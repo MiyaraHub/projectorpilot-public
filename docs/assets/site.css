@@ -252,16 +252,16 @@ img[src*="screenshots/"] { cursor: zoom-in; }
   inset: 0;
   z-index: 9999;
   display: none;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
+  overflow: auto;
   background: rgba(0, 0, 0, .88);
   backdrop-filter: blur(4px);
 }
 .lb.open { display: flex; }
 .lb img {
-  max-width: min(100%, 520px);
-  max-height: 92vh;
+  max-width: 100%;
   width: auto;
   height: auto;
   border-radius: 14px;
