@@ -40,7 +40,7 @@
 <header class="nav"><div class="wrap">
 <a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
 <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
-<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/guide/home-assistant-dashboard/">HA dashboard</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
 </div></header>
 
 <div class="hero">
@@ -172,6 +172,7 @@
           target:
             entity_id: script.projector_pilot_scene_movie_night</pre>
     <p class="capt">Example only. Your dashboard carries your projector's real entity and your own Scenes.</p>
+    <div class="note"><b>Model-agnostic.</b> Copy dashboard builds the board from <i>your</i> projector's own capabilities - the entity, the picture figures, the inputs, color modes, lens memories and Scenes it actually reported. The screenshots here are a QB1000; your model may show different inputs, controls and readings. For a full green-glass board like the one pictured, follow the <a href="/guide/home-assistant-dashboard/">step-by-step dashboard guide</a> or <a href="/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>download the complete view</a> and change two strings.</div>
     <div class="note"><b>Want a richer wall?</b> The same scripts drive whatever cards you like. If you have used AVR Maestro, the approach is identical - build lit source and mode tiles, live headers and history off the one sensor and the synced scripts.</div>
   </div>
 </section>

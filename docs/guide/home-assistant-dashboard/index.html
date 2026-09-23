@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build a Home Assistant dashboard - Projector Pilot</title><meta name="description" content="Step by step: which HACS cards to install, how to find your entity ID and serial, and the YAML for every card. Live picture readouts, your Scenes, laser hours, all in green glass. Download the complete view and change two strings." /><meta name="theme-color" content="#1B5E20" />
+<link rel="canonical" href="https://projectorpilot.com/guide/home-assistant-dashboard/" /><link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need custom cards from HACS to build this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To match the look in the screenshot, yes: Mushroom, button-card, card-mod and mini-graph-card. None of them are required for the underlying controls to work - every button is a plain script call, and the custom cards are the styling on top."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the info tiles show a value but the buttons do nothing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The projector sensor publishes its readings as soon as you sign in and sync in the app, so info tiles are live right away. The control and Scene buttons call scripts that only exist in Home Assistant after you paste the app's Copy block into configuration.yaml, restart Home Assistant, and tap Sync With HA once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my entity IDs match the ones in this guide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pattern will, the exact characters will not. Your projector sensor is named after your projector's model, and every script is named after your projector's serial. Wherever this page writes YOUR_PROJECTOR, put your own sensor's entity id; wherever it writes YOURSERIAL, put the serial-derived id shown on the app's Home Assistant screen."
+      }
+    }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Home Assistant dashboard</div>
+    <div class="eyebrow">Home Assistant &middot; step by step</div>
+    <h1>Build this dashboard <span class="g">in about an hour</span></h1>
+    <p>Ten steps, every card's YAML, and a complete view you can paste in one go. Green glass tiles, a live picture readout, your Scenes, and a laser-hours graph, all off one projector sensor. Change two strings and it is yours.</p>
+    <div class="readout"><span>4 HACS cards</span><span>Info tiles live at once</span><span>Buttons after one paste</span><span>Free to build</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="max-height:660px;overflow-y:auto;border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35)">
+        <img src="/screenshots/ha-dashboard.png" alt="The finished Projector Pilot dashboard in Home Assistant: power and source, color modes, the full picture menu, HDR and signal, RGB calibration, lens and geometry, maintenance with a laser-hours graph, and Scenes, all as green glass tiles" style="display:block;width:100%" />
+      </div>
+      <figcaption>What you are building. Scroll it, or click to enlarge.</figcaption>
+    </figure>
+    <div class="note"><b>In a hurry?</b> Jump to <a href="#whole">step 10</a>, download the complete view, change two strings and the three Scene ids, and paste it. The steps in between explain what each piece does so you can change it.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Before you start</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot is linked to Home Assistant.</b> <a href="/guide/home-automation/">The setup guide</a> covers signing in and turning on <b>Send the projector's state</b>. You should see your projector as a sensor in Home Assistant before you build anything on top of it.</li>
+      <li><b>You have synced at least once.</b> Settings &rsaquo; Home Automation &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, after pasting the app's <b>Copy block</b> into <code>configuration.yaml</code> and restarting Home Assistant. This is what creates the scripts every control button below calls.</li>
+      <li><b>Your projector is switched on</b> while you build. The picture attributes below are what a projector in standby leaves mostly blank.</li>
+    </ul>
+    <p class="lead">Two things feed this dashboard, and the difference matters at every step below.</p>
+    <table class="t">
+      <thead><tr><th>Comes from</th><th>Gives you</th></tr></thead>
+      <tbody>
+        <tr><td>The projector sensor, <code>sensor.YOUR_PROJECTOR</code></td><td>Every <b>reading</b>. Power, input, color mode, all the picture figures, HDR and signal, lens and geometry, lamp hours. Live as soon as you sign in and sync, no Copy block needed.</td></tr>
+        <tr><td>The app's synced scripts, <code>script.projpilot_YOURSERIAL_...</code></td><td>Every <b>control</b>. Power, inputs, color modes, lens memories, and your Scenes. These exist only after the Copy block is pasted, Home Assistant is restarted, and you have tapped Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 1</div>
+      <h2>Install four cards from HACS</h2>
+    </div>
+    <p class="lead">All four are in the default HACS store. In Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, search the name, Download, then reload your browser.</p>
+    <table class="t">
+      <thead><tr><th>Search for</th><th>Used for</th><th>If you skip it</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Every info tile, control button and Scene tile</td><td>Use a plain <code>button</code> card. Works, looks squarer.</td></tr>
+        <tr><td><b>button-card</b></td><td>The hero, with its live label</td><td>Use a <code>entity</code> card, or a Mushroom template card with less detail.</td></tr>
+        <tr><td><b>card-mod</b></td><td>The green glass background, borders and gradients</td><td>Everything still works. Nothing gets its glow.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>The laser-hours history under Maintenance</td><td>Use the built-in <code>history-graph</code> card.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>None of them are required to make it work.</b> Every control below runs from a stock Home Assistant button card pointed at the same script. The custom cards are the green glass look, not the plumbing.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 2</div>
+      <h2>Find your entity ID and your serial</h2>
+    </div>
+    <p class="lead">Every snippet on this page uses two placeholders. Find yours once and the rest is copy and paste.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States in Home Assistant, filter on <code>projector_pilot</code>. Something like <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; open the app, <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b>. The serial-derived id is shown right there, and it is the middle of every synced script name: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, and so on.</li>
+    </ul>
+    <p class="lead">You can also filter Developer Tools &rsaquo; States on <code>projpilot</code> to see your whole synced control list at once, once step 1's Copy block and Sync are done.</p>
+    <div class="note"><b>No script list yet?</b> That is expected before you have pasted the Copy block. The sensor still exists and still updates; the scripts show up only after Sync With HA runs successfully.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 3</div>
+      <h2>Create the view</h2>
+    </div>
+    <ol class="steps">
+      <li>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard &rsaquo; New dashboard from scratch. Call it Projector Pilot.</li>
+      <li>Open it, then the pencil icon top right to edit.</li>
+      <li>Add a view. Either layout works; the real board uses the default stack of cards, one under the other, which is the simplest to paste into.</li>
+      <li>To paste YAML, use the three-dot menu on a card and choose <b>Edit in YAML</b>, or the three-dot menu on the dashboard for <b>Raw configuration editor</b> to paste a whole view at once.</li>
+    </ol>
+    <p class="lead">The view's own settings, if you prefer to type them:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 4</div>
+      <h2>Add a live info tile</h2>
+    </div>
+    <p class="lead">Start with something that only reads, so you know your entity ID is right before you touch anything that sends a command. This one is live the moment your projector sensor exists, no Copy block, no sync. Add a card, Edit in YAML, paste:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Same shape reads any of the ~80 attributes the sensor carries: swap <code>brightness</code> for <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, whatever you want on the tile.</p>
+    <p class="lead">Save it. If a real number or word shows up, your entity ID is right and everything below will work. If it shows blank, go back to step 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 5</div>
+      <h2>Add a green section header</h2>
+    </div>
+    <p class="lead">A plain title is dead space. This is a <code>markdown</code> card with a gradient background from card-mod, and it is what turns a stack of tiles into named sections. Every section on the board opens with one of these, just a different label and emoji.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Change the emoji code and the label text; the card-mod block is identical on every section.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 6</div>
+      <h2>Add a control button</h2>
+    </div>
+    <p class="lead">This one sends a command instead of just reading a value, so it needs the scripts to exist first. It calls <code>script.projpilot_YOURSERIAL_power_on</code>, which the app writes only after you paste its Copy block into <code>configuration.yaml</code>, restart Home Assistant, and tap <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Same card for Power Off, Screen Blank, HDMI 1, HDMI 2, A/V Mute, a color mode, or a lens memory: only the label, icon and <code>service</code> change.</p>
+    <div class="note"><b>If it looks right but nothing happens</b> when you tap it, the Copy block is either not pasted or Home Assistant has not been restarted since. Run <b>Test Connection</b> in the app, which checks for exactly that, before assuming the dashboard is wrong.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 7</div>
+      <h2>Add the hero</h2>
+    </div>
+    <p class="lead">The hero at the top of the board is a <code>button-card</code>: a big power state, a one-line summary built from several attributes at once, and the green glass treatment on the whole card rather than just its border.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Trimmed to the pieces that change per install. The full card also sets the icon, name and label grid positions; see the download in step 10 for all of it.</p>
+    <p class="lead">Prefer a slimmer strip instead? A <code>mushroom-chips-card</code> does the same job in one row of small chips: power state, input, color mode, video range and lamp hours, each a template reading <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Use one or the other, not both, at the top of the board.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 8</div>
+      <h2>Add your Scenes</h2>
+    </div>
+    <p class="lead">Every Scene you save in the app becomes a script named <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> once you sync, and a tile for one is the same control-button card from step 6 with a Scene name and icon.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Replace <code>YOURSCENE1</code> with the id shown for that Scene on the app's synced control list. One tile per Scene, in a <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 9</div>
+      <h2>Add laser-hours history</h2>
+    </div>
+    <p class="lead">The projector sensor is recorded by Home Assistant like any other, so <code>lamp_hours</code> has a history for free. No extra sensors, no helpers, nothing to configure first, under the Maintenance section.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 hours is two weeks. Laser and lamp hours climb steadily rather than jumping around, so a two-week window is usually enough to see the trend without the graph looking flat.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step 10</div>
+      <h2>Or take the whole thing</h2>
+    </div>
+    <p class="lead">The complete view, every section and every card from the screenshot at the top of this page, with placeholders instead of entity IDs.</p>
+    <ol class="steps">
+      <li><a href="projector-pilot-dashboard.yaml" download>Download the view YAML</a>.</li>
+      <li>Open it in any text editor and replace, everywhere they appear: <code>YOUR_PROJECTOR</code> with your projector sensor's entity id from step 2, and <code>YOURSERIAL</code> with your serial-derived id from step 2.</li>
+      <li>In the Scenes section near the bottom, replace <code>YOURSCENE1</code>, <code>YOURSCENE2</code> and <code>YOURSCENE3</code> with your own three Scene ids, or add and remove tiles to match however many Scenes you actually have.</li>
+      <li>In Home Assistant, open your dashboard, pencil icon, three-dot menu, <b>Raw configuration editor</b>, and paste it in as a view.</li>
+    </ol>
+    <div class="note"><b>Your Scene names and count will not match.</b> The file ships with three example Scenes: Movie Night, Gaming, Sports Day. Rename the tiles, point them at your own Scene ids, and add or delete tiles until the section matches however many Scenes you actually saved.</div>
+    <div class="note"><b>Info tiles work immediately after you paste.</b> They only need the sensor to exist. Control and Scene buttons stay dead until the Copy block is pasted into <code>configuration.yaml</code>, Home Assistant is restarted, and you have tapped Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Troubleshooting</h2>
+    </div>
+    <details class="more"><summary>A tile shows Unknown</summary>
+      <p>Check the attribute name against what the sensor actually carries: Developer Tools &rsaquo; States, your <code>sensor.YOUR_PROJECTOR</code> entity, and read its attribute list. A few readings, like HDR PQ or HDR HLG, only populate while the projector is actively receiving that kind of signal, so Unknown on those two can be correct rather than broken. If the whole sensor looks sparse, wake the projector: a unit in standby publishes very little.</p>
+    </details>
+    <details class="more"><summary>A button does nothing</summary>
+      <p>You have not pasted the Copy block yet, or Home Assistant has not been restarted since you did. Control and Scene buttons call scripts the app writes, and those scripts do not exist until <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b> in the app has Copy block pasted into <code>configuration.yaml</code>, Home Assistant restarted once, and <b>Sync With HA</b> tapped. Run <b>Test Connection</b> in the app first - it tells you whether the block is present before you go looking for a dashboard mistake.</p>
+    </details>
+    <details class="more"><summary>The scripts I expect are missing from Developer Tools &rsaquo; States</summary>
+      <p>Filter on <code>projpilot</code> rather than the full serial - it is easier to see the whole list. If a control or Scene you added recently is missing, tap <b>Sync With HA</b> again; it updates in place rather than requiring a fresh setup. If old, dead scripts are cluttering the list after you deleted a Scene, use <b>Remove orphaned scripts</b> in the app.</p>
+    </details>
+    <details class="more"><summary>My entity ID does not look like the one in this guide</summary>
+      <p>The pattern is fixed, the middle is not. Your sensor is named after your own projector's model, and every script carries your own projector's serial, not the placeholders on this page. Get both from Developer Tools &rsaquo; States and the app's Home Assistant screen, as in step 2, and use those instead of typing the example text.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Your whole projector, on one wall</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation is a one-time add-on. No subscription, no account, no cloud. One purchase unlocks it on every platform you own.</p>
+    <div class="pills" style="justify-content:center">
+      <span class="pill">Google Play - coming soon</span>
+      <span class="pill">App Store - coming soon</span>
+      <span class="pill">Microsoft Store - coming soon</span>
+      <span class="pill">Mac App Store - coming soon</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/guide/home-automation/">Back to Home Automation &rarr;</a> &middot; <a href="/guide/">Full User Guide &rarr;</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

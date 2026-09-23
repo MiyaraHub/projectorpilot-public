@@ -1,0 +1,834 @@
+# Projector Pilot - Home Assistant dashboard
+#
+# Paste this into a new dashboard's Raw configuration editor.
+# Replace two strings everywhere they appear:
+#   YOUR_PROJECTOR -> your projector sensor, e.g. projector_pilot_epson_qb1000b_qb1000w
+#   YOURSERIAL     -> the serial-derived id from the app's Home Assistant screen
+# and the three scene ids (YOURSCENE1..3) from the app's synced Scene cards.
+#
+# Needs from HACS: Mushroom, button-card, card-mod, mini-graph-card.
+# Info tiles are live at once; control and Scene buttons work after you paste
+# the app's Copy block into configuration.yaml, restart, and tap Sync.
+
+title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards:
+  - type: markdown
+    content: '&#127909;  &nbsp; **PROJECTOR PILOT**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: custom:button-card
+    entity: sensor.YOUR_PROJECTOR
+    name: Epson QB1000
+    show_state: true
+    show_label: true
+    size: 48px
+    state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+    label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  •  ''+(a.color_mode||''-'')+''  •  ''+(a.video_range||''-'')+''  •  ''+(a.lamp_hours||0)+''
+      h  •  ''+(a.operation_light_output||0)+''% light''; ]]]'
+    styles:
+      card:
+      - height: 176px
+      - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+      - border: 1px solid rgba(61,220,107,0.5)
+      - border-radius: 22px
+      - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+      - padding: 20px
+      grid:
+      - grid-template-areas: '"i n" "i s" "i l"'
+      - grid-template-columns: 104px 1fr
+      - grid-template-rows: 1fr min-content min-content
+      img_cell:
+      - justify-self: center
+      - align-self: center
+      icon:
+      - color: '#3ddc6b'
+      - width: 68px
+      name:
+      - justify-self: start
+      - font-size: 28px
+      - font-weight: '800'
+      - color: '#f2fff6'
+      state:
+      - justify-self: start
+      - font-size: 17px
+      - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'
+      label:
+      - justify-self: start
+      - font-size: 12.5px
+      - color: '#bcd6c6'
+      - padding-top: 8px
+  - type: custom:mushroom-chips-card
+    alignment: center
+    chips:
+    - type: template
+      icon: mdi:projector
+      content: '{{ ''On'' if states(''sensor.YOUR_PROJECTOR'')==''on'' else ''Standby'' }}'
+      icon_color: '{{ ''green'' if states(''sensor.YOUR_PROJECTOR'')==''on'' else ''grey'' }}'
+    - type: template
+      icon: mdi:hdmi-port
+      content: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''input'') }}'
+      icon_color: green
+    - type: template
+      icon: mdi:palette
+      content: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''color_mode'') }}'
+      icon_color: green
+    - type: template
+      icon: mdi:high-definition
+      content: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''video_range'') }}'
+      icon_color: green
+    - type: template
+      icon: mdi:lightbulb-on
+      content: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''lamp_hours'') }} h'
+      icon_color: green
+    - type: template
+      icon: mdi:check-network
+      content: Linked
+      icon_color: green
+  - type: markdown
+    content: '&#128268;  &nbsp; **POWER &amp; SOURCE**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Power On
+      icon: mdi:power
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_power_on
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Power Off
+      icon: mdi:power-off
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_power_off
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Screen Blank
+      icon: mdi:eye-off
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_screen_blank
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: HDMI 1
+      icon: mdi:hdmi-port
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_input_hdmi1
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: HDMI 2
+      icon: mdi:hdmi-port
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_input_hdmi2
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: A/V Mute
+      icon: mdi:volume-off
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_av_mute
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+  - type: markdown
+    content: '&#127912;  &nbsp; **COLOR MODE**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Cinema
+      icon: mdi:movie-roll
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_colormode_cinema
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Vivid
+      icon: mdi:white-balance-sunny
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_colormode_vivid
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Natural
+      icon: mdi:leaf
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_colormode_natural
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Dynamic
+      icon: mdi:flash
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_colormode_dynamic
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Bright Cinema
+      icon: mdi:theater
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_colormode_bright_cinema
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Current
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''color_mode'') }}'
+      icon: mdi:palette
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: markdown
+    content: '&#128444;  &nbsp; **PICTURE**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Brightness
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+      icon: mdi:brightness-6
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Contrast
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''contrast'') }}'
+      icon: mdi:contrast-circle
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Saturation
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''saturation'') }}'
+      icon: mdi:invert-colors
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Sharpness
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''sharpness'') }}'
+      icon: mdi:blur
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Tint
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''tint'') }}'
+      icon: mdi:eyedropper
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Gamma
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''gamma'') }}'
+      icon: mdi:gamma
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Color temp
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''color_temp'') }}'
+      icon: mdi:thermometer
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Preset
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''image_preset'') }}'
+      icon: mdi:image-filter-center-focus
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Aspect
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''aspect_ratio'') }}'
+      icon: mdi:aspect-ratio
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: markdown
+    content: '&#127760;  &nbsp; **HDR &amp; SIGNAL**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Video range
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''video_range'') }}'
+      icon: mdi:high-definition
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: HDR PQ
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''hdr_pq'') }}'
+      icon: mdi:brightness-7
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: HDR HLG
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''hdr_hlg'') }}'
+      icon: mdi:brightness-5
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Dyn. tone map
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''picture_dynamic_tone_mapping'') }}'
+      icon: mdi:tune-variant
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Color space
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''color_space'') }}'
+      icon: mdi:palette-swatch
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Overscan
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''signal_overscan'') }}'
+      icon: mdi:image-size-select-large
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Motion interp
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''motion_interp'') }}'
+      icon: mdi:motion-play
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Image proc
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''image_processing'') }}'
+      icon: mdi:auto-fix
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Noise reduct
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''noise_reduction'') }}'
+      icon: mdi:grain
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Super-res Hi
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''super_res_hi'') }}'
+      icon: mdi:magnify-plus
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Super-res Lo
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''super_res_lo'') }}'
+      icon: mdi:magnify-plus-outline
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Frame color
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''frame_color'') }}'
+      icon: mdi:image-frame
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: markdown
+    content: '&#127752;  &nbsp; **RGB CALIBRATION**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Gain R
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''gain_r'') }}'
+      icon: mdi:circle
+      icon_color: red
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+    - type: custom:mushroom-template-card
+      primary: Gain G
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''gain_g'') }}'
+      icon: mdi:circle
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+    - type: custom:mushroom-template-card
+      primary: Gain B
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''gain_b'') }}'
+      icon: mdi:circle
+      icon_color: blue
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Offset R
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''offset_r'') }}'
+      icon: mdi:circle
+      icon_color: red
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+    - type: custom:mushroom-template-card
+      primary: Offset G
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''offset_g'') }}'
+      icon: mdi:circle
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+    - type: custom:mushroom-template-card
+      primary: Offset B
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''offset_b'') }}'
+      icon: mdi:circle
+      icon_color: blue
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 96px; }'
+  - type: markdown
+    content: '&#128247;  &nbsp; **LENS &amp; GEOMETRY**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Lens Memory 1
+      icon: mdi:camera-iris
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_lens_memory_1
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Lens Memory 2
+      icon: mdi:camera-iris
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_lens_memory_2
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Correction
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''correction_method'') }}'
+      icon: mdi:vector-square
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: V keystone
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''installation_v_keystone'') }}'
+      icon: mdi:angle-acute
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: H keystone
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''installation_h_keystone'') }}'
+      icon: mdi:angle-obtuse
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Projection
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''initial_projection'') }}'
+      icon: mdi:axis-z-rotate-clockwise
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: markdown
+    content: '&#128295;  &nbsp; **MAINTENANCE**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: custom:mini-graph-card
+    entities:
+    - entity: sensor.YOUR_PROJECTOR
+      attribute: lamp_hours
+      name: Laser hours
+    name: Laser hours
+    icon: mdi:lightbulb-on-outline
+    line_color: '#3ddc6b'
+    line_width: 4
+    hours_to_show: 336
+    points_per_hour: 0.5
+    height: 96
+    animate: true
+    card_mod:
+      style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+        0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Light output
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''operation_light_output'') }} %'
+      icon: mdi:brightness-percent
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Standby mode
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''operation_standby_mode'') }}'
+      icon: mdi:power-sleep
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Indicators
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''operation_indicators'') }}'
+      icon: mdi:led-on
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Panel align
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''panel_alignment'') }}'
+      icon: mdi:grid
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Uniformity
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''panel_uniformity'') }}'
+      icon: mdi:blur-linear
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Errors
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''errors'') }}'
+      icon: mdi:alert-circle-check
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Child lock
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''management_child_lock'') }}'
+      icon: mdi:lock
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Panel lock
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''management_control_panel_lock'') }}'
+      icon: mdi:lock-outline
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Lens lock
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''management_lens_lock'') }}'
+      icon: mdi:camera-lock
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+  - type: markdown
+    content: '&#127916;  &nbsp; **SCENES**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Movie Night
+      icon: mdi:movie-open
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Gaming
+      icon: mdi:controller
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_scene_YOURSCENE2
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+    - type: custom:mushroom-template-card
+      primary: Sports Day
+      icon: mdi:basketball
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      tap_action:
+        action: call-service
+        service: script.projpilot_YOURSERIAL_scene_YOURSCENE3
+      card_mod:
+        style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20)); border: 1px solid
+          rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); min-height: 92px; }'
+  - type: markdown
+    content: '&#8505;  &nbsp; **DEVICE**'
+    card_mod:
+      style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30)); border: 1px solid
+        rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); } ha-markdown { padding: 12px
+        20px !important; } ha-markdown p { margin: 0 !important; letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight:
+        700; }'
+  - type: horizontal-stack
+    cards:
+    - type: custom:mushroom-template-card
+      primary: Model
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''model'') }}'
+      icon: mdi:projector
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
+    - type: custom:mushroom-template-card
+      primary: Mount
+      secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''initial_projection'') }}'
+      icon: mdi:axis-arrow
+      icon_color: green
+      layout: vertical
+      fill_container: true
+      card_mod:
+        style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20); border-radius: 16px; box-shadow:
+          0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); min-height: 104px; }'
