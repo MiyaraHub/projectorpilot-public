@@ -1,0 +1,6 @@
+{
+  "android": { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
+  "ios":     { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
+  "macos":   { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
+  "windows": { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" }
+}

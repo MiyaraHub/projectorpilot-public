@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Help &amp; FAQ - Projector Pilot</title><meta name="description" content="Projector Pilot help and FAQ: get connected on the same Wi-Fi, enable PJLink and Web Control, find the projector IP and its three passwords, supported Epson and PJLink projectors, one-time purchases and restore, privacy and terms." /><meta name="theme-color" content="#1B5E20" />
+<link rel="canonical" href="https://projectorpilot.com/help/" /><link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Projector Pilot cannot find or connect to my projector",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Make sure the phone and the projector are on the same Wi-Fi network and subnet - guest networks and IoT VLANs can isolate them. On the projector, enable network control (PJLink and/or Web Control) in its network menu. Find the projector's IP in its own network information screen and add it by hand if the scan does not turn it up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which projectors does Projector Pilot support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Epson projectors over ESC/VP21 and Web Control, and any PJLink projector. A transport is used because it answers, not because it was configured - the app falls back to whatever the projector responds on, so a PJLink-only projector is an ordinary supported device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Projector Pilot a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Pro, Home Automation and the bundle are one-time purchases. Restore them on a new device from the same store account, and buying or restoring something you already own always unlocks it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Projector Pilot need an account or send my data to the cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account and no cloud. The app talks to your projector on your network. It uses crash diagnostics via Crashlytics, and optional usage analytics that are off by default and can be turned off in Settings > About. Nothing is sold."
+      }
+    }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; Help</div>
+    <div class="eyebrow">Help &amp; FAQ</div>
+    <h1><span class="g">Help</span> &amp; FAQ</h1>
+    <p>Getting connected, which projectors work, how purchases and restore behave, and how the app treats your privacy. Still stuck? Reach the developer in the community, or tap Send Feedback in the app.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Connection</div>
+      <h2>Getting connected</h2>
+      <p class="lead">Projector Pilot talks to your projector directly on your network. Three things get you connected, and one of them trips most people up.</p>
+    </div>
+    <details class="more" open><summary>Same Wi-Fi, same subnet</summary>
+      <p>The phone and the projector must be on the same network and subnet. Guest networks, IoT VLANs and some mesh setups isolate devices from each other, so a projector on the "IoT" SSID cannot be reached from your phone on the main one. Put both on the same network.</p>
+    </details>
+    <details class="more"><summary>Enable PJLink and Web Control on the projector</summary>
+      <p>Network control has to be turned on at the projector. In the projector's network menu, enable <b>PJLink</b> and <b>Web Control</b> (Epson calls the latter the web remote / Web Control). With network control off, the projector simply does not answer.</p>
+    </details>
+    <details class="more"><summary>Find the projector's IP address</summary>
+      <p>The app scans your network for projectors, and you can also add one by IP. To find the IP, open the projector's <b>network information</b> screen in its own menu - it lists the current address. If your scan comes up empty, add that IP by hand.</p>
+    </details>
+    <details class="more"><summary>The three projector passwords</summary>
+      <p>Epson projectors have <b>three separate passwords</b>: Web Control, PJLink and Remote. They are not the same field, and a projector can want one, some or none of them. Enter the ones your projector asks for; the app works out which the projector actually requires and connects either way, and Diagnostics tells you which path was used. If a projector answers without needing a password, the app says the saved password was not needed here rather than claiming none is set.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Compatibility</div>
+      <h2>Supported projectors</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Epson</b> projectors over <b>ESC/VP21</b> and <b>Web Control</b> - the two together give you power, the full picture menu, geometry and motorized lens control.</li>
+      <li><b>Any PJLink projector</b> - power, input and status over the PJLink standard, so a non-Epson or a PJLink-only Epson is an ordinary supported device.</li>
+      <li><b>A transport is used because it answers, never because it was configured.</b> The app prefers ESC/VP21, then PJLink, then Web Control, but it falls back to whatever the projector actually responds on. A projector with no Web Control keeps working over PJLink; a value a transport refuses is treated as unknown, not as unsupported.</li>
+    </ul>
+    <div class="note"><b>Not sure about your model?</b> The app's About screen lists the projectors it supports from its model database, and says for each whether it was verified on hardware or inferred. If the projector's own web page and network control work, Projector Pilot should reach it too.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Purchases &amp; restore</div>
+      <h2>Buying, and getting it back</h2>
+    </div>
+    <details class="more" open><summary>Is it a one-time purchase?</summary>
+      <p>Yes. Pro, the Home Automation add-on and the bundle are all one-time purchases. No subscription, no ads, no account. See <a href="/pricing/">pricing</a>.</p>
+    </details>
+    <details class="more"><summary>How do I restore on a new device?</summary>
+      <p>Sign in to the same store account you bought on and use Restore Purchases in the app. One purchase unlocks every platform you own - Android, iOS, Windows and macOS - tied to that store account.</p>
+    </details>
+    <details class="more"><summary>I already own it but the app shows an error</summary>
+      <p>It should not, and newer builds fix exactly that. If the store reports Pro, Home Automation or the bundle as already owned, the app grants it and quietly refreshes your purchases, so buying or restoring something you already own always unlocks it.</p>
+    </details>
+    <details class="more"><summary>Why is the price different from what I read online?</summary>
+      <p>The app shows the store's price, in your own currency, before you confirm. Regional pricing differs, and the app never falls back to a hard-coded figure - if the store has not answered yet it says so rather than inventing a number.</p>
+    </details>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Privacy</div>
+      <h2>Your data stays yours</h2>
+      <p class="lead">Projector Pilot is a local app. It talks to your projector on your network, and there is nothing to sign up for.</p>
+    </div>
+    <ul class="plain">
+      <li><b>No account, no cloud.</b> You do not create an account, and the projector's data is not sent to any server of ours.</li>
+      <li><b>Crash diagnostics via Crashlytics.</b> When the app crashes it sends a diagnostic report so the bug can be fixed. That is standard crash reporting, not tracking.</li>
+      <li><b>Optional, opt-in analytics.</b> Usage analytics are <b>off by default</b>. The app asks once on first launch, and you can turn them on or off any time in <b>Settings &rsaquo; About</b>. Nothing is collected or sent unless you turn it on.</li>
+      <li><b>Nothing is sold.</b> Your data is not sold to anyone, full stop.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Terms</div>
+      <h2>Terms, in plain language</h2>
+    </div>
+    <ul class="plain">
+      <li><b>What you get.</b> Projector Pilot is provided as-is to control compatible Epson and PJLink projectors on your own network. We work to keep it accurate and reliable, but we cannot guarantee every model and firmware behaves identically.</li>
+      <li><b>Purchases</b> are handled by the app store you buy from, under that store's terms and refund policy. Restore is subject to the store account you purchased on.</li>
+      <li><b>Independent app.</b> Projector Pilot is an independent app by MiyaraHub Technologies LLC and is <b>not affiliated with, endorsed by, or sponsored by Epson</b> or the PJLink standards body. Epson and PJLink are trademarks of their respective owners.</li>
+      <li><b>Your responsibility.</b> Commands are sent to hardware you own. Use test patterns, geometry and lens controls sensibly; we are not liable for a projector setting you change.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Contact</div>
+      <h2>Still stuck? We are quick to help</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard">
+        <h3>Community</h3>
+        <p>Join the Discord community to reach the developer and other users. Replies are quick.</p>
+      </div>
+      <div class="gcard">
+        <h3>Send Feedback</h3>
+        <p>Use <b>Send Feedback</b> in the app to report a bug or ask a question, with the app's diagnostics attached so it can be fixed fast.</p>
+      </div>
+      <div class="gcard">
+        <h3>Read the guides</h3>
+        <p>The <a href="/guide/">user guide</a> and the <a href="/guide/home-automation/">Home Automation guide</a> cover setup end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Picture - Projector Pilot</title><meta name="description" content="The full Projector Pilot picture menu: brightness, contrast, tint, sharpness, 14-step color temperature, per-mode gamma, RGB gain and offset, noise reduction, super resolution and frame interpolation - every value on the projector's own menu scale, read back after each change. HDR and color space stay separate." />
+<meta name="theme-color" content="#1B5E20" /><link rel="canonical" href="https://projectorpilot.com/guide/picture/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectorpilot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://projectorpilot.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Picture", "item": "https://projectorpilot.com/guide/picture/" }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Picture</div>
+    <div class="eyebrow">The picture menu</div>
+    <h1>The full picture menu, <span class="g">on the projector's own scale</span></h1>
+    <p class="lead">Everything the projector's picture menu holds, in one screen - brightness through frame interpolation. Every value is the number your projector's own menu shows, not its internal byte, and every change is read back from the projector afterwards so you always see the figure the hardware actually kept.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">The basics</div>
+        <h2>Brightness, contrast, tint, sharpness</h2>
+        <ul class="plain">
+          <li><b>Brightness</b> and <b>Contrast</b> - the black floor and white ceiling, on the projector's own 0-100 (or model) scale.</li>
+          <li><b>Tint</b> and <b>Saturation</b> - color balance and intensity.</li>
+          <li><b>Sharpness</b> - edge definition, on the range your model uses.</li>
+        </ul>
+        <p>Each control shows the exact menu figure. Where the projector has declared the range a control uses, the app converts precisely as the projector does; where it has not, the number is shown as sent and the control says <b>wire value</b> rather than printing a guess.</p>
+      </div>
+      <img src="/screenshots/03-picture.png" alt="Projector Pilot picture screen with brightness, contrast, color temperature, gamma and advanced controls on the projector's menu scale" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Color</div>
+      <h2>Color temperature and gamma</h2>
+      <p class="lead">Two controls that behave differently depending on the mode - and the app follows the projector rather than flattening them.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Color temperature</b> is <b>fourteen steps</b>, not a slider - numbered, or shown in Kelvin in the picture modes that report a Kelvin figure. It is a stepped setting, so the app presents it as steps, never as a 0-100 range that would misread it.</li>
+      <li><b>Gamma is per picture mode.</b> The options differ by mode - Dynamic offers steps across a range, Cinema offers curve values, Custom is different again. The app resolves which set is valid from the current picture mode before it offers you the choices, so you never see a gamma option the current mode cannot take.</li>
+      <li><b>RGB gain and offset</b> - the white-balance controls, each on the projector's own scale, for tuning the grayscale.</li>
+    </ul>
+    <div class="note">Color temperature reads as the step the menu shows (for example 0 to 13), or the Kelvin figure in the modes that show one - not a byte, and not a re-converted value.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Advanced</div>
+      <h2>The image-processing controls</h2>
+    </div>
+    <table class="t">
+      <thead><tr><th>Control</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Noise Reduction</td><td>Smooths source noise, on the projector's own scale.</td></tr>
+        <tr><td>Super Resolution</td><td>Epson's detail-enhancement pass that sharpens soft sources without ringing.</td></tr>
+        <tr><td>Frame Interpolation</td><td>Motion smoothing between frames, at the levels your model supports.</td></tr>
+        <tr><td>RGB Gain / Offset</td><td>Per-channel white balance for calibrating the grayscale.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Only the controls your model actually exposes appear, with the ranges it reports. A control your projector does not have is simply not shown - the app never invents one.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The honesty rule</div>
+      <h2>HDR and color space stay separate</h2>
+      <p class="lead">A signal's dynamic range and its color space are two different things, and the app keeps them that way. BT.2020 does not mean HDR, and SDR does not mean BT.709.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Dynamic range</b> (SDR or HDR) and <b>color space</b> (BT.2020, BT.709 and so on) are shown as separate fields.</li>
+      <li>A <b>BT.2020 SDR</b> signal - common with an external tone-mapper like MadVR - reads as exactly that, never as a false HDR10 badge.</li>
+      <li>Every picture value is read back from the projector after you set it, so a value the projector kept, or did not confirm, is said plainly rather than assumed.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Picture memory</div>
+      <h2>Save, recall and rename your picture memories</h2>
+      <p class="lead">The Picture screen lists the memories your projector actually holds, by the names you gave them on its menu. Save the current picture into a slot, rename it, or erase it - saving over a slot that already holds a memory asks first.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Next</div>
+      <h2>Keep going</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/lens/"><span>&#128247;</span>Lens</a>
+      <a href="/guide/scenes/"><span>&#127917;</span>Scenes</a>
+      <a href="/guide/dashboard/"><span>&#128202;</span>Dashboard</a>
+      <a href="/guide/"><span>&#128218;</span>Back to guide hub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home Automation - Projector Pilot</title><meta name="description" content="Connect your Epson or PJLink projector to Home Assistant, Hubitat and webhooks with Projector Pilot. Publish live projector state, turn every Scene and control into a Home Assistant script, and drive it all serverless once set up. A step-by-step guide." /><meta name="theme-color" content="#1B5E20" />
+<link rel="canonical" href="https://projectorpilot.com/guide/home-automation/" /><link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does my phone need to stay on the network for Home Assistant automations to run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Once you paste the one shell_command block into Home Assistant and sync, Home Assistant sends commands straight to the projector's IP address. Projector Pilot is only the setup tool; after that, Home Assistant talks to the projector on its own, whether your phone is home or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the projector appear in Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a sensor, for example sensor.projector_pilot_epson_qb1000b_qb1000w, carrying power, input, color mode, the picture figures and lamp hours, updated whenever they change while the app is open. Turn on Sync Advanced Controls and the app also writes a Home Assistant script for every Scene, plus power, each input, each color mode and each lens memory your projector has."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Home Automation free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Home Automation is a paid add-on, a one-time purchase, separate from Projector Pilot Pro. A bundle buys both together at a saving. See the pricing page."
+      }
+    }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Home Automation</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooks</div>
+    <h1>Your projector, <span class="g">in your smart home</span>.</h1>
+    <p>Projector Pilot publishes your projector's live state and every control to Home Assistant, Hubitat and any webhook you like. Set it up once, and your smart home drives the projector on its own - no phone on the network, no cloud in the middle.</p>
+    <div class="readout"><span>Serverless once set up</span><span>Scenes become scripts</span><span>Ready-made dashboard</span><span>Paid add-on</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Overview</div>
+      <h2>What Home Automation does</h2>
+      <p class="lead">Home Automation turns Projector Pilot from a remote in your hand into a device your whole house can see. It exposes what the projector is doing - power, input, color mode, the picture figures, lamp hours - and hands your smart home a control for everything the app can change.</p>
+    </div>
+    <ul class="plain">
+      <li><b>It publishes state.</b> The projector shows up as a Home Assistant sensor, a Hubitat device, or a JSON payload on your webhook, carrying the same readings the app shows you.</li>
+      <li><b>It publishes controls.</b> Every Scene you save, plus power, each input, each color mode and each lens memory, becomes something an automation or a voice assistant can run.</li>
+      <li><b>It runs serverless.</b> Once the scripts are set up, Home Assistant sends commands straight to the projector's IP address. Your phone does not need to be on the network, and nothing routes through a cloud account.</li>
+    </ul>
+    <div class="note"><b>Home Automation is a paid add-on.</b> It is a one-time purchase, separate from Projector Pilot Pro, and a bundle buys both together at a saving. No subscription, no account, no cloud. See <a href="/pricing/">pricing</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Three ways in, one hub</h3>
+        <p class="lead">Settings &rsaquo; Home Automation is the hub. Pick the platform you run - Home Assistant, Hubitat or Webhooks - and set it up there. You can wire up more than one at a time; they are independent.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="The Home Automation hub in Projector Pilot: Home Assistant, Hubitat and Webhooks" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Set up Home Assistant</h2>
+      <p class="lead">Sign in from the app, publish the projector as a sensor, paste one block into your configuration, and sync. From then on Home Assistant drives the projector itself.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Open <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b>.</li>
+        <li>Type your <b>Home Assistant address</b> (for example <code>http://homeassistant.local:8123</code> or its IP), then tap <b>Sign in</b>. It is a browser sign-in against your own instance - there is <b>no token to paste</b>. Use your normal Home Assistant login, two-factor and all.</li>
+        <li>The app publishes the projector as a <b>sensor</b>, with an entity like <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, carrying power, input, color mode, the picture figures and lamp hours.</li>
+        <li>Turn on <b>Send the projector's state</b> so those readings update in Home Assistant whenever they change while the app is open, and turn on <b>Sync Advanced Controls</b> to publish scripts for picture modes, inputs, lens memories and power.</li>
+        <li>Paste the one <b>shell_command</b> block (below) into your <code>configuration.yaml</code>, restart Home Assistant, then tap <b>Sync With HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="The Home Assistant screen in Projector Pilot showing the shell_command block, Sign in, Projector Entity ID and the sync toggles" />
+    </div>
+
+    <h3 style="margin-top:36px">The shell_command block</h3>
+    <p class="lead">This is the whole serverless trick. The app writes one command Home Assistant runs to talk to the projector's Web Control, and every script it syncs calls that command with a different verb. Tap <b>Copy block</b> in the app and paste it into <code>configuration.yaml</code>. The example below is illustrative - the app fills in your projector's own address and command name:</p>
+<pre class="code">shell_command:
+  projector_pilot_xdbr4700113: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Example only. The app generates yours with the projector's real IP and a name derived from its serial.</p>
+    <div class="note"><b>Why serverless.</b> That <code>curl</code> runs on the Home Assistant box, not your phone. Home Assistant reaches the projector's IP directly over Web Control, so an automation fires whether or not the app is open and whether or not your phone is even home. The <code>EPSONWEB</code> digest user is the Web Control login; the app uses the Web Control password already saved for the projector.</p></div>
+
+    <h3 style="margin-top:32px">Test Connection, Sync, and cleanup</h3>
+    <ul class="plain">
+      <li><b>Test Connection</b> checks that the app can reach your Home Assistant and that the pasted <code>shell_command</code> is actually there, so you find a typo before you build anything on top of it.</li>
+      <li><b>Sync With HA</b> writes or updates the scripts for your Scenes and controls. Run it again any time you add a Scene or change a control - it updates in place rather than piling up duplicates.</li>
+      <li><b>Remove orphaned scripts</b> deletes scripts the app wrote that no longer have a matching Scene or control - for example after you delete a Scene. It only ever touches scripts Projector Pilot created; nothing else in your Home Assistant is disturbed.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scenes as scripts</div>
+      <h2>Every Scene becomes a Home Assistant script</h2>
+      <p class="lead">After a sync, your Scenes are not stuck inside the app. Each one, plus power, each input, each color mode and each lens memory your projector actually has, is written as a Home Assistant script.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Automations can run them.</b> "At sunset, if the TV turns on, run Movie Night" is a normal Home Assistant automation once the Scene is a script.</li>
+      <li><b>Voice assistants can run them.</b> Expose a script to your assistant and "turn on Movie Night" sets the input, the picture mode and the lens memory together.</li>
+      <li><b>Only your real controls appear.</b> The app writes a script for each input, color mode and lens memory the projector reports - not a generic list it guessed at.</li>
+      <li><b>Removing sync removes only what the app wrote.</b> Turn the sync off, or use Remove orphaned scripts, and Projector Pilot deletes the scripts it created and nothing else.</li>
+    </ul>
+    <div class="note"><b>Scripts are named so a rename updates the same one.</b> The script names are derived from the projector and the control, so re-syncing after you rename a Scene updates the existing script rather than forking a second copy.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The dashboard</div>
+      <h2>Copy a ready-made dashboard</h2>
+      <p class="lead">You do not have to hand-build a Lovelace view. Tap <b>Copy dashboard</b> on the Home Assistant screen and the app hands you a complete dashboard: one card with the projector's state and a button for every Scene and control it synced.</p>
+    </div>
+    <ol class="steps">
+      <li>In the app, tap <b>Copy dashboard</b> (after you have signed in and synced at least once).</li>
+      <li>In Home Assistant, go to <b>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard</b>, create a new empty dashboard, and open it.</li>
+      <li>Open the dashboard's three-dot menu, choose <b>Edit dashboard</b>, then the three-dot menu again and <b>Raw configuration editor</b>.</li>
+      <li>Paste the copied YAML, save, and the card and buttons appear, already pointed at your projector's scripts.</li>
+    </ol>
+    <p class="lead">The copied YAML looks something like this - a state card plus a button for each control (illustrative snippet):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Example only. Your dashboard carries your projector's real entity and your own Scenes.</p>
+    <div class="note"><b>Want a richer wall?</b> The same scripts drive whatever cards you like. If you have used AVR Maestro, the approach is identical - build lit source and mode tiles, live headers and history off the one sensor and the synced scripts.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Set up Hubitat</h2>
+      <p class="lead">On Hubitat, Projector Pilot mirrors the projector onto a device in your hub through the Maker API, so Rule Machine can read and act on power, mute and input.</p>
+    </div>
+    <ol class="steps">
+      <li>In Hubitat, enable the <b>Maker API</b> app and note its access URL and token, and pick which devices it exposes.</li>
+      <li>In Projector Pilot, open <b>Settings &rsaquo; Home Automation &rsaquo; Hubitat</b> and enter your hub's <b>Maker API</b> details.</li>
+      <li>Pick the <b>device that stands for the projector</b>. The app suggests the likely one; choose it or select your own.</li>
+      <li>The app <b>mirrors power, mute and input</b> onto that device, sending only the commands the device accepts.</li>
+      <li>Build <b>Rule Machine</b> rules against that device the way you would any other - the projector's state drives them.</li>
+    </ol>
+    <div class="note"><b>Only what the device accepts.</b> The app sends a projector value to Hubitat only when the chosen device supports that command, so it never pushes something the device would reject.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooks</div>
+      <h2>Set up Webhooks</h2>
+      <p class="lead">Webhooks are the catch-all. The app posts to a URL of yours when the projector powers on, powers off, changes input or recalls a Scene - a Home Assistant webhook, Node-RED, IFTTT, or anything that takes JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Open <b>Settings &rsaquo; Home Automation &rsaquo; Webhooks</b>.</li>
+      <li>Enter the <b>URL</b> to post to. A Home Assistant webhook looks like <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Choose which <b>events</b> fire the webhook: power on, power off, input change, Scene recall - and optionally filter to a specific input or Scene.</li>
+      <li>Optionally set a <b>custom payload</b> if the receiving service wants a particular shape; otherwise the app sends its default JSON.</li>
+      <li>Save. The app posts on each matching event from then on.</li>
+    </ol>
+    <p class="lead">The default payload is plain JSON - an event, the projector, and the value that changed:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Example payload. An input-change or power event carries the fields relevant to it.</p>
+    <div class="note"><b>Re-linking fixes them all.</b> If you re-link Home Assistant at a new address, the app updates every webhook that points at it at once, so a moved instance does not mean editing each one by hand.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Troubleshooting</h2>
+    </div>
+    <details class="more"><summary>Sign-in bounces back to the login page</summary>
+      <p>Make sure the address you entered is the one you actually reach Home Assistant on, including the port (usually <code>:8123</code>). The sign-in is a real browser login against your instance, so your username, password and two-factor code all apply. On a phone the sign-in completes whether the in-app browser hands the result back or the local callback returns first; if it still stalls, close the sheet and tap Sign in again.</p>
+    </details>
+    <details class="more"><summary>The projector sensor is not appearing in Home Assistant</summary>
+      <p>The sensor is published while the app is open and <b>Send the projector's state</b> is on, so open the app and confirm that toggle. Then check <b>Developer Tools &rsaquo; States</b> in Home Assistant and filter on <code>projector_pilot</code>. A projector in standby publishes very little; wake it and the readings fill in.</p>
+    </details>
+    <details class="more"><summary>The synced scripts are missing</summary>
+      <p>The scripts are written by <b>Sync With HA</b>, which needs the <code>shell_command</code> block already pasted into <code>configuration.yaml</code> and Home Assistant restarted once. Run <b>Test Connection</b> first - it tells you whether the block is present. Then Sync again. If old, dead scripts are cluttering the list, use <b>Remove orphaned scripts</b>.</p>
+    </details>
+    <details class="more"><summary>A script runs in the app but not from Home Assistant when my phone is away</summary>
+      <p>That is the point of the <code>shell_command</code> block - it is what lets Home Assistant reach the projector's IP on its own. If it only works with the app open, the block is probably not pasted or Home Assistant was not restarted after pasting it. Confirm with Test Connection, restart Home Assistant, and Sync.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Wire your projector into the whole house</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation is a one-time add-on. No subscription, no account, no cloud. One purchase unlocks it on every platform you own.</p>
+    <div class="pills" style="justify-content:center">
+      <span class="pill">Google Play - coming soon</span>
+      <span class="pill">App Store - coming soon</span>
+      <span class="pill">Microsoft Store - coming soon</span>
+      <span class="pill">Mac App Store - coming soon</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/pricing/">See Free vs Pro vs Home Automation &rarr;</a> &middot; <a href="/guide/">Full user guide &rarr;</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

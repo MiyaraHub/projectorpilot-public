@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lens Control - Projector Pilot</title>
+<meta name="description" content="Motorized lens shift, focus and zoom with a step size you choose, lens memory recall and save, and an honest position readout - for Epson and PJLink projectors. A position the projector cannot confirm is shown as unknown, never a false lock." />
+<meta name="theme-color" content="#1B5E20" />
+<link rel="canonical" href="https://projectorpilot.com/guide/lens/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">Guide</a> &rsaquo; Lens</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">The Lens tab</div>
+        <h1>Motorized lens, moved with intent</h1>
+        <p class="lead">Shift, focus and zoom your projector's motorized lens from a precise pad, recall and save the lens memories your projector supports, and read the exact position back off the chassis. Every figure comes from the projector, and a position it cannot confirm is shown as unknown - never dressed up as a lock.</p>
+        <p class="lead">The Lens tab has two sub-tabs: <b>Lens</b> for the day-to-day shift, focus, zoom and memory controls, and <b>Installation</b> for the one-time setup adjustments.</p>
+      </div>
+      <img src="/screenshots/04-lens.png" alt="The Lens tab in Projector Pilot showing the position readout, shift pad with step-size selector, focus and zoom" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lens shift</div>
+      <h2>A directional pad, and a step size you pick</h2>
+      <p class="lead">The shift pad moves the lens up, down, left and right. What changes it from a toy into a tool is the step-size selector below it: choose how far a single tap moves the lens, from fine framing to a coarse repositioning move.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Step 1</h3><p>The finest move. Nudge the image a hair at a time to line the edge up with your screen's frame.</p></div>
+      <div class="gcard"><h3>Step 5</h3><p>A comfortable middle setting for pulling the picture into place once you are close.</p></div>
+      <div class="gcard"><h3>Step 10</h3><p>Cover ground quickly while you are still roughing out the position.</p></div>
+      <div class="gcard"><h3>Step 25</h3><p>The coarse move, for shoving the lens across a large part of its travel in a few taps.</p></div>
+    </div>
+    <div class="note">The step size you choose applies to <b>shift, focus and zoom</b> alike, so one setting governs how far every lens control moves per tap. Start coarse to get in the neighbourhood, then drop to 1 to finish the framing.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Focus &amp; zoom</div>
+      <h2>Sharpness and size, on the same terms</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Focus</b> - a minus and a plus button drive the focus motor, each tap moving by the step size you set. The current focus motor position is shown above the buttons so you can return to a known figure.</li>
+      <li><b>Zoom</b> - the same minus and plus pair drives the zoom motor, again by your chosen step size, with the live zoom motor position shown alongside.</li>
+      <li><b>Read back, not guessed</b> - the focus and zoom figures are the motor positions the projector reports, so what you see is where the lens actually is, not where the app hoped it went.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lens memory</div>
+      <h2>Recall a saved setup, or save this one</h2>
+      <p class="lead">Projectors with lens memory store a full shift, focus and zoom position in a named slot. Projector Pilot lists the slots your projector actually supports and lets you recall one in a tap or save the current position into it.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Recall</b> - tap a memory to send the lens to that stored shift, focus and zoom position, the way an anamorphic or a different aspect ratio setup wants it.</li>
+      <li><b>Save</b> - store the current lens position into a slot so you can return to it later.</li>
+      <li><b>Only the real slots</b> - the app shows the memory slots the projector reports having, not a fixed list it assumes every model carries.</li>
+    </ul>
+    <div class="note">Lens memories pair well with <a href="/guide/scenes/">Scenes</a>: a Scene can carry the lens memory alongside the input and picture mode, so a single tap sets the whole room for a wide film or a 16:9 show.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The position readout</div>
+      <h2>The shift envelope, plotted</h2>
+      <p class="lead">At the top of the Lens tab the current lens position is shown two ways: as figures and as a diagram.</p>
+    </div>
+    <ul class="plain">
+      <li><b>V-Shift and H-Shift figures</b> - the vertical and horizontal shift positions, each shown as the current value out of the projector's full travel (for example 595 of 1023), so you always know how much room is left before the lens hits its limit.</li>
+      <li><b>The envelope diagram</b> - a box that plots the lens position as a point inside the projector's shift range, vertical against horizontal, so you can see at a glance whether the lens is centred or pushed toward a corner of its travel.</li>
+    </ul>
+    <div class="note"><b>Orientation is the projector's job, and the app respects it.</b> Ceiling-mounted, rear-projected or front, up is up: the app follows the projector's own mapping and never inverts the pad to second-guess your mount. Tap up and the image goes up, whatever the projector is bolted to.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Honest by default</div>
+      <h2>An unconfirmed position is unknown, not locked</h2>
+    </div>
+    <p class="lead">Some projectors accept a lens move and carry it out, but the position they report back does not tick along with the motor. On models like the QB1000 that lag was easy to misread as a stuck lens.</p>
+    <ul class="plain">
+      <li><b>An accepted move with an unconfirmed position stays available.</b> The app no longer greys out the controls or points you at Lens Lock just because the reported figure did not move; the command was accepted, so the controls remain live.</li>
+      <li><b>Only a real refusal is reported as a lock.</b> If the projector actually rejects the command, then and only then does the app tell you the lens is locked - and it works with or without a Web Control password.</li>
+      <li><b>A refused login is unknown, not a lock.</b> If lens moves go over Web Control and that login is refused, the app treats the lens as unknown and shows a tap-to-fix nudge to update the Web Control password, rather than blaming the lens.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Installation sub-tab</div>
+      <h2>The one-time setup adjustments</h2>
+      <p class="lead">The Installation sub-tab holds the geometry and installer controls you set once when the projector goes in and rarely touch again - the counterpart to the everyday lens moves on the Lens sub-tab.</p>
+    </div>
+    <div class="note">Installer controls appear only where the projector supports them and are read back from the chassis, so what you see is what your exact model exposes, not an assumed set.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Keep reading</div>
+      <h2>Related guides</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/scenes/">One-tap Scenes</a>
+      <a href="/guide/settings/">Settings</a>
+      <a href="/guide/home-automation/">Home Assistant</a>
+      <a href="/guide/">Full user guide</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>One-Tap Scenes - Projector Pilot</title>
+<meta name="description" content="Save your projector exactly how it is - power, input, picture, signal, light, geometry and audio - tick which parts to keep, and recall it in one tap. Every Scene becomes a Home Assistant script, and Scenes export and import as shareable profiles. A Pro feature." />
+<meta name="theme-color" content="#1B5E20" />
+<link rel="canonical" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">Guide</a> &rsaquo; Scenes</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">The Scenes tab &middot; Pro</div>
+        <h1>Your whole room, in one tap</h1>
+        <p class="lead">A Scene captures your projector exactly how it is right now and brings it all back later with a single tap. Movie night, the big game, a bright Sunday matinee - each its own Scene, each one a tap away. You pick precisely which parts a Scene keeps, and only the parts your projector actually reports are on offer.</p>
+        <p class="lead">Scenes are part of <a href="/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="The Scenes tab in Projector Pilot with the Save Current button" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How to save one</div>
+      <h2>Set the room, then capture it</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Set it up.</b> Get the projector exactly how you want it - the input, the color mode, the picture, the lens memory, the lot.</li>
+      <li><b>Save Current.</b> On the Scenes tab tap <b>Save Current</b>, give the Scene a name, and tick which parts to keep. The picker only offers what your projector reports, so you never save a setting your model does not have.</li>
+      <li><b>Recall.</b> Tap the Scene to apply it. Projector Pilot confirms each setting against the projector as it goes and never claims a change that did not land.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What a Scene captures</div>
+      <h2>As much or as little as you tick</h2>
+      <p class="lead">A single Scene can snapshot any of the following. Recall replays only the parts you ticked, so a "late show" Scene can drop the light output and leave everything else alone.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Power</h3><p>The projector's power state, so a Scene can wake it or send it to standby as part of the setup.</p></div>
+      <div class="gcard"><h3>Input</h3><p>The source the Scene switches to, so "Movie Night" lands on the right HDMI every time.</p></div>
+      <div class="gcard"><h3>Picture</h3><p>Color mode and the picture values, each on the projector's own menu scale.</p></div>
+      <div class="gcard"><h3>Signal</h3><p>The signal-side settings your projector exposes for the content you are watching.</p></div>
+      <div class="gcard"><h3>Light</h3><p>Light-source output, so a bright room and a dark one get their own setting.</p></div>
+      <div class="gcard"><h3>Geometry</h3><p>The alignment and geometry state that frames the image on your screen.</p></div>
+      <div class="gcard"><h3>Audio</h3><p>The audio settings the projector reports, kept alongside the rest.</p></div>
+      <div class="gcard"><h3>Only what is reported</h3><p>The tick list is built from what your projector actually answers, so nothing you save is a guess.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Automation</div>
+      <h2>Every Scene becomes a Home Assistant script</h2>
+      <p class="lead">Paste one block into your Home Assistant configuration once and Projector Pilot writes a script for every Scene you have, plus power, each input, each color mode and each lens memory your projector actually holds. An automation or a voice assistant can then run any Scene, and the app removes the scripts it wrote when you turn the sync off, touching nothing else.</p>
+    </div>
+    <div class="note">Scenes also work through <b>webhooks</b> - recalling a Scene can post to a URL of yours - and mirror onto <b>Hubitat</b> through Maker API. It is all in the <a href="/guide/home-automation/">Home Assistant guide</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Share your work</div>
+      <h2>Shareable scene profiles</h2>
+      <p class="lead">Tuned a Scene you are proud of? Export it and hand it to a friend, or import one someone shared with you. Scene profiles move between installs so a good setup does not have to be rebuilt from scratch on every projector.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Keep reading</div>
+      <h2>Related guides</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/lens/">Lens control</a>
+      <a href="/guide/home-automation/">Home Assistant</a>
+      <a href="/guide/settings/">Settings</a>
+      <a href="/guide/">Full user guide</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body>
+</html>

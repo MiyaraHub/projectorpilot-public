@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Getting Started - Projector Pilot</title><meta name="description" content="Add your Epson or PJLink projector to Projector Pilot: scan the network or add by IP, run the first-add capability scan, Test Connection and Save. Requirements, demo mode and where to find your projector's IP." />
+<meta name="theme-color" content="#1B5E20" /><link rel="canonical" href="https://projectorpilot.com/guide/getting-started/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectorpilot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://projectorpilot.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Getting Started", "item": "https://projectorpilot.com/guide/getting-started/" }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Getting Started</div>
+    <div class="eyebrow">Getting started</div>
+    <h1>Add your projector in <span class="g">about a minute</span></h1>
+    <p class="lead">Projector Pilot finds your projector on your own network - no cloud account, no pairing code. Put your phone on the same Wi-Fi, add the projector once, and the app scans what it can do and remembers it. Here is the whole flow.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Before you start</div>
+      <h2>What you need</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Same network.</b> Your phone, tablet or computer must be on the same Wi-Fi (or wired LAN) as the projector. The app talks to the projector directly on that network.</li>
+      <li><b>Projector powered or on standby.</b> Leave the projector on, or on standby with network control enabled - most Epson models answer on standby so you can power them on from the app.</li>
+      <li><b>The projector's IP address</b> (only if you add by hand). It lives in the projector's own network menu - see below for where to look.</li>
+    </ul>
+    <div class="note"><b>No projector handy?</b> Tap <b>Explore Demo Mode</b> on the first screen and the whole app runs against a captured real Epson QB1000 that answers what a real projector answers - so you can try every screen before you buy anything.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Step by step</div>
+      <h2>Adding a projector</h2>
+      <p class="lead">Open Add Projector and pick how you want to find it. Both routes end at the same place.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Choose Scan network or Add by IP.</b> Scan network looks across your Wi-Fi or wired LAN for anything answering as a projector and fills the address in for you. Add by IP is there for the times you would rather type the address yourself.</li>
+      <li><b>Pick your projector, or enter its IP.</b> From a scan, tap the projector in the list. By hand, type the IP address from the projector's network menu and continue.</li>
+      <li><b>Let the capability scan run.</b> On a first add, the app probes the projector and shows a <b>progress bar</b> so you can see how far along it is. It is asking the projector what it actually supports - which protocols answer, which controls exist, the lens and picture ranges - so the app only ever shows you real controls.</li>
+      <li><b>Tap Test Connection.</b> The app confirms it can reach the projector and reads back its identity. If the projector wants a Web Control password, enter it here; the app works out whether a password is needed at all and tells you either way.</li>
+      <li><b>Save.</b> The projector is added and its capability scan is remembered - open the app again and it does not re-scan. You land on the dashboard, reading live.</li>
+    </ol>
+    <div class="note">A projector is scanned <b>once</b> and the result is cached. That is why the second launch is instant - the app already knows what your hardware can do.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Finding the address</div>
+      <h2>Where your projector's IP lives</h2>
+      <p class="lead">If you add by IP, you need the projector's address on your network. Every Epson exposes it in the same place.</p>
+    </div>
+    <ol class="steps">
+      <li>On the projector, open the on-screen <b>Menu</b> and go to <b>Network</b> (or Extended &rsaquo; Network on some models).</li>
+      <li>Open <b>Network Configuration</b> &rsaquo; <b>Wired LAN</b> or <b>Wireless LAN</b> and read the <b>IP Address</b>.</li>
+      <li>Type that address into Add by IP. A fixed or reserved address is worth setting on your router so it never changes under the app.</li>
+    </ol>
+    <div class="note"><b>Network settings live on the projector, not in the app.</b> Projector Pilot reaches the projector <em>over</em> that network, so it shows the network page as a clear read-only view - you change addresses on the projector's own interface.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">If it will not connect</div>
+      <h2>Quick fixes</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Double-check the network.</b> A phone that dropped onto guest Wi-Fi or cellular will not see the projector. Same network, both ends.</li>
+      <li><b>Wake the projector.</b> A model with network standby switched off will not answer until it is on. Turn it on once and add it.</li>
+      <li><b>Password prompt?</b> Enter the <b>Web Control</b> password (the only one the projector's own web page asks for). The app handles the projector's separate passwords - see the <a href="/guide/remote/">Remote guide</a>.</li>
+      <li><b>PJLink-only projector?</b> That is an ordinary device. The app falls back to whatever transport answers, so a projector without Web Control still works.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Next</div>
+      <h2>Where to go from here</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/dashboard/"><span>&#128202;</span>Read the dashboard</a>
+      <a href="/guide/remote/"><span>&#127918;</span>Use the remote</a>
+      <a href="/guide/scenes/"><span>&#127917;</span>Save a Scene</a>
+      <a href="/guide/"><span>&#128218;</span>Back to guide hub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

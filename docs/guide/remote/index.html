@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Remote - Projector Pilot</title><meta name="description" content="The Projector Pilot remote: navigation D-pad, Menu, Back, Home and Source, input and color mode, screen blank, geometry correction methods, and the Device tab with the three projector passwords and the lens, child and control-panel locks." />
+<meta name="theme-color" content="#1B5E20" /><link rel="canonical" href="https://projectorpilot.com/guide/remote/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectorpilot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://projectorpilot.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Remote", "item": "https://projectorpilot.com/guide/remote/" }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Remote</div>
+    <div class="eyebrow">The remote</div>
+    <h1>A real <span class="g">remote</span>, without the batteries</h1>
+    <p class="lead">The Remote tab carries the on-screen remote and the operational controls, split across sub-pages you swipe between: <b>Remote</b>, <b>Operation</b>, <b>Device</b> and <b>Network</b>. Everything the projector exposes, none of the buttons it does not.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Remote page</div>
+        <h2>Navigate the projector's own menus</h2>
+        <ul class="plain">
+          <li><b>Navigation D-pad</b> with a center select, plus <b>Menu</b>, <b>Back</b>, <b>Home</b> and <b>Source</b> - drive the projector's on-screen menus exactly as the handset would.</li>
+          <li><b>Input</b> selection, to jump straight to a source.</li>
+          <li><b>Color mode</b>, to switch the picture mode from the same screen.</li>
+          <li><b>Screen blank</b>, to hide the picture. Power lives on the dashboard, not here, so there is one power control, not three.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/02-remote.png" alt="Projector Pilot remote page with navigation D-pad, Menu, Back, Home, Source and screen blank" />
+    </div>
+    <div class="note"><b>Screen blank is not A/V mute.</b> Screen blank hides the image while the projector keeps running and the signal keeps flowing, so it comes back instantly. Use it for a pause, not a shutdown.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Operation page - geometry</div>
+      <h2>Correct the shape of the image</h2>
+      <p class="lead">Pick the correction method that matches your install. The app shows the methods your projector supports and only one geometry correction is active at a time, as the hardware requires.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Method</th><th>Use it for</th></tr></thead>
+      <tbody>
+        <tr><td>Off</td><td>No correction - a projector squared to the screen needs none.</td></tr>
+        <tr><td>H/V Keystone</td><td>Independent horizontal and vertical keystone for a projector offset up/down or left/right.</td></tr>
+        <tr><td>Quick Corner</td><td>Drag each of the four corners into place - the everyday fix for a not-quite-square image.</td></tr>
+        <tr><td>Point Correction</td><td>A grid of points nudged individually, for fine local distortion.</td></tr>
+        <tr><td>Curved Surface</td><td>Compensate for projection onto a curved screen or wall.</td></tr>
+        <tr><td>Corner Wall</td><td>Correct for projecting into a room corner where two walls meet.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Every geometry value is read back from the projector after you change it, so a correction the projector did not apply is never shown as if it did.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Device page - passwords</div>
+      <h2>Three passwords, not one</h2>
+      <p class="lead">An Epson projector has three separate passwords, and they protect different things. Projector Pilot knows the difference, so entering one you do not need never locks you out of the app.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Password</th><th>Protects</th></tr></thead>
+      <tbody>
+        <tr><td>Web Control</td><td>The projector's web interface and the commands that ride on it - including lens moves and image reads on many models. This is the one the projector's own web page asks for.</td></tr>
+        <tr><td>PJLink</td><td>The PJLink protocol (TCP 4352) used by control systems and, in the app, as a fallback transport.</td></tr>
+        <tr><td>Remote</td><td>The ESC/VP.net remote-control channel (TCP 3629), the app's preferred transport.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>The app works out whether a password is even wanted before deciding anything.</b> A projector that answers without asking is reported as "no password needed here", not falsely flagged as protected - and it never confuses "none set" with "set but not required for this protocol". If a saved Web Control password stops working, lens and image controls do not go dark blaming the lens: they show a tap-to-fix nudge to update the password.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Device page - locks</div>
+      <h2>Locks the projector enforces</h2>
+      <p class="lead">The Device page surfaces the projector's own locks. When a control is unavailable because the projector froze it, the app says which lock is responsible instead of failing silently.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Lens lock.</b> When the projector's lens lock is on, shift, focus and zoom are held. The app only reports a lens as locked when the projector <em>actually refuses</em> the command - an accepted move whose position the projector cannot confirm is not treated as a lock, so the controls stay available.</li>
+      <li><b>Child lock.</b> Disables the projector's own power button so a child cannot switch it on and stare into the light. Toggle it from here.</li>
+      <li><b>Control panel lock.</b> Locks the buttons on the projector body so only the remote (and the app) can drive it - handy in a public or shared room.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Network page</div>
+      <h2>A clear read-only view</h2>
+      <p class="lead">Network settings live on the projector, because the app reaches the projector <em>over</em> that network. The Network page is a plain read-only view of the projector's addressing with a note explaining why - you change these on the projector's own interface, covered in <a href="/guide/getting-started/">Getting started</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Next</div>
+      <h2>Keep going</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/picture/"><span>&#127912;</span>Picture</a>
+      <a href="/guide/lens/"><span>&#128247;</span>Lens</a>
+      <a href="/guide/dashboard/"><span>&#128202;</span>Dashboard</a>
+      <a href="/guide/"><span>&#128218;</span>Back to guide hub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>

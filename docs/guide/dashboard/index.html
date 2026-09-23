@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard - Projector Pilot</title><meta name="description" content="The Projector Pilot dashboard: live power, input and color mode, projection info (dynamic range, color space, gamma, laser hours, serial, mount), screen blank, picture and lens summaries, and cards you add, hide and reorder." />
+<meta name="theme-color" content="#1B5E20" /><link rel="canonical" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://projectorpilot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://projectorpilot.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Dashboard", "item": "https://projectorpilot.com/guide/dashboard/" }
+  ]
+}
+</script>
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/logo-square.png" alt="Projector Pilot" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m"><a href="/#features">Features</a><a href="/guide/">Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help</a><a class="cta" href="/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Dashboard</div>
+    <div class="eyebrow">The dashboard</div>
+    <h1>Everything at a glance, <span class="g">built the way you want it</span></h1>
+    <p class="lead">The dashboard is your home base. Live status across the top, a card for every part of the projector below it, and a Customize mode that lets you add, hide and reorder those cards so the screen shows what matters to you. Every figure is read from the projector and refreshed as it changes.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Live status</div>
+        <h2>Power, input and color mode, up top</h2>
+        <ul class="plain">
+          <li><b>Power pill.</b> One tap powers the projector on or off, and the pill is warm-up and cool-down aware - it shows the projector working through its warm-up or cool-down rather than pretending the state flipped instantly.</li>
+          <li><b>Input source.</b> The current source at a glance, tappable to switch.</li>
+          <li><b>Color mode.</b> The active picture mode (Dynamic, Cinema, Natural and so on), read from the projector.</li>
+          <li><b>Screen blank.</b> Blank the picture without cutting the signal, and the dashboard agrees with the Remote - blanked reads as active in both places.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="Projector Pilot dashboard showing live power, input, color mode and projection info cards" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Projection info</div>
+      <h2>What the projector is actually doing</h2>
+      <p class="lead">The projection info card reads the real signal and installation details straight from the chassis - nothing here is inferred.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Field</th><th>What it shows</th></tr></thead>
+      <tbody>
+        <tr><td>Dynamic range</td><td>SDR or HDR, kept separate from color space so a signal is never mislabelled.</td></tr>
+        <tr><td>Color space</td><td>The incoming gamut, for example BT.2020 or BT.709 - reported on its own, not folded into an HDR badge.</td></tr>
+        <tr><td>Gamma</td><td>The active gamma the projector reports.</td></tr>
+        <tr><td>Laser hours</td><td>Light-source hours run, so you can track the panel or laser life. Lamp models show lamp hours instead.</td></tr>
+        <tr><td>Serial number</td><td>The projector's own serial, read from the chassis.</td></tr>
+        <tr><td>Mount</td><td>Ceiling or rear projection, as the projector has it set.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Color space and dynamic range are separate fields, on purpose.</b> A BT.2020 SDR signal - common when an external tone-mapper like MadVR is doing the work - reads as exactly that, never as a false HDR10 badge.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Summary cards</div>
+      <h2>Picture and lens, at a glance</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Picture summary.</b> The key picture figures - Brightness, Contrast, Tint, Sharpness and Color Temperature - shown on the projector's own menu scale, with a tap through to the full <a href="/guide/picture/">Picture</a> screen.</li>
+      <li><b>Lens summary.</b> The current lens state with a jump to the <a href="/guide/lens/">Lens</a> screen for shift, focus, zoom and memories.</li>
+      <li><b>Signal, light and operation cards.</b> Add the ones you care about - signal detail, light output and Eco/operation - so the dashboard is as full or as spare as you like.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Make it yours</div>
+      <h2>Add, hide and reorder the cards</h2>
+      <p class="lead">Tap <b>Customize</b> and the dashboard becomes editable. Add a card from the picker, drag to reorder, or hide any card you never look at.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Tap Customize</b> on the dashboard.</li>
+      <li><b>Add a card</b> from the picker - Power, Input, Color Mode, Screen Blank, Picture, Lens, Signal and Eco/Operation are all available, and there are more card types in the fuller picker.</li>
+      <li><b>Drag to reorder</b> so your most-used controls sit at the top.</li>
+      <li><b>Hide</b> anything you do not need. Done - the layout is yours and it sticks.</li>
+    </ol>
+    <div class="note">Only cards for controls your projector actually supports are offered. If your model has no motorized lens, there is no lens card to add - the app never shows a control the hardware cannot answer.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Next</div>
+      <h2>Keep going</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/guide/remote/"><span>&#127918;</span>Remote</a>
+      <a href="/guide/picture/"><span>&#127912;</span>Picture</a>
+      <a href="/guide/lens/"><span>&#128247;</span>Lens</a>
+      <a href="/guide/"><span>&#128218;</span>Back to guide hub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/logo-square.png" alt="Projector Pilot" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/guide/">User Guide</a><a href="/pricing/">Pricing</a><a href="/guide/home-automation/">Home Assistant</a><a href="/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/help/#privacy">Privacy</a><a href="/help/#terms">Terms</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. The premium controller for Epson and PJLink projectors. Epson and PJLink are trademarks of their respective owners; Projector Pilot is an independent app and is not affiliated with or endorsed by Epson.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+</body></html>
