@@ -97,7 +97,7 @@
     <h3 style="margin-top:36px">The shell_command block</h3>
     <p class="lead">This is the whole serverless trick. The app writes one command Home Assistant runs to talk to the projector's Web Control, and every script it syncs calls that command with a different verb. Tap <b>Copy block</b> in the app and paste it into <code>configuration.yaml</code>. The example below is illustrative - the app fills in your projector's own address and command name:</p>
 <pre class="code">shell_command:
-  projector_pilot_xdbr4700113: &gt;-
+  projector_pilot_epson: &gt;-
     curl -s --max-time 5 --digest -u 'EPSONWEB:'
     -H "X-Requested-With: XMLHttpRequest"
     -H "Referer: http://192.168.1.50/cgi-bin/webconf"
