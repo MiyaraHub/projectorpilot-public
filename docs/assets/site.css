@@ -29,7 +29,7 @@ body{background:var(--panel);color:var(--ink);font-family:var(--body);line-heigh
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--signal);text-decoration:none;transition:color .15s}
 a:hover{color:var(--signal-deep)}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 ::selection{background:var(--signal-soft);color:var(--ink)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 
@@ -103,7 +103,7 @@ header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
 
 /* store + social badges */
 .badges{display:flex;flex-wrap:wrap;gap:12px}
-.badges img{height:46px}
+.badges img{height:46px;width:auto}
 .badges.social img{height:38px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .pill{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--steel);
@@ -118,7 +118,7 @@ section{padding:64px 0;position:relative;border-top:1px solid var(--edge)}
 .feat.rev .shots{order:2}
 .feat+.feat{margin-top:64px}
 .shots{display:flex;gap:16px;justify-content:center}
-.shots img{width:230px;border-radius:26px;filter:drop-shadow(0 20px 38px rgba(0,0,0,.5));transition:transform .25s ease}
+.shots img{width:230px;border-radius:26px;filter:drop-shadow(0 20px 38px rgba(0,0,0,.5));transition:transform .25s ease;min-width:0}
 .shots img:hover{transform:translateY(-5px)}
 .shots.one img{width:266px}
 .feat ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:11px}

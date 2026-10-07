@@ -1,0 +1,27 @@
+# Projector Pilot
+
+> Projector Pilot is an independent app by MiyaraHub Technologies LLC for controlling Epson and PJLink projectors over your own network, on Android, iOS, Windows and macOS.
+
+Projector Pilot talks to a projector over ESC/VP21, PJLink and Epson Web Control, using whichever the projector answers on. It covers power and input, the full picture menu, motorized lens shift, focus, zoom and lens memories, one-tap Scenes, maintenance insights such as lamp or laser hours, and Home Assistant, Hubitat and webhook automation, in 29 languages. Basic control is free; Pro ($9.99 reference price) and the Home Automation add-on are one-time purchases, with no subscription, no ads and no cloud account. The app is coming soon to Google Play, the App Store, the Microsoft Store and the Mac App Store. Projector Pilot is not affiliated with, endorsed by, or sponsored by Epson, the PJLink standards body, Home Assistant or Hubitat; those names are trademarks of their respective owners and are used only to describe what the app works with.
+
+## Main pages
+
+- [Home](https://projectorpilot.com/): What Projector Pilot does, screenshots and a short FAQ.
+- [Pricing](https://projectorpilot.com/pricing/): Free, Pro, the Home Automation add-on and the bundle, all one-time purchases.
+- [Help & FAQ](https://projectorpilot.com/help/): Getting connected, supported projectors, purchases and restore, privacy and terms.
+
+## User guide
+
+- [User Guide](https://projectorpilot.com/guide/): Index of every guide page.
+- [Getting Started](https://projectorpilot.com/guide/getting-started/): Add a projector by network scan or IP address, the capability scan, and demo mode.
+- [Dashboard](https://projectorpilot.com/guide/dashboard/): Live power, input and color mode, projection info and customizable cards.
+- [Remote](https://projectorpilot.com/guide/remote/): Navigation D-pad, input and color mode, screen blank, geometry correction and the Device tab.
+- [Picture](https://projectorpilot.com/guide/picture/): Brightness, contrast, color temperature, gamma, RGB gain and offset on the projector's own scale.
+- [Lens](https://projectorpilot.com/guide/lens/): Motorized lens shift, focus and zoom with a chosen step size, and lens memories.
+- [Scenes](https://projectorpilot.com/guide/scenes/): Save and recall the projector's state in one tap; Scenes can become Home Assistant scripts.
+- [Home Automation](https://projectorpilot.com/guide/home-automation/): Connect the projector to Home Assistant, Hubitat and webhooks.
+- [Home Assistant Dashboard](https://projectorpilot.com/guide/home-assistant-dashboard/): Build a custom Home Assistant projector dashboard with HACS cards and YAML.
+- [Maintenance & Insights](https://projectorpilot.com/guide/maintenance/): Lamp or laser hours, filter hours, projected life, running cost and the hour report.
+- [Settings](https://projectorpilot.com/guide/settings/): Projectors, purchases, test patterns, themes, polling, backup and restore.
+- [Highlights](https://projectorpilot.com/highlights/): Release highlights, from Home Assistant sync to the projector switcher.
+- [Languages](https://projectorpilot.com/guide/languages/): The 29 supported languages and right-to-left layout.

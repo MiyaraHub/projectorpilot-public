@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://projectorpilot.com/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://projectorpilot.com/guide/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/getting-started/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/dashboard/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/remote/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/picture/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/lens/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/scenes/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/home-automation/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/settings/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/maintenance/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/languages/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/pricing/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/help/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://projectorpilot.com/guide/home-assistant-dashboard/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://projectorpilot.com/</loc><lastmod>2026-10-06</lastmod><image:image><image:loc>https://projectorpilot.com/assets/og-card.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/01-dashboard.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/02-remote.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/03-picture.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/04-lens.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/05-scenes.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/07-home-automation.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/08-home-assistant.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://projectorpilot.com/guide/dashboard/</loc><lastmod>2026-10-06</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/01-dashboard.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/getting-started/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://projectorpilot.com/guide/home-assistant-dashboard/</loc><lastmod>2026-10-06</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/ha-dashboard.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/home-automation/</loc><lastmod>2026-10-06</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/07-home-automation.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/08-home-assistant.png</image:loc></image:image><image:image><image:loc>https://projectorpilot.com/screenshots/ha-dashboard.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/highlights/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://projectorpilot.com/guide/languages/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://projectorpilot.com/guide/lens/</loc><lastmod>2026-10-01</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/04-lens.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/maintenance/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://projectorpilot.com/guide/picture/</loc><lastmod>2026-10-01</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/03-picture.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/remote/</loc><lastmod>2026-10-01</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/02-remote.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/scenes/</loc><lastmod>2026-10-01</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/05-scenes.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/guide/settings/</loc><lastmod>2026-10-06</lastmod><image:image><image:loc>https://projectorpilot.com/screenshots/06-settings.png</image:loc></image:image></url>
+  <url><loc>https://projectorpilot.com/pricing/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://projectorpilot.com/help/</loc><lastmod>2026-10-06</lastmod></url>
 </urlset>
