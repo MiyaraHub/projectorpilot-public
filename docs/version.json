@@ -1,5 +1,5 @@
 {
-  "android": { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
+  "android": { "latest": "1.7.0", "min": "1.0.0", "url": "https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" },
   "ios":     { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
   "macos":   { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" },
   "windows": { "latest": "1.7.0", "min": "1.0.0", "url": "https://projectorpilot.com/#download" }
