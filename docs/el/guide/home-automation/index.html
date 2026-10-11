@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="el" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Οδηγός Προβολέα για Home Assistant &amp; Hubitat - Projector Pilot</title>
+<meta name="description" content="Συνδέστε τον προβολέα σας Epson ή PJLink με το Home Assistant, το Hubitat και webhooks. Ο Συγχρονισμός με HA δημοσιεύει τη ζωντανή κατάσταση και μετατρέπει κάθε Σκηνή σε script." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/el/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Οδηγός Προβολέα για Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta property="og:description" content="Συνδέστε τον προβολέα σας Epson ή PJLink με το Home Assistant, το Hubitat και webhooks. Ο Συγχρονισμός με HA δημοσιεύει τη ζωντανή κατάσταση και μετατρέπει κάθε Σκηνή σε script." />
+<meta property="og:url" content="https://projectorpilot.com/el/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Οδηγός Προβολέα για Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta name="twitter:description" content="Συνδέστε τον προβολέα σας Epson ή PJLink με το Home Assistant, το Hubitat και webhooks. Ο Συγχρονισμός με HA δημοσιεύει τη ζωντανή κατάσταση και μετατρέπει κάθε Σκηνή σε script." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "el", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Οδηγός Προβολέα για Home Assistant & Hubitat - Projector Pilot", "description": "Συνδέστε τον προβολέα σας Epson ή PJLink με το Home Assistant, το Hubitat και webhooks. Ο Συγχρονισμός με HA δημοσιεύει τη ζωντανή κατάσταση και μετατρέπει κάθε Σκηνή σε script.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "el", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Ο προβολέας σας, στο Home Assistant και στο Hubitat.", "description": "Συνδέστε τον προβολέα σας Epson ή PJLink με το Home Assistant, το Hubitat και webhooks. Ο Συγχρονισμός με HA δημοσιεύει τη ζωντανή κατάσταση και μετατρέπει κάθε Σκηνή σε script.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "el", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Οδηγός Χρήσης", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Αυτοματισμός Σπιτιού", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Πρέπει το κινητό μου να μένει στο δίκτυο για να τρέχουν οι αυτοματισμοί του Home Assistant;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Όχι. Μόλις επικολλήσετε το ένα μπλοκ shell_command στο Home Assistant και συγχρονίσετε, το Home Assistant στέλνει εντολές απευθείας στη διεύθυνση IP του προβολέα. Το Projector Pilot είναι μόνο το εργαλείο ρύθμισης· στη συνέχεια το Home Assistant μιλά μόνο του με τον προβολέα, είτε το κινητό σας είναι σπίτι είτε όχι."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Πώς εμφανίζεται ο προβολέας στο Home Assistant;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ως αισθητήρας, για παράδειγμα sensor.projector_pilot_epson_qb1000b_qb1000w, που φέρει λειτουργία, είσοδο, λειτουργία χρώματος, τιμές εικόνας και ώρες λυχνίας, και ενημερώνεται κάθε φορά που αλλάζουν όσο η εφαρμογή είναι ανοιχτή. Αν ενεργοποιήσετε το Sync Advanced Controls, η εφαρμογή γράφει επίσης ένα script Home Assistant για κάθε Σκηνή, συν λειτουργία, κάθε είσοδο, κάθε λειτουργία χρώματος και κάθε μνήμη φακού που διαθέτει ο προβολέας σας."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Είναι δωρεάν ο Αυτοματισμός Σπιτιού;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ο Αυτοματισμός Σπιτιού είναι ένα πρόσθετο επί πληρωμή, εφάπαξ αγορά, ξεχωριστό από το Projector Pilot Pro. Ένα πακέτο αγοράζει και τα δύο μαζί με έκπτωση. Δείτε τη σελίδα τιμολόγησης."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/el/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα"><a href="/el/#features">Χαρακτηριστικά</a><a href="/el/guide/">Οδηγός</a><a href="/el/pricing/">Τιμολόγηση</a><a href="/el/highlights/">Βασικά σημεία</a><a href="/el/guide/home-automation/">Home Assistant</a><a href="/el/guide/home-assistant-dashboard/">Πίνακας HA</a><a href="/el/help/">Βοήθεια</a><a class="cta" href="/el/#download">ΛΗΨΗ ΤΗΣ ΕΦΑΡΜΟΓΗΣ</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός χρήσης</a> &rsaquo; Αυτοματισμός Σπιτιού</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooks</div>
+    <h1>Ο προβολέας σας, <span class="g">στο Home Assistant και στο Hubitat</span>.</h1>
+    <p>Το Projector Pilot δημοσιεύει τη ζωντανή κατάσταση του προβολέα σας και κάθε χειριστήριο στο Home Assistant, στο Hubitat και σε οποιοδήποτε webhook θέλετε. Ρυθμίστε το μία φορά και το έξυπνο σπίτι σας οδηγεί μόνο του τον προβολέα - χωρίς κινητό στο δίκτυο, χωρίς cloud στη μέση.</p>
+    <div class="readout"><span>Χωρίς διακομιστή μετά τη ρύθμιση</span><span>Οι Σκηνές γίνονται scripts</span><span>Έτοιμος πίνακας ελέγχου</span><span>Λίστα ελέγχου ρύθμισης</span><span>Πρόσθετο επί πληρωμή</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Επισκόπηση</div>
+      <h2>Τι κάνει ο Αυτοματισμός Σπιτιού</h2>
+      <p class="lead">Ο Αυτοματισμός Σπιτιού μετατρέπει το Projector Pilot από ένα τηλεχειριστήριο στο χέρι σας σε μια συσκευή που ολόκληρο το σπίτι σας μπορεί να δει. Εκθέτει τι κάνει ο προβολέας - λειτουργία, είσοδο, λειτουργία χρώματος, τιμές εικόνας, ώρες λυχνίας - και δίνει στο έξυπνο σπίτι σας ένα χειριστήριο για ό,τι μπορεί να αλλάξει η εφαρμογή.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Δημοσιεύει κατάσταση.</b> Ο προβολέας εμφανίζεται ως αισθητήρας Home Assistant, ως συσκευή Hubitat ή ως φορτίο JSON στο webhook σας, με τις ίδιες ενδείξεις που βλέπετε στην εφαρμογή.</li>
+      <li><b>Δημοσιεύει χειριστήρια.</b> Κάθε Σκηνή που αποθηκεύετε, συν λειτουργία, κάθε είσοδος, κάθε λειτουργία χρώματος και κάθε μνήμη φακού, γίνεται κάτι που μπορεί να εκτελέσει ένας αυτοματισμός ή ένας φωνητικός βοηθός.</li>
+      <li><b>Τρέχει χωρίς διακομιστή.</b> Μόλις στηθούν τα scripts, το Home Assistant στέλνει εντολές απευθείας στη διεύθυνση IP του προβολέα. Το κινητό σας δεν χρειάζεται να είναι στο δίκτυο και τίποτα δεν περνά από λογαριασμό cloud.</li>
+    </ul>
+    <div class="note"><b>Ο Αυτοματισμός Σπιτιού είναι πρόσθετο επί πληρωμή.</b> Είναι εφάπαξ αγορά, ξεχωριστή από το Projector Pilot Pro, και ένα πακέτο αγοράζει και τα δύο μαζί με έκπτωση. Χωρίς συνδρομή, χωρίς λογαριασμό, χωρίς cloud. Δείτε την <a href="/el/pricing/">τιμολόγηση</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Τρεις τρόποι, ένα κέντρο</h3>
+        <p class="lead">Το Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού είναι το κέντρο. Επιλέξτε την πλατφόρμα που χρησιμοποιείτε - Home Assistant, Hubitat ή Webhooks - και ρυθμίστε την εκεί. Μπορείτε να συνδέσετε περισσότερες από μία ταυτόχρονα· είναι ανεξάρτητες.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Το κέντρο Αυτοματισμού Σπιτιού στο Projector Pilot: Home Assistant, Hubitat και Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Ρύθμιση Home Assistant</h2>
+      <p class="lead">Συνδεθείτε από την εφαρμογή, δημοσιεύστε τον προβολέα ως αισθητήρα, επικολλήστε ένα μπλοκ στη διαμόρφωσή σας και συγχρονίστε. Από εκεί και πέρα το Home Assistant οδηγεί μόνο του τον προβολέα.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Ανοίξτε το <b>Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Home Assistant</b>.</li>
+        <li>Πληκτρολογήστε τη <b>διεύθυνση του Home Assistant</b> (για παράδειγμα <code>http://homeassistant.local:8123</code> ή την IP του) και μετά πατήστε <b>Είσοδος</b>. Είναι σύνδεση μέσω προγράμματος περιήγησης στη δική σας εγκατάσταση - <b>δεν επικολλάτε κανένα token</b>. Χρησιμοποιήστε κανονικά τα στοιχεία σύνδεσης του Home Assistant, με την ταυτοποίηση δύο παραγόντων και όλα.</li>
+        <li>Η εφαρμογή δημοσιεύει τον προβολέα ως <b>αισθητήρα</b>, με οντότητα όπως <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, που φέρει λειτουργία, είσοδο, λειτουργία χρώματος, τιμές εικόνας και ώρες λυχνίας.</li>
+        <li>Ενεργοποιήστε το <b>Αποστολή της κατάστασης του προβολέα</b> ώστε αυτές οι ενδείξεις να ενημερώνονται στο Home Assistant κάθε φορά που αλλάζουν όσο η εφαρμογή είναι ανοιχτή, και ενεργοποιήστε το <b>Sync Advanced Controls</b> για να δημοσιεύονται scripts για λειτουργίες εικόνας, εισόδους, μνήμες φακού και λειτουργία.</li>
+        <li>Επικολλήστε το ένα μπλοκ <b>shell_command</b> (παρακάτω) στο <code>configuration.yaml</code>, κάντε επανεκκίνηση του Home Assistant και μετά πατήστε <b>Συγχρονισμός με HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Η οθόνη Home Assistant στο Projector Pilot με το μπλοκ shell_command, Είσοδος, ID οντότητας προβολέα και τους διακόπτες συγχρονισμού" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Το μπλοκ shell_command</h3>
+    <p class="lead">Αυτό είναι όλο το κόλπο χωρίς διακομιστή. Η εφαρμογή γράφει μία εντολή που τρέχει το Home Assistant για να μιλήσει με το Web Control του προβολέα, και κάθε script που συγχρονίζει καλεί αυτή την εντολή με διαφορετικό ρήμα. Πατήστε <b>Copy block</b> στην εφαρμογή και επικολλήστε το στο <code>configuration.yaml</code>. Το παρακάτω παράδειγμα είναι ενδεικτικό - η εφαρμογή συμπληρώνει τη δική σας διεύθυνση προβολέα και το όνομα της εντολής:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Μόνο παράδειγμα. Η εφαρμογή δημιουργεί το δικό σας με την πραγματική IP του προβολέα και ένα όνομα που προκύπτει από τον σειριακό του.</p>
+    <div class="note"><b>Γιατί χωρίς διακομιστή.</b> Αυτό το <code>curl</code> τρέχει στη συσκευή του Home Assistant, όχι στο κινητό σας. Το Home Assistant φτάνει απευθείας στην IP του προβολέα μέσω Web Control, οπότε ένας αυτοματισμός ενεργοποιείται είτε η εφαρμογή είναι ανοιχτή είτε όχι και είτε το κινητό σας βρίσκεται σπίτι είτε όχι. Ο χρήστης digest <code>EPSONWEB</code> είναι η σύνδεση Web Control· η εφαρμογή χρησιμοποιεί τον κωδικό Web Control που είναι ήδη αποθηκευμένος για τον προβολέα.</p></div>
+
+    <h3 style="margin-top:32px">Δοκιμή Σύνδεσης, Συγχρονισμός και εκκαθάριση</h3>
+    <ul class="plain">
+      <li>Η <b>Δοκιμή Σύνδεσης</b> ελέγχει ότι η εφαρμογή φτάνει στο Home Assistant σας και ότι το επικολλημένο <code>shell_command</code> υπάρχει πράγματι, ώστε να βρείτε ένα τυπογραφικό λάθος πριν χτίσετε οτιδήποτε πάνω του.</li>
+      <li>Ο <b>Συγχρονισμός με HA</b> γράφει ή ενημερώνει τα scripts για τις Σκηνές και τα χειριστήριά σας, και χτίζει έναν έτοιμο πίνακα ελέγχου Projector Pilot απευθείας στο Home Assistant. Εκτελέστε τον ξανά όποτε προσθέτετε μια Σκηνή ή αλλάζετε ένα χειριστήριο - ενημερώνει επί τόπου αντί να στοιβάζει διπλότυπα.</li>
+      <li>Η <b>Κατάργηση ορφανών scripts</b> βρίσκει scripts που έγραψε η εφαρμογή και δεν έχουν πια αντίστοιχη Σκηνή ή χειριστήριο - για παράδειγμα αφού διαγράψετε μια Σκηνή - <b>εμφανίζει ακριβώς ποια θα αφαιρέσει και ρωτά πρώτα</b>. Τίποτα δεν διαγράφεται μέχρι να επιβεβαιώσετε. Αγγίζει μόνο scripts που δημιούργησε το Projector Pilot· τίποτα άλλο στο Home Assistant σας δεν ενοχλείται, και αν το Home Assistant δεν εμφανίσει τα scripts του, δεν αφαιρείται τίποτα.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Λίστα ελέγχου ρύθμισης</div>
+      <h2>Η εφαρμογή σας λέει τι έχει γίνει και τι λείπει</h2>
+      <p class="lead">Η οθόνη Home Assistant περιλαμβάνει μια <b>Λίστα ελέγχου ρύθμισης</b> και έναν πίνακα <b>Τι διαθέτει το Home Assistant σας</b>, ώστε να μη μαντεύετε ποιο βήμα απομένει. Κάθε γραμμή λέει αν είναι ολοκληρωμένη, αν λείπει ή αν δεν μπόρεσε να προσδιοριστεί, και τι να κάνετε στη συνέχεια.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Συνδέθηκε με το Home Assistant</b> - έχετε συνδεθεί και απαντά. Αν το Home Assistant δεν απαντά, η γραμμή λέει να ελέγξετε τη διεύθυνση και ότι το κινητό σας βρίσκεται στο ίδιο δίκτυο.</li>
+      <li><b>Ο προβολέας προστέθηκε στο Home Assistant</b> - αν το Home Assistant έχει ήδη αυτόν τον προβολέα. Αν όχι, η γραμμή σας στέλνει να προσθέσετε την ενσωμάτωση PJLink, και το βήμα προσθήκης ενσωμάτωσης δείχνει τον host και τη θύρα PJLink που ζητά το Home Assistant.</li>
+      <li><b>Ο αισθητήρας ενδείξεων καταχωρίστηκε</b> - ο αισθητήρας που φέρει τις ενδείξεις του προβολέα σας. Καταχωρίζεται την πρώτη φορά που η εφαρμογή διαβάζει τον προβολέα, και η γραμμή προσφέρει <b>Καταχώριση τώρα</b> ή <b>Ενεργοποίηση</b> όταν κάτι το εμποδίζει.</li>
+      <li><b>Τι διαθέτει το Home Assistant σας</b> - HACS (το κοινοτικό κατάστημα), η ενσωμάτωση Epson Projector Link, η ενσωμάτωση PJLink και οι εντολές του Projector Pilot στο <code>configuration.yaml</code>. Καθένα εμφανίζει Βρέθηκε, Δεν είναι εγκατεστημένο ή Δεν ήταν δυνατός ο προσδιορισμός, με κουμπιά Πώς να εγκαταστήσετε και Άνοιγμα στο HACS όπου βοηθούν.</li>
+    </ul>
+    <div class="note"><b>Ο Έλεγχος ξανά σας λέει τι βρήκε.</b> Πατήστε <b>Έλεγχος ξανά</b> αφού διορθώσετε κάτι και η εφαρμογή διαβάζει ξανά το Home Assistant σας και αναφέρει το αποτέλεσμα, αντί να σας αφήνει να αναρωτιέστε αν δούλεψε. Μια γραμμή που δεν μπόρεσε να ελεγχθεί λέει <i>Δεν ήταν δυνατός ο προσδιορισμός</i>, ποτέ ένα μαντεμένο ναι ή όχι.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Λειτουργεί με ό,τι ήδη έχετε</div>
+      <h2>Υποστήριξη της βασικής ενσωμάτωσης PJLink, και πλουσιότερες κάρτες όταν τις έχετε</h2>
+      <p class="lead">Το Projector Pilot ανακαλύπτει τι έχει εγκατεστημένο το Home Assistant σας και χτίζει γύρω από αυτό. Λειτουργεί με τη <b>βασική ενσωμάτωση PJLink</b> που το Home Assistant περιλαμβάνει ήδη, οπότε ένας προβολέας PJLink που έχετε ήδη προσθέσει εκεί είναι πλήρες μέλος.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Πρώτα οι ενσωματωμένες κάρτες.</b> Αν δεν έχετε κάρτες κοινότητας, ο Συγχρονισμός χτίζει τον πίνακα ελέγχου με τις ενσωματωμένες κάρτες του Home Assistant και το αναφέρει όταν τελειώσει. Δουλεύει αμέσως.</li>
+      <li><b>Αναβάθμιση όταν είναι εγκατεστημένες κάρτες HACS.</b> Η εφαρμογή ελέγχει ποιες από τις κάρτες της κοινότητας (Mushroom, button-card, card-mod, apexcharts-card) είναι εγκατεστημένες και αναβαθμίζει κάθε κάρτα στην πλουσιότερη όπου την έχετε. Ο <a href="/el/guide/home-assistant-dashboard/">οδηγός χειροποίητου πίνακα ελέγχου</a> πηγαίνει πιο μακριά αν θέλετε την πλήρη εμφάνιση πράσινου γυαλιού.</li>
+      <li><b>Οι Σκηνές και τα χειριστήρια χρειάζονται μία επικόλληση.</b> Αν το Home Assistant δεν έχει ακόμη εντολή για αποστολή στον προβολέα, ο πίνακας ελέγχου χτίζεται παρ' όλα αυτά με ζωντανές ενδείξεις, και μια κάρτα <b>Ολοκλήρωση ρύθμισης</b> σας καθοδηγεί: πατήστε Copy block, επικολλήστε το στο <code>configuration.yaml</code>, κάντε επανεκκίνηση του Home Assistant και μετά πατήστε ξανά Συγχρονισμός.</li>
+      <li><b>Δεν έχετε εγκαταστήσει τίποτα; Επικολλήστε με το χέρι.</b> Αν δεν υπάρχει τίποτα εγκατεστημένο στο Home Assistant, μπορείτε και πάλι να αντιγράψετε τα πάντα από την εφαρμογή και να τα επικολλήσετε μόνοι σας.</li>
+      <li><b>Ο κωδικός επισημαίνεται.</b> Το μπλοκ εντολών που επικολλάτε λέει πότε περιέχει κωδικό προβολέα, ώστε να το ξέρετε πριν το μοιραστείτε ή το αποθηκεύσετε.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Όσο ο προβολέας είναι απενεργοποιημένος</div>
+      <h2>Ενδείξεις που μένουν στη θέση τους</h2>
+      <p class="lead">Ένας προβολέας σε αναμονή αναφέρει πολύ λίγα, οπότε ένας πίνακας ελέγχου κανονικά θα γινόταν κενός. Ο προαιρετικός <b>αισθητήρας τελευταίας γνωστής τιμής</b> κρατά τις τελευταίες ενδείξεις του προβολέα σας - την είσοδο, τις ώρες λυχνίας ή λέιζερ - στο Home Assistant όσο ο προβολέας είναι απενεργοποιημένος.</p>
+    </div>
+    <ul class="plain">
+      <li>Είναι ένα ακόμη προαιρετικό μπλοκ: επικολλήστε το στο τέλος του <code>configuration.yaml</code> (ή προσθέστε μόνο τις γραμμές του κάτω από μια υπάρχουσα ενότητα <code>template:</code>) και κάντε επανεκκίνηση του Home Assistant. Η εφαρμογή έχει ένα κουμπί <b>Έλεγχος ότι υπάρχει</b> που σας λέει αν το Home Assistant το διαθέτει.</li>
+      <li>Μια απενεργοποίηση φτάνει πλέον στο Home Assistant ως <b>off</b>, ώστε ο πίνακας ελέγχου και οι αυτοματισμοί σας να βλέπουν τον προβολέα ως απενεργοποιημένο όταν είναι.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Σκηνές ως scripts</div>
+      <h2>Κάθε Σκηνή γίνεται script του Home Assistant</h2>
+      <p class="lead">Μετά από έναν συγχρονισμό, οι Σκηνές σας δεν μένουν εγκλωβισμένες στην εφαρμογή. Καθεμία, συν η λειτουργία, κάθε είσοδος, κάθε λειτουργία χρώματος και κάθε μνήμη φακού που διαθέτει πραγματικά ο προβολέας σας, γράφεται ως script του Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Οι αυτοματισμοί μπορούν να τις εκτελούν.</b> «Στο ηλιοβασίλεμα, αν ανάψει η τηλεόραση, εκτέλεσε το Movie Night» είναι ένας κανονικός αυτοματισμός του Home Assistant μόλις η Σκηνή γίνει script.</li>
+      <li><b>Οι φωνητικοί βοηθοί μπορούν να τις εκτελούν.</b> Εκθέστε ένα script στον βοηθό σας και το «ενεργοποίησε το Movie Night» ορίζει μαζί την είσοδο, τη λειτουργία εικόνας και τη μνήμη φακού.</li>
+      <li><b>Εμφανίζονται μόνο τα πραγματικά σας χειριστήρια.</b> Η εφαρμογή γράφει ένα script για κάθε είσοδο, λειτουργία χρώματος και μνήμη φακού που αναφέρει ο προβολέας - όχι μια γενική λίστα που μάντεψε.</li>
+      <li><b>Η αφαίρεση του συγχρονισμού αφαιρεί μόνο ό,τι έγραψε η εφαρμογή.</b> Απενεργοποιήστε τον συγχρονισμό ή χρησιμοποιήστε την Κατάργηση ορφανών scripts (που τα εμφανίζει και ρωτά πρώτα), και το Projector Pilot διαγράφει τα scripts που δημιούργησε και τίποτα άλλο.</li>
+    </ul>
+    <div class="note"><b>Τα scripts ονομάζονται έτσι ώστε μια μετονομασία να ενημερώνει το ίδιο.</b> Τα ονόματα των scripts προκύπτουν από τον προβολέα και το χειριστήριο, οπότε ο επανασυγχρονισμός αφού μετονομάσετε μια Σκηνή ενημερώνει το υπάρχον script αντί να δημιουργεί δεύτερο αντίγραφο.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ο πίνακας ελέγχου</div>
+      <h2>Ο Συγχρονισμός φτιάχνει τον πίνακα ελέγχου για εσάς</h2>
+      <p class="lead">Δεν χρειάζεται να φτιάξετε με το χέρι μια προβολή Lovelace, και δεν χρειάζεται πια ούτε να την επικολλήσετε. Όταν πατάτε <b>Συγχρονισμός με HA</b>, η εφαρμογή χτίζει έναν πλήρη πίνακα ελέγχου Projector Pilot απευθείας στο Home Assistant μέσω του δικού του API: τη ζωντανή κατάσταση του προβολέα και ένα κουμπί για κάθε Σκηνή και χειριστήριο που συγχρόνισε. Εμφανίζεται στην πλαϊνή γραμμή του Home Assistant ως <b>Projector Pilot</b> - ανοίξτε τον και τελειώσατε.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Ο πίνακας ελέγχου Projector Pilot στο Home Assistant: λειτουργία και πηγή, λειτουργίες χρώματος, ολόκληρο το μενού εικόνας, HDR και σήμα, βαθμονόμηση RGB, φακός και γεωμετρία, γράφημα ωρών λέιζερ, συντήρηση και Σκηνές - όλα ως πλακίδια πράσινου γυαλιού" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Μια πιο πλούσια, χειροποίητη εκδοχή του πίνακα. Αυτός που χτίζει ο Συγχρονισμός φέρει την ίδια ζωντανή κατάσταση και τα ίδια κουμπιά σε τυπικές κάρτες του Home Assistant· η εμφάνιση πράσινου γυαλιού παρακάτω είναι η προαιρετική προσαρμοσμένη κατασκευή. Κυλήστε το ή κάντε κλικ για μεγέθυνση.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Συνδεθείτε στο Home Assistant από την εφαρμογή.</li>
+      <li>Επικολλήστε το <b>Copy block</b> της εφαρμογής στο <code>configuration.yaml</code> μία φορά και κάντε επανεκκίνηση του Home Assistant (το μοναδικό χειροκίνητο βήμα - το Home Assistant δεν επιτρέπει στις εφαρμογές να προσθέτουν αυτή την εντολή εξ αποστάσεως).</li>
+      <li>Πατήστε <b>Συγχρονισμός με HA</b>. Ο πίνακας ελέγχου φτιάχνεται για εσάς και εμφανίζεται στην πλαϊνή γραμμή ως <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Προτιμάτε να τον επικολλήσετε μόνοι σας;</b> Το <b>Αντιγραφή πίνακα ελέγχου</b> υπάρχει ακόμη στην οθόνη Home Assistant. Πατήστε το και μετά, στο Home Assistant, πηγαίνετε στο <b>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard</b>, δημιουργήστε έναν κενό πίνακα ελέγχου, ανοίξτε το μενού με τις τρεις τελείες &rsaquo; <b>Edit dashboard</b> &rsaquo; μενού με τις τρεις τελείες &rsaquo; <b>Raw configuration editor</b>, και επικολλήστε το YAML που αντιγράψατε.</div>
+    <p class="lead">Είτε τον φτιάχνει η εφαρμογή είτε τον επικολλάτε εσείς, ο πίνακας ελέγχου είναι ο ίδιος - μια κάρτα κατάστασης συν ένα κουμπί για κάθε χειριστήριο (ενδεικτικό απόσπασμα):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Μόνο παράδειγμα. Ο πίνακας ελέγχου σας φέρει την πραγματική οντότητα του προβολέα σας και τις δικές σας Σκηνές.</p>
+    <div class="note"><b>Ανεξάρτητος από μοντέλο.</b> Ο πίνακας ελέγχου χτίζεται από τις δυνατότητες του <i>δικού σας</i> προβολέα - την οντότητα, τις τιμές εικόνας, τις εισόδους, τις λειτουργίες χρώματος, τις μνήμες φακού και τις Σκηνές που ανέφερε πραγματικά. Τα στιγμιότυπα εδώ είναι ενός QB1000· το μοντέλο σας μπορεί να δείχνει διαφορετικές εισόδους, χειριστήρια και ενδείξεις. Για έναν πλήρη πίνακα πράσινου γυαλιού όπως αυτόν της εικόνας, ακολουθήστε τον <a href="/el/guide/home-assistant-dashboard/">οδηγό πίνακα ελέγχου βήμα προς βήμα</a> ή <a href="/el/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>κατεβάστε την πλήρη προβολή</a> και αλλάξτε δύο συμβολοσειρές.</div>
+    <div class="note"><b>Θέλετε έναν πιο πλούσιο τοίχο;</b> Τα ίδια scripts οδηγούν όποιες κάρτες θέλετε. Αν έχετε χρησιμοποιήσει το AVR Maestro, η προσέγγιση είναι πανομοιότυπη - χτίστε φωτισμένα πλακίδια πηγής και λειτουργίας, ζωντανές κεφαλίδες και ιστορικό από τον έναν αισθητήρα και τα συγχρονισμένα scripts.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Ρύθμιση Hubitat</h2>
+      <p class="lead">Στο Hubitat, το Projector Pilot κατοπτρίζει τον προβολέα σε μια συσκευή στο hub σας μέσω του Maker API, ώστε το Rule Machine να μπορεί να διαβάζει και να ενεργεί στη λειτουργία, τη σίγαση και την είσοδο.</p>
+    </div>
+    <ol class="steps">
+      <li>Στο Hubitat, ενεργοποιήστε την εφαρμογή <b>Maker API</b> και σημειώστε τη διεύθυνση πρόσβασης και το token της, και επιλέξτε ποιες συσκευές εκθέτει.</li>
+      <li>Στο Projector Pilot, ανοίξτε το <b>Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Hubitat</b> και εισαγάγετε τα στοιχεία <b>Maker API</b> του hub σας.</li>
+      <li>Επιλέξτε τη <b>συσκευή που αντιπροσωπεύει τον προβολέα</b>. Η εφαρμογή προτείνει την πιθανότερη· επιλέξτε τη ή διαλέξτε τη δική σας.</li>
+      <li>Η εφαρμογή <b>κατοπτρίζει τη λειτουργία, τη σίγαση και την είσοδο</b> σε αυτή τη συσκευή, στέλνοντας μόνο τις εντολές που δέχεται η συσκευή.</li>
+      <li>Φτιάξτε κανόνες <b>Rule Machine</b> πάνω σε αυτή τη συσκευή όπως θα κάνατε με οποιαδήποτε άλλη - η κατάσταση του προβολέα τους οδηγεί.</li>
+    </ol>
+    <div class="note"><b>Μόνο ό,τι δέχεται η συσκευή.</b> Η εφαρμογή στέλνει μια τιμή προβολέα στο Hubitat μόνο όταν η επιλεγμένη συσκευή υποστηρίζει αυτή την εντολή, ώστε να μην στέλνει ποτέ κάτι που η συσκευή θα απέρριπτε.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooks</div>
+      <h2>Ρύθμιση Webhooks</h2>
+      <p class="lead">Τα webhooks είναι η λύση για όλα. Η εφαρμογή στέλνει δεδομένα σε ένα URL δικό σας όταν ο προβολέας ενεργοποιείται, απενεργοποιείται, αλλάζει είσοδο ή ανακαλεί μια Σκηνή - ένα webhook του Home Assistant, το Node-RED, το IFTTT ή οτιδήποτε δέχεται JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Ανοίξτε το <b>Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Webhooks</b>.</li>
+      <li>Εισαγάγετε το <b>URL</b> προορισμού. Ένα webhook του Home Assistant μοιάζει με <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Επιλέξτε ποια <b>συμβάντα</b> ενεργοποιούν το webhook: ενεργοποίηση, απενεργοποίηση, αλλαγή εισόδου, ανάκληση Σκηνής - και προαιρετικά φιλτράρετε σε συγκεκριμένη είσοδο ή Σκηνή.</li>
+      <li>Προαιρετικά ορίστε ένα <b>προσαρμοσμένο payload</b> αν η υπηρεσία που το λαμβάνει θέλει συγκεκριμένη μορφή· διαφορετικά η εφαρμογή στέλνει το προεπιλεγμένο JSON της.</li>
+      <li>Αποθηκεύστε. Από εκεί και πέρα η εφαρμογή στέλνει σε κάθε αντίστοιχο συμβάν.</li>
+    </ol>
+    <p class="lead">Το προεπιλεγμένο payload είναι απλό JSON - ένα συμβάν, ο προβολέας και η τιμή που άλλαξε:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Παράδειγμα payload. Ένα συμβάν αλλαγής εισόδου ή λειτουργίας φέρει τα πεδία που το αφορούν.</p>
+    <div class="note"><b>Η επανασύνδεση τα διορθώνει όλα.</b> Αν επανασυνδέσετε το Home Assistant σε νέα διεύθυνση, η εφαρμογή ενημερώνει με τη μία κάθε webhook που δείχνει σε αυτό, οπότε μια εγκατάσταση που μετακινήθηκε δεν σημαίνει επεξεργασία του καθενός με το χέρι.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Αντιμετώπιση προβλημάτων</h2>
+    </div>
+    <details class="more"><summary>Η σύνδεση επιστρέφει στη σελίδα εισόδου</summary>
+      <p>Βεβαιωθείτε ότι η διεύθυνση που εισαγάγατε είναι αυτή στην οποία φτάνετε πραγματικά το Home Assistant, μαζί με τη θύρα (συνήθως <code>:8123</code>). Η σύνδεση είναι πραγματική είσοδος μέσω προγράμματος περιήγησης στη δική σας εγκατάσταση, οπότε ισχύουν το όνομα χρήστη, ο κωδικός και ο κωδικός δύο παραγόντων. Στο κινητό η σύνδεση ολοκληρώνεται είτε το ενσωματωμένο πρόγραμμα περιήγησης επιστρέψει το αποτέλεσμα είτε επιστρέψει πρώτη η τοπική επανάκληση· αν εξακολουθεί να κολλά, κλείστε το φύλλο και πατήστε ξανά Είσοδος.</p>
+    </details>
+    <details class="more"><summary>Ο αισθητήρας προβολέα δεν εμφανίζεται στο Home Assistant</summary>
+      <p>Ο αισθητήρας δημοσιεύεται όσο η εφαρμογή είναι ανοιχτή και το <b>Αποστολή της κατάστασης του προβολέα</b> είναι ενεργό, οπότε ανοίξτε την εφαρμογή και επιβεβαιώστε αυτόν τον διακόπτη. Μετά ελέγξτε το <b>Developer Tools &rsaquo; States</b> στο Home Assistant και φιλτράρετε με <code>projector_pilot</code>. Ένας προβολέας σε αναμονή δημοσιεύει πολύ λίγα· ξυπνήστε τον και οι ενδείξεις συμπληρώνονται.</p>
+    </details>
+    <details class="more"><summary>Λείπουν τα συγχρονισμένα scripts</summary>
+      <p>Τα scripts γράφονται από τον <b>Συγχρονισμό με HA</b>, που χρειάζεται το μπλοκ <code>shell_command</code> ήδη επικολλημένο στο <code>configuration.yaml</code> και μία επανεκκίνηση του Home Assistant. Εκτελέστε πρώτα <b>Δοκιμή Σύνδεσης</b> - σας λέει αν το μπλοκ υπάρχει. Μετά συγχρονίστε ξανά. Αν παλιά, νεκρά scripts γεμίζουν τη λίστα, χρησιμοποιήστε το <b>Κατάργηση ορφανών scripts</b>.</p>
+    </details>
+    <details class="more"><summary>Ένα script τρέχει στην εφαρμογή αλλά όχι από το Home Assistant όταν το κινητό μου λείπει</summary>
+      <p>Αυτός είναι ο σκοπός του μπλοκ <code>shell_command</code> - είναι αυτό που επιτρέπει στο Home Assistant να φτάνει μόνο του στην IP του προβολέα. Αν δουλεύει μόνο με την εφαρμογή ανοιχτή, το μπλοκ μάλλον δεν έχει επικολληθεί ή το Home Assistant δεν επανεκκινήθηκε μετά την επικόλληση. Επιβεβαιώστε με Δοκιμή Σύνδεσης, κάντε επανεκκίνηση του Home Assistant και συγχρονίστε.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Συνδέστε τον προβολέα σας με ολόκληρο το σπίτι</h2>
+    <p class="lead" style="margin:0 auto 24px">Ο Αυτοματισμός Σπιτιού είναι ένα εφάπαξ πρόσθετο. Χωρίς συνδρομή, χωρίς λογαριασμό, χωρίς cloud. Μία αγορά το ξεκλειδώνει σε κάθε πλατφόρμα που έχετε.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - διαθέσιμο τώρα</a>
+      <span class="pill">App Store - αναμένεται έγκριση</span>
+      <span class="pill">Microsoft Store - αναμένεται έγκριση</span>
+      <span class="pill">Mac App Store - αναμένεται έγκριση</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/el/pricing/">Δείτε Δωρεάν έναντι Pro έναντι Αυτοματισμού Σπιτιού &rarr;</a> &middot; <a href="/el/guide/">Πλήρης οδηγός χρήσης &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Γρήγορες απαντήσεις</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Πρέπει το κινητό μου να μένει στο δίκτυο για να τρέχουν οι αυτοματισμοί του Home Assistant;</h3><p>Όχι. Μόλις επικολλήσετε το ένα μπλοκ shell_command στο Home Assistant και συγχρονίσετε, το Home Assistant στέλνει εντολές απευθείας στη διεύθυνση IP του προβολέα. Το Projector Pilot είναι μόνο το εργαλείο ρύθμισης· στη συνέχεια το Home Assistant μιλά μόνο του με τον προβολέα, είτε το κινητό σας είναι σπίτι είτε όχι.</p></div><div class="gcard"><h3>Πώς εμφανίζεται ο προβολέας στο Home Assistant;</h3><p>Ως αισθητήρας, για παράδειγμα sensor.projector_pilot_epson_qb1000b_qb1000w, που φέρει λειτουργία, είσοδο, λειτουργία χρώματος, τιμές εικόνας και ώρες λυχνίας, και ενημερώνεται κάθε φορά που αλλάζουν όσο η εφαρμογή είναι ανοιχτή. Αν ενεργοποιήσετε το Sync Advanced Controls, η εφαρμογή γράφει επίσης ένα script Home Assistant για κάθε Σκηνή, συν λειτουργία, κάθε είσοδο, κάθε λειτουργία χρώματος και κάθε μνήμη φακού που διαθέτει ο προβολέας σας.</p></div><div class="gcard"><h3>Είναι δωρεάν ο Αυτοματισμός Σπιτιού;</h3><p>Ο Αυτοματισμός Σπιτιού είναι ένα πρόσθετο επί πληρωμή, εφάπαξ αγορά, ξεχωριστό από το Projector Pilot Pro. Ένα πακέτο αγοράζει και τα δύο μαζί με έκπτωση. Δείτε τη σελίδα τιμολόγησης.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/el/guide/">Οδηγός Χρήσης</a><a href="/el/pricing/">Τιμολόγηση</a><a href="/el/highlights/">Βασικά σημεία</a><a href="/el/guide/home-automation/">Home Assistant</a><a href="/el/help/">Βοήθεια &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/el/help/#privacy">Απόρρητο</a><a href="/el/help/#terms">Όροι</a></div>
+<div class="flinks"><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/guide/dashboard/">Πίνακας Ελέγχου</a><a href="/el/guide/remote/">Τηλεχειριστήριο</a><a href="/el/guide/picture/">Εικόνα</a><a href="/el/guide/lens/">Φακός</a><a href="/el/guide/scenes/">Σκηνές</a><a href="/el/guide/home-assistant-dashboard/">Πίνακας HA</a><a href="/el/guide/maintenance/">Συντήρηση</a><a href="/el/guide/settings/">Ρυθμίσεις</a><a href="/el/guide/languages/">Γλώσσες</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Το Projector Pilot είναι μια ανεξάρτητη εφαρμογή για προβολείς Epson και PJLink. Δεν σχετίζεται με, δεν υποστηρίζεται και δεν χορηγείται από την Epson, τον φορέα προτύπων PJLink, το Home Assistant, το Hubitat, την Apple, την Google ή τη Microsoft. Τα Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play και Microsoft Store είναι εμπορικά σήματα των αντίστοιχων κατόχων τους και αναφέρονται μόνο για να περιγράψουν με τι λειτουργεί η εφαρμογή.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

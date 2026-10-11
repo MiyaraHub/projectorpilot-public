@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Epson &amp; PJLink Projektörleri Kontrol Eden Uygulama - Projector Pilot</title>
+<meta name="description" content="Projector Pilot, Epson ve PJLink projektörler için bir uygulamadır: güç, giriş, görüntü, motorlu lens, tek dokunuşla Sahneler ve Home Assistant. Abonelik yok." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/tr/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Epson &amp; PJLink Projektörleri Kontrol Eden Uygulama - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot, Epson ve PJLink projektörler için bir uygulamadır: güç, giriş, görüntü, motorlu lens, tek dokunuşla Sahneler ve Home Assistant. Abonelik yok." />
+<meta property="og:url" content="https://projectorpilot.com/tr/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Epson &amp; PJLink Projektörleri Kontrol Eden Uygulama - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot, Epson ve PJLink projektörler için bir uygulamadır: güç, giriş, görüntü, motorlu lens, tek dokunuşla Sahneler ve Home Assistant. Abonelik yok." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Epson & PJLink Projektörleri Kontrol Eden Uygulama - Projector Pilot", "description": "Projector Pilot, Epson ve PJLink projektörler için bir uygulamadır: güç, giriş, görüntü, motorlu lens, tek dokunuşla Sahneler ve Home Assistant. Abonelik yok.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Epson ve PJLink projektörler için bağımsız bir uygulama: güç, giriş, tam görüntü ve renk kontrolü, motorlu lens kaydırma, odak, yakınlaştırma ve hafızalar, tek dokunuşla Sahneler, Home Assistant, Hubitat ve webhook otomasyonu, bakım analizleri ve ana ekran widget'ları, 29 dilde.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Ücretsiz", "price": "0", "priceCurrency": "USD", "description": "Projektör ekleme, güç, giriş değiştirme, canlı durum ve ekran kumandası temelleri."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Tek seferlik uygulama içi satın alma. Referans fiyat; mağaza bölgeniz için fiyatı gösterir."}, {"@type": "Offer", "name": "Ev Otomasyonu eklentisi", "price": "2.99", "priceCurrency": "USD", "description": "Tek seferlik uygulama içi satın alma. Referans fiyat; mağaza bölgeniz için fiyatı gösterir."}, {"@type": "Offer", "name": "Pro + Ev Otomasyonu paketi", "price": "11.99", "priceCurrency": "USD", "description": "Tek seferlik uygulama içi satın alma. Referans fiyat; mağaza bölgeniz için fiyatı gösterir."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Projector Pilot Epson tarafından mı yapıldı?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Projector Pilot, MiyaraHub Technologies LLC'nin bağımsız bir uygulamasıdır. Epson, PJLink standart kuruluşu, Home Assistant veya Hubitat ile bağlantılı değildir, onlar tarafından onaylanmamış veya desteklenmemiştir. Bu adlar ilgili sahiplerinin ticari markalarıdır ve burada yalnızca uygulamanın hangi projektörler ve akıllı ev sistemleriyle çalıştığını belirtmek için geçer."}}, {"@type": "Question", "name": "Projector Pilot hangi projektörleri destekler?", "acceptedAnswer": {"@type": "Answer", "text": "ESC/VP21 ve Web Control üzerinden Epson projektörler ve her PJLink projektör. Uygulama projektörün hangisinde yanıt verdiyse onu kullanır; dolayısıyla yalnızca PJLink destekleyen bir projektör sıradan, desteklenen bir cihazdır."}}, {"@type": "Question", "name": "Projector Pilot bir abonelik mi?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Temel kontrol ücretsizdir; Pro, Ev Otomasyonu ve paket tek seferlik satın almalardır. Abonelik yok, reklam yok."}}, {"@type": "Question", "name": "Projector Pilot hesap veya bulut gerektirir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Hesap yok, bulut yok. Uygulama projektörünüzle doğrudan kendi ağınızda konuşur."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="#features">Özellikler</a>
+      <a href="/tr/guide/">Kılavuz</a>
+      <a href="/tr/pricing/">Fiyatlandırma</a>
+      <a href="/tr/highlights/">Öne Çıkanlar</a>
+      <a href="/tr/guide/home-automation/">Home Assistant</a>
+      <a href="/tr/help/">Yardım</a>
+      <a class="cta" href="#download">UYGULAMAYI AL</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Epson &amp; PJLink projektörler</div>
+      <h1><span class="g">Epson projektörünüzün</span> hak ettiği kontrol uygulaması.</h1>
+      <p>Güç, giriş, tam görüntü menüsü, motorlu lens kaydırma, odak ve yakınlaştırma, tek dokunuşla Sahneler ve gerçek ev otomasyonu - Epson ve PJLink projektörler için, doğrudan telefonunuzdan. Reklam yok. Abonelik yok. Bulut hesabı yok.</p>
+      <div class="pills">
+        <span class="pill">29 dil</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Tek seferlik satın alma</span>
+        <span class="pill">Kendi ağınızda çalışır</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play'den edinin &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Bir Epson projektör için canlı güç, giriş ve renk modunu gösteren telefonda Projector Pilot yönetim paneli" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ne yapar</div>
+      <h2>Projektörünüzün sunduğu her kontrol, tek temiz bir uygulamada.</h2>
+      <p class="lead">Projector Pilot projektörünüzle ESC/VP21, PJLink ve Epson Web Control üzerinden aynı anda konuşur ve hangisi yanıt verirse onu kullanır - böylece gerçekten çalışan güç, görüntü, geometri ve lens kontrolü elde edersiniz; değerler projektörden geri okunur, asla tahmin edilmez.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Canlı durum, projeksiyon bilgisi ve görüntü ile lens özetlerini gösteren Projector Pilot yönetim paneli" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Gösterge Paneli</div>
+        <h3>Her şey tek bakışta, istediğiniz gibi kurulmuş.</h3>
+        <ul>
+          <li><b>Canlı durum</b> - güç, giriş, renk modu, ışık kaynağı saatleri, sinyal ve görüntü değerleri, değiştikçe güncellenir.</li>
+          <li>En üstten <b>tek dokunuşla güç ve giriş</b>, ısınma ve soğumayı bilen bir güç düğmesiyle.</li>
+          <li><b>Özelleştirilebilir kartlar</b> - yönetim paneli sizin için önemli olanı göstersin diye kartları ekleyin, gizleyin ve yeniden sıralayın.</li>
+          <li><b>Projeksiyon bilgisi</b> - dinamik aralık, renk uzayı, gamma, lazer saatleri, seri numarası ve montaj, projektörden okunur.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Gezinme yön tuşu, menü, kaynak ve ekran boşaltma olan Projector Pilot kumanda ekranı" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Parlaklık, karşıtlık, renk sıcaklığı ve gamma olan Projector Pilot görüntü ekranı" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Kumanda &amp; Görüntü</div>
+        <h3>Derin bir kumanda ve tam görüntü menüsü.</h3>
+        <ul>
+          <li><b>Tam gezinme yön tuşu</b>, menü, kaynak ve ekran boşaltma - ekran kumandası, doğru yapılmış.</li>
+          <li><b>Düzeltme yöntemi</b> - H/V keystone, Quick Corner, nokta düzeltme, kavisli yüzey ve köşe duvar.</li>
+          <li><b>Tam görüntü kontrolü</b> - parlaklık, karşıtlık, ton, keskinlik, renk sıcaklığı, gamma, HDR ve derin görüntü menüsü, her biri projektörün kendi ölçeğinde.</li>
+          <li><b>HDR ve renk uzayı ayrıdır</b> - bir BT.2020 SDR sinyali tam olarak öyle okunur, asla yanlış bir HDR rozeti olarak değil.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Kaydırma pedi, odak, yakınlaştırma ve adım boyutu seçicisi olan Projector Pilot lens ekranı" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Lens</div>
+        <h3>Motorlu lens kaydırma, odak, yakınlaştırma ve hafızalar.</h3>
+        <ul>
+          <li>Hassas bir pedden <b>kaydırma, odak ve yakınlaştırma</b>, <b>seçtiğiniz bir adım boyutuyla</b> - çerçeveleme için ince, büyük hareketler için kaba.</li>
+          <li><b>Lens hafızaları</b> - projektörünüzün desteklediği konumları çağırın ve kaydedin.</li>
+          <li><b>Yön duyarlı</b> - uygulama projektörün kendi eşlemesini, tavan veya arka, izler; böylece yukarı her zaman yukarıdır.</li>
+          <li><b>Dürüst göstergeler</b> - projektörün onaylayamadığı bir konum asla bir kilit gibi gösterilmez.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Kayıtlı tek dokunuşlu Sahnelerin olduğu Projector Pilot Sahneler sekmesi" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Sahneler</div>
+        <h3>Tüm oda için tek dokunuş.</h3>
+        <ul>
+          <li><b>Bir Sahne kaydedin</b> - güç, giriş, görüntü, sinyal, ışık, geometri ve ses; hangi parçaların tutulacağını tam olarak seçin.</li>
+          <li><b>Tek dokunuşla uygulayın</b> - "Film Gecesi" girişi, görüntü modunu ve lens hafızasını birlikte ayarlar.</li>
+          <li><b>Her Sahne bir Home Assistant betiği olur</b>, böylece bir otomasyon veya sesli asistan da onu çalıştırabilir.</li>
+          <li><b>Paylaşılabilir profiller</b> - ayarlanmış bir Sahneyi dışa aktarıp bir arkadaşınıza verin.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Home Assistant, Hubitat ve webhook'ların olduğu Projector Pilot Ev Otomasyonu merkezi" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Oturum aç ve eşitleme anahtarlarının olduğu Projector Pilot Home Assistant kurulum ekranı" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Ev otomasyonu</div>
+        <h3>Home Assistant, Hubitat ve webhook'lar - gerçek şey.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - oturum açın, projektörün durumunu sensör olarak yayınlayın ve her Sahne ve kontrol için bir betik almak üzere <b>HA ile Eşitle</b>'ye dokunun.</li>
+          <li><b>Sizin için oluşturulan bir yönetim paneli</b> - Eşitleme onu Home Assistant'ta yerleşik kartlarla oluşturur ve elinizde varsa daha zengin HACS kartlarına yükseltir. Çekirdek PJLink entegrasyonuyla da çalışır.</li>
+          <li><b>Bir kurulum kontrol listesi</b> neyin yapıldığını, neyin eksik olduğunu ve sonra ne yapılacağını gösterir ve okumalarınız projektör kapalıyken Home Assistant'ta kalır.</li>
+          <li><b>Hubitat</b> - Rule Machine üzerinde işlem yapabilsin diye projektörü Maker API aracılığıyla bir cihaza yansıtın.</li>
+          <li><b>Webhook'lar</b> - projektör açıldığında, kapandığında, giriş değiştiğinde veya bir Sahne çağrıldığında herhangi bir URL'ye gönderim yapın.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/tr/guide/home-automation/">Home Assistant kılavuzunun tamamını okuyun &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ve daha fazlası</div>
+      <h2>Onu bitmiş hissettiren ayrıntılar.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Projektörleri her yerden değiştirin</h3><p>Her projektör sayfasının üst çubuğundaki bir projektör değiştirici, listeye dönmeden projektörler arasında geçiş yapmanızı sağlar.</p></div>
+      <div class="gcard"><h3>Kapatmadan önce sorar</h3><p>Projektörü kapatmak onay ister; böylece yanlışlıkla bir dokunuş filmi bitirmez.</p></div>
+      <div class="gcard"><h3>Anında yanıt veren kontroller</h3><p>Lens kaydırma, odak, yakınlaştırma ve ışık çıkışı ayarı bastığınız anda hareket eder ve uygulama projektörün açıldığını yaklaşık on saniye içinde fark eder.</p></div>
+      <div class="gcard"><h3>Ürün yazılımı tek bakışta</h3><p>Projektörünüzün ürün yazılımı sürümü, projektör bildirdiği sürece Yönetim Paneli'nde ve Bilgi sekmesinde ve tanılama raporunda görünür.</p></div>
+      <div class="gcard"><h3>Yalnızca PJLink destekleyen projektörlerde giriş değiştirme</h3><p>Girişlerini yalnızca PJLink üzerinden listeleyen TW7300 ve Home Cinema 4040 gibi projektörler girişi değiştirir, Epson olmayan PJLink projektörler de değiştirebilir.</p></div>
+      <div class="gcard"><h3>Projektörünüzü Wi-Fi'da bulun</h3><p>Projektör Ekle, ağınızı projektör olarak yanıt veren her şey için tarar ve modelinizin özellikleri keşfedilirken bir ilerleme çubuğuyla adresi doldurur.</p></div>
+      <div class="gcard"><h3>Yedekleme ve geri yükleme</h3><p>Uygulama ayarlarınızı bir dosyaya dışa aktarın ve yeniden içe aktarın. Dosya gerçek adıyla paylaşılır; kayıtlı projektörler ve parolalar içinde asla taşınmaz.</p></div>
+      <div class="gcard"><h3>Tek adımda hata bildirin</h3><p>Hata Bildir, ilgili tüm günlüklerle gönderime hazır tek bir paket oluşturur.</p></div>
+      <div class="gcard"><h3>29 dil</h3><p>İngilizce artı 28 dil daha, iPhone, iPad ve Mac'teki izin istemleri dahil. <a href="/tr/guide/languages/">Dil listesine</a> bakın.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/tr/highlights/">Yeni olan her şeyi görün &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bir göz atın</div>
+      <h2>Projektörün bir parçası gibi hissettirmek için yapıldı.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Canlı durum, projeksiyon bilgisi ve görüntü ile lens özetlerini gösteren Projector Pilot yönetim paneli" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Gösterge Paneli</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Gezinme yön tuşu, menü, kaynak ve ekran boşaltma olan Projector Pilot kumanda ekranı" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Uzaktan Kumanda</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Kaydırma pedi, odak, yakınlaştırma ve adım boyutu seçicisi olan Projector Pilot lens ekranı" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Lens</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Oturum aç ve eşitleme anahtarlarının olduğu Projector Pilot Home Assistant kurulum ekranı" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SSS</div>
+      <h2>İnsanların ilk sorduğu sorular</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot Epson tarafından mı yapıldı?</h3><p>Hayır. Projector Pilot, MiyaraHub Technologies LLC'nin bağımsız bir uygulamasıdır. Epson, PJLink standart kuruluşu, Home Assistant veya Hubitat ile bağlantılı değildir, onlar tarafından onaylanmamış veya desteklenmemiştir. Bu adlar ilgili sahiplerinin ticari markalarıdır ve burada yalnızca uygulamanın hangi projektörler ve akıllı ev sistemleriyle çalıştığını belirtmek için geçer.</p></div><div class="gcard"><h3>Projector Pilot hangi projektörleri destekler?</h3><p>ESC/VP21 ve Web Control üzerinden Epson projektörler ve her PJLink projektör. Uygulama projektörün hangisinde yanıt verdiyse onu kullanır; dolayısıyla yalnızca PJLink destekleyen bir projektör sıradan, desteklenen bir cihazdır.</p></div><div class="gcard"><h3>Projector Pilot bir abonelik mi?</h3><p>Hayır. Temel kontrol ücretsizdir; Pro, Ev Otomasyonu ve paket tek seferlik satın almalardır. Abonelik yok, reklam yok.</p></div><div class="gcard"><h3>Projector Pilot hesap veya bulut gerektirir mi?</h3><p>Hesap yok, bulut yok. Uygulama projektörünüzle doğrudan kendi ağınızda konuşur.</p></div></div>
+    <p style="margin-top:22px"><a href="/tr/help/">Yardım &amp; SSS bölümünde daha fazla yanıt &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Uygulamayı edinin</div>
+      <h2>Google Play'de yayında. Daha fazla mağaza yolda.</h2>
+      <p class="lead">Projector Pilot şimdi Google Play'de yayında. App Store, Microsoft Store ve Mac App Store onay bekliyor. Tek bir satın alma, sahip olduğunuz her platformda kilidi açar.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - şimdi mevcut</a>
+      <span class="pill">App Store - onay bekliyor</span>
+      <span class="pill">Microsoft Store - onay bekliyor</span>
+      <span class="pill">Mac App Store - onay bekliyor</span>
+    </div>
+    <p style="margin-top:22px"><a href="/tr/guide/">Tam kullanım kılavuzunu açın &rarr;</a> &nbsp; &middot; &nbsp; <a href="/tr/pricing/">Ücretsiz ve Pro'yu karşılaştırın &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/tr/guide/">Kullanım Kılavuzu</a>
+      <a href="/tr/pricing/">Fiyatlandırma</a>
+      <a href="/tr/highlights/">Öne Çıkanlar</a>
+      <a href="/tr/guide/home-automation/">Home Assistant</a>
+      <a href="/tr/help/">Yardım &amp; SSS</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/tr/help/#privacy">Gizlilik</a>
+      <a href="/tr/help/#terms">Şartlar</a>
+    </div>
+<div class="flinks"><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/guide/dashboard/">Yönetim Paneli</a><a href="/tr/guide/remote/">Kumanda</a><a href="/tr/guide/picture/">Görüntü</a><a href="/tr/guide/lens/">Lens</a><a href="/tr/guide/scenes/">Sahneler</a><a href="/tr/guide/home-assistant-dashboard/">HA Yönetim Paneli</a><a href="/tr/guide/maintenance/">Bakım</a><a href="/tr/guide/settings/">Ayarlar</a><a href="/tr/guide/languages/">Diller</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot, Epson ve PJLink projektörler için bağımsız bir uygulamadır. Epson, PJLink standart kuruluşu, Home Assistant, Hubitat, Apple, Google veya Microsoft ile bağlantılı değildir; bunlar tarafından onaylanmamış veya desteklenmemiştir. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ve Microsoft Store ilgili sahiplerinin ticari markalarıdır ve yalnızca uygulamanın neyle çalıştığını belirtmek için anılmıştır.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

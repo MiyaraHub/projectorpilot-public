@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>設定、主題 &amp; 備份 - Projector Pilot</title>
+<meta name="description" content="Projector Pilot 設定說明：投影機、連接埠與密碼、Pro 與還原、測試圖樣、主題、輪詢間隔、備份與還原，以及語言。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hant/guide/settings/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/settings/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/settings/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/settings/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/settings/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/settings/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/settings/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/settings/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/settings/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/settings/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/settings/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/settings/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/settings/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/settings/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/settings/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/settings/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/settings/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/settings/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/settings/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/settings/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/settings/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/settings/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/settings/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/settings/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/settings/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/settings/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/settings/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/settings/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/settings/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/settings/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="設定、主題 &amp; 備份 - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot 設定說明：投影機、連接埠與密碼、Pro 與還原、測試圖樣、主題、輪詢間隔、備份與還原，以及語言。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hant/guide/settings/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="設定、主題 &amp; 備份 - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot 設定說明：投影機、連接埠與密碼、Pro 與還原、測試圖樣、主題、輪詢間隔、備份與還原，以及語言。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/settings/#webpage", "url": "https://projectorpilot.com/guide/settings/", "name": "設定、主題與備份 - Projector Pilot", "description": "Projector Pilot 設定說明：投影機、連接埠與密碼、Pro 與還原、測試圖樣、主題、輪詢間隔、備份與還原，以及語言。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/settings/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/settings/#article", "headline": "Projector Pilot 設定：打造專屬於您的樣子", "description": "Projector Pilot 設定說明：投影機、連接埠與密碼、Pro 與還原、測試圖樣、主題、輪詢間隔、備份與還原，以及語言。", "image": "https://projectorpilot.com/screenshots/06-settings.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "zh-Hant", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/settings/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/settings/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "設定", "item": "https://projectorpilot.com/guide/settings/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hant/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言"><a href="/zh-hant/#features">功能</a><a href="/zh-hant/guide/">指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明</a><a class="cta" href="/zh-hant/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 設定</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">設定</div>
+        <h1>Projector Pilot 設定：打造專屬於您的樣子</h1>
+        <p class="lead">設定是您管理投影機、解鎖 App、設定主題、調整輪詢方式，以及備份整個 App 的地方。它的編排讓裝置控制、購買項目、外觀與連結各自位於一個清楚的位置。沒有廣告、沒有訂閱、沒有雲端帳號，只有真正重要的開關。</p>
+      </div>
+      <img src="/screenshots/06-settings.png" alt="Projector Pilot 的設定畫面，顯示投影機、Pro 方塊、維護與洞察、測試圖樣與主題" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">每個區塊</div>
+      <h2>設定中有什麼</h2>
+    </div>
+    <table class="t">
+      <thead><tr><th>區塊</th><th>裡面有什麼</th></tr></thead>
+      <tbody>
+        <tr><td>投影機</td><td>您已儲存的投影機，每台都有編輯、進階連線、資訊與刪除。<b>新增投影機</b>可以掃描您的網路，找出任何以投影機身分回應的裝置，也可以手動輸入 IP 位址。進階則收納每台投影機的連接埠，以及三組獨立的密碼（Web Control、PJLink 與遙控器）。</td></tr>
+        <tr><td>Projector Pilot Pro</td><td>購買 <b>Pro</b>、<b>居家自動化</b>或<b>組合包</b>，並<b>還原</b>購買項目。價格以商店為準，會在您確認前以您的貨幣顯示。商店告知您已擁有的購買項目會直接授予，而不是拒絕。</td></tr>
+        <tr><td>維護 &amp; 洞察</td><td>燈泡或雷射使用時數與濾網時數、預估壽命、執行成本估算，以及時數報告。<a href="/zh-hant/guide/maintenance/">維護指南 &rarr;</a></td></tr>
+        <tr><td>測試圖樣</td><td>顯示投影機內建的對齊格線，作為如實的開關控制，方便您在螢幕上對齊畫面。</td></tr>
+        <tr><td>主題</td><td>淺色、深色、AMOLED（純黑）或品牌色（招牌森林綠），另有<b>色彩主題</b>：選擇預設值或您自己的強調色，App 就會圍繞它重建整個調色盤。</td></tr>
+        <tr><td>自訂分頁 &amp; 檢視</td><td>重新排列底部分頁並隱藏不用的分頁，也可以隱藏分頁內的個別檢視（畫質／訊號／顯示、鏡頭／安裝、遙控器／操作、設定／網路／裝置）。</td></tr>
+        <tr><td>狀態輪詢間隔</td><td>App 重新整理投影機即時狀態的頻率。變更會立即生效，拖曳滑桿時也不會出現大量查詢。</td></tr>
+        <tr><td>居家自動化</td><td>登入 Home Assistant、鏡像到 Hubitat，並觸發 Webhook。<a href="/zh-hant/guide/home-automation/">Home Assistant 指南 &rarr;</a></td></tr>
+        <tr><td>備份 &amp; 還原</td><td>匯出與匯入您的 App 設定。備份檔會以其真實名稱分享，在 iPad 上同樣可以分享。已儲存的投影機及其密碼會留在加密的安全儲存空間中，絕不會隨備份帶走。</td></tr>
+        <tr><td>回報問題</td><td>在「關於」下，「回報問題」或「提出功能需求」會建立一個包含所有相關紀錄的檔案包，隨時可以傳送。</td></tr>
+        <tr><td>說明</td><td>傳送意見回饋、歡迎畫面與引導式設定（兩者皆可重播），以及遍布 App 各處說明卡片的開關。</td></tr>
+        <tr><td>語言</td><td>「系統預設」會跟隨您的裝置；其下以各自的名稱列出全部 29 種語言（英文加上 28 種）。<a href="/zh-hant/guide/languages/">語言指南 &rarr;</a></td></tr>
+        <tr><td>連結</td><td>網站、App 手冊（也就是本指南）、Discord、瀏覽我們所有的 App、隱私權與條款。</td></tr>
+        <tr><td>關於</td><td>版本、支援的投影機清單（並註明各機型是在硬體上驗證，還是推斷而得），以及隱私權控制項。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">投影機</div>
+      <h2>新增、編輯與連線</h2>
+    </div>
+    <ul class="plain">
+      <li><b>以兩種方式新增投影機。</b>掃描您的 Wi-Fi 或有線網路，找出任何以投影機身分回應的裝置，並讓 App 填入位址，或手動輸入 IP。新增的投影機在掃描其功能時會顯示進度列，結果會被記住，因此再次開啟 App 時不會重新掃描。</li>
+      <li><b>編輯、檢視或刪除。</b>每台已儲存的投影機都有編輯鉛筆、進階連線檢視、資訊面板與刪除。進階是每台投影機的連接埠所在之處，也有那三組密碼。</li>
+      <li><b>三組獨立的密碼。</b>一台投影機最多有三組：Web Control、PJLink 與遙控器。它們是不同通訊協定的不同密碼，依投影機分別儲存，且 App 會判斷投影機實際需要哪一組，而不是假設它受到保護。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">解鎖 App</div>
+      <h2>Pro、居家自動化與組合包</h2>
+      <p class="lead">Projector Pilot 分成兩部分，皆為一次性購買。Pro 是進階 App；居家自動化是獨立購買；組合包則同時買到兩者。在拆分之前購買 Pro 的使用者，仍保有 Pro 原有的全部功能。</p>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot Pro</b>：場景、多台投影機、完整畫質控制、鏡頭與幾何校正、維護、小工具、測試圖樣與可分享的設定檔。</li>
+      <li><b>居家自動化</b>：Home Assistant、Hubitat 與 Webhook。</li>
+      <li><b>組合包</b>：一次購買，兩者兼得。</li>
+      <li><b>還原</b>：重新授予您在此商店帳號上已購買的項目。如果商店回報某個項目已擁有，App 會直接授予，而不是顯示錯誤，因此您付費購買的功能絕不會把您擋在門外。</li>
+    </ul>
+    <div class="note">價格一律以商店為準，會在您確認前以您自己的貨幣顯示，App 絕不會自創數字。在沒有商店的平台上，App 會包含所有功能，而不是顯示沒人能付款的付費牆。完整說明請見<a href="/zh-hant/pricing/">價格</a>。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">外觀</div>
+      <h2>主題與色彩主題</h2>
+    </div>
+    <ul class="plain">
+      <li><b>淺色</b>：乾淨的白色主題。</li>
+      <li><b>深色</b>：標準的深色介面。</li>
+      <li><b>AMOLED</b>：適用於 OLED 螢幕的純黑。</li>
+      <li><b>品牌色</b>：App 的招牌森林綠。</li>
+      <li><b>色彩主題</b>：選擇預設的強調色或您自己的顏色，App 就會圍繞它重建整個調色盤。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>設定常見問題</h2>
+    </div>
+    <details open><summary>如何新增投影機？</summary><div class="body">前往設定，新增投影機。可以讓 App 掃描您的網路並填入位址，也可以手動輸入 IP。新的投影機會掃描一次功能並顯示進度列，結果會被記住。</div></details>
+    <details><summary>連接埠與密碼在哪裡？</summary><div class="body">開啟已儲存投影機的進階連線檢視。每台投影機的連接埠，以及三組獨立的密碼（Web Control、PJLink 與遙控器）都在那裡。</div></details>
+    <details><summary>我已經買了 Pro，還需要購買居家自動化嗎？</summary><div class="body">不需要。在 App 拆分成兩部分之前就購買 Pro 的使用者，仍保有 Pro 原有的全部功能。已解鎖的項目不會被收回。</div></details>
+    <details><summary>我的密碼會被放進備份嗎？</summary><div class="body">不會。備份與還原涵蓋的是您的 App 設定；已儲存的投影機及其密碼會留在加密的安全儲存空間中，絕不會隨備份檔帶走。</div></details>
+    <details><summary>我可以變更查詢投影機的頻率嗎？</summary><div class="body">可以。狀態輪詢間隔決定即時狀態的重新整理頻率，變更會立即生效，拖曳滑桿時也不會出現大量查詢。</div></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">繼續閱讀</div>
+      <h2>相關指南</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/zh-hant/guide/maintenance/">維護 &amp; 洞察</a>
+      <a href="/zh-hant/guide/scenes/">一鍵場景</a>
+      <a href="/zh-hant/guide/languages/">語言</a>
+      <a href="/zh-hant/guide/">完整使用指南</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hant/help/#privacy">隱私權</a><a href="/zh-hant/help/#terms">條款</a></div>
+<div class="flinks"><a href="/zh-hant/guide/getting-started/">開始使用</a><a href="/zh-hant/guide/dashboard/">儀表板</a><a href="/zh-hant/guide/remote/">遙控器</a><a href="/zh-hant/guide/picture/">畫質</a><a href="/zh-hant/guide/lens/">鏡頭</a><a href="/zh-hant/guide/scenes/">場景</a><a href="/zh-hant/guide/home-assistant-dashboard/">HA 儀表板</a><a href="/zh-hant/guide/maintenance/">維護</a><a href="/zh-hant/guide/settings/">設定</a><a href="/zh-hant/guide/languages/">語言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是專為 Epson 與 PJLink 投影機打造的獨立 App，與 Epson、PJLink 標準組織、Home Assistant、Hubitat、Apple、Google 或 Microsoft 並無關聯，亦未獲其背書或贊助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 與 Microsoft Store 為其各自所有者的商標，此處僅用於說明本 App 的相容對象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

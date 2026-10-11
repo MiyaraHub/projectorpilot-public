@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Scene de proiector cu o singură atingere - Projector Pilot</title>
+<meta name="description" content="Salvează alimentarea, intrarea, imaginea, memoria de obiectiv și altele ca o Scenă și reapeleaz-o cu o singură atingere. Fiecare Scenă poate deveni un script Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ro/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Scene de proiector cu o singură atingere - Projector Pilot" />
+<meta property="og:description" content="Salvează alimentarea, intrarea, imaginea, memoria de obiectiv și altele ca o Scenă și reapeleaz-o cu o singură atingere. Fiecare Scenă poate deveni un script Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/ro/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Scene de proiector cu o singură atingere - Projector Pilot" />
+<meta name="twitter:description" content="Salvează alimentarea, intrarea, imaginea, memoria de obiectiv și altele ca o Scenă și reapeleaz-o cu o singură atingere. Fiecare Scenă poate deveni un script Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "Scene de proiector cu o singură atingere - Projector Pilot", "description": "Salvează alimentarea, intrarea, imaginea, memoria de obiectiv și altele ca o Scenă și reapeleaz-o cu o singură atingere. Fiecare Scenă poate deveni un script Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "Scenele proiectorului: toată camera ta, cu o singură atingere", "description": "Salvează alimentarea, intrarea, imaginea, memoria de obiectiv și altele ca o Scenă și reapeleaz-o cu o singură atingere. Fiecare Scenă poate deveni un script Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "ro", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Scene", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ro/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă"><a href="/ro/#features">Funcții</a><a href="/ro/guide/">Ghid</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/help/">Ajutor</a><a class="cta" href="/ro/#download">DESCARCĂ APLICAȚIA</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Scene</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Fila Scene &middot; Pro</div>
+        <h1>Scenele proiectorului: toată camera ta, cu o singură atingere</h1>
+        <p class="lead">O Scenă captează proiectorul exact așa cum este acum și readuce totul mai târziu cu o singură atingere. Seara de film, meciul cel mare, o matineu luminoasă de duminică - fiecare cu propria Scenă, fiecare la o atingere distanță. Alegi exact ce părți păstrează o Scenă, și se oferă doar părțile pe care proiectorul tău le raportează.</p>
+        <p class="lead">Scenele fac parte din <a href="/ro/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="Fila Scene din Projector Pilot, cu butonul Salvează curentul" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cum salvezi una</div>
+      <h2>Setează camera, apoi captureaz-o</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Setează-l.</b> Pune proiectorul exact cum îl vrei - intrarea, modul de culoare, imaginea, memoria de obiectiv, tot.</li>
+      <li><b>Salvează curentul.</b> În fila Scene atinge <b>Salvează curentul</b>, dă un nume Scenei și bifează ce părți se păstrează. Selectorul oferă doar ce raportează proiectorul tău, deci nu salvezi niciodată o setare pe care modelul tău nu o are.</li>
+      <li><b>Reapelează.</b> Atinge Scena pentru a o aplica. Projector Pilot confirmă fiecare setare pe proiector pe parcurs și nu pretinde niciodată o modificare care nu s-a produs.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ce captează o Scenă</div>
+      <h2>Cât de mult sau de puțin bifezi</h2>
+      <p class="lead">O singură Scenă poate face un instantaneu al oricăruia dintre următoarele. Reapelarea reia doar părțile bifate, așa că o Scenă „late show” poate reduce ieșirea luminoasă și poate lăsa totul neatins.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Alimentare</h3><p>Starea de alimentare a proiectorului, ca o Scenă să-l poată trezi sau trimite în standby ca parte a configurației.</p></div>
+      <div class="gcard"><h3>Intrare</h3><p>Sursa la care comută Scena, ca „Movie Night” să ajungă de fiecare dată pe HDMI-ul potrivit.</p></div>
+      <div class="gcard"><h3>Imagine</h3><p>Modul de culoare și valorile imaginii, fiecare pe scala meniului propriu al proiectorului.</p></div>
+      <div class="gcard"><h3>Semnal</h3><p>Setările de semnal pe care proiectorul tău le expune pentru conținutul pe care îl urmărești.</p></div>
+      <div class="gcard"><h3>Lumină</h3><p>Ieșirea sursei de lumină, ca o cameră luminoasă și una întunecată să-și aibă fiecare setarea proprie.</p></div>
+      <div class="gcard"><h3>Geometrie</h3><p>Starea de aliniere și geometrie care încadrează imaginea pe ecranul tău.</p></div>
+      <div class="gcard"><h3>Audio</h3><p>Setările audio raportate de proiector, păstrate alături de restul.</p></div>
+      <div class="gcard"><h3>Doar ce este raportat</h3><p>Lista de bifat este construită din ceea ce răspunde de fapt proiectorul tău, deci nimic din ce salvezi nu este o presupunere.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Automatizare</div>
+      <h2>Fiecare Scenă devine un script Home Assistant</h2>
+      <p class="lead">Lipește un singur bloc în configurația Home Assistant, o dată, iar Projector Pilot scrie un script pentru fiecare Scenă pe care o ai, plus alimentarea, fiecare intrare, fiecare mod de culoare și fiecare memorie de obiectiv pe care proiectorul tău le deține efectiv. O automatizare sau un asistent vocal poate apoi rula orice Scenă, iar aplicația elimină scripturile scrise de ea când oprești sincronizarea, fără să atingă nimic altceva.</p>
+    </div>
+    <div class="note">Scenele funcționează și prin <b>webhook-uri</b> - reapelarea unei Scene poate trimite un POST către un URL al tău - și se oglindesc pe <b>Hubitat</b> prin Maker API. Totul este în <a href="/ro/guide/home-automation/">ghidul Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Împărtășește-ți munca</div>
+      <h2>Profiluri de scene ce pot fi distribuite</h2>
+      <p class="lead">Ai reglat o Scenă de care ești mândru? Exportă-o și dă-o unui prieten sau importă una distribuită de altcineva. Profilurile de Scene se mută între instalări, așa că o configurație bună nu trebuie reconstruită de la zero pe fiecare proiector.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Continuă lectura</div>
+      <h2>Ghiduri conexe</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ro/guide/lens/">Comandă obiectiv</a>
+      <a href="/ro/guide/home-automation/">Home Assistant</a>
+      <a href="/ro/guide/settings/">Setări</a>
+      <a href="/ro/guide/">Ghid complet de utilizare</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/help/">Ajutor &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ro/help/#privacy">Confidențialitate</a><a href="/ro/help/#terms">Termeni</a></div>
+<div class="flinks"><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/guide/dashboard/">Tablou de bord</a><a href="/ro/guide/remote/">Telecomandă</a><a href="/ro/guide/picture/">Imagine</a><a href="/ro/guide/lens/">Obiectiv</a><a href="/ro/guide/scenes/">Scene</a><a href="/ro/guide/home-assistant-dashboard/">Tablou HA</a><a href="/ro/guide/maintenance/">Întreținere</a><a href="/ro/guide/settings/">Setări</a><a href="/ro/guide/languages/">Limbi</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot este o aplicație independentă pentru proiectoare Epson și PJLink. Nu este afiliată, susținută sau sponsorizată de Epson, de organismul de standardizare PJLink, de Home Assistant, Hubitat, Apple, Google sau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play și Microsoft Store sunt mărci comerciale ale deținătorilor lor respectivi, menționate doar pentru a descrie cu ce funcționează aplicația.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

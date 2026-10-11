@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="fi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant -projektorin kojelauta (YAML) - Projector Pilot</title>
+<meta name="description" content="Rakenna oma Home Assistant -projektorin kojelauta vaihe vaiheelta: asennettavat HACS-kortit, entiteetin ID ja sarjanumerosi sekä kopioitavissa oleva YAML jokaiselle kortille." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Home Assistant -projektorin kojelauta (YAML) - Projector Pilot" />
+<meta property="og:description" content="Rakenna oma Home Assistant -projektorin kojelauta vaihe vaiheelta: asennettavat HACS-kortit, entiteetin ID ja sarjanumerosi sekä kopioitavissa oleva YAML jokaiselle kortille." />
+<meta property="og:url" content="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant -projektorin kojelauta (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Rakenna oma Home Assistant -projektorin kojelauta vaihe vaiheelta: asennettavat HACS-kortit, entiteetin ID ja sarjanumerosi sekä kopioitavissa oleva YAML jokaiselle kortille." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Home Assistant -projektorin kojelauta (YAML) - Projector Pilot", "description": "Rakenna oma Home Assistant -projektorin kojelauta vaihe vaiheelta: asennettavat HACS-kortit, entiteetin ID ja sarjanumerosi sekä kopioitavissa oleva YAML jokaiselle kortille.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Rakenna Home Assistant -projektorin kojelauta noin tunnissa", "description": "Rakenna oma Home Assistant -projektorin kojelauta vaihe vaiheelta: asennettavat HACS-kortit, entiteetin ID ja sarjanumerosi sekä kopioitavissa oleva YAML jokaiselle kortille.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "fi", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant -kojelauta", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pitääkö tämä kojelauta rakentaa käsin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Kun napautat sovelluksessa Sync With HA, se rakentaa sinulle valmiin Projector Pilot -kojelaudan suoraan Home Assistantiin - reaaliaikainen projektorianturi sekä painike jokaiselle säätimelle ja kohtaukselle - ja se ilmestyy sivupalkkiin nimellä Projector Pilot. Kun yhteisökortit on asennettu, Sync päivittää korttinsa niihin automaattisesti; tämä sivu on tarkoitettu rikkaamman vihreälasisen version käsin rakentamiseen tai Syncin luoman muokkaamiseen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tarvitsenko HACS:n mukautettuja kortteja tämän rakentamiseen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jotta saat saman ulkoasun kuin kuvakaappauksessa, kyllä: Mushroom, button-card, card-mod ja mini-graph-card. Mikään niistä ei ole pakollinen perussäädinten toiminnalle - jokainen painike on tavallinen skriptikutsu, ja mukautetut kortit ovat vain ulkoasu sen päällä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miksi tietolaatat näyttävät arvon mutta painikkeet eivät tee mitään?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projektorianturi julkaisee lukemansa heti, kun kirjaudut sisään ja synkronoit sovelluksessa, joten tietolaatat ovat reaaliaikaisia heti. Säädin- ja kohtauspainikkeet kutsuvat skriptejä, jotka ovat olemassa Home Assistantissa vasta, kun olet liittänyt sovelluksen Copy block -lohkon tiedostoon configuration.yaml, käynnistänyt Home Assistantin uudelleen ja napauttanut kerran Sync With HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vastaavatko entiteettitunnukseni tämän oppaan tunnuksia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kaava pitää, mutta tarkat merkit eivät. Projektorianturisi nimi muodostuu projektorisi mallista, ja jokaisen skriptin nimi projektorisi sarjanumerosta. Aina kun tällä sivulla lukee YOUR_PROJECTOR, kirjoita oman anturisi entiteetin ID; aina kun lukee YOURSERIAL, kirjoita sarjanumerosta johdettu ID, joka näkyy sovelluksen Home Assistant -näytöllä."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/fi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli"><a href="/fi/#features">Ominaisuudet</a><a href="/fi/guide/">Opas</a><a href="/fi/pricing/">Hinnoittelu</a><a href="/fi/highlights/">Kohokohdat</a><a href="/fi/guide/home-automation/">Home Assistant</a><a href="/fi/help/">Ohje</a><a class="cta" href="/fi/#download">HAE SOVELLUS</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Home Assistant -kojelauta</div>
+    <div class="eyebrow">Home Assistant &middot; vaihe vaiheelta</div>
+    <h1>Rakenna Home Assistant -projektorin kojelauta <span class="g">noin tunnissa</span></h1>
+    <p>Sovellus rakentaa sinulle toimivan kojelaudan jo Syncin yhteydessä - tämä sivu on de luxe -versio, käsin rakennettu. Kymmenen vaihetta, jokaisen kortin YAML ja kokonainen näkymä, jonka voit liittää kerralla. Vihreälasiset laatat, reaaliaikainen kuvan lukema, kohtauksesi ja laserin käyttötuntien kuvaaja, kaikki yhdestä projektorianturista. Vaihda kaksi merkkijonoa, niin se on sinun.</p>
+    <div class="readout"><span>Sync rakentaa yhden ilmaiseksi</span><span>4 HACS-korttia ulkoasuun</span><span>Tietolaatat heti käyttöön</span><span>Painikkeet yhden liittämisen jälkeen</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Valmis Projector Pilot -kojelauta Home Assistantissa: virta ja lähde, väritilat, koko kuvavalikko, HDR ja signaali, RGB-kalibrointi, linssi ja geometria, huolto laserin käyttötuntien kuvaajalla sekä kohtaukset, kaikki vihreälasisina laattoina" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Mitä olet rakentamassa. Vieritä tai klikkaa suurentaaksesi.</figcaption>
+    </figure>
+    <div class="note"><b>Haluatko vain toimivan näkymän? Sinulla on jo sellainen.</b> Napauta sovelluksessa <b>Sync With HA</b>, niin se rakentaa sinulle valmiin Projector Pilot -kojelaudan Home Assistantin sivupalkkiin, jossa on jokainen säädin ja reaaliaikainen anturi - ei kortteja, ei YAMLia, ei liittämistä. Katso <a href="/fi/guide/home-automation/#dashboard">Sync rakentaa kojelaudan puolestasi</a>. Tämä sivu on tarkoitettu rikkaamman vihreälasisen version käsin rakentamiseen tai Syncin antaman muokkaamiseen.</div>
+    <div class="note"><b>Kiire mukautetun ulkoasun kanssa?</b> Hyppää <a href="#whole">vaiheeseen 10</a>, lataa koko näkymä, vaihda kaksi merkkijonoa ja kolme kohtaus-ID:tä ja liitä se. Välissä olevat vaiheet selittävät, mitä kukin osa tekee, jotta voit muokata sitä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ennen aloittamista</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot on yhdistetty Home Assistantiin.</b> <a href="/fi/guide/home-automation/">Asennusopas</a> käsittelee sisäänkirjautumisen ja asetuksen <b>Lähetä projektorin tila</b> käyttöönoton. Projektorisi pitäisi näkyä anturina Home Assistantissa ennen kuin rakennat mitään sen päälle.</li>
+      <li><b>Olet synkronoinut vähintään kerran.</b> Asetukset &rsaquo; Kodin automaatio &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, kun olet liittänyt sovelluksen <b>Copy block</b> -lohkon tiedostoon <code>configuration.yaml</code> ja käynnistänyt Home Assistantin uudelleen. Tämä luo ne skriptit, joita jokainen alla oleva säädinpainike kutsuu.</li>
+      <li><b>Projektorisi on päällä</b> rakentamisen ajan. Alla olevat kuvan attribuutit ovat sitä, mitä valmiustilassa oleva projektori jättää enimmäkseen tyhjiksi.</li>
+    </ul>
+    <p class="lead">Kojelautaa syöttää kaksi lähdettä, ja ero on tärkeä jokaisessa alla olevassa vaiheessa.</p>
+    <table class="t">
+      <thead><tr><th>Tulee täältä</th><th>Antaa sinulle</th></tr></thead>
+      <tbody>
+        <tr><td>Projektorianturi, <code>sensor.YOUR_PROJECTOR</code></td><td>Jokainen <b>lukema</b>. Virta, tulo, väritila, kaikki kuvan arvot, HDR ja signaali, linssi ja geometria, lampun käyttötunnit. Reaaliaikainen heti, kun kirjaudut sisään ja synkronoit, Copy block -lohkoa ei tarvita.</td></tr>
+        <tr><td>Sovelluksen synkronoimat skriptit, <code>script.projpilot_YOURSERIAL_...</code></td><td>Jokainen <b>säädin</b>. Virta, tulot, väritilat, linssimuistit ja kohtauksesi. Nämä ovat olemassa vasta, kun Copy block on liitetty, Home Assistant on käynnistetty uudelleen ja olet napauttanut Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 1</div>
+      <h2>Asenna neljä korttia HACS:stä</h2>
+    </div>
+    <p class="lead">Kaikki neljä ovat HACS:n oletuskaupassa. Home Assistantissa: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, hae nimellä, valitse Download ja lataa selain uudelleen.</p>
+    <table class="t">
+      <thead><tr><th>Hakusana</th><th>Käyttötarkoitus</th><th>Jos jätät väliin</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Jokainen tietolaatta, säädinpainike ja kohtauslaatta</td><td>Käytä tavallista <code>button</code>-korttia. Toimii, näyttää kulmikkaammalta.</td></tr>
+        <tr><td><b>button-card</b></td><td>Pääkortti reaaliaikaisella otsikollaan</td><td>Käytä <code>entity</code>-korttia tai Mushroom-mallikorttia vähemmillä yksityiskohdilla.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Vihreälasinen tausta, reunat ja liukuvärit</td><td>Kaikki toimii silti. Mikään ei vain hehku.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Laserin käyttötuntien historia Huolto-osiossa</td><td>Käytä sisäänrakennettua <code>history-graph</code>-korttia.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Mikään niistä ei ole pakollinen toiminnan kannalta.</b> Jokainen alla oleva säädin toimii tavallisella Home Assistantin painikekortilla, joka osoittaa samaan skriptiin. Mukautetut kortit ovat vihreälasinen ulkoasu, eivät putkisto.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 2</div>
+      <h2>Etsi entiteetin ID ja sarjanumerosi</h2>
+    </div>
+    <p class="lead">Jokainen tämän sivun koodinpätkä käyttää kahta paikkamerkkiä. Etsi omasi kerran, niin loppu on kopioimista ja liittämistä.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Home Assistantin Developer Tools &rsaquo; States, suodata hakusanalla <code>projector_pilot</code>. Jotakin tällaista: <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; avaa sovellus, <b>Asetukset &rsaquo; Kodin automaatio &rsaquo; Home Assistant</b>. Sarjanumerosta johdettu ID näkyy juuri siinä, ja se on jokaisen synkronoidun skriptin nimen keskiosa: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> ja niin edelleen.</li>
+    </ul>
+    <p class="lead">Voit myös suodattaa Developer Tools &rsaquo; States -näkymän hakusanalla <code>projpilot</code>, jolloin näet koko synkronoidun säädinluettelosi kerralla, kun vaiheen 1 Copy block ja Sync on tehty.</p>
+    <div class="note"><b>Ei vielä skriptiluetteloa?</b> Se on odotettua ennen kuin olet liittänyt Copy block -lohkon. Anturi on silti olemassa ja päivittyy; skriptit ilmestyvät vasta, kun Sync With HA on onnistunut.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 3</div>
+      <h2>Luo näkymä</h2>
+    </div>
+    <ol class="steps">
+      <li>Asetukset &rsaquo; Kojelaudat &rsaquo; Lisää kojelauta &rsaquo; Uusi kojelauta tyhjästä. Nimeä se Projector Pilotiksi.</li>
+      <li>Avaa se ja napauta oikean yläkulman kynäkuvaketta muokataksesi.</li>
+      <li>Lisää näkymä. Kumpi tahansa asettelu käy; oikea kojelauta käyttää oletuspinoa, jossa kortit ovat allekkain, ja siihen on yksinkertaisinta liittää.</li>
+      <li>YAMLin liittämiseen käytä kortin kolmen pisteen valikkoa ja valitse <b>Edit in YAML</b> tai kojelaudan kolmen pisteen valikosta <b>Raw configuration editor</b>, jolloin voit liittää koko näkymän kerralla.</li>
+    </ol>
+    <p class="lead">Näkymän omat asetukset, jos haluat kirjoittaa ne itse:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 4</div>
+      <h2>Lisää reaaliaikainen tietolaatta</h2>
+    </div>
+    <p class="lead">Aloita jostain, joka vain lukee, jotta tiedät entiteetin ID:n olevan oikea ennen kuin kosket mihinkään, mikä lähettää komennon. Tämä on reaaliaikainen heti, kun projektorianturisi on olemassa, ei Copy block -lohkoa, ei synkronointia. Lisää kortti, Edit in YAML, liitä:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Samanlainen rakenne lukee mitä tahansa anturin noin 80 attribuutista: vaihda <code>brightness</code> arvoihin <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, mitä tahansa haluat laatalle.</p>
+    <p class="lead">Tallenna. Jos näkyviin tulee oikea luku tai sana, entiteetin ID on oikea ja kaikki alla toimii. Jos näkyy tyhjää, palaa vaiheeseen 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 5</div>
+      <h2>Lisää vihreä osion otsikko</h2>
+    </div>
+    <p class="lead">Pelkkä otsikko on hukkatilaa. Tämä on <code>markdown</code>-kortti, jonka taustana on card-modin liukuväri, ja se muuttaa laattapinon nimetyiksi osioiksi. Jokainen kojelaudan osio alkaa tällaisella, vain otsikko ja emoji vaihtuvat.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Vaihda emojikoodi ja otsikkoteksti; card-mod-lohko on jokaisessa osiossa identtinen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 6</div>
+      <h2>Lisää säädinpainike</h2>
+    </div>
+    <p class="lead">Tämä lähettää komennon pelkän arvon lukemisen sijaan, joten skriptien on oltava olemassa ensin. Se kutsuu skriptiä <code>script.projpilot_YOURSERIAL_power_on</code>, jonka sovellus kirjoittaa vasta, kun liität sen Copy block -lohkon tiedostoon <code>configuration.yaml</code>, käynnistät Home Assistantin uudelleen ja napautat <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Sama kortti käy kohteisiin Virta pois, Kuvan pimennys, HDMI 1, HDMI 2, A/V-mykistys, väritila tai linssimuisti: vain otsikko, kuvake ja <code>service</code> vaihtuvat.</p>
+    <div class="note"><b>Jos kaikki näyttää oikealta mutta mitään ei tapahdu</b> napautettaessa, Copy block -lohkoa ei ole joko liitetty tai Home Assistantia ei ole käynnistetty sen jälkeen uudelleen. Suorita sovelluksessa <b>Test Connection</b>, joka tarkistaa juuri tämän, ennen kuin oletat kojelaudan olevan väärin.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 7</div>
+      <h2>Lisää pääkortti</h2>
+    </div>
+    <p class="lead">Kojelaudan yläreunan pääkortti on <code>button-card</code>: iso virran tila, usean attribuutin yhdistävä yhden rivin yhteenveto ja vihreälasinen käsittely koko kortille eikä vain sen reunalle.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Typistetty vain niihin osiin, jotka vaihtelevat asennuksittain. Koko kortti asettaa myös kuvakkeen, nimen ja otsikkoruudukon sijainnit; kaiken löydät vaiheen 10 latauksesta.</p>
+    <p class="lead">Haluatko mieluummin kapeamman nauhan? <code>mushroom-chips-card</code> hoitaa saman tehtävän yhdellä rivillä pieniä siruja: virran tila, tulo, väritila, videoalue ja lampun käyttötunnit, kukin lukemaa <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code> käyttävä malli. Käytä jompaakumpaa, ei molempia, kojelaudan yläreunassa.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 8</div>
+      <h2>Lisää tilanteesi</h2>
+    </div>
+    <p class="lead">Jokaisesta sovellukseen tallentamastasi kohtauksesta tulee synkronoinnin jälkeen skripti nimeltä <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code>, ja sen laatta on sama säädinpainikekortti vaiheesta 6 kohtauksen nimellä ja kuvakkeella.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Korvaa <code>YOURSCENE1</code> sillä ID:llä, joka näkyy kyseiselle kohtaukselle sovelluksen synkronoidussa säädinluettelossa. Yksi laatta kohtausta kohden, elementissä <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 9</div>
+      <h2>Lisää laserin käyttötuntien historia</h2>
+    </div>
+    <p class="lead">Home Assistant tallentaa projektorianturin kuten minkä tahansa muun, joten <code>lamp_hours</code> saa historian ilmaiseksi. Ei ylimääräisiä antureita, ei apulaisia, ei mitään konfiguroitavaa etukäteen, Huolto-osiossa.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 tuntia on kaksi viikkoa. Laserin ja lampun käyttötunnit kasvavat tasaisesti eivätkä hyppi, joten kahden viikon ikkuna riittää yleensä trendin näkemiseen ilman että kuvaaja näyttää litteältä.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 10</div>
+      <h2>Tai ota koko paketti</h2>
+    </div>
+    <p class="lead">Koko näkymä, jokainen osio ja kortti tämän sivun yläreunan kuvakaappauksesta, entiteettien ID:iden tilalla paikkamerkit.</p>
+    <ol class="steps">
+      <li><a href="/fi/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Lataa näkymän YAML</a>.</li>
+      <li>Avaa se missä tahansa tekstieditorissa ja korvaa kaikkialta, missä ne esiintyvät: <code>YOUR_PROJECTOR</code> vaiheessa 2 löytämälläsi projektorianturin entiteetin ID:llä ja <code>YOURSERIAL</code> vaiheessa 2 löytämälläsi sarjanumerosta johdetulla ID:llä.</li>
+      <li>Lähellä alareunaa olevassa Kohtaukset-osiossa korvaa <code>YOURSCENE1</code>, <code>YOURSCENE2</code> ja <code>YOURSCENE3</code> omilla kolmella kohtaus-ID:llläsi tai lisää ja poista laattoja vastaamaan todellista kohtaustesi määrää.</li>
+      <li>Avaa Home Assistantissa kojelautasi, kynäkuvake, kolmen pisteen valikko, <b>Raw configuration editor</b>, ja liitä se sisään näkymänä.</li>
+    </ol>
+    <div class="note"><b>Kohtaustesi nimet ja määrä eivät täsmää.</b> Tiedostossa on kolme esimerkkikohtausta: Elokuvailta, Pelaaminen, Urheilupäivä. Nimeä laatat uudelleen, osoita ne omiin kohtaus-ID:ihisi ja lisää tai poista laattoja, kunnes osio vastaa tallentamiesi kohtausten todellista määrää.</div>
+    <div class="note"><b>Tietolaatat toimivat heti liittämisen jälkeen.</b> Ne tarvitsevat vain anturin olemassaolon. Säädin- ja kohtauspainikkeet pysyvät kuolleina, kunnes Copy block on liitetty tiedostoon <code>configuration.yaml</code>, Home Assistant on käynnistetty uudelleen ja olet napauttanut Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Vianmääritys</h2>
+    </div>
+    <details class="more"><summary>Laatta näyttää Unknown</summary>
+      <p>Tarkista attribuutin nimi sen mukaan, mitä anturi todella sisältää: Developer Tools &rsaquo; States, <code>sensor.YOUR_PROJECTOR</code>-entiteettisi, ja lue sen attribuuttiluettelo. Jotkin lukemat, kuten HDR PQ tai HDR HLG, täyttyvät vain, kun projektori vastaanottaa aktiivisesti tuon tyyppistä signaalia, joten Unknown näissä kahdessa voi olla oikein eikä rikki. Jos koko anturi näyttää niukalta, herätä projektori: valmiustilassa oleva laite julkaisee hyvin vähän.</p>
+    </details>
+    <details class="more"><summary>Painike ei tee mitään</summary>
+      <p>Et ole vielä liittänyt Copy block -lohkoa, tai Home Assistantia ei ole käynnistetty uudelleen sen jälkeen. Säädin- ja kohtauspainikkeet kutsuvat skriptejä, jotka sovellus kirjoittaa, eikä niitä ole olemassa ennen kuin sovelluksen kohdassa <b>Asetukset &rsaquo; Kodin automaatio &rsaquo; Home Assistant</b> Copy block on liitetty tiedostoon <code>configuration.yaml</code>, Home Assistant on käynnistetty kerran uudelleen ja <b>Sync With HA</b> on napautettu. Suorita sovelluksessa ensin <b>Test Connection</b> - se kertoo, onko lohko paikallaan, ennen kuin alat etsiä virhettä kojelaudasta.</p>
+    </details>
+    <details class="more"><summary>Odottamani skriptit puuttuvat Developer Tools &rsaquo; States -näkymästä</summary>
+      <p>Suodata hakusanalla <code>projpilot</code> koko sarjanumeron sijaan - koko luettelo on helpompi nähdä. Jos äskettäin lisäämäsi säädin tai kohtaus puuttuu, napauta <b>Sync With HA</b> uudelleen; se päivittää paikallaan eikä vaadi uutta asennusta. Jos vanhat, kuolleet skriptit sotkevat luetteloa kohtauksen poistamisen jälkeen, käytä sovelluksessa toimintoa <b>Remove orphaned scripts</b>.</p>
+    </details>
+    <details class="more"><summary>Entiteetin ID ei näytä tämän oppaan ID:ltä</summary>
+      <p>Kaava on kiinteä, keskiosa ei. Anturisi nimi muodostuu oman projektorisi mallista, ja jokaisessa skriptissä on oman projektorisi sarjanumero, ei tämän sivun paikkamerkit. Hae molemmat Developer Tools &rsaquo; States -näkymästä ja sovelluksen Home Assistant -näytöltä kuten vaiheessa 2, ja käytä niitä esimerkkitekstin kirjoittamisen sijaan.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Koko projektorisi, yhdellä seinällä</h2>
+    <p class="lead" style="margin:0 auto 24px">Kodin automaatio on kertaluonteinen lisäosa. Ei tilausta, ei tiliä, ei pilveä. Yksi ostos avaa sen jokaisella omistamallasi alustalla.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - saatavilla nyt</a>
+      <span class="pill">App Store - odottaa hyväksyntää</span>
+      <span class="pill">Microsoft Store - odottaa hyväksyntää</span>
+      <span class="pill">Mac App Store - odottaa hyväksyntää</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/fi/guide/home-automation/">Takaisin kohtaan Kodin automaatio &rarr;</a> &middot; <a href="/fi/guide/">Koko käyttöopas &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Pikavastaukset</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Pitääkö tämä kojelauta rakentaa käsin?</h3><p>Ei. Kun napautat sovelluksessa Sync With HA, se rakentaa sinulle valmiin Projector Pilot -kojelaudan suoraan Home Assistantiin - reaaliaikainen projektorianturi sekä painike jokaiselle säätimelle ja kohtaukselle - ja se ilmestyy sivupalkkiin nimellä Projector Pilot. Tämä sivu on tarkoitettu rikkaamman vihreälasisen version käsin rakentamiseen tai Syncin luoman muokkaamiseen.</p></div><div class="gcard"><h3>Tarvitsenko HACS:n mukautettuja kortteja tämän rakentamiseen?</h3><p>Jotta saat saman ulkoasun kuin kuvakaappauksessa, kyllä: Mushroom, button-card, card-mod ja mini-graph-card. Mikään niistä ei ole pakollinen perussäädinten toiminnalle - jokainen painike on tavallinen skriptikutsu, ja mukautetut kortit ovat vain ulkoasu sen päällä.</p></div><div class="gcard"><h3>Miksi tietolaatat näyttävät arvon mutta painikkeet eivät tee mitään?</h3><p>Projektorianturi julkaisee lukemansa heti, kun kirjaudut sisään ja synkronoit sovelluksessa, joten tietolaatat ovat reaaliaikaisia heti. Säädin- ja kohtauspainikkeet kutsuvat skriptejä, jotka ovat olemassa Home Assistantissa vasta, kun olet liittänyt sovelluksen Copy block -lohkon tiedostoon configuration.yaml, käynnistänyt Home Assistantin uudelleen ja napauttanut kerran Sync With HA.</p></div><div class="gcard"><h3>Vastaavatko entiteettitunnukseni tämän oppaan tunnuksia?</h3><p>Kaava pitää, mutta tarkat merkit eivät. Projektorianturisi nimi muodostuu projektorisi mallista, ja jokaisen skriptin nimi projektorisi sarjanumerosta. Aina kun tällä sivulla lukee YOUR_PROJECTOR, kirjoita oman anturisi entiteetin ID; aina kun lukee YOURSERIAL, kirjoita sarjanumerosta johdettu ID, joka näkyy sovelluksen Home Assistant -näytöllä.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/fi/guide/">Käyttöopas</a><a href="/fi/pricing/">Hinnoittelu</a><a href="/fi/highlights/">Kohokohdat</a><a href="/fi/guide/home-automation/">Home Assistant</a><a href="/fi/help/">Ohje &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/fi/help/#privacy">Tietosuoja</a><a href="/fi/help/#terms">Ehdot</a></div>
+<div class="flinks"><a href="/fi/guide/getting-started/">Aloitus</a><a href="/fi/guide/dashboard/">Kojelauta</a><a href="/fi/guide/remote/">Kaukosäädin</a><a href="/fi/guide/picture/">Kuva</a><a href="/fi/guide/lens/">Linssi</a><a href="/fi/guide/scenes/">Kohtaukset</a><a href="/fi/guide/home-assistant-dashboard/">HA-kojelauta</a><a href="/fi/guide/maintenance/">Huolto</a><a href="/fi/guide/settings/">Asetukset</a><a href="/fi/guide/languages/">Kielet</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot on itsenäinen sovellus Epson- ja PJLink-projektoreille. Se ei ole yhteydessä Epsoniin, PJLink-standardointielimeen, Home Assistantiin, Hubitatiin, Appleen, Googleen tai Microsoftiin, eivätkä ne ole hyväksyneet tai tukeneet sitä. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ja Microsoft Store ovat omistajiensa tavaramerkkejä, ja ne mainitaan vain kuvaamaan sitä, minkä kanssa sovellus toimii.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

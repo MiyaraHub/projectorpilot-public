@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Projektor-vezérlőpult alkalmazás - Projector Pilot</title>
+<meta name="description" content="A Projector Pilot vezérlőpultja: élő bekapcsolási állapot, bemenet és színmód, vetítési információk (például dinamikatartomány, színtér, gamma és lézer üzemórák), valamint átrendezhető kártyák." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektor-vezérlőpult alkalmazás - Projector Pilot" />
+<meta property="og:description" content="A Projector Pilot vezérlőpultja: élő bekapcsolási állapot, bemenet és színmód, vetítési információk (például dinamikatartomány, színtér, gamma és lézer üzemórák), valamint átrendezhető kártyák." />
+<meta property="og:url" content="https://projectorpilot.com/hu/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektor-vezérlőpult alkalmazás - Projector Pilot" />
+<meta name="twitter:description" content="A Projector Pilot vezérlőpultja: élő bekapcsolási állapot, bemenet és színmód, vetítési információk (például dinamikatartomány, színtér, gamma és lézer üzemórák), valamint átrendezhető kártyák." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "Projektor-vezérlőpult alkalmazás - Projector Pilot", "description": "A Projector Pilot vezérlőpultja: élő bekapcsolási állapot, bemenet és színmód, vetítési információk (például dinamikatartomány, színtér, gamma és lézer üzemórák), valamint átrendezhető kártyák.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "A projektor vezérlőpultja, pontosan úgy kialakítva, ahogyan Ön szeretné", "description": "A Projector Pilot vezérlőpultja: élő bekapcsolási állapot, bemenet és színmód, vetítési információk (például dinamikatartomány, színtér, gamma és lézer üzemórák), valamint átrendezhető kártyák.", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "hu", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Irányítópult", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/hu/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv"><a href="/hu/#features">Funkciók</a><a href="/hu/guide/">Útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/help/">Súgó</a><a class="cta" href="/hu/#download">TÖLTSE LE AZ APPOT</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Vezérlőpult</div>
+    <div class="eyebrow">A vezérlőpult</div>
+    <h1>A projektor vezérlőpultja, <span class="g">pontosan úgy kialakítva, ahogyan Ön szeretné</span></h1>
+    <p class="lead">A vezérlőpult az otthoni bázisa. Felül az élő állapot, alatta a projektor minden részéhez egy-egy kártya, és egy Testreszabás mód, amellyel kártyákat adhat hozzá, rejthet el és rendezhet át, hogy a képernyő azt mutassa, ami Önnek fontos. Minden érték a projektorról érkezik, és a változásokkal együtt frissül.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Élő állapot</div>
+        <h2>Bekapcsolás, bemenet és színmód, legfelül</h2>
+        <ul class="plain">
+          <li><b>Bekapcsolás-gomb.</b> Egy érintéssel be- vagy kikapcsolhatja a projektort, és a gomb tisztában van a bemelegedéssel és a lehűléssel is: azt mutatja, ahogy a projektor végigmegy a bemelegedésen vagy a lehűlésen, ahelyett hogy úgy tenne, mintha az állapot egyetlen pillanat alatt váltott volna.</li>
+          <li><b>Bemeneti forrás.</b> Az aktuális forrás egy pillantással látható, és érintéssel váltható.</li>
+          <li><b>Színmód.</b> Az aktív képmód (Dinamikus, Mozi, Természetes és így tovább), a projektorról beolvasva.</li>
+          <li><b>Képelsötétítés.</b> Takarja le a képet a jel megszakítása nélkül, és a vezérlőpult egyetért a Távirányítóval: az elsötétített állapot mindkét helyen aktívként jelenik meg.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="A Projector Pilot vezérlőpultja élő bekapcsolási állapottal, bemenettel, színmóddal és vetítési információs kártyákkal" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A vezérlőpult körül</div>
+      <h2>Projektorváltás, kikapcsolás, firmware</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projektorváltó.</b> Minden projektoroldal felső sávjában található egy <b>Projektor váltása</b> vezérlő, így a projektorok között a lista érintése nélkül válthat. Több projektor kezelése a Pro része.</li>
+      <li><b>Kikapcsolás előtt rákérdez.</b> A projektor kikapcsolásakor megjelenik a <b>Kikapcsolja a projektort?</b> kérdés, és az alkalmazás megvárja a megerősítést. Bekapcsoláskor nem kérdez.</li>
+      <li><b>Firmware.</b> A projektor firmware-verziója megjelenik a Vezérlőpulton, az Info fülön és a diagnosztikai jelentésben, ha a projektor megadja. Ha nem adja meg, semmi sem látszik találgatás helyett.</li>
+      <li><b>Azonnali vezérlők.</b> A lencseeltolás, a fókusz, a zoom és a fénykibocsátás-léptető abban a pillanatban reagál, ahogy megnyomja, majd a projektor megerősített értékére áll be. Az a gombnyomás, amely egy még küldés alatt álló műveletre érkezik, elvetésre kerül ahelyett, hogy sorba állna.</li>
+      <li><b>Őszinte bekapcsolási állapot.</b> Az alkalmazás újranyitáskor kiírja, hogy ellenőrzi az állapotot, ahelyett hogy hamis „kikapcsolva” állapotot mutatna, és nagyjából tíz másodpercen belül észreveszi, ha a projektor bekapcsol.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vetítési információ</div>
+      <h2>Mit csinál valójában a projektor</h2>
+      <p class="lead">A vetítési információs kártya a valós jel- és telepítési adatokat közvetlenül a készülékből olvassa ki - itt semmi sem találgatás.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Mező</th><th>Mit mutat</th></tr></thead>
+      <tbody>
+        <tr><td>Dinamikatartomány</td><td>SDR vagy HDR, a színtértől elkülönítve, így a jel sosem kap téves címkét.</td></tr>
+        <tr><td>Színtér</td><td>A bejövő gamut, például BT.2020 vagy BT.709 - önállóan jelezve, nem összemosva egy HDR-jelvénnyel.</td></tr>
+        <tr><td>Gamma</td><td>A projektor által jelentett aktív gamma.</td></tr>
+        <tr><td>Lézer üzemórák</td><td>A fényforrás üzemórái, hogy nyomon követhesse a panel vagy a lézer élettartamát. Lámpás modelleknél a lámpaórák látszanak helyette.</td></tr>
+        <tr><td>Sorozatszám</td><td>A projektor saját sorozatszáma, a készülékből beolvasva.</td></tr>
+        <tr><td>Rögzítés</td><td>Mennyezeti vagy hátsó vetítés, ahogyan a projektoron be van állítva.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>A színtér és a dinamikatartomány szándékosan külön mező.</b> Egy BT.2020 SDR jel - ami gyakori, amikor külső tónusleképző, például MadVR dolgozik - pontosan így jelenik meg, sosem hamis HDR10 jelvénnyel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Összegző kártyák</div>
+      <h2>Kép és lencse, egy pillantással</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Képösszegzés.</b> A legfontosabb képértékek - Fényerő, Kontraszt, Színezet, Élesség és Színhőmérséklet - a projektor saját menüskáláján, egy érintéssel a teljes <a href="/hu/guide/picture/">Kép</a> képernyőre ugorva.</li>
+      <li><b>Lencseösszegzés.</b> Az aktuális lencseállapot, ugrással a <a href="/hu/guide/lens/">Lencse</a> képernyőre az eltoláshoz, fókuszhoz, zoomhoz és memóriákhoz.</li>
+      <li><b>Jel-, fény- és működéskártyák.</b> Adja hozzá azokat, amelyek érdeklik - jelrészletek, fénykibocsátás és Eco/működés -, így a vezérlőpult olyan teli vagy letisztult lehet, amilyet szeretne.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tedd a magadévá</div>
+      <h2>Kártyák hozzáadása, elrejtése és átrendezése</h2>
+      <p class="lead">Érintse meg a <b>Testreszabás</b> gombot, és a vezérlőpult szerkeszthetővé válik. Adjon hozzá kártyát a választóból, húzással rendezze át őket, vagy rejtse el azokat, amelyeket sosem néz.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Érintse meg a Testreszabás gombot</b> a vezérlőpulton.</li>
+      <li><b>Adjon hozzá egy kártyát</b> a választóból - elérhető a Bekapcsolás, Bemenet, Színmód, Képelsötétítés, Kép, Lencse, Jel és Eco/működés, a teljesebb választóban pedig további kártyatípusok is.</li>
+      <li><b>Húzással rendezze át őket</b>, hogy a leggyakrabban használt vezérlők legfelül legyenek.</li>
+      <li><b>Rejtse el</b> mindent, amire nincs szüksége. Kész - az elrendezés az Öné, és megmarad.</li>
+    </ol>
+    <div class="note">Csak olyan vezérlők kártyái érhetők el, amelyeket a projektora valóban támogat. Ha a modellje nem rendelkezik motoros lencsével, nincs hozzáadható lencsekártya sem - az alkalmazás sosem mutat olyan vezérlőt, amelyre a hardver nem tudna válaszolni.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Következő</div>
+      <h2>Folytassa</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/hu/guide/remote/"><span>&#127918;</span>Távirányító</a>
+      <a href="/hu/guide/picture/"><span>&#127912;</span>Kép</a>
+      <a href="/hu/guide/lens/"><span>&#128247;</span>Lencse</a>
+      <a href="/hu/guide/"><span>&#128218;</span>Vissza az útmutató főoldalára</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/help/">Súgó &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/hu/help/#privacy">Adatvédelem</a><a href="/hu/help/#terms">Feltételek</a></div>
+<div class="flinks"><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/guide/dashboard/">Vezérlőpult</a><a href="/hu/guide/remote/">Távirányító</a><a href="/hu/guide/picture/">Kép</a><a href="/hu/guide/lens/">Lencse</a><a href="/hu/guide/scenes/">Jelenetek</a><a href="/hu/guide/home-assistant-dashboard/">HA-vezérlőpult</a><a href="/hu/guide/maintenance/">Karbantartás</a><a href="/hu/guide/settings/">Beállítások</a><a href="/hu/guide/languages/">Nyelvek</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. A Projector Pilot egy független alkalmazás Epson és PJLink projektorokhoz. Nem áll kapcsolatban az alábbi szereplőkkel, és őket sem támogatják vagy szponzorálják: Epson, a PJLink szabványügyi testülete, Home Assistant, Hubitat, Apple, Google és Microsoft. Az Epson, a PJLink, a Home Assistant, a Hubitat, az App Store, a Mac App Store, a Google Play és a Microsoft Store a megfelelő tulajdonosaik védjegyei, és itt kizárólag azt írják le, mivel működik együtt az alkalmazás.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Aplikace pro ovládání projektorů Epson &amp; PJLink - Projector Pilot</title>
+<meta name="description" content="Projector Pilot je aplikace pro projektory Epson a PJLink: napájení, vstup, obraz, motorizovaný objektiv, Scény jedním klepnutím a Home Assistant. Bez předplatného." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/cs/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aplikace pro ovládání projektorů Epson &amp; PJLink - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot je aplikace pro projektory Epson a PJLink: napájení, vstup, obraz, motorizovaný objektiv, Scény jedním klepnutím a Home Assistant. Bez předplatného." />
+<meta property="og:url" content="https://projectorpilot.com/cs/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aplikace pro ovládání projektorů Epson &amp; PJLink - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot je aplikace pro projektory Epson a PJLink: napájení, vstup, obraz, motorizovaný objektiv, Scény jedním klepnutím a Home Assistant. Bez předplatného." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Aplikace pro ovládání projektorů Epson & PJLink - Projector Pilot", "description": "Projector Pilot je aplikace pro projektory Epson a PJLink: napájení, vstup, obraz, motorizovaný objektiv, Scény jedním klepnutím a Home Assistant. Bez předplatného.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Nezávislá aplikace pro projektory Epson a PJLink: napájení, vstup, plné ovládání obrazu a barev, motorizovaný posun, zaostření, zoom a paměti objektivu, Scény jedním klepnutím, automatizace Home Assistant, Hubitat a webhooky, přehledy údržby a widgety na domovské obrazovce, ve 29 jazycích.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Zdarma", "price": "0", "priceCurrency": "USD", "description": "Přidání projektoru, napájení, přepínání vstupů, aktuální stav a základy ovladače na obrazovce."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Jednorázový nákup v aplikaci. Orientační cena; obchod ukáže cenu pro váš region."}, {"@type": "Offer", "name": "Doplněk Domácí automatizace", "price": "2.99", "priceCurrency": "USD", "description": "Jednorázový nákup v aplikaci. Orientační cena; obchod ukáže cenu pro váš region."}, {"@type": "Offer", "name": "Balíček Pro + Domácí automatizace", "price": "11.99", "priceCurrency": "USD", "description": "Jednorázový nákup v aplikaci. Orientační cena; obchod ukáže cenu pro váš region."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Vyrábí Projector Pilot společnost Epson?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Projector Pilot je nezávislá aplikace společnosti MiyaraHub Technologies LLC. Není přidružena k Epson, organizaci PJLink, Home Assistant ani Hubitat, není jimi podporována ani sponzorována. Tyto názvy jsou ochranné známky svých příslušných vlastníků a objevují se zde jen proto, aby popsaly, s jakými projektory a systémy chytré domácnosti aplikace spolupracuje."}}, {"@type": "Question", "name": "Které projektory Projector Pilot podporuje?", "acceptedAnswer": {"@type": "Answer", "text": "Projektory Epson přes ESC/VP21 a Web Control a libovolný projektor PJLink. Aplikace používá to, na čem projektor odpovídá, takže projektor jen s PJLink je běžné podporované zařízení."}}, {"@type": "Question", "name": "Je Projector Pilot předplatné?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Základní ovládání je zdarma a Pro, Domácí automatizace a balíček jsou jednorázové nákupy. Žádné předplatné, žádné reklamy."}}, {"@type": "Question", "name": "Potřebuje Projector Pilot účet nebo cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Žádný účet a žádný cloud. Aplikace komunikuje s projektorem přímo ve vaší vlastní síti."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="#features">Funkce</a>
+      <a href="/cs/guide/">Průvodce</a>
+      <a href="/cs/pricing/">Ceník</a>
+      <a href="/cs/highlights/">Přednosti</a>
+      <a href="/cs/guide/home-automation/">Home Assistant</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a class="cta" href="#download">ZÍSKEJTE APLIKACI</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Projektory Epson &amp; PJLink</div>
+      <h1>Ovládací aplikace, kterou si váš <span class="g">projektor Epson</span> vždy zasloužil.</h1>
+      <p>Napájení, vstup, úplná nabídka obrazu, motorizovaný posun, zaostření a zoom objektivu, Scény jedním klepnutím a skutečná domácí automatizace - pro projektory Epson a PJLink, přímo z telefonu. Žádné reklamy. Žádné předplatné. Žádný cloudový účet.</p>
+      <div class="pills">
+        <span class="pill">29 jazyků</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Jednorázový nákup</span>
+        <span class="pill">Funguje ve vaší síti</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Získejte ji na Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Nástěnka Projector Pilot v telefonu s aktuálním napájením, vstupem a barevným režimem projektoru Epson" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Co dělá</div>
+      <h2>Každý ovládací prvek, který váš projektor nabízí, v jedné přehledné aplikaci.</h2>
+      <p class="lead">Projector Pilot komunikuje s vaším projektorem přes ESC/VP21, PJLink a Epson Web Control najednou a používá to, co odpovídá - takže dostanete napájení, obraz, geometrii a ovládání objektivu, které skutečně funguje, s hodnotami načtenými zpět z projektoru, nikdy neodhadnutými.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Nástěnka Projector Pilot s aktuálním stavem, informacemi o projekci a souhrny obrazu a objektivu" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dashboard</div>
+        <h3>Vše na první pohled, sestavené podle vašich představ.</h3>
+        <ul>
+          <li><b>Aktuální stav</b> - napájení, vstup, barevný režim, hodiny světelného zdroje, signál a obrazové hodnoty, aktualizované při každé změně.</li>
+          <li><b>Napájení a vstup jedním klepnutím</b> přímo nahoře, s tlačítkem napájení, které zná zahřívání a chlazení.</li>
+          <li><b>Přizpůsobitelné karty</b> - přidávejte, skrývejte a přeskupujte karty, aby nástěnka ukazovala to, na čem vám záleží.</li>
+          <li><b>Informace o projekci</b> - dynamický rozsah, barevný prostor, gama, hodiny laseru, sériové číslo a montáž, načtené z projektoru.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Obrazovka dálkového ovladače Projector Pilot s navigační ploškou, menu, zdrojem a zatmavením obrazu" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Obrazovka obrazu Projector Pilot s jasem, kontrastem, teplotou barev a gama" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dálkový ovladač &amp; Obraz</div>
+        <h3>Hluboký dálkový ovladač a úplná nabídka obrazu.</h3>
+        <ul>
+          <li><b>Úplná navigační ploška</b>, menu, zdroj a zatmavení obrazu - ovladač na obrazovce, udělaný správně.</li>
+          <li><b>Metoda korekce</b> - vodorovné/svislé zkreslení, Rychlý roh, bodová korekce, zakřivený povrch a roh stěny.</li>
+          <li><b>Plné ovládání obrazu</b> - jas, kontrast, barevný tón, ostrost, teplota barev, gama, HDR a hluboká nabídka obrazu, každé na stupnici samotného projektoru.</li>
+          <li><b>HDR a barevný prostor jsou oddělené</b> - signál BT.2020 SDR se zobrazí přesně takto, nikdy jako falešné označení HDR.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Obrazovka objektivu Projector Pilot s ploškou posunu, zaostřením, zoomem a volbou kroku" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Objektiv</div>
+        <h3>Motorizovaný posun, zaostření, zoom a paměti objektivu.</h3>
+        <ul>
+          <li><b>Posun, zaostření a zoom</b> z přesné plošky, s <b>krokem, který si zvolíte</b> - jemným pro vyrovnání, hrubým pro velké pohyby.</li>
+          <li><b>Paměti objektivu</b> - vyvolejte a uložte pozice, které váš projektor podporuje.</li>
+          <li><b>S ohledem na orientaci</b> - aplikace sleduje vlastní mapování projektoru, stropní nebo zadní, takže nahoru je vždy nahoru.</li>
+          <li><b>Poctivé údaje</b> - pozice, kterou projektor nemůže potvrdit, se nikdy nevydává za zámek.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Karta Scény v Projector Pilot s uloženými Scénami na jedno klepnutí" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Scény</div>
+        <h3>Jedno klepnutí pro celou místnost.</h3>
+        <ul>
+          <li><b>Uložte Scénu</b> - napájení, vstup, obraz, signál, světlo, geometrii a zvuk, a vyberte přesně, které části uchovat.</li>
+          <li><b>Použijte jedním klepnutím</b> - „Filmový večer“ nastaví vstup, obrazový režim i paměť objektivu najednou.</li>
+          <li><b>Každá Scéna se stane skriptem Home Assistant</b>, takže ji může spustit i automatizace nebo hlasový asistent.</li>
+          <li><b>Sdílitelné profily</b> - exportujte vyladěnou Scénu a předejte ji kamarádovi.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Centrum Domácí automatizace v Projector Pilot s Home Assistant, Hubitat a webhooky" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Obrazovka nastavení Home Assistant v Projector Pilot s přihlášením a přepínači synchronizace" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Domácí automatizace</div>
+        <h3>Home Assistant, Hubitat a webhooky - skutečně.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - přihlaste se, publikujte stav projektoru jako senzor a klepněte na <b>Synchronizovat s HA</b>, abyste dostali skript pro každou Scénu a ovládání.</li>
+          <li><b>Nástěnka sestavená za vás</b> - Synchronizace ji sestaví v Home Assistant z vestavěných karet, vylepšených na bohatší karty z HACS, když je máte. Funguje i se základní integrací PJLink.</li>
+          <li><b>Kontrolní seznam nastavení</b> ukazuje, co je hotovo, co chybí a co dělat dál, a vaše údaje zůstávají v Home Assistant, dokud je projektor vypnutý.</li>
+          <li><b>Hubitat</b> - zrcadlete projektor na zařízení přes Maker API, aby na něj mohl Rule Machine reagovat.</li>
+          <li><b>Webhooky</b> - odešlete požadavek na libovolnou URL, když se projektor zapne, vypne, změní vstup nebo vyvolá Scénu.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/cs/guide/home-automation/">Přečtěte si úplnou příručku pro Home Assistant &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A další</div>
+      <h2>Detaily, díky nimž působí dotažený.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Přepínejte projektory odkudkoli</h3><p>Přepínač projektorů v horní liště každé stránky projektoru vás přesouvá mezi projektory bez návratu na seznam.</p></div>
+      <div class="gcard"><h3>Vypnutí se nejdřív zeptá</h3><p>Vypnutí projektoru vás požádá o potvrzení, takže náhodné klepnutí neukončí film.</p></div>
+      <div class="gcard"><h3>Ovládání, které reaguje okamžitě</h3><p>Posun objektivu, zaostření, zoom i krokový ovladač světelného výkonu se pohnou v okamžiku stisku a aplikace zaznamená zapnutí projektoru přibližně do deseti sekund.</p></div>
+      <div class="gcard"><h3>Firmware na první pohled</h3><p>Verze firmwaru vašeho projektoru se zobrazuje na Nástěnce a na kartě Info i v diagnostické zprávě, kdykoli ji projektor nahlásí.</p></div>
+      <div class="gcard"><h3>Přepínání vstupů u projektorů jen s PJLink</h3><p>Projektory, které vypisují své vstupy jen přes PJLink, jako TW7300 a Home Cinema 4040, přepínají vstup, a to samé mohou projektory PJLink jiné značky než Epson.</p></div>
+      <div class="gcard"><h3>Najděte svůj projektor ve Wi-Fi</h3><p>Přidat projektor prohledá vaši síť, zda se něco neohlašuje jako projektor, a doplní adresu, s ukazatelem průběhu, zatímco se zjišťují možnosti vašeho modelu.</p></div>
+      <div class="gcard"><h3>Zálohování a obnovení</h3><p>Exportujte nastavení aplikace do souboru a znovu je importujte. Soubor se sdílí pod svým skutečným názvem a uložené projektory a hesla v něm nikdy necestují.</p></div>
+      <div class="gcard"><h3>Nahlaste chybu jedním krokem</h3><p>Nahlásit chybu vytvoří jeden balíček se všemi relevantními protokoly, připravený k odeslání.</p></div>
+      <div class="gcard"><h3>29 jazyků</h3><p>Angličtina plus 28 dalších, včetně výzev k oprávněním na iPhonu, iPadu a Macu. Viz <a href="/cs/guide/languages/">seznam jazyků</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/cs/highlights/">Podívejte se na vše nové &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Rozhlédněte se</div>
+      <h2>Vytvořeno tak, aby působilo jako součást projektoru.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Nástěnka Projector Pilot s aktuálním stavem, informacemi o projekci a souhrny obrazu a objektivu" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dashboard</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Obrazovka dálkového ovladače Projector Pilot s navigační ploškou, menu, zdrojem a zatmavením obrazu" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dálkový ovladač</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Obrazovka objektivu Projector Pilot s ploškou posunu, zaostřením, zoomem a volbou kroku" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Objektiv</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Obrazovka nastavení Home Assistant v Projector Pilot s přihlášením a přepínači synchronizace" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Otázky, které lidé kladou jako první</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Vyrábí Projector Pilot společnost Epson?</h3><p>Ne. Projector Pilot je nezávislá aplikace společnosti MiyaraHub Technologies LLC. Není přidružena k Epson, organizaci PJLink, Home Assistant ani Hubitat, není jimi podporována ani sponzorována. Tyto názvy jsou ochranné známky svých příslušných vlastníků a objevují se zde jen proto, aby popsaly, s jakými projektory a systémy chytré domácnosti aplikace spolupracuje.</p></div><div class="gcard"><h3>Které projektory Projector Pilot podporuje?</h3><p>Projektory Epson přes ESC/VP21 a Web Control a libovolný projektor PJLink. Aplikace používá to, na čem projektor odpovídá, takže projektor jen s PJLink je běžné podporované zařízení.</p></div><div class="gcard"><h3>Je Projector Pilot předplatné?</h3><p>Ne. Základní ovládání je zdarma a Pro, Domácí automatizace a balíček jsou jednorázové nákupy. Žádné předplatné, žádné reklamy.</p></div><div class="gcard"><h3>Potřebuje Projector Pilot účet nebo cloud?</h3><p>Žádný účet a žádný cloud. Aplikace komunikuje s projektorem přímo ve vaší vlastní síti.</p></div></div>
+    <p style="margin-top:22px"><a href="/cs/help/">Další odpovědi v Nápovědě &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Získejte aplikaci</div>
+      <h2>Dostupná na Google Play. Další obchody se chystají.</h2>
+      <p class="lead">Projector Pilot je nyní dostupný na Google Play. App Store, Microsoft Store a Mac App Store čekají na schválení. Jeden nákup ji odemkne na každé platformě, kterou vlastníte.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - již k dispozici</a>
+      <span class="pill">App Store - čeká na schválení</span>
+      <span class="pill">Microsoft Store - čeká na schválení</span>
+      <span class="pill">Mac App Store - čeká na schválení</span>
+    </div>
+    <p style="margin-top:22px"><a href="/cs/guide/">Otevřít úplnou uživatelskou příručku &rarr;</a> &nbsp; &middot; &nbsp; <a href="/cs/pricing/">Viz Zdarma vs Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/cs/guide/">Uživatelská příručka</a>
+      <a href="/cs/pricing/">Ceník</a>
+      <a href="/cs/highlights/">Přednosti</a>
+      <a href="/cs/guide/home-automation/">Home Assistant</a>
+      <a href="/cs/help/">Nápověda &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/cs/help/#privacy">Soukromí</a>
+      <a href="/cs/help/#terms">Podmínky</a>
+    </div>
+<div class="flinks"><a href="/cs/guide/getting-started/">První kroky</a><a href="/cs/guide/dashboard/">Nástěnka</a><a href="/cs/guide/remote/">Dálkový ovladač</a><a href="/cs/guide/picture/">Obraz</a><a href="/cs/guide/lens/">Objektiv</a><a href="/cs/guide/scenes/">Scény</a><a href="/cs/guide/home-assistant-dashboard/">Nástěnka HA</a><a href="/cs/guide/maintenance/">Údržba</a><a href="/cs/guide/settings/">Nastavení</a><a href="/cs/guide/languages/">Jazyky</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot je nezávislá aplikace pro projektory Epson a PJLink. Není přidružena k společnostem Epson, organizaci PJLink, Home Assistant, Hubitat, Apple, Google ani Microsoft, není jimi podporována ani sponzorována. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play a Microsoft Store jsou ochranné známky svých příslušných vlastníků a jsou uvedeny pouze proto, aby popsaly, s čím aplikace spolupracuje.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

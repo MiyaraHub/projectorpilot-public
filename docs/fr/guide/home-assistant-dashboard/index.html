@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="fr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Tableau de bord Home Assistant pour projecteur (YAML) - Projector Pilot</title>
+<meta name="description" content="Créez pas à pas un tableau de bord Home Assistant personnalisé pour votre projecteur : les cartes HACS à installer, votre ID d'entité et votre numéro de série, et du YAML prêt à copier pour chaque carte." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tableau de bord Home Assistant pour projecteur (YAML) - Projector Pilot" />
+<meta property="og:description" content="Créez pas à pas un tableau de bord Home Assistant personnalisé pour votre projecteur : les cartes HACS à installer, votre ID d'entité et votre numéro de série, et du YAML prêt à copier pour chaque carte." />
+<meta property="og:url" content="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tableau de bord Home Assistant pour projecteur (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Créez pas à pas un tableau de bord Home Assistant personnalisé pour votre projecteur : les cartes HACS à installer, votre ID d'entité et votre numéro de série, et du YAML prêt à copier pour chaque carte." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Tableau de bord Home Assistant pour projecteur (YAML) - Projector Pilot", "description": "Créez pas à pas un tableau de bord Home Assistant personnalisé pour votre projecteur : les cartes HACS à installer, votre ID d'entité et votre numéro de série, et du YAML prêt à copier pour chaque carte.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fr", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Créez un tableau de bord Home Assistant pour projecteur en environ une heure", "description": "Créez pas à pas un tableau de bord Home Assistant personnalisé pour votre projecteur : les cartes HACS à installer, votre ID d'entité et votre numéro de série, et du YAML prêt à copier pour chaque carte.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "fr", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Guide de l'utilisateur", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Tableau de bord Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dois-je construire ce tableau de bord à la main ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Quand vous touchez Sync With HA dans l'appli, elle construit pour vous un tableau de bord Projector Pilot prêt à l'emploi directement dans Home Assistant - le capteur du projecteur en direct plus un bouton pour chaque commande et chaque scène - et il apparaît dans votre barre latérale sous le nom Projector Pilot. Quand les cartes communautaires sont installées, Sync met automatiquement ses cartes à niveau ; cette page sert à construire à la main la version verre vert plus riche, ou à personnaliser ce que Sync a créé."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ai-je besoin de cartes personnalisées HACS pour le construire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour reproduire l'aspect de la capture d'écran, oui : Mushroom, button-card, card-mod et mini-graph-card. Aucune n'est indispensable au fonctionnement des commandes elles-mêmes : chaque bouton est un simple appel de script, et les cartes personnalisées ne sont que l'habillage par-dessus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi les tuiles d'infos affichent-elles une valeur alors que les boutons ne font rien ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le capteur du projecteur publie ses mesures dès que vous vous connectez et synchronisez dans l'appli, donc les tuiles d'infos sont en direct tout de suite. Les boutons de commande et de scène appellent des scripts qui n'existent dans Home Assistant qu'après que vous avez collé le bloc Copier de l'appli dans configuration.yaml, redémarré Home Assistant et touché Sync With HA une fois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes ID d'entités seront-ils identiques à ceux de ce guide ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le modèle, oui ; les caractères exacts, non. Votre capteur de projecteur porte le nom du modèle de votre projecteur, et chaque script porte le numéro de série de votre projecteur. Partout où cette page écrit YOUR_PROJECTOR, mettez l'ID d'entité de votre propre capteur ; partout où elle écrit YOURSERIAL, mettez l'ID dérivé du numéro de série affiché sur l'écran Home Assistant de l'appli."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/fr/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Rechercher dans le guide..." data-i18n-empty="Aucun résultat pour" data-i18n-language="Langue"><a href="/fr/#features">Fonctionnalités</a><a href="/fr/guide/">Guide</a><a href="/fr/pricing/">Tarifs</a><a href="/fr/highlights/">Points forts</a><a href="/fr/guide/home-automation/">Home Assistant</a><a href="/fr/help/">Aide</a><a class="cta" href="/fr/#download">OBTENIR L'APPLI</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/fr/">Accueil</a> &rsaquo; <a href="/fr/guide/">Guide d'utilisation</a> &rsaquo; Tableau de bord Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; pas à pas</div>
+    <h1>Créez un tableau de bord Home Assistant pour projecteur <span class="g">en environ une heure</span></h1>
+    <p>L'appli vous construit déjà un tableau de bord fonctionnel quand vous synchronisez : cette page est la version luxe, faite main. Dix étapes, le YAML de chaque carte et une vue complète à coller d'un seul coup. Des tuiles en verre vert, un affichage d'image en direct, vos scènes et un graphique des heures du laser, le tout alimenté par un seul capteur de projecteur. Changez deux chaînes et il est à vous.</p>
+    <div class="readout"><span>Sync en construit un gratuitement</span><span>4 cartes HACS pour l'aspect</span><span>Tuiles d'infos en direct tout de suite</span><span>Boutons après un seul collage</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Le tableau de bord Projector Pilot terminé dans Home Assistant : alimentation et source, modes couleur, menu d'image complet, HDR et signal, calibration RGB, objectif et géométrie, maintenance avec un graphique des heures du laser, et scènes, le tout en tuiles de verre vert" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Ce que vous allez construire. Faites défiler, ou cliquez pour agrandir.</figcaption>
+    </figure>
+    <div class="note"><b>Vous voulez juste un tableau fonctionnel ? Vous en avez déjà un.</b> Touchez <b>Sync With HA</b> dans l'appli et elle construit pour vous un tableau de bord Projector Pilot prêt à l'emploi, dans la barre latérale de Home Assistant, avec chaque commande et le capteur en direct - sans cartes, sans YAML, sans collage. Voir <a href="/fr/guide/home-automation/#dashboard">Sync construit le tableau de bord pour vous</a>. Cette page sert à construire à la main la version verre vert plus riche, ou à personnaliser ce que Sync vous a donné.</div>
+    <div class="note"><b>Pressé d'obtenir le look personnalisé ?</b> Passez à l'<a href="#whole">étape 10</a>, téléchargez la vue complète, changez deux chaînes et les trois ID de scène, puis collez-la. Les étapes intermédiaires expliquent le rôle de chaque élément pour que vous puissiez le modifier.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Avant de commencer</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot est relié à Home Assistant.</b> <a href="/fr/guide/home-automation/">Le guide de configuration</a> explique comment vous connecter et activer <b>Envoyer l'état du projecteur</b>. Vous devriez voir votre projecteur comme un capteur dans Home Assistant avant de construire quoi que ce soit dessus.</li>
+      <li><b>Vous avez synchronisé au moins une fois.</b> Réglages &rsaquo; Domotique &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, après avoir collé le <b>bloc Copier</b> de l'appli dans <code>configuration.yaml</code> et redémarré Home Assistant. C'est ce qui crée les scripts appelés par chaque bouton de commande ci-dessous.</li>
+      <li><b>Votre projecteur est allumé</b> pendant la construction. Les attributs d'image ci-dessous sont ce qu'un projecteur en veille laisse en grande partie vide.</li>
+    </ul>
+    <p class="lead">Deux sources alimentent ce tableau de bord, et la différence compte à chaque étape ci-dessous.</p>
+    <table class="t">
+      <thead><tr><th>Provient de</th><th>Vous donne</th></tr></thead>
+      <tbody>
+        <tr><td>Le capteur du projecteur, <code>sensor.YOUR_PROJECTOR</code></td><td>Chaque <b>mesure</b>. Alimentation, entrée, mode couleur, toutes les valeurs d'image, HDR et signal, objectif et géométrie, heures de lampe. En direct dès que vous vous connectez et synchronisez, sans bloc Copier.</td></tr>
+        <tr><td>Les scripts synchronisés de l'appli, <code>script.projpilot_YOURSERIAL_...</code></td><td>Chaque <b>commande</b>. Alimentation, entrées, modes couleur, mémoires d'objectif et vos scènes. Ils n'existent qu'après avoir collé le bloc Copier, redémarré Home Assistant et touché Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 1</div>
+      <h2>Installez quatre cartes depuis HACS</h2>
+    </div>
+    <p class="lead">Les quatre se trouvent dans la boutique HACS par défaut. Dans Home Assistant : <b>HACS &rsaquo; Interface &rsaquo; Explorer &amp; télécharger des dépôts</b>, cherchez le nom, cliquez sur Télécharger, puis rechargez votre navigateur.</p>
+    <table class="t">
+      <thead><tr><th>Rechercher</th><th>Sert à</th><th>Si vous l'ignorez</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Chaque tuile d'infos, bouton de commande et tuile de scène</td><td>Utilisez une carte <code>button</code> simple. Ça fonctionne, c'est juste plus carré.</td></tr>
+        <tr><td><b>button-card</b></td><td>L'en-tête principal, avec son libellé en direct</td><td>Utilisez une carte <code>entity</code>, ou une carte modèle Mushroom plus sobre.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Le fond en verre vert, les bordures et les dégradés</td><td>Tout fonctionne quand même. Rien n'a son halo lumineux.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>L'historique des heures du laser sous Maintenance</td><td>Utilisez la carte <code>history-graph</code> intégrée.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Aucune n'est nécessaire pour que cela fonctionne.</b> Chaque commande ci-dessous s'exécute depuis une carte bouton Home Assistant standard pointée vers le même script. Les cartes personnalisées apportent le look verre vert, pas la plomberie.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 2</div>
+      <h2>Trouvez votre ID d'entité et votre numéro de série</h2>
+    </div>
+    <p class="lead">Chaque extrait de cette page utilise deux paramètres fictifs. Trouvez les vôtres une fois, et le reste n'est plus que du copier-coller.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Outils de développement &rsaquo; États dans Home Assistant, filtrez sur <code>projector_pilot</code>. Quelque chose comme <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; ouvrez l'appli, <b>Réglages &rsaquo; Domotique &rsaquo; Home Assistant</b>. L'ID dérivé du numéro de série s'y affiche, et c'est le milieu du nom de chaque script synchronisé : <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, etc.</li>
+    </ul>
+    <p class="lead">Vous pouvez aussi filtrer Outils de développement &rsaquo; États sur <code>projpilot</code> pour voir d'un coup toute la liste de vos commandes synchronisées, une fois le bloc Copier et la synchronisation de l'étape 1 effectués.</p>
+    <div class="note"><b>Pas encore de liste de scripts ?</b> C'est normal avant d'avoir collé le bloc Copier. Le capteur existe et se met à jour ; les scripts n'apparaissent qu'après une exécution réussie de Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 3</div>
+      <h2>Créez la vue</h2>
+    </div>
+    <ol class="steps">
+      <li>Réglages &rsaquo; Tableaux de bord &rsaquo; Ajouter un tableau de bord &rsaquo; Nouveau tableau de bord à partir de zéro. Appelez-le Projector Pilot.</li>
+      <li>Ouvrez-le, puis l'icône en forme de crayon en haut à droite pour modifier.</li>
+      <li>Ajoutez une vue. Les deux dispositions fonctionnent ; le vrai tableau utilise la pile de cartes par défaut, l'une sous l'autre, ce qui est le plus simple pour coller.</li>
+      <li>Pour coller du YAML, utilisez le menu à trois points d'une carte et choisissez <b>Modifier en YAML</b>, ou le menu à trois points du tableau de bord pour <b>Éditeur de configuration brute</b> afin de coller toute une vue d'un coup.</li>
+    </ol>
+    <p class="lead">Les réglages propres à la vue, si vous préférez les saisir :</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 4</div>
+      <h2>Ajouter une tuile d'infos en direct</h2>
+    </div>
+    <p class="lead">Commencez par quelque chose qui ne fait que lire, pour vérifier que votre ID d'entité est correct avant de toucher à tout ce qui envoie une commande. Celle-ci est en direct dès que votre capteur de projecteur existe, sans bloc Copier ni synchronisation. Ajoutez une carte, Modifier en YAML, collez :</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">La même forme lit n'importe lequel des quelque 80 attributs du capteur : remplacez <code>brightness</code> par <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, ce que vous voulez voir sur la tuile.</p>
+    <p class="lead">Enregistrez. Si un vrai nombre ou un mot s'affiche, votre ID d'entité est correct et tout ce qui suit fonctionnera. S'il reste vide, retournez à l'étape 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 5</div>
+      <h2>Ajouter un en-tête de section vert</h2>
+    </div>
+    <p class="lead">Un simple titre est de l'espace perdu. Voici une carte <code>markdown</code> avec un fond dégradé fourni par card-mod, et c'est ce qui transforme une pile de tuiles en sections nommées. Chaque section du tableau commence par l'une d'elles, avec simplement un autre libellé et un autre emoji.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Changez le code de l'emoji et le texte du libellé ; le bloc card-mod est identique pour chaque section.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 6</div>
+      <h2>Ajouter un bouton de commande</h2>
+    </div>
+    <p class="lead">Celui-ci envoie une commande au lieu de simplement lire une valeur, donc les scripts doivent exister d'abord. Il appelle <code>script.projpilot_YOURSERIAL_power_on</code>, que l'appli n'écrit qu'après que vous avez collé son bloc Copier dans <code>configuration.yaml</code>, redémarré Home Assistant et touché <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">La même carte sert pour Éteindre, Écran noir, HDMI 1, HDMI 2, Sourdine A/V, un mode couleur ou une mémoire d'objectif : seuls le libellé, l'icône et <code>service</code> changent.</p>
+    <div class="note"><b>Si tout semble correct mais que rien ne se passe</b> quand vous touchez le bouton, le bloc Copier n'est pas collé ou Home Assistant n'a pas été redémarré depuis. Lancez <b>Tester la connexion</b> dans l'appli, qui vérifie exactement cela, avant de supposer que le tableau de bord est faux.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 7</div>
+      <h2>Ajouter l'en-tête principal</h2>
+    </div>
+    <p class="lead">L'en-tête principal en haut du tableau est une carte <code>button-card</code> : un grand état d'alimentation, un résumé d'une ligne construit à partir de plusieurs attributs à la fois, et le traitement verre vert sur toute la carte et pas seulement sur sa bordure.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Réduit aux éléments qui changent selon l'installation. La carte complète définit aussi les positions de la grille pour l'icône, le nom et le libellé ; voir le téléchargement à l'étape 10 pour tout le détail.</p>
+    <p class="lead">Vous préférez une bande plus fine ? Une carte <code>mushroom-chips-card</code> fait le même travail sur une seule rangée de petites pastilles : état d'alimentation, entrée, mode couleur, plage vidéo et heures de lampe, chacune étant un modèle qui lit <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Utilisez l'une ou l'autre, pas les deux, en haut du tableau.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 8</div>
+      <h2>Ajoutez vos Scènes</h2>
+    </div>
+    <p class="lead">Chaque scène que vous enregistrez dans l'appli devient un script nommé <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> après la synchronisation, et une tuile pour une scène est la même carte bouton de commande que celle de l'étape 6, avec un nom et une icône de scène.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Remplacez <code>YOURSCENE1</code> par l'ID affiché pour cette scène dans la liste des commandes synchronisées de l'appli. Une tuile par scène, dans une carte <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 9</div>
+      <h2>Ajouter l'historique des heures du laser</h2>
+    </div>
+    <p class="lead">Le capteur du projecteur est enregistré par Home Assistant comme n'importe quel autre, donc <code>lamp_hours</code> dispose gratuitement d'un historique. Pas de capteurs supplémentaires, pas d'assistants, rien à configurer au préalable, sous la section Maintenance.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 heures, c'est deux semaines. Les heures du laser et de la lampe augmentent régulièrement sans faire de bonds, donc une fenêtre de deux semaines suffit généralement pour voir la tendance sans que le graphique paraisse plat.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Étape 10</div>
+      <h2>Ou prenez le tout</h2>
+    </div>
+    <p class="lead">La vue complète, chaque section et chaque carte de la capture d'écran en haut de cette page, avec des espaces réservés à la place des ID d'entité.</p>
+    <ol class="steps">
+      <li><a href="/fr/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Télécharger le YAML de la vue</a>.</li>
+      <li>Ouvrez-le dans n'importe quel éditeur de texte et remplacez, partout où ils apparaissent : <code>YOUR_PROJECTOR</code> par l'ID d'entité de votre capteur de projecteur trouvé à l'étape 2, et <code>YOURSERIAL</code> par votre ID dérivé du numéro de série trouvé à l'étape 2.</li>
+      <li>Dans la section Scènes, près du bas, remplacez <code>YOURSCENE1</code>, <code>YOURSCENE2</code> et <code>YOURSCENE3</code> par vos trois propres ID de scène, ou ajoutez et supprimez des tuiles selon le nombre de scènes que vous avez réellement.</li>
+      <li>Dans Home Assistant, ouvrez votre tableau de bord, l'icône en forme de crayon, le menu à trois points, <b>Éditeur de configuration brute</b>, et collez-le comme une vue.</li>
+    </ol>
+    <div class="note"><b>Les noms et le nombre de vos scènes ne correspondront pas.</b> Le fichier est fourni avec trois scènes d'exemple : Movie Night, Gaming, Sports Day. Renommez les tuiles, pointez-les vers vos propres ID de scène, et ajoutez ou supprimez des tuiles jusqu'à ce que la section corresponde au nombre de scènes que vous avez réellement enregistrées.</div>
+    <div class="note"><b>Les tuiles d'infos fonctionnent immédiatement après le collage.</b> Elles n'ont besoin que de l'existence du capteur. Les boutons de commande et de scène restent inertes tant que le bloc Copier n'est pas collé dans <code>configuration.yaml</code>, que Home Assistant n'est pas redémarré et que vous n'avez pas touché Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Dépannage</h2>
+    </div>
+    <details class="more"><summary>Une tuile affiche Inconnu</summary>
+      <p>Vérifiez le nom de l'attribut par rapport à ce que le capteur fournit réellement : Outils de développement &rsaquo; États, votre entité <code>sensor.YOUR_PROJECTOR</code>, et lisez sa liste d'attributs. Quelques mesures, comme HDR PQ ou HDR HLG, ne se remplissent que lorsque le projecteur reçoit activement ce type de signal, donc Inconnu sur ces deux-là peut être normal et non une panne. Si tout le capteur paraît clairsemé, réveillez le projecteur : un appareil en veille publie très peu de choses.</p>
+    </details>
+    <details class="more"><summary>Un bouton ne fait rien</summary>
+      <p>Vous n'avez pas encore collé le bloc Copier, ou Home Assistant n'a pas été redémarré depuis. Les boutons de commande et de scène appellent des scripts que l'appli écrit, et ces scripts n'existent pas tant que <b>Réglages &rsaquo; Domotique &rsaquo; Home Assistant</b> dans l'appli n'a pas son bloc Copier collé dans <code>configuration.yaml</code>, Home Assistant redémarré une fois, et <b>Sync With HA</b> touché. Lancez d'abord <b>Tester la connexion</b> dans l'appli : elle vous dit si le bloc est présent avant que vous cherchiez une erreur dans le tableau de bord.</p>
+    </details>
+    <details class="more"><summary>Les scripts attendus sont absents de Outils de développement &rsaquo; États</summary>
+      <p>Filtrez sur <code>projpilot</code> plutôt que sur le numéro de série complet : c'est plus simple pour voir toute la liste. Si une commande ou une scène ajoutée récemment est absente, touchez à nouveau <b>Sync With HA</b> ; elle met à jour sur place sans exiger une nouvelle configuration. Si d'anciens scripts inutiles encombrent la liste après la suppression d'une scène, utilisez <b>Supprimer les scripts orphelins</b> dans l'appli.</p>
+    </details>
+    <details class="more"><summary>Mon ID d'entité ne ressemble pas à celui de ce guide</summary>
+      <p>Le modèle est fixe, le milieu ne l'est pas. Votre capteur porte le nom du modèle de votre propre projecteur, et chaque script porte le numéro de série de votre propre projecteur, pas les espaces réservés de cette page. Obtenez les deux dans Outils de développement &rsaquo; États et sur l'écran Home Assistant de l'appli, comme à l'étape 2, et utilisez-les à la place du texte d'exemple.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tout votre projecteur, sur un seul mur</h2>
+    <p class="lead" style="margin:0 auto 24px">La domotique est un module complémentaire à achat unique. Pas d'abonnement, pas de compte, pas de cloud. Un seul achat la débloque sur toutes les plateformes que vous possédez.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - disponible maintenant</a>
+      <span class="pill">App Store - en attente d'approbation</span>
+      <span class="pill">Microsoft Store - en attente d'approbation</span>
+      <span class="pill">Mac App Store - en attente d'approbation</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/fr/guide/home-automation/">Retour à la domotique &rarr;</a> &middot; <a href="/fr/guide/">Guide d'utilisation complet &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Réponses rapides</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Dois-je construire ce tableau de bord à la main ?</h3><p>Non. Quand vous touchez Sync With HA dans l'appli, elle construit pour vous un tableau de bord Projector Pilot prêt à l'emploi directement dans Home Assistant - le capteur du projecteur en direct plus un bouton pour chaque commande et chaque scène - et il apparaît dans votre barre latérale sous le nom Projector Pilot. Cette page sert à construire à la main la version verre vert plus riche, ou à personnaliser ce que Sync a créé.</p></div><div class="gcard"><h3>Ai-je besoin de cartes personnalisées HACS pour le construire ?</h3><p>Pour reproduire l'aspect de la capture d'écran, oui : Mushroom, button-card, card-mod et mini-graph-card. Aucune n'est indispensable au fonctionnement des commandes elles-mêmes : chaque bouton est un simple appel de script, et les cartes personnalisées ne sont que l'habillage par-dessus.</p></div><div class="gcard"><h3>Pourquoi les tuiles d'infos affichent-elles une valeur alors que les boutons ne font rien ?</h3><p>Le capteur du projecteur publie ses mesures dès que vous vous connectez et synchronisez dans l'appli, donc les tuiles d'infos sont en direct tout de suite. Les boutons de commande et de scène appellent des scripts qui n'existent dans Home Assistant qu'après que vous avez collé le bloc Copier de l'appli dans configuration.yaml, redémarré Home Assistant et touché Sync With HA une fois.</p></div><div class="gcard"><h3>Mes ID d'entités seront-ils identiques à ceux de ce guide ?</h3><p>Le modèle, oui ; les caractères exacts, non. Votre capteur de projecteur porte le nom du modèle de votre projecteur, et chaque script porte le numéro de série de votre projecteur. Partout où cette page écrit YOUR_PROJECTOR, mettez l'ID d'entité de votre propre capteur ; partout où elle écrit YOURSERIAL, mettez l'ID dérivé du numéro de série affiché sur l'écran Home Assistant de l'appli.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/fr/guide/">Guide d'utilisation</a><a href="/fr/pricing/">Tarifs</a><a href="/fr/highlights/">Points forts</a><a href="/fr/guide/home-automation/">Home Assistant</a><a href="/fr/help/">Aide &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/fr/help/#privacy">Confidentialité</a><a href="/fr/help/#terms">Conditions</a></div>
+<div class="flinks"><a href="/fr/guide/getting-started/">Premiers pas</a><a href="/fr/guide/dashboard/">Tableau de bord</a><a href="/fr/guide/remote/">Télécommande</a><a href="/fr/guide/picture/">Image</a><a href="/fr/guide/lens/">Objectif</a><a href="/fr/guide/scenes/">Scènes</a><a href="/fr/guide/home-assistant-dashboard/">Tableau de bord HA</a><a href="/fr/guide/maintenance/">Maintenance</a><a href="/fr/guide/settings/">Réglages</a><a href="/fr/guide/languages/">Langues</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot est une application indépendante pour les projecteurs Epson et PJLink. Elle n'est ni affiliée à, ni approuvée par, ni sponsorisée par Epson, l'organisme de normalisation PJLink, Home Assistant, Hubitat, Apple, Google ou Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play et Microsoft Store sont des marques de leurs détenteurs respectifs, citées uniquement pour décrire ce avec quoi l'application fonctionne.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

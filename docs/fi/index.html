@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Sovellus Epson- &amp; PJLink-projektorien ohjaamiseen - Projector Pilot</title>
+<meta name="description" content="Projector Pilot on sovellus Epson- ja PJLink-projektoreille: virta, tulo, kuva, motorisoitu linssi, kohtaukset yhdellä napautuksella ja Home Assistant. Ei tilausta." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/fi/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sovellus Epson- &amp; PJLink-projektorien ohjaamiseen - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot on sovellus Epson- ja PJLink-projektoreille: virta, tulo, kuva, motorisoitu linssi, kohtaukset yhdellä napautuksella ja Home Assistant. Ei tilausta." />
+<meta property="og:url" content="https://projectorpilot.com/fi/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sovellus Epson- &amp; PJLink-projektorien ohjaamiseen - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot on sovellus Epson- ja PJLink-projektoreille: virta, tulo, kuva, motorisoitu linssi, kohtaukset yhdellä napautuksella ja Home Assistant. Ei tilausta." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Sovellus Epson- ja PJLink-projektorien ohjaamiseen - Projector Pilot", "description": "Projector Pilot on sovellus Epson- ja PJLink-projektoreille: virta, tulo, kuva, motorisoitu linssi, kohtaukset yhdellä napautuksella ja Home Assistant. Ei tilausta.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Itsenäinen sovellus Epson- ja PJLink-projektoreille: virta, tulo, täysi kuvan ja värin hallinta, motorisoitu linssin siirto, tarkennus, zoom ja muistit, kohtaukset yhdellä napautuksella, Home Assistant-, Hubitat- ja webhook-automaatio, huoltotilastot ja aloitusnäytön widgetit, 29 kielellä.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Ilmainen", "price": "0", "priceCurrency": "USD", "description": "Lisää projektori, virta, tulon vaihto, reaaliaikainen tila ja näyttökaukosäätimen perusteet."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Kertaluonteinen sovelluksen sisäinen osto. Viitehinta; kauppa näyttää hinnan alueellesi."}, {"@type": "Offer", "name": "Kodin automaation lisäosa", "price": "2.99", "priceCurrency": "USD", "description": "Kertaluonteinen sovelluksen sisäinen osto. Viitehinta; kauppa näyttää hinnan alueellesi."}, {"@type": "Offer", "name": "Pro + Kodin automaatio -nippu", "price": "11.99", "priceCurrency": "USD", "description": "Kertaluonteinen sovelluksen sisäinen osto. Viitehinta; kauppa näyttää hinnan alueellesi."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Onko Projector Pilot Epsonin tekemä?", "acceptedAnswer": {"@type": "Answer", "text": "Ei. Projector Pilot on MiyaraHub Technologies LLC:n itsenäinen sovellus. Se ei ole yhteydessä Epsoniin, PJLink-standardointielimeen, Home Assistantiin tai Hubitatiin, eivätkä ne ole hyväksyneet tai tukeneet sitä. Nuo nimet ovat omistajiensa tavaramerkkejä, ja ne esiintyvät tässä vain kuvaamassa, minkä projektorien ja älykotijärjestelmien kanssa sovellus toimii."}}, {"@type": "Question", "name": "Mitä projektoreita Projector Pilot tukee?", "acceptedAnswer": {"@type": "Answer", "text": "Epson-projektorit ESC/VP21- ja Web Control -protokollilla sekä kaikki PJLink-projektorit. Sovellus käyttää sitä, millä projektori vastaa, joten vain PJLink-projektori on ihan tavallinen tuettu laite."}}, {"@type": "Question", "name": "Onko Projector Pilot tilaus?", "acceptedAnswer": {"@type": "Answer", "text": "Ei. Perushallinta on ilmaista, ja Pro, Kodin automaatio ja nippu ovat kertaostoksia. Ei tilausta, ei mainoksia."}}, {"@type": "Question", "name": "Tarvitseeko Projector Pilot tilin tai pilven?", "acceptedAnswer": {"@type": "Answer", "text": "Ei tiliä eikä pilveä. Sovellus keskustelee projektorisi kanssa suoraan omassa verkossasi."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="#features">Ominaisuudet</a>
+      <a href="/fi/guide/">Opas</a>
+      <a href="/fi/pricing/">Hinnoittelu</a>
+      <a href="/fi/highlights/">Kohokohdat</a>
+      <a href="/fi/guide/home-automation/">Home Assistant</a>
+      <a href="/fi/help/">Ohje</a>
+      <a class="cta" href="#download">HAE SOVELLUS</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Epson- &amp; PJLink-projektorit</div>
+      <h1>Ohjaussovellus, jonka <span class="g">Epson-projektorisi</span> on aina ansainnut.</h1>
+      <p>Virta, tulo, koko kuvavalikko, motorisoitu linssin siirto, tarkennus ja zoom, kohtaukset yhdellä napautuksella ja aito kodin automaatio - Epson- ja PJLink-projektoreille, suoraan puhelimestasi. Ei mainoksia. Ei tilausta. Ei pilvitiliä.</p>
+      <div class="pills">
+        <span class="pill">29 kieltä</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Kertaostos</span>
+        <span class="pill">Toimii omassa verkossasi</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Hae Google Playsta &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Projector Pilotin kojelauta puhelimessa, jossa Epson-projektorin reaaliaikainen virta, tulo ja väritila" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mitä se tekee</div>
+      <h2>Jokainen projektorisi tarjoama säädin yhdessä siistissä sovelluksessa.</h2>
+      <p class="lead">Projector Pilot keskustelee projektorisi kanssa samanaikaisesti ESC/VP21-, PJLink- ja Epson Web Control -protokollilla käyttäen sitä, joka vastaa - joten saat virran, kuvan, geometrian ja linssin hallinnan, joka todella toimii, arvot luettuina takaisin projektorista, ei koskaan arvattuina.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Projector Pilotin kojelauta reaaliaikaisella tilalla, projisoinnin tiedoilla sekä kuvan ja linssin yhteenvedoilla" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Kojelauta</div>
+        <h3>Kaikki yhdellä silmäyksellä, rakennettuna haluamallasi tavalla.</h3>
+        <ul>
+          <li><b>Reaaliaikainen tila</b> - virta, tulo, väritila, valonlähteen käyttötunnit, signaali ja kuvan arvot, päivittyen niiden muuttuessa.</li>
+          <li><b>Virta ja tulo yhdellä napautuksella</b> suoraan ylhäältä, lämpenemisen ja jäähtymisen tuntevalla virtapainikkeella.</li>
+          <li><b>Mukautettavat kortit</b> - lisää, piilota ja järjestä kortteja niin, että kojelauta näyttää sen, mikä sinulle on tärkeää.</li>
+          <li><b>Projisoinnin tiedot</b> - dynamiikka-alue, väriavaruus, gamma, laserin käyttötunnit, sarjanumero ja asennus, luettuna projektorista.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Projector Pilotin kaukosäädinnäyttö suuntapainikkeilla, valikolla, lähteellä ja kuvan pimennyksellä" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Projector Pilotin kuvanäyttö, jossa kirkkaus, kontrasti, värilämpötila ja gamma" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Kaukosäädin &amp; kuva</div>
+        <h3>Syvällinen kaukosäädin ja koko kuvavalikko.</h3>
+        <ul>
+          <li><b>Täydet suuntapainikkeet</b>, valikko, lähde ja kuvan pimennys - näyttökaukosäädin tehty oikein.</li>
+          <li><b>Korjaustapa</b> - vaaka-/pystytrapetsikorjaus, pikanurkka, pistekorjaus, kaareva pinta ja seinänurkka.</li>
+          <li><b>Täysi kuvanhallinta</b> - kirkkaus, kontrasti, sävy, terävyys, värilämpötila, gamma, HDR ja syvä kuvavalikko, kukin projektorin omalla asteikolla.</li>
+          <li><b>HDR ja väriavaruus ovat erillään</b> - BT.2020 SDR -signaali näkyy täsmälleen sellaisena, ei koskaan virheellisenä HDR-merkintänä.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Projector Pilotin linssinäyttö siirto-ohjaimella, tarkennuksella, zoomilla ja askelkokovalitsimella" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Linssi</div>
+        <h3>Motorisoitu linssin siirto, tarkennus, zoom ja muistit.</h3>
+        <ul>
+          <li><b>Siirto, tarkennus ja zoom</b> tarkalta ohjaimelta <b>itse valitsemallasi askelkoolla</b> - hieno kehystykseen, karkea isoihin liikkeisiin.</li>
+          <li><b>Linssimuistit</b> - palauta ja tallenna projektorisi tukemat sijainnit.</li>
+          <li><b>Suunnan tunteva</b> - sovellus noudattaa projektorin omaa määritystä, katto tai taka, joten ylös on aina ylös.</li>
+          <li><b>Rehelliset lukemat</b> - sijaintia, jota projektori ei pysty vahvistamaan, ei koskaan naamioida lukitukseksi.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Projector Pilotin Kohtaukset-välilehti tallennetuin yhden napautuksen kohtauksin" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Kohtaukset</div>
+        <h3>Yksi napautus koko huoneelle.</h3>
+        <ul>
+          <li><b>Tallenna kohtaus</b> - virta, tulo, kuva, signaali, valo, geometria ja ääni, ja valitse tarkasti, mitkä osat säilytetään.</li>
+          <li><b>Ota käyttöön yhdellä napautuksella</b> - ”Elokuvailta” asettaa tulon, kuvatilan ja linssimuistin yhdessä.</li>
+          <li><b>Jokaisesta kohtauksesta tulee Home Assistant -skripti</b>, joten automaatio tai ääniavustaja voi ajaa sen myös.</li>
+          <li><b>Jaettavat profiilit</b> - vie viritetty kohtaus ja anna se kaverille.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Projector Pilotin Kodin automaation keskus: Home Assistant, Hubitat ja webhookit" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Projector Pilotin Home Assistant -asennusnäyttö kirjautumisella ja synkronoinnin kytkimillä" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Kodin automaatio</div>
+        <h3>Home Assistant, Hubitat ja webhookit - aito juttu.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - kirjaudu sisään, julkaise projektorin tila anturina ja napauta <b>Sync With HA</b> saadaksesi skriptin jokaiselle kohtaukselle ja säätimelle.</li>
+          <li><b>Sinulle rakennettu kojelauta</b> - Sync rakentaa sen Home Assistantiin sisäänrakennetuilla korteilla, päivitettynä rikkaampiin HACS-kortteihin, kun ne sinulla on. Se toimii myös core PJLink -integraation kanssa.</li>
+          <li><b>Asennuksen tarkistuslista</b> näyttää, mikä on tehty, mikä puuttuu ja mitä tehdä seuraavaksi, ja lukemasi pysyvät Home Assistantissa projektorin ollessa pois päältä.</li>
+          <li><b>Hubitat</b> - peilaa projektori laitteeksi Maker API:n kautta, jotta Rule Machine voi toimia sen perusteella.</li>
+          <li><b>Webhooks</b> - lähetä mihin tahansa URL-osoitteeseen, kun projektori käynnistyy, sammuu, vaihtaa tuloa tai palauttaa kohtauksen.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/fi/guide/home-automation/">Lue koko Home Assistant -opas &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ja lisää</div>
+      <h2>Yksityiskohdat, jotka saavat sen tuntumaan valmiilta.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Vaihda projektoria mistä tahansa</h3><p>Projektorin vaihtaja jokaisen projektorisivun yläpalkissa siirtää sinut projektorista toiseen palaamatta luetteloon.</p></div>
+      <div class="gcard"><h3>Sammutus kysyy ensin</h3><p>Projektorin sammuttaminen pyytää vahvistuksen, jotta vahingossa osunut napautus ei lopeta elokuvaa.</p></div>
+      <div class="gcard"><h3>Säätimet, jotka reagoivat välittömästi</h3><p>Linssin siirto, tarkennus, zoom ja valotehon portaittainen säätö liikkuvat samalla hetkellä kun painat, ja sovellus huomaa projektorin käynnistyneen noin kymmenen sekunnin kuluessa.</p></div>
+      <div class="gcard"><h3>Laiteohjelmisto yhdellä silmäyksellä</h3><p>Projektorisi laiteohjelmistoversio näkyy kojelaudalla ja Tiedot-välilehdellä sekä diagnostiikkaraportissa aina, kun projektori sen ilmoittaa.</p></div>
+      <div class="gcard"><h3>Tulon vaihto vain PJLinkiä käyttävillä projektoreilla</h3><p>Projektorit, jotka luettelevat tulonsa vain PJLinkin kautta, kuten TW7300 ja Home Cinema 4040, vaihtavat tuloa, ja myös muut kuin Epson-PJLink-projektorit voivat.</p></div>
+      <div class="gcard"><h3>Löydä projektorisi Wi-Fi-verkosta</h3><p>Lisää projektori etsii verkostasi kaiken, mikä vastaa projektorina, ja täyttää osoitteen, edistymispalkin kera mallisi ominaisuuksia tunnistettaessa.</p></div>
+      <div class="gcard"><h3>Varmuuskopiointi ja palautus</h3><p>Vie sovelluksesi asetukset tiedostoon ja tuo ne takaisin. Tiedosto jaetaan sen oikealla nimellä, eivätkä tallennetut projektorit ja salasanat koskaan kulje sen mukana.</p></div>
+      <div class="gcard"><h3>Ilmoita virheestä yhdellä vaiheella</h3><p>Ilmoita virheestä kokoaa yhden paketin, jossa on kaikki olennaiset lokit, valmiina lähetettäväksi.</p></div>
+      <div class="gcard"><h3>29 kieltä</h3><p>Englanti ja 28 muuta, mukaan lukien käyttöoikeuskyselyt iPhonessa, iPadissa ja Macissa. Katso <a href="/fi/guide/languages/">kieliluettelo</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/fi/highlights/">Katso kaikki uusi &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Katsaus</div>
+      <h2>Tehty tuntumaan osalta projektoria.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Projector Pilotin kojelauta reaaliaikaisella tilalla, projisoinnin tiedoilla sekä kuvan ja linssin yhteenvedoilla" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Kojelauta</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Projector Pilotin kaukosäädinnäyttö suuntapainikkeilla, valikolla, lähteellä ja kuvan pimennyksellä" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Kaukosäädin</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Projector Pilotin linssinäyttö siirto-ohjaimella, tarkennuksella, zoomilla ja askelkokovalitsimella" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Linssi</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Projector Pilotin Home Assistant -asennusnäyttö kirjautumisella ja synkronoinnin kytkimillä" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Kysymykset, joita ihmiset kysyvät ensin</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Onko Projector Pilot Epsonin tekemä?</h3><p>Ei. Projector Pilot on MiyaraHub Technologies LLC:n itsenäinen sovellus. Se ei ole yhteydessä Epsoniin, PJLink-standardointielimeen, Home Assistantiin tai Hubitatiin, eivätkä ne ole hyväksyneet tai tukeneet sitä. Nuo nimet ovat omistajiensa tavaramerkkejä, ja ne esiintyvät tässä vain kuvaamassa, minkä projektorien ja älykotijärjestelmien kanssa sovellus toimii.</p></div><div class="gcard"><h3>Mitä projektoreita Projector Pilot tukee?</h3><p>Epson-projektorit ESC/VP21- ja Web Control -protokollilla sekä kaikki PJLink-projektorit. Sovellus käyttää sitä, millä projektori vastaa, joten vain PJLink-projektori on ihan tavallinen tuettu laite.</p></div><div class="gcard"><h3>Onko Projector Pilot tilaus?</h3><p>Ei. Perushallinta on ilmaista, ja Pro, Kodin automaatio ja nippu ovat kertaostoksia. Ei tilausta, ei mainoksia.</p></div><div class="gcard"><h3>Tarvitseeko Projector Pilot tilin tai pilven?</h3><p>Ei tiliä eikä pilveä. Sovellus keskustelee projektorisi kanssa suoraan omassa verkossasi.</p></div></div>
+    <p style="margin-top:22px"><a href="/fi/help/">Lisää vastauksia kohdassa Ohje &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hae sovellus</div>
+      <h2>Saatavilla Google Playssa. Lisää kauppoja tulossa.</h2>
+      <p class="lead">Projector Pilot on nyt saatavilla Google Playssa. App Store, Microsoft Store ja Mac App Store odottavat hyväksyntää. Yksi ostos avaa sen jokaisella omistamallasi alustalla.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - saatavilla nyt</a>
+      <span class="pill">App Store - odottaa hyväksyntää</span>
+      <span class="pill">Microsoft Store - odottaa hyväksyntää</span>
+      <span class="pill">Mac App Store - odottaa hyväksyntää</span>
+    </div>
+    <p style="margin-top:22px"><a href="/fi/guide/">Avaa koko käyttöopas &rarr;</a> &nbsp; &middot; &nbsp; <a href="/fi/pricing/">Katso Ilmainen vs Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/fi/guide/">Käyttöopas</a>
+      <a href="/fi/pricing/">Hinnoittelu</a>
+      <a href="/fi/highlights/">Kohokohdat</a>
+      <a href="/fi/guide/home-automation/">Home Assistant</a>
+      <a href="/fi/help/">Ohje &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/fi/help/#privacy">Tietosuoja</a>
+      <a href="/fi/help/#terms">Ehdot</a>
+    </div>
+<div class="flinks"><a href="/fi/guide/getting-started/">Aloitus</a><a href="/fi/guide/dashboard/">Kojelauta</a><a href="/fi/guide/remote/">Kaukosäädin</a><a href="/fi/guide/picture/">Kuva</a><a href="/fi/guide/lens/">Linssi</a><a href="/fi/guide/scenes/">Kohtaukset</a><a href="/fi/guide/home-assistant-dashboard/">HA-kojelauta</a><a href="/fi/guide/maintenance/">Huolto</a><a href="/fi/guide/settings/">Asetukset</a><a href="/fi/guide/languages/">Kielet</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot on itsenäinen sovellus Epson- ja PJLink-projektoreille. Se ei ole yhteydessä Epsoniin, PJLink-standardointielimeen, Home Assistantiin, Hubitatiin, Appleen, Googleen tai Microsoftiin, eivätkä ne ole hyväksyneet tai tukeneet sitä. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ja Microsoft Store ovat omistajiensa tavaramerkkejä, ja ne mainitaan vain kuvaamaan sitä, minkä kanssa sovellus toimii.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="ro" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Ghid Home Assistant &amp; Hubitat pentru proiector - Projector Pilot</title>
+<meta name="description" content="Conectează proiectorul tău Epson sau PJLink la Home Assistant, Hubitat și webhook-uri. Sincronizează cu HA publică starea live și transformă fiecare Scenă într-un script." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ghid Home Assistant &amp; Hubitat pentru proiector - Projector Pilot" />
+<meta property="og:description" content="Conectează proiectorul tău Epson sau PJLink la Home Assistant, Hubitat și webhook-uri. Sincronizează cu HA publică starea live și transformă fiecare Scenă într-un script." />
+<meta property="og:url" content="https://projectorpilot.com/ro/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ghid Home Assistant &amp; Hubitat pentru proiector - Projector Pilot" />
+<meta name="twitter:description" content="Conectează proiectorul tău Epson sau PJLink la Home Assistant, Hubitat și webhook-uri. Sincronizează cu HA publică starea live și transformă fiecare Scenă într-un script." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Ghid Home Assistant și Hubitat pentru proiector - Projector Pilot", "description": "Conectează proiectorul tău Epson sau PJLink la Home Assistant, Hubitat și webhook-uri. Sincronizează cu HA publică starea live și transformă fiecare Scenă într-un script.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Proiectorul tău, în Home Assistant și Hubitat.", "description": "Conectează proiectorul tău Epson sau PJLink la Home Assistant, Hubitat și webhook-uri. Sincronizează cu HA publică starea live și transformă fiecare Scenă într-un script.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ro", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Automation", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trebuie ca telefonul meu să rămână în rețea pentru ca automatizările Home Assistant să ruleze?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. După ce lipești blocul shell_command în Home Assistant și sincronizezi, Home Assistant trimite comenzile direct la adresa IP a proiectorului. Projector Pilot este doar instrumentul de configurare; după aceea, Home Assistant vorbește singur cu proiectorul, indiferent dacă telefonul tău e acasă sau nu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum apare proiectorul în Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ca senzor, de exemplu sensor.projector_pilot_epson_qb1000b_qb1000w, care conține alimentarea, intrarea, modul de culoare, valorile imaginii și orele lămpii, actualizat ori de câte ori se schimbă, cât timp aplicația este deschisă. Activează Sync Advanced Controls și aplicația scrie în Home Assistant și un script pentru fiecare Scenă, plus alimentare, fiecare intrare, fiecare mod de culoare și fiecare memorie de obiectiv pe care o are proiectorul tău."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Este Home Automation gratuit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Home Automation este un supliment plătit, cu achiziție unică, separat de Projector Pilot Pro. Un pachet le cumpără pe amândouă împreună, cu reducere. Vezi pagina de prețuri."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ro/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă"><a href="/ro/#features">Funcții</a><a href="/ro/guide/">Ghid</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/guide/home-assistant-dashboard/">Tablou HA</a><a href="/ro/help/">Ajutor</a><a class="cta" href="/ro/#download">DESCARCĂ APLICAȚIA</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Automatizare Locuință</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooks</div>
+    <h1>Proiectorul tău, <span class="g">în Home Assistant și Hubitat</span>.</h1>
+    <p>Projector Pilot publică starea live a proiectorului și fiecare comandă în Home Assistant, Hubitat și în orice webhook dorești. Îl configurezi o dată, iar casa ta inteligentă conduce singură proiectorul - fără telefon în rețea, fără cloud la mijloc.</p>
+    <div class="readout"><span>Fără server după configurare</span><span>Scenele devin scripturi</span><span>Tablou de bord gata făcut</span><span>Listă de verificare pentru configurare</span><span>Supliment plătit</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Prezentare generală</div>
+      <h2>Ce face Home Automation</h2>
+      <p class="lead">Home Automation transformă Projector Pilot dintr-o telecomandă din mâna ta într-un dispozitiv pe care îl vede toată casa. Expune ce face proiectorul - alimentare, intrare, mod de culoare, valorile imaginii, orele lămpii - și oferă casei tale inteligente un control pentru tot ce poate schimba aplicația.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Publică starea.</b> Proiectorul apare ca senzor Home Assistant, ca dispozitiv Hubitat sau ca payload JSON pe webhook-ul tău, cu aceleași valori pe care ți le arată aplicația.</li>
+      <li><b>Publică comenzile.</b> Fiecare Scenă salvată, plus alimentarea, fiecare intrare, fiecare mod de culoare și fiecare memorie de obiectiv devine ceva ce o automatizare sau un asistent vocal poate rula.</li>
+      <li><b>Rulează fără server.</b> După ce scripturile sunt configurate, Home Assistant trimite comenzile direct la adresa IP a proiectorului. Telefonul tău nu trebuie să fie în rețea și nimic nu trece printr-un cont în cloud.</li>
+    </ul>
+    <div class="note"><b>Home Automation este un supliment plătit.</b> Este o achiziție unică, separată de Projector Pilot Pro, iar un pachet le cumpără pe amândouă împreună, cu reducere. Fără abonament, fără cont, fără cloud. Vezi <a href="/ro/pricing/">prețurile</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Trei căi de acces, un singur hub</h3>
+        <p class="lead">Settings &rsaquo; Home Automation este hubul. Alege platforma pe care o rulezi - Home Assistant, Hubitat sau Webhooks - și configureaz-o acolo. Poți conecta mai multe deodată; sunt independente.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Hubul Home Automation din Projector Pilot: Home Assistant, Hubitat și Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Configurează Home Assistant</h2>
+      <p class="lead">Conectează-te din aplicație, publică proiectorul ca senzor, lipește un bloc în configurația ta și sincronizează. De atunci, Home Assistant conduce singur proiectorul.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Deschide <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b>.</li>
+        <li>Scrie <b>adresa Home Assistant</b> (de exemplu <code>http://homeassistant.local:8123</code> sau IP-ul lui), apoi atinge <b>Sign in</b>. Este o autentificare în browser pe propria ta instanță - <b>nu ai niciun token de lipit</b>. Folosește autentificarea ta obișnuită Home Assistant, inclusiv autentificarea în doi pași.</li>
+        <li>Aplicația publică proiectorul ca <b>senzor</b>, cu o entitate de forma <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, care conține alimentarea, intrarea, modul de culoare, valorile imaginii și orele lămpii.</li>
+        <li>Activează <b>Trimite starea proiectorului</b>, ca aceste valori să se actualizeze în Home Assistant ori de câte ori se schimbă cât timp aplicația este deschisă, și activează <b>Sync Advanced Controls</b> pentru a publica scripturi pentru moduri de imagine, intrări, memorii de obiectiv și alimentare.</li>
+        <li>Lipește blocul <b>shell_command</b> (de mai jos) în <code>configuration.yaml</code>, repornește Home Assistant, apoi atinge <b>Sincronizează cu HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Ecranul Home Assistant din Projector Pilot, cu blocul shell_command, Sign in, Projector Entity ID și comutatoarele de sincronizare" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Blocul shell_command</h3>
+    <p class="lead">Acesta este tot trucul fără server. Aplicația scrie o comandă pe care Home Assistant o rulează pentru a vorbi cu Web Control al proiectorului, iar fiecare script sincronizat apelează acea comandă cu un alt verb. Atinge <b>Copy block</b> în aplicație și lipește-l în <code>configuration.yaml</code>. Exemplul de mai jos este ilustrativ - aplicația completează adresa și numele de comandă ale proiectorului tău:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Doar exemplu. Aplicația îl generează pe al tău cu IP-ul real al proiectorului și un nume derivat din seria acestuia.</p>
+    <div class="note"><b>De ce fără server.</b> Acel <code>curl</code> rulează pe dispozitivul Home Assistant, nu pe telefonul tău. Home Assistant ajunge direct la IP-ul proiectorului prin Web Control, așa că o automatizare pornește indiferent dacă aplicația este deschisă sau dacă telefonul tău e măcar acasă. Utilizatorul digest <code>EPSONWEB</code> este autentificarea Web Control; aplicația folosește parola Web Control deja salvată pentru proiector.</p></div>
+
+    <h3 style="margin-top:32px">Testează conexiunea, Sincronizează și curățenia</h3>
+    <ul class="plain">
+      <li><b>Testează conexiunea</b> verifică dacă aplicația poate ajunge la Home Assistant și dacă <code>shell_command</code> lipit este într-adevăr acolo, ca să găsești o greșeală de tastare înainte de a construi ceva peste ea.</li>
+      <li><b>Sincronizează cu HA</b> scrie sau actualizează scripturile pentru Scenele și comenzile tale și construiește direct în Home Assistant un tablou de bord Projector Pilot gata făcut. Rulează-l din nou oricând adaugi o Scenă sau schimbi o comandă - se actualizează pe loc, fără să acumuleze duplicate.</li>
+      <li><b>Elimină scripturile orfane</b> găsește scripturile scrise de aplicație care nu mai au o Scenă sau o comandă corespunzătoare - de exemplu după ce ștergi o Scenă - <b>listează exact pe care le va elimina și întreabă mai întâi</b>. Nu se șterge nimic până nu confirmi. Atinge doar scripturile create de Projector Pilot; nimic altceva din Home Assistant nu este deranjat, iar dacă Home Assistant nu își listează scripturile, nu se elimină nimic.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Listă de verificare pentru configurare</div>
+      <h2>Aplicația îți spune ce este făcut și ce lipsește</h2>
+      <p class="lead">Ecranul Home Assistant conține o <b>Listă de verificare pentru configurare</b> și un panou <b>Ce are Home Assistant-ul tău</b>, așa că nu mai ghicești niciodată ce pas a mai rămas. Fiecare rând spune dacă este făcut, lipsește sau nu s-a putut stabili și îți spune ce să faci în continuare.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Conectat la Home Assistant</b> - autentificat și răspunde. Dacă Home Assistant nu răspunde, rândul îți spune să verifici adresa și că telefonul este în aceeași rețea.</li>
+      <li><b>Proiector adăugat în Home Assistant</b> - dacă Home Assistant are deja acest proiector. Dacă nu, rândul te trimite să adaugi integrarea PJLink, iar pasul de adăugare a integrării afișează hostul și portul PJLink pe care le cere Home Assistant.</li>
+      <li><b>Senzorul de valori a fost înregistrat</b> - senzorul care conține valorile proiectorului tău. Se înregistrează prima dată când aplicația citește proiectorul, iar rândul oferă <b>Înregistrează acum</b> sau <b>Activează</b> când ceva îl blochează.</li>
+      <li><b>Ce are Home Assistant-ul tău</b> - HACS (magazinul comunității), integrarea Epson Projector Link, integrarea PJLink și comenzile Projector Pilot din <code>configuration.yaml</code>. Fiecare arată Găsit, Neinstalat sau Nu s-a putut stabili, cu butoanele Cum se instalează și Deschide în HACS acolo unde ajută.</li>
+    </ul>
+    <div class="note"><b>Verifică din nou îți spune ce a găsit.</b> Atinge <b>Verifică din nou</b> după ce repari ceva, iar aplicația citește din nou Home Assistant-ul tău și raportează rezultatul, în loc să te lase să te întrebi dacă a funcționat. Un rând care nu a putut fi verificat spune <i>Nu s-a putut stabili</i>, niciodată un da sau un nu ghicit.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Funcționează cu ce ai deja</div>
+      <h2>Suport pentru integrarea PJLink de bază și carduri mai bogate când le ai</h2>
+      <p class="lead">Projector Pilot află ce are instalat Home Assistant-ul tău și se adaptează. Funcționează cu <b>integrarea PJLink de bază</b> pe care Home Assistant o include deja, așa că un proiector PJLink pe care l-ai adăugat deja acolo este un cetățean de rangul întâi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Mai întâi cardurile încorporate.</b> Dacă nu ai carduri ale comunității, Sincronizarea îți construiește tabloul de bord cu cardurile încorporate ale Home Assistant și spune asta când termină. Funcționează din prima.</li>
+      <li><b>Îmbunătățit când sunt instalate cardurile HACS.</b> Aplicația verifică care dintre cardurile comunității (Mushroom, button-card, card-mod, apexcharts-card) sunt instalate și trece fiecare card pe varianta mai bogată acolo unde o ai. <a href="/ro/guide/home-assistant-dashboard/">Ghidul tabloului construit manual</a> merge mai departe dacă vrei aspectul complet de sticlă verde.</li>
+      <li><b>Scenele și comenzile au nevoie de o singură lipire.</b> Dacă Home Assistant nu are încă o comandă pentru trimiterea către proiector, tabloul de bord este construit oricum, cu valori live, iar un card <b>Finalizează configurarea</b> te ghidează: atinge Copy block, lipește-l în <code>configuration.yaml</code>, repornește Home Assistant, apoi atinge din nou Sincronizează.</li>
+      <li><b>Nu e nimic instalat? Lipește manual.</b> Dacă nu e nimic instalat în Home Assistant, poți copia totul din aplicație și îl poți lipi singur.</li>
+      <li><b>O parolă este semnalată.</b> Blocul de comandă pe care îl lipești spune când conține o parolă de proiector, ca să știi înainte să-l distribui sau să-l stochezi.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cât timp proiectorul este oprit</div>
+      <h2>Valori care rămân la locul lor</h2>
+      <p class="lead">Un proiector în standby raportează foarte puține, așa că un tablou de bord ar rămâne de obicei gol. <b>Senzorul ultimei valori cunoscute</b>, opțional, păstrează în Home Assistant ultimele valori ale proiectorului - intrarea, orele lămpii sau ale laserului - cât timp proiectorul este oprit.</p>
+    </div>
+    <ul class="plain">
+      <li>Este încă un bloc opțional: lipește-l la finalul <code>configuration.yaml</code> (sau adaugă doar liniile lui sub o secțiune <code>template:</code> existentă) și repornește Home Assistant. Aplicația are un buton <b>Verifică dacă există</b> care îți spune dacă Home Assistant îl are.</li>
+      <li>O oprire ajunge acum în Home Assistant ca <b>off</b>, așa că tabloul de bord și automatizările tale văd proiectorul ca oprit când este oprit.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scene ca scripturi</div>
+      <h2>Fiecare Scenă devine un script Home Assistant</h2>
+      <p class="lead">După o sincronizare, Scenele tale nu rămân blocate în aplicație. Fiecare, plus alimentarea, fiecare intrare, fiecare mod de culoare și fiecare memorie de obiectiv pe care o are proiectorul tău, este scrisă ca script Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Automatizările le pot rula.</b> „La apus, dacă TV-ul pornește, rulează Movie Night” este o automatizare Home Assistant obișnuită, odată ce Scena este un script.</li>
+      <li><b>Asistenții vocali le pot rula.</b> Expune un script asistentului tău, iar „pornește Movie Night” setează împreună intrarea, modul de imagine și memoria de obiectiv.</li>
+      <li><b>Apar doar comenzile tale reale.</b> Aplicația scrie un script pentru fiecare intrare, mod de culoare și memorie de obiectiv pe care le raportează proiectorul - nu o listă generică ghicită.</li>
+      <li><b>Oprirea sincronizării elimină doar ce a scris aplicația.</b> Dezactivează sincronizarea sau folosește Elimină scripturile orfane (care le listează și întreabă mai întâi), iar Projector Pilot șterge scripturile create de el și nimic altceva.</li>
+    </ul>
+    <div class="note"><b>Scripturile sunt denumite astfel încât o redenumire să actualizeze același script.</b> Numele scripturilor derivă din proiector și din comandă, așa că re-sincronizarea după ce redenumești o Scenă actualizează scriptul existent, în loc să creeze o a doua copie.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tabloul de bord</div>
+      <h2>Sincronizarea construiește tabloul de bord pentru tine</h2>
+      <p class="lead">Nu trebuie să construiești manual o vizualizare Lovelace și nici măcar să o mai lipești. Când atingi <b>Sincronizează cu HA</b>, aplicația construiește un tablou de bord Projector Pilot complet direct în Home Assistant, prin API-ul acestuia: starea live a proiectorului și un buton pentru fiecare Scenă și comandă sincronizată. Apare în bara laterală Home Assistant ca <b>Projector Pilot</b> - îl deschizi și gata.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Tabloul de bord Projector Pilot în Home Assistant: alimentare și sursă, moduri de culoare, meniul complet al imaginii, HDR și semnal, calibrare RGB, obiectiv și geometrie, grafic al orelor laser, întreținere și Scene - toate ca plăci de sticlă verde" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>O versiune mai bogată, construită manual, a tabloului. Cel construit de Sincronizare conține aceeași stare live și aceleași butoane în carduri Home Assistant standard; aspectul de sticlă verde de mai jos este construcția personalizată opțională. Derulează sau fă clic pentru a mări.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Conectează-te la Home Assistant în aplicație.</li>
+      <li>Lipește <b>Copy block</b> al aplicației în <code>configuration.yaml</code> o singură dată și repornește Home Assistant (singurul pas manual - Home Assistant nu permite aplicațiilor să adauge de la distanță acea comandă).</li>
+      <li>Atinge <b>Sincronizează cu HA</b>. Tabloul de bord este construit pentru tine și apare în bara laterală ca <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Preferi să-l lipești singur?</b> <b>Copiază dashboardul</b> este în continuare pe ecranul Home Assistant. Atinge-l, apoi în Home Assistant mergi la <b>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard</b>, creează un tablou gol, deschide meniul lui cu trei puncte &rsaquo; <b>Edit dashboard</b> &rsaquo; meniul cu trei puncte &rsaquo; <b>Raw configuration editor</b> și lipește YAML-ul copiat.</div>
+    <p class="lead">Fie că este construit pentru tine, fie că îl lipești, tabloul de bord este același - un card de stare plus un buton pentru fiecare comandă (fragment ilustrativ):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Doar exemplu. Tabloul tău de bord conține entitatea reală a proiectorului tău și propriile tale Scene.</p>
+    <div class="note"><b>Independent de model.</b> Tabloul de bord este construit din capabilitățile <i>proiectorului tău</i> - entitatea, valorile imaginii, intrările, modurile de culoare, memoriile de obiectiv și Scenele pe care le-a raportat efectiv. Capturile de ecran de aici sunt de la un QB1000; modelul tău poate arăta alte intrări, comenzi și valori. Pentru un tablou complet în stil sticlă verde, ca cel din imagine, urmează <a href="/ro/guide/home-assistant-dashboard/">ghidul pas cu pas al tabloului de bord</a> sau <a href="/ro/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>descarcă vizualizarea completă</a> și schimbă două șiruri de text.</div>
+    <div class="note"><b>Vrei un perete mai bogat?</b> Aceleași scripturi conduc orice carduri dorești. Dacă ai folosit AVR Maestro, abordarea este identică - construiește plăci luminate pentru sursă și mod, antete live și istoric dintr-un singur senzor și din scripturile sincronizate.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Configurează Hubitat</h2>
+      <p class="lead">Pe Hubitat, Projector Pilot oglindește proiectorul pe un dispozitiv din hubul tău prin Maker API, ca Rule Machine să poată citi și acționa asupra alimentării, mute-ului și intrării.</p>
+    </div>
+    <ol class="steps">
+      <li>În Hubitat, activează aplicația <b>Maker API</b>, notează URL-ul de acces și tokenul și alege ce dispozitive expune.</li>
+      <li>În Projector Pilot, deschide <b>Settings &rsaquo; Home Automation &rsaquo; Hubitat</b> și introdu detaliile <b>Maker API</b> ale hubului tău.</li>
+      <li>Alege <b>dispozitivul care reprezintă proiectorul</b>. Aplicația îl sugerează pe cel probabil; alege-l sau selectează-l pe al tău.</li>
+      <li>Aplicația <b>oglindește alimentarea, mute-ul și intrarea</b> pe acel dispozitiv, trimițând doar comenzile pe care dispozitivul le acceptă.</li>
+      <li>Construiește reguli <b>Rule Machine</b> pentru acel dispozitiv așa cum ai face pentru oricare altul - starea proiectorului le conduce.</li>
+    </ol>
+    <div class="note"><b>Doar ce acceptă dispozitivul.</b> Aplicația trimite o valoare a proiectorului către Hubitat doar când dispozitivul ales suportă acea comandă, așa că nu trimite niciodată ceva ce dispozitivul ar respinge.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooks</div>
+      <h2>Configurează Webhooks</h2>
+      <p class="lead">Webhook-urile sunt soluția universală. Aplicația trimite un POST către un URL al tău când proiectorul pornește, se oprește, schimbă intrarea sau reapelează o Scenă - un webhook Home Assistant, Node-RED, IFTTT sau orice acceptă JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Deschide <b>Settings &rsaquo; Home Automation &rsaquo; Webhooks</b>.</li>
+      <li>Introdu <b>URL-ul</b> către care se trimite. Un webhook Home Assistant arată ca <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Alege ce <b>evenimente</b> declanșează webhook-ul: pornire, oprire, schimbarea intrării, reapelarea unei Scene - și, opțional, filtrează după o anumită intrare sau Scenă.</li>
+      <li>Opțional, setează un <b>payload personalizat</b> dacă serviciul receptor vrea o anumită structură; altfel aplicația trimite JSON-ul ei implicit.</li>
+      <li>Salvează. De atunci, aplicația trimite la fiecare eveniment potrivit.</li>
+    </ol>
+    <p class="lead">Payload-ul implicit este JSON simplu - un eveniment, proiectorul și valoarea care s-a schimbat:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Payload exemplu. Un eveniment de schimbare a intrării sau de alimentare conține câmpurile relevante pentru el.</p>
+    <div class="note"><b>Reconectarea le repară pe toate.</b> Dacă reconectezi Home Assistant la o adresă nouă, aplicația actualizează dintr-odată toate webhook-urile care îl vizează, așa că mutarea instanței nu înseamnă să editezi fiecare webhook manual.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Depanare</h2>
+    </div>
+    <details class="more"><summary>Autentificarea te aruncă înapoi la pagina de conectare</summary>
+      <p>Asigură-te că adresa introdusă este cea la care ajungi de fapt la Home Assistant, inclusiv portul (de obicei <code>:8123</code>). Autentificarea este o conectare reală în browser pe instanța ta, așa că se aplică numele de utilizator, parola și codul de autentificare în doi pași. Pe telefon, autentificarea se finalizează fie că browserul din aplicație returnează rezultatul, fie că apelul local ajunge primul; dacă tot se blochează, închide fereastra și atinge din nou Sign in.</p>
+    </details>
+    <details class="more"><summary>Senzorul proiectorului nu apare în Home Assistant</summary>
+      <p>Senzorul este publicat cât timp aplicația este deschisă și <b>Trimite starea proiectorului</b> este activat, așa că deschide aplicația și confirmă acel comutator. Apoi verifică <b>Developer Tools &rsaquo; States</b> în Home Assistant și filtrează după <code>projector_pilot</code>. Un proiector în standby publică foarte puține; trezește-l și valorile se completează.</p>
+    </details>
+    <details class="more"><summary>Scripturile sincronizate lipsesc</summary>
+      <p>Scripturile sunt scrise de <b>Sincronizează cu HA</b>, care are nevoie ca blocul <code>shell_command</code> să fie deja lipit în <code>configuration.yaml</code> și Home Assistant repornit o dată. Rulează mai întâi <b>Testează conexiunea</b> - îți spune dacă blocul este prezent. Apoi Sincronizează din nou. Dacă scripturi vechi, moarte, aglomerează lista, folosește <b>Elimină scripturile orfane</b>.</p>
+    </details>
+    <details class="more"><summary>Un script rulează în aplicație, dar nu din Home Assistant când telefonul meu e plecat</summary>
+      <p>Exact despre asta este blocul <code>shell_command</code> - el permite Home Assistant să ajungă singur la IP-ul proiectorului. Dacă funcționează doar cu aplicația deschisă, probabil blocul nu e lipit sau Home Assistant nu a fost repornit după lipire. Confirmă cu Testează conexiunea, repornește Home Assistant și Sincronizează.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Conectează-ți proiectorul la întreaga casă</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation este un supliment cumpărat o singură dată. Fără abonament, fără cont, fără cloud. O singură achiziție îl deblochează pe toate platformele pe care le ai.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - disponibil acum</a>
+      <span class="pill">App Store - în așteptarea aprobării</span>
+      <span class="pill">Microsoft Store - în așteptarea aprobării</span>
+      <span class="pill">Mac App Store - în așteptarea aprobării</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/ro/pricing/">Vezi Free vs Pro vs Home Automation &rarr;</a> &middot; <a href="/ro/guide/">Ghidul complet de utilizare &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Răspunsuri rapide</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Trebuie ca telefonul meu să rămână în rețea pentru ca automatizările Home Assistant să ruleze?</h3><p>Nu. După ce lipești blocul shell_command în Home Assistant și sincronizezi, Home Assistant trimite comenzile direct la adresa IP a proiectorului. Projector Pilot este doar instrumentul de configurare; după aceea, Home Assistant vorbește singur cu proiectorul, indiferent dacă telefonul tău e acasă sau nu.</p></div><div class="gcard"><h3>Cum apare proiectorul în Home Assistant?</h3><p>Ca senzor, de exemplu sensor.projector_pilot_epson_qb1000b_qb1000w, care conține alimentarea, intrarea, modul de culoare, valorile imaginii și orele lămpii, actualizat ori de câte ori se schimbă, cât timp aplicația este deschisă. Activează Sync Advanced Controls și aplicația scrie în Home Assistant și un script pentru fiecare Scenă, plus alimentare, fiecare intrare, fiecare mod de culoare și fiecare memorie de obiectiv pe care o are proiectorul tău.</p></div><div class="gcard"><h3>Este Home Automation gratuit?</h3><p>Home Automation este un supliment plătit, cu achiziție unică, separat de Projector Pilot Pro. Un pachet le cumpără pe amândouă împreună, cu reducere. Vezi pagina de prețuri.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/help/">Ajutor &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ro/help/#privacy">Confidențialitate</a><a href="/ro/help/#terms">Termeni</a></div>
+<div class="flinks"><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/guide/dashboard/">Tablou de bord</a><a href="/ro/guide/remote/">Telecomandă</a><a href="/ro/guide/picture/">Imagine</a><a href="/ro/guide/lens/">Obiectiv</a><a href="/ro/guide/scenes/">Scene</a><a href="/ro/guide/home-assistant-dashboard/">Tablou HA</a><a href="/ro/guide/maintenance/">Întreținere</a><a href="/ro/guide/settings/">Setări</a><a href="/ro/guide/languages/">Limbi</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot este o aplicație independentă pentru proiectoare Epson și PJLink. Nu este afiliată, susținută sau sponsorizată de Epson, de organismul de standardizare PJLink, de Home Assistant, Hubitat, Apple, Google sau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play și Microsoft Store sunt mărci comerciale ale deținătorilor lor respectivi, menționate doar pentru a descrie cu ce funcționează aplicația.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

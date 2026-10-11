@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>控制 Epson &amp; PJLink 投影机的应用 - Projector Pilot</title>
+<meta name="description" content="Projector Pilot 是适用于 Epson 和 PJLink 投影机的应用：电源、信号源、画面、电动镜头、一键场景和 Home Assistant。无需订阅。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hans/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="控制 Epson &amp; PJLink 投影机的应用 - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot 是适用于 Epson 和 PJLink 投影机的应用：电源、信号源、画面、电动镜头、一键场景和 Home Assistant。无需订阅。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hans/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="控制 Epson &amp; PJLink 投影机的应用 - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot 是适用于 Epson 和 PJLink 投影机的应用：电源、信号源、画面、电动镜头、一键场景和 Home Assistant。无需订阅。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hans", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "控制 Epson 与 PJLink 投影机的应用 - Projector Pilot", "description": "Projector Pilot 是适用于 Epson 和 PJLink 投影机的应用：电源、信号源、画面、电动镜头、一键场景和 Home Assistant。无需订阅。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hans", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "适用于 Epson 和 PJLink 投影机的独立应用：电源、信号源、完整的画面与色彩控制、电动镜头位移、对焦、变焦与记忆、一键场景、Home Assistant、Hubitat 与 Webhook 自动化、维护统计和主屏幕小组件，支持 29 种语言。", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "免费", "price": "0", "priceCurrency": "USD", "description": "添加投影机、电源、信号源切换、实时状态和屏幕遥控器基础功能。"}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "一次性应用内购买。此为参考价格；商店会显示您所在地区的价格。"}, {"@type": "Offer", "name": "家庭自动化附加组件", "price": "2.99", "priceCurrency": "USD", "description": "一次性应用内购买。此为参考价格；商店会显示您所在地区的价格。"}, {"@type": "Offer", "name": "Pro + 家庭自动化捆绑包", "price": "11.99", "priceCurrency": "USD", "description": "一次性应用内购买。此为参考价格；商店会显示您所在地区的价格。"}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Projector Pilot 是 Epson 开发的吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。Projector Pilot 是 MiyaraHub Technologies LLC 开发的独立应用，与 Epson、PJLink 标准机构、Home Assistant 或 Hubitat 没有任何关联，也未获得其认可或赞助。这些名称是其各自所有者的商标，在此出现仅用于说明本应用适用于哪些投影机和智能家居系统。"}}, {"@type": "Question", "name": "Projector Pilot 支持哪些投影机？", "acceptedAnswer": {"@type": "Answer", "text": "支持通过 ESC/VP21 和 Web Control 连接的 Epson 投影机，以及任何 PJLink 投影机。应用会使用投影机有响应的任何方式，所以只支持 PJLink 的投影机也是普通的受支持设备。"}}, {"@type": "Question", "name": "Projector Pilot 是订阅制吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。基础控制免费，Pro、家庭自动化和捆绑包均为一次性购买。没有订阅，没有广告。"}}, {"@type": "Question", "name": "Projector Pilot 需要账号或云端吗？", "acceptedAnswer": {"@type": "Answer", "text": "没有账号，也没有云端。应用直接在您自己的网络中与投影机通信。"}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="#features">功能</a>
+      <a href="/zh-hans/guide/">指南</a>
+      <a href="/zh-hans/pricing/">价格</a>
+      <a href="/zh-hans/highlights/">亮点</a>
+      <a href="/zh-hans/guide/home-automation/">Home Assistant</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a class="cta" href="#download">获取 APP</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Epson &amp; PJLink 投影机</div>
+      <h1>您的 <span class="g">Epson 投影机</span>一直应该拥有的控制应用。</h1>
+      <p>电源、信号源、完整的画面菜单、电动镜头位移、对焦与变焦、一键场景，以及真正的家庭自动化，适用于 Epson 和 PJLink 投影机，直接在手机上操作。没有广告，没有订阅，不需要云账号。</p>
+      <div class="pills">
+        <span class="pill">29 种语言</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">一次性购买</span>
+        <span class="pill">在您的网络中运行</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">前往 Google Play 获取 &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="手机上的 Projector Pilot 仪表盘，显示 Epson 投影机的实时电源、信号源和色彩模式" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">功能</div>
+      <h2>投影机提供的每一项控制，尽在一款简洁的应用中。</h2>
+      <p class="lead">Projector Pilot 同时通过 ESC/VP21、PJLink 和 Epson Web Control 与投影机通信，哪个有响应就用哪个，因此您获得的电源、画面、几何校正和镜头控制真正好用，所有数值都读回自投影机，绝不猜测。</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Projector Pilot 仪表盘，显示实时状态、投影信息以及画面和镜头摘要" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">仪表盘</div>
+        <h3>一切尽收眼底，按您的喜好打造。</h3>
+        <ul>
+          <li><b>实时状态</b>：电源、信号源、色彩模式、光源使用时间、信号和画面数值，随变化即时更新。</li>
+          <li>顶部即可<b>一键切换电源和信号源</b>，电源按钮还能感知预热和冷却。</li>
+          <li><b>可自定义的卡片</b>：添加、隐藏和重新排列卡片，让仪表盘显示您关心的内容。</li>
+          <li><b>投影信息</b>：动态范围、色彩空间、伽玛、激光使用时间、序列号和安装方式，读取自投影机。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Projector Pilot 遥控器界面，显示导航方向键、菜单、信号源和画面遮蔽" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Projector Pilot 画面界面，显示亮度、对比度、色温和伽玛" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">遥控器 &amp; 画面</div>
+        <h3>深度遥控器和完整的画面菜单。</h3>
+        <ul>
+          <li><b>完整的导航方向键</b>、菜单、信号源和画面遮蔽：把屏幕遥控器做到位。</li>
+          <li><b>校正方式</b>：水平／垂直梯形校正、快速角点校正、点校正、曲面校正和墙角校正。</li>
+          <li><b>完整的画面控制</b>：亮度、对比度、色调、锐度、色温、伽玛、HDR 以及深层画面菜单，每项都使用投影机自己的刻度。</li>
+          <li><b>HDR 与色彩空间是分开的</b>：BT.2020 SDR 信号会如实显示为 BT.2020 SDR，绝不会被错误标成 HDR。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Projector Pilot 镜头界面，显示位移方向键、对焦、变焦和步长选择器" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">镜头</div>
+        <h3>电动镜头位移、对焦、变焦与记忆。</h3>
+        <ul>
+          <li>通过精确的方向键进行<b>位移、对焦和变焦</b>，<b>步长由您选择</b>：精细用于取景，粗略用于大幅移动。</li>
+          <li><b>镜头记忆</b>：调用和保存投影机支持的位置。</li>
+          <li><b>感知安装方向</b>：应用遵循投影机自己的映射，无论是吊装还是背投，向上始终是向上。</li>
+          <li><b>如实的读数</b>：投影机无法确认的位置，绝不会被伪装成已锁定。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Projector Pilot 场景标签页，显示已保存的一键场景" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">场景</div>
+        <h3>整个房间，一键搞定。</h3>
+        <ul>
+          <li><b>保存场景</b>：电源、信号源、画面、信号、光源、几何校正和音频，并精确选择要保留的部分。</li>
+          <li><b>一键应用</b>：“观影之夜”会一并设置信号源、画面模式和镜头记忆。</li>
+          <li><b>每个场景都会变成 Home Assistant 脚本</b>，所以自动化或语音助手也能运行它。</li>
+          <li><b>可分享的配置</b>：导出调校好的场景，交给朋友。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Projector Pilot 家庭自动化中心，包含 Home Assistant、Hubitat 和 Webhook" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Projector Pilot 的 Home Assistant 设置界面，显示登录和同步开关" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">家庭自动化</div>
+        <h3>Home Assistant、Hubitat 和 Webhook，货真价实。</h3>
+        <ul>
+          <li><b>Home Assistant</b>：登录，把投影机的状态发布为传感器，然后轻点<b>与 HA 同步</b>，即可为每个场景和控件获得一个脚本。</li>
+          <li><b>为您构建的仪表盘</b>：同步会在 Home Assistant 中使用内置卡片构建，并在您安装了更丰富的 HACS 卡片时自动升级。它同样适用于核心 PJLink 集成。</li>
+          <li><b>设置清单</b>会显示哪些已完成、哪些缺失以及下一步该做什么，投影机关机期间，您的读数也会保留在 Home Assistant 中。</li>
+          <li><b>Hubitat</b>：通过 Maker API 把投影机镜像到一台设备上，这样 Rule Machine 就能据此执行操作。</li>
+          <li><b>Webhook</b>：当投影机开机、关机、切换信号源或调用场景时，向任意 URL 发送请求。</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/zh-hans/guide/home-automation/">阅读完整的 Home Assistant 指南 &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">更多功能</div>
+      <h2>让它显得完成度十足的细节。</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>随处切换投影机</h3><p>每个投影机页面顶栏中的投影机切换器，让您无需返回列表就能在多台投影机之间切换。</p></div>
+      <div class="gcard"><h3>关机前先确认</h3><p>关闭投影机时会请您确认，避免误触而中断电影。</p></div>
+      <div class="gcard"><h3>即时响应的控件</h3><p>镜头位移、对焦、变焦和光输出步进器在您按下的瞬间就会移动，应用也能在大约十秒内发现投影机已开机。</p></div>
+      <div class="gcard"><h3>固件一目了然</h3><p>只要投影机上报，它的固件版本就会显示在仪表盘和信息标签页中，也会出现在诊断报告里。</p></div>
+      <div class="gcard"><h3>只支持 PJLink 的投影机也能切换信号源</h3><p>对于只通过 PJLink 列出信号源的投影机（如 TW7300 和 Home Cinema 4040），信号源切换同样可用，非 Epson 的 PJLink 投影机也可以。</p></div>
+      <div class="gcard"><h3>在 Wi-Fi 中找到您的投影机</h3><p>“添加投影机”会扫描您的网络，查找所有以投影机身份响应的设备并填入地址，在检测您机型的功能期间还会显示进度条。</p></div>
+      <div class="gcard"><h3>备份与恢复</h3><p>将应用设置导出为文件，再导入回来。文件会以其真实名称分享，已保存的投影机和密码绝不会包含在内。</p></div>
+      <div class="gcard"><h3>一步报告问题</h3><p>“报告问题”会生成一个包含所有相关日志的压缩包，可直接发送。</p></div>
+      <div class="gcard"><h3>29 种语言</h3><p>英语加另外 28 种语言，包括 iPhone、iPad 和 Mac 上的权限提示。请查看<a href="/zh-hans/guide/languages/">语言列表</a>。</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/zh-hans/highlights/">查看所有新功能 &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">四处看看</div>
+      <h2>为了像是投影机的一部分而打造。</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Projector Pilot 仪表盘，显示实时状态、投影信息以及画面和镜头摘要" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>仪表盘</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Projector Pilot 遥控器界面，显示导航方向键、菜单、信号源和画面遮蔽" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>遥控</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Projector Pilot 镜头界面，显示位移方向键、对焦、变焦和步长选择器" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>镜头</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Projector Pilot 的 Home Assistant 设置界面，显示登录和同步开关" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>大家最先会问的问题</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot 是 Epson 开发的吗？</h3><p>不是。Projector Pilot 是 MiyaraHub Technologies LLC 开发的独立应用，与 Epson、PJLink 标准机构、Home Assistant 或 Hubitat 没有任何关联，也未获得其认可或赞助。这些名称是其各自所有者的商标，在此出现仅用于说明本应用适用于哪些投影机和智能家居系统。</p></div><div class="gcard"><h3>Projector Pilot 支持哪些投影机？</h3><p>支持通过 ESC/VP21 和 Web Control 连接的 Epson 投影机，以及任何 PJLink 投影机。应用会使用投影机有响应的任何方式，所以只支持 PJLink 的投影机也是普通的受支持设备。</p></div><div class="gcard"><h3>Projector Pilot 是订阅制吗？</h3><p>不是。基础控制免费，Pro、家庭自动化和捆绑包均为一次性购买。没有订阅，没有广告。</p></div><div class="gcard"><h3>Projector Pilot 需要账号或云端吗？</h3><p>没有账号，也没有云端。应用直接在您自己的网络中与投影机通信。</p></div></div>
+    <p style="margin-top:22px"><a href="/zh-hans/help/">更多解答请见帮助 &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">获取应用</div>
+      <h2>已在 Google Play 上架，更多应用商店即将推出。</h2>
+      <p class="lead">Projector Pilot 现已在 Google Play 上架。App Store、Microsoft Store 和 Mac App Store 正在等待审核。一次购买，即可在您拥有的所有平台上解锁。</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - 现已上架</a>
+      <span class="pill">App Store - 等待审核</span>
+      <span class="pill">Microsoft Store - 等待审核</span>
+      <span class="pill">Mac App Store - 等待审核</span>
+    </div>
+    <p style="margin-top:22px"><a href="/zh-hans/guide/">打开完整用户指南 &rarr;</a> &nbsp; &middot; &nbsp; <a href="/zh-hans/pricing/">查看免费版与 Pro 的区别 &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/zh-hans/guide/">用户指南</a>
+      <a href="/zh-hans/pricing/">价格</a>
+      <a href="/zh-hans/highlights/">亮点</a>
+      <a href="/zh-hans/guide/home-automation/">Home Assistant</a>
+      <a href="/zh-hans/help/">帮助 &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/zh-hans/help/#privacy">隐私</a>
+      <a href="/zh-hans/help/#terms">条款</a>
+    </div>
+<div class="flinks"><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/guide/dashboard/">仪表盘</a><a href="/zh-hans/guide/remote/">遥控器</a><a href="/zh-hans/guide/picture/">画面</a><a href="/zh-hans/guide/lens/">镜头</a><a href="/zh-hans/guide/scenes/">场景</a><a href="/zh-hans/guide/home-assistant-dashboard/">HA 仪表盘</a><a href="/zh-hans/guide/maintenance/">维护</a><a href="/zh-hans/guide/settings/">设置</a><a href="/zh-hans/guide/languages/">语言</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是面向 Epson 和 PJLink 投影机的独立应用，与 Epson、PJLink 标准机构、Home Assistant、Hubitat、Apple、Google 或 Microsoft 没有任何关联，也未获得其认可或赞助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 和 Microsoft Store 是其各自所有者的商标，在此仅用于说明本应用的适用对象。</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

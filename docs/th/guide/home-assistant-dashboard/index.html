@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="th" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>แดชบอร์ดโปรเจกเตอร์ Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant แบบกำหนดเองทีละขั้นตอน: การ์ด HACS ที่ต้องติดตั้ง ID เอนทิตีและซีเรียลของคุณ และ YAML พร้อมคัดลอกสำหรับทุกการ์ด" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="แดชบอร์ดโปรเจกเตอร์ Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant แบบกำหนดเองทีละขั้นตอน: การ์ด HACS ที่ต้องติดตั้ง ID เอนทิตีและซีเรียลของคุณ และ YAML พร้อมคัดลอกสำหรับทุกการ์ด" />
+<meta property="og:url" content="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="แดชบอร์ดโปรเจกเตอร์ Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant แบบกำหนดเองทีละขั้นตอน: การ์ด HACS ที่ต้องติดตั้ง ID เอนทิตีและซีเรียลของคุณ และ YAML พร้อมคัดลอกสำหรับทุกการ์ด" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "แดชบอร์ดโปรเจกเตอร์ Home Assistant (YAML) - Projector Pilot", "description": "สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant แบบกำหนดเองทีละขั้นตอน: การ์ด HACS ที่ต้องติดตั้ง ID เอนทิตีและซีเรียลของคุณ และ YAML พร้อมคัดลอกสำหรับทุกการ์ด", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant ในเวลาประมาณหนึ่งชั่วโมง", "description": "สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant แบบกำหนดเองทีละขั้นตอน: การ์ด HACS ที่ต้องติดตั้ง ID เอนทิตีและซีเรียลของคุณ และ YAML พร้อมคัดลอกสำหรับทุกการ์ด", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "th", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "แดชบอร์ด Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ฉันต้องสร้างแดชบอร์ดนี้เองด้วยมือหรือเปล่า",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ต้อง เมื่อคุณแตะซิงค์กับ HA ในแอป แอปจะสร้างแดชบอร์ด Projector Pilot สำเร็จรูปให้ใน Home Assistant โดยตรง ประกอบด้วยเซนเซอร์โปรเจกเตอร์แบบสดและปุ่มสำหรับทุกตัวควบคุมและฉาก และจะปรากฏในแถบด้านข้างของคุณในชื่อ Projector Pilot เมื่อคุณติดตั้งการ์ดจากชุมชนแล้ว การซิงค์จะอัปเกรดการ์ดเป็นแบบนั้นให้อัตโนมัติ ส่วนหน้านี้สำหรับสร้างเวอร์ชันกระจกสีเขียวที่หรูกว่าด้วยมือ หรือปรับแต่งสิ่งที่การซิงค์สร้างไว้"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ต้องใช้การ์ดกำหนดเองจาก HACS เพื่อสร้างสิ่งนี้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ถ้าอยากให้หน้าตาเหมือนในภาพหน้าจอ ต้องใช้: Mushroom, button-card, card-mod และ mini-graph-card แต่ไม่มีตัวไหนจำเป็นต่อการทำงานของตัวควบคุมพื้นฐานเลย ทุกปุ่มเป็นการเรียกสคริปต์ธรรมดา ส่วนการ์ดแบบกำหนดเองเป็นแค่การตกแต่งด้านบน"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไมไทล์ข้อมูลแสดงค่าได้ แต่ปุ่มไม่ทำงาน",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เซนเซอร์โปรเจกเตอร์เผยแพร่ค่าที่อ่านได้ทันทีที่คุณเข้าสู่ระบบและซิงค์ในแอป ไทล์ข้อมูลจึงแสดงค่าสดทันที ส่วนปุ่มควบคุมและปุ่มฉากเรียกสคริปต์ที่จะมีอยู่ใน Home Assistant ก็ต่อเมื่อคุณวางบล็อกคัดลอกของแอปลงใน configuration.yaml รีสตาร์ท Home Assistant และแตะซิงค์กับ HA หนึ่งครั้งแล้วเท่านั้น"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Entity ID ของฉันจะตรงกับในคู่มือนี้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "รูปแบบจะเหมือนกัน แต่ตัวอักษรจริงจะไม่เหมือน เซนเซอร์โปรเจกเตอร์ของคุณตั้งชื่อตามรุ่นของโปรเจกเตอร์ และทุกสคริปต์ตั้งชื่อตามซีเรียลของโปรเจกเตอร์ ในหน้านี้ ที่ใดเขียนว่า YOUR_PROJECTOR ให้ใส่ ID เอนทิตีของเซนเซอร์ของคุณเอง และที่ใดเขียนว่า YOURSERIAL ให้ใส่ ID ที่มาจากซีเรียลซึ่งแสดงในหน้าจอ Home Assistant ของแอป"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/th/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา"><a href="/th/#features">ฟีเจอร์</a><a href="/th/guide/">คู่มือ</a><a href="/th/pricing/">ราคา</a><a href="/th/highlights/">จุดเด่น</a><a href="/th/guide/home-automation/">Home Assistant</a><a href="/th/help/">ช่วยเหลือ</a><a class="cta" href="/th/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; แดชบอร์ด Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; ทีละขั้นตอน</div>
+    <h1>สร้างแดชบอร์ดโปรเจกเตอร์ Home Assistant <span class="g">ในเวลาประมาณหนึ่งชั่วโมง</span></h1>
+    <p>แอปสร้างแดชบอร์ดที่ใช้งานได้ให้คุณอยู่แล้วเมื่อคุณซิงค์ หน้านี้คือเวอร์ชันสร้างเองสุดหรู สิบขั้นตอน YAML ของทุกการ์ด และมุมมองสมบูรณ์ที่วางได้ในครั้งเดียว ไทล์กระจกสีเขียว ค่าภาพแบบสด ฉากของคุณ และกราฟชั่วโมงเลเซอร์ ทั้งหมดจากเซนเซอร์โปรเจกเตอร์ตัวเดียว แก้แค่สองสตริงก็เป็นของคุณ</p>
+    <div class="readout"><span>ซิงค์สร้างให้ฟรี</span><span>การ์ด HACS 4 ใบเพื่อลุคที่ใช่</span><span>ไทล์ข้อมูลสดทันที</span><span>ปุ่มใช้งานได้หลังวางครั้งเดียว</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="แดชบอร์ด Projector Pilot ที่เสร็จสมบูรณ์ใน Home Assistant: เปิดปิดและแหล่งสัญญาณ โหมดสี เมนูภาพแบบเต็ม HDR และสัญญาณ การคาลิเบรต RGB เลนส์และรูปทรง การบำรุงรักษาพร้อมกราฟชั่วโมงเลเซอร์ และฉาก ทั้งหมดเป็นไทล์กระจกสีเขียว" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>สิ่งที่คุณกำลังจะสร้าง เลื่อนดู หรือคลิกเพื่อขยาย</figcaption>
+    </figure>
+    <div class="note"><b>แค่อยากได้บอร์ดที่ใช้งานได้ใช่ไหม คุณมีอยู่แล้ว</b> แตะ <b>ซิงค์กับ HA</b> ในแอป แล้วแอปจะสร้างแดชบอร์ด Projector Pilot สำเร็จรูปให้ในแถบด้านข้างของ Home Assistant พร้อมทุกตัวควบคุมและเซนเซอร์สด ไม่ต้องมีการ์ด ไม่ต้องเขียน YAML ไม่ต้องวาง ดู<a href="/th/guide/home-automation/#dashboard">ซิงค์สร้างแดชบอร์ดให้คุณ</a> หน้านี้สำหรับสร้างเวอร์ชันกระจกสีเขียวที่หรูกว่าด้วยมือ หรือปรับแต่งสิ่งที่การซิงค์ให้คุณ</div>
+    <div class="note"><b>รีบอยากได้ลุคแบบกำหนดเอง?</b> ข้ามไป<a href="#whole">ขั้นตอนที่ 10</a> ดาวน์โหลดมุมมองสมบูรณ์ แก้สองสตริงกับ ID ฉากทั้งสามตัว แล้ววางได้เลย ขั้นตอนระหว่างทางอธิบายว่าแต่ละส่วนทำอะไร เพื่อให้คุณแก้ไขได้</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>ก่อนเริ่มต้น</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot เชื่อมโยงกับ Home Assistant แล้ว</b> <a href="/th/guide/home-automation/">คู่มือการตั้งค่า</a>ครอบคลุมการเข้าสู่ระบบและการเปิด<b>ส่งสถานะของโปรเจกเตอร์</b> คุณควรเห็นโปรเจกเตอร์เป็นเซนเซอร์ใน Home Assistant ก่อนจะสร้างอะไรทับลงไป</li>
+      <li><b>คุณซิงค์อย่างน้อยหนึ่งครั้งแล้ว</b> การตั้งค่า &rsaquo; ระบบอัตโนมัติในบ้าน &rsaquo; Home Assistant &rsaquo; <b>ซิงค์กับ HA</b> หลังจากวาง<b>บล็อกคัดลอก</b>ของแอปลงใน <code>configuration.yaml</code> และรีสตาร์ท Home Assistant แล้ว ขั้นตอนนี้คือสิ่งที่สร้างสคริปต์ซึ่งปุ่มควบคุมทุกปุ่มด้านล่างเรียกใช้</li>
+      <li><b>เปิดโปรเจกเตอร์ไว้</b> ระหว่างที่สร้าง แอตทริบิวต์ภาพด้านล่างคือสิ่งที่โปรเจกเตอร์ในโหมดสแตนด์บายมักปล่อยว่างไว้</li>
+    </ul>
+    <p class="lead">แดชบอร์ดนี้ได้ข้อมูลจากสองแหล่ง และความแตกต่างนี้สำคัญในทุกขั้นตอนต่อจากนี้</p>
+    <table class="t">
+      <thead><tr><th>มาจาก</th><th>ให้คุณได้</th></tr></thead>
+      <tbody>
+        <tr><td>เซนเซอร์โปรเจกเตอร์ <code>sensor.YOUR_PROJECTOR</code></td><td>ทุก<b>ค่าที่อ่านได้</b> เปิดปิด อินพุต โหมดสี ตัวเลขภาพทั้งหมด HDR และสัญญาณ เลนส์และรูปทรง ชั่วโมงหลอดภาพ เป็นค่าสดทันทีที่คุณเข้าสู่ระบบและซิงค์ ไม่ต้องใช้บล็อกคัดลอก</td></tr>
+        <tr><td>สคริปต์ที่ซิงค์จากแอป <code>script.projpilot_YOURSERIAL_...</code></td><td>ทุก<b>ตัวควบคุม</b> เปิดปิด อินพุต โหมดสี หน่วยความจำเลนส์ และฉากของคุณ สิ่งเหล่านี้จะมีก็ต่อเมื่อวางบล็อกคัดลอก รีสตาร์ท Home Assistant และแตะซิงค์กับ HA แล้วเท่านั้น</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 1</div>
+      <h2>ติดตั้งการ์ดสี่ตัวจาก HACS</h2>
+    </div>
+    <p class="lead">ทั้งสี่ตัวอยู่ในร้านค้าเริ่มต้นของ HACS ใน Home Assistant ให้ไปที่ <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b> ค้นหาชื่อ กด Download แล้วรีโหลดเบราว์เซอร์</p>
+    <table class="t">
+      <thead><tr><th>ค้นหาว่า</th><th>ใช้สำหรับ</th><th>ถ้าข้ามไป</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>ทุกไทล์ข้อมูล ปุ่มควบคุม และไทล์ฉาก</td><td>ใช้การ์ด <code>button</code> ธรรมดาแทน ใช้งานได้ แต่ดูเหลี่ยมกว่า</td></tr>
+        <tr><td><b>button-card</b></td><td>ส่วนหลักพร้อมป้ายสถานะสด</td><td>ใช้การ์ด <code>entity</code> หรือการ์ดเทมเพลตของ Mushroom ที่มีรายละเอียดน้อยกว่า</td></tr>
+        <tr><td><b>card-mod</b></td><td>พื้นหลังกระจกสีเขียว เส้นขอบ และการไล่สี</td><td>ทุกอย่างยังทำงานได้ แค่ไม่มีแสงเรืองรอง</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>ประวัติชั่วโมงเลเซอร์ในส่วนการบำรุงรักษา</td><td>ใช้การ์ด <code>history-graph</code> ที่มีมาในตัว</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>ไม่มีตัวไหนจำเป็นต่อการทำงาน</b> ทุกตัวควบคุมด้านล่างทำงานจากการ์ดปุ่มมาตรฐานของ Home Assistant ที่ชี้ไปยังสคริปต์เดียวกัน การ์ดแบบกำหนดเองคือลุคกระจกสีเขียว ไม่ใช่ระบบเบื้องหลัง</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 2</div>
+      <h2>หา ID เอนทิตีและซีเรียลของคุณ</h2>
+    </div>
+    <p class="lead">ทุกโค้ดตัวอย่างในหน้านี้ใช้ตัวแทนสองตัว หาของคุณเพียงครั้งเดียว ที่เหลือก็แค่คัดลอกแล้ววาง</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; เครื่องมือนักพัฒนา &rsaquo; สถานะ ใน Home Assistant กรองด้วย <code>projector_pilot</code> จะได้ผลลัพธ์ประมาณ <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code></li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; เปิดแอป แล้วไปที่ <b>การตั้งค่า &rsaquo; ระบบอัตโนมัติในบ้าน &rsaquo; Home Assistant</b> ID ที่มาจากซีเรียลแสดงอยู่ตรงนั้น และเป็นส่วนกลางของชื่อสคริปต์ที่ซิงค์ทุกตัว: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> และอื่นๆ</li>
+    </ul>
+    <p class="lead">คุณยังกรองเครื่องมือนักพัฒนา &rsaquo; สถานะ ด้วย <code>projpilot</code> เพื่อดูรายการตัวควบคุมที่ซิงค์ทั้งหมดในครั้งเดียว เมื่อบล็อกคัดลอกและการซิงค์ของขั้นตอนที่ 1 เสร็จแล้ว</p>
+    <div class="note"><b>ยังไม่มีรายการสคริปต์?</b> เป็นเรื่องปกติก่อนที่คุณจะวางบล็อกคัดลอก เซนเซอร์ยังคงมีอยู่และอัปเดตต่อไป สคริปต์จะปรากฏหลังจากซิงค์กับ HA สำเร็จเท่านั้น</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 3</div>
+      <h2>สร้างวิว</h2>
+    </div>
+    <ol class="steps">
+      <li>การตั้งค่า &rsaquo; แดชบอร์ด &rsaquo; เพิ่มแดชบอร์ด &rsaquo; แดชบอร์ดใหม่จากศูนย์ ตั้งชื่อว่า Projector Pilot</li>
+      <li>เปิดแดชบอร์ด แล้วแตะไอคอนดินสอที่มุมขวาบนเพื่อแก้ไข</li>
+      <li>เพิ่มมุมมอง เลย์เอาต์ไหนก็ได้ บอร์ดจริงใช้การ์ดซ้อนกันแบบมาตรฐาน วางต่อกันลงมา ซึ่งวางโค้ดง่ายที่สุด</li>
+      <li>หากต้องการวาง YAML ให้ใช้เมนูสามจุดบนการ์ดแล้วเลือก <b>แก้ไขใน YAML</b> หรือใช้เมนูสามจุดบนแดชบอร์ดเพื่อเปิด<b>ตัวแก้ไขการกำหนดค่าดิบ</b> เพื่อวางทั้งมุมมองในครั้งเดียว</li>
+    </ol>
+    <p class="lead">การตั้งค่าของมุมมองเอง หากคุณชอบพิมพ์เอง:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 4</div>
+      <h2>เพิ่มไทล์ข้อมูลสด</h2>
+    </div>
+    <p class="lead">เริ่มจากสิ่งที่อ่านค่าอย่างเดียว คุณจะได้รู้ว่า ID เอนทิตีของคุณถูกต้องก่อนแตะต้องสิ่งที่ส่งคำสั่ง ไทล์นี้ใช้งานสดทันทีที่เซนเซอร์โปรเจกเตอร์ของคุณมีอยู่ ไม่ต้องใช้บล็อกคัดลอก ไม่ต้องซิงค์ เพิ่มการ์ด แก้ไขใน YAML แล้ววาง:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">รูปแบบเดียวกันอ่านแอตทริบิวต์ได้ทั้ง ~80 ตัวที่เซนเซอร์มี: สลับ <code>brightness</code> เป็น <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code> หรืออะไรก็ได้ที่คุณอยากให้อยู่บนไทล์</p>
+    <p class="lead">บันทึก หากมีตัวเลขหรือคำจริงปรากฏขึ้น แปลว่า ID เอนทิตีของคุณถูกต้อง และทุกอย่างด้านล่างจะทำงานได้ หากแสดงว่าง ให้กลับไปที่ขั้นตอนที่ 2</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 5</div>
+      <h2>เพิ่มหัวข้อส่วนสีเขียว</h2>
+    </div>
+    <p class="lead">ชื่อเปล่าๆ เป็นพื้นที่เปล่าประโยชน์ นี่คือการ์ด <code>markdown</code> ที่มีพื้นหลังไล่สีจาก card-mod และเป็นสิ่งที่เปลี่ยนไทล์กองหนึ่งให้เป็นส่วนที่มีชื่อ ทุกส่วนบนบอร์ดเริ่มต้นด้วยการ์ดแบบนี้ เปลี่ยนแค่ป้ายและอีโมจิ</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">เปลี่ยนรหัสอีโมจิและข้อความป้าย บล็อก card-mod เหมือนกันทุกส่วน</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 6</div>
+      <h2>เพิ่มปุ่มควบคุม</h2>
+    </div>
+    <p class="lead">ปุ่มนี้ส่งคำสั่งแทนที่จะแค่อ่านค่า จึงต้องมีสคริปต์อยู่ก่อน มันเรียก <code>script.projpilot_YOURSERIAL_power_on</code> ซึ่งแอปจะเขียนให้ก็ต่อเมื่อคุณวางบล็อกคัดลอกลงใน <code>configuration.yaml</code> รีสตาร์ท Home Assistant และแตะ<b>ซิงค์กับ HA</b></p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">การ์ดเดียวกันใช้ได้กับปิดเครื่อง ปิดภาพหน้าจอ HDMI 1 HDMI 2 ปิดเสียง/ภาพ โหมดสี หรือหน่วยความจำเลนส์ เปลี่ยนเฉพาะป้าย ไอคอน และ <code>service</code></p>
+    <div class="note"><b>หากดูถูกต้องแต่ไม่เกิดอะไรขึ้น</b> เมื่อคุณแตะ แสดงว่าบล็อกคัดลอกยังไม่ได้วาง หรือ Home Assistant ยังไม่ได้รีสตาร์ทหลังจากนั้น รัน<b>ทดสอบการเชื่อมต่อ</b>ในแอปซึ่งตรวจสอบเรื่องนี้โดยเฉพาะ ก่อนจะสรุปว่าแดชบอร์ดผิด</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 7</div>
+      <h2>เพิ่มส่วนหลัก</h2>
+    </div>
+    <p class="lead">ส่วนหลักที่ด้านบนสุดของบอร์ดคือ <code>button-card</code> แสดงสถานะเปิดปิดตัวใหญ่ สรุปบรรทัดเดียวที่สร้างจากหลายแอตทริบิวต์พร้อมกัน และลุคกระจกสีเขียวทั้งการ์ด ไม่ใช่แค่เส้นขอบ</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">ตัดเหลือเฉพาะส่วนที่เปลี่ยนไปตามแต่ละการติดตั้ง การ์ดฉบับเต็มยังตั้งค่าตำแหน่งกริดของไอคอน ชื่อ และป้ายด้วย ดูไฟล์ดาวน์โหลดในขั้นตอนที่ 10 สำหรับทั้งหมด</p>
+    <p class="lead">ชอบแบบแถบบางกว่าไหม <code>mushroom-chips-card</code> ทำหน้าที่เดียวกันในแถวเดียวด้วยชิปขนาดเล็ก: สถานะเปิดปิด อินพุต โหมดสี ช่วงสัญญาณวิดีโอ และชั่วโมงหลอดภาพ แต่ละชิปเป็นเทมเพลตที่อ่าน <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code> ใช้แบบใดแบบหนึ่ง ไม่ใช้ทั้งสองอย่างที่ด้านบนของบอร์ด</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 8</div>
+      <h2>เพิ่มฉากของคุณ</h2>
+    </div>
+    <p class="lead">ทุกฉากที่คุณบันทึกในแอปจะกลายเป็นสคริปต์ชื่อ <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> เมื่อคุณซิงค์ และไทล์ของฉากก็คือการ์ดปุ่มควบคุมเดียวกับขั้นตอนที่ 6 โดยใส่ชื่อฉากและไอคอน</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">แทนที่ <code>YOURSCENE1</code> ด้วย ID ที่แสดงสำหรับฉากนั้นในรายการตัวควบคุมที่ซิงค์ของแอป หนึ่งไทล์ต่อหนึ่งฉาก ใน <code>horizontal-stack</code></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 9</div>
+      <h2>เพิ่มประวัติชั่วโมงเลเซอร์</h2>
+    </div>
+    <p class="lead">Home Assistant บันทึกเซนเซอร์โปรเจกเตอร์เหมือนเซนเซอร์อื่นๆ ดังนั้น <code>lamp_hours</code> จึงมีประวัติให้ฟรี ไม่ต้องมีเซนเซอร์เพิ่ม ไม่ต้องมีตัวช่วย ไม่ต้องตั้งค่าอะไรก่อน อยู่ในส่วนการบำรุงรักษา</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 ชั่วโมงคือสองสัปดาห์ ชั่วโมงเลเซอร์และหลอดภาพเพิ่มขึ้นเรื่อยๆ ไม่ได้กระโดดไปมา ช่วงสองสัปดาห์จึงมักพอให้เห็นแนวโน้มโดยที่กราฟไม่ดูแบนราบ</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 10</div>
+      <h2>หรือเอาไปทั้งชุดเลย</h2>
+    </div>
+    <p class="lead">มุมมองสมบูรณ์ ทุกส่วนและทุกการ์ดจากภาพหน้าจอที่ด้านบนของหน้านี้ โดยใช้ตัวแทนแทน ID เอนทิตี</p>
+    <ol class="steps">
+      <li><a href="/th/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>ดาวน์โหลด YAML ของมุมมอง</a></li>
+      <li>เปิดด้วยโปรแกรมแก้ไขข้อความใดก็ได้ แล้วแทนที่ทุกจุดที่ปรากฏ: <code>YOUR_PROJECTOR</code> ด้วย ID เอนทิตีของเซนเซอร์โปรเจกเตอร์ของคุณจากขั้นตอนที่ 2 และ <code>YOURSERIAL</code> ด้วย ID ที่มาจากซีเรียลของคุณจากขั้นตอนที่ 2</li>
+      <li>ในส่วนฉากใกล้ด้านล่าง แทนที่ <code>YOURSCENE1</code>, <code>YOURSCENE2</code> และ <code>YOURSCENE3</code> ด้วย ID ฉากทั้งสามของคุณเอง หรือเพิ่มและลบไทล์ให้ตรงกับจำนวนฉากที่คุณมีจริง</li>
+      <li>ใน Home Assistant เปิดแดชบอร์ดของคุณ แตะไอคอนดินสอ เมนูสามจุด <b>ตัวแก้ไขการกำหนดค่าดิบ</b> แล้ววางเป็นมุมมอง</li>
+    </ol>
+    <div class="note"><b>ชื่อและจำนวนฉากของคุณจะไม่ตรงกัน</b> ไฟล์มาพร้อมฉากตัวอย่างสามฉาก: Movie Night, Gaming, Sports Day เปลี่ยนชื่อไทล์ ชี้ไปที่ ID ฉากของคุณเอง แล้วเพิ่มหรือลบไทล์จนส่วนนี้ตรงกับจำนวนฉากที่คุณบันทึกไว้จริง</div>
+    <div class="note"><b>ไทล์ข้อมูลใช้งานได้ทันทีหลังวาง</b> ต้องการแค่ให้เซนเซอร์มีอยู่ ส่วนปุ่มควบคุมและปุ่มฉากจะไม่ทำงานจนกว่าจะวางบล็อกคัดลอกลงใน <code>configuration.yaml</code> รีสตาร์ท Home Assistant และแตะซิงค์กับ HA</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>การแก้ไขปัญหา</h2>
+    </div>
+    <details class="more"><summary>ไทล์แสดงว่าไม่ทราบ</summary>
+      <p>ตรวจสอบชื่อแอตทริบิวต์กับสิ่งที่เซนเซอร์มีอยู่จริง: เครื่องมือนักพัฒนา &rsaquo; สถานะ เอนทิตี <code>sensor.YOUR_PROJECTOR</code> ของคุณ แล้วอ่านรายการแอตทริบิวต์ ค่าบางอย่าง เช่น HDR PQ หรือ HDR HLG จะมีค่าก็ต่อเมื่อโปรเจกเตอร์กำลังรับสัญญาณประเภทนั้นอยู่ ดังนั้นการแสดงว่าไม่ทราบในสองค่านี้อาจถูกต้องแล้วและไม่ได้เสีย หากเซนเซอร์โดยรวมดูโล่ง ให้ปลุกโปรเจกเตอร์ เพราะเครื่องในโหมดสแตนด์บายเผยแพร่ข้อมูลน้อยมาก</p>
+    </details>
+    <details class="more"><summary>ปุ่มไม่ทำงาน</summary>
+      <p>คุณยังไม่ได้วางบล็อกคัดลอก หรือ Home Assistant ยังไม่ได้รีสตาร์ทหลังจากวาง ปุ่มควบคุมและปุ่มฉากเรียกสคริปต์ที่แอปเขียนขึ้น และสคริปต์เหล่านั้นจะไม่มีอยู่จนกว่าในแอป <b>การตั้งค่า &rsaquo; ระบบอัตโนมัติในบ้าน &rsaquo; Home Assistant</b> จะวางบล็อกคัดลอกลงใน <code>configuration.yaml</code> รีสตาร์ท Home Assistant หนึ่งครั้ง และแตะ<b>ซิงค์กับ HA</b> ให้รัน<b>ทดสอบการเชื่อมต่อ</b>ในแอปก่อน เพราะมันบอกคุณว่ามีบล็อกอยู่หรือไม่ ก่อนที่คุณจะไปหาข้อผิดพลาดของแดชบอร์ด</p>
+    </details>
+    <details class="more"><summary>สคริปต์ที่ฉันคาดหวังหายไปจากเครื่องมือนักพัฒนา &rsaquo; สถานะ</summary>
+      <p>กรองด้วย <code>projpilot</code> แทนซีเรียลเต็ม จะเห็นรายการทั้งหมดได้ง่ายกว่า หากตัวควบคุมหรือฉากที่คุณเพิ่งเพิ่มหายไป ให้แตะ<b>ซิงค์กับ HA</b> อีกครั้ง ระบบจะอัปเดตในที่เดิมโดยไม่ต้องตั้งค่าใหม่ หากสคริปต์เก่าที่ใช้ไม่ได้แล้วรกรายการหลังจากที่คุณลบฉาก ให้ใช้<b>ลบสคริปต์ที่ไม่มีเจ้าของ</b>ในแอป</p>
+    </details>
+    <details class="more"><summary>ID เอนทิตีของฉันไม่เหมือนกับในคู่มือนี้</summary>
+      <p>รูปแบบคงที่ แต่ส่วนกลางไม่ใช่ เซนเซอร์ของคุณตั้งชื่อตามรุ่นของโปรเจกเตอร์คุณเอง และทุกสคริปต์มีซีเรียลของโปรเจกเตอร์คุณเอง ไม่ใช่ตัวแทนในหน้านี้ ดึงทั้งสองค่าจากเครื่องมือนักพัฒนา &rsaquo; สถานะ และหน้าจอ Home Assistant ของแอปตามขั้นตอนที่ 2 แล้วใช้ค่าเหล่านั้นแทนการพิมพ์ข้อความตัวอย่าง</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>โปรเจกเตอร์ทั้งเครื่องของคุณ บนผนังเดียว</h2>
+    <p class="lead" style="margin:0 auto 24px">ระบบอัตโนมัติในบ้านเป็นส่วนเสริมที่ซื้อครั้งเดียว ไม่มีค่าสมาชิก ไม่ต้องมีบัญชี ไม่ต้องใช้คลาวด์ ซื้อครั้งเดียวปลดล็อกได้ทุกแพลตฟอร์มที่คุณมี</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - พร้อมให้ดาวน์โหลดแล้ว</a>
+      <span class="pill">App Store - รอการอนุมัติ</span>
+      <span class="pill">Microsoft Store - รอการอนุมัติ</span>
+      <span class="pill">Mac App Store - รอการอนุมัติ</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/th/guide/home-automation/">กลับไปที่ระบบบ้านอัตโนมัติ &rarr;</a> &middot; <a href="/th/guide/">คู่มือผู้ใช้ฉบับเต็ม &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>คำตอบฉับไว</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>ฉันต้องสร้างแดชบอร์ดนี้เองด้วยมือหรือเปล่า</h3><p>ไม่ต้อง เมื่อคุณแตะซิงค์กับ HA ในแอป แอปจะสร้างแดชบอร์ด Projector Pilot สำเร็จรูปให้ใน Home Assistant โดยตรง ประกอบด้วยเซนเซอร์โปรเจกเตอร์แบบสดและปุ่มสำหรับทุกตัวควบคุมและฉาก และจะปรากฏในแถบด้านข้างของคุณในชื่อ Projector Pilot หน้านี้สำหรับสร้างเวอร์ชันกระจกสีเขียวที่หรูกว่าด้วยมือ หรือปรับแต่งสิ่งที่การซิงค์สร้างไว้</p></div><div class="gcard"><h3>ต้องใช้การ์ดกำหนดเองจาก HACS เพื่อสร้างสิ่งนี้ไหม</h3><p>ถ้าอยากให้หน้าตาเหมือนในภาพหน้าจอ ต้องใช้: Mushroom, button-card, card-mod และ mini-graph-card แต่ไม่มีตัวไหนจำเป็นต่อการทำงานของตัวควบคุมพื้นฐานเลย ทุกปุ่มเป็นการเรียกสคริปต์ธรรมดา ส่วนการ์ดแบบกำหนดเองเป็นแค่การตกแต่งด้านบน</p></div><div class="gcard"><h3>ทำไมไทล์ข้อมูลแสดงค่าได้ แต่ปุ่มไม่ทำงาน</h3><p>เซนเซอร์โปรเจกเตอร์เผยแพร่ค่าที่อ่านได้ทันทีที่คุณเข้าสู่ระบบและซิงค์ในแอป ไทล์ข้อมูลจึงแสดงค่าสดทันที ส่วนปุ่มควบคุมและปุ่มฉากเรียกสคริปต์ที่จะมีอยู่ใน Home Assistant ก็ต่อเมื่อคุณวางบล็อกคัดลอกของแอปลงใน configuration.yaml รีสตาร์ท Home Assistant และแตะซิงค์กับ HA หนึ่งครั้งแล้วเท่านั้น</p></div><div class="gcard"><h3>Entity ID ของฉันจะตรงกับในคู่มือนี้ไหม</h3><p>รูปแบบจะเหมือนกัน แต่ตัวอักษรจริงจะไม่เหมือน เซนเซอร์โปรเจกเตอร์ของคุณตั้งชื่อตามรุ่นของโปรเจกเตอร์ และทุกสคริปต์ตั้งชื่อตามซีเรียลของโปรเจกเตอร์ ในหน้านี้ ที่ใดเขียนว่า YOUR_PROJECTOR ให้ใส่ ID เอนทิตีของเซนเซอร์ของคุณเอง และที่ใดเขียนว่า YOURSERIAL ให้ใส่ ID ที่มาจากซีเรียลซึ่งแสดงในหน้าจอ Home Assistant ของแอป</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/pricing/">ราคา</a><a href="/th/highlights/">จุดเด่น</a><a href="/th/guide/home-automation/">Home Assistant</a><a href="/th/help/">ช่วยเหลือ &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/th/help/#privacy">ความเป็นส่วนตัว</a><a href="/th/help/#terms">ข้อกำหนด</a></div>
+<div class="flinks"><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/guide/dashboard/">แดชบอร์ด</a><a href="/th/guide/remote/">รีโมต</a><a href="/th/guide/picture/">ภาพ</a><a href="/th/guide/lens/">เลนส์</a><a href="/th/guide/scenes/">ฉาก</a><a href="/th/guide/home-assistant-dashboard/">แดชบอร์ด HA</a><a href="/th/guide/maintenance/">การบำรุงรักษา</a><a href="/th/guide/settings/">การตั้งค่า</a><a href="/th/guide/languages/">ภาษา</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC Projector Pilot เป็นแอปอิสระสำหรับโปรเจกเตอร์ Epson และ PJLink ไม่มีความเกี่ยวข้อง การรับรอง หรือการสนับสนุนจาก Epson หน่วยงานมาตรฐาน PJLink, Home Assistant, Hubitat, Apple, Google หรือ Microsoft Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play และ Microsoft Store เป็นเครื่องหมายการค้าของเจ้าของที่เกี่ยวข้อง ระบุไว้เพื่ออธิบายสิ่งที่แอปทำงานร่วมด้วยเท่านั้น</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

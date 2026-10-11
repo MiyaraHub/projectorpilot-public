@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="id" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Dasbor Proyektor Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="Bangun dasbor proyektor Home Assistant kustom langkah demi langkah: kartu HACS yang perlu dipasang, ID entitas dan nomor seri Anda, serta YAML siap salin untuk setiap kartu." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Dasbor Proyektor Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="Bangun dasbor proyektor Home Assistant kustom langkah demi langkah: kartu HACS yang perlu dipasang, ID entitas dan nomor seri Anda, serta YAML siap salin untuk setiap kartu." />
+<meta property="og:url" content="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dasbor Proyektor Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Bangun dasbor proyektor Home Assistant kustom langkah demi langkah: kartu HACS yang perlu dipasang, ID entitas dan nomor seri Anda, serta YAML siap salin untuk setiap kartu." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Dasbor Proyektor Home Assistant (YAML) - Projector Pilot", "description": "Bangun dasbor proyektor Home Assistant kustom langkah demi langkah: kartu HACS yang perlu dipasang, ID entitas dan nomor seri Anda, serta YAML siap salin untuk setiap kartu.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Bangun dasbor proyektor Home Assistant dalam sekitar satu jam", "description": "Bangun dasbor proyektor Home Assistant kustom langkah demi langkah: kartu HACS yang perlu dipasang, ID entitas dan nomor seri Anda, serta YAML siap salin untuk setiap kartu.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "id", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Dasbor Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah saya harus membuat dasbor ini secara manual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Saat Anda mengetuk Sync With HA di aplikasi, aplikasi membuatkan dasbor Projector Pilot siap pakai langsung di Home Assistant - sensor proyektor langsung plus tombol untuk setiap kontrol dan Skenario - dan dasbor itu muncul di bilah samping Anda sebagai Projector Pilot. Jika kartu komunitas sudah terpasang, Sync otomatis meningkatkan kartunya ke kartu tersebut; halaman ini untuk membuat versi green-glass yang lebih kaya secara manual, atau menyesuaikan apa yang dibuat Sync."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah saya perlu kartu kustom dari HACS untuk membangun ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Untuk menyamai tampilan di tangkapan layar, ya: Mushroom, button-card, card-mod, dan mini-graph-card. Tidak satu pun wajib agar kontrol dasarnya berfungsi - setiap tombol adalah panggilan skrip biasa, dan kartu kustom hanyalah tampilan di atasnya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mengapa petak info menampilkan nilai tetapi tombolnya tidak melakukan apa-apa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sensor proyektor menerbitkan pembacaannya segera setelah Anda masuk dan menyinkronkan di aplikasi, sehingga petak info langsung aktif. Tombol kontrol dan Skenario memanggil skrip yang baru ada di Home Assistant setelah Anda menempelkan blok Copy dari aplikasi ke configuration.yaml, memulai ulang Home Assistant, dan mengetuk Sync With HA sekali."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah entity ID saya akan sama dengan yang ada di panduan ini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Polanya sama, karakter persisnya tidak. Sensor proyektor Anda dinamai sesuai model proyektor Anda, dan setiap skrip dinamai sesuai nomor seri proyektor Anda. Di mana pun halaman ini menulis YOUR_PROJECTOR, isi dengan ID entitas sensor Anda sendiri; di mana pun tertulis YOURSERIAL, isi dengan ID turunan nomor seri yang ditampilkan di layar Home Assistant aplikasi."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/id/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa"><a href="/id/#features">Fitur</a><a href="/id/guide/">Panduan</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/help/">Bantuan</a><a class="cta" href="/id/#download">DAPATKAN APLIKASI</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Dasbor Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; langkah demi langkah</div>
+    <h1>Bangun dasbor proyektor Home Assistant <span class="g">dalam sekitar satu jam</span></h1>
+    <p>Aplikasi sudah membuatkan dasbor yang berfungsi saat Anda Sync - halaman ini adalah versi mewah yang dibuat manual. Sepuluh langkah, YAML setiap kartu, dan satu tampilan lengkap yang bisa ditempel sekaligus. Petak green glass, tampilan gambar langsung, Skenario Anda, dan grafik jam laser, semuanya dari satu sensor proyektor. Ubah dua string dan ini jadi milik Anda.</p>
+    <div class="readout"><span>Sync membuatkan satu, gratis</span><span>4 kartu HACS untuk tampilannya</span><span>Petak info langsung aktif</span><span>Tombol aktif setelah satu kali tempel</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Dasbor Projector Pilot yang sudah jadi di Home Assistant: daya dan sumber, mode warna, menu gambar lengkap, HDR dan sinyal, kalibrasi RGB, lensa dan geometri, perawatan dengan grafik jam laser, dan Skenario, semuanya sebagai petak green glass" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Yang akan Anda bangun. Gulir, atau klik untuk memperbesar.</figcaption>
+    </figure>
+    <div class="note"><b>Hanya ingin dasbor yang berfungsi? Anda sudah punya.</b> Ketuk <b>Sync With HA</b> di aplikasi dan aplikasi membuatkan dasbor Projector Pilot siap pakai di bilah samping Home Assistant Anda, dengan setiap kontrol dan sensor langsung - tanpa kartu, tanpa YAML, tanpa tempel. Lihat <a href="/id/guide/home-automation/#dashboard">Sync membuatkan dasbor untuk Anda</a>. Halaman ini untuk membuat versi green-glass yang lebih kaya secara manual, atau menyesuaikan apa yang diberikan Sync.</div>
+    <div class="note"><b>Terburu-buru ingin tampilan kustom?</b> Lompat ke <a href="#whole">langkah 10</a>, unduh tampilan lengkapnya, ubah dua string dan tiga id Skenario, lalu tempel. Langkah-langkah di antaranya menjelaskan fungsi tiap bagian agar Anda bisa mengubahnya.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sebelum Anda mulai</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot sudah tertaut ke Home Assistant.</b> <a href="/id/guide/home-automation/">Panduan penyiapan</a> mencakup cara masuk dan mengaktifkan <b>Kirim status proyektor</b>. Anda seharusnya melihat proyektor Anda sebagai sensor di Home Assistant sebelum membangun apa pun di atasnya.</li>
+      <li><b>Anda sudah menyinkronkan minimal sekali.</b> Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, setelah menempelkan <b>blok Copy</b> aplikasi ke <code>configuration.yaml</code> dan memulai ulang Home Assistant. Inilah yang membuat skrip yang dipanggil setiap tombol kontrol di bawah.</li>
+      <li><b>Proyektor Anda menyala</b> selama Anda membangun. Atribut gambar di bawah sebagian besar kosong saat proyektor dalam standby.</li>
+    </ul>
+    <p class="lead">Dua hal mengisi dasbor ini, dan perbedaannya penting di setiap langkah berikut.</p>
+    <table class="t">
+      <thead><tr><th>Berasal dari</th><th>Memberi Anda</th></tr></thead>
+      <tbody>
+        <tr><td>Sensor proyektor, <code>sensor.YOUR_PROJECTOR</code></td><td>Setiap <b>pembacaan</b>. Daya, input, mode warna, semua angka gambar, HDR dan sinyal, lensa dan geometri, jam lampu. Langsung aktif begitu Anda masuk dan sinkron, tanpa blok Copy.</td></tr>
+        <tr><td>Skrip sinkron aplikasi, <code>script.projpilot_YOURSERIAL_...</code></td><td>Setiap <b>kontrol</b>. Daya, input, mode warna, memori lensa, dan Skenario Anda. Semua ini baru ada setelah blok Copy ditempel, Home Assistant dimulai ulang, dan Anda mengetuk Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 1</div>
+      <h2>Pasang empat kartu dari HACS</h2>
+    </div>
+    <p class="lead">Keempatnya ada di toko HACS bawaan. Di Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, cari namanya, Download, lalu muat ulang browser Anda.</p>
+    <table class="t">
+      <thead><tr><th>Cari</th><th>Dipakai untuk</th><th>Jika dilewati</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Setiap petak info, tombol kontrol, dan petak Skenario</td><td>Gunakan kartu <code>button</code> biasa. Tetap berfungsi, tampilannya lebih kaku.</td></tr>
+        <tr><td><b>button-card</b></td><td>Hero, dengan label langsungnya</td><td>Gunakan kartu <code>entity</code>, atau kartu template Mushroom dengan detail lebih sedikit.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Latar belakang green glass, bingkai, dan gradasi</td><td>Semuanya tetap berfungsi. Hanya tidak ada efek cahayanya.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Riwayat jam laser di bawah Perawatan</td><td>Gunakan kartu <code>history-graph</code> bawaan.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Tidak satu pun wajib agar ini berfungsi.</b> Setiap kontrol di bawah berjalan dari kartu tombol Home Assistant standar yang diarahkan ke skrip yang sama. Kartu kustom hanyalah tampilan green glass, bukan saluran kerjanya.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 2</div>
+      <h2>Temukan ID entitas dan nomor seri Anda</h2>
+    </div>
+    <p class="lead">Setiap cuplikan di halaman ini memakai dua placeholder. Temukan milik Anda satu kali, sisanya tinggal salin dan tempel.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States di Home Assistant, saring dengan <code>projector_pilot</code>. Hasilnya seperti <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; buka aplikasi, <b>Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Home Assistant</b>. ID turunan nomor seri ditampilkan di sana, dan merupakan bagian tengah dari setiap nama skrip yang disinkronkan: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, dan seterusnya.</li>
+    </ul>
+    <p class="lead">Anda juga bisa menyaring Developer Tools &rsaquo; States dengan <code>projpilot</code> untuk melihat seluruh daftar kontrol yang disinkronkan sekaligus, setelah blok Copy langkah 1 dan Sync selesai.</p>
+    <div class="note"><b>Belum ada daftar skrip?</b> Itu wajar sebelum Anda menempelkan blok Copy. Sensornya tetap ada dan tetap diperbarui; skrip baru muncul setelah Sync With HA berhasil dijalankan.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 3</div>
+      <h2>Buat tampilan</h2>
+    </div>
+    <ol class="steps">
+      <li>Pengaturan &rsaquo; Dasbor &rsaquo; Tambah Dasbor &rsaquo; Dasbor baru dari awal. Beri nama Projector Pilot.</li>
+      <li>Buka dasbor itu, lalu ikon pensil di kanan atas untuk mengedit.</li>
+      <li>Tambahkan tampilan. Tata letak apa pun bisa, tetapi dasbor asli memakai tumpukan kartu bawaan, satu di bawah yang lain, yang paling mudah untuk ditempel.</li>
+      <li>Untuk menempel YAML, gunakan menu tiga titik pada kartu dan pilih <b>Edit in YAML</b>, atau menu tiga titik pada dasbor untuk <b>Raw configuration editor</b> agar bisa menempel seluruh tampilan sekaligus.</li>
+    </ol>
+    <p class="lead">Pengaturan tampilan itu sendiri, jika Anda lebih suka mengetiknya:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 4</div>
+      <h2>Tambahkan petak info langsung</h2>
+    </div>
+    <p class="lead">Mulailah dengan sesuatu yang hanya membaca, agar Anda tahu ID entitas Anda sudah benar sebelum menyentuh apa pun yang mengirim perintah. Petak ini aktif begitu sensor proyektor Anda ada, tanpa blok Copy, tanpa sinkron. Tambahkan kartu, Edit in YAML, tempel:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Bentuk yang sama bisa membaca atribut mana pun dari sekitar 80 atribut yang dibawa sensor: ganti <code>brightness</code> dengan <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, apa pun yang Anda inginkan di petak.</p>
+    <p class="lead">Simpan. Jika angka atau kata yang nyata muncul, ID entitas Anda benar dan semua di bawah akan berfungsi. Jika kosong, kembali ke langkah 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 5</div>
+      <h2>Tambahkan header seksi hijau</h2>
+    </div>
+    <p class="lead">Judul polos hanyalah ruang kosong. Ini adalah kartu <code>markdown</code> dengan latar gradasi dari card-mod, dan inilah yang mengubah tumpukan petak menjadi seksi bernama. Setiap seksi di dasbor dibuka dengan salah satunya, hanya label dan emoji-nya yang berbeda.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Ubah kode emoji dan teks label; blok card-mod identik di setiap seksi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 6</div>
+      <h2>Tambahkan tombol kontrol</h2>
+    </div>
+    <p class="lead">Tombol ini mengirim perintah, bukan hanya membaca nilai, sehingga skripnya harus sudah ada lebih dulu. Ia memanggil <code>script.projpilot_YOURSERIAL_power_on</code>, yang ditulis aplikasi hanya setelah Anda menempelkan blok Copy ke <code>configuration.yaml</code>, memulai ulang Home Assistant, dan mengetuk <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Kartu yang sama untuk Matikan Daya, Layar Kosong, HDMI 1, HDMI 2, A/V Mute, mode warna, atau memori lensa: hanya label, ikon, dan <code>service</code> yang berubah.</p>
+    <div class="note"><b>Jika tampilannya benar tetapi tidak ada yang terjadi</b> saat diketuk, blok Copy belum ditempel atau Home Assistant belum dimulai ulang sejak itu. Jalankan <b>Test Connection</b> di aplikasi, yang memeriksa persis hal itu, sebelum menganggap dasbornya salah.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 7</div>
+      <h2>Tambahkan hero</h2>
+    </div>
+    <p class="lead">Hero di bagian atas dasbor adalah <code>button-card</code>: status daya besar, ringkasan satu baris yang dibuat dari beberapa atribut sekaligus, dan tampilan green glass pada seluruh kartu, bukan hanya bingkainya.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Dipangkas ke bagian yang berubah per instalasi. Kartu lengkap juga mengatur posisi grid ikon, nama, dan label; lihat unduhan di langkah 10 untuk selengkapnya.</p>
+    <p class="lead">Lebih suka strip yang lebih ramping? <code>mushroom-chips-card</code> melakukan tugas yang sama dalam satu baris chip kecil: status daya, input, mode warna, rentang video, dan jam lampu, masing-masing template yang membaca <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Gunakan salah satu, jangan keduanya, di bagian atas dasbor.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 8</div>
+      <h2>Tambahkan Skenario Anda</h2>
+    </div>
+    <p class="lead">Setiap Skenario yang Anda simpan di aplikasi menjadi skrip bernama <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> setelah Anda sinkron, dan petak untuk satu Skenario adalah kartu tombol kontrol yang sama dari langkah 6 dengan nama dan ikon Skenario.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Ganti <code>YOURSCENE1</code> dengan id yang ditampilkan untuk Skenario itu di daftar kontrol sinkron aplikasi. Satu petak per Skenario, dalam <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 9</div>
+      <h2>Tambahkan riwayat jam laser</h2>
+    </div>
+    <p class="lead">Sensor proyektor direkam oleh Home Assistant seperti sensor lainnya, sehingga <code>lamp_hours</code> mendapat riwayat secara gratis. Tanpa sensor tambahan, tanpa helper, tanpa konfigurasi apa pun lebih dulu, di bawah seksi Perawatan.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 jam adalah dua minggu. Jam laser dan lampu naik stabil dan tidak melonjak-lonjak, jadi jendela dua minggu biasanya cukup untuk melihat tren tanpa membuat grafik tampak datar.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 10</div>
+      <h2>Atau ambil semuanya</h2>
+    </div>
+    <p class="lead">Tampilan lengkap, setiap seksi dan setiap kartu dari tangkapan layar di bagian atas halaman ini, dengan placeholder sebagai pengganti ID entitas.</p>
+    <ol class="steps">
+      <li><a href="/id/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Unduh YAML tampilan</a>.</li>
+      <li>Buka di editor teks apa pun dan ganti, di mana pun muncul: <code>YOUR_PROJECTOR</code> dengan ID entitas sensor proyektor Anda dari langkah 2, dan <code>YOURSERIAL</code> dengan ID turunan nomor seri Anda dari langkah 2.</li>
+      <li>Di seksi Skenario di dekat bagian bawah, ganti <code>YOURSCENE1</code>, <code>YOURSCENE2</code>, dan <code>YOURSCENE3</code> dengan tiga id Skenario Anda sendiri, atau tambah dan hapus petak sesuai jumlah Skenario yang Anda punya.</li>
+      <li>Di Home Assistant, buka dasbor Anda, ikon pensil, menu tiga titik, <b>Raw configuration editor</b>, lalu tempel sebagai tampilan.</li>
+    </ol>
+    <div class="note"><b>Nama dan jumlah Skenario Anda tidak akan sama.</b> File ini berisi tiga contoh Skenario: Movie Night, Gaming, Sports Day. Ganti nama petaknya, arahkan ke id Skenario Anda sendiri, lalu tambah atau hapus petak sampai seksinya sesuai jumlah Skenario yang benar-benar Anda simpan.</div>
+    <div class="note"><b>Petak info langsung berfungsi setelah Anda menempel.</b> Petak ini hanya butuh sensornya ada. Tombol kontrol dan Skenario tetap tidak berfungsi sampai blok Copy ditempel ke <code>configuration.yaml</code>, Home Assistant dimulai ulang, dan Anda mengetuk Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pemecahan masalah</h2>
+    </div>
+    <details class="more"><summary>Petak menampilkan Unknown</summary>
+      <p>Periksa nama atribut dengan apa yang sebenarnya dibawa sensor: Developer Tools &rsaquo; States, entitas <code>sensor.YOUR_PROJECTOR</code> Anda, lalu baca daftar atributnya. Beberapa pembacaan, seperti HDR PQ atau HDR HLG, hanya terisi saat proyektor aktif menerima jenis sinyal itu, jadi Unknown pada keduanya bisa benar, bukan rusak. Jika seluruh sensor tampak sepi, bangunkan proyektor: unit dalam standby menerbitkan sangat sedikit.</p>
+    </details>
+    <details class="more"><summary>Tombol tidak melakukan apa-apa</summary>
+      <p>Anda belum menempelkan blok Copy, atau Home Assistant belum dimulai ulang sejak itu. Tombol kontrol dan Skenario memanggil skrip yang ditulis aplikasi, dan skrip itu tidak ada sampai <b>Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Home Assistant</b> di aplikasi memiliki blok Copy yang ditempel ke <code>configuration.yaml</code>, Home Assistant dimulai ulang sekali, dan <b>Sync With HA</b> diketuk. Jalankan <b>Test Connection</b> di aplikasi lebih dulu - ia memberi tahu apakah blok itu ada sebelum Anda mencari kesalahan di dasbor.</p>
+    </details>
+    <details class="more"><summary>Skrip yang saya harapkan tidak ada di Developer Tools &rsaquo; States</summary>
+      <p>Saring dengan <code>projpilot</code> daripada nomor seri lengkap - lebih mudah melihat seluruh daftar. Jika kontrol atau Skenario yang baru Anda tambahkan tidak ada, ketuk <b>Sync With HA</b> lagi; ia memperbarui di tempat, tanpa perlu penyiapan baru. Jika skrip lama yang sudah mati memenuhi daftar setelah Anda menghapus Skenario, gunakan <b>Remove orphaned scripts</b> di aplikasi.</p>
+    </details>
+    <details class="more"><summary>ID entitas saya tidak seperti yang ada di panduan ini</summary>
+      <p>Polanya tetap, bagian tengahnya tidak. Sensor Anda dinamai sesuai model proyektor Anda sendiri, dan setiap skrip membawa nomor seri proyektor Anda sendiri, bukan placeholder di halaman ini. Ambil keduanya dari Developer Tools &rsaquo; States dan layar Home Assistant aplikasi, seperti di langkah 2, dan gunakan itu sebagai ganti mengetik teks contoh.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seluruh proyektor Anda, di satu dinding</h2>
+    <p class="lead" style="margin:0 auto 24px">Otomasi Rumah adalah add-on sekali beli. Tanpa langganan, tanpa akun, tanpa cloud. Satu pembelian membukanya di setiap platform yang Anda miliki.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - tersedia sekarang</a>
+      <span class="pill">App Store - menunggu persetujuan</span>
+      <span class="pill">Microsoft Store - menunggu persetujuan</span>
+      <span class="pill">Mac App Store - menunggu persetujuan</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/id/guide/home-automation/">Kembali ke Otomasi Rumah &rarr;</a> &middot; <a href="/id/guide/">Panduan Pengguna Lengkap &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Jawaban singkat</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Apakah saya harus membuat dasbor ini secara manual?</h3><p>Tidak. Saat Anda mengetuk Sync With HA di aplikasi, aplikasi membuatkan dasbor Projector Pilot siap pakai langsung di Home Assistant - sensor proyektor langsung plus tombol untuk setiap kontrol dan Skenario - dan dasbor itu muncul di bilah samping Anda sebagai Projector Pilot. Halaman ini untuk membuat versi green-glass yang lebih kaya secara manual, atau menyesuaikan apa yang dibuat Sync.</p></div><div class="gcard"><h3>Apakah saya perlu kartu kustom dari HACS untuk membangun ini?</h3><p>Untuk menyamai tampilan di tangkapan layar, ya: Mushroom, button-card, card-mod, dan mini-graph-card. Tidak satu pun wajib agar kontrol dasarnya berfungsi - setiap tombol adalah panggilan skrip biasa, dan kartu kustom hanyalah tampilan di atasnya.</p></div><div class="gcard"><h3>Mengapa petak info menampilkan nilai tetapi tombolnya tidak melakukan apa-apa?</h3><p>Sensor proyektor menerbitkan pembacaannya segera setelah Anda masuk dan menyinkronkan di aplikasi, sehingga petak info langsung aktif. Tombol kontrol dan Skenario memanggil skrip yang baru ada di Home Assistant setelah Anda menempelkan blok Copy dari aplikasi ke configuration.yaml, memulai ulang Home Assistant, dan mengetuk Sync With HA sekali.</p></div><div class="gcard"><h3>Apakah entity ID saya akan sama dengan yang ada di panduan ini?</h3><p>Polanya sama, karakter persisnya tidak. Sensor proyektor Anda dinamai sesuai model proyektor Anda, dan setiap skrip dinamai sesuai nomor seri proyektor Anda. Di mana pun halaman ini menulis YOUR_PROJECTOR, isi dengan ID entitas sensor Anda sendiri; di mana pun tertulis YOURSERIAL, isi dengan ID turunan nomor seri yang ditampilkan di layar Home Assistant aplikasi.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/id/guide/">Panduan Pengguna</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/help/">Bantuan &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/id/help/#privacy">Privasi</a><a href="/id/help/#terms">Ketentuan</a></div>
+<div class="flinks"><a href="/id/guide/getting-started/">Memulai</a><a href="/id/guide/dashboard/">Dasbor</a><a href="/id/guide/remote/">Remote</a><a href="/id/guide/picture/">Gambar</a><a href="/id/guide/lens/">Lensa</a><a href="/id/guide/scenes/">Skenario</a><a href="/id/guide/home-assistant-dashboard/">Dasbor HA</a><a href="/id/guide/maintenance/">Perawatan</a><a href="/id/guide/settings/">Pengaturan</a><a href="/id/guide/languages/">Bahasa</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot adalah aplikasi independen untuk proyektor Epson dan PJLink. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, Hubitat, Apple, Google, atau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, dan Microsoft Store adalah merek dagang dari pemiliknya masing-masing, disebutkan hanya untuk menjelaskan apa yang didukung aplikasi ini.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

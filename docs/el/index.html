@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Εφαρμογή Ελέγχου Προβολέων Epson &amp; PJLink - Projector Pilot</title>
+<meta name="description" content="Το Projector Pilot είναι εφαρμογή για προβολείς Epson και PJLink: λειτουργία, είσοδος, εικόνα, μοτοροκίνητος φακός, Σκηνές με ένα άγγιγμα και Home Assistant. Χωρίς συνδρομή." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/el/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Εφαρμογή Ελέγχου Προβολέων Epson &amp; PJLink - Projector Pilot" />
+<meta property="og:description" content="Το Projector Pilot είναι εφαρμογή για προβολείς Epson και PJLink: λειτουργία, είσοδος, εικόνα, μοτοροκίνητος φακός, Σκηνές με ένα άγγιγμα και Home Assistant. Χωρίς συνδρομή." />
+<meta property="og:url" content="https://projectorpilot.com/el/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Εφαρμογή Ελέγχου Προβολέων Epson &amp; PJLink - Projector Pilot" />
+<meta name="twitter:description" content="Το Projector Pilot είναι εφαρμογή για προβολείς Epson και PJLink: λειτουργία, είσοδος, εικόνα, μοτοροκίνητος φακός, Σκηνές με ένα άγγιγμα και Home Assistant. Χωρίς συνδρομή." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "el", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Εφαρμογή Ελέγχου Προβολέων Epson & PJLink - Projector Pilot", "description": "Το Projector Pilot είναι εφαρμογή για προβολείς Epson και PJLink: λειτουργία, είσοδος, εικόνα, μοτοροκίνητος φακός, Σκηνές με ένα άγγιγμα και Home Assistant. Χωρίς συνδρομή.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "el", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Μια ανεξάρτητη εφαρμογή για προβολείς Epson και PJLink: λειτουργία, είσοδος, πλήρης έλεγχος εικόνας και χρώματος, μοτοροκίνητη μετατόπιση φακού, εστίαση, ζουμ και μνήμες, Σκηνές με ένα άγγιγμα, αυτοματισμός Home Assistant, Hubitat και webhook, στατιστικά συντήρησης και widgets αρχικής οθόνης, σε 29 γλώσσες.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Δωρεάν", "price": "0", "priceCurrency": "USD", "description": "Προσθήκη προβολέα, λειτουργία, αλλαγή εισόδου, ζωντανή κατάσταση και βασικά του τηλεχειριστηρίου οθόνης."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Εφάπαξ αγορά εντός εφαρμογής. Τιμή αναφοράς· το store δείχνει την τιμή για την περιοχή σας."}, {"@type": "Offer", "name": "Πρόσθετο Αυτοματισμός Σπιτιού", "price": "2.99", "priceCurrency": "USD", "description": "Εφάπαξ αγορά εντός εφαρμογής. Τιμή αναφοράς· το store δείχνει την τιμή για την περιοχή σας."}, {"@type": "Offer", "name": "Πακέτο Pro + Αυτοματισμός Σπιτιού", "price": "11.99", "priceCurrency": "USD", "description": "Εφάπαξ αγορά εντός εφαρμογής. Τιμή αναφοράς· το store δείχνει την τιμή για την περιοχή σας."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Φτιάχνει η Epson το Projector Pilot;", "acceptedAnswer": {"@type": "Answer", "text": "Όχι. Το Projector Pilot είναι ανεξάρτητη εφαρμογή της MiyaraHub Technologies LLC. Δεν σχετίζεται με, δεν εγκρίνεται και δεν χορηγείται από την Epson, τον φορέα του προτύπου PJLink, το Home Assistant ή το Hubitat. Αυτά τα ονόματα είναι εμπορικά σήματα των αντίστοιχων κατόχων τους και εμφανίζονται εδώ μόνο για να περιγράψουν με ποιους προβολείς και συστήματα έξυπνου σπιτιού λειτουργεί η εφαρμογή."}}, {"@type": "Question", "name": "Ποιους προβολείς υποστηρίζει το Projector Pilot;", "acceptedAnswer": {"@type": "Answer", "text": "Προβολείς Epson μέσω ESC/VP21 και Web Control, και οποιονδήποτε προβολέα PJLink. Η εφαρμογή χρησιμοποιεί όποιο κανάλι απαντά ο προβολέας, οπότε ένας προβολέας μόνο με PJLink είναι μια συνηθισμένη υποστηριζόμενη συσκευή."}}, {"@type": "Question", "name": "Είναι το Projector Pilot συνδρομή;", "acceptedAnswer": {"@type": "Answer", "text": "Όχι. Ο βασικός έλεγχος είναι δωρεάν, και το Pro, ο Αυτοματισμός Σπιτιού και το πακέτο είναι εφάπαξ αγορές. Χωρίς συνδρομή, χωρίς διαφημίσεις."}}, {"@type": "Question", "name": "Χρειάζεται το Projector Pilot λογαριασμό ή cloud;", "acceptedAnswer": {"@type": "Answer", "text": "Χωρίς λογαριασμό και χωρίς cloud. Η εφαρμογή μιλά απευθείας στον προβολέα σας μέσα στο δικό σας δίκτυο."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/el/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα">
+      <a href="#features">Χαρακτηριστικά</a>
+      <a href="/el/guide/">Οδηγός</a>
+      <a href="/el/pricing/">Τιμολόγηση</a>
+      <a href="/el/highlights/">Βασικά σημεία</a>
+      <a href="/el/guide/home-automation/">Home Assistant</a>
+      <a href="/el/help/">Βοήθεια</a>
+      <a class="cta" href="#download">ΛΗΨΗ ΤΗΣ ΕΦΑΡΜΟΓΗΣ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Προβολείς Epson &amp; PJLink</div>
+      <h1>Η εφαρμογή ελέγχου που ο <span class="g">προβολέας Epson</span> σας πάντα άξιζε.</h1>
+      <p>Λειτουργία, είσοδος, ολόκληρο το μενού εικόνας, μοτοροκίνητη μετατόπιση φακού, εστίαση και ζουμ, Σκηνές με ένα άγγιγμα και πραγματικός αυτοματισμός σπιτιού - για προβολείς Epson και PJLink, κατευθείαν από το κινητό σας. Χωρίς διαφημίσεις. Χωρίς συνδρομή. Χωρίς λογαριασμό cloud.</p>
+      <div class="pills">
+        <span class="pill">29 γλώσσες</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Εφάπαξ αγορά</span>
+        <span class="pill">Λειτουργεί στο δίκτυό σας</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Λήψη από το Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Ο πίνακας ελέγχου του Projector Pilot σε κινητό με ζωντανή λειτουργία, είσοδο και λειτουργία χρώματος για προβολέα Epson" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Τι κάνει</div>
+      <h2>Κάθε χειριστήριο που εκθέτει ο προβολέας σας, σε μία καθαρή εφαρμογή.</h2>
+      <p class="lead">Το Projector Pilot μιλά στον προβολέα σας ταυτόχρονα μέσω ESC/VP21, PJLink και Epson Web Control, χρησιμοποιώντας όποιο απαντά - έτσι παίρνετε λειτουργία, εικόνα, γεωμετρία και έλεγχο φακού που πραγματικά δουλεύει, με τιμές που διαβάζονται πίσω από τον προβολέα, ποτέ μαντεμένες.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Πίνακας ελέγχου Projector Pilot με ζωντανή κατάσταση, πληροφορίες προβολής και συνόψεις εικόνας και φακού" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dashboard</div>
+        <h3>Τα πάντα με μια ματιά, χτισμένα όπως τα θέλετε.</h3>
+        <ul>
+          <li><b>Ζωντανή κατάσταση</b> - λειτουργία, είσοδος, λειτουργία χρώματος, ώρες πηγής φωτός, σήμα και στοιχεία εικόνας, ενημερωμένα καθώς αλλάζουν.</li>
+          <li><b>Λειτουργία και είσοδος με ένα άγγιγμα</b> από την κορυφή, με κουμπί λειτουργίας που γνωρίζει την προθέρμανση και την ψύξη.</li>
+          <li><b>Προσαρμόσιμες κάρτες</b> - προσθέστε, κρύψτε και αναδιατάξτε τις κάρτες ώστε ο πίνακας ελέγχου να δείχνει ό,τι σας ενδιαφέρει.</li>
+          <li><b>Πληροφορίες προβολής</b> - δυναμικό εύρος, χρωματικός χώρος, γάμμα, ώρες λέιζερ, σειριακός αριθμός και στήριξη, διαβασμένα από τον προβολέα.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Οθόνη τηλεχειριστηρίου Projector Pilot με πληκτρολόγιο πλοήγησης, μενού, πηγή και τύφλωση οθόνης" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Οθόνη εικόνας Projector Pilot με φωτεινότητα, αντίθεση, θερμοκρασία χρώματος και γάμμα" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Τηλεχειριστήριο &amp; Εικόνα</div>
+        <h3>Ένα βαθύ τηλεχειριστήριο και ολόκληρο το μενού εικόνας.</h3>
+        <ul>
+          <li><b>Πλήρες πληκτρολόγιο πλοήγησης</b>, μενού, πηγή και τύφλωση οθόνης - το τηλεχειριστήριο οθόνης, όπως πρέπει.</li>
+          <li><b>Μέθοδος διόρθωσης</b> - keystone H/V, Γρήγορη Γωνία, διόρθωση σημείων, κυρτή επιφάνεια και γωνία τοίχου.</li>
+          <li><b>Πλήρης έλεγχος εικόνας</b> - φωτεινότητα, αντίθεση, απόχρωση, οξύτητα, θερμοκρασία χρώματος, γάμμα, HDR και το βαθύ μενού εικόνας, καθένα στη δική του κλίμακα του προβολέα.</li>
+          <li><b>Το HDR και ο χρωματικός χώρος είναι ξεχωριστά</b> - ένα σήμα BT.2020 SDR διαβάζεται ακριβώς έτσι, ποτέ ως ψευδές σήμα HDR.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Οθόνη φακού Projector Pilot με πληκτρολόγιο μετατόπισης, εστίαση, ζουμ και επιλογέα μεγέθους βήματος" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Φακός</div>
+        <h3>Μοτοροκίνητη μετατόπιση φακού, εστίαση, ζουμ και μνήμες.</h3>
+        <ul>
+          <li><b>Μετατόπιση, εστίαση και ζουμ</b> από ένα ακριβές πληκτρολόγιο, με <b>μέγεθος βήματος της επιλογής σας</b> - λεπτό για κάδράρισμα, χονδρό για μεγάλες κινήσεις.</li>
+          <li><b>Μνήμες φακού</b> - ανακαλέστε και αποθηκεύστε τις θέσεις που υποστηρίζει ο προβολέας σας.</li>
+          <li><b>Με επίγνωση προσανατολισμού</b> - η εφαρμογή ακολουθεί τη δική του αντιστοίχιση του προβολέα, οροφής ή οπίσθιας, ώστε το πάνω να είναι πάντα πάνω.</li>
+          <li><b>Ειλικρινείς ενδείξεις</b> - μια θέση που ο προβολέας δεν μπορεί να επιβεβαιώσει δεν παρουσιάζεται ποτέ ως κλείδωμα.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Καρτέλα Σκηνές Projector Pilot με αποθηκευμένες Σκηνές ενός αγγίγματος" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Σκηνές</div>
+        <h3>Ένα άγγιγμα για ολόκληρο το δωμάτιο.</h3>
+        <ul>
+          <li><b>Αποθηκεύστε μια Σκηνή</b> - λειτουργία, είσοδος, εικόνα, σήμα, φως, γεωμετρία και ήχος, και διαλέξτε ακριβώς ποια μέρη να κρατηθούν.</li>
+          <li><b>Εφαρμογή με ένα άγγιγμα</b> - το «Movie Night» ορίζει μαζί την είσοδο, τη λειτουργία εικόνας και τη μνήμη φακού.</li>
+          <li><b>Κάθε Σκηνή γίνεται script του Home Assistant</b>, ώστε να μπορεί να τη εκτελέσει κι ένας αυτοματισμός ή ένας φωνητικός βοηθός.</li>
+          <li><b>Κοινόχρηστα προφίλ</b> - εξαγάγετε μια ρυθμισμένη Σκηνή και δώστε την σε έναν φίλο.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Κέντρο Αυτοματισμού Σπιτιού Projector Pilot με Home Assistant, Hubitat και webhooks" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Οθόνη ρύθμισης Home Assistant του Projector Pilot με διακόπτες εισόδου και συγχρονισμού" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Αυτοματισμός σπιτιού</div>
+        <h3>Home Assistant, Hubitat και webhooks - το αληθινό πράγμα.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - συνδεθείτε, δημοσιεύστε την κατάσταση του προβολέα ως αισθητήρα και πατήστε <b>Συγχρονισμός με HA</b> για να πάρετε ένα script για κάθε Σκηνή και χειριστήριο.</li>
+          <li><b>Ένας πίνακας φτιαγμένος για εσάς</b> - ο Συγχρονισμός τον χτίζει στο Home Assistant, με ενσωματωμένες κάρτες, αναβαθμισμένες στις πλουσιότερες κάρτες HACS όταν τις έχετε. Λειτουργεί και με την ενσωμάτωση PJLink του πυρήνα.</li>
+          <li><b>Μια λίστα ελέγχου ρύθμισης</b> δείχνει τι έχει γίνει, τι λείπει και τι να κάνετε στη συνέχεια, και οι μετρήσεις σας μένουν στο Home Assistant όσο ο προβολέας είναι σβηστός.</li>
+          <li><b>Hubitat</b> - κατοπτρίστε τον προβολέα σε μια συσκευή μέσω Maker API ώστε το Rule Machine να μπορεί να ενεργεί πάνω του.</li>
+          <li><b>Webhooks</b> - στείλτε δεδομένα σε οποιοδήποτε URL όταν ο προβολέας ανάβει, σβήνει, αλλάζει είσοδο ή ανακαλεί μια Σκηνή.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/el/guide/home-automation/">Διαβάστε τον πλήρη οδηγό Home Assistant &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Και άλλα</div>
+      <h2>Οι λεπτομέρειες που το κάνουν να μοιάζει ολοκληρωμένο.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Εναλλαγή προβολέα από παντού</h3><p>Μια εναλλαγή προβολέα στην επάνω γραμμή κάθε σελίδας προβολέα σας μετακινεί ανάμεσα σε προβολείς χωρίς να γυρίσετε στη λίστα.</p></div>
+      <div class="gcard"><h3>Η απενεργοποίηση ρωτά πρώτα</h3><p>Η απενεργοποίηση του προβολέα ζητά επιβεβαίωση, ώστε ένα τυχαίο άγγιγμα να μην τελειώσει την ταινία.</p></div>
+      <div class="gcard"><h3>Χειριστήρια που ανταποκρίνονται άμεσα</h3><p>Η μετατόπιση φακού, η εστίαση, το ζουμ και το κουμπί βημάτων φωτεινής απόδοσης κινούνται τη στιγμή που πατάτε, και η εφαρμογή αντιλαμβάνεται ότι ο προβολέας ανοίγει μέσα σε περίπου δέκα δευτερόλεπτα.</p></div>
+      <div class="gcard"><h3>Το υλικολογισμικό με μια ματιά</h3><p>Η έκδοση υλικολογισμικού του προβολέα σας εμφανίζεται στον Πίνακα Ελέγχου και στην καρτέλα Πληροφορίες, και στην αναφορά διαγνωστικών, όποτε την αναφέρει ο προβολέας.</p></div>
+      <div class="gcard"><h3>Αλλαγή εισόδου σε προβολείς μόνο με PJLink</h3><p>Προβολείς που παραθέτουν τις εισόδους τους μόνο μέσω PJLink, όπως το TW7300 και το Home Cinema 4040, αλλάζουν είσοδο, και το ίδιο μπορούν και προβολείς PJLink που δεν είναι Epson.</p></div>
+      <div class="gcard"><h3>Βρείτε τον προβολέα σας στο Wi-Fi</h3><p>Η Προσθήκη Προβολέα σαρώνει το δίκτυό σας για οτιδήποτε απαντά ως προβολέας και συμπληρώνει τη διεύθυνση, με γραμμή προόδου ενώ ανακαλύπτονται οι δυνατότητες του μοντέλου σας.</p></div>
+      <div class="gcard"><h3>Αντίγραφο ασφαλείας και επαναφορά</h3><p>Εξαγάγετε τις ρυθμίσεις της εφαρμογής σε αρχείο και εισαγάγετέ τες ξανά. Το αρχείο κοινοποιείται με το πραγματικό του όνομα, και οι αποθηκευμένοι προβολείς και κωδικοί δεν ταξιδεύουν ποτέ μέσα του.</p></div>
+      <div class="gcard"><h3>Αναφέρετε ένα σφάλμα με ένα βήμα</h3><p>Η Αναφορά Σφάλματος χτίζει ένα πακέτο με κάθε σχετικό αρχείο καταγραφής, έτοιμο για αποστολή.</p></div>
+      <div class="gcard"><h3>29 γλώσσες</h3><p>Αγγλικά συν 28 ακόμη, συμπεριλαμβανομένων των αιτημάτων δικαιωμάτων σε iPhone, iPad και Mac. Δείτε τη <a href="/el/guide/languages/">λίστα γλωσσών</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/el/highlights/">Δείτε ό,τι είναι καινούργιο &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Μια ματιά γύρω</div>
+      <h2>Φτιαγμένο να μοιάζει μέρος του προβολέα.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Πίνακας ελέγχου Projector Pilot με ζωντανή κατάσταση, πληροφορίες προβολής και συνόψεις εικόνας και φακού" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dashboard</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Οθόνη τηλεχειριστηρίου Projector Pilot με πληκτρολόγιο πλοήγησης, μενού, πηγή και τύφλωση οθόνης" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Τηλεχειριστήριο</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Οθόνη φακού Projector Pilot με πληκτρολόγιο μετατόπισης, εστίαση, ζουμ και επιλογέα μεγέθους βήματος" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Φακός</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Οθόνη ρύθμισης Home Assistant του Projector Pilot με διακόπτες εισόδου και συγχρονισμού" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Ερωτήσεις που κάνουν πρώτα οι άνθρωποι</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Φτιάχνει η Epson το Projector Pilot;</h3><p>Όχι. Το Projector Pilot είναι ανεξάρτητη εφαρμογή της MiyaraHub Technologies LLC. Δεν σχετίζεται με, δεν εγκρίνεται και δεν χορηγείται από την Epson, τον φορέα του προτύπου PJLink, το Home Assistant ή το Hubitat. Αυτά τα ονόματα είναι εμπορικά σήματα των αντίστοιχων κατόχων τους και εμφανίζονται εδώ μόνο για να περιγράψουν με ποιους προβολείς και συστήματα έξυπνου σπιτιού λειτουργεί η εφαρμογή.</p></div><div class="gcard"><h3>Ποιους προβολείς υποστηρίζει το Projector Pilot;</h3><p>Προβολείς Epson μέσω ESC/VP21 και Web Control, και οποιονδήποτε προβολέα PJLink. Η εφαρμογή χρησιμοποιεί όποιο κανάλι απαντά ο προβολέας, οπότε ένας προβολέας μόνο με PJLink είναι μια συνηθισμένη υποστηριζόμενη συσκευή.</p></div><div class="gcard"><h3>Είναι το Projector Pilot συνδρομή;</h3><p>Όχι. Ο βασικός έλεγχος είναι δωρεάν, και το Pro, ο Αυτοματισμός Σπιτιού και το πακέτο είναι εφάπαξ αγορές. Χωρίς συνδρομή, χωρίς διαφημίσεις.</p></div><div class="gcard"><h3>Χρειάζεται το Projector Pilot λογαριασμό ή cloud;</h3><p>Χωρίς λογαριασμό και χωρίς cloud. Η εφαρμογή μιλά απευθείας στον προβολέα σας μέσα στο δικό σας δίκτυο.</p></div></div>
+    <p style="margin-top:22px"><a href="/el/help/">Περισσότερες απαντήσεις στη Βοήθεια &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Λήψη της εφαρμογής</div>
+      <h2>Διαθέσιμο στο Google Play. Περισσότερα store έρχονται.</h2>
+      <p class="lead">Το Projector Pilot είναι διαθέσιμο τώρα στο Google Play. Το App Store, το Microsoft Store και το Mac App Store αναμένουν έγκριση. Μία αγορά το ξεκλειδώνει σε κάθε πλατφόρμα που διαθέτετε.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - διαθέσιμο τώρα</a>
+      <span class="pill">App Store - αναμένεται έγκριση</span>
+      <span class="pill">Microsoft Store - αναμένεται έγκριση</span>
+      <span class="pill">Mac App Store - αναμένεται έγκριση</span>
+    </div>
+    <p style="margin-top:22px"><a href="/el/guide/">Ανοίξτε τον πλήρη οδηγό χρήσης &rarr;</a> &nbsp; &middot; &nbsp; <a href="/el/pricing/">Δείτε Δωρεάν έναντι Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/el/guide/">Οδηγός Χρήσης</a>
+      <a href="/el/pricing/">Τιμολόγηση</a>
+      <a href="/el/highlights/">Βασικά σημεία</a>
+      <a href="/el/guide/home-automation/">Home Assistant</a>
+      <a href="/el/help/">Βοήθεια &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/el/help/#privacy">Απόρρητο</a>
+      <a href="/el/help/#terms">Όροι</a>
+    </div>
+<div class="flinks"><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/guide/dashboard/">Πίνακας Ελέγχου</a><a href="/el/guide/remote/">Τηλεχειριστήριο</a><a href="/el/guide/picture/">Εικόνα</a><a href="/el/guide/lens/">Φακός</a><a href="/el/guide/scenes/">Σκηνές</a><a href="/el/guide/home-assistant-dashboard/">Πίνακας HA</a><a href="/el/guide/maintenance/">Συντήρηση</a><a href="/el/guide/settings/">Ρυθμίσεις</a><a href="/el/guide/languages/">Γλώσσες</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Το Projector Pilot είναι μια ανεξάρτητη εφαρμογή για προβολείς Epson και PJLink. Δεν σχετίζεται με, δεν υποστηρίζεται και δεν χορηγείται από την Epson, τον φορέα προτύπων PJLink, το Home Assistant, το Hubitat, την Apple, την Google ή τη Microsoft. Τα Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play και Microsoft Store είναι εμπορικά σήματα των αντίστοιχων κατόχων τους και αναφέρονται μόνο για να περιγράψουν με τι λειτουργεί η εφαρμογή.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

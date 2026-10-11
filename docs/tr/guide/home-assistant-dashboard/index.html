@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant Projektör Yönetim Paneli (YAML) - Projector Pilot</title>
+<meta name="description" content="Adım adım özel bir Home Assistant projektör yönetim paneli oluşturun: kurulacak HACS kartları, varlık kimliğiniz ve seri numaranız ve her kart için kopyala-yapıştır hazır YAML." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Home Assistant Projektör Yönetim Paneli (YAML) - Projector Pilot" />
+<meta property="og:description" content="Adım adım özel bir Home Assistant projektör yönetim paneli oluşturun: kurulacak HACS kartları, varlık kimliğiniz ve seri numaranız ve her kart için kopyala-yapıştır hazır YAML." />
+<meta property="og:url" content="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant Projektör Yönetim Paneli (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Adım adım özel bir Home Assistant projektör yönetim paneli oluşturun: kurulacak HACS kartları, varlık kimliğiniz ve seri numaranız ve her kart için kopyala-yapıştır hazır YAML." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Home Assistant Projektör Yönetim Paneli (YAML) - Projector Pilot", "description": "Adım adım özel bir Home Assistant projektör yönetim paneli oluşturun: kurulacak HACS kartları, varlık kimliğiniz ve seri numaranız ve her kart için kopyala-yapıştır hazır YAML.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Yaklaşık bir saatte bir Home Assistant projektör yönetim paneli oluşturun", "description": "Adım adım özel bir Home Assistant projektör yönetim paneli oluşturun: kurulacak HACS kartları, varlık kimliğiniz ve seri numaranız ve her kart için kopyala-yapıştır hazır YAML.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "tr", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant panosu", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bu yönetim panelini elle oluşturmak zorunda mıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Uygulamada HA ile Eşitle'ye dokunduğunuzda, doğrudan Home Assistant içinde sizin için hazır bir Projector Pilot yönetim paneli oluşturur - canlı projektör sensörü, her kontrol ve Sahne için bir düğmeyle birlikte - ve kenar çubuğunuzda Projector Pilot adıyla görünür. Topluluk kartlarını kurduğunuzda Eşitleme kartlarını otomatik olarak onlara yükseltir; bu sayfa ise daha zengin yeşil cam sürümünü elle oluşturmanız veya Eşitlemenin oluşturduğunu özelleştirmeniz içindir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bunu oluşturmak için HACS üzerinden özel kartlara ihtiyacım var mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ekran görüntüsündeki görünümü yakalamak için evet: Mushroom, button-card, card-mod ve mini-graph-card. Temel kontrollerin çalışması için hiçbiri gerekli değil - her düğme sade bir betik çağrısıdır, özel kartlar ise bunun üstündeki görünümdür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bilgi kutucukları neden değer gösteriyor da düğmeler hiçbir şey yapmıyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projektör sensörü, uygulamada oturum açıp eşitler eşitlemez okumalarını yayınlar; bu yüzden bilgi kutucukları hemen canlıdır. Kontrol ve Sahne düğmeleri ise yalnızca uygulamanın Kopyala bloğunu configuration.yaml dosyasına yapıştırıp Home Assistant'ı yeniden başlattıktan ve bir kez HA ile Eşitle'ye dokunduktan sonra Home Assistant'ta var olan betikleri çağırır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varlık kimliklerim bu kılavuzdakilerle aynı olacak mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desen aynı olur, tam karakterler olmaz. Projektör sensörünüz projektörünüzün modelinden adını alır ve her betik projektörünüzün seri numarasından adını alır. Bu sayfada YOUR_PROJECTOR yazan her yere kendi sensörünüzün varlık kimliğini, YOURSERIAL yazan her yere uygulamanın Home Assistant ekranında gösterilen seri numarasından türetilmiş kimliği yazın."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/tr/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil"><a href="/tr/#features">Özellikler</a><a href="/tr/guide/">Kılavuz</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/help/">Yardım</a><a class="cta" href="/tr/#download">UYGULAMAYI AL</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Home Assistant yönetim paneli</div>
+    <div class="eyebrow">Home Assistant &middot; adım adım</div>
+    <h1><span class="g">Yaklaşık bir saatte</span> bir Home Assistant projektör yönetim paneli oluşturun</h1>
+    <p>Eşitlediğinizde uygulama zaten çalışan bir yönetim paneli oluşturur - bu sayfa ise lüks, elle yapılan sürümdür. On adım, her kartın YAML'ı ve tek seferde yapıştırabileceğiniz eksiksiz bir görünüm. Yeşil cam kutucuklar, canlı bir görüntü göstergesi, Sahneleriniz ve bir lazer saati grafiği; hepsi tek bir projektör sensöründen. İki dizeyi değiştirin, sizin olsun.</p>
+    <div class="readout"><span>Eşitleme bir tanesini ücretsiz oluşturur</span><span>Görünüm için 4 HACS kartı</span><span>Bilgi kutucukları anında canlı</span><span>Düğmeler tek yapıştırmadan sonra</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Home Assistant'ta tamamlanmış Projector Pilot yönetim paneli: güç ve kaynak, renk modları, tam görüntü menüsü, HDR ve sinyal, RGB kalibrasyonu, lens ve geometri, lazer saati grafiğiyle bakım ve Sahneler; hepsi yeşil cam kutucuklar olarak" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Oluşturacağınız şey. Kaydırın veya büyütmek için tıklayın.</figcaption>
+    </figure>
+    <div class="note"><b>Sadece çalışan bir pano mu istiyorsunuz? Zaten var.</b> Uygulamada <b>HA ile Eşitle</b>'ye dokunun; Home Assistant kenar çubuğunuzda, her kontrol ve canlı sensörle birlikte hazır bir Projector Pilot yönetim paneli oluşturur - kart yok, YAML yok, yapıştırma yok. <a href="/tr/guide/home-automation/#dashboard">Eşitleme yönetim panelini sizin için oluşturur</a> bölümüne bakın. Bu sayfa, daha zengin yeşil cam sürümünü elle oluşturmanız veya Eşitlemenin verdiğini özelleştirmeniz içindir.</div>
+    <div class="note"><b>Özel görünüm için acelesiniz mi var?</b> <a href="#whole">10. adıma</a> atlayın, eksiksiz görünümü indirin, iki dizeyi ve üç Sahne kimliğini değiştirip yapıştırın. Aradaki adımlar her parçanın ne yaptığını açıklar, böylece onu değiştirebilirsiniz.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Başlamadan önce</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot, Home Assistant'a bağlı.</b> <a href="/tr/guide/home-automation/">Kurulum kılavuzu</a> oturum açmayı ve <b>Projektörün durumunu gönder</b> seçeneğini açmayı anlatır. Üzerine bir şey kurmadan önce projektörünüzü Home Assistant'ta bir sensör olarak görmelisiniz.</li>
+      <li><b>En az bir kez eşitlediniz.</b> Uygulamanın <b>Kopyala bloğunu</b> <code>configuration.yaml</code> içine yapıştırıp Home Assistant'ı yeniden başlattıktan sonra Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Home Assistant &rsaquo; <b>HA ile Eşitle</b>. Aşağıdaki her kontrol düğmesinin çağırdığı betikleri bu oluşturur.</li>
+      <li><b>Siz oluştururken projektörünüz açık</b> olmalı. Aşağıdaki görüntü öznitelikleri, beklemedeki bir projektörün çoğunlukla boş bıraktığı değerlerdir.</li>
+    </ul>
+    <p class="lead">Bu gösterge panelini iki şey besler ve aşağıdaki her adımda aradaki fark önemlidir.</p>
+    <table class="t">
+      <thead><tr><th>Kaynağı</th><th>Sağladığı</th></tr></thead>
+      <tbody>
+        <tr><td>Projektör sensörü, <code>sensor.YOUR_PROJECTOR</code></td><td>Her <b>okuma</b>. Güç, giriş, renk modu, tüm görüntü değerleri, HDR ve sinyal, lens ve geometri, lamba saatleri. Oturum açıp eşitler eşitlemez canlı, Kopyala bloğuna gerek yok.</td></tr>
+        <tr><td>Uygulamanın eşitlenmiş betikleri, <code>script.projpilot_YOURSERIAL_...</code></td><td>Her <b>kontrol</b>. Güç, girişler, renk modları, lens hafızaları ve Sahneleriniz. Bunlar yalnızca Kopyala bloğu yapıştırıldıktan, Home Assistant yeniden başlatıldıktan ve HA ile Eşitle'ye dokunduktan sonra var olur.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 1</div>
+      <h2>HACS'ten dört kart kurun</h2>
+    </div>
+    <p class="lead">Dördü de varsayılan HACS mağazasında. Home Assistant'ta: <b>HACS &rsaquo; Ön Yüz &rsaquo; Depoları Keşfet &amp; İndir</b>, adı aratın, İndir'e basın, ardından tarayıcınızı yenileyin.</p>
+    <table class="t">
+      <thead><tr><th>Aranacak ad</th><th>Kullanım amacı</th><th>Atlarsanız</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Her bilgi kutucuğu, kontrol düğmesi ve Sahne kutucuğu</td><td>Sade bir <code>button</code> kartı kullanın. Çalışır, ama daha köşeli görünür.</td></tr>
+        <tr><td><b>button-card</b></td><td>Canlı etiketiyle ana kart</td><td>Bir <code>entity</code> kartı veya daha az ayrıntılı bir Mushroom şablon kartı kullanın.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Yeşil cam arka plan, kenarlıklar ve degradeler</td><td>Her şey yine çalışır. Yalnızca parıltı olmaz.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Bakım altındaki lazer saati geçmişi</td><td>Yerleşik <code>history-graph</code> kartını kullanın.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Çalışması için hiçbiri gerekli değil.</b> Aşağıdaki her kontrol, aynı betiği gösteren standart bir Home Assistant düğme kartından çalışır. Özel kartlar yeşil cam görünümüdür, tesisat değil.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 2</div>
+      <h2>Varlık kimliğinizi ve seri numaranızı bulun</h2>
+    </div>
+    <p class="lead">Bu sayfadaki her kod parçası iki yer tutucu kullanır. Kendinizinkileri bir kez bulun, gerisi kopyala yapıştır.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Home Assistant'ta Geliştirici Araçları &rsaquo; Durumlar, <code>projector_pilot</code> ile filtreleyin. <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code> gibi bir şey görmelisiniz.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; uygulamayı açın, <b>Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Home Assistant</b>. Seri numarasından türetilmiş kimlik tam orada gösterilir ve eşitlenen her betik adının ortasındadır: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> ve benzeri.</li>
+    </ul>
+    <p class="lead">1. adımın Kopyala bloğu ve Eşitleme tamamlandıktan sonra, eşitlenmiş kontrol listenizin tamamını bir arada görmek için Geliştirici Araçları &rsaquo; Durumlar'ı <code>projpilot</code> ile de filtreleyebilirsiniz.</p>
+    <div class="note"><b>Henüz betik listesi yok mu?</b> Kopyala bloğunu yapıştırmadan önce bu beklenen bir durumdur. Sensör yine vardır ve güncellenir; betikler yalnızca HA ile Eşitle başarıyla çalıştıktan sonra görünür.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 3</div>
+      <h2>Görünümü oluşturun</h2>
+    </div>
+    <ol class="steps">
+      <li>Ayarlar &rsaquo; Yönetim Panelleri &rsaquo; Yönetim Paneli Ekle &rsaquo; Sıfırdan yeni yönetim paneli. Adını Projector Pilot koyun.</li>
+      <li>Açın, ardından düzenlemek için sağ üstteki kalem simgesine dokunun.</li>
+      <li>Bir görünüm ekleyin. İkisi de olur; gerçek pano, kartların alt alta dizildiği varsayılan düzeni kullanır ve yapıştırması en kolay olanı budur.</li>
+      <li>YAML yapıştırmak için bir kartın üç nokta menüsünden <b>YAML'da düzenle</b>'yi seçin veya bir görünümün tamamını tek seferde yapıştırmak için yönetim panelinin üç nokta menüsünden <b>Ham yapılandırma düzenleyicisi</b>'ni seçin.</li>
+    </ol>
+    <p class="lead">Yazmayı tercih ederseniz görünümün kendi ayarları:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 4</div>
+      <h2>Canlı bir bilgi kutucuğu ekleyin</h2>
+    </div>
+    <p class="lead">Komut gönderen bir şeye dokunmadan önce varlık kimliğinizin doğru olduğunu bilmek için yalnızca okuyan bir şeyle başlayın. Bu, projektör sensörünüz var olur olmaz canlıdır; Kopyala bloğu yok, eşitleme yok. Bir kart ekleyin, YAML'da Düzenle'yi seçin ve yapıştırın:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Aynı biçim, sensörün taşıdığı yaklaşık 80 özniteliğin herhangi birini okur: <code>brightness</code> yerine <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code> veya kutucukta istediğiniz herhangi birini yazın.</p>
+    <p class="lead">Kaydedin. Gerçek bir sayı veya sözcük görünürse varlık kimliğiniz doğrudur ve aşağıdaki her şey çalışır. Boş görünürse 2. adıma dönün.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 5</div>
+      <h2>Yeşil bir bölüm başlığı ekleyin</h2>
+    </div>
+    <p class="lead">Düz bir başlık boşa alan kaplar. Bu, card-mod'dan gelen degrade arka planlı bir <code>markdown</code> kartıdır ve bir kutucuk yığınını adlandırılmış bölümlere dönüştüren şeydir. Panodaki her bölüm bunlardan biriyle açılır; yalnızca etiket ve emoji farklıdır.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Emoji kodunu ve etiket metnini değiştirin; card-mod bloğu her bölümde aynıdır.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 6</div>
+      <h2>Bir kontrol düğmesi ekleyin</h2>
+    </div>
+    <p class="lead">Bu, yalnızca bir değer okumak yerine komut gönderir, bu nedenle önce betiklerin var olması gerekir. Uygulamanın yalnızca Kopyala bloğunu <code>configuration.yaml</code> içine yapıştırdıktan, Home Assistant'ı yeniden başlattıktan ve <b>HA ile Eşitle</b>'ye dokunduktan sonra yazdığı <code>script.projpilot_YOURSERIAL_power_on</code> betiğini çağırır.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Aynı kart Kapat, Ekran Boşaltma, HDMI 1, HDMI 2, A/V Sessize Alma, bir renk modu veya bir lens hafızası için de geçerlidir: yalnızca etiket, simge ve <code>service</code> değişir.</p>
+    <div class="note"><b>Doğru görünüyor ama dokununca hiçbir şey olmuyorsa</b> Kopyala bloğu ya yapıştırılmamıştır ya da Home Assistant bundan sonra yeniden başlatılmamıştır. Yönetim panelinde hata olduğunu varsaymadan önce uygulamada tam olarak bunu kontrol eden <b>Bağlantıyı Sına</b>'yı çalıştırın.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 7</div>
+      <h2>Ana kartı ekleyin</h2>
+    </div>
+    <p class="lead">Panonun en üstündeki ana kart bir <code>button-card</code>'dir: büyük bir güç durumu, aynı anda birkaç öznitelikten oluşturulan tek satırlık bir özet ve yalnızca kenarlığa değil kartın tamamına uygulanan yeşil cam görünümü.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Kurulumdan kuruluma değişen parçalara indirgenmiştir. Tam kart ayrıca simge, ad ve etiket ızgara konumlarını da ayarlar; hepsi için 10. adımdaki indirmeye bakın.</p>
+    <p class="lead">Daha ince bir şerit mi tercih edersiniz? Bir <code>mushroom-chips-card</code> aynı işi tek satırlık küçük çiplerle yapar: güç durumu, giriş, renk modu, video aralığı ve lamba saatleri; her biri <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code> okuyan bir şablon. Panonun en üstünde ikisinden birini kullanın, ikisini birden değil.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 8</div>
+      <h2>Sahnelerinizi ekleyin</h2>
+    </div>
+    <p class="lead">Uygulamada kaydettiğiniz her Sahne, eşitlediğinizde <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> adlı bir betik olur ve bunun kutucuğu, 6. adımdaki kontrol düğmesi kartının Sahne adı ve simgesiyle yazılmış halidir.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt"><code>YOURSCENE1</code> yerine, uygulamanın eşitlenmiş kontrol listesinde o Sahne için gösterilen kimliği yazın. Her Sahne için bir <code>horizontal-stack</code> içinde bir kutucuk.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 9</div>
+      <h2>Lazer saati geçmişi ekleyin</h2>
+    </div>
+    <p class="lead">Projektör sensörü Home Assistant tarafından diğerleri gibi kaydedilir, dolayısıyla <code>lamp_hours</code> için geçmiş bedavadır. Ek sensör yok, yardımcı yok, önce yapılandırılacak hiçbir şey yok; Bakım bölümünün altında.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 saat iki haftadır. Lazer ve lamba saatleri ani sıçramak yerine düzenli artar, bu yüzden iki haftalık bir pencere, grafik düz görünmeden eğilimi görmek için genellikle yeterlidir.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 10</div>
+      <h2>Ya da hepsini alın</h2>
+    </div>
+    <p class="lead">Bu sayfanın en üstündeki ekran görüntüsündeki her bölüm ve her kartla birlikte eksiksiz görünüm; varlık kimlikleri yerine yer tutucularla.</p>
+    <ol class="steps">
+      <li><a href="/tr/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Görünüm YAML'ını indirin</a>.</li>
+      <li>Herhangi bir metin düzenleyicide açın ve göründükleri her yerde <code>YOUR_PROJECTOR</code> yerine 2. adımdaki projektör sensörünüzün varlık kimliğini, <code>YOURSERIAL</code> yerine 2. adımdaki seri numarasından türetilmiş kimliğinizi yazın.</li>
+      <li>Alta yakın Sahneler bölümünde <code>YOURSCENE1</code>, <code>YOURSCENE2</code> ve <code>YOURSCENE3</code> yerine kendi üç Sahne kimliğinizi yazın veya gerçekte kaç Sahneniz varsa ona uyması için kutucuk ekleyin ya da çıkarın.</li>
+      <li>Home Assistant'ta yönetim panelinizi açın, kalem simgesine, ardından üç nokta menüsüne, <b>Ham yapılandırma düzenleyicisi</b>'ne gidin ve bir görünüm olarak yapıştırın.</li>
+    </ol>
+    <div class="note"><b>Sahne adlarınız ve sayınız uyuşmayacak.</b> Dosya üç örnek Sahneyle gelir: Film Gecesi, Oyun, Spor Günü. Kutucukları yeniden adlandırın, kendi Sahne kimliklerinize yönlendirin ve bölüm, gerçekten kaydettiğiniz Sahne sayısına uyana kadar kutucuk ekleyin veya silin.</div>
+    <div class="note"><b>Bilgi kutucukları yapıştırdığınız anda çalışır.</b> Yalnızca sensörün var olmasına ihtiyaç duyarlar. Kontrol ve Sahne düğmeleri, Kopyala bloğu <code>configuration.yaml</code> içine yapıştırılıp Home Assistant yeniden başlatılana ve HA ile Eşitle'ye dokunulana kadar ölü kalır.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sorun Giderme</h2>
+    </div>
+    <details class="more"><summary>Bir kutucuk Bilinmiyor gösteriyor</summary>
+      <p>Öznitelik adını sensörün gerçekte taşıdığıyla karşılaştırın: Geliştirici Araçları &rsaquo; Durumlar, <code>sensor.YOUR_PROJECTOR</code> varlığınız ve öznitelik listesini okuyun. HDR PQ veya HDR HLG gibi bazı okumalar yalnızca projektör o tür bir sinyali aktif olarak aldığında dolar, bu yüzden bu ikisinde Bilinmiyor bozuk olmaktan çok doğru olabilir. Sensörün tamamı seyrek görünüyorsa projektörü uyandırın: beklemedeki bir cihaz çok az şey yayınlar.</p>
+    </details>
+    <details class="more"><summary>Bir düğme hiçbir şey yapmıyor</summary>
+      <p>Kopyala bloğunu henüz yapıştırmadınız ya da yapıştırdığınızdan beri Home Assistant yeniden başlatılmadı. Kontrol ve Sahne düğmeleri uygulamanın yazdığı betikleri çağırır ve bu betikler, uygulamada <b>Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Home Assistant</b> altında Kopyala bloğu <code>configuration.yaml</code> içine yapıştırılana, Home Assistant bir kez yeniden başlatılana ve <b>HA ile Eşitle</b>'ye dokunulana kadar var olmaz. Önce uygulamada <b>Bağlantıyı Sına</b>'yı çalıştırın - bir yönetim paneli hatası aramadan önce bloğun orada olup olmadığını söyler.</p>
+    </details>
+    <details class="more"><summary>Beklediğim betikler Geliştirici Araçları &rsaquo; Durumlar'da yok</summary>
+      <p>Tam seri numarası yerine <code>projpilot</code> ile filtreleyin - listenin tamamını görmek daha kolaydır. Yakın zamanda eklediğiniz bir kontrol veya Sahne eksikse <b>HA ile Eşitle</b>'ye yeniden dokunun; yeni bir kurulum gerektirmeden yerinde günceller. Bir Sahneyi sildikten sonra eski, ölü betikler listeyi dolduruyorsa uygulamadaki <b>Sahipsiz betikleri kaldır</b>'ı kullanın.</p>
+    </details>
+    <details class="more"><summary>Varlık kimliğim bu kılavuzdakine benzemiyor</summary>
+      <p>Desen sabittir, orta kısım değildir. Sensörünüz kendi projektörünüzün modelinden adını alır ve her betik bu sayfadaki yer tutucuları değil, kendi projektörünüzün seri numarasını taşır. İkisini de 2. adımdaki gibi Geliştirici Araçları &rsaquo; Durumlar'dan ve uygulamanın Home Assistant ekranından alın, örnek metni yazmak yerine onları kullanın.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tüm projektörünüz, tek bir duvarda</h2>
+    <p class="lead" style="margin:0 auto 24px">Ev Otomasyonu tek seferlik bir eklentidir. Abonelik yok, hesap yok, bulut yok. Tek bir satın alma, sahip olduğunuz her platformda kilidi açar.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - şimdi mevcut</a>
+      <span class="pill">App Store - onay bekliyor</span>
+      <span class="pill">Microsoft Store - onay bekliyor</span>
+      <span class="pill">Mac App Store - onay bekliyor</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/tr/guide/home-automation/">Ev Otomasyonu sayfasına dön &rarr;</a> &middot; <a href="/tr/guide/">Kullanım Kılavuzunun tamamı &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SSS</div>
+      <h2>Hızlı yanıtlar</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Bu yönetim panelini elle oluşturmak zorunda mıyım?</h3><p>Hayır. Uygulamada HA ile Eşitle'ye dokunduğunuzda, doğrudan Home Assistant içinde sizin için hazır bir Projector Pilot yönetim paneli oluşturur - canlı projektör sensörü, her kontrol ve Sahne için bir düğmeyle birlikte - ve kenar çubuğunuzda Projector Pilot adıyla görünür. Bu sayfa, daha zengin yeşil cam sürümünü elle oluşturmanız veya Eşitlemenin oluşturduğunu özelleştirmeniz içindir.</p></div><div class="gcard"><h3>Bunu oluşturmak için HACS üzerinden özel kartlara ihtiyacım var mı?</h3><p>Ekran görüntüsündeki görünümü yakalamak için evet: Mushroom, button-card, card-mod ve mini-graph-card. Temel kontrollerin çalışması için hiçbiri gerekli değil - her düğme sade bir betik çağrısıdır, özel kartlar ise bunun üstündeki görünümdür.</p></div><div class="gcard"><h3>Bilgi kutucukları neden değer gösteriyor da düğmeler hiçbir şey yapmıyor?</h3><p>Projektör sensörü, uygulamada oturum açıp eşitler eşitlemez okumalarını yayınlar; bu yüzden bilgi kutucukları hemen canlıdır. Kontrol ve Sahne düğmeleri ise yalnızca uygulamanın Kopyala bloğunu configuration.yaml dosyasına yapıştırıp Home Assistant'ı yeniden başlattıktan ve bir kez HA ile Eşitle'ye dokunduktan sonra Home Assistant'ta var olan betikleri çağırır.</p></div><div class="gcard"><h3>Varlık kimliklerim bu kılavuzdakilerle aynı olacak mı?</h3><p>Desen aynı olur, tam karakterler olmaz. Projektör sensörünüz projektörünüzün modelinden adını alır ve her betik projektörünüzün seri numarasından adını alır. Bu sayfada YOUR_PROJECTOR yazan her yere kendi sensörünüzün varlık kimliğini, YOURSERIAL yazan her yere uygulamanın Home Assistant ekranında gösterilen seri numarasından türetilmiş kimliği yazın.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/help/">Yardım &amp; SSS</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/tr/help/#privacy">Gizlilik</a><a href="/tr/help/#terms">Şartlar</a></div>
+<div class="flinks"><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/guide/dashboard/">Yönetim Paneli</a><a href="/tr/guide/remote/">Kumanda</a><a href="/tr/guide/picture/">Görüntü</a><a href="/tr/guide/lens/">Lens</a><a href="/tr/guide/scenes/">Sahneler</a><a href="/tr/guide/home-assistant-dashboard/">HA Yönetim Paneli</a><a href="/tr/guide/maintenance/">Bakım</a><a href="/tr/guide/settings/">Ayarlar</a><a href="/tr/guide/languages/">Diller</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot, Epson ve PJLink projektörler için bağımsız bir uygulamadır. Epson, PJLink standart kuruluşu, Home Assistant, Hubitat, Apple, Google veya Microsoft ile bağlantılı değildir; bunlar tarafından onaylanmamış veya desteklenmemiştir. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ve Microsoft Store ilgili sahiplerinin ticari markalarıdır ve yalnızca uygulamanın neyle çalıştığını belirtmek için anılmıştır.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

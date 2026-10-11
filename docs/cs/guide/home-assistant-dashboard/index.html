@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="cs" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Nástěnka projektoru pro Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="Sestavte si vlastní nástěnku projektoru pro Home Assistant krok za krokem: karty z HACS k instalaci, ID vaší entity a sériové číslo a hotové YAML pro každou kartu." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Nástěnka projektoru pro Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="Sestavte si vlastní nástěnku projektoru pro Home Assistant krok za krokem: karty z HACS k instalaci, ID vaší entity a sériové číslo a hotové YAML pro každou kartu." />
+<meta property="og:url" content="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nástěnka projektoru pro Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Sestavte si vlastní nástěnku projektoru pro Home Assistant krok za krokem: karty z HACS k instalaci, ID vaší entity a sériové číslo a hotové YAML pro každou kartu." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Nástěnka projektoru pro Home Assistant (YAML) - Projector Pilot", "description": "Sestavte si vlastní nástěnku projektoru pro Home Assistant krok za krokem: karty z HACS k instalaci, ID vaší entity a sériové číslo a hotové YAML pro každou kartu.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Sestavte nástěnku projektoru pro Home Assistant zhruba za hodinu", "description": "Sestavte si vlastní nástěnku projektoru pro Home Assistant krok za krokem: karty z HACS k instalaci, ID vaší entity a sériové číslo a hotové YAML pro každou kartu.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "cs", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Dashboard Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Musím tuto nástěnku sestavit ručně?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Když v aplikaci klepnete na Synchronizovat s HA, aplikace vám přímo v Home Assistant sestaví hotovou nástěnku Projector Pilot - živý senzor projektoru plus tlačítko pro každý ovládací prvek a Scénu - a objeví se v postranním panelu jako Projector Pilot. Pokud máte nainstalované komunitní karty, Synchronizace na ně své karty automaticky vylepší; tato stránka je pro ruční sestavení bohatší verze se zelenými skleněnými dlaždicemi nebo pro úpravu toho, co Synchronizace vytvořila."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Potřebuji k tomu vlastní karty z HACS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aby to vypadalo jako na snímku obrazovky, ano: Mushroom, button-card, card-mod a mini-graph-card. Žádná z nich není nutná, aby základní ovládání fungovalo - každé tlačítko je obyčejné volání skriptu a vlastní karty jsou jen vzhled navíc."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proč informační dlaždice ukazují hodnotu, ale tlačítka nic nedělají?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senzor projektoru publikuje své údaje hned, jakmile se v aplikaci přihlásíte a synchronizujete, takže informační dlaždice jsou živé okamžitě. Tlačítka ovládání a Scén volají skripty, které se v Home Assistant objeví, až když vložíte Zkopírovaný blok z aplikace do configuration.yaml, restartujete Home Assistant a jednou klepnete na Synchronizovat s HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Budou moje ID entit odpovídat těm v tomto návodu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vzor ano, přesné znaky ne. Váš senzor projektoru je pojmenován podle modelu vašeho projektoru a každý skript je pojmenován podle sériového čísla vašeho projektoru. Všude, kde tato stránka píše YOUR_PROJECTOR, dosaďte ID entity svého senzoru; všude, kde píše YOURSERIAL, dosaďte ID odvozené ze sériového čísla, které ukazuje obrazovka Home Assistant v aplikaci."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/cs/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk"><a href="/cs/#features">Funkce</a><a href="/cs/guide/">Průvodce</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/help/">Nápověda</a><a class="cta" href="/cs/#download">ZÍSKEJTE APLIKACI</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Nástěnka Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; krok za krokem</div>
+    <h1>Sestavte nástěnku projektoru pro Home Assistant <span class="g">zhruba za hodinu</span></h1>
+    <p>Aplikace vám při Synchronizaci už funkční nástěnku sestaví - tato stránka je luxusní, ručně sestavená verze. Deset kroků, YAML každé karty a kompletní pohled, který vložíte najednou. Zelené skleněné dlaždice, živý přehled obrazu, vaše Scény a graf hodin laseru, vše z jediného senzoru projektoru. Změňte dva řetězce a je vaše.</p>
+    <div class="readout"><span>Synchronizace sestaví jednu zdarma</span><span>4 karty z HACS pro vzhled</span><span>Informační dlaždice ihned živé</span><span>Tlačítka po jednom vložení</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Hotová nástěnka Projector Pilot v Home Assistant: napájení a zdroj, barevné režimy, úplná nabídka obrazu, HDR a signál, kalibrace RGB, objektiv a geometrie, údržba s grafem hodin laseru a Scény, vše jako zelené skleněné dlaždice" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Co budete sestavovat. Posouvejte, nebo kliknutím zvětšete.</figcaption>
+    </figure>
+    <div class="note"><b>Chcete jen funkční nástěnku? Už ji máte.</b> Klepněte v aplikaci na <b>Synchronizovat s HA</b> a ta vám v postranním panelu Home Assistant sestaví hotovou nástěnku Projector Pilot se všemi ovládacími prvky a živým senzorem - bez karet, bez YAML, bez vkládání. Viz <a href="/cs/guide/home-automation/#dashboard">Synchronizace sestaví nástěnku za vás</a>. Tato stránka je pro ruční sestavení bohatší verze se zelenými skleněnými dlaždicemi nebo pro úpravu toho, co vám Synchronizace dala.</div>
+    <div class="note"><b>Spěcháte na vlastní vzhled?</b> Přejděte na <a href="#whole">krok 10</a>, stáhněte kompletní pohled, změňte dva řetězce a tři ID Scén a vložte ho. Kroky mezi tím vysvětlují, co která část dělá, abyste ji mohli upravit.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Než začnete</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot je propojen s Home Assistant.</b> <a href="/cs/guide/home-automation/">Průvodce nastavením</a> pokrývá přihlášení a zapnutí volby <b>Odesílat stav projektoru</b>. Než na něm začnete cokoli stavět, měli byste svůj projektor v Home Assistant vidět jako senzor.</li>
+      <li><b>Alespoň jednou jste synchronizovali.</b> Nastavení &rsaquo; Domácí automatizace &rsaquo; Home Assistant &rsaquo; <b>Synchronizovat s HA</b>, poté co jste vložili <b>Zkopírovaný blok</b> z aplikace do <code>configuration.yaml</code> a restartovali Home Assistant. Tím se vytvoří skripty, které volá každé ovládací tlačítko níže.</li>
+      <li><b>Váš projektor je zapnutý</b>, dokud sestavujete. Obrazové atributy níže zůstávají u projektoru v pohotovosti většinou prázdné.</li>
+    </ul>
+    <p class="lead">Dashboard je napájen dvěma zdroji a rozdíl mezi nimi je důležitý v každém z kroků níže.</p>
+    <table class="t">
+      <thead><tr><th>Pochází z</th><th>Poskytuje</th></tr></thead>
+      <tbody>
+        <tr><td>Senzor projektoru, <code>sensor.YOUR_PROJECTOR</code></td><td>Každý <b>údaj</b>. Napájení, vstup, barevný režim, všechny obrazové hodnoty, HDR a signál, objektiv a geometrie, hodiny lampy. Živé, jakmile se přihlásíte a synchronizujete, Zkopírovaný blok není potřeba.</td></tr>
+        <tr><td>Synchronizované skripty aplikace, <code>script.projpilot_YOURSERIAL_...</code></td><td>Každé <b>ovládání</b>. Napájení, vstupy, barevné režimy, paměti objektivu a vaše Scény. Existují až po vložení Zkopírovaného bloku, restartu Home Assistant a klepnutí na Synchronizovat s HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 1</div>
+      <h2>Nainstalujte čtyři karty z HACS</h2>
+    </div>
+    <p class="lead">Všechny čtyři jsou ve výchozím obchodě HACS. V Home Assistantu: <b>HACS &rsaquo; Frontend &rsaquo; Prozkoumat &amp; stáhnout repozitáře</b>, vyhledejte název, klikněte na Stáhnout a poté znovu načtěte prohlížeč.</p>
+    <table class="t">
+      <thead><tr><th>Hledejte</th><th>Použito pro</th><th>Pokud ji vynecháte</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Každá informační dlaždice, ovládací tlačítko a dlaždice Scény</td><td>Použijte běžnou kartu <code>button</code>. Funguje, jen vypadá hranatěji.</td></tr>
+        <tr><td><b>button-card</b></td><td>Hlavní karta s živým popiskem</td><td>Použijte kartu <code>entity</code> nebo šablonovou kartu Mushroom s menším množstvím detailů.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Zelené skleněné pozadí, okraje a přechody</td><td>Vše stále funguje. Nic jen nezáří.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Historie hodin laseru v sekci Údržba</td><td>Použijte vestavěnou kartu <code>history-graph</code>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Žádná z nich není nutná, aby to fungovalo.</b> Každé ovládání níže běží ze standardní tlačítkové karty Home Assistant, která míří na stejný skript. Vlastní karty jsou zelený skleněný vzhled, ne instalace.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 2</div>
+      <h2>Najděte ID své entity a své sériové číslo</h2>
+    </div>
+    <p class="lead">Každý úryvek na této stránce používá dva zástupné symboly. Najděte ty své jednou a zbytek je jen kopírování a vkládání.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Nástroje pro vývojáře &rsaquo; Stavy v Home Assistant, filtrujte podle <code>projector_pilot</code>. Něco jako <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; otevřete aplikaci, <b>Nastavení &rsaquo; Domácí automatizace &rsaquo; Home Assistant</b>. ID odvozené ze sériového čísla je tam vidět a je to prostřední část každého názvu synchronizovaného skriptu: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> a tak dále.</li>
+    </ul>
+    <p class="lead">Můžete také filtrovat Nástroje pro vývojáře &rsaquo; Stavy podle <code>projpilot</code> a zobrazit celý seznam synchronizovaných ovládání najednou, jakmile je hotový Zkopírovaný blok z kroku 1 a Synchronizace.</p>
+    <div class="note"><b>Zatím žádný seznam skriptů?</b> To je očekávané, dokud jste nevložili Zkopírovaný blok. Senzor přesto existuje a aktualizuje se; skripty se objeví až po úspěšném proběhnutí Synchronizovat s HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 3</div>
+      <h2>Vytvořte zobrazení</h2>
+    </div>
+    <ol class="steps">
+      <li>Nastavení &rsaquo; Nástěnky &rsaquo; Přidat nástěnku &rsaquo; Nová nástěnka od nuly. Pojmenujte ji Projector Pilot.</li>
+      <li>Otevřete ji a vpravo nahoře klepněte na ikonu tužky pro úpravy.</li>
+      <li>Přidejte pohled. Funguje jakékoli rozložení; skutečná nástěnka používá výchozí řadu karet pod sebou, do které se nejsnáz vkládá.</li>
+      <li>Pro vložení YAML použijte nabídku se třemi tečkami na kartě a zvolte <b>Upravit v YAML</b>, nebo nabídku se třemi tečkami na nástěnce a <b>Editor surové konfigurace</b>, kde vložíte celý pohled najednou.</li>
+    </ol>
+    <p class="lead">Vlastní nastavení pohledu, pokud je raději zadáte ručně:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 4</div>
+      <h2>Přidejte živou informační dlaždici</h2>
+    </div>
+    <p class="lead">Začněte něčím, co jen čte, abyste věděli, že je ID vaší entity správné, než se dotknete čehokoli, co posílá příkaz. Tato dlaždice je živá, jakmile existuje senzor vašeho projektoru, bez Zkopírovaného bloku a bez synchronizace. Přidejte kartu, Upravit v YAML a vložte:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Stejný tvar přečte kterýkoli z ~80 atributů, které senzor nese: zaměňte <code>brightness</code> za <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, cokoli chcete na dlaždici.</p>
+    <p class="lead">Uložte ji. Pokud se objeví skutečné číslo nebo slovo, je ID vaší entity správné a vše níže bude fungovat. Pokud je prázdná, vraťte se ke kroku 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 5</div>
+      <h2>Přidejte zelenou hlavičku sekce</h2>
+    </div>
+    <p class="lead">Obyčejný nadpis je mrtvé místo. Toto je karta <code>markdown</code> s přechodovým pozadím z card-mod a právě ona mění hromadu dlaždic v pojmenované sekce. Každá sekce na nástěnce začíná jednou takovou, jen s jiným popiskem a emotikonem.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Změňte kód emotikonu a text popisku; blok card-mod je u každé sekce stejný.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 6</div>
+      <h2>Přidejte ovládací tlačítko</h2>
+    </div>
+    <p class="lead">Toto posílá příkaz, místo aby jen četlo hodnotu, takže skripty musí nejdřív existovat. Volá <code>script.projpilot_YOURSERIAL_power_on</code>, které aplikace zapíše až poté, co vložíte její Zkopírovaný blok do <code>configuration.yaml</code>, restartujete Home Assistant a klepnete na <b>Synchronizovat s HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Stejná karta slouží pro Vypnutí, Zatmavení obrazu, HDMI 1, HDMI 2, Ztlumení A/V, barevný režim nebo paměť objektivu: mění se jen popisek, ikona a <code>service</code>.</p>
+    <div class="note"><b>Pokud to vypadá správně, ale po klepnutí se nic neděje</b>, Zkopírovaný blok buď není vložen, nebo se Home Assistant od té doby nerestartoval. Než usoudíte, že je chyba v nástěnce, spusťte v aplikaci <b>Vyzkoušet připojení</b>, které přesně tohle kontroluje.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 7</div>
+      <h2>Přidejte hlavní kartu</h2>
+    </div>
+    <p class="lead">Hlavní karta nahoře na nástěnce je <code>button-card</code>: velký stav napájení, jednořádkový souhrn složený z několika atributů najednou a zelený skleněný vzhled na celé kartě, nejen na jejím okraji.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Zkráceno na části, které se mění podle instalace. Úplná karta nastavuje také ikonu, název a pozice popisků v mřížce; vše najdete ve stažení v kroku 10.</p>
+    <p class="lead">Dáváte přednost štíhlejšímu pruhu? <code>mushroom-chips-card</code> odvede stejnou práci v jedné řadě malých čipů: stav napájení, vstup, barevný režim, rozsah videa a hodiny lampy, každý jako šablona čtoucí <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Nahoře na nástěnce použijte jedno nebo druhé, ne obojí.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 8</div>
+      <h2>Přidejte své Scény</h2>
+    </div>
+    <p class="lead">Každá Scéna, kterou v aplikaci uložíte, se po synchronizaci stane skriptem pojmenovaným <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> a dlaždice pro ni je stejná karta ovládacího tlačítka z kroku 6 s názvem a ikonou Scény.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Nahraďte <code>YOURSCENE1</code> ID, které je u dané Scény uvedeno v seznamu synchronizovaných ovládání v aplikaci. Jedna dlaždice na Scénu, v <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 9</div>
+      <h2>Přidejte historii hodin laseru</h2>
+    </div>
+    <p class="lead">Senzor projektoru zaznamenává Home Assistant jako každý jiný, takže <code>lamp_hours</code> má historii zadarmo. Žádné další senzory, žádní pomocníci, nic k předchozímu nastavení, v sekci Údržba.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 hodin jsou dva týdny. Hodiny laseru a lampy rostou plynule a neskáčou, takže dvoutýdenní okno obvykle stačí k tomu, aby byl vidět trend a graf nevypadal plochý.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 10</div>
+      <h2>Nebo si vezměte všechno</h2>
+    </div>
+    <p class="lead">Kompletní pohled, každá sekce a každá karta ze snímku obrazovky nahoře na této stránce, se zástupnými texty místo ID entit.</p>
+    <ol class="steps">
+      <li><a href="/cs/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Stáhnout YAML pohledu</a>.</li>
+      <li>Otevřete ho v libovolném textovém editoru a všude, kde se objeví, nahraďte: <code>YOUR_PROJECTOR</code> ID entity senzoru svého projektoru z kroku 2 a <code>YOURSERIAL</code> svým ID odvozeným ze sériového čísla z kroku 2.</li>
+      <li>V sekci Scény poblíž konce nahraďte <code>YOURSCENE1</code>, <code>YOURSCENE2</code> a <code>YOURSCENE3</code> svými třemi ID Scén, nebo dlaždice přidejte či odeberte podle toho, kolik Scén skutečně máte.</li>
+      <li>V Home Assistant otevřete svou nástěnku, ikonu tužky, nabídku se třemi tečkami, <b>Editor surové konfigurace</b> a vložte ho jako pohled.</li>
+    </ol>
+    <div class="note"><b>Názvy ani počet vašich Scén se nebudou shodovat.</b> Soubor obsahuje tři ukázkové Scény: Filmový večer, Hraní, Sportovní den. Přejmenujte dlaždice, nasměrujte je na svá ID Scén a přidejte nebo smažte dlaždice, aby sekce odpovídala počtu Scén, které jste skutečně uložili.</div>
+    <div class="note"><b>Informační dlaždice fungují ihned po vložení.</b> Potřebují jen existující senzor. Ovládací tlačítka a tlačítka Scén zůstanou mrtvá, dokud není Zkopírovaný blok vložen do <code>configuration.yaml</code>, Home Assistant restartován a nebylo klepnuto na Synchronizovat s HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Řešení potíží</h2>
+    </div>
+    <details class="more"><summary>Dlaždice ukazuje Neznámé</summary>
+      <p>Porovnejte název atributu s tím, co senzor skutečně nese: Nástroje pro vývojáře &rsaquo; Stavy, vaše entita <code>sensor.YOUR_PROJECTOR</code> a přečtěte si její seznam atributů. Některé údaje, jako HDR PQ nebo HDR HLG, se naplní jen tehdy, když projektor právě přijímá daný druh signálu, takže Neznámé u těchto dvou může být správně, ne chyba. Pokud celý senzor vypadá řídce, probuďte projektor: jednotka v pohotovosti publikuje velmi málo.</p>
+    </details>
+    <details class="more"><summary>Tlačítko nic nedělá</summary>
+      <p>Ještě jste nevložili Zkopírovaný blok, nebo se Home Assistant od té doby nerestartoval. Ovládací tlačítka a tlačítka Scén volají skripty, které aplikace zapisuje, a ty neexistují, dokud v aplikaci v <b>Nastavení &rsaquo; Domácí automatizace &rsaquo; Home Assistant</b> není Zkopírovaný blok vložen do <code>configuration.yaml</code>, Home Assistant jednou restartován a klepnuto na <b>Synchronizovat s HA</b>. Nejdřív v aplikaci spusťte <b>Vyzkoušet připojení</b> - řekne vám, zda blok existuje, dřív než začnete hledat chybu v nástěnce.</p>
+    </details>
+    <details class="more"><summary>Skripty, které očekávám, chybí v Nástroje pro vývojáře &rsaquo; Stavy</summary>
+      <p>Filtrujte podle <code>projpilot</code> místo celého sériového čísla - celý seznam se pak čte snáz. Pokud chybí ovládání nebo Scéna, kterou jste nedávno přidali, klepněte znovu na <b>Synchronizovat s HA</b>; aktualizuje se na místě a nevyžaduje nové nastavení. Pokud seznam zaplevelují staré mrtvé skripty po smazání Scény, použijte v aplikaci <b>Odebrat osiřelé skripty</b>.</p>
+    </details>
+    <details class="more"><summary>Moje ID entity nevypadá jako v této příručce</summary>
+      <p>Vzor je pevný, prostřední část ne. Váš senzor je pojmenován podle modelu vašeho projektoru a každý skript nese sériové číslo vašeho projektoru, ne zástupné texty z této stránky. Obojí zjistíte v Nástroje pro vývojáře &rsaquo; Stavy a na obrazovce Home Assistant v aplikaci, jako v kroku 2, a použijte je místo ukázkového textu.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Celý váš projektor na jedné zdi</h2>
+    <p class="lead" style="margin:0 auto 24px">Domácí automatizace je jednorázový doplněk. Žádné předplatné, žádný účet, žádný cloud. Jeden nákup ji odemkne na každé platformě, kterou vlastníte.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - již k dispozici</a>
+      <span class="pill">App Store - čeká na schválení</span>
+      <span class="pill">Microsoft Store - čeká na schválení</span>
+      <span class="pill">Mac App Store - čeká na schválení</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/cs/guide/home-automation/">Zpět na Domácí automatizaci &rarr;</a> &middot; <a href="/cs/guide/">Celá uživatelská příručka &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Rychlé odpovědi</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Musím tuto nástěnku sestavit ručně?</h3><p>Ne. Když v aplikaci klepnete na Synchronizovat s HA, aplikace vám přímo v Home Assistant sestaví hotovou nástěnku Projector Pilot - živý senzor projektoru plus tlačítko pro každý ovládací prvek a Scénu - a objeví se v postranním panelu jako Projector Pilot. Tato stránka je pro ruční sestavení bohatší verze se zelenými skleněnými dlaždicemi nebo pro úpravu toho, co Synchronizace vytvořila.</p></div><div class="gcard"><h3>Potřebuji k tomu vlastní karty z HACS?</h3><p>Aby to vypadalo jako na snímku obrazovky, ano: Mushroom, button-card, card-mod a mini-graph-card. Žádná z nich není nutná, aby základní ovládání fungovalo - každé tlačítko je obyčejné volání skriptu a vlastní karty jsou jen vzhled navíc.</p></div><div class="gcard"><h3>Proč informační dlaždice ukazují hodnotu, ale tlačítka nic nedělají?</h3><p>Senzor projektoru publikuje své údaje hned, jakmile se v aplikaci přihlásíte a synchronizujete, takže informační dlaždice jsou živé okamžitě. Tlačítka ovládání a Scén volají skripty, které se v Home Assistant objeví, až když vložíte Zkopírovaný blok z aplikace do configuration.yaml, restartujete Home Assistant a jednou klepnete na Synchronizovat s HA.</p></div><div class="gcard"><h3>Budou moje ID entit odpovídat těm v tomto návodu?</h3><p>Vzor ano, přesné znaky ne. Váš senzor projektoru je pojmenován podle modelu vašeho projektoru a každý skript je pojmenován podle sériového čísla vašeho projektoru. Všude, kde tato stránka píše YOUR_PROJECTOR, dosaďte ID entity svého senzoru; všude, kde píše YOURSERIAL, dosaďte ID odvozené ze sériového čísla, které ukazuje obrazovka Home Assistant v aplikaci.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/help/">Nápověda &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/cs/help/#privacy">Soukromí</a><a href="/cs/help/#terms">Podmínky</a></div>
+<div class="flinks"><a href="/cs/guide/getting-started/">První kroky</a><a href="/cs/guide/dashboard/">Nástěnka</a><a href="/cs/guide/remote/">Dálkový ovladač</a><a href="/cs/guide/picture/">Obraz</a><a href="/cs/guide/lens/">Objektiv</a><a href="/cs/guide/scenes/">Scény</a><a href="/cs/guide/home-assistant-dashboard/">Nástěnka HA</a><a href="/cs/guide/maintenance/">Údržba</a><a href="/cs/guide/settings/">Nastavení</a><a href="/cs/guide/languages/">Jazyky</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot je nezávislá aplikace pro projektory Epson a PJLink. Není přidružena k společnostem Epson, organizaci PJLink, Home Assistant, Hubitat, Apple, Google ani Microsoft, není jimi podporována ani sponzorována. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play a Microsoft Store jsou ochranné známky svých příslušných vlastníků a jsou uvedeny pouze proto, aby popsaly, s čím aplikace spolupracuje.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Epson &amp; PJLink 프로젝터 제어 앱 - Projector Pilot</title>
+<meta name="description" content="Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 앱입니다. 전원, 입력, 화질, 전동 렌즈, 탭 한 번으로 실행하는 장면, Home Assistant까지. 구독은 없습니다." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ko/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Epson &amp; PJLink 프로젝터 제어 앱 - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 앱입니다. 전원, 입력, 화질, 전동 렌즈, 탭 한 번으로 실행하는 장면, Home Assistant까지. 구독은 없습니다." />
+<meta property="og:url" content="https://projectorpilot.com/ko/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Epson &amp; PJLink 프로젝터 제어 앱 - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 앱입니다. 전원, 입력, 화질, 전동 렌즈, 탭 한 번으로 실행하는 장면, Home Assistant까지. 구독은 없습니다." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ko", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Epson & PJLink 프로젝터 제어 앱 - Projector Pilot", "description": "Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 앱입니다. 전원, 입력, 화질, 전동 렌즈, 탭 한 번으로 실행하는 장면, Home Assistant까지. 구독은 없습니다.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ko", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Epson 및 PJLink 프로젝터를 위한 독립 앱입니다. 전원, 입력, 전체 화질 및 색상 제어, 전동 렌즈 시프트, 초점, 줌, 메모리, 탭 한 번으로 실행하는 장면, Home Assistant, Hubitat, 웹훅 자동화, 유지관리 인사이트, 홈 화면 위젯을 29개 언어로 제공합니다.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "무료", "price": "0", "priceCurrency": "USD", "description": "프로젝터 추가, 전원, 입력 전환, 실시간 상태, 화면 리모컨 기본 기능."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "한 번만 결제하는 인앱 구매입니다. 참고 가격이며, 스토어에는 내 지역의 가격이 표시됩니다."}, {"@type": "Offer", "name": "홈 오토메이션 추가 기능", "price": "2.99", "priceCurrency": "USD", "description": "한 번만 결제하는 인앱 구매입니다. 참고 가격이며, 스토어에는 내 지역의 가격이 표시됩니다."}, {"@type": "Offer", "name": "Pro + 홈 오토메이션 번들", "price": "11.99", "priceCurrency": "USD", "description": "한 번만 결제하는 인앱 구매입니다. 참고 가격이며, 스토어에는 내 지역의 가격이 표시됩니다."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Projector Pilot은 Epson에서 만든 앱인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. Projector Pilot은 MiyaraHub Technologies LLC의 독립 앱입니다. Epson, PJLink 표준 기구, Home Assistant, Hubitat과 제휴, 보증, 후원 관계가 없습니다. 이 이름들은 각 소유자의 상표이며, 앱이 함께 작동하는 프로젝터와 스마트홈 시스템을 설명하기 위해서만 여기에 표시되었습니다."}}, {"@type": "Question", "name": "Projector Pilot은 어떤 프로젝터를 지원하나요?", "acceptedAnswer": {"@type": "Answer", "text": "ESC/VP21과 Web Control을 사용하는 Epson 프로젝터, 그리고 모든 PJLink 프로젝터를 지원합니다. 앱은 프로젝터가 응답하는 방식을 사용하므로, PJLink 전용 프로젝터도 문제없이 지원되는 일반 기기입니다."}}, {"@type": "Question", "name": "Projector Pilot은 구독 서비스인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 기본 제어는 무료이며, Pro, 홈 오토메이션, 번들은 한 번만 결제합니다. 구독도, 광고도 없습니다."}}, {"@type": "Question", "name": "Projector Pilot은 계정이나 클라우드가 필요한가요?", "acceptedAnswer": {"@type": "Answer", "text": "계정도 클라우드도 없습니다. 앱은 내 네트워크에서 프로젝터와 직접 통신합니다."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="#features">기능</a>
+      <a href="/ko/guide/">가이드</a>
+      <a href="/ko/pricing/">가격</a>
+      <a href="/ko/highlights/">하이라이트</a>
+      <a href="/ko/guide/home-automation/">Home Assistant</a>
+      <a href="/ko/help/">도움말</a>
+      <a class="cta" href="#download">앱 받기</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Epson &amp; PJLink 프로젝터</div>
+      <h1><span class="g">Epson 프로젝터</span>에게 늘 필요했던 바로 그 제어 앱.</h1>
+      <p>전원, 입력, 전체 화질 메뉴, 전동 렌즈 시프트, 초점, 줌, 탭 한 번으로 실행하는 장면, 그리고 진짜 홈 오토메이션까지. Epson 및 PJLink 프로젝터를 스마트폰으로 바로 제어하세요. 광고도, 구독도, 클라우드 계정도 없습니다.</p>
+      <div class="pills">
+        <span class="pill">29개 언어</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">한 번만 결제</span>
+        <span class="pill">내 네트워크에서 작동</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play에서 받기 &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Epson 프로젝터의 전원, 입력, 색상 모드를 실시간으로 보여 주는 스마트폰의 Projector Pilot 대시보드" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">기능</div>
+      <h2>프로젝터가 제공하는 모든 컨트롤을 깔끔한 앱 하나에.</h2>
+      <p class="lead">Projector Pilot은 ESC/VP21, PJLink, Epson Web Control을 동시에 사용해 응답하는 방식으로 프로젝터와 통신합니다. 그래서 전원, 화질, 지오메트리, 렌즈 제어가 실제로 작동하며, 모든 값은 추측이 아니라 프로젝터에서 읽어 옵니다.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="실시간 상태, 투사 정보, 화질 및 렌즈 요약이 있는 Projector Pilot 대시보드" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">대시보드</div>
+        <h3>한눈에 볼 수 있고, 원하는 대로 꾸밀 수 있습니다.</h3>
+        <ul>
+          <li><b>실시간 상태</b> - 전원, 입력, 색상 모드, 광원 사용 시간, 신호, 화질 수치가 바뀌는 대로 갱신됩니다.</li>
+          <li><b>상단에서 바로 전원과 입력을 한 번에</b> 조작하며, 전원 버튼은 예열과 냉각 과정까지 반영합니다.</li>
+          <li><b>카드 맞춤 설정</b> - 카드를 추가하고, 숨기고, 순서를 바꿔 대시보드에 중요한 정보만 표시하세요.</li>
+          <li><b>투사 정보</b> - 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간, 시리얼 번호, 설치 방식을 프로젝터에서 읽어 옵니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="방향 패드, 메뉴, 소스, 화면 차단이 있는 Projector Pilot 리모컨 화면" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="밝기, 명암, 색온도, 감마가 있는 Projector Pilot 화질 화면" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">리모컨 &amp; 화질</div>
+        <h3>깊이 있는 리모컨과 전체 화질 메뉴.</h3>
+        <ul>
+          <li><b>전체 방향 패드</b>, 메뉴, 소스, 화면 차단까지 제대로 만든 화면 리모컨입니다.</li>
+          <li><b>보정 방식</b> - 수평/수직 키스톤, 퀵 코너, 포인트 보정, 곡면, 코너 월.</li>
+          <li><b>전체 화질 제어</b> - 밝기, 명암, 색조, 선명도, 색온도, 감마, HDR, 깊이 있는 화질 메뉴를 각각 프로젝터 자체의 눈금으로 조정합니다.</li>
+          <li><b>HDR과 색 공간은 분리됩니다</b> - BT.2020 SDR 신호는 있는 그대로 표시되며, 잘못된 HDR 배지가 붙는 일은 없습니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="시프트 패드, 초점, 줌, 스텝 크기 선택기가 있는 Projector Pilot 렌즈 화면" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">렌즈</div>
+        <h3>전동 렌즈 시프트, 초점, 줌, 메모리.</h3>
+        <ul>
+          <li>정밀한 패드로 <b>시프트, 초점, 줌</b>을 조작하며, <b>직접 고르는 스텝 크기</b>로 프레이밍에는 미세하게, 큰 이동에는 크게 움직입니다.</li>
+          <li><b>렌즈 메모리</b> - 프로젝터가 지원하는 위치를 불러오고 저장합니다.</li>
+          <li><b>설치 방향 인식</b> - 앱이 천장 설치든 리어 프로젝션이든 프로젝터 자체의 매핑을 따르므로, 위는 언제나 위입니다.</li>
+          <li><b>솔직한 위치 표시</b> - 프로젝터가 확인하지 못하는 위치를 잠금으로 포장하지 않습니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="저장된 탭 한 번 장면이 있는 Projector Pilot 장면 탭" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">장면</div>
+        <h3>방 전체를 탭 한 번으로.</h3>
+        <ul>
+          <li><b>장면 저장</b> - 전원, 입력, 화질, 신호, 광원, 지오메트리, 오디오 중 어떤 항목을 담을지 정확히 고를 수 있습니다.</li>
+          <li><b>탭 한 번으로 적용</b> - “무비 나이트”가 입력, 화질 모드, 렌즈 메모리를 한꺼번에 설정합니다.</li>
+          <li><b>모든 장면이 Home Assistant 스크립트가 되므로</b>, 자동화나 음성 비서도 실행할 수 있습니다.</li>
+          <li><b>공유 가능한 프로필</b> - 잘 맞춘 장면을 내보내서 친구에게 전해 주세요.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Home Assistant, Hubitat, 웹훅이 있는 Projector Pilot 홈 오토메이션 허브" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="로그인과 동기화 토글이 있는 Projector Pilot의 Home Assistant 설정 화면" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">홈 오토메이션</div>
+        <h3>Home Assistant, Hubitat, 웹훅까지 제대로 지원합니다.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - 로그인하고, 프로젝터 상태를 센서로 게시하고, <b>HA와 동기화</b>를 탭하면 모든 장면과 컨트롤용 스크립트가 만들어집니다.</li>
+          <li><b>나를 위해 만들어지는 대시보드</b> - 동기화가 Home Assistant에 기본 카드로 대시보드를 만들고, HACS 카드가 있으면 더 풍부한 카드로 업그레이드합니다. 핵심 PJLink 통합구성요소와도 함께 작동합니다.</li>
+          <li><b>설정 체크리스트</b>가 완료된 것, 빠진 것, 다음에 할 일을 보여 주며, 프로젝터가 꺼져 있는 동안에도 측정값이 Home Assistant에 남아 있습니다.</li>
+          <li><b>Hubitat</b> - Maker API를 통해 프로젝터를 기기로 미러링해서 Rule Machine이 제어할 수 있습니다.</li>
+          <li><b>Webhooks</b> - 프로젝터가 켜지거나, 꺼지거나, 입력이 바뀌거나, 장면이 호출될 때 원하는 URL로 데이터를 보냅니다.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/ko/guide/home-automation/">Home Assistant 전체 가이드 읽기 &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">그 외에도</div>
+      <h2>완성도를 느끼게 하는 디테일들.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>어디서든 프로젝터 전환</h3><p>모든 프로젝터 페이지의 상단 바에 있는 프로젝터 전환기로 목록으로 돌아가지 않고도 프로젝터 사이를 오갈 수 있습니다.</p></div>
+      <div class="gcard"><h3>전원을 끌 때는 먼저 확인</h3><p>프로젝터를 끌 때 확인을 요청하므로, 실수로 탭해서 영화가 끝나는 일은 없습니다.</p></div>
+      <div class="gcard"><h3>즉각 반응하는 컨트롤</h3><p>렌즈 시프트, 초점, 줌, 광 출력 스테퍼가 누르는 즉시 움직이며, 앱은 프로젝터가 켜지는 것을 약 10초 안에 알아챕니다.</p></div>
+      <div class="gcard"><h3>펌웨어를 한눈에</h3><p>프로젝터가 펌웨어 버전을 보고하면 대시보드, 정보 탭, 진단 리포트에 표시됩니다.</p></div>
+      <div class="gcard"><h3>PJLink 전용 프로젝터의 입력 전환</h3><p>TW7300, Home Cinema 4040처럼 PJLink로만 입력을 나열하는 프로젝터에서도 입력을 전환할 수 있으며, Epson이 아닌 PJLink 프로젝터도 마찬가지입니다.</p></div>
+      <div class="gcard"><h3>Wi-Fi에서 프로젝터 찾기</h3><p>프로젝터 추가는 네트워크에서 프로젝터로 응답하는 기기를 검색해 주소를 채워 주며, 내 모델의 지원 기능을 파악하는 동안 진행 표시줄을 보여 줍니다.</p></div>
+      <div class="gcard"><h3>백업과 복원</h3><p>앱 설정을 파일로 내보내고 다시 가져오세요. 파일은 실제 이름으로 공유되며, 저장된 프로젝터와 비밀번호는 포함되지 않습니다.</p></div>
+      <div class="gcard"><h3>한 번에 버그 신고</h3><p>버그 신고는 관련 로그를 모두 담은 번들 하나를 만들어 바로 보낼 수 있게 해 줍니다.</p></div>
+      <div class="gcard"><h3>29개 언어</h3><p>영어와 28개 언어를 지원하며, iPhone, iPad, Mac의 권한 요청 안내도 포함됩니다. <a href="/ko/guide/languages/">언어 목록</a>을 참고하세요.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/ko/highlights/">새로운 기능 모두 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">둘러보기</div>
+      <h2>프로젝터의 일부처럼 느껴지도록 만들었습니다.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="실시간 상태, 투사 정보, 화질 및 렌즈 요약이 있는 Projector Pilot 대시보드" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>대시보드</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="방향 패드, 메뉴, 소스, 화면 차단이 있는 Projector Pilot 리모컨 화면" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>리모컨</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="시프트 패드, 초점, 줌, 스텝 크기 선택기가 있는 Projector Pilot 렌즈 화면" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>렌즈</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="로그인과 동기화 토글이 있는 Projector Pilot의 Home Assistant 설정 화면" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>가장 먼저 묻는 질문들</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot은 Epson에서 만든 앱인가요?</h3><p>아니요. Projector Pilot은 MiyaraHub Technologies LLC의 독립 앱입니다. Epson, PJLink 표준 기구, Home Assistant, Hubitat과 제휴, 보증, 후원 관계가 없습니다. 이 이름들은 각 소유자의 상표이며, 앱이 함께 작동하는 프로젝터와 스마트홈 시스템을 설명하기 위해서만 여기에 표시되었습니다.</p></div><div class="gcard"><h3>Projector Pilot은 어떤 프로젝터를 지원하나요?</h3><p>ESC/VP21과 Web Control을 사용하는 Epson 프로젝터, 그리고 모든 PJLink 프로젝터를 지원합니다. 앱은 프로젝터가 응답하는 방식을 사용하므로, PJLink 전용 프로젝터도 문제없이 지원되는 일반 기기입니다.</p></div><div class="gcard"><h3>Projector Pilot은 구독 서비스인가요?</h3><p>아니요. 기본 제어는 무료이며, Pro, 홈 오토메이션, 번들은 한 번만 결제합니다. 구독도, 광고도 없습니다.</p></div><div class="gcard"><h3>Projector Pilot은 계정이나 클라우드가 필요한가요?</h3><p>계정도 클라우드도 없습니다. 앱은 내 네트워크에서 프로젝터와 직접 통신합니다.</p></div></div>
+    <p style="margin-top:22px"><a href="/ko/help/">도움말 &amp; FAQ에서 더 많은 답변 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">앱 받기</div>
+      <h2>Google Play에서 이용 가능합니다. 다른 스토어도 곧 만나요.</h2>
+      <p class="lead">Projector Pilot은 지금 Google Play에서 이용할 수 있습니다. App Store, Microsoft Store, Mac App Store는 승인 대기 중입니다. 한 번 구매하면 보유한 모든 플랫폼에서 잠금이 해제됩니다.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - 지금 이용 가능</a>
+      <span class="pill">App Store - 승인 대기 중</span>
+      <span class="pill">Microsoft Store - 승인 대기 중</span>
+      <span class="pill">Mac App Store - 승인 대기 중</span>
+    </div>
+    <p style="margin-top:22px"><a href="/ko/guide/">전체 사용자 가이드 열기 &rarr;</a> &nbsp; &middot; &nbsp; <a href="/ko/pricing/">무료 vs Pro 비교 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/ko/guide/">사용자 가이드</a>
+      <a href="/ko/pricing/">가격</a>
+      <a href="/ko/highlights/">하이라이트</a>
+      <a href="/ko/guide/home-automation/">Home Assistant</a>
+      <a href="/ko/help/">도움말 &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/ko/help/#privacy">개인정보 보호</a>
+      <a href="/ko/help/#terms">이용약관</a>
+    </div>
+<div class="flinks"><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/guide/dashboard/">대시보드</a><a href="/ko/guide/remote/">리모컨</a><a href="/ko/guide/picture/">화질</a><a href="/ko/guide/lens/">렌즈</a><a href="/ko/guide/scenes/">장면</a><a href="/ko/guide/home-assistant-dashboard/">HA 대시보드</a><a href="/ko/guide/maintenance/">유지관리</a><a href="/ko/guide/settings/">설정</a><a href="/ko/guide/languages/">언어</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 독립 앱입니다. Epson, PJLink 표준 기구, Home Assistant, Hubitat, Apple, Google, Microsoft와 제휴, 보증, 후원 관계가 없습니다. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, Microsoft Store는 각 소유자의 상표이며, 앱이 함께 작동하는 대상을 설명하기 위해서만 언급했습니다.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

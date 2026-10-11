@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Alkalmazás Epson &amp; PJLink projektorok vezérlésére - Projector Pilot</title>
+<meta name="description" content="A Projector Pilot alkalmazás Epson és PJLink projektorokhoz: bekapcsolás, bemenet, kép, motoros lencse, egy érintéses Jelenetek és Home Assistant. Nincs előfizetés." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/hu/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Alkalmazás Epson &amp; PJLink projektorok vezérlésére - Projector Pilot" />
+<meta property="og:description" content="A Projector Pilot alkalmazás Epson és PJLink projektorokhoz: bekapcsolás, bemenet, kép, motoros lencse, egy érintéses Jelenetek és Home Assistant. Nincs előfizetés." />
+<meta property="og:url" content="https://projectorpilot.com/hu/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Alkalmazás Epson &amp; PJLink projektorok vezérlésére - Projector Pilot" />
+<meta name="twitter:description" content="A Projector Pilot alkalmazás Epson és PJLink projektorokhoz: bekapcsolás, bemenet, kép, motoros lencse, egy érintéses Jelenetek és Home Assistant. Nincs előfizetés." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Alkalmazás Epson és PJLink projektorok vezérlésére - Projector Pilot", "description": "A Projector Pilot alkalmazás Epson és PJLink projektorokhoz: bekapcsolás, bemenet, kép, motoros lencse, egy érintéses Jelenetek és Home Assistant. Nincs előfizetés.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Független alkalmazás Epson és PJLink projektorokhoz: bekapcsolás, bemenet, teljes kép- és színvezérlés, motoros lencseeltolás, fókusz, zoom és memóriák, egy érintéses Jelenetek, Home Assistant, Hubitat és webhook-automatizálás, karbantartási elemzések és kezdőképernyő-widgetek, 29 nyelven.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Ingyenes", "price": "0", "priceCurrency": "USD", "description": "Projektor hozzáadása, bekapcsolás, bemenetváltás, élő állapot és a képernyőn megjelenő távirányító alapjai."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Egyszeri alkalmazáson belüli vásárlás. Referenciaár; az áruház az Ön régiójának árát mutatja."}, {"@type": "Offer", "name": "Otthon-automatizálás kiegészítő", "price": "2.99", "priceCurrency": "USD", "description": "Egyszeri alkalmazáson belüli vásárlás. Referenciaár; az áruház az Ön régiójának árát mutatja."}, {"@type": "Offer", "name": "Pro + Otthon-automatizálás csomag", "price": "11.99", "priceCurrency": "USD", "description": "Egyszeri alkalmazáson belüli vásárlás. Referenciaár; az áruház az Ön régiójának árát mutatja."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Az Epson készíti a Projector Pilot-ot?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. A Projector Pilot a MiyaraHub Technologies LLC független alkalmazása. Nem áll kapcsolatban az Epson-nal, a PJLink szabványügyi testületével, a Home Assistant-tal vagy a Hubitat-tal, azok nem támogatják és nem szponzorálják. Ezek a nevek a megfelelő tulajdonosaik védjegyei, és itt csak annak leírására szerepelnek, mely projektorokkal és okosotthon-rendszerekkel működik az alkalmazás."}}, {"@type": "Question", "name": "Mely projektorokat támogatja a Projector Pilot?", "acceptedAnswer": {"@type": "Answer", "text": "Epson projektorok ESC/VP21 és Web Control protokollon, valamint bármely PJLink projektor. Az alkalmazás azt használja, amelyiken a projektor válaszol, így a csak PJLink-es projektor hétköznapi, támogatott eszköz."}}, {"@type": "Question", "name": "A Projector Pilot előfizetéses?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Az alapvezérlés ingyenes, a Pro, az Otthon-automatizálás és a csomag pedig egyszeri vásárlás. Nincs előfizetés, nincs hirdetés."}}, {"@type": "Question", "name": "Kell fiók vagy felhő a Projector Pilot használatához?", "acceptedAnswer": {"@type": "Answer", "text": "Nincs fiók és nincs felhő. Az alkalmazás közvetlenül a saját hálózatán beszél a projektorral."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="#features">Funkciók</a>
+      <a href="/hu/guide/">Útmutató</a>
+      <a href="/hu/pricing/">Árak</a>
+      <a href="/hu/highlights/">Kiemelések</a>
+      <a href="/hu/guide/home-automation/">Home Assistant</a>
+      <a href="/hu/help/">Súgó</a>
+      <a class="cta" href="#download">TÖLTSE LE AZ APPOT</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Epson &amp; PJLink projektorok</div>
+      <h1>A vezérlőalkalmazás, amelyet az <span class="g">Epson projektora</span> mindig is megérdemelt.</h1>
+      <p>Bekapcsolás, bemenet, a teljes képmenü, motoros lencseeltolás, fókusz és zoom, egy érintéses Jelenetek és valódi otthon-automatizálás - Epson és PJLink projektorokhoz, közvetlenül a telefonjáról. Nincs hirdetés. Nincs előfizetés. Nincs felhőfiók.</p>
+      <div class="pills">
+        <span class="pill">29 nyelv</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Egyszeri vásárlás</span>
+        <span class="pill">A hálózatán működik</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Szerezze meg a Google Play-en &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="A Projector Pilot vezérlőpultja telefonon, élő bekapcsolási állapottal, bemenettel és színmóddal egy Epson projektorhoz" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mit csinál</div>
+      <h2>Minden vezérlő, amelyet a projektora kínál, egyetlen tiszta alkalmazásban.</h2>
+      <p class="lead">A Projector Pilot egyszerre beszél a projektorával ESC/VP21, PJLink és Epson Web Control protokollon, azt használva, amelyik válaszol - így olyan bekapcsolást, képet, geometriát és lencsevezérlést kap, amely valóban működik, a projektorról visszaolvasott értékekkel, sosem találgatva.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="A Projector Pilot vezérlőpultja élő állapottal, vetítési információval, valamint kép- és lencseösszegzéssel" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Irányítópult</div>
+        <h3>Minden egy pillantásra, úgy kialakítva, ahogyan Ön szeretné.</h3>
+        <ul>
+          <li><b>Élő állapot</b> - bekapcsolás, bemenet, színmód, fényforrás üzemórák, jel és képadatok, a változásokkal együtt frissítve.</li>
+          <li><b>Egy érintéses bekapcsolás és bemenet</b> közvetlenül felülről, a bemelegedést és lehűlést ismerő bekapcsolás-gombbal.</li>
+          <li><b>Testreszabható kártyák</b> - adja hozzá, rejtse el és rendezze át a kártyákat, hogy a vezérlőpult azt mutassa, ami Önnek fontos.</li>
+          <li><b>Vetítési információ</b> - dinamikatartomány, színtér, gamma, lézer üzemórák, sorozatszám és rögzítés, a projektorról beolvasva.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="A Projector Pilot távirányító képernyője iránypaddal, menüvel, forrással és képelsötétítéssel" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="A Projector Pilot képernyője fényerővel, kontraszttal, színhőmérséklettel és gammával" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Távirányító &amp; kép</div>
+        <h3>Mély távirányító és a teljes képmenü.</h3>
+        <ul>
+          <li><b>Teljes iránypad</b>, menü, forrás és képelsötétítés - a képernyőn megjelenő távirányító, jól megcsinálva.</li>
+          <li><b>Korrekciós módszer</b> - H/V-trapézkorrekció, Gyors sarok, pontkorrekció, ívelt felület és szobasarok.</li>
+          <li><b>Teljes körű képvezérlés</b> - fényerő, kontraszt, színezet, élesség, színhőmérséklet, gamma, HDR és a mély képmenü, mindegyik a projektor saját skáláján.</li>
+          <li><b>A HDR és a színtér külön van</b> - egy BT.2020 SDR jel pontosan így olvasható, sosem hamis HDR-jelvénnyel.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="A Projector Pilot lencse képernyője eltoló paddal, fókusszal, zoommal és lépésköz-választóval" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Lencse</div>
+        <h3>Motoros lencseeltolás, fókusz, zoom és memóriák.</h3>
+        <ul>
+          <li><b>Eltolás, fókusz és zoom</b> pontos padról, <b>Ön által választott lépésközzel</b> - finom a kereteléshez, durva a nagy mozdulatokhoz.</li>
+          <li><b>Lencsememóriák</b> - hívja elő és mentse a projektora által támogatott pozíciókat.</li>
+          <li><b>Tájolástudatos</b> - az alkalmazás a projektor saját leképezését követi, mennyezeti vagy hátsó, így a fel mindig fel.</li>
+          <li><b>Őszinte kijelzések</b> - a pozíciót, amelyet a projektor nem tud megerősíteni, sosem tüntetik fel zárként.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="A Projector Pilot Jelenetek füle mentett, egy érintéses Jelenetekkel" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Jelenetek</div>
+        <h3>Egy érintés az egész szobához.</h3>
+        <ul>
+          <li><b>Jelenet mentése</b> - bekapcsolás, bemenet, kép, jel, fény, geometria és hang, és kiválaszthatja pontosan, mely részeket őrizze meg.</li>
+          <li><b>Alkalmazás egy érintéssel</b> - a „Filmes est” együtt állítja be a bemenetet, a képmódot és a lencsememóriát.</li>
+          <li><b>Minden Jelenet Home Assistant szkriptté válik</b>, így egy automatizálás vagy egy hangasszisztens is futtathatja.</li>
+          <li><b>Megosztható profilok</b> - exportáljon egy hangolt Jelenetet, és adja át egy barátnak.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="A Projector Pilot Otthon-automatizálás központja Home Assistant-tal, Hubitat-tal és webhookokkal" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="A Projector Pilot Home Assistant beállítási képernyője bejelentkezéssel és szinkronizálási kapcsolókkal" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Otthon-automatizálás</div>
+        <h3>Home Assistant, Hubitat és webhookok - az igazi.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - jelentkezzen be, tegye közzé a projektor állapotát szenzorként, és koppintson a <b>Szinkronizálás HA-val</b> gombra, hogy minden Jelenethez és vezérlőhöz szkriptet kapjon.</li>
+          <li><b>Önnek épített vezérlőpult</b> - a szinkronizálás a Home Assistant-ban építi fel, beépített kártyákkal, amelyek a gazdagabb HACS-kártyákra frissülnek, ha vannak. A core PJLink integrációval is működik.</li>
+          <li><b>Egy beállítási ellenőrzőlista</b> megmutatja, mi kész, mi hiányzik és mi a teendő, és az értékei a Home Assistant-ban maradnak, amíg a projektor ki van kapcsolva.</li>
+          <li><b>Hubitat</b> - tükrözze a projektort egy eszközre a Maker API-n keresztül, hogy a Rule Machine cselekedhessen rajta.</li>
+          <li><b>Webhookok</b> - küldjön bármely URL-re, amikor a projektor bekapcsol, kikapcsol, bemenetet vált vagy Jelenetet hív elő.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/hu/guide/home-automation/">Olvassa el a teljes Home Assistant útmutatót &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">És még több</div>
+      <h2>A részletek, amelyek késznek érezteti.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Projektorváltás bárhonnan</h3><p>Minden projektoroldal felső sávjában egy projektorváltó a lista érintése nélkül vált a projektorok között.</p></div>
+      <div class="gcard"><h3>A kikapcsolás előtt rákérdez</h3><p>A projektor kikapcsolása megerősítést kér, így egy véletlen koppintás nem vet véget a filmnek.</p></div>
+      <div class="gcard"><h3>Azonnal reagáló vezérlők</h3><p>A lencseeltolás, a fókusz, a zoom és a fénykibocsátás-léptető abban a pillanatban mozdul, ahogy megnyomja, és az alkalmazás nagyjából tíz másodpercen belül észreveszi, ha a projektor bekapcsol.</p></div>
+      <div class="gcard"><h3>Firmware egy pillantásra</h3><p>A projektor firmware-verziója megjelenik a Vezérlőpulton és az Info fülön, valamint a diagnosztikai jelentésben, ha a projektor megadja.</p></div>
+      <div class="gcard"><h3>Bemenetváltás csak PJLink-es projektorokon</h3><p>Azok a projektorok, amelyek a bemeneteiket csak PJLink-en listázzák, például a TW7300 és a Home Cinema 4040, váltanak bemenetet, és a nem Epson PJLink projektorok is tudnak.</p></div>
+      <div class="gcard"><h3>Keresse meg a projektorát a Wi-Fi-n</h3><p>A Projektor hozzáadása átvizsgálja a hálózatot minden projektorként válaszoló eszközért, és kitölti a címet, folyamatjelzővel, amíg a modellje képességeit felderíti.</p></div>
+      <div class="gcard"><h3>Biztonsági mentés és visszaállítás</h3><p>Exportálja az alkalmazásbeállításait fájlba, és importálja őket újra. A fájl a valódi nevén kerül megosztásra, és az elmentett projektorok és jelszavak sosem utaznak benne.</p></div>
+      <div class="gcard"><h3>Hiba jelentése egy lépésben</h3><p>A Hiba jelentése egyetlen csomagot épít minden fontos naplóval, küldésre készen.</p></div>
+      <div class="gcard"><h3>29 nyelv</h3><p>Angol plusz 28 további, az iPhone-on, iPaden és Mac-en megjelenő engedélykérésekkel együtt. Lásd a <a href="/hu/guide/languages/">nyelvek listáját</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/hu/highlights/">Nézze meg mindent, ami új &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Körbepillantás</div>
+      <h2>Úgy építve, hogy a projektor részének érződjön.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="A Projector Pilot vezérlőpultja élő állapottal, vetítési információval, valamint kép- és lencseösszegzéssel" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Irányítópult</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="A Projector Pilot távirányító képernyője iránypaddal, menüvel, forrással és képelsötétítéssel" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Távvezérlő</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="A Projector Pilot lencse képernyője eltoló paddal, fókusszal, zoommal és lépésköz-választóval" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Lencse</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="A Projector Pilot Home Assistant beállítási képernyője bejelentkezéssel és szinkronizálási kapcsolókkal" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Kérdések, amelyeket elsőként tesznek fel</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Az Epson készíti a Projector Pilot-ot?</h3><p>Nem. A Projector Pilot a MiyaraHub Technologies LLC független alkalmazása. Nem áll kapcsolatban az Epson-nal, a PJLink szabványügyi testületével, a Home Assistant-tal vagy a Hubitat-tal, azok nem támogatják és nem szponzorálják. Ezek a nevek a megfelelő tulajdonosaik védjegyei, és itt csak annak leírására szerepelnek, mely projektorokkal és okosotthon-rendszerekkel működik az alkalmazás.</p></div><div class="gcard"><h3>Mely projektorokat támogatja a Projector Pilot?</h3><p>Epson projektorok ESC/VP21 és Web Control protokollon, valamint bármely PJLink projektor. Az alkalmazás azt használja, amelyiken a projektor válaszol, így a csak PJLink-es projektor hétköznapi, támogatott eszköz.</p></div><div class="gcard"><h3>A Projector Pilot előfizetéses?</h3><p>Nem. Az alapvezérlés ingyenes, a Pro, az Otthon-automatizálás és a csomag pedig egyszeri vásárlás. Nincs előfizetés, nincs hirdetés.</p></div><div class="gcard"><h3>Kell fiók vagy felhő a Projector Pilot használatához?</h3><p>Nincs fiók és nincs felhő. Az alkalmazás közvetlenül a saját hálózatán beszél a projektorral.</p></div></div>
+    <p style="margin-top:22px"><a href="/hu/help/">További válaszok a Súgó &amp; FAQ oldalon &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Töltse le az appot</div>
+      <h2>Elérhető a Google Play-en. További áruházak úton vannak.</h2>
+      <p class="lead">A Projector Pilot most elérhető a Google Play-en. Az App Store, a Microsoft Store és a Mac App Store jóváhagyásra vár. Egyetlen vásárlás minden birtokolt platformon feloldja.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - már elérhető</a>
+      <span class="pill">App Store - jóváhagyásra vár</span>
+      <span class="pill">Microsoft Store - jóváhagyásra vár</span>
+      <span class="pill">Mac App Store - jóváhagyásra vár</span>
+    </div>
+    <p style="margin-top:22px"><a href="/hu/guide/">Nyissa meg a teljes felhasználói útmutatót &rarr;</a> &nbsp; &middot; &nbsp; <a href="/hu/pricing/">Ingyenes vs. Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/hu/guide/">Felhasználói útmutató</a>
+      <a href="/hu/pricing/">Árak</a>
+      <a href="/hu/highlights/">Kiemelések</a>
+      <a href="/hu/guide/home-automation/">Home Assistant</a>
+      <a href="/hu/help/">Súgó &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/hu/help/#privacy">Adatvédelem</a>
+      <a href="/hu/help/#terms">Feltételek</a>
+    </div>
+<div class="flinks"><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/guide/dashboard/">Vezérlőpult</a><a href="/hu/guide/remote/">Távirányító</a><a href="/hu/guide/picture/">Kép</a><a href="/hu/guide/lens/">Lencse</a><a href="/hu/guide/scenes/">Jelenetek</a><a href="/hu/guide/home-assistant-dashboard/">HA-vezérlőpult</a><a href="/hu/guide/maintenance/">Karbantartás</a><a href="/hu/guide/settings/">Beállítások</a><a href="/hu/guide/languages/">Nyelvek</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. A Projector Pilot egy független alkalmazás Epson és PJLink projektorokhoz. Nem áll kapcsolatban az alábbi szereplőkkel, és őket sem támogatják vagy szponzorálják: Epson, a PJLink szabványügyi testülete, Home Assistant, Hubitat, Apple, Google és Microsoft. Az Epson, a PJLink, a Home Assistant, a Hubitat, az App Store, a Mac App Store, a Google Play és a Microsoft Store a megfelelő tulajdonosaik védjegyei, és itt kizárólag azt írják le, mivel működik együtt az alkalmazás.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

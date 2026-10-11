@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-Hant" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>投影機 Home Assistant &amp; Hubitat 指南 - Projector Pilot</title>
+<meta name="description" content="將您的 Epson 或 PJLink 投影機連接到 Home Assistant、Hubitat 與 Webhook。與 HA 同步會發布即時狀態，並把每個場景變成指令碼。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="投影機 Home Assistant &amp; Hubitat 指南 - Projector Pilot" />
+<meta property="og:description" content="將您的 Epson 或 PJLink 投影機連接到 Home Assistant、Hubitat 與 Webhook。與 HA 同步會發布即時狀態，並把每個場景變成指令碼。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="投影機 Home Assistant &amp; Hubitat 指南 - Projector Pilot" />
+<meta name="twitter:description" content="將您的 Epson 或 PJLink 投影機連接到 Home Assistant、Hubitat 與 Webhook。與 HA 同步會發布即時狀態，並把每個場景變成指令碼。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "投影機 Home Assistant 與 Hubitat 指南 - Projector Pilot", "description": "將您的 Epson 或 PJLink 投影機連接到 Home Assistant、Hubitat 與 Webhook。與 HA 同步會發布即時狀態，並把每個場景變成指令碼。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "您的投影機，在 Home Assistant 與 Hubitat 中。", "description": "將您的 Epson 或 PJLink 投影機連接到 Home Assistant、Hubitat 與 Webhook。與 HA 同步會發布即時狀態，並把每個場景變成指令碼。", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "zh-Hant", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "居家自動化", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我的手機需要一直連在網路上，Home Assistant 自動化才能執行嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。只要您把那個 shell_command 區塊貼入 Home Assistant 並同步，Home Assistant 就會直接把指令傳送到投影機的 IP 位址。Projector Pilot 只是設定工具；之後 Home Assistant 會自行與投影機通訊，不管您的手機在不在家。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "投影機在 Home Assistant 中是如何呈現的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "以感測器的形式呈現，例如 sensor.projector_pilot_epson_qb1000b_qb1000w，內含電源、輸入、色彩模式、畫質數值與燈泡使用時數，並在 App 開啟期間，隨變化即時更新。若開啟「同步進階控制」，App 還會為每個場景，以及投影機具備的電源、每個輸入、每個色彩模式與每個鏡頭記憶，各寫入一個 Home Assistant 指令碼。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "居家自動化是免費的嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "居家自動化是付費的附加功能，一次性購買，與 Projector Pilot Pro 分開計價。購買組合包可同時取得兩者，並享有優惠。請參閱價格頁面。"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hant/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言"><a href="/zh-hant/#features">功能</a><a href="/zh-hant/guide/">指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/guide/home-assistant-dashboard/">HA 儀表板</a><a href="/zh-hant/help/">說明</a><a class="cta" href="/zh-hant/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 居家自動化</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhook</div>
+    <h1>您的投影機，<span class="g">在 Home Assistant 與 Hubitat 中</span>。</h1>
+    <p>Projector Pilot 會把投影機的即時狀態與每一項控制發布到 Home Assistant、Hubitat 以及您想用的任何 Webhook。設定一次後，您的智慧家庭就能自行驅動投影機：手機不必在網路上，中間也沒有雲端。</p>
+    <div class="readout"><span>設定後無需伺服器</span><span>場景變成指令碼</span><span>現成的儀表板</span><span>設定檢查清單</span><span>付費附加功能</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">總覽</div>
+      <h2>居家自動化能做什麼</h2>
+      <p class="lead">居家自動化讓 Projector Pilot 從您手中的遙控器，變成整個家都看得到的裝置。它會公開投影機的運作狀況，包括電源、輸入、色彩模式、畫質數值與燈泡使用時數，並為智慧家庭提供 App 能變更的每一項事物的控制。</p>
+    </div>
+    <ul class="plain">
+      <li><b>它會發布狀態。</b>投影機會以 Home Assistant 感測器、Hubitat 裝置，或您 Webhook 上的 JSON 內容形式出現，帶有與 App 顯示相同的讀數。</li>
+      <li><b>它會發布控制。</b>您儲存的每個場景，加上電源、每個輸入、每個色彩模式與每個鏡頭記憶，都會變成自動化或語音助理可以執行的項目。</li>
+      <li><b>它不需要伺服器。</b>指令碼設定完成後，Home Assistant 會直接把指令傳送到投影機的 IP 位址。您的手機不必在網路上，也沒有任何內容會經過雲端帳號。</li>
+    </ul>
+    <div class="note"><b>居家自動化是付費的附加功能。</b>它是一次性購買，與 Projector Pilot Pro 分開計價，購買組合包可同時取得兩者並享有優惠。沒有訂閱、沒有帳號、沒有雲端。請參閱<a href="/zh-hant/pricing/">價格</a>。</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>三種接入方式，一個中樞</h3>
+        <p class="lead">設定 &rsaquo; 居家自動化就是中樞。選擇您使用的平台：Home Assistant、Hubitat 或 Webhook，並在那裡設定。您可以同時接上多個，它們彼此獨立。</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Projector Pilot 的居家自動化中樞：Home Assistant、Hubitat 與 Webhook" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>設定 Home Assistant</h2>
+      <p class="lead">從 App 登入，把投影機發布為感測器，將一段區塊貼入您的設定檔，然後同步。從此 Home Assistant 就能自行驅動投影機。</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>開啟<b>設定 &rsaquo; 居家自動化 &rsaquo; Home Assistant</b>。</li>
+        <li>輸入您的 <b>Home Assistant 位址</b>（例如 <code>http://homeassistant.local:8123</code> 或其 IP），然後點選<b>登入</b>。這是針對您自己的執行個體所做的瀏覽器登入，<b>不需要貼上權杖</b>。請使用您平常的 Home Assistant 登入方式，包括雙重驗證。</li>
+        <li>App 會把投影機發布為<b>感測器</b>，實體類似 <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>，帶有電源、輸入、色彩模式、畫質數值與燈泡使用時數。</li>
+        <li>開啟<b>傳送投影機狀態</b>，讓這些讀數在 App 開啟期間，隨變化即時更新到 Home Assistant；並開啟<b>同步進階控制</b>，以發布畫質模式、輸入、鏡頭記憶與電源的指令碼。</li>
+        <li>把這一段 <b>shell_command</b> 區塊（見下方）貼入您的 <code>configuration.yaml</code>，重新啟動 Home Assistant，然後點選<b>與 HA 同步</b>。</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Projector Pilot 的 Home Assistant 畫面，顯示 shell_command 區塊、登入、投影機實體 ID 與同步開關" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">shell_command 區塊</h3>
+    <p class="lead">這就是無需伺服器的全部祕訣。App 會寫入一個讓 Home Assistant 執行、用來與投影機的 Web Control 通訊的指令，而它同步的每個指令碼都以不同的動詞呼叫該指令。在 App 中點選<b>複製區塊</b>，並貼入 <code>configuration.yaml</code>。下方範例僅供說明，App 會填入您投影機自己的位址與指令名稱：</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">僅為範例。App 會產生您自己的版本，內含投影機真實的 IP，以及由序號衍生的名稱。</p>
+    <div class="note"><b>為什麼無需伺服器。</b>該 <code>curl</code> 是在 Home Assistant 主機上執行，而不是在您的手機上。Home Assistant 會透過 Web Control 直接連到投影機的 IP，因此不論 App 是否開啟、您的手機是否在家，自動化都會觸發。<code>EPSONWEB</code> 摘要使用者就是 Web Control 登入帳號；App 會使用已為該投影機儲存的 Web Control 密碼。</p></div>
+
+    <h3 style="margin-top:32px">測試連線、同步與清理</h3>
+    <ul class="plain">
+      <li><b>測試連線</b>會檢查 App 能否連到您的 Home Assistant，以及貼上的 <code>shell_command</code> 是否真的存在，讓您在建立任何內容之前就能發現打錯字。</li>
+      <li><b>與 HA 同步</b>會寫入或更新您的場景與控制項的指令碼，並直接在 Home Assistant 中建立現成的 Projector Pilot 儀表板。每當您新增場景或變更控制項時都可以再執行一次，它會就地更新，而不是產生一堆重複項目。</li>
+      <li><b>移除孤立指令碼</b>會找出 App 寫入、但已沒有對應場景或控制項的指令碼，例如刪除場景之後，並<b>列出確切會移除哪些項目，且事先詢問</b>。在您確認之前不會刪除任何東西。它只會動到 Projector Pilot 建立的指令碼，Home Assistant 中的其他內容完全不受影響；如果 Home Assistant 無法列出它的指令碼，就不會移除任何項目。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">設定檢查清單</div>
+      <h2>App 會告訴您哪些已完成、哪些還缺</h2>
+      <p class="lead">Home Assistant 畫面中有<b>設定檢查清單</b>與<b>您的 Home Assistant 現有內容</b>面板，讓您不必猜測還剩哪一步。每一列都會說明該項目已完成、缺少，或無法判斷，並告訴您下一步該怎麼做。</p>
+    </div>
+    <ul class="plain">
+      <li><b>已連線到 Home Assistant</b>：已登入並有回應。如果 Home Assistant 沒有回應，該列會提示您檢查位址，以及手機是否在同一個網路上。</li>
+      <li><b>投影機已加入 Home Assistant</b>：Home Assistant 是否已有這台投影機。若沒有，該列會引導您新增 PJLink 整合，且新增整合的步驟會顯示 Home Assistant 要求的 PJLink 主機與連接埠。</li>
+      <li><b>讀數感測器已註冊</b>：承載投影機讀數的感測器。它會在 App 第一次讀取投影機時註冊，若有狀況阻礙註冊，該列會提供<b>立即註冊</b>或<b>開啟</b>。</li>
+      <li><b>您的 Home Assistant 現有內容</b>：HACS（社群商店）、Epson Projector Link 整合、PJLink 整合，以及 <code>configuration.yaml</code> 中的 Projector Pilot 指令。每一項都會顯示「已找到」、「未安裝」或「無法確定」，並在有幫助的地方附上「安裝方式」與「在 HACS 中開啟」按鈕。</li>
+    </ul>
+    <div class="note"><b>重新檢查會告訴您找到了什麼。</b>修正問題後點選<b>重新檢查</b>，App 就會重新讀取您的 Home Assistant 並回報結果，而不是讓您自己猜是否成功。無法檢查的項目會顯示<i>無法確定</i>，絕不會隨便猜一個是或否。</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">與您現有的設備搭配運作</div>
+      <h2>支援核心 PJLink 整合，有更豐富的卡片時則升級</h2>
+      <p class="lead">Projector Pilot 會查出您的 Home Assistant 安裝了什麼，並據此建立。它能搭配 Home Assistant 內建的<b>核心 PJLink 整合</b>運作，因此您已在那裡新增的 PJLink 投影機，也是一等公民。</p>
+    </div>
+    <ul class="plain">
+      <li><b>優先使用內建卡片。</b>如果您沒有安裝社群卡片，同步會以 Home Assistant 的內建卡片建立儀表板，並在完成時告知。開箱即用。</li>
+      <li><b>安裝 HACS 卡片後自動升級。</b>App 會檢查社群卡片（Mushroom、button-card、card-mod、apexcharts-card）中安裝了哪些，並在有的地方把每張卡片升級成更豐富的版本。如果您想要完整的綠色玻璃質感外觀，<a href="/zh-hant/guide/home-assistant-dashboard/">手工打造儀表板指南</a>會帶您更進一步。</li>
+      <li><b>場景與控制項需要貼上一次。</b>如果 Home Assistant 還沒有傳送給投影機的指令，儀表板仍會以即時讀數建立，並由<b>完成設定</b>卡片帶您完成：點選複製區塊，貼入 <code>configuration.yaml</code>，重新啟動 Home Assistant，然後再次點選同步。</li>
+      <li><b>什麼都沒安裝？手動貼上。</b>如果 Home Assistant 中什麼都沒安裝，您仍然可以從 App 複製所有內容，自己貼上。</li>
+      <li><b>會標明密碼。</b>您貼上的指令區塊會註明是否包含投影機密碼，讓您在分享或儲存之前就知道。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">投影機關機時</div>
+      <h2>保留不變的讀數</h2>
+      <p class="lead">待機中的投影機幾乎不回報任何資料，因此儀表板通常會變成一片空白。選用的<b>最後已知感測器</b>會在投影機關機期間，把投影機最後的讀數（輸入、燈泡或雷射使用時數）保留在 Home Assistant 中。</p>
+    </div>
+    <ul class="plain">
+      <li>它是另一個選用區塊：貼在 <code>configuration.yaml</code> 的結尾（或只把它的行加到現有的 <code>template:</code> 區段下），然後重新啟動 Home Assistant。App 有一個<b>檢查是否存在</b>按鈕，會告訴您 Home Assistant 是否已有它。</li>
+      <li>關機現在會以<b>關閉</b>的狀態傳到 Home Assistant，因此儀表板與您的自動化會在投影機關機時，將它視為關閉。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">場景變成指令碼</div>
+      <h2>每個場景都變成 Home Assistant 指令碼</h2>
+      <p class="lead">同步之後，您的場景不再被困在 App 裡。每一個場景，加上電源、每個輸入、每個色彩模式，以及投影機實際擁有的每個鏡頭記憶，都會寫成 Home Assistant 指令碼。</p>
+    </div>
+    <ul class="plain">
+      <li><b>自動化可以執行它們。</b>「日落時，如果TV開啟，就執行電影之夜」，一旦場景成為指令碼，這就是一般的 Home Assistant 自動化。</li>
+      <li><b>語音助理可以執行它們。</b>把指令碼公開給您的助理，說「開啟電影之夜」就能同時設定輸入、畫面模式與鏡頭記憶。</li>
+      <li><b>只會出現您真正有的控制項。</b>App 會為投影機回報的每個輸入、色彩模式與鏡頭記憶寫入指令碼，而不是猜測的通用清單。</li>
+      <li><b>移除同步只會移除 App 所寫入的內容。</b>關閉同步，或使用「移除孤立指令碼」（會列出並先詢問），Projector Pilot 就只會刪除它自己建立的指令碼，其餘一概不動。</li>
+    </ul>
+    <div class="note"><b>指令碼的命名方式讓重新命名後仍會更新同一個。</b>指令碼名稱由投影機與控制項衍生，因此重新命名場景後再次同步，會更新既有的指令碼，而不是分岔出第二份副本。</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">儀表板</div>
+      <h2>同步會為您建立儀表板</h2>
+      <p class="lead">您不必再手動建立 Lovelace 檢視，也不必再自己貼上。當您點選<b>與 HA 同步</b>時，App 會透過 Home Assistant 自己的 API，直接在其中建立完整的 Projector Pilot 儀表板：包含投影機的即時狀態，以及每個已同步場景與控制項各一顆按鈕。它會以<b>Projector Pilot</b> 的名稱出現在 Home Assistant 側邊欄，開啟即完成。</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Home Assistant 中的 Projector Pilot 儀表板：電源與訊號源、色彩模式、完整畫質選單、HDR 與訊號、RGB 校色、鏡頭與幾何校正、雷射使用時數圖表、維護，以及場景，全部呈現為綠色玻璃質感方塊" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>面板的手工打造進階版。同步為您建立的版本，以標準 Home Assistant 卡片呈現相同的即時狀態與按鈕；下方的綠色玻璃質感外觀則是選用的自訂版本。可捲動瀏覽，或點選放大。</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>在 App 中登入 Home Assistant。</li>
+      <li>將 App 的<b>複製區塊</b>貼入 <code>configuration.yaml</code> 一次，並重新啟動 Home Assistant（這是唯一需要手動的步驟，因為 Home Assistant 不允許 App 遠端新增該指令）。</li>
+      <li>點選<b>與 HA 同步</b>。儀表板會自動為您建立，並以<b>Projector Pilot</b> 的名稱出現在側邊欄。</li>
+    </ol>
+    <div class="note"><b>想自己貼上？</b>Home Assistant 畫面上仍保留<b>複製儀表板</b>。點選它，然後在 Home Assistant 中前往<b>設定 &rsaquo; 儀表板 &rsaquo; 新增儀表板</b>，建立空白儀表板，開啟其三點選單 &rsaquo; <b>編輯儀表板</b> &rsaquo; 三點選單 &rsaquo; <b>原始設定編輯器</b>，並貼上複製的 YAML。</div>
+    <p class="lead">不論是自動建立還是自己貼上，儀表板都是一樣的：一張狀態卡片，加上每個控制項各一顆按鈕（示意片段）：</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">僅為範例。您的儀表板會帶有您投影機的真實實體與您自己的場景。</p>
+    <div class="note"><b>不限機型。</b>儀表板是依<i>您的</i>投影機自身的功能建立：它實際回報的實體、畫質數值、輸入、色彩模式、鏡頭記憶與場景。此處的截圖是 QB1000；您的機型可能會顯示不同的輸入、控制項與讀數。若要打造如圖中那樣完整的綠色玻璃質感面板，請依照<a href="/zh-hant/guide/home-assistant-dashboard/">逐步儀表板指南</a>，或<a href="/zh-hant/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>下載完整檢視</a>並改兩個字串。</div>
+    <div class="note"><b>想要更豐富的牆面？</b>同樣的指令碼可以驅動您喜歡的任何卡片。如果您用過 AVR Maestro，做法完全相同：以同一個感測器和已同步的指令碼，打造亮起的訊號源與模式方塊、即時標題與歷程。</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>設定 Hubitat</h2>
+      <p class="lead">在 Hubitat 上，Projector Pilot 會透過 Maker API 把投影機鏡像到您中樞上的裝置，讓 Rule Machine 能讀取電源、靜音與輸入並據此動作。</p>
+    </div>
+    <ol class="steps">
+      <li>在 Hubitat 中啟用 <b>Maker API</b> 應用程式，記下它的存取 URL與權杖，並選擇它要公開哪些裝置。</li>
+      <li>在 Projector Pilot 中開啟<b>設定 &rsaquo; 居家自動化 &rsaquo; Hubitat</b>，並輸入您中樞的 <b>Maker API</b> 詳細資料。</li>
+      <li>選擇<b>代表投影機的裝置</b>。App 會建議最可能的那一個；您可以直接選用，或自行選擇。</li>
+      <li>App 會把<b>電源、靜音與輸入鏡像</b>到該裝置，並且只傳送該裝置接受的指令。</li>
+      <li>像處理其他裝置一樣，針對該裝置建立 <b>Rule Machine</b> 規則，由投影機的狀態來驅動它們。</li>
+    </ol>
+    <div class="note"><b>只傳送裝置接受的內容。</b>只有在所選裝置支援該指令時，App 才會把投影機的值傳送到 Hubitat，因此絕不會推送裝置會拒絕的內容。</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhook</div>
+      <h2>設定 Webhook</h2>
+      <p class="lead">Webhook 是萬用的做法。當投影機開機、關機、切換輸入或叫出場景時，App 會向您的 URL發送 POST 請求：可以是 Home Assistant 的 Webhook、Node-RED、IFTTT，或任何接受 JSON 的服務。</p>
+    </div>
+    <ol class="steps">
+      <li>開啟<b>設定 &rsaquo; 居家自動化 &rsaquo; Webhook</b>。</li>
+      <li>輸入要發送請求的<b>URL</b>。Home Assistant 的 Webhook 看起來像 <code>http://homeassistant.local:8123/api/webhook/your-id</code>。</li>
+      <li>選擇哪些<b>事件</b>會觸發 Webhook：開機、關機、輸入變更、叫出場景，也可以選擇性地篩選特定的輸入或場景。</li>
+      <li>如果接收的服務需要特定格式，可選擇性地設定<b>自訂 Payload</b>；否則 App 會傳送預設的 JSON。</li>
+      <li>儲存。從此每個符合條件的事件，App 都會發送請求。</li>
+    </ol>
+    <p class="lead">預設的 Payload 是單純的 JSON，包含事件、投影機，以及變更的值：</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">範例 Payload。輸入變更或電源事件會帶有與其相關的欄位。</p>
+    <div class="note"><b>重新連結即可全部修復。</b>如果您把 Home Assistant 重新連結到新位址，App 會一次更新所有指向它的 Webhook，因此搬移執行個體並不代表要逐一手動編輯。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>疑難排解</h2>
+    </div>
+    <details class="more"><summary>登入後又跳回登入頁面</summary>
+      <p>請確認您輸入的位址，就是實際連到 Home Assistant 的位址，包括連接埠（通常是 <code>:8123</code>）。登入是針對您的執行個體所做的真實瀏覽器登入，因此您的使用者名稱、密碼與雙重驗證碼都適用。在手機上，不論 App 內建瀏覽器先交回結果，還是本機回呼先返回，登入都會完成；如果仍然卡住，請關閉該視窗，再點選一次登入。</p>
+    </details>
+    <details class="more"><summary>Home Assistant 中沒有出現投影機感測器</summary>
+      <p>感測器是在 App 開啟且<b>傳送投影機狀態</b>已開啟的期間發布，因此請開啟 App 並確認該開關。接著到 Home Assistant 的<b>開發者工具 &rsaquo; 狀態</b>，以 <code>projector_pilot</code> 篩選。待機中的投影機幾乎不發布資料；喚醒它，讀數就會出現。</p>
+    </details>
+    <details class="more"><summary>缺少已同步的指令碼</summary>
+      <p>指令碼是由<b>與 HA 同步</b>寫入的，它需要 <code>shell_command</code> 區塊已貼入 <code>configuration.yaml</code> 且 Home Assistant 已重新啟動一次。請先執行<b>測試連線</b>，它會告訴您區塊是否存在。然後再同步一次。如果舊的失效指令碼讓清單變得雜亂，請使用<b>移除孤立指令碼</b>。</p>
+    </details>
+    <details class="more"><summary>手機不在身邊時，指令碼在 App 中可以執行，但從 Home Assistant 卻不行</summary>
+      <p>這正是 <code>shell_command</code> 區塊的用途：它讓 Home Assistant 能自行連到投影機的 IP。如果只有在 App 開啟時才能用，很可能是區塊沒有貼上，或貼上後沒有重新啟動 Home Assistant。請以測試連線確認、重新啟動 Home Assistant，然後同步。</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>把您的投影機接入整個家</h2>
+    <p class="lead" style="margin:0 auto 24px">居家自動化是一次性的附加功能。沒有訂閱、沒有帳號、沒有雲端。一次購買，即可在您擁有的所有平台上解鎖。</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - 現已上架</a>
+      <span class="pill">App Store - 等待審核中</span>
+      <span class="pill">Microsoft Store - 等待審核中</span>
+      <span class="pill">Mac App Store - 等待審核中</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/zh-hant/pricing/">查看免費版、Pro 與居家自動化的比較 &rarr;</a> &middot; <a href="/zh-hant/guide/">完整使用指南 &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>快速解答</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>我的手機需要一直連在網路上，Home Assistant 自動化才能執行嗎？</h3><p>不需要。只要您把那個 shell_command 區塊貼入 Home Assistant 並同步，Home Assistant 就會直接把指令傳送到投影機的 IP 位址。Projector Pilot 只是設定工具；之後 Home Assistant 會自行與投影機通訊，不管您的手機在不在家。</p></div><div class="gcard"><h3>投影機在 Home Assistant 中是如何呈現的？</h3><p>以感測器的形式呈現，例如 sensor.projector_pilot_epson_qb1000b_qb1000w，內含電源、輸入、色彩模式、畫質數值與燈泡使用時數，並在 App 開啟期間，隨變化即時更新。若開啟「同步進階控制」，App 還會為每個場景，以及投影機具備的電源、每個輸入、每個色彩模式與每個鏡頭記憶，各寫入一個 Home Assistant 指令碼。</p></div><div class="gcard"><h3>居家自動化是免費的嗎？</h3><p>居家自動化是付費的附加功能，一次性購買，與 Projector Pilot Pro 分開計價。購買組合包可同時取得兩者，並享有優惠。請參閱價格頁面。</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hant/help/#privacy">隱私權</a><a href="/zh-hant/help/#terms">條款</a></div>
+<div class="flinks"><a href="/zh-hant/guide/getting-started/">開始使用</a><a href="/zh-hant/guide/dashboard/">儀表板</a><a href="/zh-hant/guide/remote/">遙控器</a><a href="/zh-hant/guide/picture/">畫質</a><a href="/zh-hant/guide/lens/">鏡頭</a><a href="/zh-hant/guide/scenes/">場景</a><a href="/zh-hant/guide/home-assistant-dashboard/">HA 儀表板</a><a href="/zh-hant/guide/maintenance/">維護</a><a href="/zh-hant/guide/settings/">設定</a><a href="/zh-hant/guide/languages/">語言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是專為 Epson 與 PJLink 投影機打造的獨立 App，與 Epson、PJLink 標準組織、Home Assistant、Hubitat、Apple、Google 或 Microsoft 並無關聯，亦未獲其背書或贊助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 與 Microsoft Store 為其各自所有者的商標，此處僅用於說明本 App 的相容對象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

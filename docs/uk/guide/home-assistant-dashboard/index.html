@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="uk" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Дашборд проєктора для Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="Створіть власний дашборд проєктора для Home Assistant крок за кроком: картки HACS для встановлення, ID вашої сутності та серійний номер, а також готовий до копіювання YAML для кожної картки." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Дашборд проєктора для Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="Створіть власний дашборд проєктора для Home Assistant крок за кроком: картки HACS для встановлення, ID вашої сутності та серійний номер, а також готовий до копіювання YAML для кожної картки." />
+<meta property="og:url" content="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Дашборд проєктора для Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Створіть власний дашборд проєктора для Home Assistant крок за кроком: картки HACS для встановлення, ID вашої сутності та серійний номер, а також готовий до копіювання YAML для кожної картки." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "uk", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Дашборд проєктора для Home Assistant (YAML) - Projector Pilot", "description": "Створіть власний дашборд проєктора для Home Assistant крок за кроком: картки HACS для встановлення, ID вашої сутності та серійний номер, а також готовий до копіювання YAML для кожної картки.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "uk", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Створіть дашборд проєктора для Home Assistant приблизно за годину", "description": "Створіть власний дашборд проєктора для Home Assistant крок за кроком: картки HACS для встановлення, ID вашої сутності та серійний номер, а також готовий до копіювання YAML для кожної картки.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "uk", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Посібник користувача", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Панель Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чи обов'язково будувати цей дашборд вручну?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. Коли ви торкаєтеся Sync With HA у застосунку, він сам створює готовий дашборд Projector Pilot просто в Home Assistant - живий датчик проєктора та кнопку для кожного елемента керування й кожної сцени, - і він з'являється на бічній панелі як Projector Pilot. Якщо встановлено картки спільноти, Sync автоматично оновлює свої картки до них; ця сторінка потрібна, щоб зібрати багатшу версію із зеленого скла вручну або налаштувати те, що створив Sync."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи потрібні для цього власні картки з HACS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Щоб відтворити вигляд зі скриншота - так: Mushroom, button-card, card-mod і mini-graph-card. Жодна з них не потрібна для роботи самих елементів керування - кожна кнопка це звичайний виклик скрипта, а картки спільноти лише додають оформлення."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чому плитки інформації показують значення, а кнопки нічого не роблять?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Датчик проєктора публікує свої показання, щойно ви входите та синхронізуєте у застосунку, тож плитки інформації оживають одразу. Кнопки керування й сцен викликають скрипти, які існують у Home Assistant лише після того, як ви вставите блок Copy із застосунку в configuration.yaml, перезапустите Home Assistant і один раз торкнетеся Sync With HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи збігатимуться мої ID сутностей з тими, що в цьому посібнику?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Шаблон збігатиметься, а точні символи - ні. Датчик вашого проєктора названо за моделлю вашого проєктора, а кожен скрипт названо за його серійним номером. Скрізь, де ця сторінка пише YOUR_PROJECTOR, підставте ID власного датчика; скрізь, де вона пише YOURSERIAL, підставте ID на основі серійного номера, показаний на екрані Home Assistant у застосунку."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/uk/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова"><a href="/uk/#features">Можливості</a><a href="/uk/guide/">Посібник</a><a href="/uk/pricing/">Ціни</a><a href="/uk/highlights/">Головне</a><a href="/uk/guide/home-automation/">Home Assistant</a><a href="/uk/help/">Допомога</a><a class="cta" href="/uk/#download">ОТРИМАТИ ЗАСТОСУНОК</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Дашборд Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; крок за кроком</div>
+    <h1>Створіть дашборд проєктора для Home Assistant <span class="g">приблизно за годину</span></h1>
+    <p>Застосунок уже будує вам робочий дашборд під час синхронізації - ця сторінка містить розкішну версію, зібрану вручну. Десять кроків, YAML кожної картки та повне подання, яке можна вставити одним махом. Плитки із зеленого скла, живе відображення зображення, ваші сцени та графік годин роботи лазера - усе від одного датчика проєктора. Змініть два рядки, і воно ваше.</p>
+    <div class="readout"><span>Sync будує безкоштовно</span><span>4 картки HACS для вигляду</span><span>Плитки інформації одразу живі</span><span>Кнопки після одного вставлення</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Готовий дашборд Projector Pilot у Home Assistant: живлення й джерело, режими кольору, повне меню зображення, HDR і сигнал, калібрування RGB, об'єктив і геометрія, обслуговування з графіком годин роботи лазера та сцени - усе у вигляді плиток із зеленого скла" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Те, що ви будуєте. Прокрутіть або клацніть, щоб збільшити.</figcaption>
+    </figure>
+    <div class="note"><b>Потрібна просто робоча панель? Вона в вас уже є.</b> Торкніться <b>Sync With HA</b> у застосунку, і він збудує для вас готовий дашборд Projector Pilot на бічній панелі Home Assistant з усіма елементами керування та живим датчиком - без карток, без YAML, без вставлення. Див. <a href="/uk/guide/home-automation/#dashboard">Sync будує дашборд за вас</a>. Ця сторінка призначена для збирання багатшої версії із зеленого скла вручну або налаштування того, що дав Sync.</div>
+    <div class="note"><b>Поспішаєте до власного вигляду?</b> Перейдіть до <a href="#whole">кроку 10</a>, завантажте повне подання, змініть два рядки та три ID сцен і вставте. Кроки між ними пояснюють, що робить кожна частина, щоб ви могли її змінити.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Перш ніж почати</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot пов'язано з Home Assistant.</b> <a href="/uk/guide/home-automation/">Посібник із налаштування</a> розповідає про вхід і ввімкнення <b>Надсилати стан проєктора</b>. Перш ніж будувати щось поверх, ви маєте побачити свій проєктор як датчик у Home Assistant.</li>
+      <li><b>Ви вже принаймні раз синхронізували.</b> Налаштування &rsaquo; Домашня автоматизація &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b> після вставлення <b>блока Copy</b> застосунку в <code>configuration.yaml</code> та перезапуску Home Assistant. Саме це створює скрипти, які викликає кожна кнопка керування нижче.</li>
+      <li><b>Проєктор увімкнено</b>, поки ви будуєте. Атрибути зображення нижче здебільшого порожні, коли проєктор у режимі очікування.</li>
+    </ul>
+    <p class="lead">Цей дашборд живлять дві речі, і різниця між ними важлива на кожному кроці нижче.</p>
+    <table class="t">
+      <thead><tr><th>Походить із</th><th>Дає вам</th></tr></thead>
+      <tbody>
+        <tr><td>Датчик проєктора, <code>sensor.YOUR_PROJECTOR</code></td><td>Кожне <b>показання</b>. Живлення, вхід, режим кольору, усі параметри зображення, HDR і сигнал, об'єктив і геометрія, години роботи лампи. Живі, щойно ви входите й синхронізуєте, блок Copy не потрібен.</td></tr>
+        <tr><td>Синхронізовані скрипти застосунку, <code>script.projpilot_YOURSERIAL_...</code></td><td>Кожен <b>елемент керування</b>. Живлення, входи, режими кольору, пам'ять об'єктива та ваші сцени. Вони існують лише після того, як вставлено блок Copy, перезапущено Home Assistant і ви торкнулися Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 1</div>
+      <h2>Установіть чотири картки з HACS</h2>
+    </div>
+    <p class="lead">Усі чотири є в стандартному магазині HACS. У Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, знайдіть назву, натисніть Download, потім перезавантажте браузер.</p>
+    <table class="t">
+      <thead><tr><th>Шукайте</th><th>Для чого потрібна</th><th>Якщо пропустити</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Кожна плитка інформації, кнопка керування й плитка сцени</td><td>Використайте звичайну картку <code>button</code>. Працює, але виглядає квадратніше.</td></tr>
+        <tr><td><b>button-card</b></td><td>Головна картка з живим підписом</td><td>Використайте картку <code>entity</code> або шаблонну картку Mushroom з меншою кількістю деталей.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Тло із зеленого скла, рамки й градієнти</td><td>Усе працює. Просто без сяйва.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Історія годин роботи лазера в розділі «Обслуговування»</td><td>Використайте вбудовану картку <code>history-graph</code>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Жодна з них не обов'язкова для роботи.</b> Кожен елемент керування нижче працює зі стандартної кнопки Home Assistant, спрямованої на той самий скрипт. Картки спільноти дають вигляд із зеленого скла, а не механіку.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 2</div>
+      <h2>Знайдіть свій ID сутності та серійний номер</h2>
+    </div>
+    <p class="lead">Кожен фрагмент на цій сторінці використовує два заповнювачі. Знайдіть свої один раз - і решта зводиться до копіювання та вставлення.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Інструменти розробника &rsaquo; Стани в Home Assistant, відфільтруйте за <code>projector_pilot</code>. Приблизно так: <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; відкрийте застосунок, <b>Налаштування &rsaquo; Домашня автоматизація &rsaquo; Home Assistant</b>. ID на основі серійного номера показано просто там, і він є серединою кожної назви синхронізованого скрипта: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> тощо.</li>
+    </ul>
+    <p class="lead">Також можна відфільтрувати Інструменти розробника &rsaquo; Стани за <code>projpilot</code>, щоб побачити весь список синхронізованих елементів керування одразу, коли блок Copy з кроку 1 і Sync виконано.</p>
+    <div class="note"><b>Списку скриптів ще немає?</b> Це очікувано, поки ви не вставили блок Copy. Датчик усе одно існує й оновлюється; скрипти з'являються лише після успішного виконання Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 3</div>
+      <h2>Створіть подання</h2>
+    </div>
+    <ol class="steps">
+      <li>Налаштування &rsaquo; Дашборди &rsaquo; Додати дашборд &rsaquo; Новий дашборд з нуля. Назвіть його Projector Pilot.</li>
+      <li>Відкрийте його, потім торкніться значка олівця у верхньому правому куті для редагування.</li>
+      <li>Додайте подання. Підійде будь-яка розкладка; справжня панель використовує стандартний стос карток одна під одною, у який найпростіше вставляти.</li>
+      <li>Щоб вставити YAML, скористайтеся меню з трьома крапками на картці та виберіть <b>Редагувати в YAML</b>, або меню з трьома крапками на дашборді та <b>Редактор вихідної конфігурації</b>, щоб вставити все подання одразу.</li>
+    </ol>
+    <p class="lead">Власні налаштування подання, якщо волієте вводити їх самі:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 4</div>
+      <h2>Додайте живу плитку інформації</h2>
+    </div>
+    <p class="lead">Почніть із чогось, що лише читає, щоб переконатися у правильності вашого ID сутності, перш ніж торкатися чогось, що надсилає команду. Ця плитка жива, щойно існує датчик проєктора, без блока Copy й без синхронізації. Додайте картку, Редагувати в YAML, вставте:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Така сама форма читає будь-який із приблизно 80 атрибутів датчика: замініть <code>brightness</code> на <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code> - що завгодно на плитці.</p>
+    <p class="lead">Збережіть. Якщо з'явилося справжнє число чи слово, ваш ID сутності правильний і все нижче працюватиме. Якщо порожньо, поверніться до кроку 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 5</div>
+      <h2>Додайте зелений заголовок розділу</h2>
+    </div>
+    <p class="lead">Простий заголовок - це порожній простір. Це картка <code>markdown</code> із градієнтним тлом від card-mod, і саме вона перетворює стос плиток на іменовані розділи. Кожен розділ на панелі починається з такої картки, лише з іншим підписом і емодзі.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Змініть код емодзі й текст підпису; блок card-mod однаковий у кожному розділі.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 6</div>
+      <h2>Додайте кнопку керування</h2>
+    </div>
+    <p class="lead">Ця кнопка надсилає команду, а не лише читає значення, тому спершу мають існувати скрипти. Вона викликає <code>script.projpilot_YOURSERIAL_power_on</code>, який застосунок записує лише після того, як ви вставите його блок Copy в <code>configuration.yaml</code>, перезапустите Home Assistant і торкнетеся <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Така сама картка для Power Off, Screen Blank, HDMI 1, HDMI 2, A/V Mute, режиму кольору або пам'яті об'єктива: змінюються лише підпис, значок і <code>service</code>.</p>
+    <div class="note"><b>Якщо все виглядає правильно, але нічого не відбувається</b> після дотику, блок Copy або не вставлено, або Home Assistant не перезапускали відтоді. Запустіть <b>Test Connection</b> у застосунку, що перевіряє саме це, перш ніж вирішувати, що помилка в дашборді.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 7</div>
+      <h2>Додайте головну картку</h2>
+    </div>
+    <p class="lead">Головна картка вгорі панелі - це <code>button-card</code>: великий стан живлення, однорядковий підсумок з кількох атрибутів одразу та оформлення із зеленого скла на всій картці, а не лише на рамці.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Скорочено до частин, що змінюються від встановлення до встановлення. Повна картка також задає значок, назву й позиції підписів у сітці; усе це є у файлі для завантаження на кроці 10.</p>
+    <p class="lead">Волієте тоншу смугу? <code>mushroom-chips-card</code> виконує ту саму роботу в одному рядку маленьких чипів: стан живлення, вхід, режим кольору, відеодіапазон і години роботи лампи, кожен - шаблон, що читає <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Використовуйте або одне, або інше, не обидва, угорі панелі.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 8</div>
+      <h2>Додайте свої сцени</h2>
+    </div>
+    <p class="lead">Кожна сцена, яку ви зберігаєте в застосунку, після синхронізації стає скриптом із назвою <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code>, а плитка для неї - це та сама картка кнопки керування з кроку 6 з назвою й значком сцени.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Замініть <code>YOURSCENE1</code> на ID, показаний для цієї сцени у списку синхронізованих елементів керування застосунку. Одна плитка на сцену, у <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 9</div>
+      <h2>Додайте історію годин роботи лазера</h2>
+    </div>
+    <p class="lead">Датчик проєктора записується Home Assistant, як і будь-який інший, тож <code>lamp_hours</code> отримує історію безкоштовно. Жодних додаткових датчиків, помічників чи попереднього налаштування, у розділі «Обслуговування».</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 годин - це два тижні. Години роботи лазера й лампи зростають рівномірно, а не стрибками, тож двотижневого вікна зазвичай досить, щоб побачити тенденцію, а графік не здавався пласким.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 10</div>
+      <h2>Або візьміть усе одразу</h2>
+    </div>
+    <p class="lead">Повне подання, кожен розділ і кожна картка зі скриншота на початку цієї сторінки, із заповнювачами замість ID сутностей.</p>
+    <ol class="steps">
+      <li><a href="/uk/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Завантажити YAML подання</a>.</li>
+      <li>Відкрийте його в будь-якому текстовому редакторі та замініть усюди, де вони трапляються: <code>YOUR_PROJECTOR</code> на ID сутності вашого датчика проєктора з кроку 2, а <code>YOURSERIAL</code> на ваш ID на основі серійного номера з кроку 2.</li>
+      <li>У розділі «Сцени» ближче до низу замініть <code>YOURSCENE1</code>, <code>YOURSCENE2</code> і <code>YOURSCENE3</code> на ваші три ID сцен або додайте й видаліть плитки відповідно до того, скільки сцен у вас насправді є.</li>
+      <li>У Home Assistant відкрийте свій дашборд, значок олівця, меню з трьома крапками, <b>Редактор вихідної конфігурації</b> і вставте його як подання.</li>
+    </ol>
+    <div class="note"><b>Назви та кількість ваших сцен не збігатимуться.</b> Файл містить три приклади сцен: Movie Night, Gaming, Sports Day. Перейменуйте плитки, спрямуйте їх на власні ID сцен і додавайте чи видаляйте плитки, доки розділ не відповідатиме кількості збережених вами сцен.</div>
+    <div class="note"><b>Плитки інформації працюють одразу після вставлення.</b> Їм потрібен лише існуючий датчик. Кнопки керування й сцен залишаються неживими, доки блок Copy не вставлено в <code>configuration.yaml</code>, Home Assistant не перезапущено й ви не торкнулися Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Усунення несправностей</h2>
+    </div>
+    <details class="more"><summary>Плитка показує Unknown</summary>
+      <p>Звірте назву атрибута з тим, що датчик справді містить: Інструменти розробника &rsaquo; Стани, ваша сутність <code>sensor.YOUR_PROJECTOR</code>, і прочитайте її перелік атрибутів. Деякі показання, як-от HDR PQ чи HDR HLG, заповнюються лише тоді, коли проєктор активно отримує такий сигнал, тож Unknown для цих двох може бути правильним, а не збоєм. Якщо весь датчик виглядає розрідженим, розбудіть проєктор: пристрій у режимі очікування публікує дуже мало.</p>
+    </details>
+    <details class="more"><summary>Кнопка нічого не робить</summary>
+      <p>Ви ще не вставили блок Copy або Home Assistant не перезапускали відтоді. Кнопки керування й сцен викликають скрипти, які пише застосунок, а вони не існують, доки в застосунку в <b>Налаштування &rsaquo; Домашня автоматизація &rsaquo; Home Assistant</b> блок Copy не вставлено в <code>configuration.yaml</code>, Home Assistant не перезапущено один раз і не торкнуто <b>Sync With HA</b>. Спершу запустіть <b>Test Connection</b> у застосунку - він скаже, чи є блок, перш ніж ви шукатимете помилку в дашборді.</p>
+    </details>
+    <details class="more"><summary>Очікуваних скриптів немає в Інструменти розробника &rsaquo; Стани</summary>
+      <p>Відфільтруйте за <code>projpilot</code>, а не за повним серійним номером - так легше побачити весь список. Якщо нещодавно доданого елемента керування чи сцени немає, ще раз торкніться <b>Sync With HA</b>; він оновлює наявне, а не вимагає нового налаштування. Якщо після видалення сцени список засмічують старі мертві скрипти, скористайтеся <b>Remove orphaned scripts</b> у застосунку.</p>
+    </details>
+    <details class="more"><summary>Мій ID сутності не схожий на той, що в цьому посібнику</summary>
+      <p>Шаблон сталий, середина - ні. Ваш датчик названо за моделлю вашого проєктора, а кожен скрипт містить серійний номер вашого проєктора, а не заповнювачі з цієї сторінки. Візьміть обидва значення з Інструменти розробника &rsaquo; Стани та з екрана Home Assistant у застосунку, як на кроці 2, і використовуйте їх замість прикладу тексту.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Увесь ваш проєктор - на одній стіні</h2>
+    <p class="lead" style="margin:0 auto 24px">Домашня автоматизація - це одноразове доповнення. Без підписки, без облікового запису, без хмари. Одна покупка розблоковує її на кожній платформі, якою ви користуєтеся.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - уже доступно</a>
+      <span class="pill">App Store - очікує схвалення</span>
+      <span class="pill">Microsoft Store - очікує схвалення</span>
+      <span class="pill">Mac App Store - очікує схвалення</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/uk/guide/home-automation/">Назад до домашньої автоматизації &rarr;</a> &middot; <a href="/uk/guide/">Повний посібник користувача &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Короткі відповіді</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Чи обов'язково будувати цей дашборд вручну?</h3><p>Ні. Коли ви торкаєтеся Sync With HA у застосунку, він сам створює готовий дашборд Projector Pilot просто в Home Assistant - живий датчик проєктора та кнопку для кожного елемента керування й кожної сцени, - і він з'являється на бічній панелі як Projector Pilot. Ця сторінка потрібна, щоб зібрати багатшу версію із зеленого скла вручну або налаштувати те, що створив Sync.</p></div><div class="gcard"><h3>Чи потрібні для цього власні картки з HACS?</h3><p>Щоб відтворити вигляд зі скриншота - так: Mushroom, button-card, card-mod і mini-graph-card. Жодна з них не потрібна для роботи самих елементів керування - кожна кнопка це звичайний виклик скрипта, а картки спільноти лише додають оформлення.</p></div><div class="gcard"><h3>Чому плитки інформації показують значення, а кнопки нічого не роблять?</h3><p>Датчик проєктора публікує свої показання, щойно ви входите та синхронізуєте у застосунку, тож плитки інформації оживають одразу. Кнопки керування й сцен викликають скрипти, які існують у Home Assistant лише після того, як ви вставите блок Copy із застосунку в configuration.yaml, перезапустите Home Assistant і один раз торкнетеся Sync With HA.</p></div><div class="gcard"><h3>Чи збігатимуться мої ID сутностей з тими, що в цьому посібнику?</h3><p>Шаблон збігатиметься, а точні символи - ні. Датчик вашого проєктора названо за моделлю вашого проєктора, а кожен скрипт названо за його серійним номером. Скрізь, де ця сторінка пише YOUR_PROJECTOR, підставте ID власного датчика; скрізь, де вона пише YOURSERIAL, підставте ID на основі серійного номера, показаний на екрані Home Assistant у застосунку.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/uk/guide/">Посібник користувача</a><a href="/uk/pricing/">Ціни</a><a href="/uk/highlights/">Головне</a><a href="/uk/guide/home-automation/">Home Assistant</a><a href="/uk/help/">Допомога &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/uk/help/#privacy">Приватність</a><a href="/uk/help/#terms">Умови</a></div>
+<div class="flinks"><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/guide/dashboard/">Дашборд</a><a href="/uk/guide/remote/">Пульт</a><a href="/uk/guide/picture/">Зображення</a><a href="/uk/guide/lens/">Об'єктив</a><a href="/uk/guide/scenes/">Сцени</a><a href="/uk/guide/home-assistant-dashboard/">Дашборд HA</a><a href="/uk/guide/maintenance/">Обслуговування</a><a href="/uk/guide/settings/">Налаштування</a><a href="/uk/guide/languages/">Мови</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot - незалежний застосунок для проєкторів Epson і PJLink. Він не пов'язаний з Epson, організацією зі стандарту PJLink, Home Assistant, Hubitat, Apple, Google чи Microsoft, не схвалений і не спонсорований ними. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play і Microsoft Store є товарними знаками відповідних власників і згадуються лише для опису того, з чим працює застосунок.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

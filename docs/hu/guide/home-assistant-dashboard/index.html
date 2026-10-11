@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant projektor-vezérlőpult (YAML) - Projector Pilot</title>
+<meta name="description" content="Készítsen egyedi Home Assistant projektor-vezérlőpultot lépésről lépésre: a telepítendő HACS-kártyák, az entitás-ID és a sorozatszám, valamint másolásra kész YAML minden kártyához." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Home Assistant projektor-vezérlőpult (YAML) - Projector Pilot" />
+<meta property="og:description" content="Készítsen egyedi Home Assistant projektor-vezérlőpultot lépésről lépésre: a telepítendő HACS-kártyák, az entitás-ID és a sorozatszám, valamint másolásra kész YAML minden kártyához." />
+<meta property="og:url" content="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant projektor-vezérlőpult (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Készítsen egyedi Home Assistant projektor-vezérlőpultot lépésről lépésre: a telepítendő HACS-kártyák, az entitás-ID és a sorozatszám, valamint másolásra kész YAML minden kártyához." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Home Assistant projektor-vezérlőpult (YAML) - Projector Pilot", "description": "Készítsen egyedi Home Assistant projektor-vezérlőpultot lépésről lépésre: a telepítendő HACS-kártyák, az entitás-ID és a sorozatszám, valamint másolásra kész YAML minden kártyához.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Home Assistant projektor-vezérlőpult felépítése nagyjából egy óra alatt", "description": "Készítsen egyedi Home Assistant projektor-vezérlőpultot lépésről lépésre: a telepítendő HACS-kártyák, az entitás-ID és a sorozatszám, valamint másolásra kész YAML minden kártyához.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "hu", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant irányítópult", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kézzel kell megépítenem ezt a vezérlőpultot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Ha az alkalmazásban a Szinkronizálás HA-val gombra koppint, az közvetlenül a Home Assistant-ban elkészít Önnek egy kész Projector Pilot vezérlőpultot - az élő projektorszenzorral és minden vezérlőhöz és Jelenethez egy-egy gombbal -, amely a Projector Pilot néven jelenik meg az oldalsávban. Ha telepítve vannak a közösségi kártyák, a szinkronizálás automatikusan azokra frissíti a kártyáit; ez az oldal a gazdagabb, zöld üveges változat kézi felépítéséhez, vagy a szinkronizálással létrehozott vezérlőpult testreszabásához készült."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kellenek hozzá egyéni HACS kártyák?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A képernyőképen látható megjelenéshez igen: Mushroom, button-card, card-mod és mini-graph-card. A mögöttes vezérlők működéséhez egyik sem kötelező - minden gomb egy egyszerű szkripthívás, az egyedi kártyák pedig csak a stílust adják rá."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért mutatnak az információs csempék értéket, a gombok pedig miért nem csinálnak semmit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A projektorszenzor az értékeit abban a pillanatban közzéteszi, ahogy bejelentkezik és szinkronizál az alkalmazásban, így az információs csempék azonnal élnek. A vezérlő- és Jelenet-gombok olyan szkripteket hívnak, amelyek csak azután léteznek a Home Assistant-ban, hogy az alkalmazás Másolás blokkját beillesztette a configuration.yaml fájlba, újraindította a Home Assistant-ot, és egyszer megnyomta a Szinkronizálás HA-val gombot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Megegyeznek majd az entitásazonosítóim az ebben az útmutatóban szereplőkkel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A minta igen, a pontos karakterek nem. A projektorszenzor a projektor modellje után kapja a nevét, minden szkript pedig a projektor sorozatszáma után. Ahol ez az oldal YOUR_PROJECTOR szöveget ír, oda a saját szenzorának entitás-ID-ját írja; ahol YOURSERIAL szerepel, oda az alkalmazás Home Assistant képernyőjén látható, sorozatszámból képzett azonosítót."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/hu/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv"><a href="/hu/#features">Funkciók</a><a href="/hu/guide/">Útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/help/">Súgó</a><a class="cta" href="/hu/#download">TÖLTSE LE AZ APPOT</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Home Assistant vezérlőpult</div>
+    <div class="eyebrow">Home Assistant &middot; lépésről lépésre</div>
+    <h1>Home Assistant projektor-vezérlőpult felépítése <span class="g">nagyjából egy óra alatt</span></h1>
+    <p>Az alkalmazás szinkronizáláskor már magától épít egy működő vezérlőpultot - ez az oldal a luxus, kézzel épített változat. Tíz lépés, minden kártya YAML-ja, és egy teljes nézet, amelyet egyben beilleszthet. Zöld üveges csempék, élő képadatok, a Jelenetei és egy lézerórákat mutató grafikon, mind egyetlen projektorszenzorról. Cserélje ki két karakterláncot, és az öné.</p>
+    <div class="readout"><span>A szinkronizálás ingyen épít egyet</span><span>4 HACS-kártya a megjelenéshez</span><span>Az információs csempék azonnal élnek</span><span>Gombok egyetlen beillesztés után</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="A kész Projector Pilot vezérlőpult a Home Assistant-ban: bekapcsolás és forrás, színmódok, a teljes képmenü, HDR és jel, RGB-kalibráció, lencse és geometria, karbantartás lézerórák grafikonjával, valamint Jelenetek, mind zöld üveges csempékként" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Amit építeni fog. Görgesse, vagy kattintson a nagyításhoz.</figcaption>
+    </figure>
+    <div class="note"><b>Csak egy működő felületet szeretne? Már van egy.</b> Koppintson az alkalmazásban a <b>Szinkronizálás HA-val</b> gombra, és az elkészít egy kész Projector Pilot vezérlőpultot a Home Assistant oldalsávjában, minden vezérlővel és az élő szenzorral - kártyák, YAML és beillesztés nélkül. Lásd: <a href="/hu/guide/home-automation/#dashboard">A szinkronizálás elkészíti a vezérlőpultot</a>. Ez az oldal a gazdagabb, zöld üveges változat kézi felépítéséhez, vagy a szinkronizálással kapott vezérlőpult testreszabásához készült.</div>
+    <div class="note"><b>Sietős az egyedi megjelenés?</b> Ugorjon a <a href="#whole">10. lépésre</a>, töltse le a teljes nézetet, cserélje ki a két karakterláncot és a három Jelenet-azonosítót, és illessze be. A közbeeső lépések azt magyarázzák el, mit csinál az egyes elem, hogy módosítani tudja.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Mielőtt elkezdenéd</h2>
+    </div>
+    <ul class="plain">
+      <li><b>A Projector Pilot össze van kapcsolva a Home Assistant-tal.</b> <a href="/hu/guide/home-automation/">A beállítási útmutató</a> bemutatja a bejelentkezést és a <b>A projektor állapotának küldése</b> bekapcsolását. Mielőtt bármit építene rá, a projektornak szenzorként láthatónak kell lennie a Home Assistant-ban.</li>
+      <li><b>Legalább egyszer szinkronizált.</b> Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Home Assistant &rsaquo; <b>Szinkronizálás HA-val</b>, miután az alkalmazás <b>Másolás blokkját</b> beillesztette ide: <code>configuration.yaml</code>, és újraindította a Home Assistant-ot. Ez hozza létre azokat a szkripteket, amelyeket lent minden vezérlőgomb hív.</li>
+      <li><b>A projektor be van kapcsolva</b>, amíg épít. Az alábbi képattribútumok többnyire üresek maradnak, ha a projektor készenlétben van.</li>
+    </ul>
+    <p class="lead">Két forrás táplálja ezt az irányítópultot, és a különbség minden alábbi lépésnél számít.</p>
+    <table class="t">
+      <thead><tr><th>Innen jön</th><th>Ezt adja</th></tr></thead>
+      <tbody>
+        <tr><td>A projektorszenzor, <code>sensor.YOUR_PROJECTOR</code></td><td>Minden <b>érték</b>. Bekapcsolás, bemenet, színmód, az összes képadat, HDR és jel, lencse és geometria, lámpaórák. Bejelentkezés és szinkronizálás után azonnal él, Másolás blokk nélkül.</td></tr>
+        <tr><td>Az alkalmazás szinkronizált szkriptjei, <code>script.projpilot_YOURSERIAL_...</code></td><td>Minden <b>vezérlő</b>. Bekapcsolás, bemenetek, színmódok, lencsememóriák és a Jelenetei. Ezek csak azután léteznek, hogy beillesztette a Másolás blokkot, újraindította a Home Assistant-ot, és megnyomta a Szinkronizálás HA-val gombot.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">1. lépés</div>
+      <h2>Telepíts négy kártyát a HACS-ből</h2>
+    </div>
+    <p class="lead">Mind a négy megtalálható az alapértelmezett HACS-tárolóban. A Home Assistantban: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, keress rá a névre, Download, majd töltsd újra a böngészőt.</p>
+    <table class="t">
+      <thead><tr><th>Keresett név</th><th>Ehhez kell</th><th>Ha kihagyod</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Minden információs csempe, vezérlőgomb és Jelenet-csempe</td><td>Használj sima <code>button</code> kártyát. Működik, csak szögletesebb.</td></tr>
+        <tr><td><b>button-card</b></td><td>A főkártya, élő felirattal</td><td>Használjon <code>entity</code> kártyát, vagy egy kevesebb részletet mutató Mushroom sablonkártyát.</td></tr>
+        <tr><td><b>card-mod</b></td><td>A zöld üveges háttér, szegélyek és színátmenetek</td><td>Minden továbbra is működik. Csak a ragyogás marad el.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>A lézerórák története a Karbantartás alatt</td><td>Használd a beépített <code>history-graph</code> kártyát.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Egyik sem kötelező a működéshez.</b> Alább minden vezérlő egy alap Home Assistant gombkártyáról is fut, amely ugyanarra a szkriptre mutat. Az egyedi kártyák a zöld üveges megjelenést adják, nem a működést.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">2. lépés</div>
+      <h2>Keresse meg az entitás-IDt és a sorozatszámot</h2>
+    </div>
+    <p class="lead">Az oldal minden kódrészlete két helyőrzőt használ. Keresd meg a sajátjaidat egyszer, a többi már csak másolás és beillesztés.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Fejlesztői eszközök &rsaquo; Állapotok a Home Assistant-ban, szűrjön erre: <code>projector_pilot</code>. Valami ilyesmi: <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; nyissa meg az alkalmazást, <b>Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Home Assistant</b>. A sorozatszámból képzett azonosító ott látható, és ez van minden szinkronizált szkriptnév közepén: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, és így tovább.</li>
+    </ul>
+    <p class="lead">A Fejlesztői eszközök &rsaquo; Állapotok oldalon erre is szűrhet: <code>projpilot</code>, hogy egyszerre lássa a teljes szinkronizált vezérlőlistát, miután az 1. lépés Másolás blokkja és a szinkronizálás kész.</p>
+    <div class="note"><b>Még nincs szkriptlista?</b> Ez várható, amíg nem illesztette be a Másolás blokkot. A szenzor ettől még létezik és frissül; a szkriptek csak a Szinkronizálás HA-val sikeres lefutása után jelennek meg.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">3. lépés</div>
+      <h2>Hozd létre a nézetet</h2>
+    </div>
+    <ol class="steps">
+      <li>Beállítások &rsaquo; Vezérlőpultok &rsaquo; Vezérlőpult hozzáadása &rsaquo; Új vezérlőpult a semmiből. Nevezze el Projector Pilot-nak.</li>
+      <li>Nyissa meg, majd a jobb felső sarokban lévő ceruza ikonnal váltson szerkesztésre.</li>
+      <li>Adjon hozzá egy nézetet. Bármelyik elrendezés jó; a valódi felület az alapértelmezett, egymás alatti kártyákat használja, amelybe a legegyszerűbb beilleszteni.</li>
+      <li>YAML beillesztéséhez használja egy kártya hárompontos menüjét, és válassza a <b>Szerkesztés YAML-ban</b> lehetőséget, vagy a vezérlőpult hárompontos menüjében a <b>Nyers konfigurációszerkesztőt</b>, hogy egy teljes nézetet egyszerre illesszen be.</li>
+    </ol>
+    <p class="lead">A nézet saját beállításai, ha inkább begépelné őket:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">4. lépés</div>
+      <h2>Élő információs csempe hozzáadása</h2>
+    </div>
+    <p class="lead">Kezdje valamivel, ami csak olvas, hogy meggyőződjön az entitás-ID-ja helyességéről, mielőtt bármi parancsot küldő dologhoz nyúlna. Ez abban a pillanatban él, ahogy a projektorszenzor létezik, Másolás blokk és szinkronizálás nélkül. Adjon hozzá egy kártyát, Szerkesztés YAML-ban, és illessze be:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Ugyanez a forma a szenzor ~80 attribútuma közül bármelyiket kiolvassa: cserélje le a <code>brightness</code> értéket erre: <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, vagy bármelyikre, ami a csempére kerülhet.</p>
+    <p class="lead">Mentse el. Ha valódi szám vagy szó jelenik meg, az entitás-ID-ja helyes, és minden lentebbi működni fog. Ha üres, lépjen vissza a 2. lépéshez.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">5. lépés</div>
+      <h2>Zöld szakaszfejléc hozzáadása</h2>
+    </div>
+    <p class="lead">Egy sima cím kihasználatlan hely. Ez egy <code>markdown</code> kártya card-mod színátmenetes háttérrel, és ettől lesz a csempék halmazából elnevezett szakaszokra tagolt felület. A felület minden szakasza ilyennel kezdődik, csak más felirattal és emojival.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Cserélje a hangulatjel kódját és a felirat szövegét; a card-mod blokk minden szakaszban azonos.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">6. lépés</div>
+      <h2>Vezérlőgomb hozzáadása</h2>
+    </div>
+    <p class="lead">Ez parancsot küld, nem csak értéket olvas, ezért előbb léteznie kell a szkripteknek. A(z) <code>script.projpilot_YOURSERIAL_power_on</code> szkriptet hívja, amelyet az alkalmazás csak azután ír meg, hogy beillesztette a Másolás blokkját ide: <code>configuration.yaml</code>, újraindította a Home Assistant-ot, és megnyomta a <b>Szinkronizálás HA-val</b> gombot.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Ugyanez a kártya szolgál a Kikapcsoláshoz, a Képelsötétítéshez, a HDMI 1-hez, a HDMI 2-höz, az A/V némításhoz, egy színmódhoz vagy egy lencsememóriához: csak a felirat, az ikon és a <code>service</code> változik.</p>
+    <div class="note"><b>Ha minden rendben van, de semmi sem történik</b> a megérintéskor, akkor a Másolás blokk vagy nincs beillesztve, vagy a Home Assistant-ot azóta nem indították újra. Mielőtt a vezérlőpultot hibáztatná, futtassa az alkalmazásban a <b>Kapcsolat tesztelése</b> funkciót, amely pontosan ezt ellenőrzi.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">7. lépés</div>
+      <h2>A főkártya hozzáadása</h2>
+    </div>
+    <p class="lead">A felület tetején lévő főkártya egy <code>button-card</code>: nagy bekapcsolási állapot, több attribútumból épített egysoros összegzés, és a zöld üveges kidolgozás az egész kártyán, nem csak a szegélyén.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Telepítésenként változó részekre rövidítve. A teljes kártya az ikon, a név és a felirat rácspozícióit is beállítja; mindezt lásd a 10. lépés letöltésében.</p>
+    <p class="lead">Inkább egy karcsúbb sáv? Egy <code>mushroom-chips-card</code> ugyanezt végzi el egyetlen sornyi apró chipben: bekapcsolási állapot, bemenet, színmód, videótartomány és lámpaórák, mindegyik egy <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code> értéket olvasó sablon. A felület tetején az egyiket használja, ne mindkettőt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">8. lépés</div>
+      <h2>Add hozzá a Jeleneteidet</h2>
+    </div>
+    <p class="lead">Minden Jelenet, amelyet az alkalmazásban elment, szinkronizálás után <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> nevű szkriptté válik, és a hozzá tartozó csempe ugyanaz a vezérlőgomb-kártya a 6. lépésből, Jelenet-névvel és ikonnal.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Cserélje a(z) <code>YOURSCENE1</code> értéket arra az azonosítóra, amelyet az adott Jelenethez az alkalmazás szinkronizált vezérlőlistája mutat. Jelenetenként egy csempe, egy <code>horizontal-stack</code> elemben.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">9. lépés</div>
+      <h2>Lézerórák története</h2>
+    </div>
+    <p class="lead">A projektorszenzort a Home Assistant mint bármelyik másikat, rögzíti, így a(z) <code>lamp_hours</code> ingyen kap előzményeket. Nincs szükség extra szenzorra, segédre vagy előzetes beállításra, a Karbantartás szakaszban.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">A 336 óra két hét. A lézer- és lámpaórák egyenletesen emelkednek, nem ugrálnak, ezért egy kéthetes ablak általában elég a trend láttatásához anélkül, hogy a grafikon lapos lenne.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">10. lépés</div>
+      <h2>Vagy vidd az egészet</h2>
+    </div>
+    <p class="lead">A teljes nézet, az oldal tetején lévő képernyőkép minden szakasza és kártyája, entitás-ID-k helyett helyőrzőkkel.</p>
+    <ol class="steps">
+      <li><a href="/hu/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>A nézet YAML-jának letöltése</a>.</li>
+      <li>Nyissa meg bármilyen szövegszerkesztőben, és mindenhol, ahol előfordulnak, cserélje a(z) <code>YOUR_PROJECTOR</code> értéket a 2. lépés projektorszenzor-azonosítójára, a(z) <code>YOURSERIAL</code> értéket pedig a 2. lépés sorozatszámból képzett azonosítójára.</li>
+      <li>A lap aljához közeli Jelenetek szakaszban cserélje a(z) <code>YOURSCENE1</code>, <code>YOURSCENE2</code> és <code>YOURSCENE3</code> értékeket a saját három Jelenet-azonosítójára, vagy adjon hozzá és töröljön csempéket, hogy annyi legyen, ahány Jelenete valójában van.</li>
+      <li>A Home Assistant-ban nyissa meg a vezérlőpultját, kattintson a ceruza ikonra, majd a hárompontos menüre, válassza a <b>Nyers konfigurációszerkesztőt</b>, és illessze be nézetként.</li>
+    </ol>
+    <div class="note"><b>A Jelenetek neve és száma nem fog egyezni.</b> A fájl három példa Jelenettel érkezik: Filmes est, Játék, Sportnap. Nevezze át a csempéket, irányítsa őket a saját Jelenet-azonosítóira, és adjon hozzá vagy töröljön csempéket, amíg a szakasz meg nem felel annak, ahány Jelenetet valójában elmentett.</div>
+    <div class="note"><b>Az információs csempék beillesztés után azonnal működnek.</b> Nekik csak az kell, hogy a szenzor létezzen. A vezérlő- és Jelenet-gombok mindaddig nem reagálnak, amíg a Másolás blokk nincs beillesztve ide: <code>configuration.yaml</code>, a Home Assistant újra nincs indítva, és meg nem nyomta a Szinkronizálás HA-val gombot.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Hibaelhárítás</h2>
+    </div>
+    <details class="more"><summary>Egy csempe Ismeretlen értéket mutat</summary>
+      <p>Vesse össze az attribútum nevét azzal, amit a szenzor valóban hordoz: Fejlesztői eszközök &rsaquo; Állapotok, a(z) <code>sensor.YOUR_PROJECTOR</code> entitás, és olvassa át az attribútumlistáját. Néhány érték, például a HDR PQ vagy a HDR HLG, csak akkor töltődik fel, amikor a projektor éppen ilyen jelet fogad, így az Ismeretlen ennél a kettőnél lehet helyes, nem hibás. Ha az egész szenzor szegényesnek tűnik, ébressze fel a projektort: a készenléti egység nagyon keveset közöl.</p>
+    </details>
+    <details class="more"><summary>Egy gomb nem csinál semmit</summary>
+      <p>Még nem illesztette be a Másolás blokkot, vagy a Home Assistant-ot azóta nem indították újra. A vezérlő- és Jelenet-gombok az alkalmazás által írt szkripteket hívják, ezek pedig addig nem léteznek, amíg az alkalmazásban a <b>Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Home Assistant</b> oldalon a Másolás blokk be nincs illesztve ide: <code>configuration.yaml</code>, a Home Assistant egyszer újra nincs indítva, és meg nem nyomta a <b>Szinkronizálás HA-val</b> gombot. Először futtassa az alkalmazásban a <b>Kapcsolat tesztelése</b> funkciót - megmondja, hogy a blokk jelen van-e, mielőtt vezérlőpult-hibát keresne.</p>
+    </details>
+    <details class="more"><summary>A várt szkriptek hiányoznak a Fejlesztői eszközök &rsaquo; Állapotok oldalról</summary>
+      <p>Szűrjön erre: <code>projpilot</code>, ne a teljes sorozatszámra - így könnyebb átlátni a teljes listát. Ha egy nemrég hozzáadott vezérlő vagy Jelenet hiányzik, koppintson újra a <b>Szinkronizálás HA-val</b> gombra; helyben frissít, nem kell új beállítás. Ha egy Jelenet törlése után régi, halott szkriptek zsúfolják a listát, használja az alkalmazásban az <b>Árva szkriptek eltávolítása</b> funkciót.</p>
+    </details>
+    <details class="more"><summary>Az entitás-IDm nem hasonlít az útmutatóban láthatóra</summary>
+      <p>A minta rögzített, a közepe nem. A szenzor a saját projektora modellje után kapja a nevét, és minden szkript a saját projektora sorozatszámát hordozza, nem az ezen az oldalon lévő helyőrzőket. Mindkettőt a Fejlesztői eszközök &rsaquo; Állapotok oldalról és az alkalmazás Home Assistant képernyőjéről szerezze meg, ahogy a 2. lépésben, és azokat használja a példaszöveg begépelése helyett.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>A teljes projektor, egyetlen falon</h2>
+    <p class="lead" style="margin:0 auto 24px">Az Otthon-automatizálás egyszeri kiegészítő. Nincs előfizetés, fiók vagy felhő. Egyetlen vásárlás minden birtokolt platformon feloldja.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - már elérhető</a>
+      <span class="pill">App Store - jóváhagyásra vár</span>
+      <span class="pill">Microsoft Store - jóváhagyásra vár</span>
+      <span class="pill">Mac App Store - jóváhagyásra vár</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/hu/guide/home-automation/">Vissza az otthonautomatizáláshoz &rarr;</a> &middot; <a href="/hu/guide/">Teljes felhasználói útmutató &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Gyors válaszok</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Kézzel kell megépítenem ezt a vezérlőpultot?</h3><p>Nem. Ha az alkalmazásban a Szinkronizálás HA-val gombra koppint, az közvetlenül a Home Assistant-ban elkészít Önnek egy kész Projector Pilot vezérlőpultot - az élő projektorszenzorral és minden vezérlőhöz és Jelenethez egy-egy gombbal -, amely a Projector Pilot néven jelenik meg az oldalsávban. Ez az oldal a gazdagabb, zöld üveges változat kézi felépítéséhez, vagy a szinkronizálással létrehozott vezérlőpult testreszabásához készült.</p></div><div class="gcard"><h3>Kellenek hozzá egyéni HACS kártyák?</h3><p>A képernyőképen látható megjelenéshez igen: Mushroom, button-card, card-mod és mini-graph-card. A mögöttes vezérlők működéséhez egyik sem kötelező - minden gomb egy egyszerű szkripthívás, az egyedi kártyák pedig csak a stílust adják rá.</p></div><div class="gcard"><h3>Miért mutatnak az információs csempék értéket, a gombok pedig miért nem csinálnak semmit?</h3><p>A projektorszenzor az értékeit abban a pillanatban közzéteszi, ahogy bejelentkezik és szinkronizál az alkalmazásban, így az információs csempék azonnal élnek. A vezérlő- és Jelenet-gombok olyan szkripteket hívnak, amelyek csak azután léteznek a Home Assistant-ban, hogy az alkalmazás Másolás blokkját beillesztette a configuration.yaml fájlba, újraindította a Home Assistant-ot, és egyszer megnyomta a Szinkronizálás HA-val gombot.</p></div><div class="gcard"><h3>Megegyeznek majd az entitásazonosítóim az ebben az útmutatóban szereplőkkel?</h3><p>A minta igen, a pontos karakterek nem. A projektorszenzor a projektor modellje után kapja a nevét, minden szkript pedig a projektor sorozatszáma után. Ahol ez az oldal YOUR_PROJECTOR szöveget ír, oda a saját szenzorának entitás-ID-ját írja; ahol YOURSERIAL szerepel, oda az alkalmazás Home Assistant képernyőjén látható, sorozatszámból képzett azonosítót.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/help/">Súgó &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/hu/help/#privacy">Adatvédelem</a><a href="/hu/help/#terms">Feltételek</a></div>
+<div class="flinks"><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/guide/dashboard/">Vezérlőpult</a><a href="/hu/guide/remote/">Távirányító</a><a href="/hu/guide/picture/">Kép</a><a href="/hu/guide/lens/">Lencse</a><a href="/hu/guide/scenes/">Jelenetek</a><a href="/hu/guide/home-assistant-dashboard/">HA-vezérlőpult</a><a href="/hu/guide/maintenance/">Karbantartás</a><a href="/hu/guide/settings/">Beállítások</a><a href="/hu/guide/languages/">Nyelvek</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. A Projector Pilot egy független alkalmazás Epson és PJLink projektorokhoz. Nem áll kapcsolatban az alábbi szereplőkkel, és őket sem támogatják vagy szponzorálják: Epson, a PJLink szabványügyi testülete, Home Assistant, Hubitat, Apple, Google és Microsoft. Az Epson, a PJLink, a Home Assistant, a Hubitat, az App Store, a Mac App Store, a Google Play és a Microsoft Store a megfelelő tulajdonosaik védjegyei, és itt kizárólag azt írják le, mivel működik együtt az alkalmazás.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

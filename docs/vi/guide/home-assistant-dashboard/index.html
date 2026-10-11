@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Bảng điều khiển máy chiếu Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="Xây dựng bảng điều khiển máy chiếu Home Assistant tùy chỉnh từng bước: các thẻ HACS cần cài, ID thực thể và số sê-ri của bạn, cùng YAML sẵn sàng sao chép cho từng thẻ." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bảng điều khiển máy chiếu Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="Xây dựng bảng điều khiển máy chiếu Home Assistant tùy chỉnh từng bước: các thẻ HACS cần cài, ID thực thể và số sê-ri của bạn, cùng YAML sẵn sàng sao chép cho từng thẻ." />
+<meta property="og:url" content="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bảng điều khiển máy chiếu Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Xây dựng bảng điều khiển máy chiếu Home Assistant tùy chỉnh từng bước: các thẻ HACS cần cài, ID thực thể và số sê-ri của bạn, cùng YAML sẵn sàng sao chép cho từng thẻ." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Bảng điều khiển máy chiếu Home Assistant (YAML) - Projector Pilot", "description": "Xây dựng bảng điều khiển máy chiếu Home Assistant tùy chỉnh từng bước: các thẻ HACS cần cài, ID thực thể và số sê-ri của bạn, cùng YAML sẵn sàng sao chép cho từng thẻ.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Xây dựng bảng điều khiển máy chiếu Home Assistant trong khoảng một giờ", "description": "Xây dựng bảng điều khiển máy chiếu Home Assistant tùy chỉnh từng bước: các thẻ HACS cần cài, ID thực thể và số sê-ri của bạn, cùng YAML sẵn sàng sao chép cho từng thẻ.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "vi", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Bảng điều khiển Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có phải tự tay xây dựng bảng điều khiển này không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Khi bạn chạm Sync With HA trong ứng dụng, ứng dụng sẽ dựng sẵn cho bạn một bảng điều khiển Projector Pilot ngay trong Home Assistant - cảm biến máy chiếu trực tiếp cùng một nút cho mọi điều khiển và Cảnh - và nó xuất hiện trên thanh bên với tên Projector Pilot. Khi bạn đã cài các thẻ cộng đồng, Sync sẽ tự động nâng cấp các thẻ lên bản đó; trang này dành cho việc tự tay dựng phiên bản kính xanh lá phong phú hơn, hoặc tùy chỉnh những gì Sync đã tạo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có cần thẻ tùy chỉnh từ HACS để dựng cái này không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Để có giao diện giống ảnh chụp màn hình thì có: Mushroom, button-card, card-mod và mini-graph-card. Không thẻ nào trong số đó bắt buộc để các điều khiển cốt lõi hoạt động - mỗi nút chỉ là một lệnh gọi script thông thường, còn các thẻ tùy chỉnh chỉ là lớp trang trí bên trên."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao các ô thông tin hiển thị giá trị nhưng các nút lại không làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cảm biến máy chiếu công bố số liệu ngay khi bạn đăng nhập và đồng bộ trong ứng dụng, nên các ô thông tin hoạt động trực tiếp ngay. Các nút điều khiển và Cảnh gọi những script chỉ tồn tại trong Home Assistant sau khi bạn dán khối Copy của ứng dụng vào configuration.yaml, khởi động lại Home Assistant và chạm Sync With HA một lần."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ID thực thể của tôi có giống với các ID trong hướng dẫn này không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mẫu thì có, còn các ký tự chính xác thì không. Cảm biến máy chiếu của bạn được đặt tên theo model máy chiếu, và mọi script được đặt tên theo số sê-ri máy chiếu. Ở bất cứ chỗ nào trang này ghi YOUR_PROJECTOR, hãy điền entity id cảm biến của chính bạn; ở bất cứ chỗ nào ghi YOURSERIAL, hãy điền id dẫn xuất từ số sê-ri hiển thị trên màn hình Home Assistant của ứng dụng."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/vi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ"><a href="/vi/#features">Tính năng</a><a href="/vi/guide/">Hướng dẫn</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/help/">Trợ giúp</a><a class="cta" href="/vi/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Bảng điều khiển Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; từng bước một</div>
+    <h1>Xây dựng bảng điều khiển máy chiếu Home Assistant <span class="g">trong khoảng một giờ</span></h1>
+    <p>Ứng dụng đã tự dựng cho bạn một bảng điều khiển hoạt động được khi bạn Sync - trang này là phiên bản cao cấp, tự tay xây dựng. Mười bước, YAML của từng thẻ, và một giao diện hoàn chỉnh để dán một lần. Ô kính xanh lá, bảng hiển thị hình ảnh trực tiếp, các Cảnh của bạn và biểu đồ số giờ laser, tất cả từ một cảm biến máy chiếu. Đổi hai chuỗi là thành của bạn.</p>
+    <div class="readout"><span>Sync tạo sẵn một bảng miễn phí</span><span>4 thẻ HACS cho giao diện đẹp</span><span>Ô thông tin hoạt động ngay</span><span>Nút bấm sau một lần dán</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Bảng điều khiển Projector Pilot hoàn chỉnh trong Home Assistant: nguồn và nguồn vào, chế độ màu, trình đơn hình ảnh đầy đủ, HDR và tín hiệu, hiệu chỉnh RGB, ống kính và hình học, bảo trì với biểu đồ số giờ laser, và các Cảnh, tất cả đều là ô kính xanh lá" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Thứ bạn sẽ xây dựng. Cuộn để xem, hoặc nhấp để phóng to.</figcaption>
+    </figure>
+    <div class="note"><b>Chỉ muốn một bảng dùng được? Bạn đã có rồi.</b> Chạm <b>Sync With HA</b> trong ứng dụng và ứng dụng sẽ dựng sẵn cho bạn một bảng điều khiển Projector Pilot trên thanh bên Home Assistant, với mọi điều khiển và cảm biến trực tiếp - không thẻ, không YAML, không phải dán. Xem <a href="/vi/guide/home-automation/#dashboard">Sync dựng bảng điều khiển cho bạn</a>. Trang này dành cho việc tự tay dựng phiên bản kính xanh lá phong phú hơn, hoặc tùy chỉnh những gì Sync đã tạo.</div>
+    <div class="note"><b>Cần gấp giao diện tùy chỉnh?</b> Nhảy tới <a href="#whole">bước 10</a>, tải về giao diện hoàn chỉnh, đổi hai chuỗi và ba id Cảnh, rồi dán vào. Các bước ở giữa giải thích từng phần làm gì để bạn có thể thay đổi.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Trước khi bắt đầu</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot đã được liên kết với Home Assistant.</b> <a href="/vi/guide/home-automation/">Hướng dẫn thiết lập</a> bao gồm việc đăng nhập và bật <b>Gửi trạng thái máy chiếu</b>. Bạn nên thấy máy chiếu của mình dưới dạng cảm biến trong Home Assistant trước khi xây dựng bất cứ thứ gì trên đó.</li>
+      <li><b>Bạn đã đồng bộ ít nhất một lần.</b> Cài đặt &rsaquo; Home Automation &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, sau khi dán <b>khối Copy</b> của ứng dụng vào <code>configuration.yaml</code> và khởi động lại Home Assistant. Đây là bước tạo ra các script mà mọi nút điều khiển bên dưới đều gọi.</li>
+      <li><b>Máy chiếu của bạn đang bật</b> trong lúc bạn xây dựng. Các thuộc tính hình ảnh bên dưới hầu như để trống khi máy chiếu ở chế độ chờ.</li>
+    </ul>
+    <p class="lead">Dashboard này được nuôi bởi hai nguồn, và sự khác biệt giữa chúng quan trọng ở mọi bước bên dưới.</p>
+    <table class="t">
+      <thead><tr><th>Đến từ</th><th>Cho bạn</th></tr></thead>
+      <tbody>
+        <tr><td>Cảm biến máy chiếu, <code>sensor.YOUR_PROJECTOR</code></td><td>Mọi <b>số liệu đọc</b>. Nguồn, nguồn vào, chế độ màu, tất cả thông số hình ảnh, HDR và tín hiệu, ống kính và hình học, số giờ bóng đèn. Hoạt động trực tiếp ngay khi bạn đăng nhập và đồng bộ, không cần khối Copy.</td></tr>
+        <tr><td>Các script đã đồng bộ của ứng dụng, <code>script.projpilot_YOURSERIAL_...</code></td><td>Mọi <b>điều khiển</b>. Nguồn, nguồn vào, chế độ màu, bộ nhớ ống kính và các Cảnh của bạn. Chúng chỉ tồn tại sau khi khối Copy được dán, Home Assistant được khởi động lại và bạn đã chạm Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 1</div>
+      <h2>Cài bốn thẻ từ HACS</h2>
+    </div>
+    <p class="lead">Cả bốn đều có trong kho HACS mặc định. Trong Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, tìm theo tên, bấm Download, rồi tải lại trình duyệt.</p>
+    <table class="t">
+      <thead><tr><th>Tìm</th><th>Dùng cho</th><th>Nếu bỏ qua</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Mọi ô thông tin, nút điều khiển và ô Cảnh</td><td>Dùng thẻ <code>button</code> thông thường. Vẫn chạy, nhưng trông vuông vức hơn.</td></tr>
+        <tr><td><b>button-card</b></td><td>Thẻ chính, với nhãn trực tiếp</td><td>Dùng thẻ <code>entity</code>, hoặc thẻ mẫu Mushroom với ít chi tiết hơn.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Nền kính xanh lá, viền và dải chuyển màu</td><td>Mọi thứ vẫn hoạt động. Chỉ là không có hiệu ứng phát sáng.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Lịch sử số giờ laser trong mục Bảo trì</td><td>Dùng thẻ <code>history-graph</code> có sẵn.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Không thẻ nào trong số đó bắt buộc để mọi thứ hoạt động.</b> Mọi điều khiển bên dưới đều chạy được từ thẻ nút bấm tiêu chuẩn của Home Assistant trỏ tới cùng một script. Các thẻ tùy chỉnh chỉ là giao diện kính xanh lá, không phải phần hạ tầng.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 2</div>
+      <h2>Tìm ID thực thể và số sê-ri của bạn</h2>
+    </div>
+    <p class="lead">Mọi đoạn mã trên trang này dùng hai chỗ giữ chỗ. Chỉ cần tìm ID của bạn một lần, phần còn lại là sao chép và dán.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States trong Home Assistant, lọc theo <code>projector_pilot</code>. Sẽ có dạng như <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; mở ứng dụng, <b>Cài đặt &rsaquo; Home Automation &rsaquo; Home Assistant</b>. Id dẫn xuất từ số sê-ri hiển thị ngay tại đó, và nó là phần giữa của mọi tên script đã đồng bộ: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, v.v.</li>
+    </ul>
+    <p class="lead">Bạn cũng có thể lọc Developer Tools &rsaquo; States theo <code>projpilot</code> để xem toàn bộ danh sách điều khiển đã đồng bộ cùng lúc, sau khi khối Copy ở step 1's và Sync đã xong.</p>
+    <div class="note"><b>Chưa có danh sách script?</b> Điều đó là bình thường trước khi bạn dán khối Copy. Cảm biến vẫn tồn tại và vẫn cập nhật; các script chỉ xuất hiện sau khi Sync With HA chạy thành công.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 3</div>
+      <h2>Tạo view</h2>
+    </div>
+    <ol class="steps">
+      <li>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard &rsaquo; New dashboard from scratch. Đặt tên là Projector Pilot.</li>
+      <li>Mở nó, rồi nhấn biểu tượng bút chì ở góc trên bên phải để chỉnh sửa.</li>
+      <li>Thêm một chế độ xem. Bố cục nào cũng được; bảng thực tế dùng chồng thẻ mặc định, thẻ này nằm dưới thẻ kia, là cách dễ dán nhất.</li>
+      <li>Để dán YAML, dùng trình đơn ba chấm trên thẻ và chọn <b>Edit in YAML</b>, hoặc trình đơn ba chấm trên bảng điều khiển để mở <b>Raw configuration editor</b> và dán cả chế độ xem cùng lúc.</li>
+    </ol>
+    <p class="lead">Cài đặt riêng của chế độ xem, nếu bạn thích tự gõ:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 4</div>
+      <h2>Thêm một ô thông tin trực tiếp</h2>
+    </div>
+    <p class="lead">Bắt đầu với thứ chỉ để đọc, để bạn biết ID thực thể của mình đúng trước khi chạm vào bất cứ thứ gì gửi lệnh. Ô này hoạt động trực tiếp ngay khi cảm biến máy chiếu tồn tại, không cần khối Copy, không cần đồng bộ. Thêm một thẻ, Edit in YAML, rồi dán:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Cùng cấu trúc đó đọc được bất kỳ thuộc tính nào trong ~80 thuộc tính mà cảm biến mang theo: thay <code>brightness</code> bằng <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, bất cứ thứ gì bạn muốn hiển thị trên ô.</p>
+    <p class="lead">Lưu lại. Nếu một con số hoặc từ thật hiện ra, ID thực thể của bạn đúng và mọi thứ bên dưới sẽ hoạt động. Nếu hiển thị trống, hãy quay lại bước 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 5</div>
+      <h2>Thêm tiêu đề mục màu xanh lá</h2>
+    </div>
+    <p class="lead">Một tiêu đề trơn chỉ là khoảng trống. Đây là thẻ <code>markdown</code> với nền chuyển màu từ card-mod, và nó biến một chồng ô thành các mục có tên. Mọi mục trên bảng đều bắt đầu bằng một thẻ như thế này, chỉ khác nhãn và biểu tượng cảm xúc.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Đổi mã biểu tượng cảm xúc và văn bản nhãn; khối card-mod giống hệt nhau ở mọi mục.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 6</div>
+      <h2>Thêm một nút điều khiển</h2>
+    </div>
+    <p class="lead">Nút này gửi lệnh thay vì chỉ đọc giá trị, nên các script phải tồn tại trước. Nó gọi <code>script.projpilot_YOURSERIAL_power_on</code>, thứ mà ứng dụng chỉ ghi sau khi bạn dán khối Copy vào <code>configuration.yaml</code>, khởi động lại Home Assistant và chạm <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Cùng một thẻ cho Tắt nguồn, Che màn hình, HDMI 1, HDMI 2, A/V Mute, một chế độ màu hoặc một bộ nhớ ống kính: chỉ nhãn, biểu tượng và <code>service</code> thay đổi.</p>
+    <div class="note"><b>Nếu trông ổn nhưng không có gì xảy ra</b> khi bạn chạm vào, khối Copy hoặc chưa được dán, hoặc Home Assistant chưa được khởi động lại kể từ đó. Hãy chạy <b>Kiểm tra kết nối</b> trong ứng dụng, chức năng này kiểm tra đúng điều đó, trước khi cho rằng bảng điều khiển bị sai.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 7</div>
+      <h2>Thêm thẻ chính</h2>
+    </div>
+    <p class="lead">Thẻ chính ở đầu bảng là một <code>button-card</code>: trạng thái nguồn cỡ lớn, một dòng tóm tắt tạo từ nhiều thuộc tính cùng lúc, và hiệu ứng kính xanh lá trên toàn bộ thẻ chứ không chỉ viền.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Đã rút gọn còn những phần thay đổi theo từng bản cài đặt. Thẻ đầy đủ còn đặt cả vị trí lưới của biểu tượng, tên và nhãn; xem bản tải về ở bước 10 để có tất cả.</p>
+    <p class="lead">Muốn một dải gọn hơn? Thẻ <code>mushroom-chips-card</code> làm cùng việc đó trong một hàng chip nhỏ: trạng thái nguồn, nguồn vào, chế độ màu, dải video và số giờ bóng đèn, mỗi chip là một mẫu đọc <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Dùng cái này hoặc cái kia, không dùng cả hai, ở đầu bảng.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 8</div>
+      <h2>Thêm các Cảnh của bạn</h2>
+    </div>
+    <p class="lead">Mỗi Cảnh bạn lưu trong ứng dụng sẽ trở thành một script tên <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> sau khi đồng bộ, và ô cho một Cảnh chính là thẻ nút điều khiển ở bước 6 với tên và biểu tượng Cảnh.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Thay <code>YOURSCENE1</code> bằng id hiển thị cho Cảnh đó trong danh sách điều khiển đã đồng bộ của ứng dụng. Mỗi Cảnh một ô, trong một <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 9</div>
+      <h2>Thêm lịch sử số giờ laser</h2>
+    </div>
+    <p class="lead">Cảm biến máy chiếu được Home Assistant ghi lại như mọi cảm biến khác, nên <code>lamp_hours</code> có sẵn lịch sử miễn phí. Không cần cảm biến thêm, không cần helper, không phải cấu hình gì trước, nằm trong mục Bảo trì.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 giờ là hai tuần. Số giờ laser và bóng đèn tăng đều đặn chứ không nhảy lung tung, nên khoảng hai tuần thường đủ để thấy xu hướng mà biểu đồ không bị phẳng.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 10</div>
+      <h2>Hoặc lấy trọn bộ</h2>
+    </div>
+    <p class="lead">Giao diện hoàn chỉnh, mọi mục và mọi thẻ trong ảnh chụp màn hình ở đầu trang này, với phần giữ chỗ thay cho entity IDs.</p>
+    <ol class="steps">
+      <li><a href="/vi/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Tải YAML của giao diện</a>.</li>
+      <li>Mở bằng bất kỳ trình soạn thảo văn bản nào và thay thế, ở mọi nơi xuất hiện: <code>YOUR_PROJECTOR</code> bằng entity id cảm biến máy chiếu của bạn từ bước 2, và <code>YOURSERIAL</code> bằng id dẫn xuất từ số sê-ri của bạn từ bước 2.</li>
+      <li>Trong mục Cảnh gần cuối, thay <code>YOURSCENE1</code>, <code>YOURSCENE2</code> và <code>YOURSCENE3</code> bằng ba id Cảnh của riêng bạn, hoặc thêm và xóa ô cho khớp với số Cảnh bạn thực sự có.</li>
+      <li>Trong Home Assistant, mở bảng điều khiển của bạn, biểu tượng bút chì, trình đơn ba chấm, <b>Raw configuration editor</b>, rồi dán vào dưới dạng một chế độ xem.</li>
+    </ol>
+    <div class="note"><b>Tên và số lượng Cảnh của bạn sẽ không khớp.</b> Tệp đi kèm ba Cảnh mẫu: Movie Night, Gaming, Sports Day. Hãy đổi tên các ô, trỏ chúng tới id Cảnh của riêng bạn, và thêm hoặc xóa ô cho đến khi mục này khớp với số Cảnh bạn thực sự đã lưu.</div>
+    <div class="note"><b>Các ô thông tin hoạt động ngay sau khi bạn dán.</b> Chúng chỉ cần cảm biến tồn tại. Các nút điều khiển và Cảnh vẫn không phản ứng cho đến khi khối Copy được dán vào <code>configuration.yaml</code>, Home Assistant được khởi động lại và bạn đã chạm Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Khắc phục sự cố</h2>
+    </div>
+    <details class="more"><summary>Một ô hiển thị Unknown</summary>
+      <p>Hãy đối chiếu tên thuộc tính với những gì cảm biến thực sự mang theo: Developer Tools &rsaquo; States, thực thể <code>sensor.YOUR_PROJECTOR</code> của bạn, rồi đọc danh sách thuộc tính của nó. Một vài số liệu, như HDR PQ hay HDR HLG, chỉ có dữ liệu khi máy chiếu đang thực sự nhận loại tín hiệu đó, nên Unknown ở hai mục này có thể là đúng chứ không phải lỗi. Nếu cả cảm biến trông thưa thớt, hãy đánh thức máy chiếu: máy ở chế độ chờ công bố rất ít dữ liệu.</p>
+    </details>
+    <details class="more"><summary>Một nút không làm gì cả</summary>
+      <p>Bạn chưa dán khối Copy, hoặc Home Assistant chưa được khởi động lại kể từ khi bạn dán. Các nút điều khiển và Cảnh gọi những script do ứng dụng ghi, và các script đó không tồn tại cho đến khi <b>Cài đặt &rsaquo; Home Automation &rsaquo; Home Assistant</b> trong ứng dụng đã có khối Copy được dán vào <code>configuration.yaml</code>, Home Assistant được khởi động lại một lần, và <b>Sync With HA</b> được chạm. Hãy chạy <b>Kiểm tra kết nối</b> trong ứng dụng trước - nó cho bạn biết khối đó có mặt hay không trước khi bạn đi tìm lỗi ở bảng điều khiển.</p>
+    </details>
+    <details class="more"><summary>Các script tôi mong đợi không có trong Developer Tools &rsaquo; States</summary>
+      <p>Lọc theo <code>projpilot</code> thay vì toàn bộ số sê-ri - dễ nhìn cả danh sách hơn. Nếu một điều khiển hoặc Cảnh bạn mới thêm bị thiếu, hãy chạm <b>Sync With HA</b> lần nữa; nó cập nhật tại chỗ chứ không đòi hỏi thiết lập lại từ đầu. Nếu các script cũ, đã chết làm rối danh sách sau khi bạn xóa một Cảnh, hãy dùng <b>Remove orphaned scripts</b> trong ứng dụng.</p>
+    </details>
+    <details class="more"><summary>ID thực thể của tôi trông không giống ID trong hướng dẫn này</summary>
+      <p>Mẫu thì cố định, phần giữa thì không. Cảm biến của bạn được đặt tên theo model máy chiếu của bạn, và mọi script mang số sê-ri máy chiếu của bạn, không phải phần giữ chỗ trên trang này. Hãy lấy cả hai từ Developer Tools &rsaquo; States và màn hình Home Assistant của ứng dụng, như ở bước 2, và dùng chúng thay vì gõ văn bản ví dụ.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Cả chiếc máy chiếu của bạn, trên một bức tường</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation là tiện ích bổ sung mua một lần. Không đăng ký, không tài khoản, không đám mây. Một lần mua mở khóa trên mọi nền tảng bạn sở hữu.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - đã có</a>
+      <span class="pill">App Store - đang chờ phê duyệt</span>
+      <span class="pill">Microsoft Store - đang chờ phê duyệt</span>
+      <span class="pill">Mac App Store - đang chờ phê duyệt</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/vi/guide/home-automation/">Quay lại Home Automation &rarr;</a> &middot; <a href="/vi/guide/">Toàn bộ Hướng dẫn sử dụng &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Giải đáp nhanh</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Tôi có phải tự tay xây dựng bảng điều khiển này không?</h3><p>Không. Khi bạn chạm Sync With HA trong ứng dụng, ứng dụng sẽ dựng sẵn cho bạn một bảng điều khiển Projector Pilot ngay trong Home Assistant - cảm biến máy chiếu trực tiếp cùng một nút cho mọi điều khiển và Cảnh - và nó xuất hiện trên thanh bên với tên Projector Pilot. Trang này dành cho việc tự tay dựng phiên bản kính xanh lá phong phú hơn, hoặc tùy chỉnh những gì Sync đã tạo.</p></div><div class="gcard"><h3>Tôi có cần thẻ tùy chỉnh từ HACS để dựng cái này không?</h3><p>Để có giao diện giống ảnh chụp màn hình thì có: Mushroom, button-card, card-mod và mini-graph-card. Không thẻ nào trong số đó bắt buộc để các điều khiển cốt lõi hoạt động - mỗi nút chỉ là một lệnh gọi script thông thường, còn các thẻ tùy chỉnh chỉ là lớp trang trí bên trên.</p></div><div class="gcard"><h3>Tại sao các ô thông tin hiển thị giá trị nhưng các nút lại không làm gì?</h3><p>Cảm biến máy chiếu công bố số liệu ngay khi bạn đăng nhập và đồng bộ trong ứng dụng, nên các ô thông tin hoạt động trực tiếp ngay. Các nút điều khiển và Cảnh gọi những script chỉ tồn tại trong Home Assistant sau khi bạn dán khối Copy của ứng dụng vào configuration.yaml, khởi động lại Home Assistant và chạm Sync With HA một lần.</p></div><div class="gcard"><h3>ID thực thể của tôi có giống với các ID trong hướng dẫn này không?</h3><p>Mẫu thì có, còn các ký tự chính xác thì không. Cảm biến máy chiếu của bạn được đặt tên theo model máy chiếu, và mọi script được đặt tên theo số sê-ri máy chiếu. Ở bất cứ chỗ nào trang này ghi YOUR_PROJECTOR, hãy điền entity id cảm biến của chính bạn; ở bất cứ chỗ nào ghi YOURSERIAL, hãy điền id dẫn xuất từ số sê-ri hiển thị trên màn hình Home Assistant của ứng dụng.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/help/">Trợ giúp &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/vi/help/#privacy">Quyền riêng tư</a><a href="/vi/help/#terms">Điều khoản</a></div>
+<div class="flinks"><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/guide/dashboard/">Trang tổng quan</a><a href="/vi/guide/remote/">Điều khiển từ xa</a><a href="/vi/guide/picture/">Hình ảnh</a><a href="/vi/guide/lens/">Ống kính</a><a href="/vi/guide/scenes/">Cảnh</a><a href="/vi/guide/home-assistant-dashboard/">Bảng điều khiển HA</a><a href="/vi/guide/maintenance/">Bảo trì</a><a href="/vi/guide/settings/">Cài đặt</a><a href="/vi/guide/languages/">Ngôn ngữ</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot là ứng dụng độc lập dành cho máy chiếu Epson và PJLink. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant, Hubitat, Apple, Google hoặc Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play và Microsoft Store là nhãn hiệu của các chủ sở hữu tương ứng, chỉ được nêu tên để mô tả những gì ứng dụng hoạt động cùng.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Ứng dụng điều khiển máy chiếu Epson &amp; PJLink - Projector Pilot</title>
+<meta name="description" content="Projector Pilot là ứng dụng cho máy chiếu Epson và PJLink: nguồn, nguồn vào, hình ảnh, ống kính mô-tơ, Cảnh một chạm và Home Assistant. Không đăng ký." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/vi/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ứng dụng điều khiển máy chiếu Epson &amp; PJLink - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot là ứng dụng cho máy chiếu Epson và PJLink: nguồn, nguồn vào, hình ảnh, ống kính mô-tơ, Cảnh một chạm và Home Assistant. Không đăng ký." />
+<meta property="og:url" content="https://projectorpilot.com/vi/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ứng dụng điều khiển máy chiếu Epson &amp; PJLink - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot là ứng dụng cho máy chiếu Epson và PJLink: nguồn, nguồn vào, hình ảnh, ống kính mô-tơ, Cảnh một chạm và Home Assistant. Không đăng ký." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Ứng dụng điều khiển máy chiếu Epson & PJLink - Projector Pilot", "description": "Projector Pilot là ứng dụng cho máy chiếu Epson và PJLink: nguồn, nguồn vào, hình ảnh, ống kính mô-tơ, Cảnh một chạm và Home Assistant. Không đăng ký.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Ứng dụng độc lập cho máy chiếu Epson và PJLink: nguồn, nguồn vào, điều khiển hình ảnh và màu sắc đầy đủ, dịch ống kính mô-tơ, lấy nét, thu phóng và bộ nhớ, Cảnh một chạm, tự động hóa Home Assistant, Hubitat và webhook, thông tin bảo trì và widget màn hình chính, với 29 ngôn ngữ.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Miễn phí", "price": "0", "priceCurrency": "USD", "description": "Thêm máy chiếu, nguồn, chuyển nguồn vào, trạng thái trực tiếp và các điều khiển từ xa cơ bản trên màn hình."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Mua một lần trong ứng dụng. Giá tham khảo; cửa hàng hiển thị giá cho khu vực của bạn."}, {"@type": "Offer", "name": "Tiện ích bổ sung Home Automation", "price": "2.99", "priceCurrency": "USD", "description": "Mua một lần trong ứng dụng. Giá tham khảo; cửa hàng hiển thị giá cho khu vực của bạn."}, {"@type": "Offer", "name": "Gói combo Pro + Home Automation", "price": "11.99", "priceCurrency": "USD", "description": "Mua một lần trong ứng dụng. Giá tham khảo; cửa hàng hiển thị giá cho khu vực của bạn."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Projector Pilot có phải do Epson làm ra không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Projector Pilot là ứng dụng độc lập của MiyaraHub Technologies LLC. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant hoặc Hubitat. Những tên đó là nhãn hiệu của các chủ sở hữu tương ứng và chỉ xuất hiện ở đây để mô tả những máy chiếu và hệ thống nhà thông minh mà ứng dụng hoạt động cùng."}}, {"@type": "Question", "name": "Projector Pilot hỗ trợ những máy chiếu nào?", "acceptedAnswer": {"@type": "Answer", "text": "Máy chiếu Epson qua ESC/VP21 và Web Control, và mọi máy chiếu PJLink. Ứng dụng dùng phương thức nào máy chiếu phản hồi, nên một máy chiếu chỉ có PJLink là thiết bị được hỗ trợ bình thường."}}, {"@type": "Question", "name": "Projector Pilot có phải là dịch vụ đăng ký không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Điều khiển cơ bản miễn phí, còn Pro, Home Automation và gói combo là mua một lần. Không đăng ký, không quảng cáo."}}, {"@type": "Question", "name": "Projector Pilot có cần tài khoản hoặc đám mây không?", "acceptedAnswer": {"@type": "Answer", "text": "Không tài khoản và không đám mây. Ứng dụng giao tiếp trực tiếp với máy chiếu trên mạng của chính bạn."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="#features">Tính năng</a>
+      <a href="/vi/guide/">Hướng dẫn</a>
+      <a href="/vi/pricing/">Giá</a>
+      <a href="/vi/highlights/">Điểm nổi bật</a>
+      <a href="/vi/guide/home-automation/">Home Assistant</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a class="cta" href="#download">GET THE APP</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Máy chiếu Epson &amp; PJLink</div>
+      <h1>Ứng dụng điều khiển mà <span class="g">máy chiếu Epson</span> của bạn luôn xứng đáng có.</h1>
+      <p>Nguồn, nguồn vào, trình đơn hình ảnh đầy đủ, dịch ống kính mô-tơ, lấy nét và thu phóng, Cảnh một chạm và tự động hóa gia đình thực thụ - cho máy chiếu Epson và PJLink, ngay từ điện thoại của bạn. Không quảng cáo. Không đăng ký. Không tài khoản đám mây.</p>
+      <div class="pills">
+        <span class="pill">29 ngôn ngữ</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Mua một lần</span>
+        <span class="pill">Hoạt động trên mạng của bạn</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Tải trên Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Trang tổng quan Projector Pilot trên điện thoại hiển thị nguồn, nguồn vào và chế độ màu theo thời gian thực của một máy chiếu Epson" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Chức năng</div>
+      <h2>Mọi điều khiển mà máy chiếu của bạn cung cấp, trong một ứng dụng gọn gàng.</h2>
+      <p class="lead">Projector Pilot giao tiếp với máy chiếu qua ESC/VP21, PJLink và Epson Web Control cùng lúc, dùng phương thức nào phản hồi - nên bạn có điều khiển nguồn, hình ảnh, hình học và ống kính thực sự hoạt động, với giá trị đọc lại từ máy chiếu, không bao giờ đoán.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Trang tổng quan Projector Pilot với trạng thái trực tiếp, thông tin chiếu và tóm tắt hình ảnh và ống kính" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dashboard</div>
+        <h3>Mọi thứ trong tầm mắt, xây dựng theo ý bạn.</h3>
+        <ul>
+          <li><b>Trạng thái trực tiếp</b> - nguồn, nguồn vào, chế độ màu, số giờ nguồn sáng, tín hiệu và các thông số hình ảnh, cập nhật khi chúng thay đổi.</li>
+          <li><b>Nguồn và nguồn vào một chạm</b> ngay từ phía trên, với nút nguồn nhận biết khởi động và làm mát.</li>
+          <li><b>Thẻ tùy chỉnh</b> - thêm, ẩn và sắp xếp lại các thẻ để trang tổng quan hiển thị đúng những gì bạn quan tâm.</li>
+          <li><b>Thông tin chiếu</b> - dải động, không gian màu, gamma, số giờ laser, số sê-ri và cách lắp, đọc từ máy chiếu.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Màn hình điều khiển từ xa Projector Pilot với phím định hướng, menu, nguồn vào và che màn hình" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Màn hình hình ảnh Projector Pilot với độ sáng, độ tương phản, nhiệt độ màu và gamma" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Điều khiển từ xa &amp; Hình ảnh</div>
+        <h3>Một chiếc điều khiển từ xa chuyên sâu và trình đơn hình ảnh đầy đủ.</h3>
+        <ul>
+          <li><b>Phím định hướng đầy đủ</b>, menu, nguồn vào và che màn hình - điều khiển trên màn hình, làm đúng cách.</li>
+          <li><b>Phương pháp hiệu chỉnh</b> - hình thang ngang/dọc, Quick Corner, hiệu chỉnh điểm, bề mặt cong và góc tường.</li>
+          <li><b>Điều khiển hình ảnh đầy đủ</b> - độ sáng, độ tương phản, sắc thái, độ nét, nhiệt độ màu, gamma, HDR và trình đơn hình ảnh chuyên sâu, mỗi mục theo thang đo riêng của máy chiếu.</li>
+          <li><b>HDR và không gian màu tách biệt</b> - tín hiệu BT.2020 SDR được hiển thị đúng như vậy, không bao giờ bị gắn nhầm huy hiệu HDR.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Màn hình ống kính Projector Pilot với bàn phím dịch, lấy nét, thu phóng và bộ chọn bước" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Ống kính</div>
+        <h3>Dịch ống kính mô-tơ, lấy nét, thu phóng và bộ nhớ.</h3>
+        <ul>
+          <li><b>Dịch, lấy nét và thu phóng</b> từ một bàn phím chính xác, với <b>bước do bạn chọn</b> - nhỏ để định khung, thô cho các di chuyển lớn.</li>
+          <li><b>Bộ nhớ ống kính</b> - gọi lại và lưu các vị trí mà máy chiếu của bạn hỗ trợ.</li>
+          <li><b>Nhận biết hướng</b> - ứng dụng theo cách ánh xạ của chính máy chiếu, lắp trần hay chiếu ngược, nên lên luôn là lên.</li>
+          <li><b>Số liệu trung thực</b> - vị trí mà máy chiếu không xác nhận được không bao giờ bị tô vẽ thành trạng thái khóa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Tab Cảnh của Projector Pilot với các Cảnh một chạm đã lưu" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Cảnh</div>
+        <h3>Một chạm cho cả căn phòng.</h3>
+        <ul>
+          <li><b>Lưu một Cảnh</b> - nguồn, nguồn vào, hình ảnh, tín hiệu, ánh sáng, hình học và âm thanh, và chọn chính xác những phần cần giữ.</li>
+          <li><b>Áp dụng chỉ bằng một chạm</b> - “Movie Night” đặt nguồn vào, chế độ hình ảnh và bộ nhớ ống kính cùng lúc.</li>
+          <li><b>Mỗi Cảnh trở thành một script Home Assistant</b>, để một tự động hóa hoặc trợ lý giọng nói cũng có thể chạy nó.</li>
+          <li><b>Hồ sơ có thể chia sẻ</b> - xuất một Cảnh đã tinh chỉnh và gửi cho bạn bè.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Trung tâm Home Automation của Projector Pilot với Home Assistant, Hubitat và webhook" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Màn hình thiết lập Home Assistant của Projector Pilot với đăng nhập và các công tắc đồng bộ" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Tự động hóa gia đình</div>
+        <h3>Home Assistant, Hubitat và webhook - hàng thật.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - đăng nhập, công bố trạng thái máy chiếu dưới dạng cảm biến, và chạm <b>Sync With HA</b> để có một script cho mọi Cảnh và điều khiển.</li>
+          <li><b>Bảng điều khiển dựng sẵn cho bạn</b> - Sync dựng nó trong Home Assistant, với các thẻ có sẵn, được nâng cấp lên thẻ HACS phong phú hơn khi bạn có. Nó cũng hoạt động với tích hợp PJLink lõi.</li>
+          <li><b>Danh sách kiểm tra thiết lập</b> cho biết cái gì đã xong, cái gì còn thiếu và cần làm gì tiếp, và các số liệu của bạn vẫn nằm trong Home Assistant khi máy chiếu tắt.</li>
+          <li><b>Hubitat</b> - phản chiếu máy chiếu lên một thiết bị qua Maker API để Rule Machine có thể tác động lên nó.</li>
+          <li><b>Webhooks</b> - gửi dữ liệu tới bất kỳ URL nào khi máy chiếu bật, tắt, đổi nguồn vào hoặc gọi lại một Cảnh.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/vi/guide/home-automation/">Đọc hướng dẫn Home Assistant đầy đủ &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Và hơn thế nữa</div>
+      <h2>Những chi tiết khiến nó cảm giác hoàn thiện.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Chuyển máy chiếu từ mọi nơi</h3><p>Bộ chuyển máy chiếu trên thanh trên cùng của mọi trang máy chiếu giúp bạn chuyển giữa các máy chiếu mà không cần quay lại danh sách.</p></div>
+      <div class="gcard"><h3>Tắt nguồn sẽ hỏi trước</h3><p>Tắt máy chiếu yêu cầu bạn xác nhận, để một cú chạm nhầm không làm hỏng bộ phim.</p></div>
+      <div class="gcard"><h3>Điều khiển phản hồi tức thì</h3><p>Dịch ống kính, lấy nét, thu phóng và nút tăng giảm công suất ánh sáng di chuyển ngay khi bạn nhấn, và ứng dụng phát hiện máy chiếu bật lên trong vòng khoảng mười giây.</p></div>
+      <div class="gcard"><h3>Firmware trong tầm mắt</h3><p>Phiên bản firmware của máy chiếu hiển thị trên Trang tổng quan và tab Thông tin, và trong báo cáo chẩn đoán, miễn là máy chiếu báo cáo được.</p></div>
+      <div class="gcard"><h3>Chuyển nguồn vào trên máy chiếu chỉ có PJLink</h3><p>Các máy chiếu chỉ liệt kê nguồn vào qua PJLink, như TW7300 và Home Cinema 4040, đều chuyển được nguồn vào, và các máy chiếu PJLink không phải Epson cũng vậy.</p></div>
+      <div class="gcard"><h3>Tìm máy chiếu của bạn trên Wi-Fi</h3><p>Thêm máy chiếu quét mạng của bạn tìm bất kỳ thiết bị nào phản hồi như máy chiếu và điền sẵn địa chỉ, kèm thanh tiến trình trong khi khả năng của model bạn được khám phá.</p></div>
+      <div class="gcard"><h3>Sao lưu và khôi phục</h3><p>Xuất cài đặt ứng dụng của bạn ra tệp và nhập lại. Tệp được chia sẻ dưới tên thật của nó, và các máy chiếu đã lưu cùng mật khẩu không bao giờ đi cùng.</p></div>
+      <div class="gcard"><h3>Báo lỗi chỉ một bước</h3><p>Báo lỗi tạo một gói với mọi nhật ký liên quan, sẵn sàng để gửi.</p></div>
+      <div class="gcard"><h3>29 ngôn ngữ</h3><p>Tiếng Anh cộng 28 ngôn ngữ khác, kể cả các lời nhắc cấp quyền trên iPhone, iPad và Mac. Xem <a href="/vi/guide/languages/">danh sách ngôn ngữ</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/vi/highlights/">Xem mọi thứ mới &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nhìn quanh một vòng</div>
+      <h2>Được tạo ra để cảm giác như một phần của máy chiếu.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Trang tổng quan Projector Pilot với trạng thái trực tiếp, thông tin chiếu và tóm tắt hình ảnh và ống kính" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dashboard</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Màn hình điều khiển từ xa Projector Pilot với phím định hướng, menu, nguồn vào và che màn hình" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Điều khiển</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Màn hình ống kính Projector Pilot với bàn phím dịch, lấy nét, thu phóng và bộ chọn bước" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Ống kính</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Màn hình thiết lập Home Assistant của Projector Pilot với đăng nhập và các công tắc đồng bộ" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Những câu hỏi mọi người hỏi đầu tiên</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot có phải do Epson làm ra không?</h3><p>Không. Projector Pilot là ứng dụng độc lập của MiyaraHub Technologies LLC. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant hoặc Hubitat. Những tên đó là nhãn hiệu của các chủ sở hữu tương ứng và chỉ xuất hiện ở đây để mô tả những máy chiếu và hệ thống nhà thông minh mà ứng dụng hoạt động cùng.</p></div><div class="gcard"><h3>Projector Pilot hỗ trợ những máy chiếu nào?</h3><p>Máy chiếu Epson qua ESC/VP21 và Web Control, và mọi máy chiếu PJLink. Ứng dụng dùng phương thức nào máy chiếu phản hồi, nên một máy chiếu chỉ có PJLink là thiết bị được hỗ trợ bình thường.</p></div><div class="gcard"><h3>Projector Pilot có phải là dịch vụ đăng ký không?</h3><p>Không. Điều khiển cơ bản miễn phí, còn Pro, Home Automation và gói combo là mua một lần. Không đăng ký, không quảng cáo.</p></div><div class="gcard"><h3>Projector Pilot có cần tài khoản hoặc đám mây không?</h3><p>Không tài khoản và không đám mây. Ứng dụng giao tiếp trực tiếp với máy chiếu trên mạng của chính bạn.</p></div></div>
+    <p style="margin-top:22px"><a href="/vi/help/">Thêm câu trả lời trong Trợ giúp &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tải ứng dụng</div>
+      <h2>Đã có trên Google Play. Các cửa hàng khác sắp tới.</h2>
+      <p class="lead">Projector Pilot hiện đã có trên Google Play. App Store, Microsoft Store và Mac App Store đang chờ phê duyệt. Một lần mua mở khóa trên mọi nền tảng bạn sở hữu.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - đã có</a>
+      <span class="pill">App Store - đang chờ phê duyệt</span>
+      <span class="pill">Microsoft Store - đang chờ phê duyệt</span>
+      <span class="pill">Mac App Store - đang chờ phê duyệt</span>
+    </div>
+    <p style="margin-top:22px"><a href="/vi/guide/">Mở hướng dẫn sử dụng đầy đủ &rarr;</a> &nbsp; &middot; &nbsp; <a href="/vi/pricing/">Xem So sánh Miễn phí và Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/vi/guide/">Hướng dẫn sử dụng</a>
+      <a href="/vi/pricing/">Giá</a>
+      <a href="/vi/highlights/">Điểm nổi bật</a>
+      <a href="/vi/guide/home-automation/">Home Assistant</a>
+      <a href="/vi/help/">Trợ giúp &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/vi/help/#privacy">Quyền riêng tư</a>
+      <a href="/vi/help/#terms">Điều khoản</a>
+    </div>
+<div class="flinks"><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/guide/dashboard/">Trang tổng quan</a><a href="/vi/guide/remote/">Điều khiển từ xa</a><a href="/vi/guide/picture/">Hình ảnh</a><a href="/vi/guide/lens/">Ống kính</a><a href="/vi/guide/scenes/">Cảnh</a><a href="/vi/guide/home-assistant-dashboard/">Bảng điều khiển HA</a><a href="/vi/guide/maintenance/">Bảo trì</a><a href="/vi/guide/settings/">Cài đặt</a><a href="/vi/guide/languages/">Ngôn ngữ</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot là ứng dụng độc lập dành cho máy chiếu Epson và PJLink. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant, Hubitat, Apple, Google hoặc Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play và Microsoft Store là nhãn hiệu của các chủ sở hữu tương ứng, chỉ được nêu tên để mô tả những gì ứng dụng hoạt động cùng.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

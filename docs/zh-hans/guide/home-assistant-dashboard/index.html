@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="zh-Hans" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant 投影机仪表盘（YAML） - Projector Pilot</title>
+<meta name="description" content="一步步构建自定义 Home Assistant 投影机仪表盘：需要安装的 HACS 卡片、您的实体 ID 和序列号，以及每张卡片可直接复制的 YAML。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Home Assistant 投影机仪表盘（YAML） - Projector Pilot" />
+<meta property="og:description" content="一步步构建自定义 Home Assistant 投影机仪表盘：需要安装的 HACS 卡片、您的实体 ID 和序列号，以及每张卡片可直接复制的 YAML。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant 投影机仪表盘（YAML） - Projector Pilot" />
+<meta name="twitter:description" content="一步步构建自定义 Home Assistant 投影机仪表盘：需要安装的 HACS 卡片、您的实体 ID 和序列号，以及每张卡片可直接复制的 YAML。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hans", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Home Assistant 投影机仪表盘（YAML） - Projector Pilot", "description": "一步步构建自定义 Home Assistant 投影机仪表盘：需要安装的 HACS 卡片、您的实体 ID 和序列号，以及每张卡片可直接复制的 YAML。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hans", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "大约一小时，构建 Home Assistant 投影机仪表盘", "description": "一步步构建自定义 Home Assistant 投影机仪表盘：需要安装的 HACS 卡片、您的实体 ID 和序列号，以及每张卡片可直接复制的 YAML。", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "zh-Hans", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "主页", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "用户指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant 仪表板", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我必须手动搭建这个仪表盘吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。当您在应用中轻点“与 HA 同步”时，它会直接在 Home Assistant 中为您构建一个现成的 Projector Pilot 仪表盘：包含实时的投影机传感器，以及每个控件和场景对应的按钮，并以 Projector Pilot 的名称出现在侧边栏中。如果您安装了社区卡片，同步会自动把卡片升级为社区卡片。本页面适用于手动打造更丰富的绿色玻璃风格版本，或自定义同步创建的内容。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "搭建它需要 HACS 的自定义卡片吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "要还原截图中的外观，需要安装：Mushroom、button-card、card-mod 和 mini-graph-card。不过底层控制功能并不依赖它们：每个按钮都只是一次普通的脚本调用，自定义卡片只是外层的样式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么信息图块有数值，按钮却没反应？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "您在应用中登录并同步后，投影机传感器就会立即发布读数，所以信息图块马上就有实时数据。而控制和场景按钮调用的脚本，需要您把应用的复制代码块粘贴到 configuration.yaml、重启 Home Assistant，并轻点一次“与 HA 同步”之后，才会存在于 Home Assistant 中。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的实体 ID 会和本指南中的一致吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "命名规律是一样的，但具体字符不会一样。您的投影机传感器以投影机的型号命名，每个脚本则以投影机的序列号命名。本页面凡是写着 YOUR_PROJECTOR 的地方，请填入您自己传感器的实体 ID；凡是写着 YOURSERIAL 的地方，请填入应用 Home Assistant 界面上显示的、由序列号派生的 ID。"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hans/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言"><a href="/zh-hans/#features">功能</a><a href="/zh-hans/guide/">指南</a><a href="/zh-hans/pricing/">价格</a><a href="/zh-hans/highlights/">亮点</a><a href="/zh-hans/guide/home-automation/">Home Assistant</a><a href="/zh-hans/help/">帮助</a><a class="cta" href="/zh-hans/#download">获取 APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; Home Assistant 仪表盘</div>
+    <div class="eyebrow">Home Assistant &middot; 分步教程</div>
+    <h1><span class="g">大约一小时</span>，构建 Home Assistant 投影机仪表盘</h1>
+    <p>同步时，应用已经会为您构建一个可用的仪表盘；本页面介绍的是豪华的手工打造版本。共十个步骤，附带每张卡片的 YAML，以及可以一次性粘贴的完整视图。绿色玻璃图块、实时画面读数、您的场景和激光使用时间图表，全部来自同一个投影机传感器。只需修改两个字符串，它就属于您了。</p>
+    <div class="readout"><span>同步可免费生成一个</span><span>4 张 HACS 卡片打造外观</span><span>信息图块即时生效</span><span>粘贴一次后按钮可用</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Home Assistant 中完成的 Projector Pilot 仪表盘：电源和信号源、色彩模式、完整的画面菜单、HDR 与信号、RGB 校准、镜头与几何校正、带激光使用时间图表的维护，以及场景，全部是绿色玻璃图块" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>您要构建的成品。可滚动查看，或点击放大。</figcaption>
+    </figure>
+    <div class="note"><b>只想要一个能用的面板？您已经有了。</b>在应用中轻点<b>与 HA 同步</b>，它就会在您的 Home Assistant 侧边栏中为您构建一个现成的 Projector Pilot 仪表盘，包含所有控件和实时传感器，无需卡片，无需 YAML，也无需粘贴。详见<a href="/zh-hans/guide/home-automation/#dashboard">同步为您构建仪表盘</a>。本页面适用于手动打造更丰富的绿色玻璃风格版本，或自定义同步生成的内容。</div>
+    <div class="note"><b>赶时间，想要自定义外观？</b>直接跳到<a href="#whole">第 10 步</a>，下载完整视图，修改两个字符串和三个场景 ID，然后粘贴即可。中间的步骤会解释每个部分的作用，方便您自行修改。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>开始之前</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot 已关联到 Home Assistant。</b><a href="/zh-hans/guide/home-automation/">设置指南</a>介绍了如何登录并开启<b>发送投影机状态</b>。在其上构建任何内容之前，您应该能在 Home Assistant 中看到您的投影机作为传感器出现。</li>
+      <li><b>您至少已同步过一次。</b>在把应用的<b>复制代码块</b>粘贴到 <code>configuration.yaml</code> 并重启 Home Assistant 之后，依次进入“设置” &rsaquo; “家庭自动化” &rsaquo; “Home Assistant” &rsaquo; <b>与 HA 同步</b>。正是这一步创建了下面每个控制按钮所调用的脚本。</li>
+      <li><b>构建期间请保持投影机开机。</b>下面的画面属性在投影机待机时大多是空白的。</li>
+    </ul>
+    <p class="lead">这个仪表盘有两个数据来源，下面每一步都要区分清楚。</p>
+    <table class="t">
+      <thead><tr><th>来源</th><th>提供</th></tr></thead>
+      <tbody>
+        <tr><td>投影机传感器 <code>sensor.YOUR_PROJECTOR</code></td><td>所有<b>读数</b>。电源、信号源、色彩模式、全部画面数值、HDR 与信号、镜头与几何校正、灯泡使用时长。登录并同步后立即生效，无需复制代码块。</td></tr>
+        <tr><td>应用同步的脚本 <code>script.projpilot_YOURSERIAL_...</code></td><td>所有<b>控件</b>。电源、信号源、色彩模式、镜头记忆以及您的场景。只有粘贴了复制代码块、重启了 Home Assistant 并轻点了“与 HA 同步”之后，它们才会存在。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 1 步</div>
+      <h2>从 HACS 安装四张卡片</h2>
+    </div>
+    <p class="lead">这四个都在 HACS 默认商店中。在 Home Assistant 中：<b>HACS &rsaquo; 前端 &rsaquo; 探索 &amp; 下载存储库</b>，搜索名称，点击下载，然后刷新浏览器。</p>
+    <table class="t">
+      <thead><tr><th>搜索</th><th>用途</th><th>如果跳过</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>所有信息图块、控制按钮和场景图块</td><td>改用普通的 <code>button</code> 卡片。能用，只是外观更方正。</td></tr>
+        <tr><td><b>button-card</b></td><td>顶部主视觉及其实时标签</td><td>使用 <code>entity</code> 卡片，或使用细节较少的 Mushroom 模板卡片。</td></tr>
+        <tr><td><b>card-mod</b></td><td>绿色玻璃背景、边框和渐变</td><td>所有功能照常工作，只是少了发光效果。</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>“维护”下的激光使用时间历史记录</td><td>改用内置的 <code>history-graph</code> 卡片。</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>它们都不是必需的。</b>下面的每个控件都可以用原生 Home Assistant 按钮卡片指向同一个脚本来运行。自定义卡片带来的是绿色玻璃外观，而不是底层功能。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 2 步</div>
+      <h2>查找您的实体 ID 和序列号</h2>
+    </div>
+    <p class="lead">本页的每段代码都用到两个占位符。先把你的找出来，剩下的就是复制粘贴。</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; 在 Home Assistant 的“开发者工具” &rsaquo; “状态”中，筛选 <code>projector_pilot</code>。大致会是 <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code> 这样的形式。</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; 打开应用，进入<b>设置 &rsaquo; 家庭自动化 &rsaquo; Home Assistant</b>。由序列号派生的 ID 就显示在那里，它也是每个同步脚本名称的中间部分：<code>script.projpilot_YOURSERIAL_power_on</code>、<code>script.projpilot_YOURSERIAL_input_hdmi1</code>，以此类推。</li>
+    </ul>
+    <p class="lead">在完成第 1 步的复制代码块和同步之后，您还可以在“开发者工具” &rsaquo; “状态”中筛选 <code>projpilot</code>，一次看到整个同步控件列表。</p>
+    <div class="note"><b>还没有脚本列表？</b>在粘贴复制代码块之前，这是正常的。传感器依然存在并持续更新；只有成功运行“与 HA 同步”之后，脚本才会出现。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 3 步</div>
+      <h2>创建视图</h2>
+    </div>
+    <ol class="steps">
+      <li>进入“设置” &rsaquo; “仪表盘” &rsaquo; “添加仪表盘” &rsaquo; “从头开始新建仪表盘”，将其命名为 Projector Pilot。</li>
+      <li>打开它，然后点击右上角的铅笔图标进行编辑。</li>
+      <li>添加一个视图。两种布局都可以；真实面板使用的是默认的卡片堆叠，一张接一张向下排列，这种方式最容易粘贴。</li>
+      <li>要粘贴 YAML，请使用卡片上的三点菜单并选择<b>在 YAML 中编辑</b>，或者使用仪表盘上的三点菜单选择<b>原始配置编辑器</b>，一次性粘贴整个视图。</li>
+    </ol>
+    <p class="lead">如果您想自己输入，视图本身的设置如下：</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 4 步</div>
+      <h2>添加实时信息图块</h2>
+    </div>
+    <p class="lead">先从一个只读取数据的开始，这样在发送任何命令之前，您就能确认实体 ID 是否正确。只要投影机传感器存在，这个图块就是实时的，无需复制代码块，也无需同步。添加卡片，选择在 YAML 中编辑，然后粘贴：</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">同样的写法可以读取传感器携带的 ~80 个属性中的任意一个：把 <code>brightness</code> 换成 <code>contrast</code>、<code>gamma</code>、<code>color_temp</code>、<code>hdr_pq</code>、<code>lamp_hours</code>，或任何您想放到图块上的属性。</p>
+    <p class="lead">保存。如果出现了真实的数字或文字，说明您的实体 ID 正确，下面的所有内容都能正常工作。如果显示空白，请返回第 2 步。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 5 步</div>
+      <h2>添加绿色分区标题</h2>
+    </div>
+    <p class="lead">单纯的标题只是空白占位。这是一张 <code>markdown</code> 卡片，带有 card-mod 提供的渐变背景，正是它把一堆图块变成了有名称的分区。面板上的每个分区都以这样的一张卡片开头，只是标签和表情符号不同。</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">修改表情符号代码和标签文字即可；每个分区的 card-mod 代码块都完全相同。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 6 步</div>
+      <h2>添加控制按钮</h2>
+    </div>
+    <p class="lead">这个按钮会发送命令，而不只是读取数值，所以脚本必须先存在。它调用 <code>script.projpilot_YOURSERIAL_power_on</code>，而应用只有在您把复制代码块粘贴到 <code>configuration.yaml</code>、重启 Home Assistant 并轻点<b>与 HA 同步</b>之后，才会写入这个脚本。</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">关机、画面遮蔽、HDMI 1、HDMI 2、A/V 静音、某个色彩模式或某个镜头记忆，都使用同一张卡片：只需修改标签、图标和 <code>service</code>。</p>
+    <div class="note"><b>如果看起来没问题，但点击后没有任何反应</b>，说明要么复制代码块没有粘贴，要么粘贴后没有重启 Home Assistant。在断定仪表盘有问题之前，请先在应用中运行<b>测试连接</b>，它正好会检查这一点。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 7 步</div>
+      <h2>添加顶部主视觉</h2>
+    </div>
+    <p class="lead">面板顶部的主视觉是一个 <code>button-card</code>：醒目的电源状态、综合多个属性生成的单行摘要，以及作用于整张卡片而不仅仅是边框的绿色玻璃效果。</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">这里只保留了每次安装会变化的部分。完整的卡片还会设置图标、名称和标签的网格位置，完整内容请参阅第 10 步中的下载文件。</p>
+    <p class="lead">更喜欢更纤薄的横条？<code>mushroom-chips-card</code> 用一行小标签就能完成同样的工作：电源状态、信号源、色彩模式、视频范围和灯泡使用时长，每个都是读取 <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code> 的模板。面板顶部二选一，不要同时使用。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 8 步</div>
+      <h2>添加你的场景</h2>
+    </div>
+    <p class="lead">您在应用中保存的每个场景，在同步后都会成为一个名为 <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> 的脚本，而场景图块就是第 6 步中的同一张控制按钮卡片，换上场景名称和图标即可。</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">把 <code>YOURSCENE1</code> 替换为应用同步控件列表中该场景显示的 ID。每个场景一个图块，放在 <code>horizontal-stack</code> 中。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 9 步</div>
+      <h2>添加激光使用时间历史记录</h2>
+    </div>
+    <p class="lead">投影机传感器和其他传感器一样会被 Home Assistant 记录，所以 <code>lamp_hours</code> 天然带有历史数据。无需额外传感器，无需辅助实体，也无需预先配置，放在“维护”分区下即可。</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 小时即两周。激光和灯泡使用时长是稳步增长的，不会忽高忽低，所以两周的窗口通常足以看出趋势，同时图表又不会显得过于平坦。</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">第 10 步</div>
+      <h2>或者直接拿走全部</h2>
+    </div>
+    <p class="lead">完整视图包含本页顶部截图中的所有分区和所有卡片，其中用占位符代替了实体 ID。</p>
+    <ol class="steps">
+      <li><a href="/zh-hans/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>下载视图 YAML</a>。</li>
+      <li>用任意文本编辑器打开它，并替换所有出现之处：把 <code>YOUR_PROJECTOR</code> 替换为第 2 步中得到的投影机传感器实体 ID，把 <code>YOURSERIAL</code> 替换为第 2 步中得到的由序列号派生的 ID。</li>
+      <li>在靠近底部的“场景”分区中，把 <code>YOURSCENE1</code>、<code>YOURSCENE2</code> 和 <code>YOURSCENE3</code> 替换为您自己的三个场景 ID，或者根据您实际拥有的场景数量添加或删除图块。</li>
+      <li>在 Home Assistant 中，打开您的仪表盘，点击铅笔图标和三点菜单，选择<b>原始配置编辑器</b>，然后将其作为视图粘贴进去。</li>
+    </ol>
+    <div class="note"><b>您的场景名称和数量不会与示例一致。</b>该文件自带三个示例场景：观影之夜、游戏、体育日。请重命名这些图块，指向您自己的场景 ID，并根据您实际保存的场景数量增删图块，使该分区与之匹配。</div>
+    <div class="note"><b>粘贴后信息图块立即生效。</b>它们只需要传感器存在。控制和场景按钮则需要先把复制代码块粘贴到 <code>configuration.yaml</code>、重启 Home Assistant 并轻点“与 HA 同步”，否则不会有反应。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>故障排除</h2>
+    </div>
+    <details class="more"><summary>某个图块显示未知</summary>
+      <p>请对照传感器实际携带的属性名称进行检查：打开“开发者工具” &rsaquo; “状态”，找到您的 <code>sensor.YOUR_PROJECTOR</code> 实体并查看其属性列表。像 HDR PQ 或 HDR HLG 这类读数，只有在投影机正在接收对应类型的信号时才会有值，所以这两项显示未知可能是正常的，而不是出了故障。如果整个传感器的数据都很少，请唤醒投影机：待机中的设备发布的信息非常少。</p>
+    </details>
+    <details class="more"><summary>某个按钮没有反应</summary>
+      <p>您可能还没有粘贴复制代码块，或者粘贴之后没有重启 Home Assistant。控制和场景按钮调用的是应用写入的脚本，而这些脚本只有在应用的<b>设置 &rsaquo; 家庭自动化 &rsaquo; Home Assistant</b>中，复制代码块已粘贴到 <code>configuration.yaml</code>、Home Assistant 已重启一次，并且轻点了<b>与 HA 同步</b>之后才会存在。请先在应用中运行<b>测试连接</b>，它会告诉您代码块是否存在，免得您去排查并不存在的仪表盘错误。</p>
+    </details>
+    <details class="more"><summary>“开发者工具” &rsaquo; “状态”中缺少我预期的脚本</summary>
+      <p>请筛选 <code>projpilot</code>，而不是完整序列号，这样更容易看到整个列表。如果您最近添加的控件或场景缺失，请再次轻点<b>与 HA 同步</b>；它会就地更新，无需重新设置。如果删除场景后，列表里残留着失效的旧脚本，请使用应用中的<b>移除孤立脚本</b>。</p>
+    </details>
+    <details class="more"><summary>我的实体 ID 和本指南中的不一样</summary>
+      <p>命名规律是固定的，但中间部分不是。您的传感器以您自己投影机的型号命名，每个脚本都带有您自己投影机的序列号，而不是本页面上的占位符。请像第 2 步那样，从“开发者工具” &rsaquo; “状态”和应用的 Home Assistant 界面获取这两项，并使用它们，而不是照抄示例文本。</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>整台投影机，一面墙搞定</h2>
+    <p class="lead" style="margin:0 auto 24px">家庭自动化是一次性购买的附加组件。无需订阅，无需账号，无需云端。一次购买，即可在您拥有的所有平台上解锁。</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - 现已上架</a>
+      <span class="pill">App Store - 等待审核</span>
+      <span class="pill">Microsoft Store - 等待审核</span>
+      <span class="pill">Mac App Store - 等待审核</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/zh-hans/guide/home-automation/">返回家庭自动化 &rarr;</a> &middot; <a href="/zh-hans/guide/">完整用户指南 &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>快速解答</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>我必须手动搭建这个仪表盘吗？</h3><p>不需要。当您在应用中轻点“与 HA 同步”时，它会直接在 Home Assistant 中为您构建一个现成的 Projector Pilot 仪表盘：包含实时的投影机传感器，以及每个控件和场景对应的按钮，并以 Projector Pilot 的名称出现在侧边栏中。本页面适用于手动打造更丰富的绿色玻璃风格版本，或自定义同步创建的内容。</p></div><div class="gcard"><h3>搭建它需要 HACS 的自定义卡片吗？</h3><p>要还原截图中的外观，需要安装：Mushroom、button-card、card-mod 和 mini-graph-card。不过底层控制功能并不依赖它们：每个按钮都只是一次普通的脚本调用，自定义卡片只是外层的样式。</p></div><div class="gcard"><h3>为什么信息图块有数值，按钮却没反应？</h3><p>您在应用中登录并同步后，投影机传感器就会立即发布读数，所以信息图块马上就有实时数据。而控制和场景按钮调用的脚本，需要您把应用的复制代码块粘贴到 configuration.yaml、重启 Home Assistant，并轻点一次“与 HA 同步”之后，才会存在于 Home Assistant 中。</p></div><div class="gcard"><h3>我的实体 ID 会和本指南中的一致吗？</h3><p>命名规律是一样的，但具体字符不会一样。您的投影机传感器以投影机的型号命名，每个脚本则以投影机的序列号命名。本页面凡是写着 YOUR_PROJECTOR 的地方，请填入您自己传感器的实体 ID；凡是写着 YOURSERIAL 的地方，请填入应用 Home Assistant 界面上显示的、由序列号派生的 ID。</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/pricing/">价格</a><a href="/zh-hans/highlights/">亮点</a><a href="/zh-hans/guide/home-automation/">Home Assistant</a><a href="/zh-hans/help/">帮助 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hans/help/#privacy">隐私</a><a href="/zh-hans/help/#terms">条款</a></div>
+<div class="flinks"><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/guide/dashboard/">仪表盘</a><a href="/zh-hans/guide/remote/">遥控器</a><a href="/zh-hans/guide/picture/">画面</a><a href="/zh-hans/guide/lens/">镜头</a><a href="/zh-hans/guide/scenes/">场景</a><a href="/zh-hans/guide/home-assistant-dashboard/">HA 仪表盘</a><a href="/zh-hans/guide/maintenance/">维护</a><a href="/zh-hans/guide/settings/">设置</a><a href="/zh-hans/guide/languages/">语言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是面向 Epson 和 PJLink 投影机的独立应用，与 Epson、PJLink 标准机构、Home Assistant、Hubitat、Apple、Google 或 Microsoft 没有任何关联，也未获得其认可或赞助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 和 Microsoft Store 是其各自所有者的商标，在此仅用于说明本应用的适用对象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

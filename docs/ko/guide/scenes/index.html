@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>탭 한 번으로 프로젝터 장면 - Projector Pilot</title>
+<meta name="description" content="프로젝터의 전원, 입력, 화질, 렌즈 메모리 등을 장면으로 저장하고 탭 한 번으로 불러오세요. 모든 장면은 Home Assistant 스크립트가 될 수 있습니다. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ko/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="탭 한 번으로 프로젝터 장면 - Projector Pilot" />
+<meta property="og:description" content="프로젝터의 전원, 입력, 화질, 렌즈 메모리 등을 장면으로 저장하고 탭 한 번으로 불러오세요. 모든 장면은 Home Assistant 스크립트가 될 수 있습니다. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/ko/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="탭 한 번으로 프로젝터 장면 - Projector Pilot" />
+<meta name="twitter:description" content="프로젝터의 전원, 입력, 화질, 렌즈 메모리 등을 장면으로 저장하고 탭 한 번으로 불러오세요. 모든 장면은 Home Assistant 스크립트가 될 수 있습니다. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ko", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "탭 한 번으로 프로젝터 장면 - Projector Pilot", "description": "프로젝터의 전원, 입력, 화질, 렌즈 메모리 등을 장면으로 저장하고 탭 한 번으로 불러오세요. 모든 장면은 Home Assistant 스크립트가 될 수 있습니다. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ko", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "프로젝터 장면: 방 전체를 탭 한 번으로", "description": "프로젝터의 전원, 입력, 화질, 렌즈 메모리 등을 장면으로 저장하고 탭 한 번으로 불러오세요. 모든 장면은 Home Assistant 스크립트가 될 수 있습니다. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "ko", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "사용 설명서", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "장면", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ko/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어"><a href="/ko/#features">기능</a><a href="/ko/guide/">가이드</a><a href="/ko/pricing/">가격</a><a href="/ko/highlights/">하이라이트</a><a href="/ko/guide/home-automation/">Home Assistant</a><a href="/ko/help/">도움말</a><a class="cta" href="/ko/#download">앱 받기</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용 설명서</a> &rsaquo; 장면</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">장면 탭 &middot; Pro</div>
+        <h1>프로젝터 장면: 방 전체를 탭 한 번으로</h1>
+        <p class="lead">장면은 프로젝터의 현재 상태를 그대로 캡처해 두었다가 나중에 탭 한 번으로 되살립니다. 무비 나이트, 빅 게임, 화사한 일요일 오후 영화까지, 각각 하나의 장면으로 저장해 탭 한 번이면 됩니다. 장면에 어떤 항목을 담을지 정확히 고를 수 있고, 프로젝터가 실제로 보고하는 항목만 선택지로 나타납니다.</p>
+        <p class="lead">장면은 <a href="/ko/pricing/">Projector Pilot Pro</a>에 포함되어 있습니다.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="현재 상태 저장 버튼이 있는 Projector Pilot의 장면 탭" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">저장하는 방법</div>
+      <h2>방을 설정하고 캡처하세요</h2>
+    </div>
+    <ol class="steps">
+      <li><b>설정하세요.</b> 입력, 색상 모드, 화질, 렌즈 메모리 등 프로젝터를 원하는 상태로 정확히 맞춥니다.</li>
+      <li><b>현재 상태 저장.</b> 장면 탭에서 <b>현재 상태 저장</b>을 탭하고, 장면 이름을 정한 뒤 담을 항목을 체크하세요. 선택 목록에는 프로젝터가 보고하는 항목만 나오므로, 내 모델에 없는 설정은 저장되지 않습니다.</li>
+      <li><b>불러오기.</b> 장면을 탭하면 적용됩니다. Projector Pilot은 진행하면서 각 설정을 프로젝터에서 확인하고, 반영되지 않은 변경은 반영된 것처럼 말하지 않습니다.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">장면에 담기는 것</div>
+      <h2>체크한 만큼만</h2>
+      <p class="lead">장면 하나에 다음 중 무엇이든 담을 수 있습니다. 불러올 때는 체크한 항목만 재생되므로, “심야 영화” 장면에서 광 출력은 빼고 나머지는 그대로 둘 수 있어요.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>전원</h3><p>프로젝터의 전원 상태로, 장면이 설정의 일부로 프로젝터를 깨우거나 대기 상태로 보낼 수 있습니다.</p></div>
+      <div class="gcard"><h3>입력</h3><p>장면이 전환하는 소스로, “무비 나이트”가 매번 올바른 HDMI로 연결되게 합니다.</p></div>
+      <div class="gcard"><h3>화질</h3><p>색상 모드와 화질 값으로, 각각 프로젝터 자체의 메뉴 눈금을 사용합니다.</p></div>
+      <div class="gcard"><h3>신호</h3><p>지금 보는 콘텐츠에 맞춰 프로젝터가 제공하는 신호 관련 설정입니다.</p></div>
+      <div class="gcard"><h3>광원</h3><p>광원 출력으로, 밝은 방과 어두운 방에 각각 다른 설정을 줄 수 있습니다.</p></div>
+      <div class="gcard"><h3>지오메트리</h3><p>영상을 스크린에 맞춰 주는 정렬 및 지오메트리 상태입니다.</p></div>
+      <div class="gcard"><h3>오디오</h3><p>프로젝터가 보고하는 오디오 설정으로, 나머지와 함께 저장됩니다.</p></div>
+      <div class="gcard"><h3>보고된 항목만</h3><p>체크 목록은 프로젝터가 실제로 응답하는 항목으로 만들어지므로, 저장되는 것은 추측이 아닙니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자동화</div>
+      <h2>모든 장면이 Home Assistant 스크립트가 됩니다</h2>
+      <p class="lead">Home Assistant 구성에 블록 하나를 한 번 붙여 넣으면 Projector Pilot이 저장한 모든 장면과 전원, 각 입력, 각 색상 모드, 프로젝터가 실제로 가진 각 렌즈 메모리용 스크립트를 만들어 줍니다. 그러면 자동화나 음성 비서가 어떤 장면이든 실행할 수 있고, 동기화를 끄면 앱은 자신이 만든 스크립트만 제거하며 다른 것은 건드리지 않습니다.</p>
+    </div>
+    <div class="note">장면은 <b>웹훅</b>으로도 작동합니다. 장면을 불러오면 내 URL로 데이터를 보낼 수 있고, Maker API를 통해 <b>Hubitat</b>에도 미러링됩니다. 자세한 내용은 <a href="/ko/guide/home-automation/">Home Assistant 가이드</a>에 있습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">내 작업 공유하기</div>
+      <h2>공유 가능한 장면 프로필</h2>
+      <p class="lead">자랑하고 싶은 장면을 만들었나요? 내보내서 친구에게 전해 주거나, 누군가 공유한 장면을 가져오세요. 장면 프로필은 설치 간에 옮길 수 있어서, 잘 맞춘 설정을 프로젝터마다 처음부터 다시 만들 필요가 없습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">계속 읽기</div>
+      <h2>관련 가이드</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ko/guide/lens/">렌즈 컨트롤</a>
+      <a href="/ko/guide/home-automation/">Home Assistant</a>
+      <a href="/ko/guide/settings/">설정</a>
+      <a href="/ko/guide/">전체 사용자 가이드</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ko/guide/">사용자 가이드</a><a href="/ko/pricing/">가격</a><a href="/ko/highlights/">하이라이트</a><a href="/ko/guide/home-automation/">Home Assistant</a><a href="/ko/help/">도움말 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ko/help/#privacy">개인정보 처리방침</a><a href="/ko/help/#terms">이용약관</a></div>
+<div class="flinks"><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/guide/dashboard/">대시보드</a><a href="/ko/guide/remote/">리모컨</a><a href="/ko/guide/picture/">화질</a><a href="/ko/guide/lens/">렌즈</a><a href="/ko/guide/scenes/">장면</a><a href="/ko/guide/home-assistant-dashboard/">HA 대시보드</a><a href="/ko/guide/maintenance/">유지관리</a><a href="/ko/guide/settings/">설정</a><a href="/ko/guide/languages/">언어</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 독립 앱입니다. Epson, PJLink 표준 기구, Home Assistant, Hubitat, Apple, Google, Microsoft와 제휴, 보증, 후원 관계가 없습니다. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, Microsoft Store는 각 소유자의 상표이며, 앱이 함께 작동하는 대상을 설명하기 위해서만 언급했습니다.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

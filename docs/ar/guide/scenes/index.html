@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>مشاهد جهاز العرض بلمسة واحدة - Projector Pilot</title>
+<meta name="description" content="احفظ تشغيل جهاز العرض ومدخله وصورته وذاكرة عدسته وغير ذلك كمشهد، واستدعه بلمسة واحدة. يمكن أن يصبح كل مشهد نصًا برمجيًا في Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ar/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="مشاهد جهاز العرض بلمسة واحدة - Projector Pilot" />
+<meta property="og:description" content="احفظ تشغيل جهاز العرض ومدخله وصورته وذاكرة عدسته وغير ذلك كمشهد، واستدعه بلمسة واحدة. يمكن أن يصبح كل مشهد نصًا برمجيًا في Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/ar/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مشاهد جهاز العرض بلمسة واحدة - Projector Pilot" />
+<meta name="twitter:description" content="احفظ تشغيل جهاز العرض ومدخله وصورته وذاكرة عدسته وغير ذلك كمشهد، واستدعه بلمسة واحدة. يمكن أن يصبح كل مشهد نصًا برمجيًا في Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "مشاهد جهاز العرض بلمسة واحدة - Projector Pilot", "description": "احفظ تشغيل جهاز العرض ومدخله وصورته وذاكرة عدسته وغير ذلك كمشهد، واستدعه بلمسة واحدة. يمكن أن يصبح كل مشهد نصًا برمجيًا في Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "مشاهد جهاز العرض: غرفتك كلها بلمسة واحدة", "description": "احفظ تشغيل جهاز العرض ومدخله وصورته وذاكرة عدسته وغير ذلك كمشهد، واستدعه بلمسة واحدة. يمكن أن يصبح كل مشهد نصًا برمجيًا في Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "ar", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "المشاهد", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ar/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة"><a href="/ar/#features">الميزات</a><a href="/ar/guide/">الدليل</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/help/">المساعدة</a><a class="cta" href="/ar/#download">احصل على التطبيق</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; المشاهد</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">علامة تبويب المشاهد &middot; Pro</div>
+        <h1>مشاهد جهاز العرض: غرفتك كلها بلمسة واحدة</h1>
+        <p class="lead">يلتقط المشهد جهاز العرض بالضبط كما هو الآن ويعيد كل شيء لاحقًا بلمسة واحدة. ليلة أفلام، المباراة الكبرى، عرض ظهيرة الأحد الساطع - لكل منها مشهده، وكل منها على بعد لمسة. أنت تختار بدقة أي أجزاء يحتفظ بها المشهد، ولا يُعرض إلا ما يبلّغ به جهاز العرض فعلًا.</p>
+        <p class="lead">المشاهد جزء من <a href="/ar/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="علامة تبويب المشاهد في Projector Pilot مع زر حفظ الحالي" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">كيف تحفظ واحدًا</div>
+      <h2>اضبط الغرفة، ثم التقطها</h2>
+    </div>
+    <ol class="steps">
+      <li><b>اضبطه.</b> اجعل جهاز العرض كما تريده تمامًا - المدخل ووضع الألوان والصورة وذاكرة العدسة، كل شيء.</li>
+      <li><b>حفظ الحالي.</b> في علامة تبويب المشاهد المس <b>حفظ الحالي</b>، وسمِّ المشهد، وضع علامة على الأجزاء التي تريد الاحتفاظ بها. لا يعرض المنتقي إلا ما يبلّغ به جهاز العرض، فلا تحفظ أبدًا إعدادًا لا يملكه طرازك.</li>
+      <li><b>استدعاء.</b> المس المشهد لتطبيقه. يؤكد Projector Pilot كل إعداد مع جهاز العرض أثناء التقدم ولا يدّعي أبدًا تغييرًا لم يتم.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ما الذي يلتقطه المشهد</div>
+      <h2>بقدر ما تضع علامة عليه</h2>
+      <p class="lead">يستطيع المشهد الواحد التقاط أي مما يلي. يعيد الاستدعاء تشغيل الأجزاء التي وضعت عليها علامة فقط، فيستطيع مشهد «العرض المتأخر» أن يخفض إخراج الضوء ويترك كل شيء آخر.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>الطاقة</h3><p>حالة تشغيل جهاز العرض، فيستطيع المشهد إيقاظه أو إرساله إلى وضع الاستعداد كجزء من الإعداد.</p></div>
+      <div class="gcard"><h3>المدخل</h3><p>المصدر الذي يتحول إليه المشهد، فتستقر «ليلة أفلام» على مدخل HDMI الصحيح في كل مرة.</p></div>
+      <div class="gcard"><h3>الصورة</h3><p>وضع الألوان وقيم الصورة، كل منها على مقياس قائمة جهاز العرض نفسه.</p></div>
+      <div class="gcard"><h3>الإشارة</h3><p>إعدادات جهة الإشارة التي يتيحها جهاز العرض للمحتوى الذي تشاهده.</p></div>
+      <div class="gcard"><h3>الضوء</h3><p>إخراج مصدر الضوء، فتحصل الغرفة المضيئة والمظلمة كل منهما على إعدادها.</p></div>
+      <div class="gcard"><h3>الهندسة</h3><p>حالة المحاذاة والهندسة التي تؤطر الصورة على شاشتك.</p></div>
+      <div class="gcard"><h3>الصوت</h3><p>إعدادات الصوت التي يبلّغ بها جهاز العرض، محفوظة مع الباقي.</p></div>
+      <div class="gcard"><h3>ما يُبلَّغ به فقط</h3><p>تُبنى قائمة العلامات مما يجيب عنه جهاز العرض فعلًا، فلا شيء تحفظه تخمين.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الأتمتة</div>
+      <h2>كل مشهد يصبح نصًا برمجيًا في Home Assistant</h2>
+      <p class="lead">الصق كتلة واحدة في إعدادات Home Assistant مرة واحدة فيكتب Projector Pilot نصًا برمجيًا لكل مشهد لديك، إضافة إلى التشغيل وكل مدخل وكل وضع ألوان وكل ذاكرة عدسة يحتفظ بها جهاز العرض فعلًا. ويستطيع بعدها أي أتمتة أو مساعد صوتي تشغيل أي مشهد، ويزيل التطبيق النصوص التي كتبها حين توقف المزامنة، دون لمس أي شيء آخر.</p>
+    </div>
+    <div class="note">تعمل المشاهد أيضًا عبر <b>Webhooks</b> - فاستدعاء مشهد قد يرسل طلبًا إلى رابط تحدده - وتنعكس على <b>Hubitat</b> عبر Maker API. كل ذلك في <a href="/ar/guide/home-automation/">دليل Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">شارك عملك</div>
+      <h2>ملفات مشاهد قابلة للمشاركة</h2>
+      <p class="lead">ضبطت مشهدًا تفخر به؟ صدّره وسلّمه لصديق، أو استورد واحدًا شاركه معك أحدهم. تنتقل ملفات المشاهد بين التثبيتات فلا يضطر الإعداد الجيد إلى إعادة بنائه من الصفر على كل جهاز عرض.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">تابع القراءة</div>
+      <h2>أدلة ذات صلة</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ar/guide/lens/">التحكم في العدسة</a>
+      <a href="/ar/guide/home-automation/">Home Assistant</a>
+      <a href="/ar/guide/settings/">الإعدادات</a>
+      <a href="/ar/guide/">دليل المستخدم الكامل</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/help/">المساعدة والأسئلة الشائعة</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ar/help/#privacy">الخصوصية</a><a href="/ar/help/#terms">الشروط</a></div>
+<div class="flinks"><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/guide/dashboard/">لوحة التحكم</a><a href="/ar/guide/remote/">جهاز التحكم</a><a href="/ar/guide/picture/">الصورة</a><a href="/ar/guide/lens/">العدسة</a><a href="/ar/guide/scenes/">المشاهد</a><a href="/ar/guide/home-assistant-dashboard/">لوحة HA</a><a href="/ar/guide/maintenance/">الصيانة</a><a href="/ar/guide/settings/">الإعدادات</a><a href="/ar/guide/languages/">اللغات</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot تطبيق مستقل لأجهزة عرض Epson وPJLink. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat أو Apple أو Google أو Microsoft، ولا تؤيده ولا ترعاه. Epson وPJLink وHome Assistant وHubitat وApp Store وMac App Store وGoogle Play وMicrosoft Store علامات تجارية لأصحابها، وتُذكر فقط لوصف ما يعمل التطبيق معه.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

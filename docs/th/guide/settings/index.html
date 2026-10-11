@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>การตั้งค่า ธีม &amp; การสำรองข้อมูล - Projector Pilot</title>
+<meta name="description" content="อธิบายการตั้งค่า Projector Pilot: โปรเจกเตอร์ พอร์ตและรหัสผ่าน Pro และการกู้คืน แพตเทิร์นทดสอบ ธีม ความถี่ในการอัปเดตสถานะ การสำรองและกู้คืนข้อมูล และภาษา" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/th/guide/settings/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/settings/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/settings/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/settings/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/settings/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/settings/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/settings/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/settings/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/settings/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/settings/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/settings/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/settings/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/settings/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/settings/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/settings/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/settings/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/settings/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/settings/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/settings/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/settings/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/settings/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/settings/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/settings/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/settings/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/settings/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/settings/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/settings/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/settings/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/settings/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/settings/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="การตั้งค่า ธีม &amp; การสำรองข้อมูล - Projector Pilot" />
+<meta property="og:description" content="อธิบายการตั้งค่า Projector Pilot: โปรเจกเตอร์ พอร์ตและรหัสผ่าน Pro และการกู้คืน แพตเทิร์นทดสอบ ธีม ความถี่ในการอัปเดตสถานะ การสำรองและกู้คืนข้อมูล และภาษา" />
+<meta property="og:url" content="https://projectorpilot.com/th/guide/settings/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="การตั้งค่า ธีม &amp; การสำรองข้อมูล - Projector Pilot" />
+<meta name="twitter:description" content="อธิบายการตั้งค่า Projector Pilot: โปรเจกเตอร์ พอร์ตและรหัสผ่าน Pro และการกู้คืน แพตเทิร์นทดสอบ ธีม ความถี่ในการอัปเดตสถานะ การสำรองและกู้คืนข้อมูล และภาษา" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/settings/#webpage", "url": "https://projectorpilot.com/guide/settings/", "name": "การตั้งค่า ธีม และการสำรองข้อมูล - Projector Pilot", "description": "อธิบายการตั้งค่า Projector Pilot: โปรเจกเตอร์ พอร์ตและรหัสผ่าน Pro และการกู้คืน แพตเทิร์นทดสอบ ธีม ความถี่ในการอัปเดตสถานะ การสำรองและกู้คืนข้อมูล และภาษา", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/settings/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/settings/#article", "headline": "การตั้งค่า Projector Pilot: ทำให้เป็นของคุณ", "description": "อธิบายการตั้งค่า Projector Pilot: โปรเจกเตอร์ พอร์ตและรหัสผ่าน Pro และการกู้คืน แพตเทิร์นทดสอบ ธีม ความถี่ในการอัปเดตสถานะ การสำรองและกู้คืนข้อมูล และภาษา", "image": "https://projectorpilot.com/screenshots/06-settings.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "th", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/settings/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/settings/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "การตั้งค่า", "item": "https://projectorpilot.com/guide/settings/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/th/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา"><a href="/th/#features">ฟีเจอร์</a><a href="/th/guide/">คู่มือ</a><a href="/th/pricing/">ราคา</a><a href="/th/highlights/">จุดเด่น</a><a href="/th/guide/home-automation/">Home Assistant</a><a href="/th/help/">ช่วยเหลือ</a><a class="cta" href="/th/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; การตั้งค่า</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">การตั้งค่า</div>
+        <h1>การตั้งค่า Projector Pilot: ทำให้เป็นของคุณ</h1>
+        <p class="lead">การตั้งค่าคือที่ที่คุณจัดการโปรเจกเตอร์ ปลดล็อกแอป ตั้งธีม ปรับความถี่ในการอัปเดตสถานะ และสำรองข้อมูลทั้งหมด จัดไว้ให้ตัวควบคุมอุปกรณ์ การซื้อ รูปลักษณ์ และลิงก์ อยู่ในที่ชัดเจนที่เดียวกัน ไม่มีโฆษณา ไม่มีค่าสมาชิก ไม่ต้องมีบัญชีคลาวด์ มีแค่สวิตช์ที่สำคัญ</p>
+      </div>
+      <img src="/screenshots/06-settings.png" alt="หน้าจอการตั้งค่าใน Projector Pilot ที่แสดงโปรเจกเตอร์ กล่อง Pro การบำรุงรักษาและข้อมูลเชิงลึก แพตเทิร์นทดสอบ และธีม" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ทุกส่วน</div>
+      <h2>สิ่งที่อยู่ในการตั้งค่า</h2>
+    </div>
+    <table class="t">
+      <thead><tr><th>ส่วน</th><th>มีอะไรอยู่ข้างใน</th></tr></thead>
+      <tbody>
+        <tr><td>โปรเจกเตอร์</td><td>โปรเจกเตอร์ที่บันทึกไว้ของคุณ แต่ละเครื่องมีแก้ไข การเชื่อมต่อขั้นสูง ข้อมูล และลบ <b>เพิ่มโปรเจกเตอร์</b>จะสแกนเครือข่ายหาสิ่งที่ตอบสนองเป็นโปรเจกเตอร์ หรือรับที่อยู่ IP ที่ป้อนเอง ขั้นสูงเก็บพอร์ตของแต่ละโปรเจกเตอร์และรหัสผ่านสามรหัสแยกกัน (Web Control, PJLink และรีโมต)</td></tr>
+        <tr><td>Projector Pilot Pro</td><td>ซื้อ<b>Pro</b>, <b>Home Automation</b> หรือ<b>ชุดรวม</b> และ<b>กู้คืน</b>การซื้อ ราคาเป็นราคาของสโตร์ แสดงเป็นสกุลเงินของคุณก่อนยืนยัน การซื้อที่สโตร์แจ้งว่าคุณเป็นเจ้าของอยู่แล้วจะได้รับสิทธิ์ ไม่ถูกปฏิเสธ</td></tr>
+        <tr><td>การบำรุงรักษา &amp; ข้อมูลเชิงลึก</td><td>ชั่วโมงหลอดภาพหรือเลเซอร์และชั่วโมงไส้กรอง อายุการใช้งานที่คาดการณ์ ค่าใช้จ่ายโดยประมาณ และรายงานชั่วโมง <a href="/th/guide/maintenance/">คู่มือการบำรุงรักษา &rarr;</a></td></tr>
+        <tr><td>แพตเทิร์นทดสอบ</td><td>แสดงตารางจัดแนวในตัวของโปรเจกเตอร์เองเป็นตัวควบคุมเปิดปิดที่ตรงไปตรงมา สำหรับจัดภาพให้พอดีกับจอของคุณ</td></tr>
+        <tr><td>ธีม</td><td>สว่าง มืด AMOLED (ดำสนิท) หรือ Brand (สีเขียวป่าอันเป็นเอกลักษณ์) พร้อม<b>ธีมสี</b> เลือกค่าที่ตั้งไว้ล่วงหน้าหรือสีเน้นของคุณเอง แล้วแอปจะสร้างจานสีใหม่รอบสีนั้น</td></tr>
+        <tr><td>ปรับแต่งแท็บ &amp; มุมมอง</td><td>จัดเรียงแท็บด้านล่างใหม่และซ่อนแท็บที่คุณไม่ใช้ รวมถึงซ่อนมุมมองย่อยภายในแท็บ (ภาพ / สัญญาณ / การแสดงผล, เลนส์ / การติดตั้ง, รีโมต / การทำงาน, การตั้งค่า / เครือข่าย / อุปกรณ์)</td></tr>
+        <tr><td>ความถี่ในการอัปเดตสถานะ</td><td>แอปรีเฟรชสถานะสดของโปรเจกเตอร์บ่อยแค่ไหน การเปลี่ยนแปลงมีผลทันที โดยไม่มีคำสั่งสอบถามพรั่งพรูขณะที่คุณลากแถบเลื่อน</td></tr>
+        <tr><td>ระบบบ้านอัตโนมัติ</td><td>เข้าสู่ระบบ Home Assistant มิเรอร์ไปยัง Hubitat และเรียก webhooks <a href="/th/guide/home-automation/">คู่มือ Home Assistant &rarr;</a></td></tr>
+        <tr><td>สำรองข้อมูล &amp; กู้คืน</td><td>ส่งออกและนำเข้าการตั้งค่าแอปของคุณ ไฟล์สำรองถูกแชร์ด้วยชื่อจริงของมัน และการแชร์ใช้งานได้บน iPad ด้วย โปรเจกเตอร์ที่บันทึกไว้และรหัสผ่านของมันอยู่ในที่เก็บข้อมูลปลอดภัยที่เข้ารหัส และไม่เคยไปกับไฟล์สำรอง</td></tr>
+        <tr><td>รายงานข้อบกพร่อง</td><td>ใต้เกี่ยวกับ รายงานข้อบกพร่องหรือขอฟีเจอร์ จะรวมบันทึกที่เกี่ยวข้องทั้งหมดเป็นชุดเดียว พร้อมส่ง</td></tr>
+        <tr><td>วิธีใช้</td><td>ส่งความคิดเห็น หน้าจอต้อนรับและตั้งค่าแบบมีคำแนะนำ (เล่นซ้ำได้ทั้งคู่) และตัวสลับสำหรับการ์ดอธิบายที่กระจายอยู่ในแอป</td></tr>
+        <tr><td>ภาษา</td><td>ค่าเริ่มต้นของระบบทำตามอุปกรณ์ของคุณ ด้านล่างเป็นทั้ง 29 ภาษา (อังกฤษและอีก 28 ภาษา) ด้วยชื่อของตัวเอง <a href="/th/guide/languages/">คู่มือภาษา &rarr;</a></td></tr>
+        <tr><td>ลิงก์</td><td>เว็บไซต์ คู่มือแอป (คู่มือนี้) Discord ดูแอปทั้งหมดของเรา ความเป็นส่วนตัว และข้อกำหนด</td></tr>
+        <tr><td>เกี่ยวกับ</td><td>เวอร์ชัน รายการโปรเจกเตอร์ที่รองรับ พร้อมระบุว่าแต่ละรุ่นผ่านการยืนยันบนฮาร์ดแวร์หรือคาดการณ์ และตัวควบคุมความเป็นส่วนตัว</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">โปรเจกเตอร์</div>
+      <h2>เพิ่ม แก้ไข และเชื่อมต่อ</h2>
+    </div>
+    <ul class="plain">
+      <li><b>เพิ่มโปรเจกเตอร์ได้สองวิธี</b> สแกน Wi-Fi หรือเครือข่ายแบบสายหาสิ่งที่ตอบสนองเป็นโปรเจกเตอร์แล้วให้แอปกรอกที่อยู่ให้ หรือพิมพ์ IP เอง โปรเจกเตอร์ที่เพิ่งเพิ่มจะแสดงแถบความคืบหน้าขณะสแกนความสามารถ และผลจะถูกจดจำ เปิดแอปอีกครั้งจึงไม่ต้องสแกนซ้ำ</li>
+      <li><b>แก้ไข ตรวจดู หรือลบ</b> โปรเจกเตอร์ที่บันทึกไว้แต่ละเครื่องมีดินสอแก้ไข มุมมองการเชื่อมต่อขั้นสูง แผงข้อมูล และปุ่มลบ ขั้นสูงคือที่ที่พอร์ตของแต่ละโปรเจกเตอร์อยู่ ควบคู่กับรหัสผ่านทั้งสาม</li>
+      <li><b>สามรหัสผ่านแยกกัน</b> โปรเจกเตอร์มีได้สูงสุดสามรหัส: Web Control, PJLink และรีโมต เป็นรหัสผ่านต่างกันสำหรับโพรโทคอลต่างกัน บันทึกแยกตามโปรเจกเตอร์ และแอปตรวจสอบว่าโปรเจกเตอร์ต้องการรหัสไหนจริง แทนที่จะสมมติว่าป้องกันไว้</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">การปลดล็อกแอป</div>
+      <h2>Pro, Home Automation และชุดรวม</h2>
+      <p class="lead">Projector Pilot ขายเป็นสองส่วน ซื้อครั้งเดียวทั้งคู่ Pro คือแอปขั้นสูง Home Automation เป็นการซื้ออีกชิ้นหนึ่ง ส่วนชุดรวมซื้อทั้งสองอย่าง ผู้ที่ซื้อ Pro ก่อนแยกส่วนจะยังได้ทุกอย่างที่ Pro เคยมี</p>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot Pro</b> ฉาก หลายโปรเจกเตอร์ ควบคุมภาพเต็มรูปแบบ เลนส์และรูปทรง การบำรุงรักษา วิดเจ็ต แพตเทิร์นทดสอบ และโปรไฟล์ที่แชร์ได้</li>
+      <li><b>Home Automation</b> Home Assistant, Hubitat และ webhooks</li>
+      <li><b>ชุดรวม</b> ทั้งสองอย่างในการซื้อครั้งเดียว</li>
+      <li><b>กู้คืน</b> ให้สิทธิ์สิ่งที่คุณซื้อไว้แล้วในบัญชีสโตร์นี้อีกครั้ง หากสโตร์รายงานว่ามีสิ่งนั้นอยู่แล้ว แอปจะให้สิทธิ์แทนที่จะแสดงข้อผิดพลาด ฟีเจอร์ที่คุณจ่ายเงินแล้วจึงไม่มีวันล็อกคุณออก</li>
+    </ul>
+    <div class="note">ราคาเป็นราคาของสโตร์เสมอ แสดงเป็นสกุลเงินของคุณก่อนยืนยัน แอปไม่แต่งตัวเลขขึ้นเอง บนแพลตฟอร์มที่ไม่มีสโตร์ แอปรวมทุกอย่างไว้ แทนที่จะแสดงเพย์วอลล์ที่ไม่มีใครจ่ายได้ ดูรายละเอียดทั้งหมดที่<a href="/th/pricing/">ราคา</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">รูปลักษณ์</div>
+      <h2>ธีมและธีมสี</h2>
+    </div>
+    <ul class="plain">
+      <li><b>สว่าง</b> ธีมสีขาวสะอาดตา</li>
+      <li><b>มืด</b> พื้นผิวสีเข้มมาตรฐาน</li>
+      <li><b>AMOLED</b> สีดำสนิทสำหรับหน้าจอ OLED</li>
+      <li><b>Brand</b> สีเขียวป่าอันเป็นเอกลักษณ์ของแอป</li>
+      <li><b>ธีมสี</b> เลือกสีเน้นที่ตั้งไว้ล่วงหน้าหรือสีของคุณเอง แล้วแอปจะสร้างจานสีทั้งหมดใหม่รอบสีนั้น</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับการตั้งค่า</h2>
+    </div>
+    <details open><summary>ฉันจะเพิ่มโปรเจกเตอร์ได้อย่างไร</summary><div class="body">ไปที่การตั้งค่า เพิ่มโปรเจกเตอร์ ให้แอปสแกนเครือข่ายและกรอกที่อยู่ให้ หรือพิมพ์ IP เอง โปรเจกเตอร์ใหม่จะถูกสแกนความสามารถครั้งเดียวพร้อมแถบความคืบหน้า และผลจะถูกจดจำไว้</div></details>
+    <details><summary>พอร์ตและรหัสผ่านอยู่ที่ไหน</summary><div class="body">เปิดมุมมองการเชื่อมต่อขั้นสูงของโปรเจกเตอร์ที่บันทึกไว้ พอร์ตของแต่ละโปรเจกเตอร์และรหัสผ่านสามรหัสแยกกัน ได้แก่ Web Control, PJLink และรีโมต อยู่ที่นั่น</div></details>
+    <details><summary>ฉันซื้อ Pro ไปแล้ว ต้องซื้อ Home Automation ด้วยหรือไม่</summary><div class="body">ไม่ต้อง ผู้ที่ซื้อ Pro ก่อนที่แอปจะแยกเป็นสองส่วนจะยังได้ทุกอย่างที่ Pro เคยมี ไม่มีสิ่งใดที่ปลดล็อกไว้แล้วถูกเอาออก</div></details>
+    <details><summary>รหัสผ่านของฉันจะไปอยู่ในไฟล์สำรองหรือไม่</summary><div class="body">ไม่ การสำรองและกู้คืนครอบคลุมการตั้งค่าแอปของคุณ ส่วนโปรเจกเตอร์ที่บันทึกไว้และรหัสผ่านของมันอยู่ในที่เก็บข้อมูลปลอดภัยที่เข้ารหัส และไม่เคยไปกับไฟล์สำรอง</div></details>
+    <details><summary>ฉันเปลี่ยนความถี่ที่แอปสอบถามโปรเจกเตอร์ได้หรือไม่</summary><div class="body">ได้ ความถี่ในการอัปเดตสถานะกำหนดว่าสถานะสดรีเฟรชบ่อยแค่ไหน และการเปลี่ยนแปลงมีผลทันทีโดยไม่มีคำสั่งสอบถามพรั่งพรูขณะที่คุณลากแถบเลื่อน</div></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">อ่านต่อ</div>
+      <h2>คู่มือที่เกี่ยวข้อง</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/th/guide/maintenance/">การบำรุงรักษา &amp; ข้อมูลเชิงลึก</a>
+      <a href="/th/guide/scenes/">ฉากแบบแตะเดียว</a>
+      <a href="/th/guide/languages/">ภาษา</a>
+      <a href="/th/guide/">คู่มือผู้ใช้ฉบับเต็ม</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/pricing/">ราคา</a><a href="/th/highlights/">จุดเด่น</a><a href="/th/guide/home-automation/">Home Assistant</a><a href="/th/help/">ช่วยเหลือ &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/th/help/#privacy">ความเป็นส่วนตัว</a><a href="/th/help/#terms">ข้อกำหนด</a></div>
+<div class="flinks"><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/guide/dashboard/">แดชบอร์ด</a><a href="/th/guide/remote/">รีโมต</a><a href="/th/guide/picture/">ภาพ</a><a href="/th/guide/lens/">เลนส์</a><a href="/th/guide/scenes/">ฉาก</a><a href="/th/guide/home-assistant-dashboard/">แดชบอร์ด HA</a><a href="/th/guide/maintenance/">การบำรุงรักษา</a><a href="/th/guide/settings/">การตั้งค่า</a><a href="/th/guide/languages/">ภาษา</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC Projector Pilot เป็นแอปอิสระสำหรับโปรเจกเตอร์ Epson และ PJLink ไม่มีความเกี่ยวข้อง การรับรอง หรือการสนับสนุนจาก Epson หน่วยงานมาตรฐาน PJLink, Home Assistant, Hubitat, Apple, Google หรือ Microsoft Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play และ Microsoft Store เป็นเครื่องหมายการค้าของเจ้าของที่เกี่ยวข้อง ระบุไว้เพื่ออธิบายสิ่งที่แอปทำงานร่วมด้วยเท่านั้น</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

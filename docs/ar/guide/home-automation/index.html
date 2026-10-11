@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>دليل Home Assistant وHubitat لجهاز العرض - Projector Pilot</title>
+<meta name="description" content="اربط جهاز عرض Epson أو PJLink بـ Home Assistant وHubitat وWebhooks. المزامنة مع HA تنشر الحالة المباشرة وتحوّل كل مشهد إلى نص برمجي." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="دليل Home Assistant وHubitat لجهاز العرض - Projector Pilot" />
+<meta property="og:description" content="اربط جهاز عرض Epson أو PJLink بـ Home Assistant وHubitat وWebhooks. المزامنة مع HA تنشر الحالة المباشرة وتحوّل كل مشهد إلى نص برمجي." />
+<meta property="og:url" content="https://projectorpilot.com/ar/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="دليل Home Assistant وHubitat لجهاز العرض - Projector Pilot" />
+<meta name="twitter:description" content="اربط جهاز عرض Epson أو PJLink بـ Home Assistant وHubitat وWebhooks. المزامنة مع HA تنشر الحالة المباشرة وتحوّل كل مشهد إلى نص برمجي." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "دليل Home Assistant وHubitat لجهاز العرض - Projector Pilot", "description": "اربط جهاز عرض Epson أو PJLink بـ Home Assistant وHubitat وWebhooks. المزامنة مع HA تنشر الحالة المباشرة وتحوّل كل مشهد إلى نص برمجي.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "جهاز العرض لديك، في Home Assistant وHubitat.", "description": "اربط جهاز عرض Epson أو PJLink بـ Home Assistant وHubitat وWebhooks. المزامنة مع HA تنشر الحالة المباشرة وتحوّل كل مشهد إلى نص برمجي.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ar", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "أتمتة المنزل", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يجب أن يبقى هاتفي على الشبكة لتعمل أتمتة Home Assistant؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. بمجرد لصق كتلة shell_command الواحدة في Home Assistant وإجراء المزامنة، يرسل Home Assistant الأوامر مباشرة إلى عنوان IP لجهاز العرض. Projector Pilot مجرد أداة إعداد؛ وبعدها يتحدث Home Assistant مع جهاز العرض بنفسه، سواء كان هاتفك في المنزل أم لا."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف يظهر جهاز العرض في Home Assistant؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "كمستشعر، مثل sensor.projector_pilot_epson_qb1000b_qb1000w، يحمل التشغيل والمدخل ووضع الألوان وأرقام الصورة وساعات المصباح، ويتحدّث كلما تغيّرت بينما التطبيق مفتوح. فعّل مزامنة عناصر التحكم المتقدمة فيكتب التطبيق أيضًا نصًا برمجيًا في Home Assistant لكل مشهد، إضافة إلى التشغيل وكل مدخل وكل وضع ألوان وكل ذاكرة عدسة يملكها جهاز العرض."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أتمتة المنزل مجانية؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "أتمتة المنزل إضافة مدفوعة، بعملية شراء لمرة واحدة، منفصلة عن Projector Pilot Pro. وتتيح الحزمة شراء الاثنين معًا بسعر أوفر. انظر صفحة الأسعار."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ar/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة"><a href="/ar/#features">الميزات</a><a href="/ar/guide/">الدليل</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/guide/home-assistant-dashboard/">لوحة HA</a><a href="/ar/help/">المساعدة</a><a class="cta" href="/ar/#download">احصل على التطبيق</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; أتمتة المنزل</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooks</div>
+    <h1>جهاز العرض لديك، <span class="g">في Home Assistant وHubitat</span>.</h1>
+    <p>ينشر Projector Pilot الحالة المباشرة لجهاز العرض وكل عناصر التحكم إلى Home Assistant وHubitat وأي Webhook تريده. أعدّه مرة واحدة، فيدير منزلك الذكي جهاز العرض بنفسه - دون هاتف على الشبكة ودون سحابة في الوسط.</p>
+    <div class="readout"><span>دون خادم بعد الإعداد</span><span>المشاهد تصبح نصوصًا برمجية</span><span>لوحة تحكم جاهزة</span><span>قائمة الإعداد</span><span>إضافة مدفوعة</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">نظرة عامة</div>
+      <h2>ما الذي تفعله أتمتة المنزل</h2>
+      <p class="lead">تحوّل أتمتة المنزل Projector Pilot من جهاز تحكم في يدك إلى جهاز يراه منزلك كله. فهي تعرض ما يفعله جهاز العرض - التشغيل والمدخل ووضع الألوان وأرقام الصورة وساعات المصباح - وتمنح منزلك الذكي عنصر تحكم لكل ما يستطيع التطبيق تغييره.</p>
+    </div>
+    <ul class="plain">
+      <li><b>تنشر الحالة.</b> يظهر جهاز العرض كمستشعر في Home Assistant، أو كجهاز في Hubitat، أو كحمولة JSON في Webhook لديك، ويحمل القراءات نفسها التي يعرضها لك التطبيق.</li>
+      <li><b>تنشر عناصر التحكم.</b> كل مشهد تحفظه، إضافة إلى التشغيل وكل مدخل وكل وضع ألوان وكل ذاكرة عدسة، يصبح شيئًا تستطيع الأتمتة أو المساعد الصوتي تشغيله.</li>
+      <li><b>تعمل دون خادم.</b> بعد إعداد النصوص البرمجية، يرسل Home Assistant الأوامر مباشرة إلى عنوان IP لجهاز العرض. لا يحتاج هاتفك إلى أن يكون على الشبكة، ولا يمر شيء عبر حساب سحابي.</li>
+    </ul>
+    <div class="note"><b>أتمتة المنزل إضافة مدفوعة.</b> هي عملية شراء لمرة واحدة، منفصلة عن Projector Pilot Pro، وتتيح الحزمة شراء الاثنين معًا بسعر أوفر. دون اشتراك ودون حساب ودون سحابة. انظر <a href="/ar/pricing/">الأسعار</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>ثلاثة مداخل، ومركز واحد</h3>
+        <p class="lead">الإعدادات &rsaquo; أتمتة المنزل هي المركز. اختر المنصة التي تستخدمها - Home Assistant أو Hubitat أو Webhooks - وأعدّها من هناك. يمكنك ربط أكثر من واحدة في الوقت نفسه؛ فهي مستقلة.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="مركز أتمتة المنزل في Projector Pilot: Home Assistant وHubitat وWebhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>إعداد Home Assistant</h2>
+      <p class="lead">سجّل الدخول من التطبيق، وانشر جهاز العرض كمستشعر، والصق كتلة واحدة في إعداداتك، ثم زامن. ومن بعدها يدير Home Assistant جهاز العرض بنفسه.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>افتح <b>الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Home Assistant</b>.</li>
+        <li>اكتب <b>عنوان Home Assistant</b> (مثل <code>http://homeassistant.local:8123</code> أو عنوان IP الخاص به)، ثم المس <b>تسجيل الدخول</b>. إنه تسجيل دخول عبر المتصفح إلى نسختك الخاصة - ولا <b>يوجد رمز للصقه</b>. استخدم بيانات دخولك المعتادة إلى Home Assistant، بما فيها التحقق بخطوتين.</li>
+        <li>ينشر التطبيق جهاز العرض كـ<b>مستشعر</b>، بكيان مثل <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>، يحمل التشغيل والمدخل ووضع الألوان وأرقام الصورة وساعات المصباح.</li>
+        <li>فعّل <b>إرسال حالة جهاز العرض</b> لتتحدث هذه القراءات في Home Assistant كلما تغيّرت بينما التطبيق مفتوح، وفعّل <b>مزامنة عناصر التحكم المتقدمة</b> لنشر نصوص برمجية لأوضاع الصورة والمداخل وذاكرات العدسة والتشغيل.</li>
+        <li>الصق كتلة <b>shell_command</b> الواحدة (أدناه) في <code>configuration.yaml</code> لديك، وأعد تشغيل Home Assistant، ثم المس <b>المزامنة مع HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="شاشة Home Assistant في Projector Pilot تعرض كتلة shell_command وتسجيل الدخول وID كيان جهاز العرض ومفاتيح المزامنة" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">كتلة shell_command</h3>
+    <p class="lead">هذه هي الحيلة كلها لتعمل دون خادم. يكتب التطبيق أمرًا واحدًا يشغّله Home Assistant للتحدث إلى Web Control في جهاز العرض، ويستدعي كل نص برمجي يزامنه هذا الأمر بفعل مختلف. المس <b>نسخ الكتلة</b> في التطبيق والصقها في <code>configuration.yaml</code>. المثال أدناه توضيحي - فالتطبيق يملأ عنوان جهاز العرض واسم الأمر الخاصين بك:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">مثال فقط. ينشئ التطبيق كتلتك بعنوان IP الحقيقي لجهاز العرض واسم مشتق من رقمه التسلسلي.</p>
+    <div class="note"><b>لماذا دون خادم.</b> يعمل <code>curl</code> هذا على جهاز Home Assistant، لا على هاتفك. يصل Home Assistant إلى عنوان IP لجهاز العرض مباشرة عبر Web Control، فتعمل الأتمتة سواء كان التطبيق مفتوحًا أم لا، وسواء كان هاتفك في المنزل أم لا. ومستخدم <code>EPSONWEB</code> هو بيانات دخول Web Control؛ ويستخدم التطبيق كلمة مرور Web Control المحفوظة أصلًا لجهاز العرض.</p></div>
+
+    <h3 style="margin-top:32px">اختبار الاتصال والمزامنة والتنظيف</h3>
+    <ul class="plain">
+      <li>يتحقق <b>اختبار الاتصال</b> من قدرة التطبيق على الوصول إلى Home Assistant ومن وجود <code>shell_command</code> الملصوق فعلًا، لتكتشف أي خطأ مطبعي قبل أن تبني شيئًا فوقه.</li>
+      <li>تكتب <b>المزامنة مع HA</b> النصوص البرمجية لمشاهدك وعناصر التحكم أو تحدّثها، وتبني لوحة Projector Pilot جاهزة مباشرة داخل Home Assistant. شغّلها مجددًا في أي وقت تضيف فيه مشهدًا أو تغيّر عنصر تحكم - فهي تحدّث في مكانها ولا تكدّس نسخًا مكررة.</li>
+      <li><b>إزالة النصوص البرمجية اليتيمة</b> تعثر على النصوص التي كتبها التطبيق ولم يعد لها مشهد أو عنصر تحكم مطابق - مثلًا بعد حذف مشهد - و<b>تعرض بالضبط ما ستزيله وتسأل أولًا</b>. لا يُحذف شيء حتى تؤكد. وهي لا تلمس إلا النصوص التي أنشأها Projector Pilot؛ ولا يُمسّ أي شيء آخر في Home Assistant، وإن لم يعرض Home Assistant قائمة نصوصه البرمجية فلا يُزال شيء.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">قائمة الإعداد</div>
+      <h2>يخبرك التطبيق بما تم وبما ينقص</h2>
+      <p class="lead">تحمل شاشة Home Assistant <b>قائمة الإعداد</b> ولوحة <b>ما لدى Home Assistant لديك</b>، فلا تضطر أبدًا إلى تخمين الخطوة المتبقية. يذكر كل صف ما إذا كان منجزًا أو ناقصًا أو تعذّر تحديده، ويخبرك بما عليك فعله بعد ذلك.</p>
+    </div>
+    <ul class="plain">
+      <li><b>متصل بـ Home Assistant</b> - تم تسجيل الدخول وهو يستجيب. وإن لم يستجب Home Assistant، يطلب الصف التحقق من العنوان ومن أن هاتفك على الشبكة نفسها.</li>
+      <li><b>أُضيف جهاز العرض إلى Home Assistant</b> - هل يملك Home Assistant هذا الجهاز بالفعل. وإن لم يكن كذلك، يرشدك الصف إلى إضافة تكامل PJLink، وتعرض خطوة إضافة التكامل مضيف PJLink ومنفذه اللذين يطلبهما Home Assistant.</li>
+      <li><b>تم تسجيل مستشعر القراءات</b> - المستشعر الذي يحمل قراءات جهاز العرض. يُسجَّل أول مرة يقرأ فيها التطبيق جهاز العرض، ويعرض الصف <b>سجّل الآن</b> أو <b>تشغيل</b> حين يوجد ما يعيق ذلك.</li>
+      <li><b>ما لدى Home Assistant لديك</b> - HACS (المتجر المجتمعي)، وتكامل Epson Projector Link، وتكامل PJLink، وأوامر Projector Pilot في <code>configuration.yaml</code>. يعرض كل منها تم العثور أو غير مثبّت أو تعذر التحديد، مع زرّي طريقة التثبيت وفتح في HACS حيث يفيدان.</li>
+    </ul>
+    <div class="note"><b>تحقق مرة أخرى يخبرك بما وجده.</b> المس <b>تحقق مرة أخرى</b> بعد أن تصلح شيئًا فيعيد التطبيق قراءة Home Assistant لديك ويبلغك بالنتيجة، بدلًا من تركك تتساءل هل نجح الأمر. والصف الذي تعذّر فحصه يقول <i>تعذر التحديد</i>، ولا يقول أبدًا نعم أو لا بالتخمين.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">يعمل مع ما لديك</div>
+      <h2>دعم تكامل PJLink الأساسي، وبطاقات أغنى حين تتوفر لديك</h2>
+      <p class="lead">يكتشف Projector Pilot ما ثبّته Home Assistant لديك ويبني عليه. وهو يعمل مع <b>تكامل PJLink الأساسي</b> الذي يأتي مع Home Assistant أصلًا، فجهاز عرض PJLink أضفته هناك بالفعل يُعامل معاملة كاملة.</p>
+    </div>
+    <ul class="plain">
+      <li><b>البطاقات المدمجة أولًا.</b> إن لم تكن لديك بطاقات مجتمع، تبني المزامنة لوحتك ببطاقات Home Assistant المدمجة وتخبرك بذلك عند الانتهاء. يعمل مباشرة دون إعداد.</li>
+      <li><b>ترقية عند تثبيت بطاقات HACS.</b> يتحقق التطبيق من بطاقات المجتمع المثبّتة (Mushroom وbutton-card وcard-mod وapexcharts-card) ويرقّي كل بطاقة إلى الأغنى منها حيث تملكها. ويذهب <a href="/ar/guide/home-assistant-dashboard/">دليل اللوحة المبنية يدويًا</a> أبعد إن أردت مظهر الزجاج الأخضر الكامل.</li>
+      <li><b>المشاهد وعناصر التحكم تحتاج إلى اللصقة الواحدة.</b> إن لم يكن لدى Home Assistant أمر للإرسال إلى جهاز العرض بعد، تُبنى اللوحة مع ذلك بقراءات مباشرة، وتصحبك بطاقة <b>إنهاء الإعداد</b> خلاله: المس نسخ الكتلة، والصقها في <code>configuration.yaml</code>، وأعد تشغيل Home Assistant، ثم المس المزامنة مرة أخرى.</li>
+      <li><b>لم يُثبَّت شيء؟ الصق يدويًا.</b> إن لم يكن شيء مثبّتًا في Home Assistant فما زال بإمكانك نسخ كل شيء من التطبيق ولصقه بنفسك.</li>
+      <li><b>تُنبَّه إلى كلمة المرور.</b> تذكر كتلة الأوامر التي تلصقها ما إذا كانت تحمل كلمة مرور جهاز العرض، لتعرف ذلك قبل أن تشاركها أو تخزّنها.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">بينما جهاز العرض متوقف</div>
+      <h2>قراءات تبقى في مكانها</h2>
+      <p class="lead">يبلّغ جهاز العرض في وضع الاستعداد بالقليل جدًا، فتفرغ لوحة التحكم عادةً. أما <b>مستشعر آخر قيمة معروفة</b> الاختياري فيحتفظ بآخر قراءات جهاز العرض - المدخل وساعات المصباح أو الليزر - في Home Assistant بينما جهاز العرض متوقف.</p>
+    </div>
+    <ul class="plain">
+      <li>إنه كتلة اختيارية أخرى: الصقها في نهاية <code>configuration.yaml</code> (أو أضف أسطرها فقط تحت قسم <code>template:</code> موجود) وأعد تشغيل Home Assistant. وفي التطبيق زر <b>تحقق من وجودها</b> يخبرك ما إذا كانت موجودة في Home Assistant.</li>
+      <li>يصل الإيقاف الآن إلى Home Assistant على أنه <b>off</b>، فترى لوحة التحكم والأتمتة جهاز العرض متوقفًا حين يكون كذلك.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">المشاهد كنصوص برمجية</div>
+      <h2>كل مشهد يصبح نصًا برمجيًا في Home Assistant</h2>
+      <p class="lead">بعد المزامنة، لا تبقى مشاهدك حبيسة التطبيق. يُكتب كل واحد منها، إضافة إلى التشغيل وكل مدخل وكل وضع ألوان وكل ذاكرة عدسة يملكها جهاز العرض فعلًا، كنص برمجي في Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>تستطيع الأتمتة تشغيلها.</b> «عند الغروب، إن اشتغل التلفاز، شغّل ليلة أفلام» أتمتة عادية في Home Assistant بمجرد أن يصبح المشهد نصًا برمجيًا.</li>
+      <li><b>تستطيع المساعدات الصوتية تشغيلها.</b> اعرض نصًا برمجيًا لمساعدك فيضبط «شغّل ليلة أفلام» المدخل ووضع الصورة وذاكرة العدسة معًا.</li>
+      <li><b>تظهر عناصر التحكم الحقيقية لديك فقط.</b> يكتب التطبيق نصًا برمجيًا لكل مدخل ووضع ألوان وذاكرة عدسة يبلّغ بها جهاز العرض - لا قائمة عامة خمّنها.</li>
+      <li><b>إزالة المزامنة تزيل ما كتبه التطبيق فقط.</b> أوقف المزامنة، أو استخدم إزالة النصوص البرمجية اليتيمة (التي تعرضها وتسأل أولًا)، فيحذف Projector Pilot النصوص التي أنشأها ولا شيء غيرها.</li>
+    </ul>
+    <div class="note"><b>تُسمّى النصوص البرمجية بحيث تحدّث إعادة التسمية النص نفسه.</b> تُشتق أسماء النصوص من جهاز العرض ومن عنصر التحكم، لذا فإعادة المزامنة بعد إعادة تسمية مشهد تحدّث النص الموجود بدلًا من إنشاء نسخة ثانية منه.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">لوحة التحكم</div>
+      <h2>المزامنة تبني اللوحة لك</h2>
+      <p class="lead">لا تحتاج إلى بناء عرض Lovelace يدويًا، ولم تعد مضطرًا إلى لصق واحد أيضًا. عندما تلمس <b>المزامنة مع HA</b>، يبني التطبيق لوحة Projector Pilot كاملة مباشرة داخل Home Assistant عبر واجهته البرمجية: الحالة المباشرة لجهاز العرض وزرًا لكل مشهد وعنصر تحكم زامنه. وتظهر في الشريط الجانبي لـ Home Assistant باسم <b>Projector Pilot</b> - افتحها وانتهى الأمر.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="لوحة Projector Pilot في Home Assistant: التشغيل والمصدر، وأوضاع الألوان، وقائمة الصورة الكاملة، وHDR والإشارة، ومعايرة RGB، والعدسة والهندسة، ورسم بياني لساعات الليزر، والصيانة، والمشاهد - كلها بلاط من الزجاج الأخضر" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>نسخة أغنى مبنية يدويًا من اللوحة. أما التي تبنيها لك المزامنة فتحمل الحالة المباشرة والأزرار نفسها في بطاقات Home Assistant القياسية؛ ومظهر الزجاج الأخضر أدناه هو البناء المخصص الاختياري. مرّر فيها، أو انقر للتكبير.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>سجّل الدخول إلى Home Assistant في التطبيق.</li>
+      <li>الصق <b>كتلة النسخ</b> من التطبيق في <code>configuration.yaml</code> مرة واحدة وأعد تشغيل Home Assistant (الخطوة اليدوية الوحيدة - فـ Home Assistant لا يسمح للتطبيقات بإضافة ذلك الأمر عن بُعد).</li>
+      <li>المس <b>المزامنة مع HA</b>. تُبنى اللوحة لك وتظهر في الشريط الجانبي باسم <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>تفضّل أن تلصقها بنفسك؟</b> ما زال <b>نسخ لوحة المعلومات</b> موجودًا في شاشة Home Assistant. المسه، ثم في Home Assistant انتقل إلى <b>الإعدادات &rsaquo; لوحات التحكم &rsaquo; إضافة لوحة تحكم</b>، وأنشئ لوحة فارغة، وافتح قائمتها ذات النقاط الثلاث &rsaquo; <b>تحرير لوحة التحكم</b> &rsaquo; قائمة النقاط الثلاث &rsaquo; <b>محرر الإعدادات الخام</b>، والصق YAML المنسوخ.</div>
+    <p class="lead">سواء بُنيت لك أو لصقتها بنفسك، فاللوحة هي نفسها - بطاقة حالة وزر لكل عنصر تحكم (مقتطف توضيحي):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">مثال فقط. تحمل لوحتك كيان جهاز العرض الحقيقي لديك ومشاهدك أنت.</p>
+    <div class="note"><b>لا ترتبط بطراز بعينه.</b> تُبنى اللوحة من إمكانات جهاز العرض <i>الخاص بك</i> - الكيان وأرقام الصورة والمداخل وأوضاع الألوان وذاكرات العدسة والمشاهد التي أبلغ بها فعلًا. لقطات الشاشة هنا لجهاز QB1000؛ وقد يعرض طرازك مداخل وعناصر تحكم وقراءات مختلفة. وللحصول على لوحة كاملة من الزجاج الأخضر مثل المصورة، اتبع <a href="/ar/guide/home-assistant-dashboard/">دليل اللوحة خطوة بخطوة</a> أو <a href="/ar/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>نزّل العرض الكامل</a> وغيّر نصّين.</div>
+    <div class="note"><b>تريد جدارًا أغنى؟</b> النصوص البرمجية نفسها تشغّل أي بطاقات تريدها. وإن استخدمت AVR Maestro فالنهج مطابق - ابنِ بلاط مصادر وأوضاع مضاءة وعناوين مباشرة وسجلات من المستشعر الواحد والنصوص البرمجية المزامنة.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>إعداد Hubitat</h2>
+      <p class="lead">في Hubitat، يعكس Projector Pilot جهاز العرض على جهاز في المركز لديك عبر Maker API، فيستطيع Rule Machine قراءة التشغيل وكتم الصوت والمدخل والتصرف بناءً عليها.</p>
+    </div>
+    <ol class="steps">
+      <li>في Hubitat، فعّل تطبيق <b>Maker API</b> ودوّن رابط الوصول والرمز، واختر الأجهزة التي يعرضها.</li>
+      <li>في Projector Pilot، افتح <b>الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Hubitat</b> وأدخل تفاصيل <b>Maker API</b> الخاصة بمركزك.</li>
+      <li>اختر <b>الجهاز الذي يمثل جهاز العرض</b>. يقترح التطبيق الأرجح؛ اختره أو حدد جهازك أنت.</li>
+      <li><b>يعكس التطبيق التشغيل وكتم الصوت والمدخل</b> على ذلك الجهاز، ولا يرسل إلا الأوامر التي يقبلها الجهاز.</li>
+      <li>ابنِ قواعد <b>Rule Machine</b> على ذلك الجهاز كما تفعل مع أي جهاز آخر - فحالة جهاز العرض هي التي تحركها.</li>
+    </ol>
+    <div class="note"><b>ما يقبله الجهاز فقط.</b> لا يرسل التطبيق قيمة من جهاز العرض إلى Hubitat إلا إذا كان الجهاز المختار يدعم ذلك الأمر، فلا يدفع أبدًا شيئًا قد يرفضه الجهاز.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooks</div>
+      <h2>إعداد Webhooks</h2>
+      <p class="lead">Webhooks هي الحل الشامل. يرسل التطبيق طلبًا إلى رابط تحدده عندما يعمل جهاز العرض أو يتوقف أو يتغير المدخل أو يُستدعى مشهد - Webhook في Home Assistant أو Node-RED أو IFTTT أو أي شيء يقبل JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>افتح <b>الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Webhooks</b>.</li>
+      <li>أدخل <b>الرابط</b> الذي سيُرسل إليه. يبدو Webhook في Home Assistant هكذا <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>اختر <b>الأحداث</b> التي تطلق Webhook: التشغيل والإيقاف وتغيّر المدخل واستدعاء مشهد - ويمكنك اختياريًا حصره بمدخل أو مشهد معين.</li>
+      <li>اضبط اختياريًا <b>حمولة مخصصة</b> إن كانت الخدمة المستقبِلة تريد شكلًا معينًا؛ وإلا يرسل التطبيق JSON الافتراضي.</li>
+      <li>احفظ. يرسل التطبيق عند كل حدث مطابق من الآن فصاعدًا.</li>
+    </ol>
+    <p class="lead">الحمولة الافتراضية JSON عادي - حدث وجهاز العرض والقيمة التي تغيّرت:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">حمولة مثال. يحمل حدث تغيّر المدخل أو التشغيل الحقول المتعلقة به.</p>
+    <div class="note"><b>إعادة الربط تصلحها كلها.</b> إن أعدت ربط Home Assistant بعنوان جديد، يحدّث التطبيق كل Webhook يشير إليه دفعة واحدة، فنقل النسخة لا يعني تعديل كل واحد يدويًا.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>استكشاف الأخطاء وإصلاحها</h2>
+    </div>
+    <details class="more"><summary>تسجيل الدخول يعود إلى صفحة الدخول</summary>
+      <p>تأكد من أن العنوان الذي أدخلته هو الذي تصل به فعلًا إلى Home Assistant، بما في ذلك المنفذ (عادةً <code>:8123</code>). تسجيل الدخول هو دخول حقيقي عبر المتصفح إلى نسختك، لذا تنطبق كلمة مرورك واسم المستخدم ورمز التحقق بخطوتين كلها. وفي الهاتف يكتمل تسجيل الدخول سواء أعاد المتصفح داخل التطبيق النتيجة أم عاد الاستدعاء المحلي أولًا؛ وإن ظل متعثرًا فأغلق الصفحة وامس تسجيل الدخول مرة أخرى.</p>
+    </details>
+    <details class="more"><summary>مستشعر جهاز العرض لا يظهر في Home Assistant</summary>
+      <p>يُنشر المستشعر بينما التطبيق مفتوح و<b>إرسال حالة جهاز العرض</b> مفعّل، لذا افتح التطبيق وتأكد من ذلك المفتاح. ثم تحقق من <b>أدوات المطوّر &rsaquo; الحالات</b> في Home Assistant وصفِّ بحسب <code>projector_pilot</code>. ينشر جهاز العرض في وضع الاستعداد القليل جدًا؛ أيقظه فتمتلئ القراءات.</p>
+    </details>
+    <details class="more"><summary>النصوص البرمجية المزامنة مفقودة</summary>
+      <p>تكتب النصوص البرمجية <b>المزامنة مع HA</b>، وهي تحتاج إلى كتلة <code>shell_command</code> ملصوقة مسبقًا في <code>configuration.yaml</code> وإلى إعادة تشغيل Home Assistant مرة واحدة. شغّل <b>اختبار الاتصال</b> أولًا - فهو يخبرك ما إذا كانت الكتلة موجودة. ثم زامن مرة أخرى. وإن كانت نصوص برمجية قديمة ميتة تزدحم بها القائمة فاستخدم <b>إزالة النصوص البرمجية اليتيمة</b>.</p>
+    </details>
+    <details class="more"><summary>ينفّذ التطبيق النص البرمجي لكنه لا يعمل من Home Assistant حين يكون هاتفي بعيدًا</summary>
+      <p>هذا هو جوهر كتلة <code>shell_command</code> - فهي ما يتيح لـ Home Assistant الوصول إلى عنوان IP لجهاز العرض بنفسه. وإن كان يعمل فقط والتطبيق مفتوح فالأرجح أن الكتلة لم تُلصق أو أن Home Assistant لم يُعد تشغيله بعد لصقها. تأكد باختبار الاتصال، وأعد تشغيل Home Assistant، ثم زامن.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>اربط جهاز العرض بالمنزل كله</h2>
+    <p class="lead" style="margin:0 auto 24px">أتمتة المنزل إضافة لمرة واحدة. دون اشتراك ودون حساب ودون سحابة. عملية شراء واحدة تفتحها على كل منصة تملكها.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - متاح الآن</a>
+      <span class="pill">App Store - بانتظار الموافقة</span>
+      <span class="pill">Microsoft Store - بانتظار الموافقة</span>
+      <span class="pill">Mac App Store - بانتظار الموافقة</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/ar/pricing/">شاهد المجاني مقابل Pro مقابل أتمتة المنزل &rarr;</a> &middot; <a href="/ar/guide/">دليل المستخدم الكامل &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الأسئلة الشائعة</div>
+      <h2>إجابات سريعة</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>هل يجب أن يبقى هاتفي على الشبكة لتعمل أتمتة Home Assistant؟</h3><p>لا. بمجرد لصق كتلة shell_command الواحدة في Home Assistant وإجراء المزامنة، يرسل Home Assistant الأوامر مباشرة إلى عنوان IP لجهاز العرض. Projector Pilot مجرد أداة إعداد؛ وبعدها يتحدث Home Assistant مع جهاز العرض بنفسه، سواء كان هاتفك في المنزل أم لا.</p></div><div class="gcard"><h3>كيف يظهر جهاز العرض في Home Assistant؟</h3><p>كمستشعر، مثل sensor.projector_pilot_epson_qb1000b_qb1000w، يحمل التشغيل والمدخل ووضع الألوان وأرقام الصورة وساعات المصباح، ويتحدّث كلما تغيّرت بينما التطبيق مفتوح. فعّل مزامنة عناصر التحكم المتقدمة فيكتب التطبيق أيضًا نصًا برمجيًا في Home Assistant لكل مشهد، إضافة إلى التشغيل وكل مدخل وكل وضع ألوان وكل ذاكرة عدسة يملكها جهاز العرض.</p></div><div class="gcard"><h3>هل أتمتة المنزل مجانية؟</h3><p>أتمتة المنزل إضافة مدفوعة، بعملية شراء لمرة واحدة، منفصلة عن Projector Pilot Pro. وتتيح الحزمة شراء الاثنين معًا بسعر أوفر. انظر صفحة الأسعار.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/help/">المساعدة والأسئلة الشائعة</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ar/help/#privacy">الخصوصية</a><a href="/ar/help/#terms">الشروط</a></div>
+<div class="flinks"><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/guide/dashboard/">لوحة التحكم</a><a href="/ar/guide/remote/">جهاز التحكم</a><a href="/ar/guide/picture/">الصورة</a><a href="/ar/guide/lens/">العدسة</a><a href="/ar/guide/scenes/">المشاهد</a><a href="/ar/guide/home-assistant-dashboard/">لوحة HA</a><a href="/ar/guide/maintenance/">الصيانة</a><a href="/ar/guide/settings/">الإعدادات</a><a href="/ar/guide/languages/">اللغات</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot تطبيق مستقل لأجهزة عرض Epson وPJLink. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat أو Apple أو Google أو Microsoft، ولا تؤيده ولا ترعاه. Epson وPJLink وHome Assistant وHubitat وApp Store وMac App Store وGoogle Play وMicrosoft Store علامات تجارية لأصحابها، وتُذكر فقط لوصف ما يعمل التطبيق معه.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

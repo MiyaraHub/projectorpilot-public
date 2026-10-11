@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Cenas de Projetor com Um Toque - Projector Pilot</title>
+<meta name="description" content="Salve energia, entrada, imagem, memória de lente e mais do seu projetor como uma Cena e recupere com um toque. Cada Cena pode virar um script do Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Cenas de Projetor com Um Toque - Projector Pilot" />
+<meta property="og:description" content="Salve energia, entrada, imagem, memória de lente e mais do seu projetor como uma Cena e recupere com um toque. Cada Cena pode virar um script do Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/pt-br/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cenas de Projetor com Um Toque - Projector Pilot" />
+<meta name="twitter:description" content="Salve energia, entrada, imagem, memória de lente e mais do seu projetor como uma Cena e recupere com um toque. Cada Cena pode virar um script do Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "pt-BR", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "Cenas de Projetor com Um Toque - Projector Pilot", "description": "Salve energia, entrada, imagem, memória de lente e mais do seu projetor como uma Cena e recupere com um toque. Cada Cena pode virar um script do Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "pt-BR", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "Cenas do projetor: a sala inteira, com um toque", "description": "Salve energia, entrada, imagem, memória de lente e mais do seu projetor como uma Cena e recupere com um toque. Cada Cena pode virar um script do Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "pt-BR", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Guia do Usuário", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Cenas", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/pt-br/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Pesquisar no guia..." data-i18n-empty="Nenhum resultado para" data-i18n-language="Idioma"><a href="/pt-br/#features">Recursos</a><a href="/pt-br/guide/">Guia</a><a href="/pt-br/pricing/">Preços</a><a href="/pt-br/highlights/">Destaques</a><a href="/pt-br/guide/home-automation/">Home Assistant</a><a href="/pt-br/help/">Ajuda</a><a class="cta" href="/pt-br/#download">BAIXAR O APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/pt-br/">Início</a> &rsaquo; <a href="/pt-br/guide/">Guia do Usuário</a> &rsaquo; Cenas</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">A aba Cenas &middot; Pro</div>
+        <h1>Cenas do projetor: a sala inteira, com um toque</h1>
+        <p class="lead">Uma Cena captura o seu projetor exatamente como está agora e traz tudo de volta depois com um único toque. Noite de cinema, o grande jogo, uma sessão clara de domingo - cada uma é uma Cena, cada uma a um toque de distância. Você escolhe exatamente quais partes uma Cena guarda, e só as partes que o seu projetor realmente informa são oferecidas.</p>
+        <p class="lead">Cenas fazem parte do <a href="/pt-br/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="A aba Cenas no Projector Pilot com o botão Salvar Atual" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Como salvar uma</div>
+      <h2>Ajuste a sala e depois capture</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Ajuste.</b> Deixe o projetor exatamente como quer - a entrada, o modo de cor, a imagem, a memória de lente, tudo.</li>
+      <li><b>Salvar Atual.</b> Na aba Cenas, toque em <b>Salvar Atual</b>, dê um nome à Cena e marque quais partes guardar. O seletor só oferece o que o seu projetor informa, então você nunca salva uma configuração que o seu modelo não tem.</li>
+      <li><b>Recuperar.</b> Toque na Cena para aplicá-la. O Projector Pilot confirma cada configuração com o projetor conforme avança e nunca afirma uma mudança que não ocorreu.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">O que uma Cena captura</div>
+      <h2>Tanto ou tão pouco quanto você marcar</h2>
+      <p class="lead">Uma única Cena pode registrar qualquer um dos itens a seguir. Recuperar reproduz apenas as partes marcadas, então uma Cena de "sessão da noite" pode baixar a saída de luz e deixar o resto em paz.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Energia</h3><p>O estado de energia do projetor, para uma Cena poder acordá-lo ou mandá-lo para standby como parte da configuração.</p></div>
+      <div class="gcard"><h3>Entrada</h3><p>A fonte para a qual a Cena troca, para "Noite de Cinema" cair no HDMI certo sempre.</p></div>
+      <div class="gcard"><h3>Imagem</h3><p>Modo de cor e os valores de imagem, cada um na escala do menu do próprio projetor.</p></div>
+      <div class="gcard"><h3>Sinal</h3><p>As configurações do lado do sinal que o seu projetor expõe para o conteúdo que você está assistindo.</p></div>
+      <div class="gcard"><h3>Luz</h3><p>Saída da fonte de luz, para uma sala clara e uma escura terem cada uma a sua configuração.</p></div>
+      <div class="gcard"><h3>Geometria</h3><p>O estado de alinhamento e geometria que enquadra a imagem na sua tela.</p></div>
+      <div class="gcard"><h3>Áudio</h3><p>As configurações de áudio que o projetor informa, guardadas junto com o resto.</p></div>
+      <div class="gcard"><h3>Só o que é informado</h3><p>A lista de marcação é montada a partir do que o seu projetor realmente responde, então nada que você salva é um palpite.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Automação</div>
+      <h2>Cada Cena vira um script do Home Assistant</h2>
+      <p class="lead">Cole um bloco na configuração do seu Home Assistant uma vez e o Projector Pilot escreve um script para cada Cena que você tem, mais energia, cada entrada, cada modo de cor e cada memória de lente que o seu projetor realmente guarda. Uma automação ou um assistente de voz pode então executar qualquer Cena, e o app remove os scripts que escreveu quando você desativa a sincronização, sem tocar em mais nada.</p>
+    </div>
+    <div class="note">As Cenas também funcionam por <b>webhooks</b> - recuperar uma Cena pode enviar um POST para uma URL sua - e são espelhadas no <b>Hubitat</b> pela Maker API. Está tudo no <a href="/pt-br/guide/home-automation/">guia do Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Compartilhe seu trabalho</div>
+      <h2>Perfis de cena compartilháveis</h2>
+      <p class="lead">Ajustou uma Cena de que se orgulha? Exporte e passe a um amigo, ou importe uma que alguém compartilhou com você. Perfis de cena viajam entre instalações para que uma boa configuração não precise ser refeita do zero em cada projetor.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Continue lendo</div>
+      <h2>Guias relacionados</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/pt-br/guide/lens/">Controle de lente</a>
+      <a href="/pt-br/guide/home-automation/">Home Assistant</a>
+      <a href="/pt-br/guide/settings/">Configurações</a>
+      <a href="/pt-br/guide/">Guia completo do usuário</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/pt-br/guide/">Guia do Usuário</a><a href="/pt-br/pricing/">Preços</a><a href="/pt-br/highlights/">Destaques</a><a href="/pt-br/guide/home-automation/">Home Assistant</a><a href="/pt-br/help/">Ajuda &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/pt-br/help/#privacy">Privacidade</a><a href="/pt-br/help/#terms">Termos</a></div>
+<div class="flinks"><a href="/pt-br/guide/getting-started/">Primeiros Passos</a><a href="/pt-br/guide/dashboard/">Painel</a><a href="/pt-br/guide/remote/">Controle remoto</a><a href="/pt-br/guide/picture/">Imagem</a><a href="/pt-br/guide/lens/">Lente</a><a href="/pt-br/guide/scenes/">Cenas</a><a href="/pt-br/guide/home-assistant-dashboard/">Painel HA</a><a href="/pt-br/guide/maintenance/">Manutenção</a><a href="/pt-br/guide/settings/">Configurações</a><a href="/pt-br/guide/languages/">Idiomas</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. O Projector Pilot é um app independente para projetores Epson e PJLink. Não é afiliado, endossado nem patrocinado pela Epson, pelo órgão de padrões do PJLink, Home Assistant, Hubitat, Apple, Google ou Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play e Microsoft Store são marcas registradas de seus respectivos proprietários, citadas apenas para descrever com o que o app funciona.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

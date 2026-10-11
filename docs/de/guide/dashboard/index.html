@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="de" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Projektor-Status-Dashboard-App - Projector Pilot</title>
+<meta name="description" content="Das Projector Pilot Dashboard: Live-Status zu Ein/Aus, Eingang und Farbmodus, Projektionsinfos wie Dynamikumfang, Farbraum, Gamma und Laserstunden sowie frei anordenbare Karten." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/de/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektor-Status-Dashboard-App - Projector Pilot" />
+<meta property="og:description" content="Das Projector Pilot Dashboard: Live-Status zu Ein/Aus, Eingang und Farbmodus, Projektionsinfos wie Dynamikumfang, Farbraum, Gamma und Laserstunden sowie frei anordenbare Karten." />
+<meta property="og:url" content="https://projectorpilot.com/de/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektor-Status-Dashboard-App - Projector Pilot" />
+<meta name="twitter:description" content="Das Projector Pilot Dashboard: Live-Status zu Ein/Aus, Eingang und Farbmodus, Projektionsinfos wie Dynamikumfang, Farbraum, Gamma und Laserstunden sowie frei anordenbare Karten." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "de", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "Projektor-Status-Dashboard-App - Projector Pilot", "description": "Das Projector Pilot Dashboard: Live-Status zu Ein/Aus, Eingang und Farbmodus, Projektionsinfos wie Dynamikumfang, Farbraum, Gamma und Laserstunden sowie frei anordenbare Karten.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "de", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "Dein Projektor-Dashboard, so gebaut, wie du es willst", "description": "Das Projector Pilot Dashboard: Live-Status zu Ein/Aus, Eingang und Farbmodus, Projektionsinfos wie Dynamikumfang, Farbraum, Gamma und Laserstunden sowie frei anordenbare Karten.", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "de", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Benutzerhandbuch", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Dashboard", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/de/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Handbuch durchsuchen..." data-i18n-empty="Keine Treffer für" data-i18n-language="Sprache"><a href="/de/#features">Funktionen</a><a href="/de/guide/">Anleitung</a><a href="/de/pricing/">Preise</a><a href="/de/highlights/">Highlights</a><a href="/de/guide/home-automation/">Home Assistant</a><a href="/de/help/">Hilfe</a><a class="cta" href="/de/#download">APP HOLEN</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/de/">Startseite</a> &rsaquo; <a href="/de/guide/">Benutzerhandbuch</a> &rsaquo; Dashboard</div>
+    <div class="eyebrow">Das Dashboard</div>
+    <h1>Dein Projektor-Dashboard, <span class="g">so gebaut, wie du es willst</span></h1>
+    <p class="lead">Das Dashboard ist deine Schaltzentrale. Oben der Live-Status, darunter eine Karte für jeden Bereich des Projektors und ein Anpassen-Modus, in dem du Karten hinzufügen, ausblenden und neu anordnen kannst, damit der Bildschirm zeigt, was dir wichtig ist. Jeder Wert wird vom Projektor gelesen und aktualisiert, sobald er sich ändert.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Live-Status</div>
+        <h2>Ein/Aus, Eingang und Farbmodus ganz oben</h2>
+        <ul class="plain">
+          <li><b>Ein/Aus-Schalter.</b> Ein Tipp schaltet den Projektor ein oder aus. Der Schalter kennt Aufwärm- und Abkühlphase: Er zeigt, wie der Projektor sie durchläuft, statt so zu tun, als wäre der Zustand sofort umgesprungen.</li>
+          <li><b>Eingangsquelle.</b> Die aktuelle Quelle auf einen Blick, zum Wechseln antippbar.</li>
+          <li><b>Farbmodus.</b> Der aktive Bildmodus (Dynamisch, Kino, Natürlich und so weiter), direkt vom Projektor gelesen.</li>
+          <li><b>Bild aus.</b> Blende das Bild aus, ohne das Signal zu unterbrechen. Das Dashboard und die Fernbedienung sind sich dabei einig: Ausgeblendet wird an beiden Stellen als aktiv angezeigt.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="Projector Pilot Dashboard mit Live-Karten zu Ein/Aus, Eingang, Farbmodus und Projektionsinfo" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Rund um das Dashboard</div>
+      <h2>Projektor wechseln, ausschalten, Firmware</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projektorwechsel.</b> Die obere Leiste jeder Projektorseite hat ein Steuerelement <b>Projektor wechseln</b>, damit du zwischen deinen Projektoren wechseln kannst, ohne zur Liste zurückzugehen. Mehrere Projektoren sind Teil von Pro.</li>
+      <li><b>Ausschalten fragt zuerst nach.</b> Beim Ausschalten erscheint <b>Projektor ausschalten?</b> und der Projektor wartet auf deine Bestätigung. Beim Einschalten wird nicht gefragt.</li>
+      <li><b>Firmware.</b> Die Firmware-Version des Projektors steht im Dashboard, auf dem Tab Info und im Diagnosebericht, sobald der Projektor sie meldet. Meldet er keine, wird nichts angezeigt, statt zu raten.</li>
+      <li><b>Sofort reagierende Steuerung.</b> Objektivverschiebung, Fokus, Zoom und die Lichtleistungsstufe reagieren im Moment des Drückens und stellen sich auf den vom Projektor bestätigten Wert ein. Ein Tastendruck, der eintrifft, während noch einer gesendet wird, wird verworfen statt eingereiht.</li>
+      <li><b>Ehrlicher Betriebszustand.</b> Beim erneuten Öffnen der App steht dort, dass sie gerade prüft, statt fälschlich „aus“ anzuzeigen. Und sie bemerkt innerhalb von etwa zehn Sekunden, wenn sich der Projektor einschaltet.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Projektionsinfo</div>
+      <h2>Was der Projektor wirklich tut</h2>
+      <p class="lead">Die Karte Projektionsinfo liest das echte Signal und die Installationsdaten direkt aus dem Gerät - nichts davon wird geschätzt.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Feld</th><th>Was angezeigt wird</th></tr></thead>
+      <tbody>
+        <tr><td>Dynamikumfang</td><td>SDR oder HDR, getrennt vom Farbraum, damit ein Signal nie falsch bezeichnet wird.</td></tr>
+        <tr><td>Farbraum</td><td>Der eingehende Gamut, zum Beispiel BT.2020 oder BT.709 - eigenständig gemeldet und nicht in ein HDR-Symbol eingerechnet.</td></tr>
+        <tr><td>Gamma</td><td>Das aktive Gamma, das der Projektor meldet.</td></tr>
+        <tr><td>Laserstunden</td><td>Betriebsstunden der Lichtquelle, damit du die Lebensdauer von Panel oder Laser im Blick behältst. Bei Lampenmodellen werden stattdessen Lampenstunden angezeigt.</td></tr>
+        <tr><td>Seriennummer</td><td>Die eigene Seriennummer des Projektors, aus dem Gerät gelesen.</td></tr>
+        <tr><td>Montage</td><td>Decken- oder Rückprojektion, so wie am Projektor eingestellt.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Farbraum und Dynamikumfang sind bewusst getrennte Felder.</b> Ein BT.2020-SDR-Signal - üblich, wenn ein externer Tone-Mapper wie MadVR die Arbeit übernimmt - wird genau so angezeigt und nie als falsches HDR10-Symbol.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Übersichtskarten</div>
+      <h2>Bild und Objektiv auf einen Blick</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Bildübersicht.</b> Die wichtigsten Bildwerte - Helligkeit, Kontrast, Tönung, Schärfe und Farbtemperatur - auf der Skala des Projektormenüs, mit einem Tipp-Sprung zum vollständigen Bildschirm <a href="/de/guide/picture/">Bild</a>.</li>
+      <li><b>Objektivübersicht.</b> Der aktuelle Objektivzustand mit einem Sprung zum Bildschirm <a href="/de/guide/lens/">Objektiv</a> für Verschiebung, Fokus, Zoom und Speicher.</li>
+      <li><b>Karten für Signal, Licht und Betrieb.</b> Füge die hinzu, die dir wichtig sind - Signaldetails, Lichtleistung und Eco/Betrieb -, damit das Dashboard so voll oder so schlank ist, wie du es magst.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Machen Sie es zu Ihrem</div>
+      <h2>Karten hinzufügen, ausblenden und neu anordnen</h2>
+      <p class="lead">Tippe auf <b>Anpassen</b> und das Dashboard wird bearbeitbar. Füge aus der Auswahl eine Karte hinzu, ordne sie per Ziehen neu an oder blende jede Karte aus, die du nie ansiehst.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Tippe im Dashboard auf Anpassen.</b></li>
+      <li><b>Füge eine Karte hinzu</b> - aus der Auswahl stehen Ein/Aus, Eingang, Farbmodus, Bild aus, Bild, Objektiv, Signal und Eco/Betrieb bereit, und die erweiterte Auswahl bietet weitere Kartentypen.</li>
+      <li><b>Per Ziehen neu anordnen</b>, damit deine meistgenutzten Steuerelemente ganz oben liegen.</li>
+      <li><b>Blende</b> alles aus, was du nicht brauchst. Fertig - das Layout gehört dir und bleibt erhalten.</li>
+    </ol>
+    <div class="note">Es werden nur Karten für Funktionen angeboten, die dein Projektor tatsächlich unterstützt. Hat dein Modell kein motorisiertes Objektiv, gibt es keine Objektivkarte zum Hinzufügen - die App zeigt nie ein Steuerelement, das die Hardware nicht beantworten kann.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Weiter</div>
+      <h2>Mach weiter</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/de/guide/remote/"><span>&#127918;</span>Fernbedienung</a>
+      <a href="/de/guide/picture/"><span>&#127912;</span>Bild</a>
+      <a href="/de/guide/lens/"><span>&#128247;</span>Objektiv</a>
+      <a href="/de/guide/"><span>&#128218;</span>Zurück zur Anleitungsübersicht</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/de/guide/">Benutzerhandbuch</a><a href="/de/pricing/">Preise</a><a href="/de/highlights/">Highlights</a><a href="/de/guide/home-automation/">Home Assistant</a><a href="/de/help/">Hilfe &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/de/help/#privacy">Datenschutz</a><a href="/de/help/#terms">Nutzungsbedingungen</a></div>
+<div class="flinks"><a href="/de/guide/getting-started/">Erste Schritte</a><a href="/de/guide/dashboard/">Dashboard</a><a href="/de/guide/remote/">Fernbedienung</a><a href="/de/guide/picture/">Bild</a><a href="/de/guide/lens/">Objektiv</a><a href="/de/guide/scenes/">Szenen</a><a href="/de/guide/home-assistant-dashboard/">HA-Dashboard</a><a href="/de/guide/maintenance/">Wartung</a><a href="/de/guide/settings/">Einstellungen</a><a href="/de/guide/languages/">Sprachen</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot ist eine unabhängige App für Epson- und PJLink-Projektoren. Sie steht in keiner Verbindung zu Epson, der PJLink-Normungsstelle, Home Assistant, Hubitat, Apple, Google oder Microsoft und wird von diesen weder empfohlen noch gesponsert. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play und Microsoft Store sind Marken ihrer jeweiligen Inhaber und werden nur genannt, um zu beschreiben, womit die App funktioniert.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

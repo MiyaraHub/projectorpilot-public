@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>投影机镜头位移、对焦 &amp; 变焦应用 - Projector Pilot</title>
+<meta name="description" content="用手机控制电动镜头的位移、对焦和变焦，步长由您选择，还可调用和保存镜头记忆，并提供如实的位置读数。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hans/guide/lens/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/lens/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/lens/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/lens/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/lens/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/lens/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/lens/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/lens/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/lens/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/lens/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/lens/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/lens/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/lens/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/lens/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/lens/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/lens/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/lens/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/lens/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/lens/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/lens/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/lens/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/lens/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/lens/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/lens/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/lens/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/lens/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/lens/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/lens/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/lens/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/lens/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/lens/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/lens/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="投影机镜头位移、对焦 &amp; 变焦应用 - Projector Pilot" />
+<meta property="og:description" content="用手机控制电动镜头的位移、对焦和变焦，步长由您选择，还可调用和保存镜头记忆，并提供如实的位置读数。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hans/guide/lens/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="投影机镜头位移、对焦 &amp; 变焦应用 - Projector Pilot" />
+<meta name="twitter:description" content="用手机控制电动镜头的位移、对焦和变焦，步长由您选择，还可调用和保存镜头记忆，并提供如实的位置读数。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hans", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/lens/#webpage", "url": "https://projectorpilot.com/guide/lens/", "name": "投影机镜头位移、对焦与变焦应用 - Projector Pilot", "description": "用手机控制电动镜头的位移、对焦和变焦，步长由您选择，还可调用和保存镜头记忆，并提供如实的位置读数。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hans", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/lens/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/lens/#article", "headline": "镜头位移、对焦与变焦，精准到位", "description": "用手机控制电动镜头的位移、对焦和变焦，步长由您选择，还可调用和保存镜头记忆，并提供如实的位置读数。", "image": "https://projectorpilot.com/screenshots/04-lens.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "zh-Hans", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/lens/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/lens/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "主页", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "用户指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "镜头", "item": "https://projectorpilot.com/guide/lens/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hans/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言"><a href="/zh-hans/#features">功能</a><a href="/zh-hans/guide/">指南</a><a href="/zh-hans/pricing/">价格</a><a href="/zh-hans/highlights/">亮点</a><a href="/zh-hans/guide/home-automation/">Home Assistant</a><a href="/zh-hans/help/">帮助</a><a class="cta" href="/zh-hans/#download">获取 APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; 镜头</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">镜头标签页</div>
+        <h1>镜头位移、对焦与变焦，精准到位</h1>
+        <p class="lead">通过精确的方向键对投影机的电动镜头进行位移、对焦和变焦，调用和保存投影机支持的镜头记忆，并从机身读回精确位置。每个数值都来自投影机，对于它无法确认的位置，会显示为未知，而不是伪装成已锁定。</p>
+        <p class="lead">镜头标签页包含两个子标签页：<b>镜头</b>用于日常的位移、对焦、变焦和记忆控制，<b>安装</b>用于一次性的设置调整。</p>
+      </div>
+      <img src="/screenshots/04-lens.png" alt="Projector Pilot 中的镜头标签页，显示位置读数、带步长选择器的位移方向键、对焦和变焦" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">镜头位移</div>
+      <h2>一个方向键，加上由您选择的步长</h2>
+      <p class="lead">位移方向键可将镜头上移、下移、左移和右移。真正让它从玩具变成工具的，是下方的步长选择器：您可以选择轻点一次让镜头移动多远，从精细取景到大幅调整位置均可。</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>第 1 步</h3><p>最精细的移动。一点一点地微调画面，让边缘与屏幕边框对齐。</p></div>
+      <div class="gcard"><h3>第 5 步</h3><p>适中的设置，适合在已经接近目标位置时把画面调到位。</p></div>
+      <div class="gcard"><h3>第 10 步</h3><p>在初步确定位置时快速移动。</p></div>
+      <div class="gcard"><h3>步长 25</h3><p>最粗的移动，几次轻点就能让镜头移过大部分行程。</p></div>
+    </div>
+    <div class="note">您选择的步长同样适用于<b>位移、对焦和变焦</b>，所以一个设置就决定了每个镜头控件每次轻点移动多远。先用较大的步长大致到位，再降到 1 完成取景。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">对焦 &amp; 变焦</div>
+      <h2>清晰度与画面大小，同样的方式</h2>
+    </div>
+    <ul class="plain">
+      <li><b>对焦</b>：一个减号和一个加号按钮驱动对焦电机，每次轻点按您设置的步长移动。当前对焦电机位置显示在按钮上方，方便您回到已知的数值。</li>
+      <li><b>变焦</b>：同样的减号和加号按钮驱动变焦电机，同样按您选择的步长移动，旁边显示实时的变焦电机位置。</li>
+      <li><b>读回，而非猜测</b>：对焦和变焦数值是投影机上报的电机位置，所以您看到的就是镜头实际所在的位置，而不是应用希望它到达的位置。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">镜头记忆</div>
+      <h2>调用已保存的设置，或保存当前设置</h2>
+      <p class="lead">支持镜头记忆的投影机会在命名的存储位中保存完整的位移、对焦和变焦位置。Projector Pilot 会列出您的投影机实际支持的存储位，让您轻点一下就能调用，或把当前位置保存进去。</p>
+    </div>
+    <ul class="plain">
+      <li><b>调用</b>：轻点一个记忆，镜头就会移动到所存储的位移、对焦和变焦位置，正如变形宽银幕或其他画幅比例的设置所需要的那样。</li>
+      <li><b>保存</b>：把当前镜头位置存入存储位，方便以后回到这里。</li>
+      <li><b>只有真实的存储位</b>：应用显示的是投影机上报拥有的记忆存储位，而不是假定每个机型都具备的固定列表。</li>
+    </ul>
+    <div class="note">镜头记忆与<a href="/zh-hans/guide/scenes/">场景</a>搭配得很好：场景可以把镜头记忆与信号源和画面模式一并保存，轻点一下，就能为宽银幕电影或 16:9 节目设置好整个房间。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">位置读数</div>
+      <h2>位移范围，绘制成图</h2>
+      <p class="lead">在镜头标签页顶部，当前镜头位置以两种方式显示：数值和示意图。</p>
+    </div>
+    <ul class="plain">
+      <li><b>垂直位移和水平位移数值</b>：垂直和水平位移位置，各自显示为当前值占投影机完整行程的比例（例如 1023 中的 595），让您始终知道镜头距离极限还有多少余量。</li>
+      <li><b>范围示意图</b>：一个方框，把镜头位置绘制为投影机位移范围内的一个点，纵向对应垂直，横向对应水平，让您一眼看出镜头是居中还是偏向行程的某个角落。</li>
+    </ul>
+    <div class="note"><b>方向由投影机决定，应用予以尊重。</b>无论是吊装、背投还是正投，向上就是向上：应用遵循投影机自己的映射，绝不会为了揣测您的安装方式而反转方向键。轻点向上，画面就上移，无论投影机是怎么固定的。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">默认如实呈现</div>
+      <h2>未确认的位置是未知，而不是已锁定</h2>
+    </div>
+    <p class="lead">有些投影机会接受并执行镜头移动，但它读回的位置并不会随电机同步变化。在 QB1000 等机型上，这种滞后很容易被误认为镜头卡住了。</p>
+    <ul class="plain">
+      <li><b>已接受移动但位置未确认时，控件仍然可用。</b>应用不再仅仅因为上报的数值没有变化，就让控件变灰或引导您去看镜头锁定；既然命令已被接受，控件就保持可用。</li>
+      <li><b>只有真正的拒绝才会被报告为锁定。</b>只有当投影机确实拒绝命令时，应用才会告诉您镜头已锁定，并且无论有没有 Web Control 密码都是如此。</li>
+      <li><b>登录被拒绝是未知，而不是锁定。</b>如果镜头移动通过 Web Control 进行，而该登录被拒绝，应用会将镜头视为未知，并显示一条轻点即可修复的提示，让您更新 Web Control 密码，而不是怪罪镜头。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">安装子标签页</div>
+      <h2>一次性设置调整</h2>
+      <p class="lead">安装子标签页包含几何校正和安装人员控件，这些是投影机安装时设置一次、之后很少再动的内容，与镜头子标签页中的日常镜头移动相对应。</p>
+    </div>
+    <div class="note">安装人员控件只在投影机支持时才会出现，并读回自机身，所以您看到的就是您的具体机型所提供的内容，而不是假定的一套功能。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">继续阅读</div>
+      <h2>相关指南</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/zh-hans/guide/scenes/">一键场景</a>
+      <a href="/zh-hans/guide/settings/">设置</a>
+      <a href="/zh-hans/guide/home-automation/">Home Assistant</a>
+      <a href="/zh-hans/guide/">完整用户指南</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/pricing/">价格</a><a href="/zh-hans/highlights/">亮点</a><a href="/zh-hans/guide/home-automation/">Home Assistant</a><a href="/zh-hans/help/">帮助 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hans/help/#privacy">隐私</a><a href="/zh-hans/help/#terms">条款</a></div>
+<div class="flinks"><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/guide/dashboard/">仪表盘</a><a href="/zh-hans/guide/remote/">遥控器</a><a href="/zh-hans/guide/picture/">画面</a><a href="/zh-hans/guide/lens/">镜头</a><a href="/zh-hans/guide/scenes/">场景</a><a href="/zh-hans/guide/home-assistant-dashboard/">HA 仪表盘</a><a href="/zh-hans/guide/maintenance/">维护</a><a href="/zh-hans/guide/settings/">设置</a><a href="/zh-hans/guide/languages/">语言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是面向 Epson 和 PJLink 投影机的独立应用，与 Epson、PJLink 标准机构、Home Assistant、Hubitat、Apple、Google 或 Microsoft 没有任何关联，也未获得其认可或赞助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 和 Microsoft Store 是其各自所有者的商标，在此仅用于说明本应用的适用对象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Hướng dẫn máy chiếu với Home Assistant &amp; Hubitat - Projector Pilot</title>
+<meta name="description" content="Kết nối máy chiếu Epson hoặc PJLink của bạn với Home Assistant, Hubitat và webhook. Sync With HA công bố trạng thái trực tiếp và biến mọi Cảnh thành một script." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hướng dẫn máy chiếu với Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta property="og:description" content="Kết nối máy chiếu Epson hoặc PJLink của bạn với Home Assistant, Hubitat và webhook. Sync With HA công bố trạng thái trực tiếp và biến mọi Cảnh thành một script." />
+<meta property="og:url" content="https://projectorpilot.com/vi/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hướng dẫn máy chiếu với Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta name="twitter:description" content="Kết nối máy chiếu Epson hoặc PJLink của bạn với Home Assistant, Hubitat và webhook. Sync With HA công bố trạng thái trực tiếp và biến mọi Cảnh thành một script." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Hướng dẫn máy chiếu với Home Assistant & Hubitat - Projector Pilot", "description": "Kết nối máy chiếu Epson hoặc PJLink của bạn với Home Assistant, Hubitat và webhook. Sync With HA công bố trạng thái trực tiếp và biến mọi Cảnh thành một script.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Máy chiếu của bạn, trong Home Assistant và Hubitat.", "description": "Kết nối máy chiếu Epson hoặc PJLink của bạn với Home Assistant, Hubitat và webhook. Sync With HA công bố trạng thái trực tiếp và biến mọi Cảnh thành một script.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "vi", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Automation", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Điện thoại của tôi có cần luôn ở trong mạng để các tự động hóa Home Assistant chạy không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Sau khi bạn dán khối shell_command vào Home Assistant và đồng bộ, Home Assistant gửi lệnh thẳng tới địa chỉ IP của máy chiếu. Projector Pilot chỉ là công cụ thiết lập; sau đó, Home Assistant tự giao tiếp với máy chiếu, dù điện thoại của bạn có ở nhà hay không."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Máy chiếu xuất hiện trong Home Assistant như thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dưới dạng một cảm biến, ví dụ sensor.projector_pilot_epson_qb1000b_qb1000w, mang theo nguồn, nguồn vào, chế độ màu, các thông số hình ảnh và số giờ bóng đèn, được cập nhật mỗi khi chúng thay đổi trong lúc ứng dụng đang mở. Bật Sync Advanced Controls và ứng dụng còn ghi một script Home Assistant cho từng Cảnh, cùng nguồn, từng nguồn vào, từng chế độ màu và từng bộ nhớ ống kính mà máy chiếu của bạn có."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Home Automation có miễn phí không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Home Automation là tiện ích bổ sung trả phí, mua một lần, tách biệt với Projector Pilot Pro. Gói combo mua cả hai cùng lúc với giá ưu đãi. Xem trang giá."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/vi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ"><a href="/vi/#features">Tính năng</a><a href="/vi/guide/">Hướng dẫn</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/guide/home-assistant-dashboard/">Bảng điều khiển HA</a><a href="/vi/help/">Trợ giúp</a><a class="cta" href="/vi/#download">GET THE APP</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Home Automation</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhook</div>
+    <h1>Máy chiếu của bạn, <span class="g">trong Home Assistant và Hubitat</span>.</h1>
+    <p>Projector Pilot công bố trạng thái trực tiếp và mọi điều khiển của máy chiếu lên Home Assistant, Hubitat và bất kỳ webhook nào bạn muốn. Thiết lập một lần, và ngôi nhà thông minh của bạn tự điều khiển máy chiếu - không cần điện thoại trong mạng, không có đám mây ở giữa.</p>
+    <div class="readout"><span>Không cần máy chủ sau khi thiết lập</span><span>Cảnh trở thành script</span><span>Bảng điều khiển dựng sẵn</span><span>Danh sách kiểm tra thiết lập</span><span>Tiện ích trả phí</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tổng quan</div>
+      <h2>Home Automation làm được gì</h2>
+      <p class="lead">Home Automation biến Projector Pilot từ chiếc điều khiển trong tay bạn thành một thiết bị mà cả ngôi nhà có thể nhìn thấy. Nó công bố những gì máy chiếu đang làm - nguồn, nguồn vào, chế độ màu, các thông số hình ảnh, số giờ bóng đèn - và trao cho ngôi nhà thông minh của bạn một điều khiển cho mọi thứ ứng dụng có thể thay đổi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nó công bố trạng thái.</b> Máy chiếu xuất hiện dưới dạng cảm biến Home Assistant, thiết bị Hubitat, hoặc payload JSON trên webhook của bạn, mang cùng các số liệu mà ứng dụng hiển thị cho bạn.</li>
+      <li><b>Nó công bố các điều khiển.</b> Mỗi Cảnh bạn lưu, cùng nguồn, từng nguồn vào, từng chế độ màu và từng bộ nhớ ống kính, trở thành thứ mà một tự động hóa hoặc trợ lý giọng nói có thể chạy.</li>
+      <li><b>Nó chạy không cần máy chủ.</b> Khi các script đã được thiết lập, Home Assistant gửi lệnh thẳng tới địa chỉ IP của máy chiếu. Điện thoại của bạn không cần ở trong mạng, và không có gì đi qua tài khoản đám mây.</li>
+    </ul>
+    <div class="note"><b>Home Automation là tiện ích bổ sung trả phí.</b> Mua một lần, tách biệt với Projector Pilot Pro, và gói combo mua cả hai cùng lúc với giá ưu đãi. Không đăng ký, không tài khoản, không đám mây. Xem <a href="/vi/pricing/">giá</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Ba cách vào, một trung tâm</h3>
+        <p class="lead">Cài đặt &rsaquo; Home Automation là trung tâm. Chọn nền tảng bạn dùng - Home Assistant, Hubitat hoặc Webhooks - và thiết lập tại đó. Bạn có thể kết nối nhiều hơn một cùng lúc; chúng độc lập với nhau.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Trung tâm Home Automation trong Projector Pilot: Home Assistant, Hubitat và Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Thiết lập Home Assistant</h2>
+      <p class="lead">Đăng nhập từ ứng dụng, công bố máy chiếu dưới dạng cảm biến, dán một khối vào cấu hình của bạn, rồi đồng bộ. Từ đó trở đi Home Assistant tự điều khiển máy chiếu.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Mở <b>Cài đặt &rsaquo; Home Automation &rsaquo; Home Assistant</b>.</li>
+        <li>Nhập <b>địa chỉ Home Assistant</b> của bạn (ví dụ <code>http://homeassistant.local:8123</code> hoặc IP của nó), rồi chạm <b>Đăng nhập</b>. Đây là đăng nhập qua trình duyệt vào chính hệ thống của bạn - <b>không có mã thông báo nào để dán</b>. Dùng tài khoản Home Assistant thường ngày của bạn, kể cả xác thực hai yếu tố.</li>
+        <li>Ứng dụng công bố máy chiếu dưới dạng <b>cảm biến</b>, với một thực thể như <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, mang theo nguồn, nguồn vào, chế độ màu, các thông số hình ảnh và số giờ bóng đèn.</li>
+        <li>Bật <b>Gửi trạng thái máy chiếu</b> để các số liệu đó cập nhật trong Home Assistant mỗi khi thay đổi trong lúc ứng dụng đang mở, và bật <b>Sync Advanced Controls</b> để công bố script cho các chế độ hình ảnh, nguồn vào, bộ nhớ ống kính và nguồn.</li>
+        <li>Dán khối <b>shell_command</b> (bên dưới) vào <code>configuration.yaml</code> của bạn, khởi động lại Home Assistant, rồi chạm <b>Sync With HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Màn hình Home Assistant trong Projector Pilot hiển thị khối shell_command, Đăng nhập, ID thực thể máy chiếu và các công tắc đồng bộ" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Khối shell_command</h3>
+    <p class="lead">Đây là toàn bộ mẹo không cần máy chủ. Ứng dụng ghi một lệnh để Home Assistant chạy nhằm giao tiếp với Web Control của máy chiếu, và mọi script nó đồng bộ đều gọi lệnh đó với một động từ khác nhau. Chạm <b>Copy block</b> trong ứng dụng và dán vào <code>configuration.yaml</code>. Ví dụ bên dưới chỉ mang tính minh họa - ứng dụng sẽ điền địa chỉ và tên lệnh riêng của máy chiếu bạn:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Chỉ là ví dụ. Ứng dụng tạo khối của bạn với IP thật của máy chiếu và một tên dẫn xuất từ số sê-ri.</p>
+    <div class="note"><b>Vì sao không cần máy chủ.</b> <code>curl</code> đó chạy trên thiết bị Home Assistant, không phải điện thoại của bạn. Home Assistant kết nối thẳng tới IP của máy chiếu qua Web Control, nên một tự động hóa chạy dù ứng dụng có mở hay không và dù điện thoại của bạn có ở nhà hay không. Người dùng digest <code>EPSONWEB</code> là tài khoản đăng nhập Web Control; ứng dụng dùng mật khẩu Web Control đã lưu cho máy chiếu.</p></div>
+
+    <h3 style="margin-top:32px">Kiểm tra kết nối, Sync và dọn dẹp</h3>
+    <ul class="plain">
+      <li><b>Kiểm tra kết nối</b> xác nhận ứng dụng có thể kết nối tới Home Assistant của bạn và <code>shell_command</code> đã dán thực sự có mặt, để bạn tìm ra lỗi gõ trước khi xây dựng bất cứ thứ gì dựa trên nó.</li>
+      <li><b>Sync With HA</b> ghi hoặc cập nhật các script cho Cảnh và điều khiển của bạn, đồng thời dựng sẵn một bảng điều khiển Projector Pilot thẳng vào Home Assistant. Chạy lại bất cứ lúc nào bạn thêm một Cảnh hoặc thay đổi một điều khiển - nó cập nhật tại chỗ thay vì chất đống bản trùng lặp.</li>
+      <li><b>Remove orphaned scripts</b> tìm các script do ứng dụng ghi mà không còn Cảnh hoặc điều khiển tương ứng - ví dụ sau khi bạn xóa một Cảnh - <b>liệt kê chính xác những script sẽ xóa và hỏi trước</b>. Không có gì bị xóa cho đến khi bạn xác nhận. Nó chỉ chạm tới các script do Projector Pilot tạo; không có gì khác trong Home Assistant của bạn bị ảnh hưởng, và nếu Home Assistant không liệt kê được các script của nó, sẽ không có gì bị xóa.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Danh sách kiểm tra thiết lập</div>
+      <h2>Ứng dụng cho bạn biết cái gì đã xong và cái gì còn thiếu</h2>
+      <p class="lead">Màn hình Home Assistant có <b>Danh sách kiểm tra thiết lập</b> và bảng <b>Home Assistant của bạn có gì</b>, nên bạn không bao giờ phải đoán còn bước nào. Mỗi hàng cho biết đã xong, còn thiếu hay không xác định được, và nói rõ bước tiếp theo cần làm.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Đã kết nối với Home Assistant</b> - đã đăng nhập và đang phản hồi. Nếu Home Assistant không phản hồi, hàng này nhắc bạn kiểm tra địa chỉ và điện thoại có cùng mạng không.</li>
+      <li><b>Máy chiếu đã được thêm vào Home Assistant</b> - Home Assistant đã có máy chiếu này chưa. Nếu chưa, hàng này dẫn bạn đến thêm tích hợp PJLink, và bước thêm tích hợp hiển thị host và cổng PJLink mà Home Assistant hỏi.</li>
+      <li><b>Đã đăng ký cảm biến số liệu</b> - cảm biến mang các số liệu của máy chiếu bạn. Nó được đăng ký lần đầu khi ứng dụng đọc máy chiếu, và hàng này đưa ra <b>Đăng ký ngay</b> hoặc <b>Bật</b> khi có thứ gì đó đang ngăn cản.</li>
+      <li><b>Home Assistant của bạn có gì</b> - HACS (cửa hàng cộng đồng), tích hợp Epson Projector Link, tích hợp PJLink và các lệnh Projector Pilot trong <code>configuration.yaml</code>. Mỗi mục hiển thị Found, Not installed hoặc Could not tell, kèm các nút Cách cài đặt và Mở trong HACS khi hữu ích.</li>
+    </ul>
+    <div class="note"><b>Kiểm tra lại cho bạn biết nó tìm thấy gì.</b> Chạm <b>Kiểm tra lại</b> sau khi bạn khắc phục điều gì đó và ứng dụng đọc lại Home Assistant của bạn rồi báo kết quả, thay vì để bạn tự hỏi liệu nó có hiệu quả không. Một hàng không kiểm tra được sẽ ghi <i>Không xác định được</i>, không bao giờ là một câu có hoặc không đoán bừa.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hoạt động với những gì bạn đã có</div>
+      <h2>Hỗ trợ tích hợp PJLink lõi, và thẻ phong phú hơn khi bạn có</h2>
+      <p class="lead">Projector Pilot tìm hiểu Home Assistant của bạn đã cài những gì và xây dựng xoay quanh đó. Nó hoạt động với <b>tích hợp PJLink lõi</b> mà Home Assistant đã có sẵn, nên một máy chiếu PJLink bạn đã thêm ở đó được đối xử như công dân hạng nhất.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ưu tiên thẻ có sẵn.</b> Nếu bạn không có thẻ cộng đồng, Sync dựng bảng điều khiển bằng các thẻ có sẵn của Home Assistant và báo cho bạn khi xong. Dùng được ngay không cần cài thêm.</li>
+      <li><b>Nâng cấp khi đã cài thẻ HACS.</b> Ứng dụng kiểm tra những thẻ cộng đồng nào (Mushroom, button-card, card-mod, apexcharts-card) đã được cài và nâng cấp từng thẻ lên bản phong phú hơn khi bạn có. <a href="/vi/guide/home-assistant-dashboard/">Hướng dẫn bảng điều khiển tự xây dựng</a> đi xa hơn nếu bạn muốn trọn bộ giao diện kính xanh lá.</li>
+      <li><b>Cảnh và điều khiển cần một lần dán.</b> Nếu Home Assistant chưa có lệnh gửi tới máy chiếu, bảng điều khiển vẫn được dựng với số liệu trực tiếp, và một thẻ <b>Hoàn tất thiết lập</b> hướng dẫn bạn: chạm Copy block, dán vào <code>configuration.yaml</code>, khởi động lại Home Assistant, rồi chạm Sync lần nữa.</li>
+      <li><b>Chưa cài gì? Hãy dán thủ công.</b> Nếu chưa cài gì trong Home Assistant, bạn vẫn có thể sao chép mọi thứ từ ứng dụng và tự dán.</li>
+      <li><b>Mật khẩu được nêu rõ.</b> Khối lệnh bạn dán cho biết khi nào nó có chứa mật khẩu máy chiếu, để bạn biết trước khi chia sẻ hoặc lưu trữ.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Khi máy chiếu đang tắt</div>
+      <h2>Số liệu được giữ lại</h2>
+      <p class="lead">Máy chiếu ở chế độ chờ báo cáo rất ít, nên bảng điều khiển thường sẽ trống trơn. <b>Cảm biến giá trị cuối</b> tùy chọn giữ lại các số liệu gần nhất của máy chiếu - nguồn vào, số giờ bóng đèn hoặc laser - trong Home Assistant khi máy chiếu đang tắt.</p>
+    </div>
+    <ul class="plain">
+      <li>Đó là thêm một khối tùy chọn: dán vào cuối <code>configuration.yaml</code> (hoặc chỉ thêm các dòng của nó dưới một mục <code>template:</code> có sẵn) và khởi động lại Home Assistant. Ứng dụng có nút <b>Kiểm tra xem đã có chưa</b> cho bạn biết Home Assistant có nó hay không.</li>
+      <li>Việc tắt nguồn giờ được gửi tới Home Assistant dưới dạng <b>off</b>, nên bảng điều khiển và các tự động hóa của bạn thấy máy chiếu đang tắt khi nó thực sự tắt.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cảnh dưới dạng script</div>
+      <h2>Mỗi Cảnh trở thành một script Home Assistant</h2>
+      <p class="lead">Sau khi đồng bộ, các Cảnh của bạn không bị kẹt trong ứng dụng. Mỗi Cảnh, cùng nguồn, từng nguồn vào, từng chế độ màu và từng bộ nhớ ống kính mà máy chiếu của bạn thực sự có, được ghi thành một script Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Tự động hóa có thể chạy chúng.</b> “Lúc hoàng hôn, nếu TV bật, chạy Movie Night” là một tự động hóa Home Assistant bình thường khi Cảnh đã là một script.</li>
+      <li><b>Trợ lý giọng nói có thể chạy chúng.</b> Hãy mở một script cho trợ lý của bạn và “bật Movie Night” sẽ đặt nguồn vào, chế độ hình ảnh và bộ nhớ ống kính cùng lúc.</li>
+      <li><b>Chỉ các điều khiển thật của bạn mới xuất hiện.</b> Ứng dụng ghi một script cho từng nguồn vào, chế độ màu và bộ nhớ ống kính mà máy chiếu báo cáo - không phải một danh sách chung chung do nó đoán.</li>
+      <li><b>Gỡ đồng bộ chỉ xóa những gì ứng dụng đã ghi.</b> Tắt đồng bộ, hoặc dùng Remove orphaned scripts (liệt kê chúng và hỏi trước), và Projector Pilot xóa các script nó đã tạo chứ không xóa gì khác.</li>
+    </ul>
+    <div class="note"><b>Script được đặt tên để việc đổi tên cập nhật đúng script đó.</b> Tên script dẫn xuất từ máy chiếu và điều khiển, nên đồng bộ lại sau khi bạn đổi tên một Cảnh sẽ cập nhật script hiện có thay vì tạo ra một bản sao thứ hai.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trang tổng quan</div>
+      <h2>Sync dựng bảng điều khiển cho bạn</h2>
+      <p class="lead">Bạn không phải tự dựng một chế độ xem Lovelace, và cũng không còn phải dán nữa. Khi bạn chạm <b>Sync With HA</b>, ứng dụng dựng một bảng điều khiển Projector Pilot hoàn chỉnh trực tiếp trong Home Assistant qua API của nó: trạng thái trực tiếp của máy chiếu và một nút cho mọi Cảnh và điều khiển đã đồng bộ. Nó xuất hiện trên thanh bên Home Assistant với tên <b>Projector Pilot</b> - mở ra là xong.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Bảng điều khiển Projector Pilot trong Home Assistant: nguồn và nguồn vào, chế độ màu, trình đơn hình ảnh đầy đủ, HDR và tín hiệu, hiệu chỉnh RGB, ống kính và hình học, biểu đồ số giờ laser, bảo trì và các Cảnh - tất cả đều là ô kính xanh lá" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Một phiên bản bảng điều khiển phong phú hơn, tự tay xây dựng. Bảng mà Sync dựng cho bạn mang cùng trạng thái trực tiếp và các nút bằng thẻ Home Assistant tiêu chuẩn; giao diện kính xanh lá bên dưới là bản tùy chỉnh không bắt buộc. Cuộn để xem, hoặc nhấp để phóng to.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Đăng nhập Home Assistant trong ứng dụng.</li>
+      <li>Dán <b>khối Copy</b> của ứng dụng vào <code>configuration.yaml</code> một lần và khởi động lại Home Assistant (bước thủ công duy nhất - Home Assistant không cho ứng dụng thêm lệnh đó từ xa).</li>
+      <li>Chạm <b>Sync With HA</b>. Bảng điều khiển được dựng sẵn cho bạn và xuất hiện trên thanh bên với tên <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Thích tự dán hơn?</b> <b>Sao chép bảng điều khiển</b> vẫn còn trên màn hình Home Assistant. Chạm vào đó, rồi trong Home Assistant vào <b>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard</b>, tạo một bảng điều khiển trống, mở trình đơn ba chấm &rsaquo; <b>Edit dashboard</b> &rsaquo; trình đơn ba chấm &rsaquo; <b>Raw configuration editor</b>, và dán YAML đã sao chép.</div>
+    <p class="lead">Dù được dựng sẵn hay bạn tự dán, bảng điều khiển đều giống nhau - một thẻ trạng thái cộng một nút cho từng điều khiển (đoạn minh họa):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Chỉ là ví dụ. Bảng điều khiển của bạn mang thực thể thật của máy chiếu và các Cảnh của riêng bạn.</p>
+    <div class="note"><b>Không phụ thuộc model.</b> Bảng điều khiển được dựng từ khả năng của <i>chính</i> máy chiếu bạn - thực thể, các thông số hình ảnh, nguồn vào, chế độ màu, bộ nhớ ống kính và Cảnh mà nó thực sự báo cáo. Ảnh chụp màn hình ở đây là QB1000; model của bạn có thể hiển thị nguồn vào, điều khiển và số liệu khác. Để có bảng kính xanh lá đầy đủ như trong ảnh, hãy làm theo <a href="/vi/guide/home-assistant-dashboard/">hướng dẫn bảng điều khiển từng bước</a> hoặc <a href="/vi/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>tải về giao diện hoàn chỉnh</a> và đổi hai chuỗi.</div>
+    <div class="note"><b>Muốn một bức tường phong phú hơn?</b> Cùng các script đó điều khiển bất kỳ thẻ nào bạn thích. Nếu bạn đã dùng AVR Maestro, cách làm hoàn toàn giống nhau - dựng các ô nguồn và chế độ phát sáng, tiêu đề trực tiếp và lịch sử từ một cảm biến và các script đã đồng bộ.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Thiết lập Hubitat</h2>
+      <p class="lead">Trên Hubitat, Projector Pilot phản chiếu máy chiếu lên một thiết bị trong hub của bạn qua Maker API, để Rule Machine có thể đọc và tác động lên nguồn, tắt tiếng và nguồn vào.</p>
+    </div>
+    <ol class="steps">
+      <li>Trong Hubitat, bật ứng dụng <b>Maker API</b>, ghi lại URL truy cập và mã thông báo của nó, và chọn những thiết bị nào nó mở ra.</li>
+      <li>Trong Projector Pilot, mở <b>Cài đặt &rsaquo; Home Automation &rsaquo; Hubitat</b> và nhập thông tin <b>Maker API</b> của hub.</li>
+      <li>Chọn <b>thiết bị đại diện cho máy chiếu</b>. Ứng dụng gợi ý thiết bị có khả năng nhất; hãy chọn nó hoặc tự chọn thiết bị của bạn.</li>
+      <li>Ứng dụng <b>phản chiếu nguồn, tắt tiếng và nguồn vào</b> lên thiết bị đó, chỉ gửi những lệnh mà thiết bị chấp nhận.</li>
+      <li>Xây dựng các quy tắc <b>Rule Machine</b> dựa trên thiết bị đó như với bất kỳ thiết bị nào khác - trạng thái của máy chiếu điều khiển chúng.</li>
+    </ol>
+    <div class="note"><b>Chỉ những gì thiết bị chấp nhận.</b> Ứng dụng chỉ gửi giá trị máy chiếu tới Hubitat khi thiết bị đã chọn hỗ trợ lệnh đó, nên nó không bao giờ đẩy thứ mà thiết bị sẽ từ chối.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhook</div>
+      <h2>Thiết lập Webhooks</h2>
+      <p class="lead">Webhooks là giải pháp vạn năng. Ứng dụng gửi dữ liệu tới một URL của bạn khi máy chiếu bật, tắt, đổi nguồn vào hoặc gọi lại một Cảnh - một webhook Home Assistant, Node-RED, IFTTT, hoặc bất cứ thứ gì nhận JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Mở <b>Cài đặt &rsaquo; Home Automation &rsaquo; Webhooks</b>.</li>
+      <li>Nhập <b>URL</b> để gửi tới. Một webhook Home Assistant trông như <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Chọn <b>sự kiện</b> nào kích hoạt webhook: bật nguồn, tắt nguồn, đổi nguồn vào, gọi lại Cảnh - và tùy chọn lọc theo một nguồn vào hoặc Cảnh cụ thể.</li>
+      <li>Tùy chọn đặt <b>payload tùy chỉnh</b> nếu dịch vụ nhận cần một định dạng riêng; nếu không ứng dụng gửi JSON mặc định.</li>
+      <li>Lưu. Từ đó ứng dụng gửi dữ liệu mỗi khi có sự kiện khớp.</li>
+    </ol>
+    <p class="lead">Payload mặc định là JSON thuần - một sự kiện, máy chiếu và giá trị đã thay đổi:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Payload ví dụ. Một sự kiện đổi nguồn vào hoặc nguồn mang các trường liên quan tới nó.</p>
+    <div class="note"><b>Liên kết lại sẽ sửa tất cả.</b> Nếu bạn liên kết lại Home Assistant ở một địa chỉ mới, ứng dụng cập nhật mọi webhook trỏ tới nó cùng lúc, nên việc chuyển hệ thống sang nơi khác không có nghĩa là phải sửa từng cái thủ công.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Khắc phục sự cố</h2>
+    </div>
+    <details class="more"><summary>Đăng nhập bị quay lại trang đăng nhập</summary>
+      <p>Hãy chắc chắn địa chỉ bạn nhập đúng là địa chỉ bạn truy cập Home Assistant, bao gồm cả cổng (thường là <code>:8123</code>). Đăng nhập là một lần đăng nhập thật qua trình duyệt vào hệ thống của bạn, nên tên người dùng, mật khẩu và mã xác thực hai yếu tố đều áp dụng. Trên điện thoại, đăng nhập hoàn tất dù trình duyệt trong ứng dụng trả kết quả về hay callback cục bộ trả về trước; nếu vẫn bị kẹt, hãy đóng bảng và chạm Đăng nhập lại.</p>
+    </details>
+    <details class="more"><summary>Cảm biến máy chiếu không xuất hiện trong Home Assistant</summary>
+      <p>Cảm biến được công bố khi ứng dụng đang mở và <b>Gửi trạng thái máy chiếu</b> đang bật, nên hãy mở ứng dụng và xác nhận công tắc đó. Sau đó kiểm tra <b>Developer Tools &rsaquo; States</b> trong Home Assistant và lọc theo <code>projector_pilot</code>. Máy chiếu ở chế độ chờ công bố rất ít; hãy đánh thức nó và các số liệu sẽ được điền đầy.</p>
+    </details>
+    <details class="more"><summary>Các script đã đồng bộ bị thiếu</summary>
+      <p>Các script được ghi bởi <b>Sync With HA</b>, cần khối <code>shell_command</code> đã được dán vào <code>configuration.yaml</code> và Home Assistant được khởi động lại một lần. Hãy chạy <b>Kiểm tra kết nối</b> trước - nó cho bạn biết khối đó có mặt hay không. Sau đó Sync lại. Nếu các script cũ, đã chết làm rối danh sách, hãy dùng <b>Remove orphaned scripts</b>.</p>
+    </details>
+    <details class="more"><summary>Một script chạy trong ứng dụng nhưng không chạy từ Home Assistant khi điện thoại tôi vắng nhà</summary>
+      <p>Đó chính là mục đích của khối <code>shell_command</code> - nó cho phép Home Assistant tự kết nối tới IP của máy chiếu. Nếu nó chỉ hoạt động khi ứng dụng đang mở, có lẽ khối chưa được dán hoặc Home Assistant chưa được khởi động lại sau khi dán. Hãy xác nhận bằng Kiểm tra kết nối, khởi động lại Home Assistant, rồi Sync.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Nối máy chiếu của bạn vào cả ngôi nhà</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation là tiện ích bổ sung mua một lần. Không đăng ký, không tài khoản, không đám mây. Một lần mua mở khóa trên mọi nền tảng bạn sở hữu.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - đã có</a>
+      <span class="pill">App Store - đang chờ phê duyệt</span>
+      <span class="pill">Microsoft Store - đang chờ phê duyệt</span>
+      <span class="pill">Mac App Store - đang chờ phê duyệt</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/vi/pricing/">Xem So sánh Miễn phí, Pro và Home Automation &rarr;</a> &middot; <a href="/vi/guide/">Hướng dẫn sử dụng đầy đủ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Giải đáp nhanh</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Điện thoại của tôi có cần luôn ở trong mạng để các tự động hóa Home Assistant chạy không?</h3><p>Không. Sau khi bạn dán khối shell_command vào Home Assistant và đồng bộ, Home Assistant gửi lệnh thẳng tới địa chỉ IP của máy chiếu. Projector Pilot chỉ là công cụ thiết lập; sau đó, Home Assistant tự giao tiếp với máy chiếu, dù điện thoại của bạn có ở nhà hay không.</p></div><div class="gcard"><h3>Máy chiếu xuất hiện trong Home Assistant như thế nào?</h3><p>Dưới dạng một cảm biến, ví dụ sensor.projector_pilot_epson_qb1000b_qb1000w, mang theo nguồn, nguồn vào, chế độ màu, các thông số hình ảnh và số giờ bóng đèn, được cập nhật mỗi khi chúng thay đổi trong lúc ứng dụng đang mở. Bật Sync Advanced Controls và ứng dụng còn ghi một script Home Assistant cho từng Cảnh, cùng nguồn, từng nguồn vào, từng chế độ màu và từng bộ nhớ ống kính mà máy chiếu của bạn có.</p></div><div class="gcard"><h3>Home Automation có miễn phí không?</h3><p>Home Automation là tiện ích bổ sung trả phí, mua một lần, tách biệt với Projector Pilot Pro. Gói combo mua cả hai cùng lúc với giá ưu đãi. Xem trang giá.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/help/">Trợ giúp &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/vi/help/#privacy">Quyền riêng tư</a><a href="/vi/help/#terms">Điều khoản</a></div>
+<div class="flinks"><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/guide/dashboard/">Trang tổng quan</a><a href="/vi/guide/remote/">Điều khiển từ xa</a><a href="/vi/guide/picture/">Hình ảnh</a><a href="/vi/guide/lens/">Ống kính</a><a href="/vi/guide/scenes/">Cảnh</a><a href="/vi/guide/home-assistant-dashboard/">Bảng điều khiển HA</a><a href="/vi/guide/maintenance/">Bảo trì</a><a href="/vi/guide/settings/">Cài đặt</a><a href="/vi/guide/languages/">Ngôn ngữ</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot là ứng dụng độc lập dành cho máy chiếu Epson và PJLink. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant, Hubitat, Apple, Google hoặc Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play và Microsoft Store là nhãn hiệu của các chủ sở hữu tương ứng, chỉ được nêu tên để mô tả những gì ứng dụng hoạt động cùng.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

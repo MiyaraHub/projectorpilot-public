@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Skenario Proyektor Sekali Ketuk - Projector Pilot</title>
+<meta name="description" content="Simpan daya, input, gambar, memori lensa, dan lainnya dari proyektor Anda sebagai Skenario dan panggil dengan sekali ketuk. Setiap Skenario bisa menjadi skrip Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/id/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Skenario Proyektor Sekali Ketuk - Projector Pilot" />
+<meta property="og:description" content="Simpan daya, input, gambar, memori lensa, dan lainnya dari proyektor Anda sebagai Skenario dan panggil dengan sekali ketuk. Setiap Skenario bisa menjadi skrip Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/id/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Skenario Proyektor Sekali Ketuk - Projector Pilot" />
+<meta name="twitter:description" content="Simpan daya, input, gambar, memori lensa, dan lainnya dari proyektor Anda sebagai Skenario dan panggil dengan sekali ketuk. Setiap Skenario bisa menjadi skrip Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "Skenario Proyektor Sekali Ketuk - Projector Pilot", "description": "Simpan daya, input, gambar, memori lensa, dan lainnya dari proyektor Anda sebagai Skenario dan panggil dengan sekali ketuk. Setiap Skenario bisa menjadi skrip Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "Skenario Proyektor: seluruh ruangan Anda, dalam sekali ketuk", "description": "Simpan daya, input, gambar, memori lensa, dan lainnya dari proyektor Anda sebagai Skenario dan panggil dengan sekali ketuk. Setiap Skenario bisa menjadi skrip Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "id", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Skenario", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/id/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa"><a href="/id/#features">Fitur</a><a href="/id/guide/">Panduan</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/help/">Bantuan</a><a class="cta" href="/id/#download">DAPATKAN APLIKASI</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Skenario</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Tab Skenario &middot; Pro</div>
+        <h1>Skenario Proyektor: seluruh ruangan Anda, dalam sekali ketuk</h1>
+        <p class="lead">Skenario merekam proyektor Anda persis seperti kondisinya saat ini dan mengembalikan semuanya nanti dengan satu ketukan. Movie night, pertandingan besar, matine Minggu yang terang - masing-masing Skenario sendiri, masing-masing hanya satu ketukan. Anda memilih dengan tepat bagian mana yang disimpan Skenario, dan hanya bagian yang benar-benar dilaporkan proyektor Anda yang ditawarkan.</p>
+        <p class="lead">Skenario adalah bagian dari <a href="/id/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="Tab Skenario di Projector Pilot dengan tombol Simpan Saat Ini" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cara menyimpannya</div>
+      <h2>Atur ruangan, lalu rekam</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Atur.</b> Buat proyektor persis seperti yang Anda inginkan - input, mode warna, gambar, memori lensa, semuanya.</li>
+      <li><b>Simpan Saat Ini.</b> Di tab Skenario ketuk <b>Simpan Saat Ini</b>, beri nama Skenario, dan centang bagian mana yang disimpan. Pemilih hanya menawarkan apa yang dilaporkan proyektor Anda, jadi Anda tidak pernah menyimpan pengaturan yang tidak dimiliki model Anda.</li>
+      <li><b>Panggil.</b> Ketuk Skenario untuk menerapkannya. Projector Pilot mengonfirmasi setiap pengaturan terhadap proyektor selagi berjalan dan tidak pernah mengklaim perubahan yang tidak berhasil.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Apa yang direkam Skenario</div>
+      <h2>Sebanyak atau sesedikit yang Anda centang</h2>
+      <p class="lead">Satu Skenario bisa merekam salah satu dari berikut. Pemanggilan hanya memutar ulang bagian yang Anda centang, jadi Skenario "late show" bisa menurunkan keluaran cahaya dan membiarkan yang lain apa adanya.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Daya</h3><p>Status daya proyektor, sehingga Skenario bisa membangunkannya atau mengirimnya ke standby sebagai bagian dari penyiapan.</p></div>
+      <div class="gcard"><h3>Input</h3><p>Sumber yang dituju Skenario, sehingga "Movie Night" selalu mendarat di HDMI yang tepat.</p></div>
+      <div class="gcard"><h3>Gambar</h3><p>Mode warna dan nilai gambar, masing-masing dalam skala menu proyektor sendiri.</p></div>
+      <div class="gcard"><h3>Sinyal</h3><p>Pengaturan sisi sinyal yang diekspos proyektor Anda untuk konten yang sedang Anda tonton.</p></div>
+      <div class="gcard"><h3>Cahaya</h3><p>Keluaran sumber cahaya, sehingga ruangan terang dan gelap masing-masing punya pengaturan sendiri.</p></div>
+      <div class="gcard"><h3>Geometri</h3><p>Status penyelarasan dan geometri yang membingkai gambar di layar Anda.</p></div>
+      <div class="gcard"><h3>Audio</h3><p>Pengaturan audio yang dilaporkan proyektor, disimpan bersama yang lain.</p></div>
+      <div class="gcard"><h3>Hanya yang dilaporkan</h3><p>Daftar centang dibuat dari apa yang benar-benar dijawab proyektor Anda, jadi tidak ada yang Anda simpan berupa tebakan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Otomasi</div>
+      <h2>Setiap Skenario menjadi skrip Home Assistant</h2>
+      <p class="lead">Tempel satu blok ke konfigurasi Home Assistant Anda sekali saja dan Projector Pilot menulis skrip untuk setiap Skenario yang Anda punya, plus daya, setiap input, setiap mode warna, dan setiap memori lensa yang benar-benar dimiliki proyektor Anda. Otomasi atau asisten suara kemudian bisa menjalankan Skenario apa pun, dan aplikasi menghapus skrip yang ditulisnya saat Anda mematikan sinkron, tanpa menyentuh yang lain.</p>
+    </div>
+    <div class="note">Skenario juga bekerja lewat <b>webhook</b> - memanggil Skenario bisa mengirim ke URL milik Anda - dan dicerminkan ke <b>Hubitat</b> lewat Maker API. Semuanya ada di <a href="/id/guide/home-automation/">panduan Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bagikan hasil kerja Anda</div>
+      <h2>Profil skenario yang dapat dibagikan</h2>
+      <p class="lead">Sudah menyetel Skenario yang Anda banggakan? Ekspor dan berikan ke teman, atau impor yang dibagikan seseorang kepada Anda. Profil skenario berpindah antar instalasi sehingga penyiapan yang bagus tidak perlu dibangun ulang dari nol di setiap proyektor.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lanjutkan membaca</div>
+      <h2>Panduan terkait</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/id/guide/lens/">Kontrol lensa</a>
+      <a href="/id/guide/home-automation/">Home Assistant</a>
+      <a href="/id/guide/settings/">Pengaturan</a>
+      <a href="/id/guide/">Panduan pengguna lengkap</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/id/guide/">Panduan Pengguna</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/help/">Bantuan &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/id/help/#privacy">Privasi</a><a href="/id/help/#terms">Ketentuan</a></div>
+<div class="flinks"><a href="/id/guide/getting-started/">Memulai</a><a href="/id/guide/dashboard/">Dasbor</a><a href="/id/guide/remote/">Remote</a><a href="/id/guide/picture/">Gambar</a><a href="/id/guide/lens/">Lensa</a><a href="/id/guide/scenes/">Skenario</a><a href="/id/guide/home-assistant-dashboard/">Dasbor HA</a><a href="/id/guide/maintenance/">Perawatan</a><a href="/id/guide/settings/">Pengaturan</a><a href="/id/guide/languages/">Bahasa</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot adalah aplikasi independen untuk proyektor Epson dan PJLink. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, Hubitat, Apple, Google, atau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, dan Microsoft Store adalah merek dagang dari pemiliknya masing-masing, disebutkan hanya untuk menjelaskan apa yang didukung aplikasi ini.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>تطبيق للتحكم في أجهزة عرض Epson وPJLink - Projector Pilot</title>
+<meta name="description" content="Projector Pilot تطبيق لأجهزة عرض Epson وPJLink: التشغيل والمدخل والصورة والعدسة الكهربائية والمشاهد بلمسة واحدة وHome Assistant. دون اشتراك." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ar/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="تطبيق للتحكم في أجهزة عرض Epson وPJLink - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot تطبيق لأجهزة عرض Epson وPJLink: التشغيل والمدخل والصورة والعدسة الكهربائية والمشاهد بلمسة واحدة وHome Assistant. دون اشتراك." />
+<meta property="og:url" content="https://projectorpilot.com/ar/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="تطبيق للتحكم في أجهزة عرض Epson وPJLink - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot تطبيق لأجهزة عرض Epson وPJLink: التشغيل والمدخل والصورة والعدسة الكهربائية والمشاهد بلمسة واحدة وHome Assistant. دون اشتراك." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "تطبيق للتحكم في أجهزة عرض Epson وPJLink - Projector Pilot", "description": "Projector Pilot تطبيق لأجهزة عرض Epson وPJLink: التشغيل والمدخل والصورة والعدسة الكهربائية والمشاهد بلمسة واحدة وHome Assistant. دون اشتراك.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "تطبيق مستقل لأجهزة عرض Epson وPJLink: التشغيل والمدخل، والتحكم الكامل في الصورة والألوان، وإزاحة العدسة الكهربائية والتركيز والتكبير والذاكرات، والمشاهد بلمسة واحدة، وأتمتة Home Assistant وHubitat وWebhooks، وإحصاءات الصيانة وأدوات الشاشة الرئيسية، بـ 29 لغة.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "مجاني", "price": "0", "priceCurrency": "USD", "description": "أضف جهاز عرض، والتشغيل، وتبديل المدخل، والحالة المباشرة، وأساسيات جهاز التحكم على الشاشة."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "عملية شراء لمرة واحدة داخل التطبيق. سعر مرجعي؛ ويعرض المتجر السعر لمنطقتك."}, {"@type": "Offer", "name": "إضافة أتمتة المنزل", "price": "2.99", "priceCurrency": "USD", "description": "عملية شراء لمرة واحدة داخل التطبيق. سعر مرجعي؛ ويعرض المتجر السعر لمنطقتك."}, {"@type": "Offer", "name": "حزمة Pro + أتمتة المنزل", "price": "11.99", "priceCurrency": "USD", "description": "عملية شراء لمرة واحدة داخل التطبيق. سعر مرجعي؛ ويعرض المتجر السعر لمنطقتك."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "هل Projector Pilot من صنع Epson؟", "acceptedAnswer": {"@type": "Answer", "text": "لا. Projector Pilot تطبيق مستقل من MiyaraHub Technologies LLC. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat، ولا تؤيده ولا ترعاه. هذه الأسماء علامات تجارية لأصحابها وتظهر هنا فقط لوصف أجهزة العرض وأنظمة المنزل الذكي التي يعمل التطبيق معها."}}, {"@type": "Question", "name": "ما أجهزة العرض التي يدعمها Projector Pilot؟", "acceptedAnswer": {"@type": "Answer", "text": "أجهزة عرض Epson عبر ESC/VP21 وWeb Control، وأي جهاز عرض PJLink. يستخدم التطبيق ما يجيب عليه جهاز العرض، فجهاز عرض PJLink فقط جهاز مدعوم عادي."}}, {"@type": "Question", "name": "هل Projector Pilot اشتراك؟", "acceptedAnswer": {"@type": "Answer", "text": "لا. التحكم الأساسي مجاني، وPro وأتمتة المنزل والحزمة عمليات شراء لمرة واحدة. دون اشتراك ودون إعلانات."}}, {"@type": "Question", "name": "هل يحتاج Projector Pilot إلى حساب أو سحابة؟", "acceptedAnswer": {"@type": "Answer", "text": "دون حساب ودون سحابة. يتحدث التطبيق إلى جهاز العرض مباشرة في شبكتك الخاصة."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ar/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة">
+      <a href="#features">الميزات</a>
+      <a href="/ar/guide/">الدليل</a>
+      <a href="/ar/pricing/">الأسعار</a>
+      <a href="/ar/highlights/">أبرز النقاط</a>
+      <a href="/ar/guide/home-automation/">Home Assistant</a>
+      <a href="/ar/help/">المساعدة</a>
+      <a class="cta" href="#download">احصل على التطبيق</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">أجهزة عرض Epson وPJLink</div>
+      <h1>تطبيق التحكم الذي يستحقه <span class="g">جهاز عرض Epson</span> منذ زمن.</h1>
+      <p>التشغيل والمدخل وقائمة الصورة الكاملة وإزاحة العدسة الكهربائية والتركيز والتكبير والمشاهد بلمسة واحدة وأتمتة منزلية حقيقية - لأجهزة عرض Epson وPJLink، مباشرة من هاتفك. دون إعلانات. دون اشتراك. دون حساب سحابي.</p>
+      <div class="pills">
+        <span class="pill">29 لغة</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">شراء لمرة واحدة</span>
+        <span class="pill">يعمل في شبكتك</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">احصل عليه من Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="لوحة تحكم Projector Pilot على هاتف تعرض التشغيل والمدخل ووضع الألوان بشكل مباشر لجهاز عرض Epson" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ماذا تفعل</div>
+      <h2>كل عنصر تحكم يتيحه جهاز العرض، في تطبيق واحد نظيف.</h2>
+      <p class="lead">يتحدث Projector Pilot إلى جهاز العرض عبر ESC/VP21 وPJLink وEpson Web Control في آن واحد، مستخدمًا أيًّا منها يستجيب - فتحصل على تحكم في التشغيل والصورة والهندسة والعدسة يعمل فعلًا، بقيم تُقرأ من جهاز العرض ولا تُخمَّن أبدًا.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="لوحة تحكم Projector Pilot مع الحالة المباشرة ومعلومات الإسقاط وملخصات الصورة والعدسة" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">لوحة التحكم</div>
+        <h3>كل شيء بنظرة واحدة، مبني كما تريد.</h3>
+        <ul>
+          <li><b>حالة مباشرة</b> - التشغيل والمدخل ووضع الألوان وساعات مصدر الضوء والإشارة وأرقام الصورة، تتحدث فور تغيّرها.</li>
+          <li><b>التشغيل والمدخل بلمسة واحدة</b> من الأعلى مباشرة، مع زر تشغيل يدرك الإحماء والتبريد.</li>
+          <li><b>بطاقات قابلة للتخصيص</b> - أضف البطاقات وأخفها وأعد ترتيبها لتعرض لوحة التحكم ما يهمك.</li>
+          <li><b>معلومات الإسقاط</b> - النطاق الديناميكي وفضاء الألوان وغاما وساعات الليزر والرقم التسلسلي والتركيب، مقروءة من جهاز العرض.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="شاشة جهاز التحكم في Projector Pilot مع لوحة التنقل والقائمة والمصدر وإخفاء الشاشة" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="شاشة الصورة في Projector Pilot مع السطوع والتباين وحرارة اللون وغاما" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">جهاز التحكم والصورة</div>
+        <h3>جهاز تحكم متعمق وقائمة الصورة الكاملة.</h3>
+        <ul>
+          <li><b>لوحة تنقل كاملة</b> وقائمة ومصدر وإخفاء الشاشة - جهاز التحكم على الشاشة كما يجب أن يكون.</li>
+          <li><b>طريقة التصحيح</b> - تصحيح الميل الأفقي/الرأسي، وتصحيح الزوايا السريع، وتصحيح النقاط، والسطح المنحني، وزاوية الجدار.</li>
+          <li><b>تحكم كامل في الصورة</b> - السطوع والتباين والصبغة والحدة وحرارة اللون وغاما وHDR وقائمة الصورة المتعمقة، كل منها على مقياس جهاز العرض نفسه.</li>
+          <li><b>HDR وفضاء الألوان منفصلان</b> - إشارة BT.2020 SDR تُعرض كما هي تمامًا، ولا تظهر أبدًا بشارة HDR خاطئة.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="شاشة العدسة في Projector Pilot مع لوحة الإزاحة والتركيز والتكبير ومنتقي حجم الخطوة" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">العدسة</div>
+        <h3>إزاحة العدسة الكهربائية والتركيز والتكبير والذاكرات.</h3>
+        <ul>
+          <li><b>الإزاحة والتركيز والتكبير</b> من لوحة دقيقة، مع <b>حجم خطوة تختاره</b> - دقيق للتأطير وكبير للحركات الواسعة.</li>
+          <li><b>ذاكرات العدسة</b> - استدعِ المواضع التي يدعمها جهاز العرض واحفظها.</li>
+          <li><b>يدرك الاتجاه</b> - يتبع التطبيق تخطيط جهاز العرض نفسه، سقفًا أو خلفيًا، فالأعلى هو الأعلى دائمًا.</li>
+          <li><b>قراءات صادقة</b> - الموضع الذي لا يستطيع جهاز العرض تأكيده لا يُلبَس أبدًا ثوب القفل.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="علامة تبويب المشاهد في Projector Pilot مع مشاهد محفوظة بلمسة واحدة" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">المشاهد</div>
+        <h3>لمسة واحدة للغرفة كلها.</h3>
+        <ul>
+          <li><b>احفظ مشهدًا</b> - التشغيل والمدخل والصورة والإشارة والضوء والهندسة والصوت، واختر بدقة الأجزاء التي تريد الاحتفاظ بها.</li>
+          <li><b>طبّق بلمسة واحدة</b> - «ليلة أفلام» تضبط المدخل ووضع الصورة وذاكرة العدسة معًا.</li>
+          <li><b>كل مشهد يصبح نصًا برمجيًا في Home Assistant</b>، فتستطيع أتمتة أو مساعد صوتي تشغيله أيضًا.</li>
+          <li><b>ملفات قابلة للمشاركة</b> - صدّر مشهدًا ضبطته وسلّمه لصديق.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="مركز أتمتة المنزل في Projector Pilot مع Home Assistant وHubitat وWebhooks" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="شاشة إعداد Home Assistant في Projector Pilot مع تسجيل الدخول ومفاتيح المزامنة" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">أتمتة المنزل</div>
+        <h3>Home Assistant وHubitat وWebhooks - بحق وحقيقة.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - سجّل الدخول، وانشر حالة جهاز العرض كمستشعر، والمس <b>المزامنة مع HA</b> لتحصل على نص برمجي لكل مشهد وعنصر تحكم.</li>
+          <li><b>لوحة تحكم مبنية لك</b> - تبنيها المزامنة في Home Assistant، ببطاقات مدمجة، وتُرقّى إلى بطاقات HACS الأغنى عند توفرها. وتعمل مع تكامل PJLink الأساسي أيضًا.</li>
+          <li><b>قائمة إعداد</b> تعرض ما أُنجز وما ينقص وما يجب فعله بعد ذلك، وتبقى قراءاتك في Home Assistant بينما جهاز العرض متوقف.</li>
+          <li><b>Hubitat</b> - اعكس جهاز العرض على جهاز عبر Maker API ليتصرف Rule Machine بناءً عليه.</li>
+          <li><b>Webhooks</b> - أرسل إلى أي رابط حين يعمل جهاز العرض أو يتوقف أو يتغير المدخل أو يُستدعى مشهد.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/ar/guide/home-automation/">اقرأ دليل Home Assistant الكامل &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">والمزيد</div>
+      <h2>التفاصيل التي تجعله يبدو مكتملًا.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>بدّل أجهزة العرض من أي مكان</h3><p>يتيح مبدّل أجهزة العرض في الشريط العلوي لكل صفحة جهاز عرض الانتقال بين أجهزتك دون العودة إلى القائمة.</p></div>
+      <div class="gcard"><h3>الإيقاف يسأل أولًا</h3><p>إيقاف تشغيل جهاز العرض يطلب منك التأكيد، فلا تنهي لمسة طائشة الفيلم.</p></div>
+      <div class="gcard"><h3>عناصر تحكم تستجيب فورًا</h3><p>تتحرك إزاحة العدسة والتركيز والتكبير وزر ضبط إخراج الضوء لحظة الضغط، ويلاحظ التطبيق تشغيل جهاز العرض خلال نحو عشر ثوانٍ.</p></div>
+      <div class="gcard"><h3>البرنامج الثابت بنظرة واحدة</h3><p>يظهر إصدار البرنامج الثابت لجهاز العرض في لوحة التحكم وعلامة تبويب المعلومات وفي تقرير التشخيص، متى أبلغ به جهاز العرض.</p></div>
+      <div class="gcard"><h3>تبديل المدخل في أجهزة العرض التي تدعم PJLink فقط</h3><p>أجهزة العرض التي لا تسرد مداخلها إلا عبر PJLink، مثل TW7300 وHome Cinema 4040، تبدّل المدخل، وكذلك تستطيع أجهزة عرض PJLink من غير Epson.</p></div>
+      <div class="gcard"><h3>اعثر على جهاز العرض في شبكة Wi-Fi</h3><p>تفحص إضافة جهاز عرض شبكتك بحثًا عن أي شيء يجيب كجهاز عرض وتملأ العنوان، مع شريط تقدم أثناء اكتشاف إمكانات طرازك.</p></div>
+      <div class="gcard"><h3>النسخ الاحتياطي والاستعادة</h3><p>صدّر إعدادات تطبيقك إلى ملف واستوردها مجددًا. يُشارَك الملف باسمه الحقيقي، ولا تنتقل فيه أجهزة العرض المحفوظة وكلمات المرور أبدًا.</p></div>
+      <div class="gcard"><h3>أبلغ عن خلل في خطوة واحدة</h3><p>يبني الإبلاغ عن خلل حزمة واحدة بكل السجلات ذات الصلة، جاهزة للإرسال.</p></div>
+      <div class="gcard"><h3>29 لغة</h3><p>الإنجليزية و28 لغة أخرى، بما فيها رسائل طلب الأذونات على iPhone وiPad وMac. انظر <a href="/ar/guide/languages/">قائمة اللغات</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/ar/highlights/">شاهد كل جديد &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">جولة سريعة</div>
+      <h2>مصمم ليبدو جزءًا من جهاز العرض.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="لوحة تحكم Projector Pilot مع الحالة المباشرة ومعلومات الإسقاط وملخصات الصورة والعدسة" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>لوحة التحكم</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="شاشة جهاز التحكم في Projector Pilot مع لوحة التنقل والقائمة والمصدر وإخفاء الشاشة" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>التحكم عن بُعد</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="شاشة العدسة في Projector Pilot مع لوحة الإزاحة والتركيز والتكبير ومنتقي حجم الخطوة" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>العدسة</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="شاشة إعداد Home Assistant في Projector Pilot مع تسجيل الدخول ومفاتيح المزامنة" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الأسئلة الشائعة</div>
+      <h2>أسئلة يطرحها الناس أولًا</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>هل Projector Pilot من صنع Epson؟</h3><p>لا. Projector Pilot تطبيق مستقل من MiyaraHub Technologies LLC. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat، ولا تؤيده ولا ترعاه. هذه الأسماء علامات تجارية لأصحابها وتظهر هنا فقط لوصف أجهزة العرض وأنظمة المنزل الذكي التي يعمل التطبيق معها.</p></div><div class="gcard"><h3>ما أجهزة العرض التي يدعمها Projector Pilot؟</h3><p>أجهزة عرض Epson عبر ESC/VP21 وWeb Control، وأي جهاز عرض PJLink. يستخدم التطبيق ما يجيب عليه جهاز العرض، فجهاز عرض PJLink فقط جهاز مدعوم عادي.</p></div><div class="gcard"><h3>هل Projector Pilot اشتراك؟</h3><p>لا. التحكم الأساسي مجاني، وPro وأتمتة المنزل والحزمة عمليات شراء لمرة واحدة. دون اشتراك ودون إعلانات.</p></div><div class="gcard"><h3>هل يحتاج Projector Pilot إلى حساب أو سحابة؟</h3><p>دون حساب ودون سحابة. يتحدث التطبيق إلى جهاز العرض مباشرة في شبكتك الخاصة.</p></div></div>
+    <p style="margin-top:22px"><a href="/ar/help/">مزيد من الإجابات في المساعدة والأسئلة الشائعة &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">احصل على التطبيق</div>
+      <h2>متاح على Google Play. والمزيد من المتاجر في الطريق.</h2>
+      <p class="lead">Projector Pilot متاح الآن على Google Play. أما App Store وMicrosoft Store وMac App Store فبانتظار الموافقة. عملية شراء واحدة تفتحه على كل منصة تملكها.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - متاح الآن</a>
+      <span class="pill">App Store - بانتظار الموافقة</span>
+      <span class="pill">Microsoft Store - بانتظار الموافقة</span>
+      <span class="pill">Mac App Store - بانتظار الموافقة</span>
+    </div>
+    <p style="margin-top:22px"><a href="/ar/guide/">افتح دليل المستخدم الكامل &rarr;</a> &nbsp; &middot; &nbsp; <a href="/ar/pricing/">شاهد المجاني مقابل Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/ar/guide/">دليل المستخدم</a>
+      <a href="/ar/pricing/">الأسعار</a>
+      <a href="/ar/highlights/">أبرز النقاط</a>
+      <a href="/ar/guide/home-automation/">Home Assistant</a>
+      <a href="/ar/help/">المساعدة والأسئلة الشائعة</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/ar/help/#privacy">الخصوصية</a>
+      <a href="/ar/help/#terms">الشروط</a>
+    </div>
+<div class="flinks"><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/guide/dashboard/">لوحة التحكم</a><a href="/ar/guide/remote/">جهاز التحكم</a><a href="/ar/guide/picture/">الصورة</a><a href="/ar/guide/lens/">العدسة</a><a href="/ar/guide/scenes/">المشاهد</a><a href="/ar/guide/home-assistant-dashboard/">لوحة HA</a><a href="/ar/guide/maintenance/">الصيانة</a><a href="/ar/guide/settings/">الإعدادات</a><a href="/ar/guide/languages/">اللغات</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot تطبيق مستقل لأجهزة عرض Epson وPJLink. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat أو Apple أو Google أو Microsoft، ولا تؤيده ولا ترعاه. Epson وPJLink وHome Assistant وHubitat وApp Store وMac App Store وGoogle Play وMicrosoft Store علامات تجارية لأصحابها، وتُذكر فقط لوصف ما يعمل التطبيق معه.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

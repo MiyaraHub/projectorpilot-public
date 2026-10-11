@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="cs" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Průvodce projektorem pro Home Assistant &amp; Hubitat - Projector Pilot</title>
+<meta name="description" content="Propojte svůj projektor Epson nebo PJLink s Home Assistant, Hubitat a webhooky. Synchronizovat s HA publikuje aktuální stav a promění každou Scénu ve skript." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Průvodce projektorem pro Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta property="og:description" content="Propojte svůj projektor Epson nebo PJLink s Home Assistant, Hubitat a webhooky. Synchronizovat s HA publikuje aktuální stav a promění každou Scénu ve skript." />
+<meta property="og:url" content="https://projectorpilot.com/cs/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Průvodce projektorem pro Home Assistant &amp; Hubitat - Projector Pilot" />
+<meta name="twitter:description" content="Propojte svůj projektor Epson nebo PJLink s Home Assistant, Hubitat a webhooky. Synchronizovat s HA publikuje aktuální stav a promění každou Scénu ve skript." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Průvodce projektorem pro Home Assistant & Hubitat - Projector Pilot", "description": "Propojte svůj projektor Epson nebo PJLink s Home Assistant, Hubitat a webhooky. Synchronizovat s HA publikuje aktuální stav a promění každou Scénu ve skript.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Váš projektor v Home Assistant a Hubitat.", "description": "Propojte svůj projektor Epson nebo PJLink s Home Assistant, Hubitat a webhooky. Synchronizovat s HA publikuje aktuální stav a promění každou Scénu ve skript.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "cs", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Domácí automatizace", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Musí můj telefon zůstat v síti, aby fungovaly automatizace Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Jakmile vložíte do Home Assistant jediný blok shell_command a synchronizujete, Home Assistant posílá příkazy přímo na IP adresu projektoru. Projector Pilot je jen nástroj pro nastavení; poté Home Assistant s projektorem komunikuje sám, ať je váš telefon doma, nebo ne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak se projektor objeví v Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jako senzor, například sensor.projector_pilot_epson_qb1000b_qb1000w, nesoucí napájení, vstup, barevný režim, obrazové hodnoty a hodiny lampy, aktualizovaný při každé změně, dokud je aplikace otevřená. Zapněte Synchronizovat pokročilé ovládání a aplikace také zapíše skript Home Assistant pro každou Scénu, plus napájení, každý vstup, každý barevný režim a každou paměť objektivu, které váš projektor má."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Je Domácí automatizace zdarma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Domácí automatizace je placený doplněk, jednorázový nákup, oddělený od Projector Pilot Pro. Balíček pořídí obojí dohromady se slevou. Viz stránka s ceníkem."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/cs/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk"><a href="/cs/#features">Funkce</a><a href="/cs/guide/">Průvodce</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/guide/home-assistant-dashboard/">Nástěnka HA</a><a href="/cs/help/">Nápověda</a><a class="cta" href="/cs/#download">ZÍSKEJTE APLIKACI</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Domácí automatizace</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooky</div>
+    <h1>Váš projektor <span class="g">v Home Assistant a Hubitat</span>.</h1>
+    <p>Projector Pilot publikuje aktuální stav vašeho projektoru a každé ovládání do Home Assistant, Hubitat a libovolného webhooku. Nastavte to jednou a váš chytrý domov projektor ovládá sám - bez telefonu v síti, bez cloudu uprostřed.</p>
+    <div class="readout"><span>Bez serveru po nastavení</span><span>Scény se stávají skripty</span><span>Hotová nástěnka</span><span>Kontrolní seznam nastavení</span><span>Placený doplněk</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Přehled</div>
+      <h2>Co Domácí automatizace dělá</h2>
+      <p class="lead">Domácí automatizace promění Projector Pilot z dálkového ovladače ve vaší ruce v zařízení, které vidí celý váš dům. Zveřejňuje, co projektor dělá - napájení, vstup, barevný režim, obrazové hodnoty, hodiny lampy - a vašemu chytrému domovu dává ovládání všeho, co umí aplikace měnit.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Publikuje stav.</b> Projektor se objeví jako senzor Home Assistant, zařízení Hubitat nebo datová zátěž JSON na vašem webhooku a nese stejné údaje, které vám ukazuje aplikace.</li>
+      <li><b>Publikuje ovládání.</b> Každá Scéna, kterou uložíte, plus napájení, každý vstup, každý barevný režim a každá paměť objektivu se stane něčím, co může spustit automatizace nebo hlasový asistent.</li>
+      <li><b>Běží bez serveru.</b> Jakmile jsou skripty nastaveny, Home Assistant posílá příkazy přímo na IP adresu projektoru. Váš telefon nemusí být v síti a nic neprochází cloudovým účtem.</li>
+    </ul>
+    <div class="note"><b>Domácí automatizace je placený doplněk.</b> Je to jednorázový nákup, oddělený od Projector Pilot Pro, a balíček pořídí obojí dohromady se slevou. Žádné předplatné, žádný účet, žádný cloud. Viz <a href="/cs/pricing/">ceník</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Tři cesty dovnitř, jedno centrum</h3>
+        <p class="lead">Nastavení &rsaquo; Domácí automatizace je centrum. Vyberte platformu, kterou používáte - Home Assistant, Hubitat nebo Webhooky - a nastavte ji tam. Můžete zapojit více než jednu najednou; jsou nezávislé.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Centrum Domácí automatizace v Projector Pilot: Home Assistant, Hubitat a Webhooky" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Nastavení Home Assistant</h2>
+      <p class="lead">Přihlaste se z aplikace, publikujte projektor jako senzor, vložte jeden blok do konfigurace a synchronizujte. Od té chvíle Home Assistant projektor ovládá sám.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Otevřete <b>Nastavení &rsaquo; Domácí automatizace &rsaquo; Home Assistant</b>.</li>
+        <li>Zadejte <b>adresu Home Assistant</b> (například <code>http://homeassistant.local:8123</code> nebo jeho IP) a klepněte na <b>Přihlásit se</b>. Je to přihlášení v prohlížeči k vaší vlastní instanci - <b>žádný token nevkládáte</b>. Použijte své obvyklé přihlášení do Home Assistant, včetně dvoufázového ověření.</li>
+        <li>Aplikace publikuje projektor jako <b>senzor</b> s entitou jako <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, nesoucí napájení, vstup, barevný režim, obrazové hodnoty a hodiny lampy.</li>
+        <li>Zapněte <b>Odesílat stav projektoru</b>, aby se tyto údaje v Home Assistant aktualizovaly při každé změně, dokud je aplikace otevřená, a zapněte <b>Synchronizovat pokročilé ovládání</b> pro publikování skriptů pro obrazové režimy, vstupy, paměti objektivu a napájení.</li>
+        <li>Vložte jeden blok <b>shell_command</b> (níže) do <code>configuration.yaml</code>, restartujte Home Assistant a klepněte na <b>Synchronizovat s HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Obrazovka Home Assistant v Projector Pilot s blokem shell_command, Přihlášením, ID entity projektoru a přepínači synchronizace" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Blok shell_command</h3>
+    <p class="lead">Tohle je celý trik bez serveru. Aplikace zapíše jeden příkaz, který Home Assistant spouští pro komunikaci s Web Control projektoru, a každý skript, který synchronizuje, tento příkaz volá s jiným slovesem. Klepněte v aplikaci na <b>Zkopírovat blok</b> a vložte ho do <code>configuration.yaml</code>. Příklad níže je ilustrační - aplikace doplní vlastní adresu a název příkazu vašeho projektoru:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Jen příklad. Aplikace vygeneruje váš s reálnou IP projektoru a názvem odvozeným z jeho sériového čísla.</p>
+    <div class="note"><b>Proč bez serveru.</b> Ten <code>curl</code> běží na zařízení s Home Assistant, ne na vašem telefonu. Home Assistant se k IP projektoru dostává přímo přes Web Control, takže automatizace se spustí, ať je aplikace otevřená, nebo ne, a ať je váš telefon doma, nebo ne. Uživatel <code>EPSONWEB</code> je přihlášení do Web Control; aplikace používá heslo Web Control, které je pro projektor již uloženo.</p></div>
+
+    <h3 style="margin-top:32px">Vyzkoušení připojení, synchronizace a úklid</h3>
+    <ul class="plain">
+      <li><b>Vyzkoušet připojení</b> ověří, že aplikace dosáhne na váš Home Assistant a že vložený <code>shell_command</code> tam skutečně je, takže překlep najdete dřív, než na něm cokoli postavíte.</li>
+      <li><b>Synchronizovat s HA</b> zapíše nebo aktualizuje skripty pro vaše Scény a ovládání a sestaví hotovou nástěnku Projector Pilot přímo v Home Assistant. Spusťte ji znovu, kdykoli přidáte Scénu nebo změníte ovládání - aktualizuje se na místě a nehromadí duplikáty.</li>
+      <li><b>Odebrat osiřelé skripty</b> najde skripty, které aplikace zapsala a které už nemají odpovídající Scénu nebo ovládání - například po smazání Scény - <b>vypíše přesně, které odebere, a nejdřív se zeptá</b>. Nic se nesmaže, dokud nepotvrdíte. Dotkne se jen skriptů, které vytvořil Projector Pilot; nic jiného ve vašem Home Assistant se nenaruší, a pokud Home Assistant svůj seznam skriptů nevydá, nic se neodebere.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kontrolní seznam nastavení</div>
+      <h2>Aplikace vám řekne, co je hotovo a co chybí</h2>
+      <p class="lead">Obrazovka Home Assistant obsahuje <b>Kontrolní seznam nastavení</b> a panel <b>Co váš Home Assistant má</b>, takže nikdy nehádáte, který krok zbývá. Každý řádek říká, zda je hotovo, chybí, nebo se to nepodařilo zjistit, a říká, co dělat dál.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Připojeno k Home Assistant</b> - přihlášeno a odpovídá. Pokud Home Assistant neodpovídá, řádek vám řekne, ať zkontrolujete adresu a že je váš telefon ve stejné síti.</li>
+      <li><b>Projektor přidán do Home Assistant</b> - zda už Home Assistant tento projektor má. Pokud ne, řádek vás odešle přidat integraci PJLink a krok přidání integrace ukáže hostitele a port PJLink, na které se Home Assistant ptá.</li>
+      <li><b>Senzor údajů zaregistrován</b> - senzor, který nese údaje vašeho projektoru. Zaregistruje se při prvním čtení projektoru aplikací a řádek nabídne <b>Zaregistrovat</b> nebo <b>Zapnout</b>, když tomu něco brání.</li>
+      <li><b>Co váš Home Assistant má</b> - HACS (komunitní obchod), integrace Epson Projector Link, integrace PJLink a příkazy Projector Pilot v <code>configuration.yaml</code>. Každá položka ukazuje Nalezeno, Nenainstalováno nebo Nelze zjistit, s tlačítky Jak nainstalovat a Otevřít v HACS, kde pomohou.</li>
+    </ul>
+    <div class="note"><b>Zkontrolovat znovu vám řekne, co našlo.</b> Po opravě něčeho klepněte na <b>Zkontrolovat znovu</b> a aplikace znovu načte váš Home Assistant a oznámí výsledek, místo aby vás nechala přemýšlet, zda to zabralo. Řádek, který nešlo zkontrolovat, říká <i>Nelze zjistit</i>, nikdy hádané ano nebo ne.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Funguje s tím, co už máte</div>
+      <h2>Podpora základní integrace PJLink a bohatší karty, když je máte</h2>
+      <p class="lead">Projector Pilot zjistí, co váš Home Assistant má nainstalováno, a podle toho staví. Funguje se <b>základní integrací PJLink</b>, kterou Home Assistant už obsahuje, takže projektor PJLink, který jste tam již přidali, je plnohodnotným občanem.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nejdřív vestavěné karty.</b> Pokud nemáte žádné komunitní karty, Synchronizace sestaví vaši nástěnku z vestavěných karet Home Assistant a po dokončení to oznámí. Funguje to hned.</li>
+      <li><b>Vylepšeno, když jsou nainstalovány karty z HACS.</b> Aplikace zkontroluje, které z komunitních karet (Mushroom, button-card, card-mod, apexcharts-card) jsou nainstalovány, a každou kartu vylepší na bohatší, kde ji máte. <a href="/cs/guide/home-assistant-dashboard/">Průvodce ruční nástěnkou</a> jde dál, pokud chcete plný zelený skleněný vzhled.</li>
+      <li><b>Scény a ovládání potřebují jedno vložení.</b> Pokud Home Assistant zatím nemá příkaz pro odesílání na projektor, nástěnka se přesto sestaví s živými údaji a karta <b>Dokončit nastavení</b> vás provede: klepněte na Zkopírovat blok, vložte ho do <code>configuration.yaml</code>, restartujte Home Assistant a znovu klepněte na Synchronizovat.</li>
+      <li><b>Nic nenainstalováno? Vložte ručně.</b> Pokud v Home Assistant není nainstalováno nic, můžete stále vše zkopírovat z aplikace a vložit sami.</li>
+      <li><b>Heslo je zvýrazněno.</b> Vkládaný blok příkazu uvádí, kdy nese heslo projektoru, takže to víte dřív, než ho sdílíte nebo uložíte.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Když je projektor vypnutý</div>
+      <h2>Údaje, které zůstanou</h2>
+      <p class="lead">Projektor v pohotovosti hlásí velmi málo, takže by nástěnka obvykle zůstala prázdná. Volitelný <b>senzor posledních známých hodnot</b> uchovává poslední údaje vašeho projektoru - vstup, hodiny lampy nebo laseru - v Home Assistant, dokud je projektor vypnutý.</p>
+    </div>
+    <ul class="plain">
+      <li>Je to jeden další volitelný blok: vložte ho na konec <code>configuration.yaml</code> (nebo přidejte jen jeho řádky pod existující sekci <code>template:</code>) a restartujte Home Assistant. Aplikace má tlačítko <b>Zkontrolovat, že tam je</b>, které řekne, zda ho Home Assistant má.</li>
+      <li>Vypnutí nyní do Home Assistant dorazí jako <b>off</b>, takže nástěnka i vaše automatizace vidí projektor jako vypnutý, když vypnutý je.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scény jako skripty</div>
+      <h2>Každá Scéna se stane skriptem Home Assistant</h2>
+      <p class="lead">Po synchronizaci vaše Scény nezůstanou uvězněné v aplikaci. Každá z nich, plus napájení, každý vstup, každý barevný režim a každá paměť objektivu, které váš projektor skutečně má, se zapíše jako skript Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Automatizace je mohou spouštět.</b> „Při západu slunce, pokud se zapne TV, spusť Filmový večer“ je běžná automatizace Home Assistant, jakmile je Scéna skriptem.</li>
+      <li><b>Hlasoví asistenti je mohou spouštět.</b> Zpřístupněte skript svému asistentovi a „zapni Filmový večer“ nastaví vstup, obrazový režim i paměť objektivu najednou.</li>
+      <li><b>Objeví se jen vaše skutečné ovládání.</b> Aplikace zapíše skript pro každý vstup, barevný režim a paměť objektivu, které projektor hlásí - ne obecný seznam, který by si vymyslela.</li>
+      <li><b>Odebrání synchronizace odebere jen to, co aplikace zapsala.</b> Vypněte synchronizaci nebo použijte Odebrat osiřelé skripty (které je vypíše a nejdřív se zeptá) a Projector Pilot smaže skripty, které vytvořil, a nic jiného.</li>
+    </ul>
+    <div class="note"><b>Skripty jsou pojmenovány tak, aby přejmenování aktualizovalo ten samý.</b> Názvy skriptů jsou odvozeny od projektoru a ovládání, takže opětovná synchronizace po přejmenování Scény aktualizuje existující skript místo vytvoření druhé kopie.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nástěnka</div>
+      <h2>Synchronizace sestaví nástěnku za vás</h2>
+      <p class="lead">Nemusíte ručně sestavovat pohled Lovelace a už ho nemusíte ani vkládat. Když klepnete na <b>Synchronizovat s HA</b>, aplikace sestaví kompletní nástěnku Projector Pilot přímo v Home Assistant přes jeho vlastní API: aktuální stav projektoru a tlačítko pro každou Scénu a ovládání, které synchronizovala. V postranním panelu Home Assistant se objeví jako <b>Projector Pilot</b> - otevřete ji a je hotovo.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Nástěnka Projector Pilot v Home Assistant: napájení a zdroj, barevné režimy, úplná nabídka obrazu, HDR a signál, kalibrace RGB, objektiv a geometrie, graf hodin laseru, údržba a Scény - vše jako zelené skleněné dlaždice" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Bohatší, ručně sestavená verze nástěnky. Ta, kterou vám sestaví Synchronizace, nese stejný aktuální stav a tlačítka ve standardních kartách Home Assistant; zelený skleněný vzhled níže je volitelné vlastní sestavení. Posouvejte, nebo kliknutím zvětšete.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Přihlaste se v aplikaci k Home Assistant.</li>
+      <li>Vložte <b>Zkopírovaný blok</b> z aplikace jednou do <code>configuration.yaml</code> a restartujte Home Assistant (jediný ruční krok - Home Assistant aplikacím nedovolí přidat tento příkaz na dálku).</li>
+      <li>Klepněte na <b>Synchronizovat s HA</b>. Nástěnka se pro vás sestaví a v postranním panelu se objeví jako <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Raději to vložíte sami?</b> <b>Kopírovat dashboard</b> je pořád na obrazovce Home Assistant. Klepněte na něj, pak v Home Assistant přejděte do <b>Nastavení &rsaquo; Nástěnky &rsaquo; Přidat nástěnku</b>, vytvořte prázdnou nástěnku, otevřete její nabídku se třemi tečkami &rsaquo; <b>Upravit nástěnku</b> &rsaquo; nabídka se třemi tečkami &rsaquo; <b>Editor surové konfigurace</b> a vložte zkopírované YAML.</div>
+    <p class="lead">Ať ji sestaví aplikace, nebo ji vložíte vy, nástěnka je stejná - karta stavu plus tlačítko pro každé ovládání (ilustrační úryvek):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Jen příklad. Vaše nástěnka nese skutečnou entitu vašeho projektoru a vaše vlastní Scény.</p>
+    <div class="note"><b>Nezávislé na modelu.</b> Nástěnka se sestavuje z vlastních možností <i>vašeho</i> projektoru - entity, obrazových hodnot, vstupů, barevných režimů, pamětí objektivu a Scén, které skutečně nahlásil. Snímky obrazovky zde jsou QB1000; váš model může ukazovat jiné vstupy, ovládání a údaje. Pro plnou zelenou skleněnou nástěnku jako na obrázku sledujte <a href="/cs/guide/home-assistant-dashboard/">průvodce nástěnkou krok za krokem</a> nebo <a href="/cs/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>stáhněte kompletní pohled</a> a změňte dva řetězce.</div>
+    <div class="note"><b>Chcete bohatší stěnu?</b> Stejné skripty ovládají karty, které si zvolíte. Pokud jste používali AVR Maestro, postup je stejný - sestavte svítící dlaždice zdrojů a režimů, živé hlavičky a historii z jednoho senzoru a synchronizovaných skriptů.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Nastavení Hubitat</h2>
+      <p class="lead">V Hubitat Projector Pilot zrcadlí projektor na zařízení ve vašem hubu přes Maker API, takže Rule Machine může číst a ovládat napájení, ztlumení a vstup.</p>
+    </div>
+    <ol class="steps">
+      <li>V Hubitat povolte aplikaci <b>Maker API</b>, poznamenejte si její přístupovou URL a token a vyberte, která zařízení zpřístupňuje.</li>
+      <li>V Projector Pilot otevřete <b>Nastavení &rsaquo; Domácí automatizace &rsaquo; Hubitat</b> a zadejte údaje <b>Maker API</b> svého hubu.</li>
+      <li>Vyberte <b>zařízení, které představuje projektor</b>. Aplikace navrhne pravděpodobné; zvolte ho, nebo vyberte vlastní.</li>
+      <li>Aplikace <b>zrcadlí napájení, ztlumení a vstup</b> na toto zařízení a posílá jen příkazy, které zařízení přijímá.</li>
+      <li>Sestavte pravidla <b>Rule Machine</b> proti tomuto zařízení jako u jakéhokoli jiného - řídí je stav projektoru.</li>
+    </ol>
+    <div class="note"><b>Jen to, co zařízení přijímá.</b> Aplikace posílá hodnotu projektoru do Hubitat jen tehdy, když zvolené zařízení daný příkaz podporuje, takže nikdy nepošle něco, co by zařízení odmítlo.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooky</div>
+      <h2>Nastavení Webhooků</h2>
+      <p class="lead">Webhooky jsou univerzální řešení. Aplikace odešle požadavek na vaši URL, když se projektor zapne, vypne, změní vstup nebo vyvolá Scénu - webhook Home Assistant, Node-RED, IFTTT nebo cokoli, co přijímá JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Otevřete <b>Nastavení &rsaquo; Domácí automatizace &rsaquo; Webhooky</b>.</li>
+      <li>Zadejte <b>URL</b>, na kterou se má odesílat. Webhook Home Assistant vypadá takto: <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Zvolte, které <b>události</b> webhook spouštějí: zapnutí, vypnutí, změna vstupu, vyvolání Scény - a volitelně omezte na konkrétní vstup nebo Scénu.</li>
+      <li>Volitelně nastavte <b>vlastní datovou zátěž</b>, pokud přijímající služba chce určitý tvar; jinak aplikace odešle výchozí JSON.</li>
+      <li>Uložte. Od té chvíle aplikace odesílá při každé odpovídající události.</li>
+    </ol>
+    <p class="lead">Výchozí datová zátěž je prostý JSON - událost, projektor a hodnota, která se změnila:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Příklad datové zátěže. Událost změny vstupu nebo napájení nese pole, která se jí týkají.</p>
+    <div class="note"><b>Opětovné propojení opraví všechny.</b> Pokud Home Assistant znovu propojíte na novou adresu, aplikace aktualizuje najednou všechny webhooky, které na něj míří, takže přesunutá instance neznamená ruční úpravu každého z nich.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Řešení potíží</h2>
+    </div>
+    <details class="more"><summary>Přihlášení se vrací na přihlašovací stránku</summary>
+      <p>Ujistěte se, že zadaná adresa je ta, na které se k Home Assistant skutečně dostanete, včetně portu (obvykle <code>:8123</code>). Přihlášení je skutečné přihlášení v prohlížeči k vaší instanci, takže platí vaše uživatelské jméno, heslo i kód dvoufázového ověření. V telefonu se přihlášení dokončí, ať výsledek vrátí prohlížeč v aplikaci, nebo se dřív vrátí místní zpětné volání; pokud se přesto zasekne, zavřete panel a klepněte na Přihlásit se znovu.</p>
+    </details>
+    <details class="more"><summary>Senzor projektoru se v Home Assistant neobjevuje</summary>
+      <p>Senzor se publikuje, dokud je aplikace otevřená a je zapnuto <b>Odesílat stav projektoru</b>, takže aplikaci otevřete a ověřte tento přepínač. Pak zkontrolujte <b>Nástroje pro vývojáře &rsaquo; Stavy</b> v Home Assistant a filtrujte podle <code>projector_pilot</code>. Projektor v pohotovosti publikuje velmi málo; probuďte ho a údaje se doplní.</p>
+    </details>
+    <details class="more"><summary>Synchronizované skripty chybí</summary>
+      <p>Skripty zapisuje <b>Synchronizovat s HA</b>, což vyžaduje, aby blok <code>shell_command</code> byl již vložen do <code>configuration.yaml</code> a Home Assistant jednou restartován. Nejdřív spusťte <b>Vyzkoušet připojení</b> - řekne, zda blok existuje. Pak znovu Synchronizujte. Pokud seznam zaplevelují staré mrtvé skripty, použijte <b>Odebrat osiřelé skripty</b>.</p>
+    </details>
+    <details class="more"><summary>Skript funguje v aplikaci, ale ne z Home Assistant, když je můj telefon pryč</summary>
+      <p>To je smysl bloku <code>shell_command</code> - díky němu se Home Assistant dostane na IP projektoru sám. Pokud to funguje jen s otevřenou aplikací, blok pravděpodobně není vložen nebo se Home Assistant po vložení nerestartoval. Ověřte přes Vyzkoušet připojení, restartujte Home Assistant a Synchronizujte.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Zapojte svůj projektor do celého domu</h2>
+    <p class="lead" style="margin:0 auto 24px">Domácí automatizace je jednorázový doplněk. Žádné předplatné, žádný účet, žádný cloud. Jeden nákup ji odemkne na každé platformě, kterou vlastníte.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - již k dispozici</a>
+      <span class="pill">App Store - čeká na schválení</span>
+      <span class="pill">Microsoft Store - čeká na schválení</span>
+      <span class="pill">Mac App Store - čeká na schválení</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/cs/pricing/">Viz Zdarma vs Pro vs Domácí automatizace &rarr;</a> &middot; <a href="/cs/guide/">Úplná uživatelská příručka &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Rychlé odpovědi</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Musí můj telefon zůstat v síti, aby fungovaly automatizace Home Assistant?</h3><p>Ne. Jakmile vložíte do Home Assistant jediný blok shell_command a synchronizujete, Home Assistant posílá příkazy přímo na IP adresu projektoru. Projector Pilot je jen nástroj pro nastavení; poté Home Assistant s projektorem komunikuje sám, ať je váš telefon doma, nebo ne.</p></div><div class="gcard"><h3>Jak se projektor objeví v Home Assistant?</h3><p>Jako senzor, například sensor.projector_pilot_epson_qb1000b_qb1000w, nesoucí napájení, vstup, barevný režim, obrazové hodnoty a hodiny lampy, aktualizovaný při každé změně, dokud je aplikace otevřená. Zapněte Synchronizovat pokročilé ovládání a aplikace také zapíše skript Home Assistant pro každou Scénu, plus napájení, každý vstup, každý barevný režim a každou paměť objektivu, které váš projektor má.</p></div><div class="gcard"><h3>Je Domácí automatizace zdarma?</h3><p>Domácí automatizace je placený doplněk, jednorázový nákup, oddělený od Projector Pilot Pro. Balíček pořídí obojí dohromady se slevou. Viz stránka s ceníkem.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/help/">Nápověda &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/cs/help/#privacy">Soukromí</a><a href="/cs/help/#terms">Podmínky</a></div>
+<div class="flinks"><a href="/cs/guide/getting-started/">První kroky</a><a href="/cs/guide/dashboard/">Nástěnka</a><a href="/cs/guide/remote/">Dálkový ovladač</a><a href="/cs/guide/picture/">Obraz</a><a href="/cs/guide/lens/">Objektiv</a><a href="/cs/guide/scenes/">Scény</a><a href="/cs/guide/home-assistant-dashboard/">Nástěnka HA</a><a href="/cs/guide/maintenance/">Údržba</a><a href="/cs/guide/settings/">Nastavení</a><a href="/cs/guide/languages/">Jazyky</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot je nezávislá aplikace pro projektory Epson a PJLink. Není přidružena k společnostem Epson, organizaci PJLink, Home Assistant, Hubitat, Apple, Google ani Microsoft, není jimi podporována ani sponzorována. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play a Microsoft Store jsou ochranné známky svých příslušných vlastníků a jsou uvedeny pouze proto, aby popsaly, s čím aplikace spolupracuje.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

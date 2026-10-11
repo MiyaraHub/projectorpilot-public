@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Aplikacja do sterowania projektorami Epson &amp; PJLink - Projector Pilot</title>
+<meta name="description" content="Projector Pilot to aplikacja do projektorów Epson i PJLink: zasilanie, wejście, obraz, zmotoryzowany obiektyw, sceny jednym dotknięciem i Home Assistant. Bez subskrypcji." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/pl/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aplikacja do sterowania projektorami Epson &amp; PJLink - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot to aplikacja do projektorów Epson i PJLink: zasilanie, wejście, obraz, zmotoryzowany obiektyw, sceny jednym dotknięciem i Home Assistant. Bez subskrypcji." />
+<meta property="og:url" content="https://projectorpilot.com/pl/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aplikacja do sterowania projektorami Epson &amp; PJLink - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot to aplikacja do projektorów Epson i PJLink: zasilanie, wejście, obraz, zmotoryzowany obiektyw, sceny jednym dotknięciem i Home Assistant. Bez subskrypcji." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "pl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Aplikacja do sterowania projektorami Epson & PJLink - Projector Pilot", "description": "Projector Pilot to aplikacja do projektorów Epson i PJLink: zasilanie, wejście, obraz, zmotoryzowany obiektyw, sceny jednym dotknięciem i Home Assistant. Bez subskrypcji.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "pl", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Niezależna aplikacja do projektorów Epson i PJLink: zasilanie, wejście, pełne sterowanie obrazem i kolorem, zmotoryzowane przesunięcie obiektywu, ostrość, zoom i pamięci, sceny jednym dotknięciem, automatyka Home Assistant, Hubitat i webhooków, statystyki konserwacji i widżety ekranu głównego, w 29 językach.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Za darmo", "price": "0", "priceCurrency": "USD", "description": "Dodaj projektor, zasilanie, przełączanie wejść, stan na żywo i podstawy ekranowego pilota."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Jednorazowy zakup w aplikacji. Cena orientacyjna; sklep pokazuje cenę dla Twojego regionu."}, {"@type": "Offer", "name": "Dodatek Automatyka domowa", "price": "2.99", "priceCurrency": "USD", "description": "Jednorazowy zakup w aplikacji. Cena orientacyjna; sklep pokazuje cenę dla Twojego regionu."}, {"@type": "Offer", "name": "Pakiet Pro + Automatyka domowa", "price": "11.99", "priceCurrency": "USD", "description": "Jednorazowy zakup w aplikacji. Cena orientacyjna; sklep pokazuje cenę dla Twojego regionu."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Czy Projector Pilot jest wyprodukowany przez Epson?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Projector Pilot to niezależna aplikacja MiyaraHub Technologies LLC. Nie jest powiązana z Epson, organizacją standaryzującą PJLink, Home Assistant ani Hubitat, ani przez nie popierana czy sponsorowana. Te nazwy są znakami towarowymi ich właścicieli i pojawiają się tutaj wyłącznie po to, by opisać, z jakimi projektorami i systemami inteligentnego domu współpracuje aplikacja."}}, {"@type": "Question", "name": "Które projektory obsługuje Projector Pilot?", "acceptedAnswer": {"@type": "Answer", "text": "Projektory Epson przez ESC/VP21 i Web Control oraz każdy projektor PJLink. Aplikacja używa tego, na czym odpowiada projektor, więc projektor tylko z PJLink to zwykłe obsługiwane urządzenie."}}, {"@type": "Question", "name": "Czy Projector Pilot to subskrypcja?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Podstawowe sterowanie jest za darmo, a Pro, Automatyka domowa i pakiet to zakupy jednorazowe. Bez subskrypcji, bez reklam."}}, {"@type": "Question", "name": "Czy Projector Pilot potrzebuje konta albo chmury?", "acceptedAnswer": {"@type": "Answer", "text": "Bez konta i bez chmury. Aplikacja rozmawia z Twoim projektorem bezpośrednio w Twojej własnej sieci."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/pl/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Przeszukaj przewodnik..." data-i18n-empty="Brak wyników dla" data-i18n-language="Język">
+      <a href="#features">Funkcje</a>
+      <a href="/pl/guide/">Przewodnik</a>
+      <a href="/pl/pricing/">Cennik</a>
+      <a href="/pl/highlights/">Najważniejsze</a>
+      <a href="/pl/guide/home-automation/">Home Assistant</a>
+      <a href="/pl/help/">Pomoc</a>
+      <a class="cta" href="#download">POBIERZ APLIKACJĘ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Projektory Epson &amp; PJLink</div>
+      <h1>Aplikacja sterująca, na którą Twój <span class="g">projektor Epson</span> zawsze zasługiwał.</h1>
+      <p>Zasilanie, wejście, pełne menu obrazu, zmotoryzowane przesunięcie obiektywu, ostrość i zoom, sceny jednym dotknięciem i prawdziwa automatyka domowa - dla projektorów Epson i PJLink, prosto z telefonu. Bez reklam. Bez subskrypcji. Bez konta w chmurze.</p>
+      <div class="pills">
+        <span class="pill">29 języków</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Zakup jednorazowy</span>
+        <span class="pill">Działa w Twojej sieci</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Pobierz w Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Kokpit Projector Pilot na telefonie z zasilaniem, wejściem i trybem koloru projektora Epson na żywo" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Co robi</div>
+      <h2>Każde sterowanie, które udostępnia Twój projektor, w jednej przejrzystej aplikacji.</h2>
+      <p class="lead">Projector Pilot rozmawia z Twoim projektorem jednocześnie przez ESC/VP21, PJLink i Epson Web Control, używając tego, który odpowiada - więc dostajesz zasilanie, obraz, geometrię i sterowanie obiektywem, które naprawdę działają, z wartościami odczytanymi z projektora, nigdy zgadywanymi.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Kokpit Projector Pilot ze stanem na żywo, informacjami o projekcji oraz podsumowaniami obrazu i obiektywu" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dashboard</div>
+        <h3>Wszystko w skrócie, zbudowane tak, jak chcesz.</h3>
+        <ul>
+          <li><b>Stan na żywo</b> - zasilanie, wejście, tryb koloru, godziny pracy źródła światła, sygnał i wartości obrazu, aktualizowane na bieżąco.</li>
+          <li><b>Zasilanie i wejście jednym dotknięciem</b> prosto z góry, z przyciskiem zasilania uwzględniającym rozgrzewanie i stygnięcie.</li>
+          <li><b>Konfigurowalne karty</b> - dodawaj, ukrywaj i przestawiaj karty, aby kokpit pokazywał to, co dla Ciebie ważne.</li>
+          <li><b>Informacje o projekcji</b> - zakres dynamiki, przestrzeń barw, gamma, godziny pracy lasera, numer seryjny i montaż, odczytane z projektora.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Ekran pilota Projector Pilot z polem nawigacji, menu, źródłem i zaczernieniem ekranu" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Ekran obrazu Projector Pilot z jasnością, kontrastem, temperaturą barwową i gammą" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Pilot &amp; Obraz</div>
+        <h3>Rozbudowany pilot i pełne menu obrazu.</h3>
+        <ul>
+          <li><b>Pełne pole nawigacji</b>, menu, źródło i zaczernienie ekranu - ekranowy pilot zrobiony jak należy.</li>
+          <li><b>Metoda korekcji</b> - korekcja trapezowa H/V, Quick Corner, korekcja punktowa, powierzchnia zakrzywiona i narożnik ściany.</li>
+          <li><b>Pełne sterowanie obrazem</b> - jasność, kontrast, odcień barwy, ostrość, temperatura barwowa, gamma, HDR i rozbudowane menu obrazu, każde na skali samego projektora.</li>
+          <li><b>HDR i przestrzeń barw są oddzielne</b> - sygnał BT.2020 SDR jest odczytywany dokładnie tak, nigdy jako fałszywa plakietka HDR.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Ekran obiektywu Projector Pilot z polem przesunięcia, ostrością, zoomem i wyborem rozmiaru kroku" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Obiektyw</div>
+        <h3>Zmotoryzowane przesunięcie obiektywu, ostrość, zoom i pamięci.</h3>
+        <ul>
+          <li><b>Przesunięcie, ostrość i zoom</b> z precyzyjnego pola, z <b>rozmiarem kroku, który wybierasz</b> - drobnym do kadrowania, zgrubnym do dużych ruchów.</li>
+          <li><b>Pamięci obiektywu</b> - przywołuj i zapisuj pozycje obsługiwane przez Twój projektor.</li>
+          <li><b>Świadomość orientacji</b> - aplikacja podąża za własnym mapowaniem projektora, sufitowym lub tylnym, więc góra to zawsze góra.</li>
+          <li><b>Uczciwe odczyty</b> - pozycja, której projektor nie potrafi potwierdzić, nigdy nie jest udawana jako blokada.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Karta Sceny Projector Pilot z zapisanymi scenami jednym dotknięciem" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Sceny</div>
+        <h3>Jedno dotknięcie na cały pokój.</h3>
+        <ul>
+          <li><b>Zapisz scenę</b> - zasilanie, wejście, obraz, sygnał, światło, geometria i dźwięk, i wybierz dokładnie, które części zachować.</li>
+          <li><b>Zastosuj jednym dotknięciem</b> - „Wieczór filmowy” ustawia razem wejście, tryb obrazu i pamięć obiektywu.</li>
+          <li><b>Każda scena staje się skryptem Home Assistant</b>, więc może ją uruchomić także automatyzacja lub asystent głosowy.</li>
+          <li><b>Profile do udostępniania</b> - wyeksportuj dostrojoną scenę i przekaż ją znajomemu.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Hub automatyki domowej Projector Pilot z Home Assistant, Hubitat i webhookami" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Ekran konfiguracji Home Assistant w Projector Pilot z logowaniem i przełącznikami synchronizacji" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Automatyka domowa</div>
+        <h3>Home Assistant, Hubitat i webhooki - prawdziwa rzecz.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - zaloguj się, opublikuj stan projektora jako czujnik i dotknij <b>Synchronizuj z HA</b>, by dostać skrypt dla każdej sceny i sterowania.</li>
+          <li><b>Panel zbudowany dla Ciebie</b> - synchronizacja buduje go w Home Assistant z wbudowanych kart, ulepszonych do bogatszych kart HACS, gdy je masz. Działa także z wbudowaną integracją PJLink.</li>
+          <li><b>Lista kontrolna konfiguracji</b> pokazuje, co jest zrobione, czego brakuje i co zrobić dalej, a Twoje odczyty pozostają w Home Assistant, gdy projektor jest wyłączony.</li>
+          <li><b>Hubitat</b> - odbij projektor na urządzeniu przez Maker API, aby Rule Machine mogła na nim działać.</li>
+          <li><b>Webhooki</b> - wysyłaj żądanie na dowolny adres URL, gdy projektor się włącza, wyłącza, zmienia wejście lub przywołuje scenę.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/pl/guide/home-automation/">Przeczytaj pełny przewodnik po Home Assistant &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">I więcej</div>
+      <h2>Szczegóły, dzięki którym całość wygląda na dopracowaną.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Przełączaj projektory z dowolnego miejsca</h3><p>Przełącznik projektorów na górnym pasku każdej strony projektora przenosi Cię między projektorami bez wracania do listy.</p></div>
+      <div class="gcard"><h3>Wyłączenie najpierw pyta</h3><p>Wyłączenie projektora prosi o potwierdzenie, więc przypadkowe dotknięcie nie zakończy filmu.</p></div>
+      <div class="gcard"><h3>Sterowanie, które reaguje natychmiast</h3><p>Przesunięcie obiektywu, ostrość, zoom i regulator mocy świetlnej poruszają się w chwili naciśnięcia, a aplikacja zauważa włączenie projektora w ciągu około dziesięciu sekund.</p></div>
+      <div class="gcard"><h3>Oprogramowanie sprzętowe w skrócie</h3><p>Wersja oprogramowania sprzętowego Twojego projektora jest widoczna w kokpicie i na karcie Info oraz w raporcie diagnostycznym, o ile projektor ją zgłasza.</p></div>
+      <div class="gcard"><h3>Przełączanie wejść na projektorach tylko z PJLink</h3><p>Projektory, które wymieniają wejścia tylko przez PJLink, takie jak TW7300 i Home Cinema 4040, przełączają wejścia, a projektory PJLink innych marek niż Epson też mogą.</p></div>
+      <div class="gcard"><h3>Znajdź projektor w Wi-Fi</h3><p>Dodaj projektor skanuje Twoją sieć w poszukiwaniu wszystkiego, co odpowiada jak projektor, i wpisuje adres, z paskiem postępu podczas wykrywania możliwości Twojego modelu.</p></div>
+      <div class="gcard"><h3>Kopia zapasowa i przywracanie</h3><p>Wyeksportuj ustawienia aplikacji do pliku i zaimportuj je ponownie. Plik jest udostępniany pod prawdziwą nazwą, a zapisane projektory i hasła nigdy w nim nie podróżują.</p></div>
+      <div class="gcard"><h3>Zgłoś błąd w jednym kroku</h3><p>Zgłoś błąd buduje jeden pakiet ze wszystkimi istotnymi logami, gotowy do wysłania.</p></div>
+      <div class="gcard"><h3>29 języków</h3><p>Angielski plus 28 innych, w tym monity o uprawnienia na iPhone, iPadzie i Macu. Zobacz <a href="/pl/guide/languages/">listę języków</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/pl/highlights/">Zobacz wszystko, co nowe &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Rozejrzyj się</div>
+      <h2>Zbudowane tak, by wyglądało na część projektora.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Kokpit Projector Pilot ze stanem na żywo, informacjami o projekcji oraz podsumowaniami obrazu i obiektywu" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dashboard</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Ekran pilota Projector Pilot z polem nawigacji, menu, źródłem i zaczernieniem ekranu" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Pilot</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Ekran obiektywu Projector Pilot z polem przesunięcia, ostrością, zoomem i wyborem rozmiaru kroku" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Obiektyw</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Ekran konfiguracji Home Assistant w Projector Pilot z logowaniem i przełącznikami synchronizacji" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Pytania, które ludzie zadają najpierw</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Czy Projector Pilot jest wyprodukowany przez Epson?</h3><p>Nie. Projector Pilot to niezależna aplikacja MiyaraHub Technologies LLC. Nie jest powiązana z Epson, organizacją standaryzującą PJLink, Home Assistant ani Hubitat, ani przez nie popierana czy sponsorowana. Te nazwy są znakami towarowymi ich właścicieli i pojawiają się tutaj wyłącznie po to, by opisać, z jakimi projektorami i systemami inteligentnego domu współpracuje aplikacja.</p></div><div class="gcard"><h3>Które projektory obsługuje Projector Pilot?</h3><p>Projektory Epson przez ESC/VP21 i Web Control oraz każdy projektor PJLink. Aplikacja używa tego, na czym odpowiada projektor, więc projektor tylko z PJLink to zwykłe obsługiwane urządzenie.</p></div><div class="gcard"><h3>Czy Projector Pilot to subskrypcja?</h3><p>Nie. Podstawowe sterowanie jest za darmo, a Pro, Automatyka domowa i pakiet to zakupy jednorazowe. Bez subskrypcji, bez reklam.</p></div><div class="gcard"><h3>Czy Projector Pilot potrzebuje konta albo chmury?</h3><p>Bez konta i bez chmury. Aplikacja rozmawia z Twoim projektorem bezpośrednio w Twojej własnej sieci.</p></div></div>
+    <p style="margin-top:22px"><a href="/pl/help/">Więcej odpowiedzi w Pomoc &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pobierz aplikację</div>
+      <h2>Dostępna w Google Play. Kolejne sklepy w drodze.</h2>
+      <p class="lead">Projector Pilot jest już dostępny w Google Play. App Store, Microsoft Store i Mac App Store oczekują na zatwierdzenie. Jeden zakup odblokowuje go na każdej platformie, której używasz.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - dostępne już teraz</a>
+      <span class="pill">App Store - oczekuje na zatwierdzenie</span>
+      <span class="pill">Microsoft Store - oczekuje na zatwierdzenie</span>
+      <span class="pill">Mac App Store - oczekuje na zatwierdzenie</span>
+    </div>
+    <p style="margin-top:22px"><a href="/pl/guide/">Otwórz pełny przewodnik użytkownika &rarr;</a> &nbsp; &middot; &nbsp; <a href="/pl/pricing/">Zobacz Za darmo i Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/pl/guide/">Przewodnik użytkownika</a>
+      <a href="/pl/pricing/">Cennik</a>
+      <a href="/pl/highlights/">Najważniejsze</a>
+      <a href="/pl/guide/home-automation/">Home Assistant</a>
+      <a href="/pl/help/">Pomoc &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/pl/help/#privacy">Prywatność</a>
+      <a href="/pl/help/#terms">Regulamin</a>
+    </div>
+<div class="flinks"><a href="/pl/guide/getting-started/">Pierwsze kroki</a><a href="/pl/guide/dashboard/">Kokpit</a><a href="/pl/guide/remote/">Pilot</a><a href="/pl/guide/picture/">Obraz</a><a href="/pl/guide/lens/">Obiektyw</a><a href="/pl/guide/scenes/">Sceny</a><a href="/pl/guide/home-assistant-dashboard/">Panel HA</a><a href="/pl/guide/maintenance/">Konserwacja</a><a href="/pl/guide/settings/">Ustawienia</a><a href="/pl/guide/languages/">Języki</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot to niezależna aplikacja do projektorów Epson i PJLink. Nie jest powiązana z Epson, organizacją standaryzującą PJLink, Home Assistant, Hubitat, Apple, Google ani Microsoft, ani przez nie popierana czy sponsorowana. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play i Microsoft Store są znakami towarowymi ich właścicieli i zostały użyte wyłącznie po to, by opisać, z czym współpracuje aplikacja.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

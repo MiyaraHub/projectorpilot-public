@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="el" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Πίνακας Ελέγχου Προβολέα για το Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="Φτιάξτε βήμα προς βήμα έναν προσαρμοσμένο πίνακα ελέγχου προβολέα για το Home Assistant: οι κάρτες HACS προς εγκατάσταση, το entity ID και ο σειριακός σας αριθμός, και έτοιμο προς αντιγραφή YAML για κάθε κάρτα." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Πίνακας Ελέγχου Προβολέα για το Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="Φτιάξτε βήμα προς βήμα έναν προσαρμοσμένο πίνακα ελέγχου προβολέα για το Home Assistant: οι κάρτες HACS προς εγκατάσταση, το entity ID και ο σειριακός σας αριθμός, και έτοιμο προς αντιγραφή YAML για κάθε κάρτα." />
+<meta property="og:url" content="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Πίνακας Ελέγχου Προβολέα για το Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Φτιάξτε βήμα προς βήμα έναν προσαρμοσμένο πίνακα ελέγχου προβολέα για το Home Assistant: οι κάρτες HACS προς εγκατάσταση, το entity ID και ο σειριακός σας αριθμός, και έτοιμο προς αντιγραφή YAML για κάθε κάρτα." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "el", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Πίνακας Ελέγχου Προβολέα για το Home Assistant (YAML) - Projector Pilot", "description": "Φτιάξτε βήμα προς βήμα έναν προσαρμοσμένο πίνακα ελέγχου προβολέα για το Home Assistant: οι κάρτες HACS προς εγκατάσταση, το entity ID και ο σειριακός σας αριθμός, και έτοιμο προς αντιγραφή YAML για κάθε κάρτα.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "el", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Φτιάξτε έναν πίνακα ελέγχου προβολέα για το Home Assistant σε περίπου μία ώρα", "description": "Φτιάξτε βήμα προς βήμα έναν προσαρμοσμένο πίνακα ελέγχου προβολέα για το Home Assistant: οι κάρτες HACS προς εγκατάσταση, το entity ID και ο σειριακός σας αριθμός, και έτοιμο προς αντιγραφή YAML για κάθε κάρτα.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "el", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Οδηγός Χρήσης", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Πίνακας ελέγχου Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Πρέπει να φτιάξω αυτόν τον πίνακα ελέγχου με το χέρι;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Όχι. Όταν πατάτε Συγχρονισμός με HA στην εφαρμογή, αυτή φτιάχνει για εσάς έναν έτοιμο πίνακα ελέγχου Projector Pilot απευθείας στο Home Assistant - τον ζωντανό αισθητήρα προβολέα συν ένα κουμπί για κάθε χειριστήριο και Σκηνή - και εμφανίζεται στην πλαϊνή γραμμή ως Projector Pilot. Όταν έχετε εγκατεστημένες τις κάρτες της κοινότητας, ο Συγχρονισμός αναβαθμίζει αυτόματα τις κάρτες του σε αυτές· αυτή η σελίδα είναι για να φτιάξετε με το χέρι την πιο πλούσια έκδοση «πράσινου γυαλιού» ή για να προσαρμόσετε ό,τι δημιούργησε ο Συγχρονισμός."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Χρειάζομαι προσαρμοσμένες κάρτες από το HACS για να το φτιάξω;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Για να ταιριάζει η εμφάνιση με το στιγμιότυπο, ναι: Mushroom, button-card, card-mod και mini-graph-card. Καμία δεν είναι απαραίτητη για να λειτουργούν τα βασικά χειριστήρια - κάθε κουμπί είναι μια απλή κλήση script, και οι προσαρμοσμένες κάρτες είναι απλώς το στυλ από πάνω."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Γιατί τα πλακίδια πληροφοριών δείχνουν τιμή αλλά τα κουμπιά δεν κάνουν τίποτα;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ο αισθητήρας προβολέα δημοσιεύει τις ενδείξεις του μόλις συνδεθείτε και συγχρονίσετε στην εφαρμογή, οπότε τα πλακίδια πληροφοριών είναι ζωντανά αμέσως. Τα κουμπιά ελέγχου και Σκηνών καλούν scripts που υπάρχουν στο Home Assistant μόνο αφού επικολλήσετε το Copy block της εφαρμογής στο configuration.yaml, κάνετε επανεκκίνηση του Home Assistant και πατήσετε μία φορά Συγχρονισμός με HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Θα ταιριάζουν τα ID των οντοτήτων μου με αυτά του οδηγού;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Το μοτίβο θα ταιριάζει, οι ακριβείς χαρακτήρες όχι. Ο αισθητήρας προβολέα σας παίρνει το όνομά του από το μοντέλο του προβολέα, και κάθε script παίρνει το όνομά του από τον σειριακό αριθμό του προβολέα. Όπου αυτή η σελίδα γράφει YOUR_PROJECTOR, βάλτε το entity id του δικού σας αισθητήρα· όπου γράφει YOURSERIAL, βάλτε το id που προκύπτει από τον σειριακό και εμφανίζεται στην οθόνη Home Assistant της εφαρμογής."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/el/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα"><a href="/el/#features">Χαρακτηριστικά</a><a href="/el/guide/">Οδηγός</a><a href="/el/pricing/">Τιμολόγηση</a><a href="/el/highlights/">Βασικά σημεία</a><a href="/el/guide/home-automation/">Home Assistant</a><a href="/el/help/">Βοήθεια</a><a class="cta" href="/el/#download">ΛΗΨΗ ΤΗΣ ΕΦΑΡΜΟΓΗΣ</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός Χρήσης</a> &rsaquo; Πίνακας ελέγχου Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; βήμα προς βήμα</div>
+    <h1>Φτιάξτε έναν πίνακα ελέγχου προβολέα για το Home Assistant <span class="g">σε περίπου μία ώρα</span></h1>
+    <p>Η εφαρμογή φτιάχνει ήδη έναν λειτουργικό πίνακα ελέγχου όταν κάνετε Συγχρονισμό - αυτή η σελίδα είναι η πολυτελής, χειροποίητη εκδοχή. Δέκα βήματα, το YAML κάθε κάρτας και μια πλήρης προβολή που επικολλάτε με μία κίνηση. Πλακίδια πράσινου γυαλιού, ζωντανή ένδειξη εικόνας, οι Σκηνές σας και ένα γράφημα ωρών λέιζερ, όλα από έναν αισθητήρα προβολέα. Αλλάξτε δύο συμβολοσειρές και είναι δικός σας.</p>
+    <div class="readout"><span>Ο Συγχρονισμός φτιάχνει έναν δωρεάν</span><span>4 κάρτες HACS για την εμφάνιση</span><span>Πλακίδια πληροφοριών ζωντανά αμέσως</span><span>Κουμπιά μετά από μία επικόλληση</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Ο ολοκληρωμένος πίνακας ελέγχου Projector Pilot στο Home Assistant: λειτουργία και πηγή, λειτουργίες χρώματος, ολόκληρο το μενού εικόνας, HDR και σήμα, βαθμονόμηση RGB, φακός και γεωμετρία, συντήρηση με γράφημα ωρών λέιζερ, και Σκηνές, όλα ως πλακίδια πράσινου γυαλιού" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Αυτό που φτιάχνετε. Κυλήστε το ή κάντε κλικ για μεγέθυνση.</figcaption>
+    </figure>
+    <div class="note"><b>Θέλετε απλώς έναν λειτουργικό πίνακα; Τον έχετε ήδη.</b> Πατήστε <b>Συγχρονισμός με HA</b> στην εφαρμογή και φτιάχνει για εσάς έναν έτοιμο πίνακα ελέγχου Projector Pilot, στην πλαϊνή γραμμή του Home Assistant, με κάθε χειριστήριο και τον ζωντανό αισθητήρα - χωρίς κάρτες, χωρίς YAML, χωρίς επικόλληση. Δείτε το <a href="/el/guide/home-automation/#dashboard">Ο Συγχρονισμός φτιάχνει τον πίνακα για εσάς</a>. Αυτή η σελίδα είναι για να φτιάξετε με το χέρι την πιο πλούσια έκδοση «πράσινου γυαλιού» ή για να προσαρμόσετε ό,τι σας έδωσε ο Συγχρονισμός.</div>
+    <div class="note"><b>Βιάζεστε για την προσαρμοσμένη εμφάνιση;</b> Πηγαίνετε στο <a href="#whole">βήμα 10</a>, κατεβάστε την πλήρη προβολή, αλλάξτε δύο συμβολοσειρές και τα τρία id Σκηνών, και επικολλήστε την. Τα ενδιάμεσα βήματα εξηγούν τι κάνει κάθε κομμάτι, ώστε να μπορείτε να το αλλάξετε.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Πριν ξεκινήσετε</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Το Projector Pilot είναι συνδεδεμένο με το Home Assistant.</b> <a href="/el/guide/home-automation/">Ο οδηγός ρύθμισης</a> καλύπτει τη σύνδεση και την ενεργοποίηση του <b>Αποστολή της κατάστασης του προβολέα</b>. Θα πρέπει να βλέπετε τον προβολέα σας ως αισθητήρα στο Home Assistant πριν χτίσετε οτιδήποτε πάνω του.</li>
+      <li><b>Έχετε κάνει συγχρονισμό τουλάχιστον μία φορά.</b> Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Home Assistant &rsaquo; <b>Συγχρονισμός με HA</b>, αφού επικολλήσετε το <b>Copy block</b> της εφαρμογής στο <code>configuration.yaml</code> και κάνετε επανεκκίνηση του Home Assistant. Αυτό δημιουργεί τα scripts που καλεί κάθε κουμπί ελέγχου παρακάτω.</li>
+      <li><b>Ο προβολέας σας είναι ενεργοποιημένος</b> όσο χτίζετε. Τα χαρακτηριστικά εικόνας παρακάτω είναι αυτά που ένας προβολέας σε αναμονή αφήνει ως επί το πλείστον κενά.</li>
+    </ul>
+    <p class="lead">Δύο πηγές τροφοδοτούν αυτό το dashboard, και η διαφορά τους μετράει σε κάθε βήμα παρακάτω.</p>
+    <table class="t">
+      <thead><tr><th>Προέρχεται από</th><th>Σας δίνει</th></tr></thead>
+      <tbody>
+        <tr><td>Ο αισθητήρας προβολέα, <code>sensor.YOUR_PROJECTOR</code></td><td>Κάθε <b>ένδειξη</b>. Λειτουργία, είσοδος, λειτουργία χρώματος, όλες οι τιμές εικόνας, HDR και σήμα, φακός και γεωμετρία, ώρες λυχνίας. Ζωντανές μόλις συνδεθείτε και συγχρονίσετε, χωρίς να χρειάζεται Copy block.</td></tr>
+        <tr><td>Τα συγχρονισμένα scripts της εφαρμογής, <code>script.projpilot_YOURSERIAL_...</code></td><td>Κάθε <b>χειριστήριο</b>. Λειτουργία, είσοδοι, λειτουργίες χρώματος, μνήμες φακού και οι Σκηνές σας. Αυτά υπάρχουν μόνο αφού επικολληθεί το Copy block, γίνει επανεκκίνηση του Home Assistant και πατήσετε Συγχρονισμός με HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 1</div>
+      <h2>Εγκαταστήστε τέσσερις κάρτες από το HACS</h2>
+    </div>
+    <p class="lead">Και οι τέσσερις βρίσκονται στο προεπιλεγμένο κατάστημα του HACS. Στο Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, αναζητήστε το όνομα, πατήστε Download και ανανεώστε τον περιηγητή σας.</p>
+    <table class="t">
+      <thead><tr><th>Αναζητήστε</th><th>Χρησιμεύει για</th><th>Αν το παραλείψετε</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Κάθε πλακίδιο πληροφοριών, κουμπί ελέγχου και πλακίδιο Σκηνής</td><td>Χρησιμοποιήστε μια απλή κάρτα <code>button</code>. Λειτουργεί, αλλά φαίνεται πιο γωνιώδης.</td></tr>
+        <tr><td><b>button-card</b></td><td>Το κεντρικό πλακίδιο, με την ζωντανή ετικέτα του</td><td>Χρησιμοποιήστε μια κάρτα <code>entity</code> ή μια κάρτα προτύπου Mushroom με λιγότερες λεπτομέρειες.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Το φόντο πράσινου γυαλιού, τα περιγράμματα και οι διαβαθμίσεις</td><td>Όλα εξακολουθούν να λειτουργούν. Απλώς δεν αποκτούν τη λάμψη τους.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Το ιστορικό ωρών λέιζερ κάτω από τη Συντήρηση</td><td>Χρησιμοποιήστε την ενσωματωμένη κάρτα <code>history-graph</code>.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Καμία δεν είναι απαραίτητη για να λειτουργήσει.</b> Κάθε χειριστήριο παρακάτω τρέχει από μια τυπική κάρτα κουμπιού του Home Assistant που δείχνει στο ίδιο script. Οι προσαρμοσμένες κάρτες είναι η εμφάνιση πράσινου γυαλιού, όχι η υποδομή.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 2</div>
+      <h2>Βρείτε το entity ID και τον σειριακό αριθμό σας</h2>
+    </div>
+    <p class="lead">Κάθε απόσπασμα σε αυτή τη σελίδα χρησιμοποιεί δύο σημεία αναπλήρωσης. Βρείτε τα δικά σας μία φορά και όλα τα υπόλοιπα είναι αντιγραφή και επικόλληση.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States στο Home Assistant, με φίλτρο <code>projector_pilot</code>. Κάτι σαν <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; ανοίξτε την εφαρμογή, <b>Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Home Assistant</b>. Το id που προκύπτει από τον σειριακό εμφανίζεται εκεί, και είναι το μεσαίο τμήμα κάθε συγχρονισμένου script: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> και ούτω καθεξής.</li>
+    </ul>
+    <p class="lead">Μπορείτε επίσης να φιλτράρετε το Developer Tools &rsaquo; States με <code>projpilot</code> για να δείτε ολόκληρη τη συγχρονισμένη λίστα χειριστηρίων με μια ματιά, αφού ολοκληρωθούν το Copy block και ο Συγχρονισμός του βήματος 1.</p>
+    <div class="note"><b>Δεν υπάρχει ακόμη λίστα scripts;</b> Αναμενόμενο πριν επικολλήσετε το Copy block. Ο αισθητήρας υπάρχει και ενημερώνεται· τα scripts εμφανίζονται μόνο αφού εκτελεστεί με επιτυχία ο Συγχρονισμός με HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 3</div>
+      <h2>Δημιουργήστε την προβολή</h2>
+    </div>
+    <ol class="steps">
+      <li>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard &rsaquo; New dashboard from scratch. Ονομάστε το Projector Pilot.</li>
+      <li>Ανοίξτε το και μετά το εικονίδιο μολυβιού πάνω δεξιά για επεξεργασία.</li>
+      <li>Προσθέστε μια προβολή. Και οι δύο διατάξεις δουλεύουν· ο πραγματικός πίνακας χρησιμοποιεί την προεπιλεγμένη στοίβα καρτών, η μία κάτω από την άλλη, που είναι η πιο απλή για επικόλληση.</li>
+      <li>Για να επικολλήσετε YAML, χρησιμοποιήστε το μενού με τις τρεις τελείες σε μια κάρτα και επιλέξτε <b>Edit in YAML</b>, ή το μενού με τις τρεις τελείες του πίνακα ελέγχου για <b>Raw configuration editor</b> ώστε να επικολλήσετε μια ολόκληρη προβολή με τη μία.</li>
+    </ol>
+    <p class="lead">Οι δικές ρυθμίσεις της προβολής, αν προτιμάτε να τις πληκτρολογήσετε:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 4</div>
+      <h2>Προσθέστε ένα ζωντανό πλακίδιο πληροφοριών</h2>
+    </div>
+    <p class="lead">Ξεκινήστε με κάτι που μόνο διαβάζει, ώστε να ξέρετε ότι το entity ID σας είναι σωστό πριν αγγίξετε οτιδήποτε στέλνει εντολή. Αυτό είναι ζωντανό μόλις υπάρξει ο αισθητήρας προβολέα, χωρίς Copy block, χωρίς συγχρονισμό. Προσθέστε μια κάρτα, Edit in YAML, επικολλήστε:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Το ίδιο σχήμα διαβάζει οποιοδήποτε από τα ~80 χαρακτηριστικά που φέρει ο αισθητήρας: αντικαταστήστε το <code>brightness</code> με <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, ό,τι θέλετε στο πλακίδιο.</p>
+    <p class="lead">Αποθηκεύστε το. Αν εμφανιστεί ένας πραγματικός αριθμός ή λέξη, το entity ID σας είναι σωστό και όλα τα παρακάτω θα δουλέψουν. Αν εμφανιστεί κενό, επιστρέψτε στο βήμα 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 5</div>
+      <h2>Προσθέστε μια πράσινη κεφαλίδα ενότητας</h2>
+    </div>
+    <p class="lead">Ένας απλός τίτλος είναι νεκρός χώρος. Αυτή είναι μια κάρτα <code>markdown</code> με φόντο διαβάθμισης από το card-mod, και είναι αυτό που μετατρέπει μια στοίβα πλακιδίων σε ονομασμένες ενότητες. Κάθε ενότητα του πίνακα ανοίγει με μία τέτοια, απλώς με διαφορετική ετικέτα και emoji.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Αλλάξτε τον κωδικό του emoji και το κείμενο της ετικέτας· το μπλοκ card-mod είναι ίδιο σε κάθε ενότητα.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 6</div>
+      <h2>Προσθέστε ένα κουμπί ελέγχου</h2>
+    </div>
+    <p class="lead">Αυτό στέλνει εντολή αντί να διαβάζει απλώς μια τιμή, γι' αυτό χρειάζεται να υπάρχουν πρώτα τα scripts. Καλεί το <code>script.projpilot_YOURSERIAL_power_on</code>, που η εφαρμογή γράφει μόνο αφού επικολλήσετε το Copy block στο <code>configuration.yaml</code>, κάνετε επανεκκίνηση του Home Assistant και πατήσετε <b>Συγχρονισμός με HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Η ίδια κάρτα για Απενεργοποίηση, Τύφλωση Οθόνης, HDMI 1, HDMI 2, A/V Mute, μια λειτουργία χρώματος ή μια μνήμη φακού: αλλάζουν μόνο η ετικέτα, το εικονίδιο και το <code>service</code>.</p>
+    <div class="note"><b>Αν φαίνεται σωστό αλλά δεν γίνεται τίποτα</b> όταν το πατάτε, είτε το Copy block δεν έχει επικολληθεί είτε το Home Assistant δεν έχει επανεκκινηθεί από τότε. Εκτελέστε <b>Δοκιμή Σύνδεσης</b> στην εφαρμογή, που ελέγχει ακριβώς αυτό, πριν υποθέσετε ότι φταίει ο πίνακας ελέγχου.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 7</div>
+      <h2>Προσθέστε το κεντρικό πλακίδιο</h2>
+    </div>
+    <p class="lead">Το κεντρικό πλακίδιο στην κορυφή του πίνακα είναι ένα <code>button-card</code>: μια μεγάλη κατάσταση λειτουργίας, μια σύνοψη μιας γραμμής που χτίζεται από πολλά χαρακτηριστικά ταυτόχρονα, και η εμφάνιση πράσινου γυαλιού σε ολόκληρη την κάρτα και όχι μόνο στο περίγραμμά της.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Περικομμένο στα κομμάτια που αλλάζουν ανά εγκατάσταση. Η πλήρης κάρτα ορίζει επίσης το εικονίδιο, το όνομα και τις θέσεις πλέγματος της ετικέτας· δείτε το αρχείο λήψης στο βήμα 10 για όλα.</p>
+    <p class="lead">Προτιμάτε μια πιο λεπτή λωρίδα; Ένα <code>mushroom-chips-card</code> κάνει την ίδια δουλειά σε μία σειρά μικρών chips: κατάσταση λειτουργίας, είσοδος, λειτουργία χρώματος, εύρος βίντεο και ώρες λυχνίας, το καθένα ένα πρότυπο που διαβάζει <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Χρησιμοποιήστε το ένα ή το άλλο, όχι και τα δύο, στην κορυφή του πίνακα.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 8</div>
+      <h2>Προσθέστε τις Σκηνές σας</h2>
+    </div>
+    <p class="lead">Κάθε Σκηνή που αποθηκεύετε στην εφαρμογή γίνεται ένα script με όνομα <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> μόλις συγχρονίσετε, και ένα πλακίδιο για μια Σκηνή είναι η ίδια κάρτα κουμπιού ελέγχου από το βήμα 6 με όνομα και εικονίδιο Σκηνής.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Αντικαταστήστε το <code>YOURSCENE1</code> με το id που εμφανίζεται για αυτή τη Σκηνή στη συγχρονισμένη λίστα χειριστηρίων της εφαρμογής. Ένα πλακίδιο ανά Σκηνή, σε ένα <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 9</div>
+      <h2>Προσθέστε ιστορικό ωρών λέιζερ</h2>
+    </div>
+    <p class="lead">Ο αισθητήρας προβολέα καταγράφεται από το Home Assistant όπως κάθε άλλος, οπότε το <code>lamp_hours</code> έχει ιστορικό δωρεάν. Χωρίς επιπλέον αισθητήρες, χωρίς βοηθούς, χωρίς καμία προηγούμενη ρύθμιση, κάτω από την ενότητα Συντήρηση.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">Οι 336 ώρες είναι δύο εβδομάδες. Οι ώρες λέιζερ και λυχνίας ανεβαίνουν σταθερά αντί να πηδούν πέρα δώθε, οπότε ένα παράθυρο δύο εβδομάδων συνήθως αρκεί για να φανεί η τάση χωρίς να φαίνεται το γράφημα επίπεδο.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Βήμα 10</div>
+      <h2>Ή πάρτε το σύνολο</h2>
+    </div>
+    <p class="lead">Η πλήρης προβολή, κάθε ενότητα και κάθε κάρτα από το στιγμιότυπο στην κορυφή αυτής της σελίδας, με σημεία αναπλήρωσης αντί για entity ID.</p>
+    <ol class="steps">
+      <li><a href="/el/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Κατεβάστε το YAML της προβολής</a>.</li>
+      <li>Ανοίξτε το σε οποιονδήποτε επεξεργαστή κειμένου και αντικαταστήστε, παντού όπου εμφανίζονται: το <code>YOUR_PROJECTOR</code> με το entity id του αισθητήρα προβολέα από το βήμα 2, και το <code>YOURSERIAL</code> με το id σας που προκύπτει από τον σειριακό, επίσης από το βήμα 2.</li>
+      <li>Στην ενότητα Σκηνές προς το τέλος, αντικαταστήστε τα <code>YOURSCENE1</code>, <code>YOURSCENE2</code> και <code>YOURSCENE3</code> με τα δικά σας τρία id Σκηνών, ή προσθέστε και αφαιρέστε πλακίδια ώστε να ταιριάζουν με όσες Σκηνές έχετε πραγματικά.</li>
+      <li>Στο Home Assistant, ανοίξτε τον πίνακα ελέγχου σας, εικονίδιο μολυβιού, μενού με τις τρεις τελείες, <b>Raw configuration editor</b>, και επικολλήστε το ως προβολή.</li>
+    </ol>
+    <div class="note"><b>Τα ονόματα και ο αριθμός των Σκηνών σας δεν θα ταιριάζουν.</b> Το αρχείο περιλαμβάνει τρεις Σκηνές ως παράδειγμα: Movie Night, Gaming, Sports Day. Μετονομάστε τα πλακίδια, κατευθύνετέ τα στα δικά σας id Σκηνών και προσθέστε ή διαγράψτε πλακίδια μέχρι η ενότητα να ταιριάζει με όσες Σκηνές αποθηκεύσατε πραγματικά.</div>
+    <div class="note"><b>Τα πλακίδια πληροφοριών δουλεύουν αμέσως μετά την επικόλληση.</b> Χρειάζονται μόνο να υπάρχει ο αισθητήρας. Τα κουμπιά ελέγχου και Σκηνών παραμένουν ανενεργά μέχρι να επικολληθεί το Copy block στο <code>configuration.yaml</code>, να γίνει επανεκκίνηση του Home Assistant και να πατήσετε Συγχρονισμός με HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Αντιμετώπιση προβλημάτων</h2>
+    </div>
+    <details class="more"><summary>Ένα πλακίδιο δείχνει Unknown</summary>
+      <p>Ελέγξτε το όνομα του χαρακτηριστικού με αυτό που φέρει πραγματικά ο αισθητήρας: Developer Tools &rsaquo; States, η οντότητά σας <code>sensor.YOUR_PROJECTOR</code>, και διαβάστε τη λίστα χαρακτηριστικών της. Ορισμένες ενδείξεις, όπως HDR PQ ή HDR HLG, συμπληρώνονται μόνο όσο ο προβολέας λαμβάνει ενεργά αυτό το είδος σήματος, οπότε το Unknown σε αυτές τις δύο μπορεί να είναι σωστό και όχι βλάβη. Αν ολόκληρος ο αισθητήρας φαίνεται φτωχός, ξυπνήστε τον προβολέα: μια μονάδα σε αναμονή δημοσιεύει πολύ λίγα.</p>
+    </details>
+    <details class="more"><summary>Ένα κουμπί δεν κάνει τίποτα</summary>
+      <p>Δεν έχετε επικολλήσει ακόμη το Copy block ή το Home Assistant δεν έχει επανεκκινηθεί από τότε. Τα κουμπιά ελέγχου και Σκηνών καλούν scripts που γράφει η εφαρμογή, και αυτά τα scripts δεν υπάρχουν μέχρι να επικολληθεί το Copy block στο <code>configuration.yaml</code> από το <b>Ρυθμίσεις &rsaquo; Αυτοματισμός Σπιτιού &rsaquo; Home Assistant</b> της εφαρμογής, να γίνει μία επανεκκίνηση του Home Assistant και να πατηθεί <b>Συγχρονισμός με HA</b>. Εκτελέστε πρώτα <b>Δοκιμή Σύνδεσης</b> στην εφαρμογή - σας λέει αν το μπλοκ υπάρχει πριν ψάξετε για λάθος στον πίνακα ελέγχου.</p>
+    </details>
+    <details class="more"><summary>Τα scripts που περιμένω λείπουν από το Developer Tools &rsaquo; States</summary>
+      <p>Φιλτράρετε με <code>projpilot</code> αντί για ολόκληρο τον σειριακό - είναι πιο εύκολο να δείτε ολόκληρη τη λίστα. Αν λείπει ένα χειριστήριο ή μια Σκηνή που προσθέσατε πρόσφατα, πατήστε ξανά <b>Συγχρονισμός με HA</b>· ενημερώνεται επί τόπου χωρίς να απαιτείται νέα ρύθμιση. Αν παλιά, νεκρά scripts γεμίζουν τη λίστα αφού διαγράψατε μια Σκηνή, χρησιμοποιήστε το <b>Κατάργηση ορφανών scripts</b> στην εφαρμογή.</p>
+    </details>
+    <details class="more"><summary>Το entity ID μου δεν μοιάζει με αυτό του οδηγού</summary>
+      <p>Το μοτίβο είναι σταθερό, το μεσαίο τμήμα όχι. Ο αισθητήρας σας παίρνει το όνομα από το μοντέλο του δικού σας προβολέα, και κάθε script φέρει τον σειριακό αριθμό του δικού σας προβολέα, όχι τα σημεία αναπλήρωσης αυτής της σελίδας. Βρείτε και τα δύο από το Developer Tools &rsaquo; States και την οθόνη Home Assistant της εφαρμογής, όπως στο βήμα 2, και χρησιμοποιήστε αυτά αντί για το κείμενο του παραδείγματος.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ολόκληρος ο προβολέας σας, σε έναν τοίχο</h2>
+    <p class="lead" style="margin:0 auto 24px">Ο Αυτοματισμός Σπιτιού είναι ένα εφάπαξ πρόσθετο. Χωρίς συνδρομή, χωρίς λογαριασμό, χωρίς cloud. Μία αγορά το ξεκλειδώνει σε κάθε πλατφόρμα που έχετε.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - διαθέσιμο τώρα</a>
+      <span class="pill">App Store - αναμένεται έγκριση</span>
+      <span class="pill">Microsoft Store - αναμένεται έγκριση</span>
+      <span class="pill">Mac App Store - αναμένεται έγκριση</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/el/guide/home-automation/">Πίσω στον Αυτοματισμό Σπιτιού &rarr;</a> &middot; <a href="/el/guide/">Πλήρης οδηγός χρήσης &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Γρήγορες απαντήσεις</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Πρέπει να φτιάξω αυτόν τον πίνακα ελέγχου με το χέρι;</h3><p>Όχι. Όταν πατάτε Συγχρονισμός με HA στην εφαρμογή, αυτή φτιάχνει για εσάς έναν έτοιμο πίνακα ελέγχου Projector Pilot απευθείας στο Home Assistant - τον ζωντανό αισθητήρα προβολέα συν ένα κουμπί για κάθε χειριστήριο και Σκηνή - και εμφανίζεται στην πλαϊνή γραμμή ως Projector Pilot. Αυτή η σελίδα είναι για να φτιάξετε με το χέρι την πιο πλούσια έκδοση «πράσινου γυαλιού» ή για να προσαρμόσετε ό,τι δημιούργησε ο Συγχρονισμός.</p></div><div class="gcard"><h3>Χρειάζομαι προσαρμοσμένες κάρτες από το HACS για να το φτιάξω;</h3><p>Για να ταιριάζει η εμφάνιση με το στιγμιότυπο, ναι: Mushroom, button-card, card-mod και mini-graph-card. Καμία δεν είναι απαραίτητη για να λειτουργούν τα βασικά χειριστήρια - κάθε κουμπί είναι μια απλή κλήση script, και οι προσαρμοσμένες κάρτες είναι απλώς το στυλ από πάνω.</p></div><div class="gcard"><h3>Γιατί τα πλακίδια πληροφοριών δείχνουν τιμή αλλά τα κουμπιά δεν κάνουν τίποτα;</h3><p>Ο αισθητήρας προβολέα δημοσιεύει τις ενδείξεις του μόλις συνδεθείτε και συγχρονίσετε στην εφαρμογή, οπότε τα πλακίδια πληροφοριών είναι ζωντανά αμέσως. Τα κουμπιά ελέγχου και Σκηνών καλούν scripts που υπάρχουν στο Home Assistant μόνο αφού επικολλήσετε το Copy block της εφαρμογής στο configuration.yaml, κάνετε επανεκκίνηση του Home Assistant και πατήσετε μία φορά Συγχρονισμός με HA.</p></div><div class="gcard"><h3>Θα ταιριάζουν τα ID των οντοτήτων μου με αυτά του οδηγού;</h3><p>Το μοτίβο θα ταιριάζει, οι ακριβείς χαρακτήρες όχι. Ο αισθητήρας προβολέα σας παίρνει το όνομά του από το μοντέλο του προβολέα, και κάθε script παίρνει το όνομά του από τον σειριακό αριθμό του προβολέα. Όπου αυτή η σελίδα γράφει YOUR_PROJECTOR, βάλτε το entity id του δικού σας αισθητήρα· όπου γράφει YOURSERIAL, βάλτε το id που προκύπτει από τον σειριακό και εμφανίζεται στην οθόνη Home Assistant της εφαρμογής.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/el/guide/">Οδηγός Χρήσης</a><a href="/el/pricing/">Τιμολόγηση</a><a href="/el/highlights/">Βασικά σημεία</a><a href="/el/guide/home-automation/">Home Assistant</a><a href="/el/help/">Βοήθεια &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/el/help/#privacy">Απόρρητο</a><a href="/el/help/#terms">Όροι</a></div>
+<div class="flinks"><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/guide/dashboard/">Πίνακας Ελέγχου</a><a href="/el/guide/remote/">Τηλεχειριστήριο</a><a href="/el/guide/picture/">Εικόνα</a><a href="/el/guide/lens/">Φακός</a><a href="/el/guide/scenes/">Σκηνές</a><a href="/el/guide/home-assistant-dashboard/">Πίνακας HA</a><a href="/el/guide/maintenance/">Συντήρηση</a><a href="/el/guide/settings/">Ρυθμίσεις</a><a href="/el/guide/languages/">Γλώσσες</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Το Projector Pilot είναι μια ανεξάρτητη εφαρμογή για προβολείς Epson και PJLink. Δεν σχετίζεται με, δεν υποστηρίζεται και δεν χορηγείται από την Epson, τον φορέα προτύπων PJLink, το Home Assistant, το Hubitat, την Apple, την Google ή τη Microsoft. Τα Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play και Microsoft Store είναι εμπορικά σήματα των αντίστοιχων κατόχων τους και αναφέρονται μόνο για να περιγράψουν με τι λειτουργεί η εφαρμογή.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

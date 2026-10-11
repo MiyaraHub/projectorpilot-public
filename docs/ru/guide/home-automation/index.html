@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="ru" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Руководство по Home Assistant &amp; Hubitat для проектора - Projector Pilot</title>
+<meta name="description" content="Подключите проектор Epson или PJLink к Home Assistant, Hubitat и вебхукам. Синхронизация с HA публикует состояние в реальном времени и превращает каждую сцену в скрипт." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Руководство по Home Assistant &amp; Hubitat для проектора - Projector Pilot" />
+<meta property="og:description" content="Подключите проектор Epson или PJLink к Home Assistant, Hubitat и вебхукам. Синхронизация с HA публикует состояние в реальном времени и превращает каждую сцену в скрипт." />
+<meta property="og:url" content="https://projectorpilot.com/ru/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Руководство по Home Assistant &amp; Hubitat для проектора - Projector Pilot" />
+<meta name="twitter:description" content="Подключите проектор Epson или PJLink к Home Assistant, Hubitat и вебхукам. Синхронизация с HA публикует состояние в реальном времени и превращает каждую сцену в скрипт." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ru", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Руководство по Home Assistant и Hubitat для проектора - Projector Pilot", "description": "Подключите проектор Epson или PJLink к Home Assistant, Hubitat и вебхукам. Синхронизация с HA публикует состояние в реальном времени и превращает каждую сцену в скрипт.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ru", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Ваш проектор - в Home Assistant и Hubitat.", "description": "Подключите проектор Epson или PJLink к Home Assistant, Hubitat и вебхукам. Синхронизация с HA публикует состояние в реальном времени и превращает каждую сцену в скрипт.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ru", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Руководство пользователя", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Автоматизация дома", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Нужно ли, чтобы телефон оставался в сети для работы автоматизаций Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Как только вы вставите в Home Assistant один блок shell_command и выполните синхронизацию, Home Assistant будет отправлять команды прямо на IP-адрес проектора. Projector Pilot - лишь инструмент настройки; после этого Home Assistant общается с проектором сам, дома ваш телефон или нет."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как проектор отображается в Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Как датчик, например sensor.projector_pilot_epson_qb1000b_qb1000w, содержащий питание, вход, цветовой режим, параметры изображения и часы работы лампы, который обновляется при каждом изменении, пока приложение открыто. Включите «Синхронизировать расширенное управление», и приложение также запишет скрипт Home Assistant для каждой сцены, а также для питания, каждого входа, каждого цветового режима и каждой памяти объектива вашего проектора."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Домашняя автоматизация бесплатна?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Домашняя автоматизация - платное дополнение, разовая покупка, отдельная от Projector Pilot Pro. Комплект покупает обе вместе со скидкой. См. страницу цен."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ru/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Поиск по руководству..." data-i18n-empty="Нет совпадений для" data-i18n-language="Язык"><a href="/ru/#features">Возможности</a><a href="/ru/guide/">Руководство</a><a href="/ru/pricing/">Цены</a><a href="/ru/highlights/">Главное</a><a href="/ru/guide/home-automation/">Home Assistant</a><a href="/ru/guide/home-assistant-dashboard/">Панель HA</a><a href="/ru/help/">Помощь</a><a class="cta" href="/ru/#download">СКАЧАТЬ ПРИЛОЖЕНИЕ</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ru/">Главная</a> &rsaquo; <a href="/ru/guide/">Руководство пользователя</a> &rsaquo; Автоматизация дома</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Вебхуки</div>
+    <h1>Ваш проектор - <span class="g">в Home Assistant и Hubitat</span>.</h1>
+    <p>Projector Pilot публикует состояние вашего проектора в реальном времени и каждый элемент управления в Home Assistant, Hubitat и любой вебхук на ваш выбор. Настройте один раз, и ваш умный дом сам управляет проектором - без телефона в сети и без облака посередине.</p>
+    <div class="readout"><span>Без сервера после настройки</span><span>Сцены становятся скриптами</span><span>Готовая панель</span><span>Список настройки</span><span>Платное дополнение</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Обзор</div>
+      <h2>Что делает домашняя автоматизация</h2>
+      <p class="lead">Домашняя автоматизация превращает Projector Pilot из пульта в вашей руке в устройство, которое видит весь ваш дом. Она открывает то, что делает проектор - питание, вход, цветовой режим, параметры изображения, часы работы лампы - и даёт вашему умному дому управление всем, что может менять приложение.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Она публикует состояние.</b> Проектор появляется как датчик Home Assistant, устройство Hubitat или JSON-данные в вашем вебхуке с теми же показаниями, что вы видите в приложении.</li>
+      <li><b>Она публикует элементы управления.</b> Каждая сохранённая сцена, а также питание, каждый вход, каждый цветовой режим и каждая память объектива становятся тем, что могут запускать автоматизация или голосовой помощник.</li>
+      <li><b>Она работает без сервера.</b> После настройки скриптов Home Assistant отправляет команды прямо на IP-адрес проектора. Телефону не нужно быть в сети, и ничего не проходит через облачную учётную запись.</li>
+    </ul>
+    <div class="note"><b>Домашняя автоматизация - платное дополнение.</b> Это разовая покупка, отдельная от Projector Pilot Pro, а комплект покупает обе вместе со скидкой. Без подписки, без учётной записи, без облака. См. <a href="/ru/pricing/">цены</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Три пути, один центр</h3>
+        <p class="lead">Настройки &rsaquo; Домашняя автоматизация - это центр. Выберите свою платформу - Home Assistant, Hubitat или вебхуки - и настройте её там. Можно подключить несколько сразу; они независимы.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Центр домашней автоматизации в Projector Pilot: Home Assistant, Hubitat и вебхуки" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Настройка Home Assistant</h2>
+      <p class="lead">Войдите из приложения, опубликуйте проектор как датчик, вставьте один блок в конфигурацию и выполните синхронизацию. После этого Home Assistant управляет проектором сам.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Откройте <b>Настройки &rsaquo; Домашняя автоматизация &rsaquo; Home Assistant</b>.</li>
+        <li>Введите <b>адрес Home Assistant</b> (например, <code>http://homeassistant.local:8123</code> или его IP), затем нажмите <b>Войти</b>. Это вход через браузер в вашем собственном экземпляре - <b>вставлять токен не нужно</b>. Используйте обычный логин Home Assistant, включая двухфакторную аутентификацию.</li>
+        <li>Приложение публикует проектор как <b>датчик</b> с сущностью вида <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, содержащий питание, вход, цветовой режим, параметры изображения и часы работы лампы.</li>
+        <li>Включите <b>Отправлять состояние проектора</b>, чтобы эти показания обновлялись в Home Assistant при каждом изменении, пока приложение открыто, и включите <b>Синхронизировать расширенное управление</b>, чтобы опубликовать скрипты для режимов изображения, входов, памяти объектива и питания.</li>
+        <li>Вставьте один блок <b>shell_command</b> (ниже) в свой <code>configuration.yaml</code>, перезапустите Home Assistant, затем нажмите <b>Синхронизировать с HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Экран Home Assistant в Projector Pilot с блоком shell_command, кнопкой «Войти», ID сущности проектора и переключателями синхронизации" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Блок shell_command</h3>
+    <p class="lead">В этом весь секрет работы без сервера. Приложение записывает одну команду, которую Home Assistant выполняет для связи с Web Control проектора, а каждый синхронизированный скрипт вызывает эту команду с другим действием. Нажмите <b>Копировать блок</b> в приложении и вставьте его в <code>configuration.yaml</code>. Пример ниже - иллюстрация: приложение подставит собственный адрес вашего проектора и имя команды:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Только пример. Приложение создаёт ваш блок с реальным IP проектора и именем, производным от его серийного номера.</p>
+    <div class="note"><b>Почему без сервера.</b> Эта <code>curl</code> работает на устройстве с Home Assistant, а не на телефоне. Home Assistant обращается к IP проектора напрямую через Web Control, поэтому автоматизация срабатывает независимо от того, открыто ли приложение и дома ли ваш телефон. Дайджест-пользователь <code>EPSONWEB</code> - это логин Web Control; приложение использует пароль Web Control, уже сохранённый для проектора.</p></div>
+
+    <h3 style="margin-top:32px">Проверка подключения, синхронизация и очистка</h3>
+    <ul class="plain">
+      <li><b>Проверить подключение</b> убеждается, что приложение может связаться с вашим Home Assistant и что вставленный <code>shell_command</code> действительно на месте, - так вы найдёте опечатку до того, как что-то на нём построите.</li>
+      <li><b>Синхронизировать с HA</b> записывает или обновляет скрипты для ваших сцен и элементов управления и создаёт готовую панель Projector Pilot прямо в Home Assistant. Запускайте снова при добавлении сцены или изменении элемента управления - обновление идёт на месте, дубликаты не накапливаются.</li>
+      <li><b>Удалить осиротевшие скрипты</b> находит скрипты, записанные приложением, для которых больше нет сцены или элемента управления, - например, после удаления сцены - <b>показывает, какие именно будут удалены, и сначала спрашивает</b>. Ничего не удаляется без вашего подтверждения. Затрагиваются только скрипты, созданные Projector Pilot; остальное в вашем Home Assistant не тронуто, а если Home Assistant не выдаёт список скриптов, ничего не удаляется.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Список настройки</div>
+      <h2>Приложение сообщает, что сделано, а чего не хватает</h2>
+      <p class="lead">На экране Home Assistant есть <b>Список настройки</b> и панель <b>Что есть в вашем Home Assistant</b>, так что вам не придётся гадать, какой шаг остался. Каждая строка сообщает, выполнен ли шаг, отсутствует или не удалось определить, и подсказывает, что делать дальше.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Подключено к Home Assistant</b> - вход выполнен и ответ получен. Если Home Assistant не отвечает, строка предлагает проверить адрес и что телефон в той же сети.</li>
+      <li><b>Проектор добавлен в Home Assistant</b> - есть ли этот проектор в Home Assistant. Если нет, строка отправляет вас добавить интеграцию PJLink, а шаг добавления интеграции показывает хост и порт PJLink, которые запрашивает Home Assistant.</li>
+      <li><b>Датчик показаний зарегистрирован</b> - датчик, содержащий показания вашего проектора. Он регистрируется при первом считывании данных проектора, а строка предлагает <b>Зарегистрировать</b> или <b>Включить</b>, если что-то этому мешает.</li>
+      <li><b>Что есть в вашем Home Assistant</b> - HACS (магазин сообщества), интеграция Epson Projector Link, интеграция PJLink и команды Projector Pilot в <code>configuration.yaml</code>. Для каждого показано «Найдено», «Не установлено» или «Не удалось определить», а при необходимости есть кнопки «Как установить» и «Открыть в HACS».</li>
+    </ul>
+    <div class="note"><b>«Проверить снова» сообщает, что нашло.</b> Нажмите <b>Проверить снова</b> после исправления, и приложение заново прочитает ваш Home Assistant и сообщит результат, а не оставит вас гадать, сработало ли. Строка, которую не удалось проверить, говорит <i>Не удалось определить</i>, а не угаданное «да» или «нет».</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Работает с тем, что у вас уже есть</div>
+      <h2>Поддержка встроенной интеграции PJLink и более богатые карточки, если они у вас есть</h2>
+      <p class="lead">Projector Pilot выясняет, что установлено в вашем Home Assistant, и подстраивается под это. Он работает со <b>встроенной интеграцией PJLink</b>, которая уже входит в Home Assistant, так что проектор PJLink, уже добавленный там, полноценно поддерживается.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Сначала встроенные карточки.</b> Если карточек сообщества нет, синхронизация создаёт панель из встроенных карточек Home Assistant и сообщает об этом по завершении. Всё работает сразу.</li>
+      <li><b>Улучшение при наличии карточек HACS.</b> Приложение проверяет, какие из карточек сообщества (Mushroom, button-card, card-mod, apexcharts-card) установлены, и заменяет каждую карточку более богатой там, где она есть. <a href="/ru/guide/home-assistant-dashboard/">Руководство по панели ручной сборки</a> идёт дальше, если вам нужен полный вид из зелёного стекла.</li>
+      <li><b>Сценам и элементам управления нужна одна вставка.</b> Если в Home Assistant ещё нет команды для отправки на проектор, панель всё равно создаётся с показаниями в реальном времени, а карточка <b>Завершить настройку</b> проведёт вас по шагам: нажмите «Копировать блок», вставьте его в <code>configuration.yaml</code>, перезапустите Home Assistant, затем снова нажмите «Синхронизировать».</li>
+      <li><b>Ничего не установлено? Вставьте вручную.</b> Если в Home Assistant ничего не установлено, вы всё равно можете скопировать всё из приложения и вставить самостоятельно.</li>
+      <li><b>Пароль помечается.</b> Вставляемый блок команды сообщает, когда содержит пароль проектора, так что вы знаете об этом, прежде чем делиться им или сохранять.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Пока проектор выключен</div>
+      <h2>Показания, которые сохраняются</h2>
+      <p class="lead">Проектор в режиме ожидания сообщает очень мало, поэтому панель обычно становилась бы пустой. Необязательный <b>датчик последних известных значений</b> сохраняет в Home Assistant последние показания проектора - вход, часы работы лампы или лазера - пока проектор выключен.</p>
+    </div>
+    <ul class="plain">
+      <li>Это ещё один необязательный блок: вставьте его в конец <code>configuration.yaml</code> (или добавьте только его строки в существующий раздел <code>template:</code>) и перезапустите Home Assistant. В приложении есть кнопка <b>Проверить, на месте ли</b>, которая сообщает, есть ли он в Home Assistant.</li>
+      <li>Выключение теперь доходит до Home Assistant как <b>off</b>, так что панель и ваши автоматизации видят проектор выключенным, когда он выключен.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Сцены как скрипты</div>
+      <h2>Каждая сцена становится скриптом Home Assistant</h2>
+      <p class="lead">После синхронизации ваши сцены не заперты внутри приложения. Каждая из них, а также питание, каждый вход, каждый цветовой режим и каждая память объектива, которые действительно есть у вашего проектора, записываются как скрипт Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Автоматизации могут их запускать.</b> «На закате, если телевизор включился, запустить “Киновечер”» - обычная автоматизация Home Assistant, когда сцена стала скриптом.</li>
+      <li><b>Голосовые помощники могут их запускать.</b> Откройте скрипт своему помощнику, и фраза «включи “Киновечер”» одновременно задаст вход, режим изображения и память объектива.</li>
+      <li><b>Появляются только ваши реальные элементы управления.</b> Приложение записывает скрипт для каждого входа, цветового режима и памяти объектива, о которых сообщает проектор, а не универсальный список, составленный наугад.</li>
+      <li><b>Отключение синхронизации удаляет только записанное приложением.</b> Выключите синхронизацию или воспользуйтесь функцией «Удалить осиротевшие скрипты» (она показывает список и сначала спрашивает), и Projector Pilot удалит созданные им скрипты и больше ничего.</li>
+    </ul>
+    <div class="note"><b>Скрипты названы так, чтобы переименование обновляло тот же скрипт.</b> Имена скриптов образуются из проектора и элемента управления, поэтому повторная синхронизация после переименования сцены обновляет существующий скрипт, а не создаёт вторую копию.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Панель управления</div>
+      <h2>Синхронизация создаёт панель за вас</h2>
+      <p class="lead">Вам не нужно собирать представление Lovelace вручную и больше не нужно его вставлять. Когда вы нажимаете <b>Синхронизировать с HA</b>, приложение создаёт полную панель Projector Pilot прямо в Home Assistant через его собственный API: состояние проектора в реальном времени и кнопку для каждой синхронизированной сцены и элемента управления. Она появляется в боковом меню Home Assistant как <b>Projector Pilot</b> - откройте её, и всё готово.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Панель Projector Pilot в Home Assistant: питание и источник, цветовые режимы, полное меню изображения, HDR и сигнал, RGB-калибровка, объектив и геометрия, график часов работы лазера, обслуживание и сцены - всё в виде плиток из зелёного стекла" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Более богатая версия панели ручной сборки. Панель, которую создаёт синхронизация, содержит то же состояние в реальном времени и те же кнопки в стандартных карточках Home Assistant; вид из зелёного стекла ниже - необязательная пользовательская сборка. Прокрутите или нажмите, чтобы увеличить.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Войдите в Home Assistant в приложении.</li>
+      <li>Один раз вставьте <b>блок «Копировать»</b> приложения в <code>configuration.yaml</code> и перезапустите Home Assistant (единственный ручной шаг - Home Assistant не позволяет приложениям добавлять эту команду удалённо).</li>
+      <li>Нажмите <b>Синхронизировать с HA</b>. Панель будет создана и появится в боковом меню как <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Хотите вставить её сами?</b> Кнопка <b>Копировать панель</b> по-прежнему есть на экране Home Assistant. Нажмите её, затем в Home Assistant перейдите в <b>Настройки &rsaquo; Панели &rsaquo; Добавить панель</b>, создайте пустую панель, откройте её меню из трёх точек &rsaquo; <b>Редактировать панель</b> &rsaquo; меню из трёх точек &rsaquo; <b>Редактор необработанной конфигурации</b> и вставьте скопированный YAML.</div>
+    <p class="lead">Создана ли панель за вас или вы вставили её сами, она одинакова - карточка состояния плюс кнопка для каждого элемента управления (пример фрагмента):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Только пример. В вашей панели - реальная сущность вашего проектора и ваши сцены.</p>
+    <div class="note"><b>Не зависит от модели.</b> Панель строится из возможностей <i>вашего</i> проектора - сущности, параметров изображения, входов, цветовых режимов, памяти объектива и сцен, о которых он действительно сообщил. Скриншоты здесь сняты с QB1000; у вашей модели могут быть другие входы, элементы управления и показания. Для полной панели из зелёного стекла, как на изображении, следуйте <a href="/ru/guide/home-assistant-dashboard/">пошаговому руководству по панели</a> или <a href="/ru/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>скачайте готовое представление</a> и измените две строки.</div>
+    <div class="note"><b>Хотите более богатую стену?</b> Те же скрипты управляют любыми карточками на ваш вкус. Если вы пользовались AVR Maestro, подход тот же - создавайте подсвечиваемые плитки источников и режимов, живые заголовки и историю на основе одного датчика и синхронизированных скриптов.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Настройка Hubitat</h2>
+      <p class="lead">В Hubitat Projector Pilot отражает проектор на устройство в вашем хабе через Maker API, так что Rule Machine может считывать и обрабатывать питание, отключение звука и вход.</p>
+    </div>
+    <ol class="steps">
+      <li>В Hubitat включите приложение <b>Maker API</b>, запишите его URL доступа и токен и выберите, какие устройства оно открывает.</li>
+      <li>В Projector Pilot откройте <b>Настройки &rsaquo; Домашняя автоматизация &rsaquo; Hubitat</b> и введите данные <b>Maker API</b> вашего хаба.</li>
+      <li>Выберите <b>устройство, представляющее проектор</b>. Приложение предлагает наиболее подходящее; выберите его или укажите своё.</li>
+      <li>Приложение <b>отражает питание, отключение звука и вход</b> на это устройство, отправляя только те команды, которые устройство принимает.</li>
+      <li>Создавайте правила <b>Rule Machine</b> для этого устройства так же, как для любого другого - ими управляет состояние проектора.</li>
+    </ol>
+    <div class="note"><b>Только то, что принимает устройство.</b> Приложение отправляет значение проектора в Hubitat, только если выбранное устройство поддерживает такую команду, поэтому оно никогда не отправит то, что устройство отклонит.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Вебхуки</div>
+      <h2>Настройка вебхуков</h2>
+      <p class="lead">Вебхуки - универсальное решение. Приложение отправляет запрос на ваш URL, когда проектор включается, выключается, меняет вход или вызывает сцену - вебхук Home Assistant, Node-RED, IFTTT или всё, что принимает JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Откройте <b>Настройки &rsaquo; Домашняя автоматизация &rsaquo; Вебхуки</b>.</li>
+      <li>Введите <b>URL</b>, на который нужно отправлять. Вебхук Home Assistant выглядит так: <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Выберите, какие <b>события</b> запускают вебхук: включение, выключение, смена входа, вызов сцены - и при желании отфильтруйте по конкретному входу или сцене.</li>
+      <li>При необходимости задайте <b>собственные данные запроса</b>, если принимающему сервису нужен определённый формат; иначе приложение отправляет JSON по умолчанию.</li>
+      <li>Сохраните. С этого момента приложение отправляет запрос при каждом подходящем событии.</li>
+    </ol>
+    <p class="lead">Данные по умолчанию - обычный JSON: событие, проектор и изменившееся значение:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Пример данных. Событие смены входа или питания содержит соответствующие ему поля.</p>
+    <div class="note"><b>Повторная привязка исправляет всё сразу.</b> Если вы заново привязываете Home Assistant по новому адресу, приложение сразу обновляет все вебхуки, указывающие на него, так что перенос экземпляра не означает редактирования каждого вручную.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Устранение неполадок</h2>
+    </div>
+    <details class="more"><summary>Вход возвращает на страницу входа</summary>
+      <p>Убедитесь, что введённый адрес - тот, по которому вы действительно открываете Home Assistant, включая порт (обычно <code>:8123</code>). Вход - это настоящий вход через браузер в вашем экземпляре, поэтому действуют ваше имя пользователя, пароль и код двухфакторной аутентификации. На телефоне вход завершается независимо от того, передаёт ли встроенный браузер результат или первым возвращается локальный обратный вызов; если всё равно зависает, закройте окно и снова нажмите «Войти».</p>
+    </details>
+    <details class="more"><summary>Датчик проектора не появляется в Home Assistant</summary>
+      <p>Датчик публикуется, пока приложение открыто и включено <b>Отправлять состояние проектора</b>, поэтому откройте приложение и проверьте этот переключатель. Затем проверьте <b>Инструменты разработчика &rsaquo; Состояния</b> в Home Assistant и отфильтруйте по <code>projector_pilot</code>. Проектор в режиме ожидания публикует очень мало; разбудите его, и показания появятся.</p>
+    </details>
+    <details class="more"><summary>Синхронизированные скрипты отсутствуют</summary>
+      <p>Скрипты записывает <b>Синхронизировать с HA</b>, для чего блок <code>shell_command</code> должен быть уже вставлен в <code>configuration.yaml</code>, а Home Assistant один раз перезапущен. Сначала запустите <b>Проверить подключение</b> - оно сообщит, есть ли блок. Затем синхронизируйте снова. Если список засорён старыми мёртвыми скриптами, воспользуйтесь функцией <b>Удалить осиротевшие скрипты</b>.</p>
+    </details>
+    <details class="more"><summary>Скрипт работает в приложении, но не из Home Assistant, когда телефона нет рядом</summary>
+      <p>В этом и смысл блока <code>shell_command</code> - именно он позволяет Home Assistant самостоятельно обращаться к IP проектора. Если он работает только при открытом приложении, вероятно, блок не вставлен или Home Assistant не перезапускали после вставки. Проверьте подключением, перезапустите Home Assistant и синхронизируйте.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Подключите проектор ко всему дому</h2>
+    <p class="lead" style="margin:0 auto 24px">Домашняя автоматизация - разовое дополнение. Без подписки, без учётной записи, без облака. Одна покупка открывает её на всех ваших платформах.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - уже доступно</a>
+      <span class="pill">App Store - ожидает одобрения</span>
+      <span class="pill">Microsoft Store - ожидает одобрения</span>
+      <span class="pill">Mac App Store - ожидает одобрения</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/ru/pricing/">См. сравнение Free, Pro и «Домашняя автоматизация» &rarr;</a> &middot; <a href="/ru/guide/">Полное руководство пользователя &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Быстрые ответы</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Нужно ли, чтобы телефон оставался в сети для работы автоматизаций Home Assistant?</h3><p>Нет. Как только вы вставите в Home Assistant один блок shell_command и выполните синхронизацию, Home Assistant будет отправлять команды прямо на IP-адрес проектора. Projector Pilot - лишь инструмент настройки; после этого Home Assistant общается с проектором сам, дома ваш телефон или нет.</p></div><div class="gcard"><h3>Как проектор отображается в Home Assistant?</h3><p>Как датчик, например sensor.projector_pilot_epson_qb1000b_qb1000w, содержащий питание, вход, цветовой режим, параметры изображения и часы работы лампы, который обновляется при каждом изменении, пока приложение открыто. Включите «Синхронизировать расширенное управление», и приложение также запишет скрипт Home Assistant для каждой сцены, а также для питания, каждого входа, каждого цветового режима и каждой памяти объектива вашего проектора.</p></div><div class="gcard"><h3>Домашняя автоматизация бесплатна?</h3><p>Домашняя автоматизация - платное дополнение, разовая покупка, отдельная от Projector Pilot Pro. Комплект покупает обе вместе со скидкой. См. страницу цен.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ru/guide/">Руководство пользователя</a><a href="/ru/pricing/">Цены</a><a href="/ru/highlights/">Главное</a><a href="/ru/guide/home-automation/">Home Assistant</a><a href="/ru/help/">Помощь &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ru/help/#privacy">Конфиденциальность</a><a href="/ru/help/#terms">Условия</a></div>
+<div class="flinks"><a href="/ru/guide/getting-started/">Начало работы</a><a href="/ru/guide/dashboard/">Панель управления</a><a href="/ru/guide/remote/">Пульт</a><a href="/ru/guide/picture/">Изображение</a><a href="/ru/guide/lens/">Объектив</a><a href="/ru/guide/scenes/">Сцены</a><a href="/ru/guide/home-assistant-dashboard/">Панель HA</a><a href="/ru/guide/maintenance/">Обслуживание</a><a href="/ru/guide/settings/">Настройки</a><a href="/ru/guide/languages/">Языки</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot - независимое приложение для проекторов Epson и PJLink. Оно не связано с Epson, организацией по стандарту PJLink, Home Assistant, Hubitat, Apple, Google и Microsoft, не одобрено и не спонсируется ими. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play и Microsoft Store являются товарными знаками их владельцев и упоминаются лишь для описания того, с чем работает приложение.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="ko" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>프로젝터 상태 대시보드 앱 - Projector Pilot</title>
+<meta name="description" content="Projector Pilot 대시보드: 전원, 입력, 색상 모드를 실시간으로 확인하고, 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간 같은 투사 정보와 순서를 바꿀 수 있는 카드를 한 화면에서 만나 보세요." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="프로젝터 상태 대시보드 앱 - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot 대시보드: 전원, 입력, 색상 모드를 실시간으로 확인하고, 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간 같은 투사 정보와 순서를 바꿀 수 있는 카드를 한 화면에서 만나 보세요." />
+<meta property="og:url" content="https://projectorpilot.com/ko/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="프로젝터 상태 대시보드 앱 - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot 대시보드: 전원, 입력, 색상 모드를 실시간으로 확인하고, 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간 같은 투사 정보와 순서를 바꿀 수 있는 카드를 한 화면에서 만나 보세요." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ko", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "프로젝터 상태 대시보드 앱 - Projector Pilot", "description": "Projector Pilot 대시보드: 전원, 입력, 색상 모드를 실시간으로 확인하고, 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간 같은 투사 정보와 순서를 바꿀 수 있는 카드를 한 화면에서 만나 보세요.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ko", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "내 프로젝터 대시보드, 원하는 대로 꾸미세요", "description": "Projector Pilot 대시보드: 전원, 입력, 색상 모드를 실시간으로 확인하고, 다이내믹 레인지, 색 공간, 감마, 레이저 사용 시간 같은 투사 정보와 순서를 바꿀 수 있는 카드를 한 화면에서 만나 보세요.", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ko", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "사용 설명서", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "대시보드", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ko/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어"><a href="/ko/#features">기능</a><a href="/ko/guide/">가이드</a><a href="/ko/pricing/">가격</a><a href="/ko/highlights/">하이라이트</a><a href="/ko/guide/home-automation/">Home Assistant</a><a href="/ko/help/">도움말</a><a class="cta" href="/ko/#download">앱 받기</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용자 가이드</a> &rsaquo; 대시보드</div>
+    <div class="eyebrow">대시보드</div>
+    <h1>내 프로젝터 대시보드, <span class="g">원하는 대로 꾸미세요</span></h1>
+    <p class="lead">대시보드는 모든 조작의 출발점입니다. 상단에는 실시간 상태가 표시되고, 그 아래에는 프로젝터의 각 기능별 카드가 놓입니다. 맞춤 설정 모드에서는 카드를 추가하고, 숨기고, 순서를 바꿔서 꼭 필요한 정보만 화면에 담을 수 있어요. 표시되는 모든 수치는 프로젝터에서 직접 읽어 오며, 값이 바뀌는 즉시 갱신됩니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">실시간 상태</div>
+        <h2>전원, 입력, 색상 모드를 한눈에</h2>
+        <ul class="plain">
+          <li><b>전원 버튼.</b> 한 번 탭하면 프로젝터를 켜고 끌 수 있습니다. 예열과 냉각 과정도 그대로 보여 주기 때문에, 상태가 순식간에 바뀐 것처럼 꾸미지 않고 프로젝터가 실제로 예열 또는 냉각 중인 모습을 확인할 수 있어요.</li>
+          <li><b>입력 소스.</b> 현재 소스를 바로 확인하고, 탭해서 전환할 수 있습니다.</li>
+          <li><b>색상 모드.</b> 프로젝터에서 읽어 온 현재 화질 모드(다이내믹, 시네마, 내추럴 등)를 보여 줍니다.</li>
+          <li><b>화면 차단.</b> 신호는 그대로 둔 채 화면만 가립니다. 대시보드와 리모컨의 상태가 항상 일치해서, 차단 중이면 두 곳 모두 활성으로 표시돼요.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="전원, 입력, 색상 모드, 투사 정보 카드가 실시간으로 표시된 Projector Pilot 대시보드" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">대시보드 주변 기능</div>
+      <h2>프로젝터 전환, 전원 끄기, 펌웨어</h2>
+    </div>
+    <ul class="plain">
+      <li><b>프로젝터 전환기.</b> 모든 프로젝터 페이지 상단 바에 <b>프로젝터 전환</b> 컨트롤이 있어서, 목록으로 돌아가지 않고도 프로젝터 사이를 오갈 수 있습니다. 여러 대의 프로젝터 지원은 Pro에 포함됩니다.</li>
+      <li><b>전원을 끌 때는 먼저 확인합니다.</b> 프로젝터를 끌 때는 <b>프로젝터를 끌까요?</b>라고 물어보고 확인을 기다립니다. 켤 때는 묻지 않아요.</li>
+      <li><b>펌웨어.</b> 프로젝터가 펌웨어 버전을 알려 주면 대시보드, 정보 탭, 진단 리포트에 표시됩니다. 알려 주지 않으면 추측해서 보여 주지 않고 아무것도 표시하지 않습니다.</li>
+      <li><b>즉각 반응하는 컨트롤.</b> 렌즈 시프트, 초점, 줌, 광 출력 스테퍼는 누르는 즉시 반응하고, 프로젝터가 확인해 준 값으로 맞춰집니다. 전송 중에 들어온 입력은 대기열에 쌓지 않고 무시해요.</li>
+      <li><b>솔직한 전원 상태.</b> 앱을 다시 열면 잘못된 “꺼짐”을 보여 주는 대신 확인 중이라고 알려 주고, 프로젝터가 켜지면 약 10초 안에 알아챕니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">투사 정보</div>
+      <h2>프로젝터가 지금 실제로 하고 있는 일</h2>
+      <p class="lead">투사 정보 카드는 실제 신호와 설치 정보를 본체에서 직접 읽어 옵니다. 여기에 추측으로 채운 값은 없어요.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>항목</th><th>표시 내용</th></tr></thead>
+      <tbody>
+        <tr><td>다이내믹 레인지</td><td>SDR 또는 HDR이며, 색 공간과 분리해서 표시하므로 신호가 잘못 표기되는 일이 없습니다.</td></tr>
+        <tr><td>색 공간</td><td>BT.2020, BT.709 같은 입력 색역입니다. HDR 배지에 섞지 않고 따로 보여 줍니다.</td></tr>
+        <tr><td>감마</td><td>프로젝터가 보고하는 현재 감마입니다.</td></tr>
+        <tr><td>레이저 사용 시간</td><td>광원이 작동한 시간으로, 패널이나 레이저 수명을 가늠할 수 있습니다. 램프 모델은 램프 사용 시간이 대신 표시돼요.</td></tr>
+        <tr><td>시리얼 번호</td><td>본체에서 읽어 온 프로젝터 고유의 시리얼 번호입니다.</td></tr>
+        <tr><td>설치 방식</td><td>프로젝터에 설정된 천장 설치 또는 리어 프로젝션 여부입니다.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>색 공간과 다이내믹 레인지는 의도적으로 분리된 항목입니다.</b> MadVR 같은 외부 톤 매퍼가 처리하는 BT.2020 SDR 신호는 있는 그대로 표시되며, 잘못된 HDR10 배지가 붙는 일은 없습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">요약 카드</div>
+      <h2>화질과 렌즈를 한눈에</h2>
+    </div>
+    <ul class="plain">
+      <li><b>화질 요약.</b> 밝기, 명암, 색조, 선명도, 색온도 등 핵심 화질 수치를 프로젝터 메뉴와 같은 눈금으로 보여 주고, 탭하면 전체 <a href="/ko/guide/picture/">화질</a> 화면으로 이동합니다.</li>
+      <li><b>렌즈 요약.</b> 현재 렌즈 상태를 보여 주며, 시프트, 초점, 줌, 메모리를 다루는 <a href="/ko/guide/lens/">렌즈</a> 화면으로 바로 이동할 수 있습니다.</li>
+      <li><b>신호, 광원, 작동 카드.</b> 신호 상세, 광 출력, 에코/작동처럼 관심 있는 카드를 추가해서 대시보드를 꽉 채우거나 간결하게 유지해 보세요.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">나만의 스타일로</div>
+      <h2>카드 추가, 숨기기, 순서 바꾸기</h2>
+      <p class="lead"><b>맞춤 설정</b>을 탭하면 대시보드를 편집할 수 있습니다. 선택 목록에서 카드를 추가하고, 드래그해서 순서를 바꾸고, 보지 않는 카드는 숨기세요.</p>
+    </div>
+    <ol class="steps">
+      <li>대시보드에서 <b>맞춤 설정을 탭</b>합니다.</li>
+      <li>선택 목록에서 <b>카드를 추가</b>합니다. 전원, 입력, 색상 모드, 화면 차단, 화질, 렌즈, 신호, 에코/작동 카드를 쓸 수 있고, 전체 목록에는 더 많은 카드 종류가 있습니다.</li>
+      <li><b>드래그해서 순서를 바꿔</b> 자주 쓰는 컨트롤을 맨 위에 두세요.</li>
+      <li>필요 없는 항목은 <b>숨깁니다</b>. 끝났어요. 구성은 내 취향대로 저장되고 그대로 유지됩니다.</li>
+    </ol>
+    <div class="note">프로젝터가 실제로 지원하는 컨트롤의 카드만 나타납니다. 전동 렌즈가 없는 모델에는 추가할 렌즈 카드도 없어요. 하드웨어가 응답하지 못하는 컨트롤은 앱이 절대 보여 주지 않습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">다음</div>
+      <h2>계속 읽어 보기</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ko/guide/remote/"><span>&#127918;</span>리모컨</a>
+      <a href="/ko/guide/picture/"><span>&#127912;</span>화질</a>
+      <a href="/ko/guide/lens/"><span>&#128247;</span>렌즈</a>
+      <a href="/ko/guide/"><span>&#128218;</span>가이드 허브로 돌아가기</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ko/guide/">사용자 가이드</a><a href="/ko/pricing/">가격</a><a href="/ko/highlights/">하이라이트</a><a href="/ko/guide/home-automation/">Home Assistant</a><a href="/ko/help/">도움말 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ko/help/#privacy">개인정보 처리방침</a><a href="/ko/help/#terms">이용약관</a></div>
+<div class="flinks"><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/guide/dashboard/">대시보드</a><a href="/ko/guide/remote/">리모컨</a><a href="/ko/guide/picture/">화질</a><a href="/ko/guide/lens/">렌즈</a><a href="/ko/guide/scenes/">장면</a><a href="/ko/guide/home-assistant-dashboard/">HA 대시보드</a><a href="/ko/guide/maintenance/">유지관리</a><a href="/ko/guide/settings/">설정</a><a href="/ko/guide/languages/">언어</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot은 Epson 및 PJLink 프로젝터를 위한 독립 앱입니다. Epson, PJLink 표준 기구, Home Assistant, Hubitat, Apple, Google, Microsoft와 제휴, 보증, 후원 관계가 없습니다. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, Microsoft Store는 각 소유자의 상표이며, 앱이 함께 작동하는 대상을 설명하기 위해서만 언급했습니다.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

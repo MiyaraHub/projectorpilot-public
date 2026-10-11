@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>מדריך Home Assistant &amp; Hubitat למקרן - Projector Pilot</title>
+<meta name="description" content="חברו את מקרן Epson או PJLink שלכם אל Home Assistant, Hubitat ו-webhooks. סנכרון עם HA מפרסם מצב חי והופך כל סצנה לסקריפט." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/he/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="מדריך Home Assistant &amp; Hubitat למקרן - Projector Pilot" />
+<meta property="og:description" content="חברו את מקרן Epson או PJLink שלכם אל Home Assistant, Hubitat ו-webhooks. סנכרון עם HA מפרסם מצב חי והופך כל סצנה לסקריפט." />
+<meta property="og:url" content="https://projectorpilot.com/he/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="מדריך Home Assistant &amp; Hubitat למקרן - Projector Pilot" />
+<meta name="twitter:description" content="חברו את מקרן Epson או PJLink שלכם אל Home Assistant, Hubitat ו-webhooks. סנכרון עם HA מפרסם מצב חי והופך כל סצנה לסקריפט." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "he", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "מדריך Home Assistant ו-Hubitat למקרן - Projector Pilot", "description": "חברו את מקרן Epson או PJLink שלכם אל Home Assistant, Hubitat ו-webhooks. סנכרון עם HA מפרסם מצב חי והופך כל סצנה לסקריפט.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "he", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "המקרן שלכם, ב-Home Assistant וב-Hubitat.", "description": "חברו את מקרן Epson או PJLink שלכם אל Home Assistant, Hubitat ו-webhooks. סנכרון עם HA מפרסם מצב חי והופך כל סצנה לסקריפט.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "he", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "בית", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "מדריך למשתמש", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "אוטומציה ביתית", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם הטלפון שלי צריך להישאר ברשת כדי שאוטומציות של Home Assistant ירוצו?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. אחרי שמדביקים את בלוק shell_command האחד ל-Home Assistant ומסנכרנים, Home Assistant שולח פקודות ישירות לכתובת ה-IP של המקרן. Projector Pilot היא רק כלי ההתקנה; אחר כך Home Assistant מדבר עם המקרן בעצמו, בין אם הטלפון שלכם בבית ובין אם לא."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "איך המקרן מופיע ב-Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כחיישן, למשל sensor.projector_pilot_epson_qb1000b_qb1000w, שנושא הפעלה, קלט, מצב צבע, נתוני התמונה ושעות מנורה, ומתעדכן בכל פעם שהם משתנים בזמן שהאפליקציה פתוחה. הפעילו את סנכרון בקרות מתקדמות והאפליקציה כותבת גם סקריפט ב-Home Assistant לכל סצנה, וכן להפעלה, לכל קלט, לכל מצב צבע ולכל זיכרון עדשה שיש במקרן שלכם."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אוטומציה ביתית בחינם?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "אוטומציה ביתית היא תוספת בתשלום, רכישה חד-פעמית, נפרדת מ-Projector Pilot Pro. חבילה קונה את שתיהן יחד בהנחה. ראו את עמוד התמחור."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/he/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה"><a href="/he/#features">תכונות</a><a href="/he/guide/">מדריך</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/guide/home-assistant-dashboard/">לוח בקרה ב-HA</a><a href="/he/help/">עזרה</a><a class="cta" href="/he/#download">הורידו את האפליקציה</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; אוטומציה ביתית</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhooks</div>
+    <h1>המקרן שלכם, <span class="g">ב-Home Assistant וב-Hubitat</span>.</h1>
+    <p>Projector Pilot מפרסמת את המצב החי של המקרן ואת כל הבקרות אל Home Assistant, Hubitat וכל webhook שתרצו. מגדירים פעם אחת, והבית החכם שלכם מפעיל את המקרן בעצמו - בלי טלפון ברשת, בלי ענן באמצע.</p>
+    <div class="readout"><span>בלי שרת אחרי ההגדרה</span><span>סצנות הופכות לסקריפטים</span><span>לוח בקרה מוכן</span><span>רשימת הגדרה</span><span>תוספת בתשלום</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">סקירה</div>
+      <h2>מה אוטומציה ביתית עושה</h2>
+      <p class="lead">אוטומציה ביתית הופכת את Projector Pilot משלט שביד למכשיר שכל הבית שלכם רואה. היא חושפת מה המקרן עושה - הפעלה, קלט, מצב צבע, נתוני התמונה, שעות מנורה - ונותנת לבית החכם בקרה לכל מה שהאפליקציה יכולה לשנות.</p>
+    </div>
+    <ul class="plain">
+      <li><b>היא מפרסמת מצב.</b> המקרן מופיע כחיישן ב-Home Assistant, כמכשיר ב-Hubitat, או כמטען JSON ב-webhook שלכם, עם אותן קריאות שהאפליקציה מראה לכם.</li>
+      <li><b>היא מפרסמת בקרות.</b> כל סצנה שאתם שומרים, וכן הפעלה, כל קלט, כל מצב צבע וכל זיכרון עדשה, הופכים למשהו שאוטומציה או עוזר קולי יכולים להפעיל.</li>
+      <li><b>היא רצה בלי שרת.</b> אחרי שהסקריפטים מוגדרים, Home Assistant שולח פקודות ישירות לכתובת ה-IP של המקרן. הטלפון שלכם לא צריך להיות ברשת, ושום דבר לא עובר דרך חשבון בענן.</li>
+    </ul>
+    <div class="note"><b>אוטומציה ביתית היא תוספת בתשלום.</b> זו רכישה חד-פעמית, נפרדת מ-Projector Pilot Pro, וחבילה קונה את שתיהן יחד בהנחה. בלי מנוי, בלי חשבון, בלי ענן. ראו <a href="/he/pricing/">תמחור</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>שלוש דרכי כניסה, מרכז אחד</h3>
+        <p class="lead">הגדרות &rsaquo; אוטומציה ביתית הוא המרכז. בחרו את הפלטפורמה שאתם מפעילים - Home Assistant, Hubitat או Webhooks - והגדירו אותה שם. אפשר לחבר יותר מאחת בו-זמנית; הן עצמאיות.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="מרכז האוטומציה הביתית ב-Projector Pilot: Home Assistant, Hubitat ו-Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>הגדרת Home Assistant</h2>
+      <p class="lead">התחברו מהאפליקציה, פרסמו את המקרן כחיישן, הדביקו בלוק אחד לתצורה שלכם, וסנכרנו. מאותו רגע Home Assistant מפעיל את המקרן בעצמו.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>פתחו <b>הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Home Assistant</b>.</li>
+        <li>הקלידו את <b>כתובת Home Assistant</b> שלכם (למשל <code>http://homeassistant.local:8123</code> או ה-IP שלו), ואז לחצו על <b>התחברות</b>. זו התחברות בדפדפן מול המופע שלכם - <b>אין אסימון להדביק</b>. השתמשו בהתחברות הרגילה שלכם ל-Home Assistant, כולל אימות דו-שלבי.</li>
+        <li>האפליקציה מפרסמת את המקרן כ<b>חיישן</b>, עם ישות כמו <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, שנושאת הפעלה, קלט, מצב צבע, נתוני התמונה ושעות מנורה.</li>
+        <li>הפעילו את <b>שליחת מצב המקרן</b> כדי שהקריאות יתעדכנו ב-Home Assistant בכל פעם שהן משתנות בזמן שהאפליקציה פתוחה, והפעילו את <b>סנכרון בקרות מתקדמות</b> כדי לפרסם סקריפטים למצבי תמונה, קלטים, זיכרונות עדשה והפעלה.</li>
+        <li>הדביקו את בלוק <b>shell_command</b> האחד (בהמשך) ל-<code>configuration.yaml</code> שלכם, הפעילו מחדש את Home Assistant, ואז לחצו על <b>סנכרון עם HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="מסך Home Assistant ב-Projector Pilot מציג את בלוק shell_command, התחברות, ID של ישות המקרן ומתגי הסנכרון" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">בלוק shell_command</h3>
+    <p class="lead">זה כל הטריק של העבודה בלי שרת. האפליקציה כותבת פקודה אחת ש-Home Assistant מריץ כדי לדבר עם Web Control של המקרן, וכל סקריפט שהיא מסנכרנת קורא לפקודה הזו עם פועל אחר. לחצו על <b>העתקת בלוק</b> באפליקציה והדביקו ל-<code>configuration.yaml</code>. הדוגמה שלהלן להמחשה בלבד - האפליקציה ממלאת את הכתובת ואת שם הפקודה של המקרן שלכם:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">דוגמה בלבד. האפליקציה מייצרת את שלכם עם ה-IP האמיתי של המקרן ושם שנגזר מהמספר הסידורי שלו.</p>
+    <div class="note"><b>למה בלי שרת.</b> ה-<code>curl</code> הזה רץ על קופסת Home Assistant, לא על הטלפון שלכם. Home Assistant מגיע ישירות לכתובת ה-IP של המקרן דרך Web Control, ולכן אוטומציה רצה בין אם האפליקציה פתוחה ובין אם לא, ובין אם הטלפון בבית ובין אם לא. משתמש ה-digest <code>EPSONWEB</code> הוא ההתחברות ל-Web Control; האפליקציה משתמשת בסיסמת Web Control ששמורה כבר עבור המקרן.</p></div>
+
+    <h3 style="margin-top:32px">בדיקת חיבור, סנכרון וניקוי</h3>
+    <ul class="plain">
+      <li><b>בדיקת חיבור</b> בודקת שהאפליקציה מגיעה ל-Home Assistant שלכם ושה-<code>shell_command</code> שהודבק באמת שם, כדי שתמצאו שגיאת הקלדה לפני שבונים עליו משהו.</li>
+      <li><b>סנכרון עם HA</b> כותב או מעדכן את הסקריפטים של הסצנות והבקרות שלכם, ובונה לוח בקרה מוכן של Projector Pilot ישירות ב-Home Assistant. הריצו אותו שוב בכל פעם שמוסיפים סצנה או משנים בקרה - הוא מתעדכן במקום ולא יוצר כפילויות.</li>
+      <li><b>הסרת סקריפטים יתומים</b> מוצאת סקריפטים שהאפליקציה כתבה ושאין להם יותר סצנה או בקרה תואמת - למשל אחרי שמחקתם סצנה - <b>מציגה בדיוק אילו מהם תסיר, ושואלת קודם</b>. שום דבר לא נמחק עד שתאשרו. היא נוגעת רק בסקריפטים ש-Projector Pilot יצרה; שום דבר אחר ב-Home Assistant שלכם לא מופרע, ואם Home Assistant לא מציג את רשימת הסקריפטים שלו, לא מוסר דבר.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">רשימת הגדרה</div>
+      <h2>האפליקציה אומרת לכם מה הושלם ומה חסר</h2>
+      <p class="lead">במסך Home Assistant יש <b>רשימת הגדרה</b> ופאנל <b>מה יש ב-Home Assistant שלכם</b>, כך שלעולם לא תנחשו איזה צעד נשאר. כל שורה אומרת אם הוא הושלם, חסר, או שלא ניתן היה לדעת, ומה לעשות הלאה.</p>
+    </div>
+    <ul class="plain">
+      <li><b>מחובר ל-Home Assistant</b> - מחוברים ועונה. אם Home Assistant לא עונה, השורה אומרת לבדוק את הכתובת ושהטלפון באותה רשת.</li>
+      <li><b>המקרן נוסף ל-Home Assistant</b> - האם ל-Home Assistant כבר יש את המקרן הזה. אם לא, השורה שולחת אתכם להוסיף את אינטגרציית PJLink, ושלב הוספת האינטגרציה מציג את המארח והפורט של PJLink ש-Home Assistant מבקש.</li>
+      <li><b>חיישן הקריאות נרשם</b> - החיישן שנושא את הקריאות של המקרן שלכם. הוא נרשם בפעם הראשונה שהאפליקציה קוראת את המקרן, והשורה מציעה <b>רשום עכשיו</b> או <b>הפעלה</b> כשמשהו מונע זאת.</li>
+      <li><b>מה יש ב-Home Assistant שלכם</b> - HACS (חנות הקהילה), אינטגרציית Epson Projector Link, אינטגרציית PJLink, ופקודות Projector Pilot ב-<code>configuration.yaml</code>. כל אחד מציג נמצא, לא מותקן או לא ניתן לדעת, עם לחצני איך להתקין ופתח ב-HACS איפה שזה עוזר.</li>
+    </ul>
+    <div class="note"><b>בדיקה חוזרת אומרת לכם מה נמצא.</b> לחצו על <b>בדיקה חוזרת</b> אחרי שתיקנתם משהו והאפליקציה קוראת את Home Assistant שלכם מחדש ומדווחת על התוצאה, במקום להשאיר אתכם לתהות אם זה עבד. שורה שלא ניתן היה לבדוק אומרת <i>לא ניתן לדעת</i>, אף פעם לא כן או לא מנחשים.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">עובדת עם מה שכבר יש לכם</div>
+      <h2>תמיכה באינטגרציית PJLink המובנית, וכרטיסים עשירים יותר כשיש לכם אותם</h2>
+      <p class="lead">Projector Pilot בודקת מה מותקן ב-Home Assistant שלכם ובונה סביב זה. היא עובדת עם <b>אינטגרציית PJLink המובנית</b> שמגיעה עם Home Assistant, כך שמקרן PJLink שכבר הוספתם שם הוא אזרח מן המניין.</p>
+    </div>
+    <ul class="plain">
+      <li><b>כרטיסים מובנים קודם.</b> אם אין לכם כרטיסי קהילה, הסנכרון בונה את לוח הבקרה עם הכרטיסים המובנים של Home Assistant ואומר זאת בסיום. זה עובד ישר מהקופסה.</li>
+      <li><b>משודרג כשכרטיסי HACS מותקנים.</b> האפליקציה בודקת אילו מכרטיסי הקהילה (Mushroom, button-card, card-mod, apexcharts-card) מותקנים ומשדרגת כל כרטיס לעשיר יותר איפה שיש לכם אותו. <a href="/he/guide/home-assistant-dashboard/">מדריך לוח הבקרה הבנוי ביד</a> הולך רחוק יותר אם אתם רוצים את מראה הזכוכית הירוקה המלא.</li>
+      <li><b>סצנות ובקרות צריכות את ההדבקה האחת.</b> אם ל-Home Assistant עדיין אין פקודה לשליחה אל המקרן, לוח הבקרה עדיין נבנה עם קריאות חיות, וכרטיס <b>סיום ההגדרה</b> מדריך אתכם: לחצו על העתקת בלוק, הדביקו ל-<code>configuration.yaml</code>, הפעילו מחדש את Home Assistant, ואז לחצו שוב על סנכרון.</li>
+      <li><b>שום דבר לא מותקן? הדביקו ידנית.</b> אם שום דבר לא מותקן ב-Home Assistant אפשר עדיין להעתיק הכול מהאפליקציה ולהדביק בעצמכם.</li>
+      <li><b>סיסמה מסומנת.</b> בלוק הפקודה שאתם מדביקים אומר מתי הוא נושא סיסמת מקרן, כדי שתדעו לפני ששומרים או משתפים אותו.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">כשהמקרן כבוי</div>
+      <h2>קריאות שנשארות במקומן</h2>
+      <p class="lead">מקרן במצב המתנה מדווח מעט מאוד, ולכן לוח בקרה היה בדרך כלל מתרוקן. <b>חיישן הערך האחרון הידוע</b> האופציונלי שומר ב-Home Assistant את הקריאות האחרונות של המקרן - הקלט, שעות מנורה או לייזר - בזמן שהמקרן כבוי.</p>
+    </div>
+    <ul class="plain">
+      <li>זה עוד בלוק אופציונלי: הדביקו אותו בסוף <code>configuration.yaml</code> (או הוסיפו רק את השורות שלו תחת מקטע <code>template:</code> קיים) והפעילו מחדש את Home Assistant. באפליקציה יש לחצן <b>בדוק שהוא שם</b> שאומר לכם אם Home Assistant מכיל אותו.</li>
+      <li>כיבוי מגיע עכשיו ל-Home Assistant כ-<b>off</b>, כך שלוח הבקרה והאוטומציות שלכם רואים את המקרן כבוי כשהוא כבוי.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">סצנות כסקריפטים</div>
+      <h2>כל סצנה נהפכת לסקריפט ב-Home Assistant</h2>
+      <p class="lead">אחרי סנכרון, הסצנות שלכם לא תקועות בתוך האפליקציה. כל אחת מהן, וכן הפעלה, כל קלט, כל מצב צבע וכל זיכרון עדשה שיש באמת במקרן שלכם, נכתבים כסקריפט ב-Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>אוטומציות יכולות להריץ אותם.</b> ״בשקיעה, אם ה-TV נדלק, הפעל את ערב קולנוע״ היא אוטומציה רגילה ב-Home Assistant ברגע שהסצנה היא סקריפט.</li>
+      <li><b>עוזרים קוליים יכולים להריץ אותם.</b> חשפו סקריפט לעוזר שלכם ו״הפעל ערב קולנוע״ קובע יחד את הקלט, את מצב התמונה ואת זיכרון העדשה.</li>
+      <li><b>מופיעות רק הבקרות האמיתיות שלכם.</b> האפליקציה כותבת סקריפט לכל קלט, מצב צבע וזיכרון עדשה שהמקרן מדווח עליהם - לא רשימה כללית שניחשה.</li>
+      <li><b>הסרת הסנכרון מסירה רק מה שהאפליקציה כתבה.</b> כבו את הסנכרון, או השתמשו בהסרת סקריפטים יתומים (שמציגה אותם ושואלת קודם), ו-Projector Pilot מוחקת את הסקריפטים שיצרה ושום דבר אחר.</li>
+    </ul>
+    <div class="note"><b>שמות הסקריפטים נבחרים כך ששינוי שם מעדכן את אותו סקריפט.</b> שמות הסקריפטים נגזרים מהמקרן ומהבקרה, ולכן סנכרון מחדש אחרי שינוי שם של סצנה מעדכן את הסקריפט הקיים ולא יוצר עותק שני.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">לוח הבקרה</div>
+      <h2>הסנכרון בונה לכם את לוח הבקרה</h2>
+      <p class="lead">אין צורך לבנות תצוגת Lovelace ביד, וגם לא להדביק אחת. כשלוחצים על <b>סנכרון עם HA</b>, האפליקציה בונה לוח בקרה שלם של Projector Pilot ישירות ב-Home Assistant דרך ה-API שלו: המצב החי של המקרן ולחצן לכל סצנה ובקרה שסונכרנו. הוא מופיע בסרגל הצד של Home Assistant בשם <b>Projector Pilot</b> - פותחים וזה גמור.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="לוח הבקרה של Projector Pilot ב-Home Assistant: הפעלה ומקור, מצבי צבע, תפריט התמונה המלא, HDR ואות, כיול RGB, עדשה וגאומטריה, גרף שעות לייזר, תחזוקה וסצנות - הכול באריחי זכוכית ירוקים" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>גרסה עשירה יותר של הלוח, בנויה ביד. זה שהסנכרון בונה לכם נושא את אותו מצב חי ואותם לחצנים בכרטיסים רגילים של Home Assistant; מראה הזכוכית הירוקה שלהלן הוא הבנייה המותאמת האופציונלית. גללו, או לחצו להגדלה.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>התחברו ל-Home Assistant באפליקציה.</li>
+      <li>הדביקו את <b>בלוק ההעתקה</b> של האפליקציה ל-<code>configuration.yaml</code> פעם אחת והפעילו מחדש את Home Assistant (הצעד הידני היחיד - Home Assistant לא מאפשר לאפליקציות להוסיף את הפקודה הזו מרחוק).</li>
+      <li>לחצו על <b>סנכרון עם HA</b>. לוח הבקרה נבנה בשבילכם ומופיע בסרגל הצד בשם <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>מעדיפים להדביק בעצמכם?</b> <b>העתקת לוח בקרה</b> עדיין קיים במסך Home Assistant. לחצו עליו, ואז ב-Home Assistant עברו אל <b>הגדרות &rsaquo; לוחות בקרה &rsaquo; הוספת לוח בקרה</b>, צרו לוח בקרה ריק, פתחו את תפריט שלוש הנקודות שלו &rsaquo; <b>עריכת לוח בקרה</b> &rsaquo; תפריט שלוש נקודות &rsaquo; <b>עורך תצורה גולמי</b>, והדביקו את ה-YAML שהועתק.</div>
+    <p class="lead">בין אם הוא נבנה בשבילכם ובין אם הדבקתם אותו, לוח הבקרה זהה - כרטיס מצב ולחצן לכל בקרה (קטע להמחשה):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">דוגמה בלבד. לוח הבקרה שלכם נושא את הישות האמיתית של המקרן ואת הסצנות שלכם.</p>
+    <div class="note"><b>לא תלוי בדגם.</b> לוח הבקרה נבנה מהיכולות של המקרן <i>שלכם</i> - הישות, נתוני התמונה, הקלטים, מצבי הצבע, זיכרונות העדשה והסצנות שהוא דיווח עליהם בפועל. צילומי המסך כאן הם של QB1000; ייתכן שבדגם שלכם יוצגו קלטים, בקרות וקריאות אחרים. ללוח זכוכית ירוקה מלא כמו בתמונה, עקבו אחר <a href="/he/guide/home-assistant-dashboard/">מדריך לוח הבקרה צעד אחר צעד</a> או <a href="/he/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>הורידו את התצוגה המלאה</a> ושנו שתי מחרוזות.</div>
+    <div class="note"><b>רוצים קיר עשיר יותר?</b> אותם סקריפטים מפעילים כל כרטיס שתרצו. אם השתמשתם ב-AVR Maestro, הגישה זהה - בונים אריחי מקור ומצב מוארים, כותרות חיות והיסטוריה מהחיישן האחד ומהסקריפטים המסונכרנים.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>הגדרת Hubitat</h2>
+      <p class="lead">ב-Hubitat, Projector Pilot משקפת את המקרן על מכשיר ב-hub שלכם דרך Maker API, כך ש-Rule Machine יכול לקרוא ולפעול לפי הפעלה, השתקה וקלט.</p>
+    </div>
+    <ol class="steps">
+      <li>ב-Hubitat, הפעילו את אפליקציית <b>Maker API</b>, רשמו את כתובת ה-URL והאסימון שלה, ובחרו אילו מכשירים היא חושפת.</li>
+      <li>ב-Projector Pilot, פתחו <b>הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Hubitat</b> והזינו את פרטי <b>Maker API</b> של ה-hub שלכם.</li>
+      <li>בחרו את <b>המכשיר שמייצג את המקרן</b>. האפליקציה מציעה את הסביר ביותר; בחרו בו או בחרו משלכם.</li>
+      <li>האפליקציה <b>משקפת הפעלה, השתקה וקלט</b> אל המכשיר הזה, ושולחת רק את הפקודות שהמכשיר מקבל.</li>
+      <li>בנו כללי <b>Rule Machine</b> מול המכשיר הזה כמו מול כל מכשיר אחר - מצב המקרן מפעיל אותם.</li>
+    </ol>
+    <div class="note"><b>רק מה שהמכשיר מקבל.</b> האפליקציה שולחת ערך מקרן אל Hubitat רק כשהמכשיר שנבחר תומך בפקודה הזו, כך שהיא אף פעם לא דוחפת משהו שהמכשיר היה דוחה.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhooks</div>
+      <h2>הגדרת Webhooks</h2>
+      <p class="lead">Webhooks הם הפתרון הכללי. האפליקציה שולחת POST לכתובת URL שלכם כשהמקרן נדלק, נכבה, מחליף קלט או מפעיל סצנה - webhook של Home Assistant, Node-RED, IFTTT, או כל דבר שמקבל JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>פתחו <b>הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Webhooks</b>.</li>
+      <li>הזינו את ה-<b>URL</b> שאליו נשלח. webhook של Home Assistant נראה כמו <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>בחרו אילו <b>אירועים</b> מפעילים את ה-webhook: הדלקה, כיבוי, החלפת קלט, הפעלת סצנה - ואפשר גם לסנן לקלט או לסצנה מסוימים.</li>
+      <li>אם רוצים, הגדירו <b>מטען מותאם אישית</b> אם השירות המקבל רוצה צורה מסוימת; אחרת האפליקציה שולחת את ה-JSON ברירת המחדל שלה.</li>
+      <li>שמרו. מעכשיו האפליקציה שולחת בכל אירוע תואם.</li>
+    </ol>
+    <p class="lead">מטען ברירת המחדל הוא JSON פשוט - אירוע, המקרן, והערך שהשתנה:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">מטען לדוגמה. אירוע החלפת קלט או הפעלה נושא את השדות הרלוונטיים אליו.</p>
+    <div class="note"><b>קישור מחדש מתקן את כולם.</b> אם מקשרים מחדש את Home Assistant לכתובת חדשה, האפליקציה מעדכנת בבת אחת כל webhook שמצביע עליו, כך שמופע שהוזז לא אומר לערוך כל אחד ביד.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>פתרון בעיות</h2>
+    </div>
+    <details class="more"><summary>ההתחברות חוזרת לדף הכניסה</summary>
+      <p>ודאו שהכתובת שהזנתם היא זו שבה אתם באמת מגיעים ל-Home Assistant, כולל הפורט (בדרך כלל <code>:8123</code>). ההתחברות היא כניסה אמיתית בדפדפן מול המופע שלכם, ולכן שם המשתמש, הסיסמה וקוד האימות הדו-שלבי חלים כולם. בטלפון ההתחברות מסתיימת בין אם הדפדפן שבתוך האפליקציה מחזיר את התוצאה ובין אם החזרה המקומית מגיעה קודם; אם היא עדיין נתקעת, סגרו את החלונית ולחצו שוב על התחברות.</p>
+    </details>
+    <details class="more"><summary>חיישן המקרן לא מופיע ב-Home Assistant</summary>
+      <p>החיישן מתפרסם כשהאפליקציה פתוחה ו<b>שליחת מצב המקרן</b> מופעלת, ולכן פתחו את האפליקציה ואשרו את המתג הזה. אחר כך בדקו ב<b>כלי פיתוח &rsaquo; מצבים</b> ב-Home Assistant וסננו לפי <code>projector_pilot</code>. מקרן במצב המתנה מפרסם מעט מאוד; הערו אותו והקריאות יתמלאו.</p>
+    </details>
+    <details class="more"><summary>הסקריפטים המסונכרנים חסרים</summary>
+      <p>הסקריפטים נכתבים על ידי <b>סנכרון עם HA</b>, שצריך שבלוק <code>shell_command</code> כבר יודבק ל-<code>configuration.yaml</code> ושה-Home Assistant יופעל מחדש פעם אחת. הריצו קודם <b>בדיקת חיבור</b> - היא אומרת אם הבלוק קיים. אחר כך סנכרנו שוב. אם סקריפטים ישנים ומתים מבלגנים את הרשימה, השתמשו ב<b>הסרת סקריפטים יתומים</b>.</p>
+    </details>
+    <details class="more"><summary>סקריפט רץ באפליקציה אבל לא מ-Home Assistant כשהטלפון שלי לא בבית</summary>
+      <p>זו הנקודה של בלוק <code>shell_command</code> - הוא מה שמאפשר ל-Home Assistant להגיע לכתובת ה-IP של המקרן בעצמו. אם זה עובד רק כשהאפליקציה פתוחה, כנראה שהבלוק לא הודבק או ש-Home Assistant לא הופעל מחדש אחרי ההדבקה. אשרו עם בדיקת חיבור, הפעילו מחדש את Home Assistant, וסנכרנו.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>חברו את המקרן לכל הבית</h2>
+    <p class="lead" style="margin:0 auto 24px">אוטומציה ביתית היא תוספת חד-פעמית. בלי מנוי, בלי חשבון, בלי ענן. רכישה אחת פותחת אותה בכל פלטפורמה שבבעלותכם.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - זמין עכשיו</a>
+      <span class="pill">App Store - ממתין לאישור</span>
+      <span class="pill">Microsoft Store - ממתין לאישור</span>
+      <span class="pill">Mac App Store - ממתין לאישור</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/he/pricing/">ראו חינם מול Pro מול אוטומציה ביתית &rarr;</a> &middot; <a href="/he/guide/">המדריך המלא למשתמש &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות (FAQ)</div>
+      <h2>תשובות מהירות</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>האם הטלפון שלי צריך להישאר ברשת כדי שאוטומציות של Home Assistant ירוצו?</h3><p>לא. אחרי שמדביקים את בלוק shell_command האחד ל-Home Assistant ומסנכרנים, Home Assistant שולח פקודות ישירות לכתובת ה-IP של המקרן. Projector Pilot היא רק כלי ההתקנה; אחר כך Home Assistant מדבר עם המקרן בעצמו, בין אם הטלפון שלכם בבית ובין אם לא.</p></div><div class="gcard"><h3>איך המקרן מופיע ב-Home Assistant?</h3><p>כחיישן, למשל sensor.projector_pilot_epson_qb1000b_qb1000w, שנושא הפעלה, קלט, מצב צבע, נתוני התמונה ושעות מנורה, ומתעדכן בכל פעם שהם משתנים בזמן שהאפליקציה פתוחה. הפעילו את סנכרון בקרות מתקדמות והאפליקציה כותבת גם סקריפט ב-Home Assistant לכל סצנה, וכן להפעלה, לכל קלט, לכל מצב צבע ולכל זיכרון עדשה שיש במקרן שלכם.</p></div><div class="gcard"><h3>האם אוטומציה ביתית בחינם?</h3><p>אוטומציה ביתית היא תוספת בתשלום, רכישה חד-פעמית, נפרדת מ-Projector Pilot Pro. חבילה קונה את שתיהן יחד בהנחה. ראו את עמוד התמחור.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/he/guide/">מדריך למשתמש</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/help/">עזרה &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/he/help/#privacy">פרטיות</a><a href="/he/help/#terms">תנאים</a></div>
+<div class="flinks"><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/guide/dashboard/">לוח בקרה</a><a href="/he/guide/remote/">שלט</a><a href="/he/guide/picture/">תמונה</a><a href="/he/guide/lens/">עדשה</a><a href="/he/guide/scenes/">סצנות</a><a href="/he/guide/home-assistant-dashboard/">לוח בקרה ב-HA</a><a href="/he/guide/maintenance/">תחזוקה</a><a href="/he/guide/settings/">הגדרות</a><a href="/he/guide/languages/">שפות</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot היא אפליקציה עצמאית למקרני Epson ו-PJLink. היא אינה קשורה, מאושרת או ממומנת על ידי Epson, גוף התקנים PJLink, Home Assistant, Hubitat, Apple, Google או Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ו-Microsoft Store הם סימנים מסחריים של בעליהם, ומוזכרים רק כדי לתאר עם מה האפליקציה עובדת.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

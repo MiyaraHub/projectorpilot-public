@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Ứng dụng bảng điều khiển trạng thái máy chiếu - Projector Pilot</title>
+<meta name="description" content="Trang tổng quan Projector Pilot: nguồn, nguồn vào và chế độ màu theo thời gian thực, thông tin chiếu như dải động, không gian màu, gamma và số giờ laser, cùng các thẻ có thể sắp xếp lại." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ứng dụng bảng điều khiển trạng thái máy chiếu - Projector Pilot" />
+<meta property="og:description" content="Trang tổng quan Projector Pilot: nguồn, nguồn vào và chế độ màu theo thời gian thực, thông tin chiếu như dải động, không gian màu, gamma và số giờ laser, cùng các thẻ có thể sắp xếp lại." />
+<meta property="og:url" content="https://projectorpilot.com/vi/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ứng dụng bảng điều khiển trạng thái máy chiếu - Projector Pilot" />
+<meta name="twitter:description" content="Trang tổng quan Projector Pilot: nguồn, nguồn vào và chế độ màu theo thời gian thực, thông tin chiếu như dải động, không gian màu, gamma và số giờ laser, cùng các thẻ có thể sắp xếp lại." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "Ứng dụng bảng điều khiển trạng thái máy chiếu - Projector Pilot", "description": "Trang tổng quan Projector Pilot: nguồn, nguồn vào và chế độ màu theo thời gian thực, thông tin chiếu như dải động, không gian màu, gamma và số giờ laser, cùng các thẻ có thể sắp xếp lại.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "Trang tổng quan máy chiếu, theo đúng ý bạn", "description": "Trang tổng quan Projector Pilot: nguồn, nguồn vào và chế độ màu theo thời gian thực, thông tin chiếu như dải động, không gian màu, gamma và số giờ laser, cùng các thẻ có thể sắp xếp lại.", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "vi", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Dashboard", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/vi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ"><a href="/vi/#features">Tính năng</a><a href="/vi/guide/">Hướng dẫn</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/help/">Trợ giúp</a><a class="cta" href="/vi/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Trang tổng quan</div>
+    <div class="eyebrow">Trang tổng quan</div>
+    <h1>Trang tổng quan máy chiếu, <span class="g">theo đúng ý bạn</span></h1>
+    <p class="lead">Trang tổng quan là căn cứ chính của bạn. Trạng thái trực tiếp nằm ở phía trên, bên dưới là một thẻ cho từng bộ phận của máy chiếu, cùng chế độ Tùy chỉnh để bạn thêm, ẩn và sắp xếp lại các thẻ sao cho màn hình hiển thị đúng những gì bạn quan tâm. Mọi con số đều được đọc từ máy chiếu và làm mới ngay khi có thay đổi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Trạng thái trực tiếp</div>
+        <h2>Nguồn, nguồn vào và chế độ màu ngay trên cùng</h2>
+        <ul class="plain">
+          <li><b>Nút nguồn.</b> Chạm một lần để bật hoặc tắt máy chiếu, và nút này nhận biết cả quá trình khởi động lẫn làm mát - nó hiển thị máy chiếu đang trải qua giai đoạn khởi động hoặc làm mát thay vì giả vờ trạng thái đổi ngay lập tức.</li>
+          <li><b>Nguồn vào.</b> Xem nhanh nguồn đang dùng, chạm để chuyển.</li>
+          <li><b>Chế độ màu.</b> Chế độ hình ảnh đang hoạt động (Dynamic, Cinema, Natural và các chế độ khác), được đọc từ máy chiếu.</li>
+          <li><b>Che màn hình.</b> Che hình ảnh mà không ngắt tín hiệu, và trang tổng quan đồng bộ với Điều khiển từ xa - trạng thái đã che hiển thị là đang hoạt động ở cả hai nơi.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="Trang tổng quan Projector Pilot hiển thị các thẻ nguồn, nguồn vào, chế độ màu và thông tin chiếu theo thời gian thực" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Xung quanh trang tổng quan</div>
+      <h2>Chuyển máy chiếu, tắt nguồn, firmware</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Chuyển máy chiếu.</b> Thanh trên cùng của mọi trang máy chiếu có nút <b>Chuyển máy chiếu</b>, nhờ đó bạn chuyển giữa các máy chiếu mà không cần quay lại danh sách. Nhiều máy chiếu là một phần của Pro.</li>
+      <li><b>Tắt nguồn sẽ hỏi trước.</b> Khi tắt máy chiếu, ứng dụng hỏi <b>Tắt máy chiếu?</b> và chờ bạn xác nhận. Bật máy chiếu thì không hỏi.</li>
+      <li><b>Firmware.</b> Phiên bản firmware của máy chiếu hiển thị trên Trang tổng quan, trên tab Thông tin và trong báo cáo chẩn đoán, miễn là máy chiếu báo cáo được. Nếu không, ứng dụng không hiển thị gì thay vì đoán bừa.</li>
+      <li><b>Điều khiển tức thì.</b> Dịch ống kính, lấy nét, thu phóng và nút tăng giảm công suất ánh sáng phản hồi ngay khi bạn nhấn và chốt ở giá trị mà máy chiếu đã xác nhận. Một lần nhấn rơi vào lúc lệnh trước vẫn đang gửi sẽ bị bỏ qua thay vì xếp hàng chờ.</li>
+      <li><b>Trạng thái nguồn trung thực.</b> Khi bạn mở lại ứng dụng, ứng dụng báo rằng đang kiểm tra thay vì hiển thị “tắt” sai, và phát hiện máy chiếu bật lên trong vòng khoảng mười giây.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Thông tin chiếu</div>
+      <h2>Máy chiếu thực sự đang làm gì</h2>
+      <p class="lead">Thẻ thông tin chiếu đọc tín hiệu thực và chi tiết lắp đặt trực tiếp từ thân máy - không có gì ở đây là suy đoán.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Trường</th><th>Hiển thị gì</th></tr></thead>
+      <tbody>
+        <tr><td>Dải động</td><td>SDR hoặc HDR, tách riêng khỏi không gian màu để tín hiệu không bao giờ bị gắn nhãn sai.</td></tr>
+        <tr><td>Không gian màu</td><td>Gam màu đầu vào, ví dụ BT.2020 hoặc BT.709 - được báo cáo riêng, không gộp vào huy hiệu HDR.</td></tr>
+        <tr><td>Gamma</td><td>Gamma đang hoạt động mà máy chiếu báo cáo.</td></tr>
+        <tr><td>Số giờ laser</td><td>Số giờ nguồn sáng đã chạy, để bạn theo dõi tuổi thọ tấm nền hoặc laser. Các model dùng bóng đèn sẽ hiển thị số giờ bóng đèn.</td></tr>
+        <tr><td>Số sê-ri</td><td>Số sê-ri của chính máy chiếu, đọc từ thân máy.</td></tr>
+        <tr><td>Cách lắp</td><td>Chiếu trần hoặc chiếu ngược, theo cách máy chiếu được cài đặt.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Không gian màu và dải động là hai trường riêng biệt, có chủ đích.</b> Tín hiệu BT.2020 SDR - thường gặp khi bộ ánh xạ tông màu bên ngoài như MadVR xử lý - được hiển thị đúng như vậy, không bao giờ bị gắn nhầm huy hiệu HDR10.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Thẻ tóm tắt</div>
+      <h2>Hình ảnh và ống kính, xem nhanh</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tóm tắt hình ảnh.</b> Các thông số hình ảnh chính - Độ sáng, Độ tương phản, Sắc thái, Độ nét và Nhiệt độ màu - hiển thị theo thang đo trình đơn riêng của máy chiếu, kèm lối tắt sang màn hình <a href="/vi/guide/picture/">Hình ảnh</a> đầy đủ.</li>
+      <li><b>Tóm tắt ống kính.</b> Trạng thái ống kính hiện tại, kèm lối tắt sang màn hình <a href="/vi/guide/lens/">Ống kính</a> để dịch, lấy nét, thu phóng và bộ nhớ.</li>
+      <li><b>Các thẻ tín hiệu, ánh sáng và vận hành.</b> Thêm những thẻ bạn quan tâm - chi tiết tín hiệu, công suất ánh sáng và Eco/vận hành - để trang tổng quan đầy đặn hay tối giản tùy ý bạn.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Biến nó thành của bạn</div>
+      <h2>Thêm, ẩn và sắp xếp lại các thẻ</h2>
+      <p class="lead">Chạm <b>Tùy chỉnh</b> và trang tổng quan sẽ chuyển sang chế độ chỉnh sửa. Thêm thẻ từ bộ chọn, kéo để sắp xếp lại, hoặc ẩn bất kỳ thẻ nào bạn không bao giờ xem.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Chạm Tùy chỉnh</b> trên trang tổng quan.</li>
+      <li><b>Thêm thẻ</b> từ bộ chọn - Nguồn, Nguồn vào, Chế độ màu, Che màn hình, Hình ảnh, Ống kính, Tín hiệu và Eco/Vận hành đều có sẵn, và bộ chọn đầy đủ còn có nhiều loại thẻ khác.</li>
+      <li><b>Kéo để sắp xếp lại</b> sao cho các điều khiển bạn dùng nhiều nhất nằm trên cùng.</li>
+      <li><b>Ẩn</b> mọi thứ bạn không cần. Xong - bố cục là của bạn và được giữ nguyên.</li>
+    </ol>
+    <div class="note">Chỉ những thẻ cho các điều khiển mà máy chiếu của bạn thực sự hỗ trợ mới được đưa ra. Nếu model của bạn không có ống kính mô-tơ thì sẽ không có thẻ ống kính để thêm - ứng dụng không bao giờ hiển thị một điều khiển mà phần cứng không đáp ứng được.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tiếp theo</div>
+      <h2>Tiếp tục khám phá</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/vi/guide/remote/"><span>&#127918;</span>Điều khiển từ xa</a>
+      <a href="/vi/guide/picture/"><span>&#127912;</span>Hình ảnh</a>
+      <a href="/vi/guide/lens/"><span>&#128247;</span>Ống kính</a>
+      <a href="/vi/guide/"><span>&#128218;</span>Quay lại trung tâm hướng dẫn</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/pricing/">Giá</a><a href="/vi/highlights/">Điểm nổi bật</a><a href="/vi/guide/home-automation/">Home Assistant</a><a href="/vi/help/">Trợ giúp &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/vi/help/#privacy">Quyền riêng tư</a><a href="/vi/help/#terms">Điều khoản</a></div>
+<div class="flinks"><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/guide/dashboard/">Trang tổng quan</a><a href="/vi/guide/remote/">Điều khiển từ xa</a><a href="/vi/guide/picture/">Hình ảnh</a><a href="/vi/guide/lens/">Ống kính</a><a href="/vi/guide/scenes/">Cảnh</a><a href="/vi/guide/home-assistant-dashboard/">Bảng điều khiển HA</a><a href="/vi/guide/maintenance/">Bảo trì</a><a href="/vi/guide/settings/">Cài đặt</a><a href="/vi/guide/languages/">Ngôn ngữ</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot là ứng dụng độc lập dành cho máy chiếu Epson và PJLink. Ứng dụng không có liên kết với, không được chứng thực hay tài trợ bởi Epson, tổ chức tiêu chuẩn PJLink, Home Assistant, Hubitat, Apple, Google hoặc Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play và Microsoft Store là nhãn hiệu của các chủ sở hữu tương ứng, chỉ được nêu tên để mô tả những gì ứng dụng hoạt động cùng.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

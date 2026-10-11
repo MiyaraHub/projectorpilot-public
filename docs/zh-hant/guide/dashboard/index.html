@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-Hant" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>投影機狀態儀表板 App - Projector Pilot</title>
+<meta name="description" content="Projector Pilot 儀表板：即時顯示電源、輸入與色彩模式，以及動態範圍、色彩空間、伽瑪、雷射使用時數等投影資訊，卡片還能自由排序。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="投影機狀態儀表板 App - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot 儀表板：即時顯示電源、輸入與色彩模式，以及動態範圍、色彩空間、伽瑪、雷射使用時數等投影資訊，卡片還能自由排序。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="投影機狀態儀表板 App - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot 儀表板：即時顯示電源、輸入與色彩模式，以及動態範圍、色彩空間、伽瑪、雷射使用時數等投影資訊，卡片還能自由排序。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "投影機狀態儀表板 App - Projector Pilot", "description": "Projector Pilot 儀表板：即時顯示電源、輸入與色彩模式，以及動態範圍、色彩空間、伽瑪、雷射使用時數等投影資訊，卡片還能自由排序。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "依您的喜好打造的投影機儀表板", "description": "Projector Pilot 儀表板：即時顯示電源、輸入與色彩模式，以及動態範圍、色彩空間、伽瑪、雷射使用時數等投影資訊，卡片還能自由排序。", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "zh-Hant", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "儀表板", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hant/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言"><a href="/zh-hant/#features">功能</a><a href="/zh-hant/guide/">指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明</a><a class="cta" href="/zh-hant/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 儀表板</div>
+    <div class="eyebrow">儀表板</div>
+    <h1>您的投影機儀表板，<span class="g">依您的喜好打造</span></h1>
+    <p class="lead">儀表板是您的大本營：上方是即時狀態，下方是對應投影機各個部分的卡片，還有「自訂」模式，讓您新增、隱藏與重新排列這些卡片，讓畫面只顯示您在意的內容。每一個數值都是從投影機讀取，並隨變化即時更新。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">即時狀態</div>
+        <h2>電源、輸入與色彩模式，一覽無遺</h2>
+        <ul class="plain">
+          <li><b>電源按鈕。</b>點一下即可開機或關機，並且能感知暖機與冷卻：會如實顯示投影機正在暖機或冷卻，而不是假裝狀態瞬間切換。</li>
+          <li><b>輸入訊號源。</b>目前的訊號源一目了然，點一下即可切換。</li>
+          <li><b>色彩模式。</b>目前啟用的畫面模式（動態、電影院、自然等），直接從投影機讀取。</li>
+          <li><b>螢幕遮蔽。</b>在不中斷訊號的情況下遮蔽畫面，而且儀表板與遙控器保持一致：遮蔽中的狀態在兩處都會顯示為啟用。</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="Projector Pilot 儀表板，顯示即時電源、輸入、色彩模式與投影資訊卡片" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">儀表板周邊功能</div>
+      <h2>切換投影機、關機、韌體</h2>
+    </div>
+    <ul class="plain">
+      <li><b>投影機切換器。</b>每個投影機頁面的頂端列都有<b>切換投影機</b>控制項，不必回到清單就能在多台投影機之間切換。多台投影機屬於 Pro 功能。</li>
+      <li><b>關機前會先確認。</b>關閉投影機時會詢問<b>關閉投影機？</b>，等您確認後才執行。開機則不會詢問。</li>
+      <li><b>韌體。</b>只要投影機有回報，韌體版本就會顯示在儀表板、資訊分頁以及診斷報告中。若投影機沒有回報，就什麼都不顯示，而不是亂猜。</li>
+      <li><b>即時回應的控制。</b>鏡頭偏移、對焦、變焦與光輸出調整鈕在您按下的瞬間就會回應，並以投影機確認的數值為準。如果前一個指令還在傳送時又按了一次，該次按壓會被捨棄，而不是排隊等候。</li>
+      <li><b>如實的電源狀態。</b>重新開啟 App 時，它會顯示「檢查中」，而不是錯誤地顯示「關機」；投影機開機後約十秒內就會被偵測到。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">投影資訊</div>
+      <h2>投影機實際的運作狀況</h2>
+      <p class="lead">投影資訊卡片直接從機身讀取真實的訊號與安裝資料，這裡沒有任何內容是推測出來的。</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>欄位</th><th>顯示內容</th></tr></thead>
+      <tbody>
+        <tr><td>動態範圍</td><td>SDR 或 HDR，與色彩空間分開顯示，因此訊號絕不會被標錯。</td></tr>
+        <tr><td>色彩空間</td><td>輸入訊號的色域，例如 BT.2020 或 BT.709，獨立回報，不會混入 HDR 標章。</td></tr>
+        <tr><td>伽瑪</td><td>投影機回報的目前伽瑪設定。</td></tr>
+        <tr><td>雷射使用時數</td><td>光源已運作的時數，方便您掌握面板或雷射的壽命。燈泡機種則改為顯示燈泡使用時數。</td></tr>
+        <tr><td>序號</td><td>投影機本身的序號，直接從機身讀取。</td></tr>
+        <tr><td>安裝方式</td><td>吊裝或背面投影，依投影機的實際設定顯示。</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>色彩空間與動態範圍刻意分成兩個欄位。</b>當外接色調對應器（例如 MadVR）處理訊號時，常見的 BT.2020 SDR 訊號就會如實顯示，絕不會被誤標成 HDR10。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">摘要卡片</div>
+      <h2>畫質與鏡頭，一眼掌握</h2>
+    </div>
+    <ul class="plain">
+      <li><b>畫質摘要。</b>重要的畫質數值：亮度、對比、色調、銳利度與色溫，皆採用投影機自己的選單刻度，點一下即可進入完整的<a href="/zh-hant/guide/picture/">畫質</a>畫面。</li>
+      <li><b>鏡頭摘要。</b>顯示目前的鏡頭狀態，並可直接跳到<a href="/zh-hant/guide/lens/">鏡頭</a>畫面，進行偏移、對焦、變焦與記憶操作。</li>
+      <li><b>訊號、光源與操作卡片。</b>把您在意的加進來：訊號詳情、光輸出與節能／操作，讓儀表板想豐富或精簡都隨您。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">打造專屬於您的樣子</div>
+      <h2>新增、隱藏與重新排列卡片</h2>
+      <p class="lead">點選<b>自訂</b>後，儀表板就會變成可編輯狀態。您可以從選擇器新增卡片、拖曳重新排序，或隱藏不會看的卡片。</p>
+    </div>
+    <ol class="steps">
+      <li>在儀表板上<b>點選自訂</b>。</li>
+      <li>從選擇器<b>新增卡片</b>：電源、輸入、色彩模式、螢幕遮蔽、畫質、鏡頭、訊號與節能／操作都可以選，完整選擇器中還有更多卡片類型。</li>
+      <li><b>拖曳重新排序</b>，讓最常用的控制項排在最上面。</li>
+      <li><b>隱藏</b>不需要的項目。完成：版面由您決定，而且會保留下來。</li>
+    </ol>
+    <div class="note">只會提供您的投影機實際支援的控制項卡片。如果您的機型沒有電動鏡頭，就不會有鏡頭卡片可加入，App 絕不會顯示硬體無法回應的控制項。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">下一步</div>
+      <h2>繼續探索</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/zh-hant/guide/remote/"><span>&#127918;</span>遙控器</a>
+      <a href="/zh-hant/guide/picture/"><span>&#127912;</span>畫質</a>
+      <a href="/zh-hant/guide/lens/"><span>&#128247;</span>鏡頭</a>
+      <a href="/zh-hant/guide/"><span>&#128218;</span>返回指南首頁</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hant/help/#privacy">隱私權</a><a href="/zh-hant/help/#terms">條款</a></div>
+<div class="flinks"><a href="/zh-hant/guide/getting-started/">開始使用</a><a href="/zh-hant/guide/dashboard/">儀表板</a><a href="/zh-hant/guide/remote/">遙控器</a><a href="/zh-hant/guide/picture/">畫質</a><a href="/zh-hant/guide/lens/">鏡頭</a><a href="/zh-hant/guide/scenes/">場景</a><a href="/zh-hant/guide/home-assistant-dashboard/">HA 儀表板</a><a href="/zh-hant/guide/maintenance/">維護</a><a href="/zh-hant/guide/settings/">設定</a><a href="/zh-hant/guide/languages/">語言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是專為 Epson 與 PJLink 投影機打造的獨立 App，與 Epson、PJLink 標準組織、Home Assistant、Hubitat、Apple、Google 或 Microsoft 並無關聯，亦未獲其背書或贊助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 與 Microsoft Store 為其各自所有者的商標，此處僅用於說明本 App 的相容對象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

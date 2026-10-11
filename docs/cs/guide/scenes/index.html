@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Scény projektoru jedním klepnutím - Projector Pilot</title>
+<meta name="description" content="Uložte napájení, vstup, obraz, paměť objektivu a další jako Scénu a vyvolejte ji jedním klepnutím. Každá Scéna se může stát skriptem Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/cs/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Scény projektoru jedním klepnutím - Projector Pilot" />
+<meta property="og:description" content="Uložte napájení, vstup, obraz, paměť objektivu a další jako Scénu a vyvolejte ji jedním klepnutím. Každá Scéna se může stát skriptem Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/cs/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Scény projektoru jedním klepnutím - Projector Pilot" />
+<meta name="twitter:description" content="Uložte napájení, vstup, obraz, paměť objektivu a další jako Scénu a vyvolejte ji jedním klepnutím. Každá Scéna se může stát skriptem Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "Scény projektoru jedním klepnutím - Projector Pilot", "description": "Uložte napájení, vstup, obraz, paměť objektivu a další jako Scénu a vyvolejte ji jedním klepnutím. Každá Scéna se může stát skriptem Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "Scény projektoru: celá místnost jedním klepnutím", "description": "Uložte napájení, vstup, obraz, paměť objektivu a další jako Scénu a vyvolejte ji jedním klepnutím. Každá Scéna se může stát skriptem Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "cs", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Scény", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/cs/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk"><a href="/cs/#features">Funkce</a><a href="/cs/guide/">Průvodce</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/help/">Nápověda</a><a class="cta" href="/cs/#download">ZÍSKEJTE APLIKACI</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Scény</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Karta Scény &middot; Pro</div>
+        <h1>Scény projektoru: celá místnost jedním klepnutím</h1>
+        <p class="lead">Scéna zachytí váš projektor přesně tak, jak je právě teď, a později vše vrátí jediným klepnutím. Filmový večer, velký zápas, jasné nedělní odpoledne - každé vlastní Scéna, každá na dosah klepnutí. Vy určíte, které části Scéna uchová, a nabízejí se jen části, které váš projektor skutečně hlásí.</p>
+        <p class="lead">Scény jsou součástí <a href="/cs/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="Karta Scény v Projector Pilot s tlačítkem Uložit aktuální" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Jak jednu uložit</div>
+      <h2>Nastavte místnost a zachyťte ji</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Nastavte.</b> Dejte projektor přesně do stavu, jaký chcete - vstup, barevný režim, obraz, paměť objektivu, všechno.</li>
+      <li><b>Uložit aktuální.</b> Na kartě Scény klepněte na <b>Uložit aktuální</b>, pojmenujte Scénu a zaškrtněte, které části uchovat. Výběr nabízí jen to, co váš projektor hlásí, takže nikdy neuložíte nastavení, které váš model nemá.</li>
+      <li><b>Vyvolat.</b> Klepnutím na Scénu ji použijete. Projector Pilot průběžně potvrzuje každé nastavení u projektoru a nikdy netvrdí změnu, která se neprovedla.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Co Scéna zachytí</div>
+      <h2>Tolik nebo tak málo, kolik zaškrtnete</h2>
+      <p class="lead">Jedna Scéna může zachytit cokoli z následujícího. Vyvolání přehraje jen části, které jste zaškrtli, takže Scéna „pozdní film“ může snížit světelný výkon a vše ostatní nechat být.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Napájení</h3><p>Stav napájení projektoru, takže Scéna ho může probudit nebo poslat do pohotovostního režimu jako součást nastavení.</p></div>
+      <div class="gcard"><h3>Vstup</h3><p>Zdroj, na který Scéna přepne, takže „Filmový večer“ přistane pokaždé na správném HDMI.</p></div>
+      <div class="gcard"><h3>Obraz</h3><p>Barevný režim a hodnoty obrazu, každá na vlastní stupnici nabídky projektoru.</p></div>
+      <div class="gcard"><h3>Signál</h3><p>Nastavení na straně signálu, která váš projektor nabízí pro obsah, který sledujete.</p></div>
+      <div class="gcard"><h3>Světlo</h3><p>Výkon světelného zdroje, takže jasná a tmavá místnost dostanou každá své nastavení.</p></div>
+      <div class="gcard"><h3>Geometrie</h3><p>Stav zarovnání a geometrie, který rámuje obraz na vašem plátně.</p></div>
+      <div class="gcard"><h3>Zvuk</h3><p>Nastavení zvuku, která projektor hlásí, uchovaná spolu s ostatními.</p></div>
+      <div class="gcard"><h3>Jen to, co je hlášeno</h3><p>Seznam k zaškrtnutí vzniká z toho, na co váš projektor skutečně odpovídá, takže nic, co uložíte, není odhad.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Automatizace</div>
+      <h2>Každá Scéna se stane skriptem Home Assistant</h2>
+      <p class="lead">Vložte jednou jeden blok do konfigurace Home Assistant a Projector Pilot zapíše skript pro každou vaši Scénu plus napájení, každý vstup, každý barevný režim a každou paměť objektivu, které váš projektor skutečně má. Automatizace nebo hlasový asistent pak může spustit libovolnou Scénu a aplikace skripty, které zapsala, odebere, když synchronizaci vypnete, a ničeho jiného se nedotkne.</p>
+    </div>
+    <div class="note">Scény fungují také přes <b>webhooky</b> - vyvolání Scény může odeslat požadavek na vaši URL - a zrcadlí se na <b>Hubitat</b> přes Maker API. Vše je v <a href="/cs/guide/home-automation/">příručce pro Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sdílejte svou práci</div>
+      <h2>Sdílitelné profily scén</h2>
+      <p class="lead">Vyladili jste Scénu, na kterou jste hrdí? Exportujte ji a předejte kamarádovi, nebo importujte tu, kterou s vámi někdo sdílel. Profily scén putují mezi instalacemi, takže dobré nastavení nemusíte na každém projektoru budovat od nuly.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Čtěte dál</div>
+      <h2>Související příručky</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/cs/guide/lens/">Ovládání objektivu</a>
+      <a href="/cs/guide/home-automation/">Home Assistant</a>
+      <a href="/cs/guide/settings/">Nastavení</a>
+      <a href="/cs/guide/">Úplná uživatelská příručka</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/pricing/">Ceník</a><a href="/cs/highlights/">Přednosti</a><a href="/cs/guide/home-automation/">Home Assistant</a><a href="/cs/help/">Nápověda &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/cs/help/#privacy">Soukromí</a><a href="/cs/help/#terms">Podmínky</a></div>
+<div class="flinks"><a href="/cs/guide/getting-started/">První kroky</a><a href="/cs/guide/dashboard/">Nástěnka</a><a href="/cs/guide/remote/">Dálkový ovladač</a><a href="/cs/guide/picture/">Obraz</a><a href="/cs/guide/lens/">Objektiv</a><a href="/cs/guide/scenes/">Scény</a><a href="/cs/guide/home-assistant-dashboard/">Nástěnka HA</a><a href="/cs/guide/maintenance/">Údržba</a><a href="/cs/guide/settings/">Nastavení</a><a href="/cs/guide/languages/">Jazyky</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot je nezávislá aplikace pro projektory Epson a PJLink. Není přidružena k společnostem Epson, organizaci PJLink, Home Assistant, Hubitat, Apple, Google ani Microsoft, není jimi podporována ani sponzorována. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play a Microsoft Store jsou ochranné známky svých příslušných vlastníků a jsou uvedeny pouze proto, aby popsaly, s čím aplikace spolupracuje.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

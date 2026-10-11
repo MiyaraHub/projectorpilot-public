@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>設定、テーマ &amp; バックアップ - Projector Pilot</title>
+<meta name="description" content="Projector Pilotの設定を解説します。プロジェクター、ポートとパスワード、Proと復元、テストパターン、テーマ、取得間隔、バックアップと復元、言語を紹介します。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ja/guide/settings/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/settings/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/settings/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/settings/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/settings/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/settings/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/settings/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/settings/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/settings/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/settings/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/settings/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/settings/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/settings/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/settings/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/settings/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/settings/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/settings/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/settings/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/settings/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/settings/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/settings/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/settings/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/settings/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/settings/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/settings/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/settings/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/settings/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/settings/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/settings/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/settings/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/settings/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="設定、テーマ &amp; バックアップ - Projector Pilot" />
+<meta property="og:description" content="Projector Pilotの設定を解説します。プロジェクター、ポートとパスワード、Proと復元、テストパターン、テーマ、取得間隔、バックアップと復元、言語を紹介します。" />
+<meta property="og:url" content="https://projectorpilot.com/ja/guide/settings/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="設定、テーマ &amp; バックアップ - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilotの設定を解説します。プロジェクター、ポートとパスワード、Proと復元、テストパターン、テーマ、取得間隔、バックアップと復元、言語を紹介します。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ja", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/settings/#webpage", "url": "https://projectorpilot.com/guide/settings/", "name": "設定、テーマ、バックアップ - Projector Pilot", "description": "Projector Pilotの設定を解説します。プロジェクター、ポートとパスワード、Proと復元、テストパターン、テーマ、取得間隔、バックアップと復元、言語を紹介します。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ja", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/settings/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/settings/#article", "headline": "Projector Pilotの設定: 自分仕様に", "description": "Projector Pilotの設定を解説します。プロジェクター、ポートとパスワード、Proと復元、テストパターン、テーマ、取得間隔、バックアップと復元、言語を紹介します。", "image": "https://projectorpilot.com/screenshots/06-settings.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ja", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/settings/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/settings/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "ユーザーガイド", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "設定", "item": "https://projectorpilot.com/guide/settings/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ja/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語"><a href="/ja/#features">機能</a><a href="/ja/guide/">ガイド</a><a href="/ja/pricing/">料金</a><a href="/ja/highlights/">ハイライト</a><a href="/ja/guide/home-automation/">Home Assistant</a><a href="/ja/help/">ヘルプ</a><a class="cta" href="/ja/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; 設定</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">設定</div>
+        <h1>Projector Pilotの設定: 自分仕様に</h1>
+        <p class="lead">設定では、プロジェクターの管理、アプリのアンロック、テーマの変更、取得間隔の調整、そして全体のバックアップができます。デバイスコントロール、購入、外観、リンクがそれぞれ分かりやすい場所に整理されています。広告もサブスクリプションもクラウドアカウントもなく、本当に必要なスイッチだけを用意しています。</p>
+      </div>
+      <img src="/screenshots/06-settings.png" alt="プロジェクター、Proボックス、メンテナンスと使用状況、テストパターン、テーマを表示したProjector Pilotの設定画面" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">すべてのセクション</div>
+      <h2>設定の内容</h2>
+    </div>
+    <table class="t">
+      <thead><tr><th>セクション</th><th>含まれるもの</th></tr></thead>
+      <tbody>
+        <tr><td>プロジェクター</td><td>保存済みのプロジェクターを一覧表示し、それぞれ編集、詳細接続、情報、削除ができます。<b>プロジェクターを追加</b>では、ネットワークをスキャンしてプロジェクターとして応答する機器を探すか、IPアドレスを手入力します。詳細設定には、プロジェクターごとのポートと、3つの独立したパスワード(Web Control、PJLink、リモート)があります。</td></tr>
+        <tr><td>Projector Pilot Pro</td><td><b>Pro</b>、<b>ホームオートメーション</b>、<b>バンドル</b>の購入と、購入の<b>復元</b>ができます。価格は各ストアの表示価格で、確定前にお使いの通貨で表示されます。ストアが「すでに所有している」と返した購入は、拒否されずに付与されます。</td></tr>
+        <tr><td>メンテナンス &amp; 使用状況</td><td>ランプまたはレーザーの使用時間とフィルター使用時間、寿命の見込み、ランニングコストの目安、使用時間レポート。<a href="/ja/guide/maintenance/">メンテナンスガイド &rarr;</a></td></tr>
+        <tr><td>テストパターン</td><td>プロジェクターに内蔵されたアライメント用グリッドを、オン・オフの分かりやすいコントロールで表示します。映像をスクリーンに合わせるときに便利です。</td></tr>
+        <tr><td>テーマ</td><td>ライト、ダーク、AMOLED(完全な黒)、ブランド(特徴的なフォレストグリーン)から選べ、さらに<b>カラーテーマ</b>では、プリセットまたは好みのアクセントカラーを選ぶと、アプリがそれを基準にパレット全体を作り直します。</td></tr>
+        <tr><td>タブ &amp; ビューのカスタマイズ</td><td>下部タブの順序を変えたり、使わないタブを非表示にしたりできます。タブ内の個別のビュー(ピクチャー / 信号 / ディスプレイ、レンズ / 設置、リモコン / 操作、設定 / ネットワーク / デバイス)も非表示にできます。</td></tr>
+        <tr><td>ステータス取得間隔</td><td>アプリがプロジェクターのライブ状態を更新する頻度です。変更は即座に反映され、スライダーをドラッグしている間に問い合わせが集中することはありません。</td></tr>
+        <tr><td>ホームオートメーション</td><td>Home Assistantにサインインし、Hubitatにミラーリングし、Webhookを送信します。<a href="/ja/guide/home-automation/">Home Assistantガイド &rarr;</a></td></tr>
+        <tr><td>バックアップ&amp;復元</td><td>アプリの設定をエクスポートおよびインポートします。バックアップファイルは本来の名前のまま共有され、iPadでも共有できます。保存済みのプロジェクターとそのパスワードは暗号化されたセキュアストレージに残り、バックアップには含まれません。</td></tr>
+        <tr><td>不具合を報告</td><td>「アプリについて」の「不具合を報告または機能をリクエスト」では、関連するすべてのログを1つにまとめ、すぐに送信できる状態にします。</td></tr>
+        <tr><td>ヘルプ</td><td>フィードバックの送信、ウェルカム画面とガイド付きセットアップ(どちらも再表示可能)、そしてアプリ内に点在する説明カードの表示切り替え。</td></tr>
+        <tr><td>言語</td><td>「システムの既定」は端末の言語に従います。その下には、29のすべての言語(英語に加え28言語)がそれぞれの言語名で並びます。<a href="/ja/guide/languages/">言語ガイド &rarr;</a></td></tr>
+        <tr><td>リンク</td><td>Webサイト、アプリマニュアル(このガイド)、Discord、すべてのアプリを見る、プライバシー、利用規約。</td></tr>
+        <tr><td>アプリについて</td><td>バージョン、対応プロジェクターの一覧(実機で確認済みか推定かを併記)、そしてプライバシーのコントロール。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">プロジェクター</div>
+      <h2>追加、編集、接続</h2>
+    </div>
+    <ul class="plain">
+      <li><b>プロジェクターの追加は2通り。</b>Wi-Fiまたは有線ネットワークをスキャンして、プロジェクターとして応答する機器を探しアドレスを自動入力するか、IPを手入力します。新しく追加したプロジェクターは、機能のスキャン中にプログレスバーを表示し、結果は記憶されるので、次回アプリを開いても再スキャンされません。</li>
+      <li><b>編集、確認、削除。</b>保存済みのプロジェクターごとに、編集の鉛筆アイコン、詳細接続ビュー、情報パネル、削除があります。詳細設定には、プロジェクターごとのポートと3つのパスワードがあります。</li>
+      <li><b>3つの独立したパスワード。</b>プロジェクターには最大3つ(Web Control、PJLink、リモート)あります。プロトコルごとに別のパスワードで、プロジェクターごとに保存されます。アプリは保護されていると決めつけず、プロジェクターが実際にどれを求めているかを判断します。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">アプリのアンロック</div>
+      <h2>Pro、ホームオートメーション、そしてバンドル</h2>
+      <p class="lead">Projector Pilotは、買い切りの2つに分けて販売されています。Proは高機能なアプリ本体、ホームオートメーションは別売りで、バンドルは両方をまとめて購入できます。分割前にProを購入された方は、Proにあったすべての機能をそのままお使いいただけます。</p>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot Pro</b> - シーン、複数のプロジェクター、ピクチャーのフルコントロール、レンズとジオメトリー、メンテナンス、ウィジェット、テストパターン、共有可能なプロファイル。</li>
+      <li><b>ホームオートメーション</b> - Home Assistant、Hubitat、Webhook。</li>
+      <li><b>バンドル</b> - 両方を1回の購入で。</li>
+      <li><b>復元</b> - このストアアカウントで購入済みの内容を再付与します。ストアが「すでに所有している」と返した場合、アプリはエラーを表示せずに付与するので、購入した機能が使えなくなることはありません。</li>
+    </ul>
+    <div class="note">価格は常にストアの表示価格で、確定前にお使いの通貨で表示されます。アプリが勝手な数字を作ることはありません。ストアのないプラットフォームでは、誰も支払えない課金の壁を出さず、すべての機能を含めて提供します。詳しい内訳は<a href="/ja/pricing/">料金</a>をご覧ください。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">外観</div>
+      <h2>テーマとカラーテーマ</h2>
+    </div>
+    <ul class="plain">
+      <li><b>ライト</b> - すっきりした白いテーマ。</li>
+      <li><b>ダーク</b> - 標準的なダークの配色。</li>
+      <li><b>AMOLED</b> - OLEDディスプレイ向けの完全な黒。</li>
+      <li><b>ブランド</b> - アプリの特徴であるフォレストグリーン。</li>
+      <li><b>カラーテーマ</b> - プリセットのアクセントカラーまたは好みの色を選ぶと、アプリがそれを基準にパレット全体を作り直します。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>設定のよくある質問</h2>
+    </div>
+    <details open><summary>プロジェクターはどうやって追加しますか?</summary><div class="body">設定のプロジェクターを追加を開きます。アプリにネットワークをスキャンさせてアドレスを自動入力するか、IPを手入力してください。新しいプロジェクターは、機能を一度だけプログレスバー付きでスキャンされ、その結果が記憶されます。</div></details>
+    <details><summary>ポートとパスワードはどこにありますか?</summary><div class="body">保存済みのプロジェクターの詳細接続ビューを開いてください。プロジェクターごとのポートと、3つの独立したパスワード(Web Control、PJLink、リモート)はそこにあります。</div></details>
+    <details><summary>すでにProを購入済みですが、ホームオートメーションも買う必要がありますか?</summary><div class="body">いいえ。アプリが2つに分かれる前にProを購入された方は、Proにあったすべての機能をそのままお使いいただけます。アンロック済みのものが失われることはありません。</div></details>
+    <details><summary>パスワードはバックアップに含まれますか?</summary><div class="body">いいえ。バックアップと復元の対象はアプリの設定です。保存済みのプロジェクターとそのパスワードは暗号化されたセキュアストレージに残り、バックアップファイルには含まれません。</div></details>
+    <details><summary>プロジェクターへの問い合わせ頻度は変更できますか?</summary><div class="body">はい。ステータス取得間隔でライブ状態の更新頻度を設定できます。変更は即座に反映され、スライダーをドラッグしている間に問い合わせが集中することはありません。</div></details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">続けて読む</div>
+      <h2>関連ガイド</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ja/guide/maintenance/">メンテナンス &amp; 使用状況</a>
+      <a href="/ja/guide/scenes/">ワンタップのシーン</a>
+      <a href="/ja/guide/languages/">対応言語</a>
+      <a href="/ja/guide/">ユーザーガイド全体</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/pricing/">料金</a><a href="/ja/highlights/">ハイライト</a><a href="/ja/guide/home-automation/">Home Assistant</a><a href="/ja/help/">ヘルプ &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ja/help/#privacy">プライバシー</a><a href="/ja/help/#terms">利用規約</a></div>
+<div class="flinks"><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/guide/dashboard/">ダッシュボード</a><a href="/ja/guide/remote/">リモコン</a><a href="/ja/guide/picture/">ピクチャー</a><a href="/ja/guide/lens/">レンズ</a><a href="/ja/guide/scenes/">シーン</a><a href="/ja/guide/home-assistant-dashboard/">HAダッシュボード</a><a href="/ja/guide/maintenance/">メンテナンス</a><a href="/ja/guide/settings/">設定</a><a href="/ja/guide/languages/">言語</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilotは、EpsonおよびPJLinkプロジェクター向けの独立したアプリです。Epson、PJLink標準化団体、Home Assistant、Hubitat、Apple、Google、Microsoftとは提携しておらず、承認やスポンサーを受けたものでもありません。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play、Microsoft Storeは各権利者の商標であり、本アプリの対応対象を説明する目的でのみ記載しています。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

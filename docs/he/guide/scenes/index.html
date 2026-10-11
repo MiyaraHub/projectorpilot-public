@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>סצנות מקרן בנגיעה אחת - Projector Pilot</title>
+<meta name="description" content="שמרו את ההפעלה, הקלט, התמונה, זיכרון העדשה של המקרן ועוד כסצנה, ושלפו אותה בנגיעה אחת. כל סצנה יכולה להפוך לסקריפט ב-Home Assistant. Pro." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/he/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="סצנות מקרן בנגיעה אחת - Projector Pilot" />
+<meta property="og:description" content="שמרו את ההפעלה, הקלט, התמונה, זיכרון העדשה של המקרן ועוד כסצנה, ושלפו אותה בנגיעה אחת. כל סצנה יכולה להפוך לסקריפט ב-Home Assistant. Pro." />
+<meta property="og:url" content="https://projectorpilot.com/he/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="סצנות מקרן בנגיעה אחת - Projector Pilot" />
+<meta name="twitter:description" content="שמרו את ההפעלה, הקלט, התמונה, זיכרון העדשה של המקרן ועוד כסצנה, ושלפו אותה בנגיעה אחת. כל סצנה יכולה להפוך לסקריפט ב-Home Assistant. Pro." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "he", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "סצנות מקרן בנגיעה אחת - Projector Pilot", "description": "שמרו את ההפעלה, הקלט, התמונה, זיכרון העדשה של המקרן ועוד כסצנה, ושלפו אותה בנגיעה אחת. כל סצנה יכולה להפוך לסקריפט ב-Home Assistant. Pro.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "he", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "סצנות מקרן: כל החדר שלכם, בנגיעה אחת", "description": "שמרו את ההפעלה, הקלט, התמונה, זיכרון העדשה של המקרן ועוד כסצנה, ושלפו אותה בנגיעה אחת. כל סצנה יכולה להפוך לסקריפט ב-Home Assistant. Pro.", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "he", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "בית", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "מדריך למשתמש", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "סצנות", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/he/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה"><a href="/he/#features">תכונות</a><a href="/he/guide/">מדריך</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/help/">עזרה</a><a class="cta" href="/he/#download">הורידו את האפליקציה</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; סצנות</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">לשונית הסצנות &middot; Pro</div>
+        <h1>סצנות מקרן: כל החדר שלכם, בנגיעה אחת</h1>
+        <p class="lead">סצנה מתעדת את המקרן בדיוק כפי שהוא עכשיו ומחזירה את הכול מאוחר יותר בנגיעה אחת. ערב סרט, המשחק הגדול, מטינה בהירה ביום ראשון - כל אחד סצנה משלו, כל אחד במרחק נגיעה. אתם בוחרים בדיוק אילו חלקים סצנה שומרת, ומוצעים רק החלקים שהמקרן שלכם באמת מדווח עליהם.</p>
+        <p class="lead">סצנות הן חלק מ-<a href="/he/pricing/">Projector Pilot Pro</a>.</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="לשונית הסצנות ב-Projector Pilot עם לחצן שמירת הנוכחי" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">איך שומרים אחת</div>
+      <h2>מגדירים את החדר, ואז מתעדים אותו</h2>
+    </div>
+    <ol class="steps">
+      <li><b>מגדירים.</b> הביאו את המקרן בדיוק למצב שאתם רוצים - הקלט, מצב הצבע, התמונה, זיכרון העדשה, הכול.</li>
+      <li><b>שמירת הנוכחי.</b> בלשונית הסצנות לחצו על <b>שמירת הנוכחי</b>, תנו לסצנה שם וסמנו אילו חלקים לשמור. הבורר מציע רק מה שהמקרן מדווח, כך שלעולם לא תשמרו הגדרה שאין בדגם שלכם.</li>
+      <li><b>שליפה.</b> לחצו על הסצנה כדי להחיל אותה. Projector Pilot מאשרת כל הגדרה מול המקרן תוך כדי ולעולם לא טוענת לשינוי שלא נקלט.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">מה סצנה מתעדת</div>
+      <h2>כמה שתסמנו, או מעט</h2>
+      <p class="lead">סצנה אחת יכולה לצלם כל אחד מהבאים. השליפה משחזרת רק את החלקים שסימנתם, כך שסצנת ״מופע מאוחר״ יכולה להוריד את תפוקת האור ולהשאיר את כל השאר.</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>הפעלה</h3><p>מצב ההפעלה של המקרן, כך שסצנה יכולה להעיר אותו או לשלוח אותו להמתנה כחלק מההגדרה.</p></div>
+      <div class="gcard"><h3>קלט</h3><p>המקור שאליו הסצנה עוברת, כך ש״ערב קולנוע״ נוחתת על ה-HDMI הנכון בכל פעם.</p></div>
+      <div class="gcard"><h3>תמונה</h3><p>מצב צבע וערכי התמונה, כל אחד בסקאלה של התפריט של המקרן.</p></div>
+      <div class="gcard"><h3>אות</h3><p>הגדרות צד האות שהמקרן שלכם חושף לתוכן שאתם צופים בו.</p></div>
+      <div class="gcard"><h3>אור</h3><p>תפוקת מקור האור, כך שלחדר מואר ולחדר חשוך יש הגדרה משלהם.</p></div>
+      <div class="gcard"><h3>גאומטריה</h3><p>מצב היישור והגאומטריה שמסגר את התמונה על המסך שלכם.</p></div>
+      <div class="gcard"><h3>שמע</h3><p>הגדרות האודיו שהמקרן מדווח, נשמרות לצד השאר.</p></div>
+      <div class="gcard"><h3>רק מה שמדווח</h3><p>רשימת הסימון נבנית ממה שהמקרן שלכם באמת עונה, כך שאין בכל מה שתשמרו ניחוש.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">אוטומציה</div>
+      <h2>כל סצנה נהפכת לסקריפט ב-Home Assistant</h2>
+      <p class="lead">הדביקו בלוק אחד לתצורת Home Assistant שלכם פעם אחת ו-Projector Pilot כותבת סקריפט לכל סצנה שיש לכם, וכן להפעלה, לכל קלט, לכל מצב צבע ולכל זיכרון עדשה שהמקרן שלכם באמת מחזיק. אוטומציה או עוזר קולי יכולים אז להריץ כל סצנה, והאפליקציה מסירה את הסקריפטים שכתבה כשמכבים את הסנכרון, בלי לגעת בשום דבר אחר.</p>
+    </div>
+    <div class="note">סצנות עובדות גם דרך <b>webhooks</b> - שליפת סצנה יכולה לשלוח POST לכתובת שלכם - ומשתקפות על <b>Hubitat</b> דרך Maker API. הכול במדריך <a href="/he/guide/home-automation/">Home Assistant</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שתפו את העבודה שלכם</div>
+      <h2>פרופילי סצנה לשיתוף</h2>
+      <p class="lead">כיוונתם סצנה שאתם גאים בה? ייצאו אותה ותנו לחבר, או ייבאו אחת ששיתפו איתכם. פרופילי סצנה עוברים בין התקנות, כך שהגדרה טובה לא צריכה להיבנות מאפס בכל מקרן.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ממשיכים לקרוא</div>
+      <h2>מדריכים קשורים</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/he/guide/lens/">בקרת עדשה</a>
+      <a href="/he/guide/home-automation/">Home Assistant</a>
+      <a href="/he/guide/settings/">הגדרות</a>
+      <a href="/he/guide/">המדריך המלא למשתמש</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/he/guide/">מדריך למשתמש</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/help/">עזרה &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/he/help/#privacy">פרטיות</a><a href="/he/help/#terms">תנאים</a></div>
+<div class="flinks"><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/guide/dashboard/">לוח בקרה</a><a href="/he/guide/remote/">שלט</a><a href="/he/guide/picture/">תמונה</a><a href="/he/guide/lens/">עדשה</a><a href="/he/guide/scenes/">סצנות</a><a href="/he/guide/home-assistant-dashboard/">לוח בקרה ב-HA</a><a href="/he/guide/maintenance/">תחזוקה</a><a href="/he/guide/settings/">הגדרות</a><a href="/he/guide/languages/">שפות</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot היא אפליקציה עצמאית למקרני Epson ו-PJLink. היא אינה קשורה, מאושרת או ממומנת על ידי Epson, גוף התקנים PJLink, Home Assistant, Hubitat, Apple, Google או Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ו-Microsoft Store הם סימנים מסחריים של בעליהם, ומוזכרים רק כדי לתאר עם מה האפליקציה עובדת.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

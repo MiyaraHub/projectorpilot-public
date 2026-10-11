@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" />
+<meta name="keywords" content="Epson projector app, projector remote app, app for Epson projectors, Epson QB1000, PJLink app, projector controller, lens shift app, projector Home Assistant, projector Hubitat, ESC/VP21, projector calibration app, home theater projector remote" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Aplikasi untuk Mengontrol Proyektor Epson &amp; PJLink - Projector Pilot</title>
+<meta name="description" content="Projector Pilot adalah aplikasi untuk proyektor Epson dan PJLink: daya, input, gambar, lensa bermotor, Skenario sekali ketuk, dan Home Assistant. Tanpa langganan." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/id/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aplikasi untuk Mengontrol Proyektor Epson &amp; PJLink - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot adalah aplikasi untuk proyektor Epson dan PJLink: daya, input, gambar, lensa bermotor, Skenario sekali ketuk, dan Home Assistant. Tanpa langganan." />
+<meta property="og:url" content="https://projectorpilot.com/id/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aplikasi untuk Mengontrol Proyektor Epson &amp; PJLink - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot adalah aplikasi untuk proyektor Epson dan PJLink: daya, input, gambar, lensa bermotor, Skenario sekali ketuk, dan Home Assistant. Tanpa langganan." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/#webpage", "url": "https://projectorpilot.com/", "name": "Aplikasi untuk Mengontrol Proyektor Epson & PJLink - Projector Pilot", "description": "Projector Pilot adalah aplikasi untuk proyektor Epson dan PJLink: daya, input, gambar, lensa bermotor, Skenario sekali ketuk, dan Home Assistant. Tanpa langganan.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "SoftwareApplication", "@id": "https://projectorpilot.com/#app", "name": "Projector Pilot", "url": "https://projectorpilot.com/", "description": "Aplikasi independen untuk proyektor Epson dan PJLink: daya, input, kontrol gambar dan warna lengkap, geser lensa bermotor, fokus, zoom dan memori, Skenario sekali ketuk, otomasi Home Assistant, Hubitat, dan webhook, wawasan perawatan, dan widget layar utama, dalam 29 bahasa.", "operatingSystem": "Android, iOS, Windows, macOS", "applicationCategory": "UtilitiesApplication", "softwareRequirements": "An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app", "featureList": ["Power and input control", "Full picture and color control", "Motorized lens shift, focus, zoom and lens memories", "One-tap Scenes", "Home Assistant, Hubitat and webhook automation", "Maintenance and insights", "Home-screen widgets", "29 languages"], "image": "https://projectorpilot.com/assets/icon-512.png", "screenshot": ["https://projectorpilot.com/screenshots/01-dashboard.png", "https://projectorpilot.com/screenshots/02-remote.png", "https://projectorpilot.com/screenshots/03-picture.png", "https://projectorpilot.com/screenshots/04-lens.png", "https://projectorpilot.com/screenshots/05-scenes.png", "https://projectorpilot.com/screenshots/06-settings.png", "https://projectorpilot.com/screenshots/07-home-automation.png", "https://projectorpilot.com/screenshots/08-home-assistant.png"], "offers": [{"@type": "Offer", "name": "Gratis", "price": "0", "priceCurrency": "USD", "description": "Tambah proyektor, daya, pergantian input, status langsung, dan dasar-dasar remote di layar."}, {"@type": "Offer", "name": "Projector Pilot Pro", "price": "9.99", "priceCurrency": "USD", "description": "Pembelian dalam aplikasi sekali saja. Harga acuan; store menampilkan harga untuk wilayah Anda."}, {"@type": "Offer", "name": "Add-on Otomasi Rumah", "price": "2.99", "priceCurrency": "USD", "description": "Pembelian dalam aplikasi sekali saja. Harga acuan; store menampilkan harga untuk wilayah Anda."}, {"@type": "Offer", "name": "Bundel Pro + Otomasi Rumah", "price": "11.99", "priceCurrency": "USD", "description": "Pembelian dalam aplikasi sekali saja. Harga acuan; store menampilkan harga untuk wilayah Anda."}], "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "FAQPage", "@id": "https://projectorpilot.com/#faq", "mainEntity": [{"@type": "Question", "name": "Apakah Projector Pilot dibuat oleh Epson?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Projector Pilot adalah aplikasi independen dari MiyaraHub Technologies LLC. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, atau Hubitat. Nama-nama itu adalah merek dagang dari pemiliknya masing-masing dan muncul di sini hanya untuk menjelaskan proyektor dan sistem rumah pintar apa yang didukung aplikasi."}}, {"@type": "Question", "name": "Proyektor apa saja yang didukung Projector Pilot?", "acceptedAnswer": {"@type": "Answer", "text": "Proyektor Epson lewat ESC/VP21 dan Web Control, serta proyektor PJLink apa pun. Aplikasi memakai apa pun yang dijawab proyektor, jadi proyektor yang hanya PJLink adalah perangkat biasa yang didukung."}}, {"@type": "Question", "name": "Apakah Projector Pilot berlangganan?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Kontrol dasar gratis, dan Pro, Otomasi Rumah, serta bundel adalah pembelian sekali saja. Tanpa langganan, tanpa iklan."}}, {"@type": "Question", "name": "Apakah Projector Pilot membutuhkan akun atau cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Tanpa akun dan tanpa cloud. Aplikasi berbicara dengan proyektor Anda langsung di jaringan Anda sendiri."}}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="#features">Fitur</a>
+      <a href="/id/guide/">Panduan</a>
+      <a href="/id/pricing/">Harga</a>
+      <a href="/id/highlights/">Sorotan</a>
+      <a href="/id/guide/home-automation/">Home Assistant</a>
+      <a href="/id/help/">Bantuan</a>
+      <a class="cta" href="#download">DAPATKAN APLIKASI</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Proyektor Epson &amp; PJLink</div>
+      <h1>Aplikasi kontrol yang selalu pantas dimiliki <span class="g">proyektor Epson</span> Anda.</h1>
+      <p>Daya, input, menu gambar lengkap, geser lensa bermotor, fokus dan zoom, Skenario sekali ketuk, dan otomasi rumah sungguhan - untuk proyektor Epson dan PJLink, langsung dari ponsel Anda. Tanpa iklan. Tanpa langganan. Tanpa akun cloud.</p>
+      <div class="pills">
+        <span class="pill">29 bahasa</span>
+        <span class="pill">Android &middot; iOS &middot; Windows &middot; macOS</span>
+        <span class="pill">Pembelian sekali saja</span>
+        <span class="pill">Bekerja di jaringan Anda</span>
+      </div>
+      <div class="readout">
+        <span>ESC/VP21</span><span>PJLink</span><span>Web Control</span><span>Home Assistant</span><span>Hubitat</span><span>Webhooks</span>
+      </div>
+      <p style="margin-top:24px"><a class="pill" style="color:var(--vfd);border-color:var(--edge-2)" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Dapatkan di Google Play &rarr;</a></p>
+    </div>
+    <div class="hero-shot"><img src="/screenshots/01-dashboard.png" alt="Dasbor Projector Pilot di ponsel yang menampilkan daya, input, dan mode warna secara langsung untuk proyektor Epson" width="1600" height="2384" fetchpriority="high" decoding="async" /></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Fungsinya</div>
+      <h2>Setiap kontrol yang diekspos proyektor Anda, dalam satu aplikasi yang bersih.</h2>
+      <p class="lead">Projector Pilot berbicara dengan proyektor Anda lewat ESC/VP21, PJLink, dan Epson Web Control sekaligus, memakai mana pun yang menjawab - sehingga Anda mendapatkan kontrol daya, gambar, geometri, dan lensa yang benar-benar berfungsi, dengan nilai yang dibaca balik dari proyektor, tidak pernah ditebak.</p>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/01-dashboard.png" alt="Dasbor Projector Pilot dengan status langsung, info proyeksi, serta ringkasan gambar dan lensa" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Dasbor</div>
+        <h3>Semuanya terlihat sekilas, dibuat sesuai keinginan Anda.</h3>
+        <ul>
+          <li><b>Status langsung</b> - daya, input, mode warna, jam sumber cahaya, sinyal, dan angka gambar, diperbarui saat berubah.</li>
+          <li><b>Daya dan input sekali ketuk</b> langsung dari atas, dengan tombol daya yang peka terhadap pemanasan dan pendinginan.</li>
+          <li><b>Kartu yang dapat dikustomisasi</b> - tambah, sembunyikan, dan urutkan ulang kartu agar dasbor menampilkan hal yang penting bagi Anda.</li>
+          <li><b>Info proyeksi</b> - dynamic range, ruang warna, gamma, jam laser, nomor seri, dan pemasangan, dibaca dari proyektor.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots"><img src="/screenshots/02-remote.png" alt="Layar remote Projector Pilot dengan D-pad navigasi, menu, sumber, dan layar kosong" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/03-picture.png" alt="Layar gambar Projector Pilot dengan brightness, contrast, suhu warna, dan gamma" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Remote &amp; Gambar</div>
+        <h3>Remote yang mendalam dan menu gambar lengkap.</h3>
+        <ul>
+          <li><b>D-pad navigasi lengkap</b>, menu, sumber, dan layar kosong - remote di layar, dibuat dengan benar.</li>
+          <li><b>Metode koreksi</b> - keystone H/V, Quick Corner, koreksi titik, permukaan melengkung, dan sudut dinding.</li>
+          <li><b>Kontrol gambar penuh</b> - brightness, contrast, tint, sharpness, suhu warna, gamma, HDR, dan menu gambar mendalam, masing-masing dalam skala proyektor sendiri.</li>
+          <li><b>HDR dan ruang warna terpisah</b> - sinyal BT.2020 SDR tampil persis seperti itu, tidak pernah sebagai lencana HDR yang keliru.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots one"><img src="/screenshots/04-lens.png" alt="Layar lensa Projector Pilot dengan pad geser, fokus, zoom, dan pemilih ukuran langkah" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Lensa</div>
+        <h3>Geser lensa bermotor, fokus, zoom, dan memori.</h3>
+        <ul>
+          <li><b>Geser, fokus, dan zoom</b> dari pad yang presisi, dengan <b>ukuran langkah pilihan Anda</b> - halus untuk pembingkaian, kasar untuk perpindahan besar.</li>
+          <li><b>Memori lensa</b> - panggil dan simpan posisi yang didukung proyektor Anda.</li>
+          <li><b>Peka orientasi</b> - aplikasi mengikuti pemetaan proyektor sendiri, plafon atau belakang, sehingga atas selalu atas.</li>
+          <li><b>Pembacaan yang jujur</b> - posisi yang tidak bisa dikonfirmasi proyektor tidak pernah disamarkan sebagai terkunci.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="shots one"><img src="/screenshots/05-scenes.png" alt="Tab Skenario Projector Pilot dengan Skenario sekali ketuk yang tersimpan" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Skenario</div>
+        <h3>Satu ketukan untuk seluruh ruangan.</h3>
+        <ul>
+          <li><b>Simpan Skenario</b> - daya, input, gambar, sinyal, cahaya, geometri, dan audio, dan pilih dengan tepat bagian mana yang disimpan.</li>
+          <li><b>Terapkan dengan sekali ketuk</b> - "Movie Night" mengatur input, mode gambar, dan memori lensa sekaligus.</li>
+          <li><b>Setiap Skenario menjadi skrip Home Assistant</b>, sehingga otomasi atau asisten suara bisa menjalankannya juga.</li>
+          <li><b>Profil yang dapat dibagikan</b> - ekspor Skenario yang sudah disetel dan berikan ke teman.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="shots"><img src="/screenshots/07-home-automation.png" alt="Hub Otomasi Rumah Projector Pilot dengan Home Assistant, Hubitat, dan webhook" width="1600" height="2384" loading="lazy" decoding="async" /><img src="/screenshots/08-home-assistant.png" alt="Layar penyiapan Home Assistant di Projector Pilot dengan sakelar masuk dan sinkron" width="1600" height="2384" loading="lazy" decoding="async" /></div>
+      <div>
+        <div class="eyebrow">Otomasi rumah</div>
+        <h3>Home Assistant, Hubitat, dan webhook - yang sungguhan.</h3>
+        <ul>
+          <li><b>Home Assistant</b> - masuk, terbitkan status proyektor sebagai sensor, dan ketuk <b>Sync With HA</b> untuk mendapatkan skrip bagi setiap Skenario dan kontrol.</li>
+          <li><b>Dasbor yang dibuatkan untuk Anda</b> - Sync membangunnya di Home Assistant, dengan kartu bawaan, ditingkatkan ke kartu HACS yang lebih kaya jika Anda memilikinya. Bekerja juga dengan integrasi PJLink inti.</li>
+          <li><b>Daftar periksa penyiapan</b> menunjukkan apa yang selesai, apa yang kurang, dan apa yang harus dilakukan selanjutnya, dan pembacaan Anda tetap ada di Home Assistant saat proyektor mati.</li>
+          <li><b>Hubitat</b> - cerminkan proyektor ke sebuah perangkat lewat Maker API agar Rule Machine bisa bertindak atasnya.</li>
+          <li><b>Webhook</b> - kirim ke URL mana pun saat proyektor menyala, mati, berganti input, atau memanggil Skenario.</li>
+        </ul>
+        <p style="margin-top:16px"><a href="/id/guide/home-automation/">Baca panduan Home Assistant lengkap &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dan masih banyak lagi</div>
+      <h2>Detail yang membuatnya terasa tuntas.</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Ganti proyektor dari mana saja</h3><p>Pengganti proyektor di bilah atas setiap halaman proyektor memindahkan Anda antar proyektor tanpa kembali ke daftar.</p></div>
+      <div class="gcard"><h3>Mematikan daya bertanya dulu</h3><p>Mematikan proyektor meminta konfirmasi Anda, sehingga ketukan nyasar tidak mengakhiri film.</p></div>
+      <div class="gcard"><h3>Kontrol yang merespons seketika</h3><p>Geser lensa, fokus, zoom, dan pengatur keluaran cahaya bergerak begitu ditekan, dan aplikasi mengenali proyektor yang menyala dalam sekitar sepuluh detik.</p></div>
+      <div class="gcard"><h3>Firmware sekilas</h3><p>Versi firmware proyektor Anda tampil di Dasbor dan tab Info, serta di laporan diagnostik, selama proyektor melaporkannya.</p></div>
+      <div class="gcard"><h3>Pergantian input pada proyektor yang hanya PJLink</h3><p>Proyektor yang hanya mencantumkan inputnya lewat PJLink, seperti TW7300 dan Home Cinema 4040, bisa berganti input, begitu juga proyektor PJLink non-Epson.</p></div>
+      <div class="gcard"><h3>Temukan proyektor Anda di Wi-Fi</h3><p>Tambah Proyektor memindai jaringan Anda untuk perangkat apa pun yang menjawab sebagai proyektor dan mengisi alamatnya, dengan bilah kemajuan selagi kemampuan model Anda ditemukan.</p></div>
+      <div class="gcard"><h3>Cadangan dan pemulihan</h3><p>Ekspor pengaturan aplikasi Anda ke file dan impor lagi. File dibagikan dengan nama aslinya, dan proyektor tersimpan beserta kata sandinya tidak pernah ikut di dalamnya.</p></div>
+      <div class="gcard"><h3>Laporkan bug dalam satu langkah</h3><p>Laporkan Bug membuat satu paket berisi setiap log yang relevan, siap dikirim.</p></div>
+      <div class="gcard"><h3>29 bahasa</h3><p>Inggris plus 28 lainnya, termasuk permintaan izin di iPhone, iPad, dan Mac. Lihat <a href="/id/guide/languages/">daftar bahasa</a>.</p></div>
+    </div>
+    <p style="margin-top:22px"><a href="/id/highlights/">Lihat semua yang baru &rarr;</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sekilas melihat</div>
+      <h2>Dibuat agar terasa seperti bagian dari proyektor.</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="/screenshots/01-dashboard.png" alt="Dasbor Projector Pilot dengan status langsung, info proyeksi, serta ringkasan gambar dan lensa" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Dasbor</figcaption></figure>
+      <figure><img src="/screenshots/02-remote.png" alt="Layar remote Projector Pilot dengan D-pad navigasi, menu, sumber, dan layar kosong" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Remote</figcaption></figure>
+      <figure><img src="/screenshots/04-lens.png" alt="Layar lensa Projector Pilot dengan pad geser, fokus, zoom, dan pemilih ukuran langkah" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Lensa</figcaption></figure>
+      <figure><img src="/screenshots/08-home-assistant.png" alt="Layar penyiapan Home Assistant di Projector Pilot dengan sakelar masuk dan sinkron" width="1600" height="2384" loading="lazy" decoding="async" /><figcaption>Home Assistant</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Pertanyaan yang paling sering diajukan</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Apakah Projector Pilot dibuat oleh Epson?</h3><p>Tidak. Projector Pilot adalah aplikasi independen dari MiyaraHub Technologies LLC. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, atau Hubitat. Nama-nama itu adalah merek dagang dari pemiliknya masing-masing dan muncul di sini hanya untuk menjelaskan proyektor dan sistem rumah pintar apa yang didukung aplikasi.</p></div><div class="gcard"><h3>Proyektor apa saja yang didukung Projector Pilot?</h3><p>Proyektor Epson lewat ESC/VP21 dan Web Control, serta proyektor PJLink apa pun. Aplikasi memakai apa pun yang dijawab proyektor, jadi proyektor yang hanya PJLink adalah perangkat biasa yang didukung.</p></div><div class="gcard"><h3>Apakah Projector Pilot berlangganan?</h3><p>Tidak. Kontrol dasar gratis, dan Pro, Otomasi Rumah, serta bundel adalah pembelian sekali saja. Tanpa langganan, tanpa iklan.</p></div><div class="gcard"><h3>Apakah Projector Pilot membutuhkan akun atau cloud?</h3><p>Tanpa akun dan tanpa cloud. Aplikasi berbicara dengan proyektor Anda langsung di jaringan Anda sendiri.</p></div></div>
+    <p style="margin-top:22px"><a href="/id/help/">Jawaban lainnya di Bantuan &amp; FAQ &rarr;</a></p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dapatkan aplikasinya</div>
+      <h2>Tersedia di Google Play. Store lainnya segera menyusul.</h2>
+      <p class="lead">Projector Pilot sudah tersedia di Google Play. App Store, Microsoft Store, dan Mac App Store menunggu persetujuan. Satu pembelian membukanya di setiap platform yang Anda miliki.</p>
+    </div>
+    <div class="pills">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - tersedia sekarang</a>
+      <span class="pill">App Store - menunggu persetujuan</span>
+      <span class="pill">Microsoft Store - menunggu persetujuan</span>
+      <span class="pill">Mac App Store - menunggu persetujuan</span>
+    </div>
+    <p style="margin-top:22px"><a href="/id/guide/">Buka panduan pengguna lengkap &rarr;</a> &nbsp; &middot; &nbsp; <a href="/id/pricing/">Lihat Gratis vs Pro &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" />
+      <div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div>
+    </div>
+    <div class="flinks">
+      <a href="/id/guide/">Panduan Pengguna</a>
+      <a href="/id/pricing/">Harga</a>
+      <a href="/id/highlights/">Sorotan</a>
+      <a href="/id/guide/home-automation/">Home Assistant</a>
+      <a href="/id/help/">Bantuan &amp; FAQ</a>
+      <a href="https://miyarahub.com">MiyaraHub</a>
+      <a href="/id/help/#privacy">Privasi</a>
+      <a href="/id/help/#terms">Ketentuan</a>
+    </div>
+<div class="flinks"><a href="/id/guide/getting-started/">Memulai</a><a href="/id/guide/dashboard/">Dasbor</a><a href="/id/guide/remote/">Remote</a><a href="/id/guide/picture/">Gambar</a><a href="/id/guide/lens/">Lensa</a><a href="/id/guide/scenes/">Skenario</a><a href="/id/guide/home-assistant-dashboard/">Dasbor HA</a><a href="/id/guide/maintenance/">Perawatan</a><a href="/id/guide/settings/">Pengaturan</a><a href="/id/guide/languages/">Bahasa</a></div>
+    <p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot adalah aplikasi independen untuk proyektor Epson dan PJLink. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, Hubitat, Apple, Google, atau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, dan Microsoft Store adalah merek dagang dari pemiliknya masing-masing, disebutkan hanya untuk menjelaskan apa yang didukung aplikasi ini.</p>
+  </div>
+</footer>
+
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

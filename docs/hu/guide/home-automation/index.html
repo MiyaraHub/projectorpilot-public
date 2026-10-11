@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Projektor Home Assistant &amp; Hubitat útmutató - Projector Pilot</title>
+<meta name="description" content="Csatlakoztassa Epson vagy PJLink projektorát a Home Assistant-hoz, a Hubitat-hoz és webhookokhoz. A Szinkronizálás HA-val élő állapotot tesz közzé, és minden Jelenetből szkriptet készít." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektor Home Assistant &amp; Hubitat útmutató - Projector Pilot" />
+<meta property="og:description" content="Csatlakoztassa Epson vagy PJLink projektorát a Home Assistant-hoz, a Hubitat-hoz és webhookokhoz. A Szinkronizálás HA-val élő állapotot tesz közzé, és minden Jelenetből szkriptet készít." />
+<meta property="og:url" content="https://projectorpilot.com/hu/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektor Home Assistant &amp; Hubitat útmutató - Projector Pilot" />
+<meta name="twitter:description" content="Csatlakoztassa Epson vagy PJLink projektorát a Home Assistant-hoz, a Hubitat-hoz és webhookokhoz. A Szinkronizálás HA-val élő állapotot tesz közzé, és minden Jelenetből szkriptet készít." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Projektor Home Assistant és Hubitat útmutató - Projector Pilot", "description": "Csatlakoztassa Epson vagy PJLink projektorát a Home Assistant-hoz, a Hubitat-hoz és webhookokhoz. A Szinkronizálás HA-val élő állapotot tesz közzé, és minden Jelenetből szkriptet készít.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "A projektor, Home Assistant-ban és Hubitat-ban.", "description": "Csatlakoztassa Epson vagy PJLink projektorát a Home Assistant-hoz, a Hubitat-hoz és webhookokhoz. A Szinkronizálás HA-val élő állapotot tesz közzé, és minden Jelenetből szkriptet készít.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "hu", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Otthon-automatizálás", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Maradnia kell a telefonomnak a hálózaton, hogy a Home Assistant automatizálásai lefussanak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Miután az egyetlen shell_command blokkot beillesztette a Home Assistant-ba, és szinkronizált, a Home Assistant közvetlenül a projektor IP-címére küldi a parancsokat. A Projector Pilot csak a beállítóeszköz; ezután a Home Assistant magától beszél a projektorral, akár otthon van a telefonja, akár nem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hogyan jelenik meg a projektor a Home Assistant-ban?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Szenzorként, például sensor.projector_pilot_epson_qb1000b_qb1000w, amely hordozza a bekapcsolási állapotot, a bemenetet, a színmódot, a képadatokat és a lámpaórákat, és frissül, valahányszor ezek változnak, miközben az alkalmazás nyitva van. Kapcsolja be a Speciális vezérlők szinkronizálását, és az alkalmazás minden Jelenethez szkriptet is ír a Home Assistant-ba, valamint a bekapcsoláshoz, minden bemenethez, minden színmódhoz és a projektor minden lencsememóriájához."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ingyenes az Otthon-automatizálás?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az Otthon-automatizálás fizetős kiegészítő, egyszeri vásárlás, a Projector Pilot Pro-tól külön. A csomag mindkettőt együtt, kedvezménnyel adja. Lásd az árak oldalt."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/hu/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv"><a href="/hu/#features">Funkciók</a><a href="/hu/guide/">Útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/guide/home-assistant-dashboard/">HA-vezérlőpult</a><a href="/hu/help/">Súgó</a><a class="cta" href="/hu/#download">TÖLTSE LE AZ APPOT</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Otthonautomatizálás</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhookok</div>
+    <h1>A projektor, <span class="g">Home Assistant-ban és Hubitat-ban</span>.</h1>
+    <p>A Projector Pilot közzéteszi a projektor élő állapotát és minden vezérlőjét a Home Assistant-ban, a Hubitat-ban és bármely tetszőleges webhookon. Egyszer állítsa be, és az okosotthona magától vezérli a projektort - telefon a hálózaton és felhő a közvetítésben nélkül.</p>
+    <div class="readout"><span>Beállítás után szerver nélkül</span><span>A Jelenetek szkriptekké válnak</span><span>Kész vezérlőpult</span><span>Beállítási ellenőrzőlista</span><span>Fizetős kiegészítő</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Áttekintés</div>
+      <h2>Mit tud az Otthon-automatizálás</h2>
+      <p class="lead">Az Otthon-automatizálás a Projector Pilot-ot a kezében tartott távirányítóból olyan eszközzé teszi, amelyet az egész háza lát. Közzéteszi, mit csinál a projektor - bekapcsolás, bemenet, színmód, képadatok, lámpaórák -, és az okosotthona kezébe ad egy vezérlőt mindenhez, amit az alkalmazás módosítani tud.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Állapotot tesz közzé.</b> A projektor Home Assistant szenzorként, Hubitat eszközként vagy a webhookon küldött JSON-adatcsomagként jelenik meg, ugyanazokkal az értékekkel, amelyeket az alkalmazás is mutat.</li>
+      <li><b>Vezérlőket tesz közzé.</b> Minden elmentett Jelenet, valamint a bekapcsolás, minden bemenet, minden színmód és minden lencsememória olyasmivé válik, amit egy automatizálás vagy egy hangasszisztens futtatni tud.</li>
+      <li><b>Szerver nélkül fut.</b> Amint a szkriptek be vannak állítva, a Home Assistant közvetlenül a projektor IP-címére küldi a parancsokat. A telefonnak nem kell a hálózaton lennie, és semmi sem megy át felhőfiókon.</li>
+    </ul>
+    <div class="note"><b>Az Otthon-automatizálás fizetős kiegészítő.</b> Egyszeri vásárlás, a Projector Pilot Pro-tól külön, a csomag pedig mindkettőt együtt, kedvezménnyel adja. Nincs előfizetés, fiók vagy felhő. Lásd az <a href="/hu/pricing/">árakat</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Három út, egy központ</h3>
+        <p class="lead">A Beállítások &rsaquo; Otthon-automatizálás a központ. Válassza ki a használt platformot - Home Assistant, Hubitat vagy Webhookok - és ott állítsa be. Egyszerre többet is bekötheti; egymástól függetlenek.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Az Otthon-automatizálás központ a Projector Pilot-ban: Home Assistant, Hubitat és Webhookok" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>A Home Assistant beállítása</h2>
+      <p class="lead">Jelentkezzen be az alkalmazásból, tegye közzé a projektort szenzorként, illesszen be egy blokkot a konfigurációjába, és szinkronizáljon. Ettől kezdve a Home Assistant maga vezérli a projektort.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Nyissa meg a <b>Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Home Assistant</b> oldalt.</li>
+        <li>Írja be a <b>Home Assistant címét</b> (például <code>http://homeassistant.local:8123</code> vagy az IP-címét), majd koppintson a <b>Bejelentkezés</b> gombra. Ez böngészős bejelentkezés a saját példányába - <b>nincs beillesztendő token</b>. Használja a szokásos Home Assistant belépését, kétfaktoros azonosítással együtt.</li>
+        <li>Az alkalmazás <b>szenzorként</b> teszi közzé a projektort, például <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code> entitással, amely hordozza a bekapcsolási állapotot, a bemenetet, a színmódot, a képadatokat és a lámpaórákat.</li>
+        <li>Kapcsolja be a <b>A projektor állapotának küldése</b> funkciót, hogy ezek az értékek frissüljenek a Home Assistant-ban, valahányszor változnak, amíg az alkalmazás nyitva van, és kapcsolja be a <b>Speciális vezérlők szinkronizálása</b> funkciót, hogy szkriptek készüljenek a képmódokhoz, bemenetekhez, lencsememóriákhoz és a bekapcsoláshoz.</li>
+        <li>Illessze be az egyetlen <b>shell_command</b> blokkot (lent) a(z) <code>configuration.yaml</code> fájlba, indítsa újra a Home Assistant-ot, majd koppintson a <b>Szinkronizálás HA-val</b> gombra.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="A Home Assistant képernyő a Projector Pilot-ban a shell_command blokkal, a Bejelentkezéssel, a Projektor entitás-ID mezővel és a szinkronizálási kapcsolókkal" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">A shell_command blokk</h3>
+    <p class="lead">Ez a teljes szerver nélküli trükk. Az alkalmazás egyetlen parancsot ír, amelyet a Home Assistant futtat a projektor Web Control felületével való beszélgetéshez, és minden szinkronizált szkript ezt a parancsot hívja más-más igével. Koppintson az alkalmazásban a <b>Blokk másolása</b> gombra, és illessze be ide: <code>configuration.yaml</code>. Az alábbi példa csak illusztráció - az alkalmazás beírja a projektor saját címét és parancsnevét:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Csak példa. Az alkalmazás a sajátját a projektor valódi IP-címével és a sorozatszámból képzett névvel állítja elő.</p>
+    <div class="note"><b>Miért szerver nélküli.</b> Ez a <code>curl</code> a Home Assistant gépen fut, nem a telefonján. A Home Assistant közvetlenül a projektor IP-címét éri el Web Control-on keresztül, így az automatizálás akkor is lefut, ha az alkalmazás nincs nyitva, és akkor is, ha a telefonja nincs is otthon. A <code>EPSONWEB</code> digest felhasználó a Web Control bejelentkezés; az alkalmazás a projektorhoz már elmentett Web Control jelszót használja.</p></div>
+
+    <h3 style="margin-top:32px">Kapcsolat tesztelése, szinkronizálás és takarítás</h3>
+    <ul class="plain">
+      <li>A <b>Kapcsolat tesztelése</b> ellenőrzi, hogy az alkalmazás eléri-e a Home Assistant-ot, és hogy a beillesztett <code>shell_command</code> valóban ott van-e, így még azelőtt kiderül egy elírás, hogy bármit ráépítene.</li>
+      <li>A <b>Szinkronizálás HA-val</b> megírja vagy frissíti a Jelenetek és vezérlők szkriptjeit, és közvetlenül a Home Assistant-ba felépít egy kész Projector Pilot vezérlőpultot. Futtassa újra bármikor, ha új Jelenetet ad hozzá vagy módosít egy vezérlőt - helyben frissít, nem halmoz fel másolatokat.</li>
+      <li>Az <b>Árva szkriptek eltávolítása</b> megkeresi azokat a szkripteket, amelyeket az alkalmazás írt, de már nincs hozzájuk Jelenet vagy vezérlő - például egy Jelenet törlése után -, <b>felsorolja, pontosan melyeket távolítja el, és előbb rákérdez</b>. Semmi sem törlődik, amíg meg nem erősíti. Csak a Projector Pilot által létrehozott szkriptekhez nyúl; a Home Assistant semmi más része nem sérül, és ha a Home Assistant nem listázza a szkriptjeit, semmi sem kerül eltávolításra.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Beállítási ellenőrzőlista</div>
+      <h2>Az alkalmazás megmondja, mi van kész és mi hiányzik</h2>
+      <p class="lead">A Home Assistant képernyőn egy <b>Beállítási ellenőrzőlista</b> és egy <b>Mi van a Home Assistant-ban</b> panel látható, így sosem kell találgatnia, melyik lépés van hátra. Minden sor megmondja, hogy kész, hiányzik, vagy nem állapítható meg, és azt is, mi a teendő.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Csatlakozva a Home Assistant-hoz</b> - bejelentkezve és válaszol. Ha a Home Assistant nem válaszol, a sor azt javasolja, hogy ellenőrizze a címet, és hogy a telefon ugyanazon a hálózaton van-e.</li>
+      <li><b>Projektor hozzáadva a Home Assistant-hoz</b> - hogy a Home Assistant már ismeri-e ezt a projektort. Ha nem, a sor a PJLink integráció hozzáadásához irányítja, és az integráció-hozzáadási lépés megmutatja a PJLink gazdát és portot, amelyet a Home Assistant kér.</li>
+      <li><b>Értékszenzor regisztrálva</b> - a szenzor, amely a projektor értékeit hordozza. Akkor regisztrálódik, amikor az alkalmazás először olvassa be a projektort, és a sor <b>Regisztrálás most</b> vagy <b>Bekapcsolás</b> lehetőséget kínál, ha valami megakadályozza.</li>
+      <li><b>Mi van a Home Assistant-ban</b> - HACS (a közösségi bolt), az Epson Projector Link integráció, a PJLink integráció, és a Projector Pilot parancsai itt: <code>configuration.yaml</code>. Mindegyik Megtalálva, Nincs telepítve vagy Nem állapítható meg állapotot mutat, Telepítés menete és Megnyitás a HACS-ben gombokkal, ahol azok segítenek.</li>
+    </ul>
+    <div class="note"><b>Az Ellenőrzés újra megmondja, mit talált.</b> Koppintson az <b>Ellenőrzés újra</b> gombra, miután javított valamit, és az alkalmazás újraolvassa a Home Assistant-ot, és jelenti az eredményt, ahelyett hogy azon töprengene, működött-e. Az a sor, amelyet nem lehetett ellenőrizni, azt mondja: <i>Nem állapítható meg</i>, sosem találgatott igent vagy nemet.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Együttműködik azzal, ami már megvan</div>
+      <h2>A core PJLink integráció támogatása, és gazdagabb kártyák, ha vannak</h2>
+      <p class="lead">A Projector Pilot kideríti, mi van telepítve a Home Assistant-ban, és ahhoz igazodik. Együttműködik a Home Assistant eleve részét képező <b>core PJLink integrációval</b>, így az ott már hozzáadott PJLink projektor teljes értékű résztvevő.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Előbb a beépített kártyák.</b> Ha nincsenek közösségi kártyák, a szinkronizálás a Home Assistant beépített kártyáival építi fel a vezérlőpultot, és a végén ezt jelzi. Dobozból kivéve működik.</li>
+      <li><b>Frissítés, ha HACS-kártyák vannak telepítve.</b> Az alkalmazás ellenőrzi, melyik közösségi kártya (Mushroom, button-card, card-mod, apexcharts-card) van telepítve, és ahol megvan, a gazdagabbra cseréli az adott kártyát. A <a href="/hu/guide/home-assistant-dashboard/">kézzel épített vezérlőpult útmutatója</a> tovább megy, ha a teljes zöld üveges megjelenést szeretné.</li>
+      <li><b>A Jelenetekhez és vezérlőkhöz kell az az egy beillesztés.</b> Ha a Home Assistant-ban még nincs projektornak küldő parancs, a vezérlőpult élő értékekkel így is elkészül, és egy <b>Beállítás befejezése</b> kártya végigvezeti: koppintson a Blokk másolása gombra, illessze be ide: <code>configuration.yaml</code>, indítsa újra a Home Assistant-ot, majd koppintson újra a Szinkronizálásra.</li>
+      <li><b>Nincs semmi telepítve? Illessze be kézzel.</b> Ha a Home Assistant-ban nincs telepítve semmi, mindent kimásolhat az alkalmazásból, és maga beillesztheti.</li>
+      <li><b>A jelszót jelzi.</b> A beillesztett parancsblokk megmondja, ha projektorjelszót hordoz, így megosztás vagy tárolás előtt tudja.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Amíg a projektor ki van kapcsolva</div>
+      <h2>Értékek, amelyek maradnak</h2>
+      <p class="lead">A készenléti projektor nagyon keveset közöl, így egy vezérlőpult általában kiürülne. Az opcionális <b>utolsó ismert szenzor</b> megőrzi a projektor utolsó értékeit - a bemenetet, a lámpa- vagy lézerórákat - a Home Assistant-ban, amíg a projektor ki van kapcsolva.</p>
+    </div>
+    <ul class="plain">
+      <li>Ez még egy opcionális blokk: illessze be a(z) <code>configuration.yaml</code> végére (vagy csak a soraiban lévő részt egy meglévő <code>template:</code> szakasz alá), és indítsa újra a Home Assistant-ot. Az alkalmazásban van egy <b>Ellenőrzés, hogy ott van-e</b> gomb, amely megmondja, hogy a Home Assistant rendelkezik-e vele.</li>
+      <li>A kikapcsolás mostantól <b>off</b> állapotként érkezik a Home Assistant-ba, így a vezérlőpult és az automatizálások kikapcsoltnak látják a projektort, amikor az valóban az.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Jelenetek mint szkriptek</div>
+      <h2>Minden Jelenet Home Assistant szkriptté válik</h2>
+      <p class="lead">Szinkronizálás után a Jelenetek nem ragadnak az alkalmazásban. Mindegyik, valamint a bekapcsolás, minden bemenet, minden színmód és a projektor minden valóban meglévő lencsememóriája Home Assistant szkriptként íródik meg.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Az automatizálások futtathatják őket.</b> „Naplementekor, ha a TV bekapcsol, futtasd a Filmes estet” egy hétköznapi Home Assistant automatizálás, amint a Jelenet szkript.</li>
+      <li><b>A hangasszisztensek futtathatják őket.</b> Tegyen elérhetővé egy szkriptet az asszisztensének, és a „kapcsold be a Filmes estet” együtt állítja be a bemenetet, a képmódot és a lencsememóriát.</li>
+      <li><b>Csak a valódi vezérlők jelennek meg.</b> Az alkalmazás minden olyan bemenethez, színmódhoz és lencsememóriához ír szkriptet, amelyet a projektor jelent - nem egy találgatott, általános listához.</li>
+      <li><b>A szinkronizálás eltávolítása csak azt távolítja el, amit az alkalmazás írt.</b> Kapcsolja ki a szinkronizálást, vagy használja az Árva szkriptek eltávolítása funkciót (amely felsorolja őket, és előbb rákérdez), és a Projector Pilot törli az általa létrehozott szkripteket, és semmi mást.</li>
+    </ul>
+    <div class="note"><b>A szkriptek úgy vannak elnevezve, hogy az átnevezés ugyanazt frissítse.</b> A szkriptnevek a projektorból és a vezérlőből származnak, így a Jelenet átnevezése utáni újraszinkronizálás a meglévő szkriptet frissíti, nem hoz létre második másolatot.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A vezérlőpult</div>
+      <h2>A szinkronizálás elkészíti a vezérlőpultot</h2>
+      <p class="lead">Nem kell kézzel építenie egy Lovelace nézetet, és beillesztenie sem kell többé. Amikor a <b>Szinkronizálás HA-val</b> gombra koppint, az alkalmazás a saját API-ján keresztül közvetlenül a Home Assistant-ban felépít egy teljes Projector Pilot vezérlőpultot: a projektor élő állapotát és egy gombot minden szinkronizált Jelenethez és vezérlőhöz. Az oldalsávban <b>Projector Pilot</b> néven jelenik meg - nyissa meg, és kész.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="A Projector Pilot vezérlőpult a Home Assistant-ban: bekapcsolás és forrás, színmódok, a teljes képmenü, HDR és jel, RGB-kalibráció, lencse és geometria, lézerórák grafikonja, karbantartás és Jelenetek - mind zöld üveges csempékként" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>A felület gazdagabb, kézzel épített változata. Az, amelyet a szinkronizálás készít, ugyanazt az élő állapotot és gombokat hordozza szabványos Home Assistant kártyákban; az alábbi zöld üveges megjelenés az opcionális egyedi változat. Görgesse, vagy kattintson a nagyításhoz.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Jelentkezzen be az alkalmazásban a Home Assistant-ba.</li>
+      <li>Illessze be az alkalmazás <b>Másolás blokkját</b> egyszer ide: <code>configuration.yaml</code>, és indítsa újra a Home Assistant-ot (az egyetlen kézi lépés - a Home Assistant nem engedi, hogy alkalmazások távolról adják hozzá ezt a parancsot).</li>
+      <li>Koppintson a <b>Szinkronizálás HA-val</b> gombra. A vezérlőpult elkészül, és <b>Projector Pilot</b> néven megjelenik az oldalsávban.</li>
+    </ol>
+    <div class="note"><b>Inkább maga illesztené be?</b> A <b>Vezérlőpult másolása</b> továbbra is ott van a Home Assistant képernyőn. Koppintson rá, majd a Home Assistant-ban lépjen a <b>Beállítások &rsaquo; Vezérlőpultok &rsaquo; Vezérlőpult hozzáadása</b> oldalra, hozzon létre egy üres vezérlőpultot, nyissa meg a hárompontos menüjét &rsaquo; <b>Vezérlőpult szerkesztése</b> &rsaquo; hárompontos menü &rsaquo; <b>Nyers konfigurációszerkesztő</b>, és illessze be a kimásolt YAML-t.</div>
+    <p class="lead">Akár elkészül Önnek, akár maga illeszti be, a vezérlőpult ugyanaz - egy állapotkártya és egy gomb minden vezérlőhöz (illusztratív részlet):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Csak példa. A vezérlőpultja a projektora valódi entitását és a saját Jelenetei hordozza.</p>
+    <div class="note"><b>Modellfüggetlen.</b> A vezérlőpult a <i>saját</i> projektora képességeiből épül fel - az entitásból, a képadatokból, a bemenetekből, a színmódokból, a lencsememóriákból és a Jelenetekből, amelyeket az valóban jelentett. Az itteni képernyőképek egy QB1000-ről készültek; az Ön modellje más bemeneteket, vezérlőket és értékeket mutathat. Egy, a képen látotthoz hasonló teljes zöld üveges felülethez kövesse a <a href="/hu/guide/home-assistant-dashboard/">lépésről lépésre vezérlőpult-útmutatót</a>, vagy <a href="/hu/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>töltse le a teljes nézetet</a>, és cserélje ki a két karakterláncot.</div>
+    <div class="note"><b>Gazdagabb falat szeretne?</b> Ugyanezek a szkriptek bármilyen kártyát meghajtanak. Ha használta az AVR Maestro-t, a megközelítés azonos - világító forrás- és módcsempék, élő fejlécek és előzmények építhetők az egyetlen szenzorból és a szinkronizált szkriptekből.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>A Hubitat beállítása</h2>
+      <p class="lead">A Hubitat-on a Projector Pilot a Maker API-n keresztül tükrözi a projektort a központ egyik eszközére, így a Rule Machine olvasni és cselekedni tud a bekapcsolás, némítás és bemenet alapján.</p>
+    </div>
+    <ol class="steps">
+      <li>A Hubitat-ban engedélyezze a <b>Maker API</b> alkalmazást, jegyezze fel a hozzáférési URL-jét és tokenjét, és válassza ki, mely eszközöket tegye elérhetővé.</li>
+      <li>A Projector Pilot-ban nyissa meg a <b>Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Hubitat</b> oldalt, és adja meg a központ <b>Maker API</b> adatait.</li>
+      <li>Válassza ki a <b>projektort képviselő eszközt</b>. Az alkalmazás javasolja a valószínűt; fogadja el, vagy válasszon sajátot.</li>
+      <li>Az alkalmazás <b>tükrözi a bekapcsolást, némítást és bemenetet</b> arra az eszközre, és csak az eszköz által elfogadott parancsokat küldi.</li>
+      <li>Építsen <b>Rule Machine</b> szabályokat arra az eszközre úgy, ahogy bármely másikra - a projektor állapota vezérli őket.</li>
+    </ol>
+    <div class="note"><b>Csak amit az eszköz elfogad.</b> Az alkalmazás csak akkor küld projektorértéket a Hubitat-nak, ha a kiválasztott eszköz támogatja az adott parancsot, így sosem küld olyat, amit az eszköz elutasítana.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhookok</div>
+      <h2>A Webhookok beállítása</h2>
+      <p class="lead">A webhookok az általános megoldás. Az alkalmazás az Ön URL-jére küld, amikor a projektor bekapcsol, kikapcsol, bemenetet vált vagy Jelenetet hív elő - Home Assistant webhookra, Node-RED-re, IFTTT-re, vagy bármire, ami JSON-t fogad.</p>
+    </div>
+    <ol class="steps">
+      <li>Nyissa meg a <b>Beállítások &rsaquo; Otthon-automatizálás &rsaquo; Webhookok</b> oldalt.</li>
+      <li>Adja meg az <b>URL</b>-t, amelyre küldeni kell. Egy Home Assistant webhook így néz ki: <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Válassza ki, mely <b>események</b> váltják ki a webhookot: bekapcsolás, kikapcsolás, bemenetváltás, Jelenet előhívása - és szükség esetén szűrjön egy adott bemenetre vagy Jelenetre.</li>
+      <li>Szükség esetén állítson be <b>egyéni adattartalmat</b>, ha a fogadó szolgáltatás bizonyos formát vár; különben az alkalmazás az alapértelmezett JSON-t küldi.</li>
+      <li>Mentse el. Az alkalmazás ezután minden egyező eseménynél küld.</li>
+    </ol>
+    <p class="lead">Az alapértelmezett adattartalom sima JSON - egy esemény, a projektor és az érték, amely megváltozott:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Példa adattartalom. A bemenetváltás vagy bekapcsolás eseménye a rá vonatkozó mezőket hordozza.</p>
+    <div class="note"><b>Az újrakapcsolás mindet megjavítja.</b> Ha a Home Assistant-ot új címen kapcsolja újra, az alkalmazás egyszerre frissíti az összes rá mutató webhookot, így egy elköltöztetett példány nem jelenti, hogy mindegyiket kézzel kell szerkeszteni.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Hibaelhárítás</h2>
+    </div>
+    <details class="more"><summary>A bejelentkezés visszadob a bejelentkezési oldalra</summary>
+      <p>Győződjön meg arról, hogy a megadott cím az, amelyen valóban eléri a Home Assistant-ot, a porttal együtt (általában <code>:8123</code>). A bejelentkezés valódi böngészős belépés a példányába, így a felhasználóneve, jelszava és kétfaktoros kódja is érvényes. Telefonon a bejelentkezés akkor is befejeződik, ha az alkalmazáson belüli böngésző adja vissza az eredményt, és akkor is, ha előbb a helyi visszahívás érkezik; ha mégis elakad, zárja be a lapot, és koppintson újra a Bejelentkezésre.</p>
+    </details>
+    <details class="more"><summary>A projektorszenzor nem jelenik meg a Home Assistant-ban</summary>
+      <p>A szenzor akkor kerül közzétételre, amikor az alkalmazás nyitva van és a <b>A projektor állapotának küldése</b> be van kapcsolva, ezért nyissa meg az alkalmazást, és ellenőrizze a kapcsolót. Utána nézze meg a Home Assistant <b>Fejlesztői eszközök &rsaquo; Állapotok</b> oldalát, és szűrjön erre: <code>projector_pilot</code>. A készenléti projektor nagyon keveset közöl; ébressze fel, és az értékek feltöltődnek.</p>
+    </details>
+    <details class="more"><summary>A szinkronizált szkriptek hiányoznak</summary>
+      <p>A szkripteket a <b>Szinkronizálás HA-val</b> írja meg, amelynek szüksége van a(z) <code>shell_command</code> blokkra, amely már be van illesztve ide: <code>configuration.yaml</code>, és a Home Assistant egyszeri újraindítására. Először futtassa a <b>Kapcsolat tesztelése</b> funkciót - megmondja, hogy a blokk jelen van-e. Aztán szinkronizáljon újra. Ha régi, halott szkriptek zsúfolják a listát, használja az <b>Árva szkriptek eltávolítása</b> funkciót.</p>
+    </details>
+    <details class="more"><summary>Egy szkript fut az alkalmazásban, de a Home Assistant-ból nem, ha a telefonom távol van</summary>
+      <p>Pontosan ez a(z) <code>shell_command</code> blokk lényege - ettől éri el a Home Assistant magától a projektor IP-címét. Ha csak nyitott alkalmazással működik, a blokk valószínűleg nincs beillesztve, vagy a Home Assistant-ot nem indították újra a beillesztés után. Ellenőrizze a Kapcsolat tesztelésével, indítsa újra a Home Assistant-ot, és szinkronizáljon.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Kösse be a projektort az egész házba</h2>
+    <p class="lead" style="margin:0 auto 24px">Az Otthon-automatizálás egyszeri kiegészítő. Nincs előfizetés, fiók vagy felhő. Egyetlen vásárlás minden birtokolt platformon feloldja.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - már elérhető</a>
+      <span class="pill">App Store - jóváhagyásra vár</span>
+      <span class="pill">Microsoft Store - jóváhagyásra vár</span>
+      <span class="pill">Mac App Store - jóváhagyásra vár</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/hu/pricing/">Ingyenes vs. Pro vs. Otthon-automatizálás &rarr;</a> &middot; <a href="/hu/guide/">Teljes felhasználói útmutató &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Gyors válaszok</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Maradnia kell a telefonomnak a hálózaton, hogy a Home Assistant automatizálásai lefussanak?</h3><p>Nem. Miután az egyetlen shell_command blokkot beillesztette a Home Assistant-ba, és szinkronizált, a Home Assistant közvetlenül a projektor IP-címére küldi a parancsokat. A Projector Pilot csak a beállítóeszköz; ezután a Home Assistant magától beszél a projektorral, akár otthon van a telefonja, akár nem.</p></div><div class="gcard"><h3>Hogyan jelenik meg a projektor a Home Assistant-ban?</h3><p>Szenzorként, például sensor.projector_pilot_epson_qb1000b_qb1000w, amely hordozza a bekapcsolási állapotot, a bemenetet, a színmódot, a képadatokat és a lámpaórákat, és frissül, valahányszor ezek változnak, miközben az alkalmazás nyitva van. Kapcsolja be a Speciális vezérlők szinkronizálását, és az alkalmazás minden Jelenethez szkriptet is ír a Home Assistant-ba, valamint a bekapcsoláshoz, minden bemenethez, minden színmódhoz és a projektor minden lencsememóriájához.</p></div><div class="gcard"><h3>Ingyenes az Otthon-automatizálás?</h3><p>Az Otthon-automatizálás fizetős kiegészítő, egyszeri vásárlás, a Projector Pilot Pro-tól külön. A csomag mindkettőt együtt, kedvezménnyel adja. Lásd az árak oldalt.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/pricing/">Árak</a><a href="/hu/highlights/">Kiemelések</a><a href="/hu/guide/home-automation/">Home Assistant</a><a href="/hu/help/">Súgó &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/hu/help/#privacy">Adatvédelem</a><a href="/hu/help/#terms">Feltételek</a></div>
+<div class="flinks"><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/guide/dashboard/">Vezérlőpult</a><a href="/hu/guide/remote/">Távirányító</a><a href="/hu/guide/picture/">Kép</a><a href="/hu/guide/lens/">Lencse</a><a href="/hu/guide/scenes/">Jelenetek</a><a href="/hu/guide/home-assistant-dashboard/">HA-vezérlőpult</a><a href="/hu/guide/maintenance/">Karbantartás</a><a href="/hu/guide/settings/">Beállítások</a><a href="/hu/guide/languages/">Nyelvek</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. A Projector Pilot egy független alkalmazás Epson és PJLink projektorokhoz. Nem áll kapcsolatban az alábbi szereplőkkel, és őket sem támogatják vagy szponzorálják: Epson, a PJLink szabványügyi testülete, Home Assistant, Hubitat, Apple, Google és Microsoft. Az Epson, a PJLink, a Home Assistant, a Hubitat, az App Store, a Mac App Store, a Google Play és a Microsoft Store a megfelelő tulajdonosaik védjegyei, és itt kizárólag azt írják le, mivel működik együtt az alkalmazás.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

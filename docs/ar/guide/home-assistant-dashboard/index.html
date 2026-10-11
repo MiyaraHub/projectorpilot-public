@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>لوحة تحكم Home Assistant لجهاز العرض (YAML) - Projector Pilot</title>
+<meta name="description" content="ابنِ لوحة تحكم مخصصة لجهاز العرض في Home Assistant خطوة بخطوة: بطاقات HACS التي تثبّتها، ومعرّف الكيان والرقم التسلسلي، وشيفرة YAML جاهزة للنسخ لكل بطاقة." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="لوحة تحكم Home Assistant لجهاز العرض (YAML) - Projector Pilot" />
+<meta property="og:description" content="ابنِ لوحة تحكم مخصصة لجهاز العرض في Home Assistant خطوة بخطوة: بطاقات HACS التي تثبّتها، ومعرّف الكيان والرقم التسلسلي، وشيفرة YAML جاهزة للنسخ لكل بطاقة." />
+<meta property="og:url" content="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="لوحة تحكم Home Assistant لجهاز العرض (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="ابنِ لوحة تحكم مخصصة لجهاز العرض في Home Assistant خطوة بخطوة: بطاقات HACS التي تثبّتها، ومعرّف الكيان والرقم التسلسلي، وشيفرة YAML جاهزة للنسخ لكل بطاقة." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "لوحة تحكم Home Assistant لجهاز العرض (YAML) - Projector Pilot", "description": "ابنِ لوحة تحكم مخصصة لجهاز العرض في Home Assistant خطوة بخطوة: بطاقات HACS التي تثبّتها، ومعرّف الكيان والرقم التسلسلي، وشيفرة YAML جاهزة للنسخ لكل بطاقة.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "ابنِ لوحة تحكم Home Assistant لجهاز العرض في ساعة تقريبًا", "description": "ابنِ لوحة تحكم مخصصة لجهاز العرض في Home Assistant خطوة بخطوة: بطاقات HACS التي تثبّتها، ومعرّف الكيان والرقم التسلسلي، وشيفرة YAML جاهزة للنسخ لكل بطاقة.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ar", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "لوحة Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل عليّ بناء هذه اللوحة يدويًا؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. عندما تلمس المزامنة مع HA في التطبيق، يبني لك لوحة Projector Pilot جاهزة مباشرة داخل Home Assistant - مستشعر جهاز العرض المباشر مع زر لكل عنصر تحكم ولكل مشهد - وتظهر في الشريط الجانبي باسم Projector Pilot. وعند تثبيت بطاقات المجتمع، ترقّي المزامنة بطاقاتها إليها تلقائيًا؛ وهذه الصفحة مخصصة لبناء النسخة الأغنى بالزجاج الأخضر يدويًا، أو لتخصيص ما أنشأته المزامنة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أحتاج إلى بطاقات مخصصة من HACS لبناء هذه اللوحة؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "للحصول على المظهر نفسه في لقطة الشاشة، نعم: Mushroom وbutton-card وcard-mod وmini-graph-card. لا يلزم أي منها لتعمل عناصر التحكم الأساسية - فكل زر مجرد استدعاء نص برمجي عادي، والبطاقات المخصصة هي التنسيق فوقه."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا تعرض بلاط المعلومات قيمة بينما الأزرار لا تفعل شيئًا؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ينشر مستشعر جهاز العرض قراءاته بمجرد تسجيل الدخول والمزامنة في التطبيق، لذا تكون بلاط المعلومات مباشرة فورًا. أما أزرار التحكم والمشاهد فتستدعي نصوصًا برمجية لا توجد في Home Assistant إلا بعد أن تلصق كتلة النسخ من التطبيق في configuration.yaml، وتعيد تشغيل Home Assistant، وتلمس المزامنة مع HA مرة واحدة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل ستطابق معرّفات الكيانات لديّ ما في هذا الدليل؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "النمط سينطبق، أما الأحرف نفسها فلا. يُسمّى مستشعر جهاز العرض باسم طراز جهازك، ويُسمّى كل نص برمجي باسم الرقم التسلسلي لجهازك. أينما تكتب هذه الصفحة YOUR_PROJECTOR فضع معرّف كيان مستشعرك أنت، وأينما تكتب YOURSERIAL فضع المعرّف المشتق من الرقم التسلسلي والظاهر في شاشة Home Assistant بالتطبيق."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ar/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة"><a href="/ar/#features">الميزات</a><a href="/ar/guide/">الدليل</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/help/">المساعدة</a><a class="cta" href="/ar/#download">احصل على التطبيق</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; لوحة تحكم Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; خطوة بخطوة</div>
+    <h1>ابنِ لوحة تحكم Home Assistant لجهاز العرض <span class="g">في ساعة تقريبًا</span></h1>
+    <p>يبني لك التطبيق لوحة تحكم تعمل عند المزامنة - وهذه الصفحة هي النسخة الفاخرة المبنية يدويًا. عشر خطوات، وشيفرة YAML لكل بطاقة، وعرض كامل يمكنك لصقه دفعة واحدة. بلاط من الزجاج الأخضر، وقراءة مباشرة للصورة، ومشاهدك، ورسم بياني لساعات الليزر، كلها من مستشعر واحد لجهاز العرض. غيّر نصّين وتصبح لوحتك.</p>
+    <div class="readout"><span>المزامنة تبني لوحة مجانًا</span><span>4 بطاقات HACS للمظهر</span><span>بلاط المعلومات مباشرة فورًا</span><span>الأزرار بعد لصقة واحدة</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="لوحة Projector Pilot المكتملة في Home Assistant: التشغيل والمصدر، وأوضاع الألوان، وقائمة الصورة الكاملة، وHDR والإشارة، ومعايرة RGB، والعدسة والهندسة، والصيانة مع رسم بياني لساعات الليزر، والمشاهد، كلها بلاط من الزجاج الأخضر" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>ما الذي تبنيه. مرّر فيها، أو انقر للتكبير.</figcaption>
+    </figure>
+    <div class="note"><b>تريد لوحة تعمل فحسب؟ لديك واحدة بالفعل.</b> المس <b>المزامنة مع HA</b> في التطبيق فيبني لك لوحة Projector Pilot جاهزة في الشريط الجانبي لـ Home Assistant، تضم كل عناصر التحكم والمستشعر المباشر - دون بطاقات أو YAML أو لصق. انظر <a href="/ar/guide/home-automation/#dashboard">المزامنة تبني اللوحة لك</a>. هذه الصفحة مخصصة لبناء النسخة الأغنى بالزجاج الأخضر يدويًا، أو لتخصيص ما قدّمته لك المزامنة.</div>
+    <div class="note"><b>مستعجل وتريد المظهر المخصص؟</b> انتقل إلى <a href="#whole">الخطوة 10</a>، ونزّل العرض الكامل، وغيّر نصّين ومعرّفات المشاهد الثلاثة، ثم الصقه. أما الخطوات بينهما فتشرح وظيفة كل جزء لتتمكن من تعديله.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>قبل أن تبدأ</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot مرتبط بـ Home Assistant.</b> يشرح <a href="/ar/guide/home-automation/">دليل الإعداد</a> تسجيل الدخول وتفعيل <b>إرسال حالة جهاز العرض</b>. يجب أن ترى جهاز العرض كمستشعر في Home Assistant قبل أن تبني أي شيء فوقه.</li>
+      <li><b>أجريت مزامنة واحدة على الأقل.</b> الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Home Assistant &rsaquo; <b>المزامنة مع HA</b>، بعد لصق <b>كتلة النسخ</b> من التطبيق في <code>configuration.yaml</code> وإعادة تشغيل Home Assistant. هذا ما ينشئ النصوص البرمجية التي يستدعيها كل زر تحكم أدناه.</li>
+      <li><b>جهاز العرض قيد التشغيل</b> أثناء البناء. خصائص الصورة أدناه هي ما يترك جهاز العرض في وضع الاستعداد معظمه فارغًا.</li>
+    </ul>
+    <p class="lead">هناك مصدران يغذّيان لوحة التحكم هذه، والفرق بينهما مهم في كل خطوة أدناه.</p>
+    <table class="t">
+      <thead><tr><th>المصدر</th><th>ما يوفّره لك</th></tr></thead>
+      <tbody>
+        <tr><td>مستشعر جهاز العرض، <code>sensor.YOUR_PROJECTOR</code></td><td>كل <b>قراءة</b>. التشغيل والمدخل ووضع الألوان وكل أرقام الصورة وHDR والإشارة والعدسة والهندسة وساعات المصباح. مباشرة بمجرد تسجيل الدخول والمزامنة، دون الحاجة إلى كتلة النسخ.</td></tr>
+        <tr><td>النصوص البرمجية المزامنة من التطبيق، <code>script.projpilot_YOURSERIAL_...</code></td><td>كل <b>عنصر تحكم</b>. التشغيل والمداخل وأوضاع الألوان وذاكرات العدسة ومشاهدك. لا توجد هذه إلا بعد لصق كتلة النسخ وإعادة تشغيل Home Assistant ولمس المزامنة مع HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 1</div>
+      <h2>ثبّت أربع بطاقات من HACS</h2>
+    </div>
+    <p class="lead">الأربع كلها موجودة في متجر HACS الافتراضي. في Home Assistant: <b>HACS &rsaquo; الواجهة الأمامية &rsaquo; استكشاف &amp; تنزيل المستودعات</b>، ابحث عن الاسم، ثم نزّل، ثم أعد تحميل المتصفح.</p>
+    <table class="t">
+      <thead><tr><th>ابحث عن</th><th>يُستخدم من أجل</th><th>إن تخطيته</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>كل بلاطة معلومات وزر تحكم وبلاطة مشهد</td><td>استخدم بطاقة <code>button</code> عادية. تعمل، لكن شكلها أكثر تربيعًا.</td></tr>
+        <tr><td><b>button-card</b></td><td>البطاقة الرئيسية، مع تسميتها المباشرة</td><td>استخدم بطاقة <code>entity</code>، أو بطاقة قالب Mushroom بتفاصيل أقل.</td></tr>
+        <tr><td><b>card-mod</b></td><td>خلفية الزجاج الأخضر والحدود والتدرجات</td><td>كل شيء يعمل رغم ذلك. لكن لا شيء يحصل على توهجه.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>سجل ساعات الليزر تحت قسم الصيانة</td><td>استخدم بطاقة <code>history-graph</code> المدمجة.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>لا يلزم أي منها ليعمل كل شيء.</b> يعمل كل عنصر تحكم أدناه من بطاقة زر عادية في Home Assistant موجّهة إلى النص البرمجي نفسه. البطاقات المخصصة هي مظهر الزجاج الأخضر، لا السباكة الداخلية.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 2</div>
+      <h2>اعثر على معرّف الكيان والرقم التسلسلي</h2>
+    </div>
+    <p class="lead">كل مقطع في هذه الصفحة يستخدم عنصرَين نائبَين. اعثر على قيمتيك مرة واحدة، والباقي نسخ ولصق.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; أدوات المطوّر &rsaquo; الحالات في Home Assistant، وصفِّ بحسب <code>projector_pilot</code>. ستجد شيئًا مثل <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; افتح التطبيق، <b>الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Home Assistant</b>. يظهر المعرّف المشتق من الرقم التسلسلي هناك، وهو الجزء الأوسط من اسم كل نص برمجي مزامن: <code>script.projpilot_YOURSERIAL_power_on</code> و<code>script.projpilot_YOURSERIAL_input_hdmi1</code> وهكذا.</li>
+    </ul>
+    <p class="lead">يمكنك أيضًا تصفية أدوات المطوّر &rsaquo; الحالات بحسب <code>projpilot</code> لترى قائمة عناصر التحكم المزامنة كلها دفعة واحدة، بعد إتمام كتلة النسخ والمزامنة في الخطوة 1.</p>
+    <div class="note"><b>لا توجد قائمة نصوص برمجية بعد؟</b> هذا متوقع قبل لصق كتلة النسخ. يبقى المستشعر موجودًا ويتحدّث، ولا تظهر النصوص البرمجية إلا بعد نجاح المزامنة مع HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 3</div>
+      <h2>أنشئ العرض</h2>
+    </div>
+    <ol class="steps">
+      <li>الإعدادات &rsaquo; لوحات التحكم &rsaquo; إضافة لوحة تحكم &rsaquo; لوحة جديدة من الصفر. سمِّها Projector Pilot.</li>
+      <li>افتحها، ثم المس أيقونة القلم في أعلى اليمين للتحرير.</li>
+      <li>أضف عرضًا. كلا التخطيطين يصلح؛ واللوحة الفعلية تستخدم التراص الافتراضي للبطاقات، واحدة تحت الأخرى، وهو الأبسط للصق فيه.</li>
+      <li>للصق YAML، استخدم قائمة النقاط الثلاث في البطاقة واختر <b>التحرير بصيغة YAML</b>، أو قائمة النقاط الثلاث في لوحة التحكم واختر <b>محرر الإعدادات الخام</b> للصق عرض كامل دفعة واحدة.</li>
+    </ol>
+    <p class="lead">إعدادات العرض نفسه، إن فضّلت كتابتها:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 4</div>
+      <h2>أضف بلاطة معلومات مباشرة</h2>
+    </div>
+    <p class="lead">ابدأ بشيء يقرأ فقط، لتتأكد من صحة معرّف الكيان قبل أن تلمس أي شيء يرسل أمرًا. هذه البلاطة تعمل مباشرة بمجرد وجود مستشعر جهاز العرض، دون كتلة نسخ ودون مزامنة. أضف بطاقة، ثم التحرير بصيغة YAML، ثم الصق:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">الشكل نفسه يقرأ أيًّا من الخصائص الثمانين تقريبًا (~80) التي يحملها المستشعر: بدّل <code>brightness</code> بـ <code>contrast</code> أو <code>gamma</code> أو <code>color_temp</code> أو <code>hdr_pq</code> أو <code>lamp_hours</code>، أو أي شيء تريده على البلاطة.</p>
+    <p class="lead">احفظها. إن ظهر رقم أو كلمة حقيقية فمعرّف الكيان صحيح وكل ما يلي سيعمل. وإن ظهرت فارغة فعُد إلى الخطوة 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 5</div>
+      <h2>أضف عنوان قسم أخضر</h2>
+    </div>
+    <p class="lead">العنوان العادي مساحة ميتة. هذه بطاقة <code>markdown</code> بخلفية متدرجة من card-mod، وهي ما يحوّل كومة البلاط إلى أقسام لها أسماء. كل قسم في اللوحة يبدأ بواحدة منها، بتسمية ورمز تعبيري مختلفين فقط.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">غيّر رمز الإيموجي ونص التسمية؛ أما كتلة card-mod فهي نفسها في كل قسم.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 6</div>
+      <h2>أضف زر تحكم</h2>
+    </div>
+    <p class="lead">هذا الزر يرسل أمرًا ولا يكتفي بقراءة قيمة، لذا يحتاج إلى وجود النصوص البرمجية أولًا. يستدعي <code>script.projpilot_YOURSERIAL_power_on</code>، الذي لا يكتبه التطبيق إلا بعد أن تلصق كتلة النسخ فيه في <code>configuration.yaml</code>، وتعيد تشغيل Home Assistant، وتلمس <b>المزامنة مع HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">البطاقة نفسها تصلح لإيقاف التشغيل وإخفاء الشاشة وHDMI 1 وHDMI 2 وكتم الصوت والصورة ووضع ألوان أو ذاكرة عدسة: يتغير فقط التسمية والأيقونة و<code>service</code>.</p>
+    <div class="note"><b>إن بدا كل شيء صحيحًا لكن لا يحدث شيء</b> عند لمسه، فإما أن كتلة النسخ لم تُلصق أو أن Home Assistant لم يُعد تشغيله منذ ذلك. شغّل <b>اختبار الاتصال</b> في التطبيق، فهو يتحقق من ذلك تحديدًا، قبل أن تفترض أن اللوحة خاطئة.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 7</div>
+      <h2>أضف البطاقة الرئيسية</h2>
+    </div>
+    <p class="lead">البطاقة الرئيسية في أعلى اللوحة هي <code>button-card</code>: حالة تشغيل كبيرة، وملخص من سطر واحد مبني من عدة خصائص معًا، ومعالجة الزجاج الأخضر على البطاقة كلها لا على حدودها فقط.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">مختصرة إلى الأجزاء التي تتغير من تثبيت إلى آخر. تحدد البطاقة الكاملة أيضًا مواضع الأيقونة والاسم والتسمية في الشبكة؛ انظر التنزيل في الخطوة 10 لكل التفاصيل.</p>
+    <p class="lead">تفضّل شريطًا أنحف؟ تؤدي <code>mushroom-chips-card</code> المهمة نفسها في صف واحد من الرقائق الصغيرة: حالة التشغيل والمدخل ووضع الألوان ونطاق الفيديو وساعات المصباح، وكل منها قالب يقرأ <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. استخدم أحدهما، لا الاثنين، في أعلى اللوحة.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 8</div>
+      <h2>أضف مشاهدك</h2>
+    </div>
+    <p class="lead">كل مشهد تحفظه في التطبيق يصبح نصًا برمجيًا باسم <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> بعد المزامنة، وبلاطته هي بطاقة زر التحكم نفسها من الخطوة 6 مع اسم مشهد وأيقونة.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">استبدل <code>YOURSCENE1</code> بالمعرّف الظاهر لذلك المشهد في قائمة عناصر التحكم المزامنة بالتطبيق. بلاطة واحدة لكل مشهد، في <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 9</div>
+      <h2>أضف سجل ساعات الليزر</h2>
+    </div>
+    <p class="lead">يسجّل Home Assistant مستشعر جهاز العرض كأي مستشعر آخر، لذا فإن <code>lamp_hours</code> لديه سجل مجانًا. دون مستشعرات إضافية ودون مساعدات ودون إعداد مسبق، ضمن قسم الصيانة.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 ساعة تعادل أسبوعين. تتزايد ساعات الليزر والمصباح بثبات بدلًا من القفز، لذا تكفي نافذة أسبوعين عادةً لرؤية الاتجاه دون أن يبدو الرسم البياني مسطحًا.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 10</div>
+      <h2>أو خذ كل شيء جاهزًا</h2>
+    </div>
+    <p class="lead">العرض الكامل، بكل قسم وكل بطاقة من لقطة الشاشة في أعلى هذه الصفحة، مع عناصر نائبة بدلًا من معرّفات الكيانات.</p>
+    <ol class="steps">
+      <li><a href="/ar/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>نزّل YAML الخاص بالعرض</a>.</li>
+      <li>افتحه في أي محرر نصوص واستبدل، في كل موضع يظهر فيه: <code>YOUR_PROJECTOR</code> بمعرّف كيان مستشعر جهاز العرض من الخطوة 2، و<code>YOURSERIAL</code> بالمعرّف المشتق من رقمك التسلسلي من الخطوة 2.</li>
+      <li>في قسم المشاهد قرب الأسفل، استبدل <code>YOURSCENE1</code> و<code>YOURSCENE2</code> و<code>YOURSCENE3</code> بمعرّفات مشاهدك الثلاثة، أو أضف بلاطًا واحذف منها لتطابق عدد المشاهد لديك فعلًا.</li>
+      <li>في Home Assistant، افتح لوحة التحكم، ثم أيقونة القلم، ثم قائمة النقاط الثلاث، ثم <b>محرر الإعدادات الخام</b>، والصقه كعرض.</li>
+    </ol>
+    <div class="note"><b>لن تتطابق أسماء مشاهدك وعددها.</b> يأتي الملف بثلاثة مشاهد نموذجية: ليلة أفلام، وألعاب، ويوم الرياضة. أعد تسمية البلاط، ووجّهها إلى معرّفات مشاهدك، وأضف بلاطًا أو احذفه حتى يطابق القسم عدد المشاهد التي حفظتها فعلًا.</div>
+    <div class="note"><b>تعمل بلاط المعلومات فور اللصق.</b> فهي لا تحتاج إلا إلى وجود المستشعر. أما أزرار التحكم والمشاهد فتبقى بلا استجابة حتى تلصق كتلة النسخ في <code>configuration.yaml</code>، وتعيد تشغيل Home Assistant، وتلمس المزامنة مع HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>استكشاف الأخطاء وإصلاحها</h2>
+    </div>
+    <details class="more"><summary>بلاطة تعرض «غير معروف»</summary>
+      <p>قارن اسم الخاصية بما يحمله المستشعر فعلًا: أدوات المطوّر &rsaquo; الحالات، ثم كيان <code>sensor.YOUR_PROJECTOR</code> لديك، واقرأ قائمة خصائصه. بعض القراءات، مثل HDR PQ أو HDR HLG، لا تمتلئ إلا حين يستقبل جهاز العرض هذا النوع من الإشارة فعلًا، لذا قد يكون «غير معروف» في هاتين القراءتين صحيحًا لا عطلًا. وإن بدا المستشعر كله خاليًا فأيقظ جهاز العرض: فالجهاز في وضع الاستعداد ينشر القليل جدًا.</p>
+    </details>
+    <details class="more"><summary>زر لا يفعل شيئًا</summary>
+      <p>إما أنك لم تلصق كتلة النسخ بعد، أو لم يُعد تشغيل Home Assistant منذ لصقها. تستدعي أزرار التحكم والمشاهد نصوصًا برمجية يكتبها التطبيق، ولا توجد هذه النصوص حتى تلصق كتلة النسخ في <code>configuration.yaml</code> من <b>الإعدادات &rsaquo; أتمتة المنزل &rsaquo; Home Assistant</b> في التطبيق، وتعيد تشغيل Home Assistant مرة واحدة، وتلمس <b>المزامنة مع HA</b>. شغّل <b>اختبار الاتصال</b> في التطبيق أولًا - فهو يخبرك ما إذا كانت الكتلة موجودة قبل أن تبحث عن خطأ في اللوحة.</p>
+    </details>
+    <details class="more"><summary>النصوص البرمجية التي أتوقعها مفقودة من أدوات المطوّر &rsaquo; الحالات</summary>
+      <p>صفِّ بحسب <code>projpilot</code> بدلًا من الرقم التسلسلي الكامل - فمن الأسهل رؤية القائمة كلها. وإن كان عنصر تحكم أو مشهد أضفته مؤخرًا مفقودًا، فالمس <b>المزامنة مع HA</b> مرة أخرى؛ فهي تحدّث في مكانها ولا تتطلب إعدادًا جديدًا. وإن كانت نصوص برمجية قديمة ميتة تزدحم بها القائمة بعد حذف مشهد، فاستخدم <b>إزالة النصوص البرمجية اليتيمة</b> في التطبيق.</p>
+    </details>
+    <details class="more"><summary>معرّف الكيان لدي لا يشبه الموجود في هذا الدليل</summary>
+      <p>النمط ثابت، أما الجزء الأوسط فلا. يُسمّى مستشعرك باسم طراز جهاز العرض الخاص بك، ويحمل كل نص برمجي الرقم التسلسلي لجهازك أنت، لا العناصر النائبة في هذه الصفحة. احصل على كليهما من أدوات المطوّر &rsaquo; الحالات ومن شاشة Home Assistant في التطبيق، كما في الخطوة 2، واستخدمهما بدلًا من كتابة نص المثال.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>جهاز العرض كله، على جدار واحد</h2>
+    <p class="lead" style="margin:0 auto 24px">أتمتة المنزل إضافة لمرة واحدة. دون اشتراك ودون حساب ودون سحابة. عملية شراء واحدة تفتحها على كل منصة تملكها.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - متاح الآن</a>
+      <span class="pill">App Store - بانتظار الموافقة</span>
+      <span class="pill">Microsoft Store - بانتظار الموافقة</span>
+      <span class="pill">Mac App Store - بانتظار الموافقة</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/ar/guide/home-automation/">العودة إلى أتمتة المنزل &rarr;</a> &middot; <a href="/ar/guide/">دليل المستخدم الكامل &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الأسئلة الشائعة</div>
+      <h2>إجابات سريعة</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>هل عليّ بناء هذه اللوحة يدويًا؟</h3><p>لا. عندما تلمس المزامنة مع HA في التطبيق، يبني لك لوحة Projector Pilot جاهزة مباشرة داخل Home Assistant - مستشعر جهاز العرض المباشر مع زر لكل عنصر تحكم ولكل مشهد - وتظهر في الشريط الجانبي باسم Projector Pilot. هذه الصفحة مخصصة لبناء النسخة الأغنى بالزجاج الأخضر يدويًا، أو لتخصيص ما أنشأته المزامنة.</p></div><div class="gcard"><h3>هل أحتاج إلى بطاقات مخصصة من HACS لبناء هذه اللوحة؟</h3><p>للحصول على المظهر نفسه في لقطة الشاشة، نعم: Mushroom وbutton-card وcard-mod وmini-graph-card. لا يلزم أي منها لتعمل عناصر التحكم الأساسية - فكل زر مجرد استدعاء نص برمجي عادي، والبطاقات المخصصة هي التنسيق فوقه.</p></div><div class="gcard"><h3>لماذا تعرض بلاط المعلومات قيمة بينما الأزرار لا تفعل شيئًا؟</h3><p>ينشر مستشعر جهاز العرض قراءاته بمجرد تسجيل الدخول والمزامنة في التطبيق، لذا تكون بلاط المعلومات مباشرة فورًا. أما أزرار التحكم والمشاهد فتستدعي نصوصًا برمجية لا توجد في Home Assistant إلا بعد أن تلصق كتلة النسخ من التطبيق في configuration.yaml، وتعيد تشغيل Home Assistant، وتلمس المزامنة مع HA مرة واحدة.</p></div><div class="gcard"><h3>هل ستطابق معرّفات الكيانات لديّ ما في هذا الدليل؟</h3><p>النمط سينطبق، أما الأحرف نفسها فلا. يُسمّى مستشعر جهاز العرض باسم طراز جهازك، ويُسمّى كل نص برمجي باسم الرقم التسلسلي لجهازك. أينما تكتب هذه الصفحة YOUR_PROJECTOR فضع معرّف كيان مستشعرك أنت، وأينما تكتب YOURSERIAL فضع المعرّف المشتق من الرقم التسلسلي والظاهر في شاشة Home Assistant بالتطبيق.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/pricing/">الأسعار</a><a href="/ar/highlights/">أبرز النقاط</a><a href="/ar/guide/home-automation/">Home Assistant</a><a href="/ar/help/">المساعدة والأسئلة الشائعة</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ar/help/#privacy">الخصوصية</a><a href="/ar/help/#terms">الشروط</a></div>
+<div class="flinks"><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/guide/dashboard/">لوحة التحكم</a><a href="/ar/guide/remote/">جهاز التحكم</a><a href="/ar/guide/picture/">الصورة</a><a href="/ar/guide/lens/">العدسة</a><a href="/ar/guide/scenes/">المشاهد</a><a href="/ar/guide/home-assistant-dashboard/">لوحة HA</a><a href="/ar/guide/maintenance/">الصيانة</a><a href="/ar/guide/settings/">الإعدادات</a><a href="/ar/guide/languages/">اللغات</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot تطبيق مستقل لأجهزة عرض Epson وPJLink. وهو غير تابع لـ Epson أو الجهة المعنية بمعيار PJLink أو Home Assistant أو Hubitat أو Apple أو Google أو Microsoft، ولا تؤيده ولا ترعاه. Epson وPJLink وHome Assistant وHubitat وApp Store وMac App Store وGoogle Play وMicrosoft Store علامات تجارية لأصحابها، وتُذكر فقط لوصف ما يعمل التطبيق معه.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

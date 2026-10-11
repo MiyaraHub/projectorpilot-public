@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>לוח בקרה למקרן ב-Home Assistant (YAML) - Projector Pilot</title>
+<meta name="description" content="בנו לוח בקרה מותאם למקרן ב-Home Assistant צעד אחר צעד: כרטיסי HACS להתקנה, ID הישות והמספר הסידורי שלכם, ו-YAML מוכן להעתקה לכל כרטיס." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="לוח בקרה למקרן ב-Home Assistant (YAML) - Projector Pilot" />
+<meta property="og:description" content="בנו לוח בקרה מותאם למקרן ב-Home Assistant צעד אחר צעד: כרטיסי HACS להתקנה, ID הישות והמספר הסידורי שלכם, ו-YAML מוכן להעתקה לכל כרטיס." />
+<meta property="og:url" content="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="לוח בקרה למקרן ב-Home Assistant (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="בנו לוח בקרה מותאם למקרן ב-Home Assistant צעד אחר צעד: כרטיסי HACS להתקנה, ID הישות והמספר הסידורי שלכם, ו-YAML מוכן להעתקה לכל כרטיס." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "he", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "לוח בקרה למקרן ב-Home Assistant (YAML) - Projector Pilot", "description": "בנו לוח בקרה מותאם למקרן ב-Home Assistant צעד אחר צעד: כרטיסי HACS להתקנה, ID הישות והמספר הסידורי שלכם, ו-YAML מוכן להעתקה לכל כרטיס.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "he", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "בניית לוח בקרה למקרן ב-Home Assistant תוך כשעה", "description": "בנו לוח בקרה מותאם למקרן ב-Home Assistant צעד אחר צעד: כרטיסי HACS להתקנה, ID הישות והמספר הסידורי שלכם, ו-YAML מוכן להעתקה לכל כרטיס.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "he", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "בית", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "מדריך למשתמש", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "לוח בקרה של Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם אני חייב לבנות את לוח הבקרה הזה ידנית?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. כשלוחצים על סנכרון עם HA באפליקציה, היא בונה בשבילכם לוח בקרה מוכן של Projector Pilot ישירות ב-Home Assistant - חיישן המקרן החי ולחצן לכל בקרה ולכל סצנה - והוא מופיע בסרגל הצד בשם Projector Pilot. כשמותקנים כרטיסי הקהילה, הסנכרון משדרג את הכרטיסים אליהם אוטומטית; העמוד הזה נועד לבנות ידנית את הגרסה העשירה יותר בסגנון הזכוכית הירוקה, או להתאים אישית את מה שהסנכרון יצר."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "צריך כרטיסים מותאמים אישית מ-HACS כדי לבנות את זה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כדי להתאים למראה שבצילום המסך - כן: Mushroom, button-card, card-mod ו-mini-graph-card. אף אחד מהם לא נדרש כדי שהבקרות עצמן יעבדו - כל לחצן הוא קריאה פשוטה לסקריפט, והכרטיסים המותאמים הם רק העיצוב שמעל."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "למה אריחי המידע מציגים ערך אבל הלחצנים לא עושים כלום?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "חיישן המקרן מפרסם את הקריאות שלו ברגע שמתחברים ומסנכרנים באפליקציה, ולכן אריחי המידע חיים מיד. לחצני הבקרה והסצנות קוראים לסקריפטים שקיימים ב-Home Assistant רק אחרי שמדביקים את בלוק ההעתקה של האפליקציה ל-configuration.yaml, מפעילים מחדש את Home Assistant ולוחצים פעם אחת על סנכרון עם HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם מזהי הישויות שלי יהיו זהים לאלה שבמדריך?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "התבנית כן, התווים המדויקים לא. חיישן המקרן נקרא על שם הדגם של המקרן שלכם, וכל סקריפט נקרא על שם המספר הסידורי שלו. בכל מקום שבו העמוד הזה כותב YOUR_PROJECTOR, הכניסו את מזהה הישות של החיישן שלכם; בכל מקום שבו כתוב YOURSERIAL, הכניסו את המזהה הנגזר מהמספר הסידורי שמוצג במסך Home Assistant באפליקציה."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/he/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה"><a href="/he/#features">תכונות</a><a href="/he/guide/">מדריך</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/help/">עזרה</a><a class="cta" href="/he/#download">הורידו את האפליקציה</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; לוח בקרה ב-Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; צעד אחר צעד</div>
+    <h1>בניית לוח בקרה למקרן ב-Home Assistant <span class="g">תוך כשעה</span></h1>
+    <p>האפליקציה כבר בונה לכם לוח בקרה עובד כשמסנכרנים - העמוד הזה הוא גרסת הדלקס שנבנית ביד. עשרה צעדים, ה-YAML של כל כרטיס, ותצוגה שלמה שאפשר להדביק בבת אחת. אריחי זכוכית ירוקים, קריאת תמונה חיה, הסצנות שלכם וגרף שעות לייזר, הכול מחיישן מקרן אחד. משנים שתי מחרוזות והוא שלכם.</p>
+    <div class="readout"><span>הסנכרון בונה אחד בחינם</span><span>4 כרטיסי HACS בשביל המראה</span><span>אריחי מידע חיים מיד</span><span>לחצנים אחרי הדבקה אחת</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="לוח הבקרה המוגמר של Projector Pilot ב-Home Assistant: הפעלה ומקור, מצבי צבע, תפריט התמונה המלא, HDR ואות, כיול RGB, עדשה וגאומטריה, תחזוקה עם גרף שעות לייזר, וסצנות, הכול באריחי זכוכית ירוקים" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>מה שאתם בונים. גללו, או לחצו להגדלה.</figcaption>
+    </figure>
+    <div class="note"><b>רוצים רק לוח שעובד? כבר יש לכם אחד.</b> לחצו על <b>סנכרון עם HA</b> באפליקציה והיא בונה לכם לוח בקרה מוכן של Projector Pilot בסרגל הצד של Home Assistant, עם כל בקרה והחיישן החי - בלי כרטיסים, בלי YAML, בלי הדבקה. ראו <a href="/he/guide/home-automation/#dashboard">הסנכרון בונה לכם את לוח הבקרה</a>. העמוד הזה נועד לבנות ידנית את הגרסה העשירה יותר בסגנון הזכוכית הירוקה, או להתאים אישית את מה שהסנכרון נתן לכם.</div>
+    <div class="note"><b>ממהרים למראה המותאם?</b> קפצו אל <a href="#whole">צעד 10</a>, הורידו את התצוגה המלאה, שנו שתי מחרוזות ואת שלושת מזהי הסצנות, והדביקו. הצעדים שביניהם מסבירים מה כל חלק עושה כדי שתוכלו לשנות אותו.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>לפני שמתחילים</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot מקושרת ל-Home Assistant.</b> <a href="/he/guide/home-automation/">מדריך ההתקנה</a> מכסה התחברות והפעלת <b>שליחת מצב המקרן</b>. אתם אמורים לראות את המקרן שלכם כחיישן ב-Home Assistant לפני שבונים עליו משהו.</li>
+      <li><b>סנכרנתם לפחות פעם אחת.</b> הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Home Assistant &rsaquo; <b>סנכרון עם HA</b>, אחרי שהדבקתם את <b>בלוק ההעתקה</b> של האפליקציה ל-<code>configuration.yaml</code> והפעלתם מחדש את Home Assistant. זה מה שיוצר את הסקריפטים שכל לחצן בקרה בהמשך קורא להם.</li>
+      <li><b>המקרן שלכם דלוק</b> בזמן הבנייה. מאפייני התמונה שלהלן הם מה שמקרן במצב המתנה משאיר ברובו ריק.</li>
+    </ul>
+    <p class="lead">שני דברים מזינים את לוח הבקרה הזה, וההבדל ביניהם חשוב בכל שלב להלן.</p>
+    <table class="t">
+      <thead><tr><th>מגיע מ</th><th>נותן לכם</th></tr></thead>
+      <tbody>
+        <tr><td>חיישן המקרן, <code>sensor.YOUR_PROJECTOR</code></td><td>כל <b>קריאה</b>. הפעלה, קלט, מצב צבע, כל נתוני התמונה, HDR ואות, עדשה וגאומטריה, שעות מנורה. חי ברגע שמתחברים ומסנכרנים, בלי בלוק העתקה.</td></tr>
+        <tr><td>הסקריפטים המסונכרנים של האפליקציה, <code>script.projpilot_YOURSERIAL_...</code></td><td>כל <b>בקרה</b>. הפעלה, קלטים, מצבי צבע, זיכרונות עדשה והסצנות שלכם. הם קיימים רק אחרי שבלוק ההעתקה הודבק, Home Assistant הופעל מחדש ולחצתם על סנכרון עם HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 1</div>
+      <h2>התקינו ארבעה כרטיסים מ-HACS</h2>
+    </div>
+    <p class="lead">כולם נמצאים בחנות ברירת המחדל של HACS. ב-Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, חפשו את השם, לחצו Download, ואז רעננו את הדפדפן.</p>
+    <table class="t">
+      <thead><tr><th>מחפשים</th><th>משמש ל</th><th>אם מדלגים</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>כל אריח מידע, לחצן בקרה ואריח סצנה</td><td>משתמשים בכרטיס <code>button</code> רגיל. עובד, אבל נראה יותר מרובע.</td></tr>
+        <tr><td><b>button-card</b></td><td>הגיבור, עם התווית החיה שלו</td><td>השתמשו בכרטיס <code>entity</code>, או בכרטיס תבנית של Mushroom עם פחות פירוט.</td></tr>
+        <tr><td><b>card-mod</b></td><td>רקע הזכוכית הירוקה, המסגרות והגרדיאנטים</td><td>הכול עדיין עובד. פשוט בלי הזוהר.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>היסטוריית שעות הלייזר תחת תחזוקה</td><td>משתמשים בכרטיס <code>history-graph</code> המובנה.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>אף אחד מהם אינו נדרש כדי שזה יעבוד.</b> כל בקרה בהמשך רצה מכרטיס לחצן רגיל של Home Assistant שמצביע על אותו סקריפט. הכרטיסים המותאמים הם מראה הזכוכית הירוקה, לא האינסטלציה.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 2</div>
+      <h2>איתור ה-ID של הישות והמספר הסידורי שלכם</h2>
+    </div>
+    <p class="lead">כל קטע קוד בעמוד הזה משתמש בשני מציינים. מוצאים את שלכם פעם אחת, והשאר זה העתק-הדבק.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; כלי פיתוח &rsaquo; מצבים ב-Home Assistant, וסננו לפי <code>projector_pilot</code>. משהו כמו <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; פתחו את האפליקציה, <b>הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Home Assistant</b>. המזהה הנגזר מהמספר הסידורי מוצג שם, והוא האמצע של כל שם סקריפט מסונכרן: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code>, וכן הלאה.</li>
+    </ul>
+    <p class="lead">אפשר גם לסנן את כלי פיתוח &rsaquo; מצבים לפי <code>projpilot</code> כדי לראות את כל רשימת הבקרות המסונכרנת בבת אחת, אחרי שבלוק ההעתקה והסנכרון של צעד 1 הושלמו.</p>
+    <div class="note"><b>אין עדיין רשימת סקריפטים?</b> זה צפוי לפני שהדבקתם את בלוק ההעתקה. החיישן קיים ועדיין מתעדכן; הסקריפטים מופיעים רק אחרי שסנכרון עם HA רץ בהצלחה.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 3</div>
+      <h2>צרו את התצוגה</h2>
+    </div>
+    <ol class="steps">
+      <li>הגדרות &rsaquo; לוחות בקרה &rsaquo; הוספת לוח בקרה &rsaquo; לוח בקרה חדש מאפס. קראו לו Projector Pilot.</li>
+      <li>פתחו אותו, ואז לחצו על סמל העיפרון בפינה הימנית העליונה כדי לערוך.</li>
+      <li>הוסיפו תצוגה. שתי הפריסות מתאימות; הלוח האמיתי משתמש בערימת הכרטיסים ברירת המחדל, אחד מתחת לשני, שהיא הקלה ביותר להדבקה.</li>
+      <li>כדי להדביק YAML, השתמשו בתפריט שלוש הנקודות בכרטיס ובחרו <b>עריכה ב-YAML</b>, או בתפריט שלוש הנקודות בלוח הבקרה עבור <b>עורך תצורה גולמי</b> כדי להדביק תצוגה שלמה בבת אחת.</li>
+    </ol>
+    <p class="lead">ההגדרות של התצוגה עצמה, אם אתם מעדיפים להקליד אותן:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 4</div>
+      <h2>הוספת אריח מידע חי</h2>
+    </div>
+    <p class="lead">התחילו במשהו שרק קורא, כדי לדעת שה-ID של הישות נכון לפני שנוגעים במשהו ששולח פקודה. זה חי ברגע שחיישן המקרן קיים, בלי בלוק העתקה, בלי סנכרון. הוסיפו כרטיס, עריכה ב-YAML, הדביקו:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">אותה צורה קוראת כל אחד מכ-80 המאפיינים שהחיישן נושא: החליפו את <code>brightness</code> ב-<code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, כל מה שתרצו באריח.</p>
+    <p class="lead">שמרו. אם מופיע מספר או מילה אמיתיים, ה-ID של הישות נכון והכול בהמשך יעבוד. אם מופיע ריק, חזרו לצעד 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 5</div>
+      <h2>הוספת כותרת מקטע ירוקה</h2>
+    </div>
+    <p class="lead">כותרת פשוטה היא שטח מת. זה כרטיס <code>markdown</code> עם רקע גרדיאנט מ-card-mod, והוא מה שהופך ערימת אריחים למקטעים עם שמות. כל מקטע בלוח נפתח באחד כאלה, רק עם תווית ואימוג'י אחרים.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">שנו את קוד האימוג'י ואת טקסט התווית; בלוק card-mod זהה בכל מקטע.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 6</div>
+      <h2>הוספת לחצן בקרה</h2>
+    </div>
+    <p class="lead">זה שולח פקודה במקום רק לקרוא ערך, ולכן הסקריפטים צריכים להתקיים קודם. הוא קורא ל-<code>script.projpilot_YOURSERIAL_power_on</code>, שהאפליקציה כותבת רק אחרי שמדביקים את בלוק ההעתקה שלה ל-<code>configuration.yaml</code>, מפעילים מחדש את Home Assistant ולוחצים על <b>סנכרון עם HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">אותו כרטיס עבור כיבוי, השחרת מסך, HDMI 1, HDMI 2, השתקת A/V, מצב צבע או זיכרון עדשה: רק התווית, הסמל ו-<code>service</code> משתנים.</p>
+    <div class="note"><b>אם זה נראה תקין אבל לא קורה כלום</b> כשלוחצים, בלוק ההעתקה לא הודבק או ש-Home Assistant לא הופעל מחדש מאז. הריצו <b>בדיקת חיבור</b> באפליקציה, שבודקת בדיוק את זה, לפני שמניחים שהלוח שגוי.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 7</div>
+      <h2>הוספת הגיבור</h2>
+    </div>
+    <p class="lead">הגיבור בראש הלוח הוא <code>button-card</code>: מצב הפעלה גדול, סיכום בשורה אחת הבנוי ממספר מאפיינים בבת אחת, וטיפול הזכוכית הירוקה על הכרטיס כולו ולא רק על המסגרת.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">מקוצר לחלקים שמשתנים בכל התקנה. הכרטיס המלא קובע גם את מיקומי הסמל, השם והתווית ברשת; ראו את ההורדה בצעד 10 לכל הפרטים.</p>
+    <p class="lead">מעדיפים פס דק יותר? <code>mushroom-chips-card</code> עושה את אותה עבודה בשורה אחת של שבבים קטנים: מצב הפעלה, קלט, מצב צבע, טווח וידאו ושעות מנורה, כל אחד תבנית שקוראת <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. השתמשו באחד או בשני, לא בשניהם, בראש הלוח.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 8</div>
+      <h2>הוסיפו את הסצנות שלכם</h2>
+    </div>
+    <p class="lead">כל סצנה שאתם שומרים באפליקציה נהפכת לסקריפט בשם <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code> אחרי הסנכרון, ואריח לסצנה הוא אותו כרטיס לחצן בקרה מצעד 6 עם שם סצנה וסמל.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">החליפו את <code>YOURSCENE1</code> במזהה שמוצג לאותה סצנה ברשימת הבקרות המסונכרנת של האפליקציה. אריח אחד לכל סצנה, בתוך <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 9</div>
+      <h2>הוספת היסטוריית שעות לייזר</h2>
+    </div>
+    <p class="lead">חיישן המקרן מתועד על ידי Home Assistant כמו כל חיישן אחר, ולכן ל-<code>lamp_hours</code> יש היסטוריה בחינם. בלי חיישנים נוספים, בלי עוזרים, בלי שום דבר להגדיר קודם, תחת מקטע התחזוקה.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 שעות הן שבועיים. שעות לייזר ומנורה עולות בהתמדה ולא קופצות, ולכן חלון של שבועיים בדרך כלל מספיק כדי לראות את המגמה בלי שהגרף ייראה שטוח.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שלב 10</div>
+      <h2>או קחו את הכול</h2>
+    </div>
+    <p class="lead">התצוגה השלמה, כל מקטע וכל כרטיס מצילום המסך בראש העמוד הזה, עם מציינים במקום ID-ים של ישויות.</p>
+    <ol class="steps">
+      <li><a href="/he/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>הורידו את ה-YAML של התצוגה</a>.</li>
+      <li>פתחו אותו בכל עורך טקסט והחליפו, בכל מקום שהם מופיעים: את <code>YOUR_PROJECTOR</code> במזהה הישות של חיישן המקרן שלכם מצעד 2, ואת <code>YOURSERIAL</code> במזהה הנגזר מהמספר הסידורי שלכם מצעד 2.</li>
+      <li>במקטע הסצנות ליד התחתית, החליפו את <code>YOURSCENE1</code>, <code>YOURSCENE2</code> ו-<code>YOURSCENE3</code> בשלושת מזהי הסצנות שלכם, או הוסיפו והסירו אריחים כך שיתאימו למספר הסצנות שיש לכם בפועל.</li>
+      <li>ב-Home Assistant, פתחו את לוח הבקרה שלכם, סמל עיפרון, תפריט שלוש נקודות, <b>עורך תצורה גולמי</b>, והדביקו אותו כתצוגה.</li>
+    </ol>
+    <div class="note"><b>שמות הסצנות והמספר שלהן לא יתאימו.</b> הקובץ מגיע עם שלוש סצנות לדוגמה: ערב קולנוע, גיימינג, יום ספורט. שנו את שמות האריחים, כוונו אותם אל מזהי הסצנות שלכם, והוסיפו או מחקו אריחים עד שהמקטע תואם לכמות הסצנות ששמרתם.</div>
+    <div class="note"><b>אריחי המידע עובדים מיד אחרי ההדבקה.</b> הם צריכים רק שהחיישן יהיה קיים. לחצני הבקרה והסצנות נשארים מתים עד שבלוק ההעתקה מודבק ל-<code>configuration.yaml</code>, Home Assistant מופעל מחדש ולוחצים על סנכרון עם HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>פתרון בעיות</h2>
+    </div>
+    <details class="more"><summary>אריח מציג Unknown</summary>
+      <p>בדקו את שם המאפיין מול מה שהחיישן באמת נושא: כלי פיתוח &rsaquo; מצבים, הישות <code>sensor.YOUR_PROJECTOR</code> שלכם, וקראו את רשימת המאפיינים שלה. כמה קריאות, כמו HDR PQ או HDR HLG, מתמלאות רק כשהמקרן מקבל באמת אות מהסוג הזה, ולכן Unknown בשתיים האלה יכול להיות תקין ולא תקלה. אם החיישן כולו נראה דליל, הערו את המקרן: מכשיר במצב המתנה מפרסם מעט מאוד.</p>
+    </details>
+    <details class="more"><summary>לחצן לא עושה כלום</summary>
+      <p>עדיין לא הדבקתם את בלוק ההעתקה, או ש-Home Assistant לא הופעל מחדש מאז. לחצני הבקרה והסצנות קוראים לסקריפטים שהאפליקציה כותבת, והסקריפטים האלה לא קיימים עד ש<b>הגדרות &rsaquo; אוטומציה ביתית &rsaquo; Home Assistant</b> באפליקציה הדביקו את בלוק ההעתקה ל-<code>configuration.yaml</code>, Home Assistant הופעל מחדש פעם אחת, ו<b>סנכרון עם HA</b> נלחץ. הריצו קודם <b>בדיקת חיבור</b> באפליקציה - היא אומרת לכם אם הבלוק קיים לפני שאתם מחפשים טעות בלוח הבקרה.</p>
+    </details>
+    <details class="more"><summary>הסקריפטים שאני מצפה להם חסרים בכלי פיתוח &rsaquo; מצבים</summary>
+      <p>סננו לפי <code>projpilot</code> ולא לפי המספר הסידורי המלא - קל יותר לראות את כל הרשימה. אם בקרה או סצנה שהוספתם לאחרונה חסרות, לחצו שוב על <b>סנכרון עם HA</b>; הוא מתעדכן במקום ולא דורש התקנה חדשה. אם סקריפטים ישנים ומתים מבלגנים את הרשימה אחרי שמחקתם סצנה, השתמשו ב<b>הסרת סקריפטים יתומים</b> באפליקציה.</p>
+    </details>
+    <details class="more"><summary>ה-ID של הישות שלי לא נראה כמו זה שבמדריך</summary>
+      <p>התבנית קבועה, האמצע לא. החיישן נקרא על שם הדגם של המקרן שלכם, וכל סקריפט נושא את המספר הסידורי של המקרן שלכם, לא את מציינים שבעמוד הזה. קחו את שניהם מכלי פיתוח &rsaquo; מצבים ממסך Home Assistant של האפליקציה, כמו בצעד 2, והשתמשו בהם במקום להקליד את טקסט הדוגמה.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>כל המקרן שלכם, על קיר אחד</h2>
+    <p class="lead" style="margin:0 auto 24px">אוטומציה ביתית היא תוספת חד-פעמית. בלי מנוי, בלי חשבון, בלי ענן. רכישה אחת פותחת אותה בכל פלטפורמה שבבעלותכם.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - זמין עכשיו</a>
+      <span class="pill">App Store - ממתין לאישור</span>
+      <span class="pill">Microsoft Store - ממתין לאישור</span>
+      <span class="pill">Mac App Store - ממתין לאישור</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/he/guide/home-automation/">חזרה לאוטומציה ביתית &rarr;</a> &middot; <a href="/he/guide/">המדריך המלא למשתמש &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות (FAQ)</div>
+      <h2>תשובות מהירות</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>האם אני חייב לבנות את לוח הבקרה הזה ידנית?</h3><p>לא. כשלוחצים על סנכרון עם HA באפליקציה, היא בונה בשבילכם לוח בקרה מוכן של Projector Pilot ישירות ב-Home Assistant - חיישן המקרן החי ולחצן לכל בקרה ולכל סצנה - והוא מופיע בסרגל הצד בשם Projector Pilot. העמוד הזה נועד לבנות ידנית את הגרסה העשירה יותר בסגנון הזכוכית הירוקה, או להתאים אישית את מה שהסנכרון יצר.</p></div><div class="gcard"><h3>צריך כרטיסים מותאמים אישית מ-HACS כדי לבנות את זה?</h3><p>כדי להתאים למראה שבצילום המסך - כן: Mushroom, button-card, card-mod ו-mini-graph-card. אף אחד מהם לא נדרש כדי שהבקרות עצמן יעבדו - כל לחצן הוא קריאה פשוטה לסקריפט, והכרטיסים המותאמים הם רק העיצוב שמעל.</p></div><div class="gcard"><h3>למה אריחי המידע מציגים ערך אבל הלחצנים לא עושים כלום?</h3><p>חיישן המקרן מפרסם את הקריאות שלו ברגע שמתחברים ומסנכרנים באפליקציה, ולכן אריחי המידע חיים מיד. לחצני הבקרה והסצנות קוראים לסקריפטים שקיימים ב-Home Assistant רק אחרי שמדביקים את בלוק ההעתקה של האפליקציה ל-configuration.yaml, מפעילים מחדש את Home Assistant ולוחצים פעם אחת על סנכרון עם HA.</p></div><div class="gcard"><h3>האם מזהי הישויות שלי יהיו זהים לאלה שבמדריך?</h3><p>התבנית כן, התווים המדויקים לא. חיישן המקרן נקרא על שם הדגם של המקרן שלכם, וכל סקריפט נקרא על שם המספר הסידורי שלו. בכל מקום שבו העמוד הזה כותב YOUR_PROJECTOR, הכניסו את מזהה הישות של החיישן שלכם; בכל מקום שבו כתוב YOURSERIAL, הכניסו את המזהה הנגזר מהמספר הסידורי שמוצג במסך Home Assistant באפליקציה.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/he/guide/">מדריך למשתמש</a><a href="/he/pricing/">תמחור</a><a href="/he/highlights/">דגשים</a><a href="/he/guide/home-automation/">Home Assistant</a><a href="/he/help/">עזרה &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/he/help/#privacy">פרטיות</a><a href="/he/help/#terms">תנאים</a></div>
+<div class="flinks"><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/guide/dashboard/">לוח בקרה</a><a href="/he/guide/remote/">שלט</a><a href="/he/guide/picture/">תמונה</a><a href="/he/guide/lens/">עדשה</a><a href="/he/guide/scenes/">סצנות</a><a href="/he/guide/home-assistant-dashboard/">לוח בקרה ב-HA</a><a href="/he/guide/maintenance/">תחזוקה</a><a href="/he/guide/settings/">הגדרות</a><a href="/he/guide/languages/">שפות</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot היא אפליקציה עצמאית למקרני Epson ו-PJLink. היא אינה קשורה, מאושרת או ממומנת על ידי Epson, גוף התקנים PJLink, Home Assistant, Hubitat, Apple, Google או Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ו-Microsoft Store הם סימנים מסחריים של בעליהם, ומוזכרים רק כדי לתאר עם מה האפליקציה עובדת.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

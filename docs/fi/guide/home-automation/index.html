@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="fi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Projektori, Home Assistant &amp; Hubitat -opas - Projector Pilot</title>
+<meta name="description" content="Yhdistä Epson- tai PJLink-projektorisi Home Assistantiin, Hubitatiin ja webhookeihin. Sync With HA julkaisee reaaliaikaisen tilan ja muuttaa jokaisen kohtauksen skriptiksi." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektori, Home Assistant &amp; Hubitat -opas - Projector Pilot" />
+<meta property="og:description" content="Yhdistä Epson- tai PJLink-projektorisi Home Assistantiin, Hubitatiin ja webhookeihin. Sync With HA julkaisee reaaliaikaisen tilan ja muuttaa jokaisen kohtauksen skriptiksi." />
+<meta property="og:url" content="https://projectorpilot.com/fi/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektori, Home Assistant &amp; Hubitat -opas - Projector Pilot" />
+<meta name="twitter:description" content="Yhdistä Epson- tai PJLink-projektorisi Home Assistantiin, Hubitatiin ja webhookeihin. Sync With HA julkaisee reaaliaikaisen tilan ja muuttaa jokaisen kohtauksen skriptiksi." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Projektori, Home Assistant & Hubitat -opas - Projector Pilot", "description": "Yhdistä Epson- tai PJLink-projektorisi Home Assistantiin, Hubitatiin ja webhookeihin. Sync With HA julkaisee reaaliaikaisen tilan ja muuttaa jokaisen kohtauksen skriptiksi.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Projektorisi Home Assistantissa ja Hubitatissa.", "description": "Yhdistä Epson- tai PJLink-projektorisi Home Assistantiin, Hubitatiin ja webhookeihin. Sync With HA julkaisee reaaliaikaisen tilan ja muuttaa jokaisen kohtauksen skriptiksi.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "fi", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Kodin automaatio", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pitääkö puhelimen pysyä verkossa, jotta Home Assistantin automaatiot toimivat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Kun olet liittänyt yhden shell_command-lohkon Home Assistantiin ja synkronoinut, Home Assistant lähettää komennot suoraan projektorin IP-osoitteeseen. Projector Pilot on vain asennustyökalu; sen jälkeen Home Assistant keskustelee projektorin kanssa itsenäisesti, oli puhelimesi kotona tai ei."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miten projektori näkyy Home Assistantissa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anturina, esimerkiksi sensor.projector_pilot_epson_qb1000b_qb1000w, joka sisältää virran, tulon, väritilan, kuvan arvot ja lampun käyttötunnit ja päivittyy aina niiden muuttuessa sovelluksen ollessa auki. Kun otat käyttöön asetuksen Sync Advanced Controls, sovellus kirjoittaa Home Assistantiin myös skriptin jokaiselle kohtaukselle sekä virralle, jokaiselle tulolle, jokaiselle väritilalle ja jokaiselle projektorisi linssimuistille."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onko Kodin automaatio ilmainen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kodin automaatio on maksullinen lisäosa, kertaostos, erillinen Projector Pilot Pro -versiosta. Nippu ostaa molemmat yhdessä edullisemmin. Katso hinnoittelusivu."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/fi/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli"><a href="/fi/#features">Ominaisuudet</a><a href="/fi/guide/">Opas</a><a href="/fi/pricing/">Hinnoittelu</a><a href="/fi/highlights/">Kohokohdat</a><a href="/fi/guide/home-automation/">Home Assistant</a><a href="/fi/guide/home-assistant-dashboard/">HA-kojelauta</a><a href="/fi/help/">Ohje</a><a class="cta" href="/fi/#download">HAE SOVELLUS</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Kodin automaatio</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhookit</div>
+    <h1>Projektorisi <span class="g">Home Assistantissa ja Hubitatissa</span>.</h1>
+    <p>Projector Pilot julkaisee projektorisi reaaliaikaisen tilan ja jokaisen säätimen Home Assistantiin, Hubitatiin ja mihin tahansa haluamaasi webhookiin. Asenna kerran, niin älykotisi ohjaa projektoria itse - ei puhelinta verkossa, ei pilveä välissä.</p>
+    <div class="readout"><span>Palvelimeton asennuksen jälkeen</span><span>Kohtauksista tulee skriptejä</span><span>Valmis kojelauta</span><span>Asennuksen tarkistuslista</span><span>Maksullinen lisäosa</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Yleiskatsaus</div>
+      <h2>Mitä Kodin automaatio tekee</h2>
+      <p class="lead">Kodin automaatio muuttaa Projector Pilotin kädessäsi olevasta kaukosäätimestä laitteeksi, jonka koko talo näkee. Se kertoo, mitä projektori tekee - virta, tulo, väritila, kuvan arvot, lampun käyttötunnit - ja antaa älykodillesi säätimen kaikkeen, mitä sovellus voi muuttaa.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se julkaisee tilan.</b> Projektori näkyy Home Assistantin anturina, Hubitatin laitteena tai JSON-sisältönä webhookissasi, ja se sisältää samat lukemat, jotka sovellus näyttää sinulle.</li>
+      <li><b>Se julkaisee säätimet.</b> Jokaisesta tallentamastasi kohtauksesta sekä virrasta, jokaisesta tulosta, jokaisesta väritilasta ja jokaisesta linssimuistista tulee jotakin, minkä automaatio tai ääniavustaja voi suorittaa.</li>
+      <li><b>Se toimii palvelimettomasti.</b> Kun skriptit on asennettu, Home Assistant lähettää komennot suoraan projektorin IP-osoitteeseen. Puhelimesi ei tarvitse olla verkossa, eikä mikään kulje pilvitilin kautta.</li>
+    </ul>
+    <div class="note"><b>Kodin automaatio on maksullinen lisäosa.</b> Se on kertaostos, erillinen Projector Pilot Pro -versiosta, ja nippu ostaa molemmat yhdessä edullisemmin. Ei tilausta, ei tiliä, ei pilveä. Katso <a href="/fi/pricing/">hinnoittelu</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Kolme tapaa sisään, yksi keskus</h3>
+        <p class="lead">Asetukset &rsaquo; Kodin automaatio on keskus. Valitse käyttämäsi alusta - Home Assistant, Hubitat tai Webhooks - ja määritä se siellä. Voit ottaa käyttöön useamman kuin yhden samanaikaisesti; ne ovat toisistaan riippumattomia.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Kodin automaation keskus Projector Pilotissa: Home Assistant, Hubitat ja Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Home Assistantin käyttöönotto</h2>
+      <p class="lead">Kirjaudu sisään sovelluksesta, julkaise projektori anturina, liitä yksi lohko konfiguraatioosi ja synkronoi. Siitä lähtien Home Assistant ohjaa projektoria itse.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Avaa <b>Asetukset &rsaquo; Kodin automaatio &rsaquo; Home Assistant</b>.</li>
+        <li>Kirjoita <b>Home Assistantin osoite</b> (esimerkiksi <code>http://homeassistant.local:8123</code> tai sen IP-osoite) ja napauta <b>Kirjaudu sisään</b>. Kirjautuminen tapahtuu selaimessa omaa instanssiasi vasten - <b>tunnusta ei tarvitse liittää</b>. Käytä tavallista Home Assistant -kirjautumistasi, kaksivaiheinen tunnistautuminen mukaan lukien.</li>
+        <li>Sovellus julkaisee projektorin <b>anturina</b>, jonka entiteetti on esimerkiksi <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code> ja joka sisältää virran, tulon, väritilan, kuvan arvot ja lampun käyttötunnit.</li>
+        <li>Ota käyttöön <b>Lähetä projektorin tila</b>, jotta nämä lukemat päivittyvät Home Assistantissa aina muuttuessaan sovelluksen ollessa auki, ja ota käyttöön <b>Sync Advanced Controls</b> julkaistaksesi skriptit kuvatiloille, tuloille, linssimuisteille ja virralle.</li>
+        <li>Liitä yksi <b>shell_command</b>-lohko (alla) tiedostoosi <code>configuration.yaml</code>, käynnistä Home Assistant uudelleen ja napauta sitten <b>Sync With HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Home Assistant -näyttö Projector Pilotissa, jossa näkyvät shell_command-lohko, Kirjaudu sisään, Projektorin entiteetin ID ja synkronoinnin kytkimet" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">shell_command-lohko</h3>
+    <p class="lead">Tämä on koko palvelimettoman toiminnan temppu. Sovellus kirjoittaa yhden komennon, jonka Home Assistant ajaa keskustellakseen projektorin Web Controlin kanssa, ja jokainen synkronoitu skripti kutsuu tätä komentoa eri verbillä. Napauta sovelluksessa <b>Copy block</b> ja liitä se tiedostoon <code>configuration.yaml</code>. Alla oleva esimerkki on havainnollistava - sovellus täyttää projektorisi oman osoitteen ja komennon nimen:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Vain esimerkki. Sovellus luo omasi projektorin todellisella IP-osoitteella ja sarjanumerosta johdetulla nimellä.</p>
+    <div class="note"><b>Miksi palvelimeton.</b> Tuo <code>curl</code> toimii Home Assistant -laitteella, ei puhelimellasi. Home Assistant tavoittaa projektorin IP-osoitteen suoraan Web Controlin kautta, joten automaatio laukeaa riippumatta siitä, onko sovellus auki ja onko puhelimesi edes kotona. <code>EPSONWEB</code>-digest-käyttäjä on Web Control -kirjautuminen; sovellus käyttää projektorille jo tallennettua Web Control -salasanaa.</p></div>
+
+    <h3 style="margin-top:32px">Test Connection, Sync ja siivous</h3>
+    <ul class="plain">
+      <li><b>Test Connection</b> tarkistaa, että sovellus tavoittaa Home Assistantisi ja että liitetty <code>shell_command</code> on todella siellä, jotta löydät kirjoitusvirheen ennen kuin rakennat mitään sen päälle.</li>
+      <li><b>Sync With HA</b> kirjoittaa tai päivittää kohtaustesi ja säädintesi skriptit ja rakentaa valmiin Projector Pilot -kojelaudan suoraan Home Assistantiin. Suorita se uudelleen aina, kun lisäät kohtauksen tai muutat säädintä - se päivittää paikallaan eikä kasaa kaksoiskappaleita.</li>
+      <li><b>Remove orphaned scripts</b> löytää skriptit, jotka sovellus on kirjoittanut ja joilla ei enää ole vastaavaa kohtausta tai säädintä - esimerkiksi kohtauksen poistamisen jälkeen - <b>luettelee tarkasti, mitkä se poistaa, ja kysyy ensin</b>. Mitään ei poisteta ennen kuin vahvistat. Se koskee vain Projector Pilotin luomia skriptejä; mikään muu Home Assistantissasi ei häiriinny, ja jos Home Assistant ei luettele skriptejään, mitään ei poisteta.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Asennuksen tarkistuslista</div>
+      <h2>Sovellus kertoo, mikä on tehty ja mikä puuttuu</h2>
+      <p class="lead">Home Assistant -näytöllä on <b>Asennuksen tarkistuslista</b> ja <b>Mitä Home Assistantissasi on</b> -paneeli, joten sinun ei koskaan tarvitse arvailla, mikä vaihe on jäljellä. Jokainen rivi kertoo, onko se tehty, puuttuuko se vai ei voitu selvittää, ja kertoo mitä tehdä seuraavaksi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Yhdistetty Home Assistantiin</b> - kirjautunut sisään ja vastaa. Jos Home Assistant ei vastaa, rivi kehottaa tarkistamaan osoitteen ja sen, että puhelimesi on samassa verkossa.</li>
+      <li><b>Projektori lisätty Home Assistantiin</b> - onko tämä projektori jo Home Assistantissa. Jos ei, rivi ohjaa sinut lisäämään PJLink-integraation, ja integraation lisäysvaihe näyttää PJLink-isännän ja portin, joita Home Assistant kysyy.</li>
+      <li><b>Lukemien anturi rekisteröity</b> - anturi, joka sisältää projektorisi lukemat. Se rekisteröityy ensimmäisellä kerralla, kun sovellus lukee projektoria, ja rivi tarjoaa toimintoja <b>Rekisteröi nyt</b> tai <b>Ota käyttöön</b>, kun jokin estää sen.</li>
+      <li><b>Mitä Home Assistantissasi on</b> - HACS (yhteisön kauppa), Epson Projector Link -integraatio, PJLink-integraatio ja Projector Pilotin komennot tiedostossa <code>configuration.yaml</code>. Kukin näyttää tilan Löytyi, Ei asennettu tai Ei voitu selvittää, ja mukana ovat tarvittaessa Asennusohje- ja Avaa HACSissa -painikkeet.</li>
+    </ul>
+    <div class="note"><b>Tarkista uudelleen kertoo, mitä löytyi.</b> Napauta <b>Tarkista uudelleen</b>, kun olet korjannut jotain, ja sovellus lukee Home Assistantisi uudelleen ja ilmoittaa tuloksen sen sijaan, että jättäisi sinut miettimään, toimiko se. Rivi, jota ei voitu tarkistaa, sanoo <i>Ei voitu selvittää</i>, ei koskaan arvattua kyllä- tai ei-vastausta.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Toimii sen kanssa, mitä sinulla jo on</div>
+      <h2>Core PJLink -integraation tuki ja rikkaammat kortit, kun niitä on</h2>
+      <p class="lead">Projector Pilot selvittää, mitä Home Assistantiisi on asennettu, ja rakentaa sen ympärille. Se toimii Home Assistantin mukana jo tulevan <b>core PJLink -integraation</b> kanssa, joten siellä jo lisäämäsi PJLink-projektori on ensiluokkainen kansalainen.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sisäänrakennetut kortit ensin.</b> Jos sinulla ei ole yhteisökortteja, Sync rakentaa kojelaudan Home Assistantin sisäänrakennetuilla korteilla ja kertoo siitä valmistuttuaan. Se toimii heti valmiina.</li>
+      <li><b>Päivittyy, kun HACS-kortit on asennettu.</b> Sovellus tarkistaa, mitkä yhteisökorteista (Mushroom, button-card, card-mod, apexcharts-card) on asennettu, ja päivittää kunkin kortin rikkaampaan, jos se sinulla on. <a href="/fi/guide/home-assistant-dashboard/">Käsin rakennettavan kojelaudan opas</a> menee pidemmälle, jos haluat täyden vihreälasisen ulkoasun.</li>
+      <li><b>Kohtaukset ja säätimet tarvitsevat yhden liittämisen.</b> Jos Home Assistantissa ei vielä ole komentoa projektorille lähettämiseen, kojelauta rakennetaan silti reaaliaikaisilla lukemilla, ja <b>Viimeistele asennus</b> -kortti opastaa läpi: napauta Copy block, liitä se tiedostoon <code>configuration.yaml</code>, käynnistä Home Assistant uudelleen ja napauta Sync uudelleen.</li>
+      <li><b>Mitään ei asennettu? Liitä käsin.</b> Jos Home Assistantiin ei ole asennettu mitään, voit silti kopioida kaiken sovelluksesta ja liittää sen itse.</li>
+      <li><b>Salasana mainitaan erikseen.</b> Liittämäsi komentolohko kertoo, kun se sisältää projektorin salasanan, jotta tiedät sen ennen jakamista tai tallentamista.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kun projektori on pois päältä</div>
+      <h2>Lukemat, jotka pysyvät paikallaan</h2>
+      <p class="lead">Valmiustilassa oleva projektori ilmoittaa hyvin vähän, joten kojelauta menisi normaalisti tyhjäksi. Valinnainen <b>viimeisin tunnettu anturi</b> säilyttää projektorisi viimeiset lukemat - tulon, lampun tai laserin käyttötunnit - Home Assistantissa projektorin ollessa pois päältä.</p>
+    </div>
+    <ul class="plain">
+      <li>Se on yksi lisälohko: liitä se tiedoston <code>configuration.yaml</code> loppuun (tai lisää vain sen rivit olemassa olevan <code>template:</code>-osion alle) ja käynnistä Home Assistant uudelleen. Sovelluksessa on <b>Tarkista, että se on siellä</b> -painike, joka kertoo, onko se Home Assistantissa.</li>
+      <li>Virran katkaisu välittyy nyt Home Assistantiin tilana <b>off</b>, joten kojelauta ja automaatiosi näkevät projektorin pois päältä silloin, kun se on.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kohtaukset skripteinä</div>
+      <h2>Jokaisesta kohtauksesta tulee Home Assistant -skripti</h2>
+      <p class="lead">Synkronoinnin jälkeen kohtauksesi eivät ole jumissa sovelluksessa. Jokainen niistä sekä virta, jokainen tulo, jokainen väritila ja jokainen projektorisi todella tuntema linssimuisti kirjoitetaan Home Assistant -skriptiksi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Automaatiot voivat ajaa ne.</b> ”Auringonlaskussa, jos televisio menee päälle, aja Elokuvailta” on tavallinen Home Assistant -automaatio, kun kohtaus on skripti.</li>
+      <li><b>Ääniavustajat voivat ajaa ne.</b> Julkaise skripti avustajallesi, niin ”käynnistä Elokuvailta” asettaa tulon, kuvatilan ja linssimuistin yhdessä.</li>
+      <li><b>Vain todelliset säätimesi näkyvät.</b> Sovellus kirjoittaa skriptin jokaiselle tulolle, väritilalle ja linssimuistille, jonka projektori ilmoittaa - ei arvattua yleisluetteloa.</li>
+      <li><b>Synkronoinnin poisto poistaa vain sovelluksen kirjoittaman.</b> Kytke synkronointi pois tai käytä toimintoa Remove orphaned scripts (joka luettelee ne ja kysyy ensin), ja Projector Pilot poistaa luomansa skriptit eikä mitään muuta.</li>
+    </ul>
+    <div class="note"><b>Skriptit on nimetty niin, että uudelleennimeäminen päivittää saman skriptin.</b> Skriptien nimet johdetaan projektorista ja säätimestä, joten uudelleensynkronointi kohtauksen nimeämisen jälkeen päivittää olemassa olevan skriptin eikä luo toista kopiota.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kojelauta</div>
+      <h2>Sync rakentaa kojelaudan puolestasi</h2>
+      <p class="lead">Sinun ei tarvitse rakentaa Lovelace-näkymää käsin, eikä sinun enää tarvitse edes liittää sellaista. Kun napautat <b>Sync With HA</b>, sovellus rakentaa täydellisen Projector Pilot -kojelaudan suoraan Home Assistantiin sen omalla rajapinnalla: projektorin reaaliaikainen tila ja painike jokaiselle synkronoidulle kohtaukselle ja säätimelle. Se ilmestyy Home Assistantin sivupalkkiin nimellä <b>Projector Pilot</b> - avaa se, ja se on valmis.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Projector Pilot -kojelauta Home Assistantissa: virta ja lähde, väritilat, koko kuvavalikko, HDR ja signaali, RGB-kalibrointi, linssi ja geometria, laserin käyttötuntien kuvaaja, huolto ja kohtaukset - kaikki vihreälasisina laattoina" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Rikkaampi, käsin rakennettu versio kojelaudasta. Syncin sinulle rakentama sisältää saman reaaliaikaisen tilan ja samat painikkeet Home Assistantin tavallisilla korteilla; alla oleva vihreälasinen ulkoasu on valinnainen mukautettu versio. Vieritä tai klikkaa suurentaaksesi.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Kirjaudu sovelluksessa Home Assistantiin.</li>
+      <li>Liitä sovelluksen <b>Copy block</b> kerran tiedostoon <code>configuration.yaml</code> ja käynnistä Home Assistant uudelleen (ainoa manuaalinen vaihe - Home Assistant ei salli sovellusten lisätä tuota komentoa etänä).</li>
+      <li>Napauta <b>Sync With HA</b>. Kojelauta rakennetaan puolestasi ja ilmestyy sivupalkkiin nimellä <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Haluatko liittää sen itse?</b> <b>Kopioi kojelauta</b> on edelleen Home Assistant -näytöllä. Napauta sitä, siirry sitten Home Assistantissa kohtaan <b>Asetukset &rsaquo; Kojelaudat &rsaquo; Lisää kojelauta</b>, luo tyhjä kojelauta, avaa sen kolmen pisteen valikko &rsaquo; <b>Edit dashboard</b> &rsaquo; kolmen pisteen valikko &rsaquo; <b>Raw configuration editor</b> ja liitä kopioitu YAML.</div>
+    <p class="lead">Rakennettiinpa se puolestasi tai liitit sen itse, kojelauta on sama - tilakortti sekä painike jokaiselle säätimelle (havainnollistava pätkä):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Vain esimerkki. Kojelaudassasi on projektorisi todellinen entiteetti ja omat kohtauksesi.</p>
+    <div class="note"><b>Mallista riippumaton.</b> Kojelauta rakennetaan <i>projektorisi</i> omien ominaisuuksien pohjalta - entiteetti, kuvan arvot, tulot, väritilat, linssimuistit ja kohtaukset, jotka se todella ilmoitti. Tämän sivun kuvakaappaukset ovat QB1000-mallista; sinun mallisi voi näyttää eri tuloja, säätimiä ja lukemia. Saadaksesi täyden vihreälasisen kojelaudan kuten kuvassa, seuraa <a href="/fi/guide/home-assistant-dashboard/">vaiheittaista kojelautaopasta</a> tai <a href="/fi/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>lataa koko näkymä</a> ja vaihda kaksi merkkijonoa.</div>
+    <div class="note"><b>Haluatko rikkaamman seinän?</b> Samat skriptit ohjaavat mitä tahansa haluamiasi kortteja. Jos olet käyttänyt AVR Maestroa, lähestymistapa on identtinen - rakenna valaistut lähde- ja tilalaatat, reaaliaikaiset otsikot ja historia yhdestä anturista ja synkronoiduista skripteistä.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Hubitatin käyttöönotto</h2>
+      <p class="lead">Hubitatissa Projector Pilot peilaa projektorin keskuksesi laitteeksi Maker API:n kautta, jolloin Rule Machine voi lukea virtaa, mykistystä ja tuloa ja toimia niiden perusteella.</p>
+    </div>
+    <ol class="steps">
+      <li>Ota Hubitatissa käyttöön <b>Maker API</b> -sovellus, merkitse muistiin sen käyttö-URL ja tunnus ja valitse, mitkä laitteet se julkaisee.</li>
+      <li>Avaa Projector Pilotissa <b>Asetukset &rsaquo; Kodin automaatio &rsaquo; Hubitat</b> ja anna keskuksesi <b>Maker API</b> -tiedot.</li>
+      <li>Valitse <b>laite, joka edustaa projektoria</b>. Sovellus ehdottaa todennäköisintä; valitse se tai valitse oma.</li>
+      <li>Sovellus <b>peilaa virran, mykistyksen ja tulon</b> kyseiselle laitteelle ja lähettää vain komennot, jotka laite hyväksyy.</li>
+      <li>Rakenna <b>Rule Machine</b> -säännöt kyseisen laitteen pohjalta kuten minkä tahansa muun - projektorin tila ohjaa niitä.</li>
+    </ol>
+    <div class="note"><b>Vain se, minkä laite hyväksyy.</b> Sovellus lähettää projektorin arvon Hubitatiin vain, kun valittu laite tukee kyseistä komentoa, joten se ei koskaan työnnä mitään, minkä laite hylkäisi.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhookit</div>
+      <h2>Webhooks-ominaisuuden käyttöönotto</h2>
+      <p class="lead">Webhooks on yleisratkaisu. Sovellus lähettää POST-pyynnön URL-osoitteeseesi, kun projektori käynnistyy, sammuu, vaihtaa tuloa tai palauttaa kohtauksen - Home Assistant -webhook, Node-RED, IFTTT tai mikä tahansa JSONia vastaanottava.</p>
+    </div>
+    <ol class="steps">
+      <li>Avaa <b>Asetukset &rsaquo; Kodin automaatio &rsaquo; Webhooks</b>.</li>
+      <li>Anna <b>URL</b>, johon lähetetään. Home Assistant -webhook näyttää tältä: <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Valitse, mitkä <b>tapahtumat</b> laukaisevat webhookin: virta päälle, virta pois, tulon vaihto, kohtauksen palautus - ja halutessasi rajaa tiettyyn tuloon tai kohtaukseen.</li>
+      <li>Aseta tarvittaessa <b>oma hyötykuorma</b>, jos vastaanottava palvelu haluaa tietyn muodon; muuten sovellus lähettää oletus-JSONinsa.</li>
+      <li>Tallenna. Sovellus lähettää sen jälkeen jokaisesta vastaavasta tapahtumasta.</li>
+    </ol>
+    <p class="lead">Oletushyötykuorma on pelkkää JSONia - tapahtuma, projektori ja muuttunut arvo:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Esimerkkihyötykuorma. Tulon vaihto- tai virtatapahtuma sisältää siihen liittyvät kentät.</p>
+    <div class="note"><b>Uudelleenyhdistäminen korjaa kaikki.</b> Jos yhdistät Home Assistantin uudelleen uudessa osoitteessa, sovellus päivittää kaikki siihen osoittavat webhookit kerralla, joten siirretty instanssi ei tarkoita jokaisen muokkaamista käsin.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Vianmääritys</h2>
+    </div>
+    <details class="more"><summary>Sisäänkirjautuminen palaa takaisin kirjautumissivulle</summary>
+      <p>Varmista, että antamasi osoite on se, jolla todella tavoitat Home Assistantin, portti mukaan lukien (yleensä <code>:8123</code>). Kirjautuminen on aito selainkirjautuminen instanssiasi vasten, joten käyttäjätunnuksesi, salasanasi ja kaksivaiheinen koodisi kaikki pätevät. Puhelimessa kirjautuminen valmistuu riippumatta siitä, palauttaako sovelluksen sisäinen selain tuloksen vai palaako paikallinen takaisinkutsu ensin; jos se silti jumittuu, sulje näkymä ja napauta Kirjaudu sisään uudelleen.</p>
+    </details>
+    <details class="more"><summary>Projektorianturi ei näy Home Assistantissa</summary>
+      <p>Anturi julkaistaan sovelluksen ollessa auki ja kun <b>Lähetä projektorin tila</b> on käytössä, joten avaa sovellus ja varmista kytkin. Tarkista sitten Home Assistantissa <b>Developer Tools &rsaquo; States</b> ja suodata hakusanalla <code>projector_pilot</code>. Valmiustilassa oleva projektori julkaisee hyvin vähän; herätä se, niin lukemat täyttyvät.</p>
+    </details>
+    <details class="more"><summary>Synkronoidut skriptit puuttuvat</summary>
+      <p>Skriptit kirjoittaa <b>Sync With HA</b>, joka vaatii, että <code>shell_command</code>-lohko on jo liitetty tiedostoon <code>configuration.yaml</code> ja Home Assistant on käynnistetty kerran uudelleen. Suorita ensin <b>Test Connection</b> - se kertoo, onko lohko paikallaan. Synkronoi sitten uudelleen. Jos vanhat, kuolleet skriptit sotkevat luetteloa, käytä toimintoa <b>Remove orphaned scripts</b>.</p>
+    </details>
+    <details class="more"><summary>Skripti toimii sovelluksessa mutta ei Home Assistantista, kun puhelimeni on poissa</summary>
+      <p>Juuri se on <code>shell_command</code>-lohkon tarkoitus - sen ansiosta Home Assistant tavoittaa projektorin IP-osoitteen itsenäisesti. Jos se toimii vain sovelluksen ollessa auki, lohkoa ei todennäköisesti ole liitetty tai Home Assistantia ei käynnistetty uudelleen liittämisen jälkeen. Varmista Test Connectionilla, käynnistä Home Assistant uudelleen ja synkronoi.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Kytke projektorisi koko taloon</h2>
+    <p class="lead" style="margin:0 auto 24px">Kodin automaatio on kertaluonteinen lisäosa. Ei tilausta, ei tiliä, ei pilveä. Yksi ostos avaa sen jokaisella omistamallasi alustalla.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - saatavilla nyt</a>
+      <span class="pill">App Store - odottaa hyväksyntää</span>
+      <span class="pill">Microsoft Store - odottaa hyväksyntää</span>
+      <span class="pill">Mac App Store - odottaa hyväksyntää</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/fi/pricing/">Katso Ilmainen vs Pro vs Kodin automaatio &rarr;</a> &middot; <a href="/fi/guide/">Koko käyttöopas &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Pikavastaukset</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Pitääkö puhelimen pysyä verkossa, jotta Home Assistantin automaatiot toimivat?</h3><p>Ei. Kun olet liittänyt yhden shell_command-lohkon Home Assistantiin ja synkronoinut, Home Assistant lähettää komennot suoraan projektorin IP-osoitteeseen. Projector Pilot on vain asennustyökalu; sen jälkeen Home Assistant keskustelee projektorin kanssa itsenäisesti, oli puhelimesi kotona tai ei.</p></div><div class="gcard"><h3>Miten projektori näkyy Home Assistantissa?</h3><p>Anturina, esimerkiksi sensor.projector_pilot_epson_qb1000b_qb1000w, joka sisältää virran, tulon, väritilan, kuvan arvot ja lampun käyttötunnit ja päivittyy aina niiden muuttuessa sovelluksen ollessa auki. Kun otat käyttöön asetuksen Sync Advanced Controls, sovellus kirjoittaa Home Assistantiin myös skriptin jokaiselle kohtaukselle sekä virralle, jokaiselle tulolle, jokaiselle väritilalle ja jokaiselle projektorisi linssimuistille.</p></div><div class="gcard"><h3>Onko Kodin automaatio ilmainen?</h3><p>Kodin automaatio on maksullinen lisäosa, kertaostos, erillinen Projector Pilot Pro -versiosta. Nippu ostaa molemmat yhdessä edullisemmin. Katso hinnoittelusivu.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/fi/guide/">Käyttöopas</a><a href="/fi/pricing/">Hinnoittelu</a><a href="/fi/highlights/">Kohokohdat</a><a href="/fi/guide/home-automation/">Home Assistant</a><a href="/fi/help/">Ohje &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/fi/help/#privacy">Tietosuoja</a><a href="/fi/help/#terms">Ehdot</a></div>
+<div class="flinks"><a href="/fi/guide/getting-started/">Aloitus</a><a href="/fi/guide/dashboard/">Kojelauta</a><a href="/fi/guide/remote/">Kaukosäädin</a><a href="/fi/guide/picture/">Kuva</a><a href="/fi/guide/lens/">Linssi</a><a href="/fi/guide/scenes/">Kohtaukset</a><a href="/fi/guide/home-assistant-dashboard/">HA-kojelauta</a><a href="/fi/guide/maintenance/">Huolto</a><a href="/fi/guide/settings/">Asetukset</a><a href="/fi/guide/languages/">Kielet</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot on itsenäinen sovellus Epson- ja PJLink-projektoreille. Se ei ole yhteydessä Epsoniin, PJLink-standardointielimeen, Home Assistantiin, Hubitatiin, Appleen, Googleen tai Microsoftiin, eivätkä ne ole hyväksyneet tai tukeneet sitä. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ja Microsoft Store ovat omistajiensa tavaramerkkejä, ja ne mainitaan vain kuvaamaan sitä, minkä kanssa sovellus toimii.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

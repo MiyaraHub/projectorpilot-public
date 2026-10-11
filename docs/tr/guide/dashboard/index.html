@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>Projektör Durum Paneli Uygulaması - Projector Pilot</title>
+<meta name="description" content="Projector Pilot yönetim paneli: canlı güç, giriş ve renk modu; dinamik aralık, renk uzayı, gamma ve lazer saatleri gibi projeksiyon bilgileri ve yeniden sıralanabilir kartlar." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektör Durum Paneli Uygulaması - Projector Pilot" />
+<meta property="og:description" content="Projector Pilot yönetim paneli: canlı güç, giriş ve renk modu; dinamik aralık, renk uzayı, gamma ve lazer saatleri gibi projeksiyon bilgileri ve yeniden sıralanabilir kartlar." />
+<meta property="og:url" content="https://projectorpilot.com/tr/guide/dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektör Durum Paneli Uygulaması - Projector Pilot" />
+<meta name="twitter:description" content="Projector Pilot yönetim paneli: canlı güç, giriş ve renk modu; dinamik aralık, renk uzayı, gamma ve lazer saatleri gibi projeksiyon bilgileri ve yeniden sıralanabilir kartlar." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/dashboard/#webpage", "url": "https://projectorpilot.com/guide/dashboard/", "name": "Projektör Durum Paneli Uygulaması - Projector Pilot", "description": "Projector Pilot yönetim paneli: canlı güç, giriş ve renk modu; dinamik aralık, renk uzayı, gamma ve lazer saatleri gibi projeksiyon bilgileri ve yeniden sıralanabilir kartlar.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/dashboard/#article", "headline": "Projektör yönetim paneliniz, tam istediğiniz gibi", "description": "Projector Pilot yönetim paneli: canlı güç, giriş ve renk modu; dinamik aralık, renk uzayı, gamma ve lazer saatleri gibi projeksiyon bilgileri ve yeniden sıralanabilir kartlar.", "image": "https://projectorpilot.com/screenshots/01-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "tr", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Gösterge Paneli", "item": "https://projectorpilot.com/guide/dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/tr/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil"><a href="/tr/#features">Özellikler</a><a href="/tr/guide/">Kılavuz</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/help/">Yardım</a><a class="cta" href="/tr/#download">UYGULAMAYI AL</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Yönetim Paneli</div>
+    <div class="eyebrow">Yönetim paneli</div>
+    <h1>Projektör yönetim paneliniz, <span class="g">tam istediğiniz gibi</span></h1>
+    <p class="lead">Yönetim paneli sizin üssünüzdür. En üstte canlı durum, altında projektörün her bölümü için bir kart ve bu kartları ekleyip gizleyebileceğiniz, yeniden sıralayabileceğiniz bir Özelleştir modu var; böylece ekranda sizin için önemli olan şeyler görünür. Her değer projektörden okunur ve değiştikçe yenilenir.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Canlı durum</div>
+        <h2>Güç, giriş ve renk modu en üstte</h2>
+        <ul class="plain">
+          <li><b>Güç düğmesi.</b> Tek dokunuşla projektör açılır veya kapanır; düğme ısınma ve soğuma sürecini de bilir - durum bir anda değişmiş gibi davranmak yerine projektörün ısınma veya soğuma aşamasını gösterir.</li>
+          <li><b>Giriş kaynağı.</b> Geçerli kaynak tek bakışta görünür, dokunarak değiştirilebilir.</li>
+          <li><b>Renk modu.</b> Etkin görüntü modu (Dynamic, Cinema, Natural vb.), projektörden okunur.</li>
+          <li><b>Ekran boşaltma.</b> Sinyali kesmeden görüntüyü boşaltın; yönetim paneli ile Kumanda aynı fikirdedir - boşaltılmış durum her iki yerde de etkin görünür.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/01-dashboard.png" alt="Canlı güç, giriş, renk modu ve projeksiyon bilgisi kartlarını gösteren Projector Pilot yönetim paneli" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Yönetim panelinin çevresi</div>
+      <h2>Projektör değiştirme, kapatma, ürün yazılımı</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projektör değiştirici.</b> Her projektör sayfasının üst çubuğunda bir <b>Projektörü değiştir</b> denetimi bulunur; listeye dönmeden projektörleriniz arasında geçiş yapabilirsiniz. Birden fazla projektör Pro kapsamındadır.</li>
+      <li><b>Kapatmadan önce sorar.</b> Projektörü kapatmak <b>Projektör kapatılsın mı?</b> diye sorar ve onayınızı bekler. Açarken sormaz.</li>
+      <li><b>Ürün yazılımı.</b> Projektör bildirdiği sürece, projektörün ürün yazılımı sürümü Yönetim Paneli'nde, Bilgi sekmesinde ve tanılama raporunda görünür. Bildirmiyorsa tahmin yürütmek yerine hiçbir şey gösterilmez.</li>
+      <li><b>Anında tepki veren kontroller.</b> Lens kaydırma, odak, yakınlaştırma ve ışık çıkışı ayarı, bastığınız anda tepki verir ve projektörün onayladığı değerde durur. Biri hâlâ gönderilirken yapılan basış sıraya alınmaz, atlanır.</li>
+      <li><b>Dürüst güç durumu.</b> Uygulamayı yeniden açtığınızda yanlış bir "kapalı" göstermek yerine kontrol ettiğini söyler ve projektörün açıldığını yaklaşık on saniye içinde fark eder.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Projeksiyon bilgisi</div>
+      <h2>Projektör gerçekte ne yapıyor</h2>
+      <p class="lead">Projeksiyon bilgisi kartı, gerçek sinyal ve kurulum ayrıntılarını doğrudan projektörün gövdesinden okur - burada hiçbir şey tahmine dayanmaz.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Alan</th><th>Ne gösterir</th></tr></thead>
+      <tbody>
+        <tr><td>Dinamik aralık</td><td>SDR veya HDR; sinyal yanlış etiketlenmesin diye renk uzayından ayrı tutulur.</td></tr>
+        <tr><td>Renk uzayı</td><td>Gelen gamut, örneğin BT.2020 veya BT.709 - tek başına bildirilir, bir HDR rozetine karıştırılmaz.</td></tr>
+        <tr><td>Gamma</td><td>Projektörün bildirdiği etkin gamma.</td></tr>
+        <tr><td>Lazer saatleri</td><td>Işık kaynağının çalışma saatleri; panelin veya lazerin ömrünü izlemenizi sağlar. Lambalı modellerde bunun yerine lamba saatleri görünür.</td></tr>
+        <tr><td>Seri numarası</td><td>Projektörün kendi seri numarası, gövdesinden okunur.</td></tr>
+        <tr><td>Montaj</td><td>Tavan veya arka projeksiyon, projektörde ayarlandığı şekilde.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Renk uzayı ile dinamik aralık bilerek ayrı alanlardır.</b> MadVR gibi harici bir ton eşleyici işi yaparken sık görülen BT.2020 SDR sinyali tam olarak öyle görünür; asla yanlış bir HDR10 rozeti olarak değil.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Özet kartları</div>
+      <h2>Görüntü ve lens, tek bakışta</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Görüntü özeti.</b> Temel görüntü değerleri - Parlaklık, Karşıtlık, Ton, Keskinlik ve Renk Sıcaklığı - projektörün kendi menü ölçeğinde gösterilir; dokunarak tam <a href="/tr/guide/picture/">Görüntü</a> ekranına geçilir.</li>
+      <li><b>Lens özeti.</b> Geçerli lens durumu ve kaydırma, odak, yakınlaştırma ile hafızalar için <a href="/tr/guide/lens/">Lens</a> ekranına kısayol.</li>
+      <li><b>Sinyal, ışık ve işlem kartları.</b> İlgilendiklerinizi ekleyin - sinyal ayrıntısı, ışık çıkışı ve Eko/işlem - yönetim paneli istediğiniz kadar dolu ya da sade olsun.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kendinize göre yapın</div>
+      <h2>Kartları ekleyin, gizleyin, yeniden sıralayın</h2>
+      <p class="lead"><b>Özelleştir</b>'e dokunun, yönetim paneli düzenlenebilir hale gelir. Seçiciden bir kart ekleyin, sürükleyerek yeniden sıralayın veya hiç bakmadığınız kartları gizleyin.</p>
+    </div>
+    <ol class="steps">
+      <li>Yönetim panelinde <b>Özelleştir</b>'e dokunun.</li>
+      <li>Seçiciden <b>kart ekleyin</b> - Güç, Giriş, Renk Modu, Ekran Boşaltma, Görüntü, Lens, Sinyal ve Eko/İşlem hazır; daha kapsamlı seçicide başka kart türleri de var.</li>
+      <li>En çok kullandığınız kontroller en üstte olsun diye <b>sürükleyerek sıralayın</b>.</li>
+      <li>İhtiyacınız olmayan her şeyi <b>gizleyin</b>. Bitti - düzen sizin ve kalıcı.</li>
+    </ol>
+    <div class="note">Yalnızca projektörünüzün gerçekten desteklediği kontroller için kartlar sunulur. Modelinizde motorlu lens yoksa eklenecek lens kartı da yoktur - uygulama, donanımın yanıtlayamayacağı bir kontrolü asla göstermez.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sonraki</div>
+      <h2>Devam edin</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/tr/guide/remote/"><span>&#127918;</span>Kumanda</a>
+      <a href="/tr/guide/picture/"><span>&#127912;</span>Görüntü</a>
+      <a href="/tr/guide/lens/"><span>&#128247;</span>Lens</a>
+      <a href="/tr/guide/"><span>&#128218;</span>Kılavuz ana sayfasına dön</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/help/">Yardım &amp; SSS</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/tr/help/#privacy">Gizlilik</a><a href="/tr/help/#terms">Şartlar</a></div>
+<div class="flinks"><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/guide/dashboard/">Yönetim Paneli</a><a href="/tr/guide/remote/">Kumanda</a><a href="/tr/guide/picture/">Görüntü</a><a href="/tr/guide/lens/">Lens</a><a href="/tr/guide/scenes/">Sahneler</a><a href="/tr/guide/home-assistant-dashboard/">HA Yönetim Paneli</a><a href="/tr/guide/maintenance/">Bakım</a><a href="/tr/guide/settings/">Ayarlar</a><a href="/tr/guide/languages/">Diller</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot, Epson ve PJLink projektörler için bağımsız bir uygulamadır. Epson, PJLink standart kuruluşu, Home Assistant, Hubitat, Apple, Google veya Microsoft ile bağlantılı değildir; bunlar tarafından onaylanmamış veya desteklenmemiştir. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ve Microsoft Store ilgili sahiplerinin ticari markalarıdır ve yalnızca uygulamanın neyle çalıştığını belirtmek için anılmıştır.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

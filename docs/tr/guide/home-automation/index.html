@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Projektör Home Assistant &amp; Hubitat Kılavuzu - Projector Pilot</title>
+<meta name="description" content="Epson veya PJLink projektörünüzü Home Assistant, Hubitat ve webhook'lara bağlayın. HA ile Eşitle canlı durumu yayınlar ve her Sahneyi bir betiğe dönüştürür." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Projektör Home Assistant &amp; Hubitat Kılavuzu - Projector Pilot" />
+<meta property="og:description" content="Epson veya PJLink projektörünüzü Home Assistant, Hubitat ve webhook'lara bağlayın. HA ile Eşitle canlı durumu yayınlar ve her Sahneyi bir betiğe dönüştürür." />
+<meta property="og:url" content="https://projectorpilot.com/tr/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Projektör Home Assistant &amp; Hubitat Kılavuzu - Projector Pilot" />
+<meta name="twitter:description" content="Epson veya PJLink projektörünüzü Home Assistant, Hubitat ve webhook'lara bağlayın. HA ile Eşitle canlı durumu yayınlar ve her Sahneyi bir betiğe dönüştürür." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Projektör Home Assistant & Hubitat Kılavuzu - Projector Pilot", "description": "Epson veya PJLink projektörünüzü Home Assistant, Hubitat ve webhook'lara bağlayın. HA ile Eşitle canlı durumu yayınlar ve her Sahneyi bir betiğe dönüştürür.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Projektörünüz, Home Assistant ve Hubitat'ta.", "description": "Epson veya PJLink projektörünüzü Home Assistant, Hubitat ve webhook'lara bağlayın. HA ile Eşitle canlı durumu yayınlar ve her Sahneyi bir betiğe dönüştürür.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "tr", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Ev Otomasyonu", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Home Assistant otomasyonlarının çalışması için telefonumun ağda kalması gerekir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Tek shell_command bloğunu Home Assistant'a yapıştırıp eşitledikten sonra Home Assistant komutları doğrudan projektörün IP adresine gönderir. Projector Pilot yalnızca kurulum aracıdır; sonrasında telefonunuz evde olsun olmasın Home Assistant projektörle kendi başına konuşur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Projektör Home Assistant'ta nasıl görünür?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Örneğin sensor.projector_pilot_epson_qb1000b_qb1000w gibi bir sensör olarak; güç, giriş, renk modu, görüntü değerleri ve lamba saatlerini taşır ve uygulama açıkken bunlar değiştikçe güncellenir. Gelişmiş Kontrolleri Eşitle'yi açarsanız uygulama ayrıca her Sahne için, ayrıca güç, her giriş, her renk modu ve projektörünüzün sahip olduğu her lens hafızası için bir Home Assistant betiği yazar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ev Otomasyonu ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ev Otomasyonu, Projector Pilot Pro'dan ayrı, tek seferlik satın alınan ücretli bir eklentidir. Bir paket ikisini birlikte indirimli alır. Fiyatlandırma sayfasına bakın."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/tr/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil"><a href="/tr/#features">Özellikler</a><a href="/tr/guide/">Kılavuz</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/guide/home-assistant-dashboard/">HA yönetim paneli</a><a href="/tr/help/">Yardım</a><a class="cta" href="/tr/#download">UYGULAMAYI AL</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Ev Otomasyonu</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhook'lar</div>
+    <h1>Projektörünüz, <span class="g">Home Assistant ve Hubitat'ta</span>.</h1>
+    <p>Projector Pilot, projektörünüzün canlı durumunu ve her kontrolü Home Assistant'a, Hubitat'a ve istediğiniz herhangi bir webhook'a yayınlar. Bir kez kurun, akıllı eviniz projektörü kendi başına yönetsin - ağda telefon yok, aracı bulut yok.</p>
+    <div class="readout"><span>Kurulumdan sonra sunucusuz</span><span>Sahneler betiğe dönüşür</span><span>Hazır yönetim paneli</span><span>Kurulum kontrol listesi</span><span>Ücretli eklenti</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Genel bakış</div>
+      <h2>Ev Otomasyonu ne yapar</h2>
+      <p class="lead">Ev Otomasyonu, Projector Pilot'u elinizdeki bir kumandadan tüm evinizin görebildiği bir cihaza dönüştürür. Projektörün ne yaptığını - güç, giriş, renk modu, görüntü değerleri, lamba saatleri - yayınlar ve akıllı evinize uygulamanın değiştirebildiği her şey için bir kontrol verir.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Durumu yayınlar.</b> Projektör, uygulamanın size gösterdiği okumaları taşıyan bir Home Assistant sensörü, bir Hubitat cihazı veya webhook'unuzda bir JSON yükü olarak görünür.</li>
+      <li><b>Kontrolleri yayınlar.</b> Kaydettiğiniz her Sahne, ayrıca güç, her giriş, her renk modu ve her lens hafızası, bir otomasyonun veya sesli asistanın çalıştırabileceği bir şeye dönüşür.</li>
+      <li><b>Sunucusuz çalışır.</b> Betikler kurulduktan sonra Home Assistant komutları doğrudan projektörün IP adresine gönderir. Telefonunuzun ağda olması gerekmez ve hiçbir şey bir bulut hesabı üzerinden geçmez.</li>
+    </ul>
+    <div class="note"><b>Ev Otomasyonu ücretli bir eklentidir.</b> Projector Pilot Pro'dan ayrı, tek seferlik bir satın almadır ve bir paket ikisini birlikte indirimli alır. Abonelik yok, hesap yok, bulut yok. <a href="/tr/pricing/">Fiyatlandırma</a> sayfasına bakın.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Üç yol, tek merkez</h3>
+        <p class="lead">Ayarlar &rsaquo; Ev Otomasyonu merkezdir. Kullandığınız platformu seçin - Home Assistant, Hubitat veya Webhooks - ve orada kurun. Birden fazlasını aynı anda bağlayabilirsiniz; birbirinden bağımsızdırlar.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Projector Pilot'taki Ev Otomasyonu merkezi: Home Assistant, Hubitat ve Webhooks" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Home Assistant'ı kurun</h2>
+      <p class="lead">Uygulamadan oturum açın, projektörü bir sensör olarak yayınlayın, yapılandırmanıza tek bir blok yapıştırın ve eşitleyin. O andan itibaren Home Assistant projektörü kendisi yönetir.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li><b>Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Home Assistant</b>'ı açın.</li>
+        <li><b>Home Assistant adresinizi</b> yazın (örneğin <code>http://homeassistant.local:8123</code> veya IP'si), ardından <b>Oturum aç</b>'a dokunun. Bu, kendi örneğinize karşı bir tarayıcı oturum açmasıdır - <b>yapıştıracak jeton yok</b>. Normal Home Assistant girişinizi, iki aşamalı doğrulamasıyla birlikte kullanın.</li>
+        <li>Uygulama projektörü <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code> gibi bir varlıkla bir <b>sensör</b> olarak yayınlar; güç, giriş, renk modu, görüntü değerleri ve lamba saatlerini taşır.</li>
+        <li>Uygulama açıkken bu okumalar değiştikçe Home Assistant'ta güncellensin diye <b>Projektörün durumunu gönder</b> seçeneğini açın; görüntü modları, girişler, lens hafızaları ve güç için betik yayınlamak üzere <b>Gelişmiş Kontrolleri Eşitle</b> seçeneğini açın.</li>
+        <li>Tek <b>shell_command</b> bloğunu (aşağıda) <code>configuration.yaml</code> içine yapıştırın, Home Assistant'ı yeniden başlatın, ardından <b>HA ile Eşitle</b>'ye dokunun.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="shell_command bloğu, Oturum aç, Projektör Varlık Kimliği ve eşitleme anahtarlarını gösteren Projector Pilot'taki Home Assistant ekranı" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">shell_command bloğu</h3>
+    <p class="lead">Sunucusuz olmanın bütün püf noktası bu. Uygulama, Home Assistant'ın projektörün Web Control'üyle konuşmak için çalıştırdığı tek bir komut yazar ve eşitlediği her betik bu komutu farklı bir fiille çağırır. Uygulamada <b>Bloğu kopyala</b>'ya dokunun ve <code>configuration.yaml</code> içine yapıştırın. Aşağıdaki örnek açıklayıcıdır - uygulama projektörünüzün kendi adresini ve komut adını doldurur:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Yalnızca örnek. Uygulama, sizinkini projektörün gerçek IP'si ve seri numarasından türetilmiş bir adla üretir.</p>
+    <div class="note"><b>Neden sunucusuz.</b> Bu <code>curl</code>, telefonunuzda değil Home Assistant kutusunda çalışır. Home Assistant projektörün IP'sine doğrudan Web Control üzerinden ulaşır; böylece uygulama açık olsun olmasın, telefonunuz evde bile olmasa otomasyon çalışır. <code>EPSONWEB</code> özet kullanıcısı Web Control girişidir; uygulama projektör için zaten kayıtlı olan Web Control parolasını kullanır.</p></div>
+
+    <h3 style="margin-top:32px">Bağlantıyı Sına, Eşitle ve temizlik</h3>
+    <ul class="plain">
+      <li><b>Bağlantıyı Sına</b>, uygulamanın Home Assistant'ınıza ulaşıp ulaşamadığını ve yapıştırılan <code>shell_command</code> bloğunun gerçekten orada olup olmadığını kontrol eder; böylece üzerine bir şey kurmadan önce bir yazım hatasını bulursunuz.</li>
+      <li><b>HA ile Eşitle</b>, Sahneleriniz ve kontrolleriniz için betikleri yazar veya günceller ve doğrudan Home Assistant içinde hazır bir Projector Pilot yönetim paneli oluşturur. Bir Sahne eklediğinizde veya bir kontrolü değiştirdiğinizde istediğiniz zaman yeniden çalıştırın - kopya biriktirmek yerine yerinde günceller.</li>
+      <li><b>Sahipsiz betikleri kaldır</b>, uygulamanın yazdığı ve artık eşleşen bir Sahnesi veya kontrolü olmayan betikleri bulur - örneğin bir Sahneyi sildikten sonra - <b>tam olarak hangilerini kaldıracağını listeler ve önce sorar</b>. Siz onaylamadan hiçbir şey silinmez. Yalnızca Projector Pilot'un oluşturduğu betiklere dokunur; Home Assistant'ınızdaki başka hiçbir şey etkilenmez ve Home Assistant betiklerini listelemezse hiçbir şey kaldırılmaz.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kurulum kontrol listesi</div>
+      <h2>Uygulama neyin yapıldığını ve neyin eksik olduğunu söyler</h2>
+      <p class="lead">Home Assistant ekranında bir <b>Kurulum kontrol listesi</b> ve bir <b>Home Assistant'ınızda neler var</b> paneli bulunur; böylece hangi adımın kaldığını tahmin etmeniz gerekmez. Her satır yapıldığını, eksik olduğunu veya belirlenemediğini söyler ve sonraki adımı belirtir.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Home Assistant'a bağlandı</b> - oturum açıldı ve yanıt veriyor. Home Assistant yanıt vermezse satır adresi ve telefonunuzun aynı ağda olduğunu kontrol etmenizi söyler.</li>
+      <li><b>Projektör Home Assistant'a eklendi</b> - Home Assistant'ın bu projektörü zaten tanıyıp tanımadığı. Tanımıyorsa satır sizi PJLink entegrasyonunu eklemeye yönlendirir ve entegrasyon ekleme adımı Home Assistant'ın istediği PJLink ana bilgisayarını ve portunu gösterir.</li>
+      <li><b>Okuma sensörü kaydedildi</b> - projektörünüzün okumalarını taşıyan sensör. Uygulama projektörü ilk okuduğunda kaydedilir ve bir şey engelliyorsa satır <b>Şimdi kaydet</b> veya <b>Aç</b> seçeneği sunar.</li>
+      <li><b>Home Assistant'ınızda neler var</b> - HACS (topluluk mağazası), Epson Projector Link entegrasyonu, PJLink entegrasyonu ve <code>configuration.yaml</code> içindeki Projector Pilot komutları. Her biri Bulundu, Kurulu değil veya Belirlenemedi olarak gösterilir; işe yaradığı yerlerde Nasıl kurulur ve HACS'te aç düğmeleri bulunur.</li>
+    </ul>
+    <div class="note"><b>Tekrar kontrol et, ne bulduğunu söyler.</b> Bir şeyi düzelttikten sonra <b>Tekrar kontrol et</b>'e dokunun; uygulama Home Assistant'ınızı yeniden okur ve işe yarayıp yaramadığını merak etmenize bırakmak yerine sonucu bildirir. Kontrol edilemeyen bir satır asla tahmini bir evet veya hayır değil, <i>Belirlenemedi</i> der.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Zaten sahip olduklarınızla çalışır</div>
+      <h2>Çekirdek PJLink entegrasyonu desteği ve elinizde varsa daha zengin kartlar</h2>
+      <p class="lead">Projector Pilot, Home Assistant'ınızda nelerin kurulu olduğunu öğrenir ve etrafında inşa eder. Home Assistant'ın zaten birlikte geldiği <b>çekirdek PJLink entegrasyonuyla</b> çalışır, dolayısıyla orada zaten eklediğiniz bir PJLink projektörü birinci sınıf bir vatandaştır.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Önce yerleşik kartlar.</b> Topluluk kartlarınız yoksa Eşitleme yönetim panelinizi Home Assistant'ın yerleşik kartlarıyla oluşturur ve bitince bunu söyler. Kutudan çıktığı gibi çalışır.</li>
+      <li><b>HACS kartları kuruluysa yükseltilir.</b> Uygulama topluluk kartlarından (Mushroom, button-card, card-mod, apexcharts-card) hangilerinin kurulu olduğunu kontrol eder ve elinizde olan her kartı daha zengin olana yükseltir. Tam yeşil cam görünümü istiyorsanız <a href="/tr/guide/home-assistant-dashboard/">elle yönetim paneli kılavuzu</a> daha da ileri gider.</li>
+      <li><b>Sahneler ve kontroller tek yapıştırma ister.</b> Home Assistant'ta projektöre göndermek için henüz bir komut yoksa yönetim paneli yine canlı okumalarla oluşturulur ve bir <b>Kurulumu bitir</b> kartı sizi adım adım yönlendirir: Bloğu kopyala'ya dokunun, <code>configuration.yaml</code> içine yapıştırın, Home Assistant'ı yeniden başlatın, sonra yeniden Eşitle'ye dokunun.</li>
+      <li><b>Hiçbir şey kurulu değil mi? Elle yapıştırın.</b> Home Assistant'ta hiçbir şey kurulu değilse de her şeyi uygulamadan kopyalayıp kendiniz yapıştırabilirsiniz.</li>
+      <li><b>Parola belirtilir.</b> Yapıştırdığınız komut bloğu, bir projektör parolası taşıdığında bunu söyler; böylece paylaşmadan veya saklamadan önce bilirsiniz.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Projektör kapalıyken</div>
+      <h2>Yerinde kalan okumalar</h2>
+      <p class="lead">Beklemedeki bir projektör çok az şey bildirir, bu yüzden bir yönetim paneli normalde boşalırdı. İsteğe bağlı <b>son bilinen sensör</b>, projektör kapalıyken projektörünüzün son okumalarını - giriş, lamba veya lazer saatleri - Home Assistant'ta tutar.</p>
+    </div>
+    <ul class="plain">
+      <li>Bu da isteğe bağlı bir bloktur:<code>configuration.yaml</code> dosyasının sonuna yapıştırın (veya yalnızca satırlarını mevcut bir <code>template:</code> bölümüne ekleyin) ve Home Assistant'ı yeniden başlatın. Uygulamada, Home Assistant'ta olup olmadığını söyleyen bir <b>Orada olduğunu kontrol et</b> düğmesi vardır.</li>
+      <li>Bir kapatma artık Home Assistant'a <b>kapalı</b> olarak ulaşır; böylece yönetim paneli ve otomasyonlarınız projektörü kapalıyken kapalı görür.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Betik olarak Sahneler</div>
+      <h2>Her Sahne bir Home Assistant betiğine dönüşür</h2>
+      <p class="lead">Bir eşitlemeden sonra Sahneleriniz uygulamanın içinde sıkışıp kalmaz. Her biri, ayrıca güç, her giriş, her renk modu ve projektörünüzün gerçekten sahip olduğu her lens hafızası, bir Home Assistant betiği olarak yazılır.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Otomasyonlar çalıştırabilir.</b> Sahne bir betik olduğunda "Gün batımında TV açılırsa Film Gecesi'ni çalıştır" sıradan bir Home Assistant otomasyonudur.</li>
+      <li><b>Sesli asistanlar çalıştırabilir.</b> Bir betiği asistanınıza açın ve "Film Gecesi'ni aç" girişi, görüntü modunu ve lens hafızasını birlikte ayarlar.</li>
+      <li><b>Yalnızca gerçek kontrolleriniz görünür.</b> Uygulama, projektörün bildirdiği her giriş, renk modu ve lens hafızası için bir betik yazar - tahmin ettiği genel bir liste için değil.</li>
+      <li><b>Eşitlemeyi kaldırmak yalnızca uygulamanın yazdığını kaldırır.</b> Eşitlemeyi kapatın veya Sahipsiz betikleri kaldır'ı kullanın (onları listeler ve önce sorar); Projector Pilot yalnızca oluşturduğu betikleri siler, başka hiçbir şeyi silmez.</li>
+    </ul>
+    <div class="note"><b>Betikler, yeniden adlandırmanın aynısını güncellemesi için adlandırılır.</b> Betik adları projektörden ve kontrolden türetilir; bu yüzden bir Sahneyi yeniden adlandırdıktan sonra yeniden eşitlemek ikinci bir kopya oluşturmak yerine mevcut betiği günceller.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Yönetim paneli</div>
+      <h2>Eşitleme yönetim panelini sizin için oluşturur</h2>
+      <p class="lead">Bir Lovelace görünümünü elle oluşturmak zorunda değilsiniz ve artık yapıştırmanız da gerekmiyor. <b>HA ile Eşitle</b>'ye dokunduğunuzda uygulama, Home Assistant'ın kendi API'si üzerinden doğrudan Home Assistant içinde eksiksiz bir Projector Pilot yönetim paneli oluşturur: projektörün canlı durumu ve eşitlediği her Sahne ile kontrol için bir düğme. Home Assistant kenar çubuğunuzda <b>Projector Pilot</b> adıyla görünür - açın, bitti.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Home Assistant'taki Projector Pilot yönetim paneli: güç ve kaynak, renk modları, tam görüntü menüsü, HDR ve sinyal, RGB kalibrasyonu, lens ve geometri, lazer saati grafiği, bakım ve Sahneler - hepsi yeşil cam kutucuklar olarak" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Panonun daha zengin, elle yapılan bir sürümü. Eşitlemenin sizin için oluşturduğu, aynı canlı durumu ve düğmeleri standart Home Assistant kartlarında taşır; aşağıdaki yeşil cam görünümü isteğe bağlı özel yapıdır. Kaydırın veya büyütmek için tıklayın.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Uygulamada Home Assistant'ta oturum açın.</li>
+      <li>Uygulamanın <b>Kopyala bloğunu</b> bir kez <code>configuration.yaml</code> içine yapıştırın ve Home Assistant'ı yeniden başlatın (tek manuel adım - Home Assistant uygulamaların bu komutu uzaktan eklemesine izin vermez).</li>
+      <li><b>HA ile Eşitle</b>'ye dokunun. Yönetim paneli sizin için oluşturulur ve kenar çubuğunda <b>Projector Pilot</b> olarak görünür.</li>
+    </ol>
+    <div class="note"><b>Kendiniz yapıştırmayı mı tercih edersiniz?</b> <b>Yönetim panelini kopyala</b> Home Assistant ekranında hâlâ duruyor. Ona dokunun, ardından Home Assistant'ta <b>Ayarlar &rsaquo; Yönetim Panelleri &rsaquo; Yönetim Paneli Ekle</b>'ye gidin, boş bir yönetim paneli oluşturun, üç nokta menüsü &rsaquo; <b>Yönetim panelini düzenle</b> &rsaquo; üç nokta menüsü &rsaquo; <b>Ham yapılandırma düzenleyicisi</b>'ni açın ve kopyalanan YAML'ı yapıştırın.</div>
+    <p class="lead">Sizin için oluşturulsun ya da kendiniz yapıştırın, yönetim paneli aynıdır - bir durum kartı artı her kontrol için bir düğme (açıklayıcı parça):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Yalnızca örnek. Yönetim paneliniz projektörünüzün gerçek varlığını ve kendi Sahnelerinizi taşır.</p>
+    <div class="note"><b>Modelden bağımsız.</b> Yönetim paneli <i>sizin</i> projektörünüzün kendi özelliklerinden oluşturulur - gerçekten bildirdiği varlık, görüntü değerleri, girişler, renk modları, lens hafızaları ve Sahneler. Buradaki ekran görüntüleri bir QB1000'e aittir; modeliniz farklı girişler, kontroller ve okumalar gösterebilir. Resimdeki gibi eksiksiz bir yeşil cam pano için <a href="/tr/guide/home-assistant-dashboard/">adım adım yönetim paneli kılavuzunu</a> izleyin veya <a href="/tr/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>eksiksiz görünümü indirin</a> ve iki dizeyi değiştirin.</div>
+    <div class="note"><b>Daha zengin bir duvar mı istiyorsunuz?</b> Aynı betikler istediğiniz her kartı yönetir. AVR Maestro'yu kullandıysanız yaklaşım aynıdır - tek sensör ve eşitlenmiş betiklerden yanan kaynak ve mod kutucukları, canlı başlıklar ve geçmiş oluşturun.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Hubitat'ı kurun</h2>
+      <p class="lead">Hubitat'ta Projector Pilot, projektörü Maker API üzerinden hub'ınızdaki bir cihaza yansıtır; böylece Rule Machine güç, sessize alma ve girişi okuyup bunlara göre hareket edebilir.</p>
+    </div>
+    <ol class="steps">
+      <li>Hubitat'ta <b>Maker API</b> uygulamasını etkinleştirin, erişim URL'sini ve jetonunu not edin ve hangi cihazları açacağını seçin.</li>
+      <li>Projector Pilot'ta <b>Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Hubitat</b>'ı açın ve hub'ınızın <b>Maker API</b> bilgilerini girin.</li>
+      <li><b>Projektörü temsil eden cihazı</b> seçin. Uygulama olası olanı önerir; onu seçin veya kendinizinkini seçin.</li>
+      <li>Uygulama, <b>gücü, sessize almayı ve girişi</b> o cihaza yansıtır ve yalnızca cihazın kabul ettiği komutları gönderir.</li>
+      <li><b>Rule Machine</b> kurallarını bu cihaza karşı diğer cihazlarda yaptığınız gibi oluşturun - projektörün durumu onları yönetir.</li>
+    </ol>
+    <div class="note"><b>Yalnızca cihazın kabul ettiği.</b> Uygulama Hubitat'a bir projektör değerini yalnızca seçilen cihaz o komutu desteklediğinde gönderir; böylece cihazın reddedeceği bir şeyi asla göndermez.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhook'lar</div>
+      <h2>Webhooks'u kurun</h2>
+      <p class="lead">Webhooks her şeyi kapsayan çözümdür. Uygulama, projektör açıldığında, kapandığında, giriş değiştiğinde veya bir Sahne çağrıldığında sizin bir URL'nize gönderim yapar - bir Home Assistant webhook'u, Node-RED, IFTTT veya JSON kabul eden herhangi bir şey.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Ayarlar &rsaquo; Ev Otomasyonu &rsaquo; Webhooks</b>'u açın.</li>
+      <li>Gönderim yapılacak <b>URL</b>'yi girin. Bir Home Assistant webhook'u <code>http://homeassistant.local:8123/api/webhook/your-id</code> gibi görünür.</li>
+      <li>Webhook'u hangi <b>olayların</b> tetikleyeceğini seçin: güç açma, güç kapama, giriş değişikliği, Sahne çağırma - ve isteğe bağlı olarak belirli bir giriş veya Sahneyle filtreleyin.</li>
+      <li>Alıcı hizmet belirli bir biçim istiyorsa isteğe bağlı olarak bir <b>özel yük</b> ayarlayın; aksi halde uygulama varsayılan JSON'unu gönderir.</li>
+      <li>Kaydedin. Uygulama bundan sonra eşleşen her olayda gönderim yapar.</li>
+    </ol>
+    <p class="lead">Varsayılan yük sade JSON'dur - bir olay, projektör ve değişen değer:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Örnek yük. Bir giriş değişikliği veya güç olayı kendisiyle ilgili alanları taşır.</p>
+    <div class="note"><b>Yeniden bağlamak hepsini düzeltir.</b> Home Assistant'ı yeni bir adreste yeniden bağlarsanız uygulama ona işaret eden her webhook'u tek seferde günceller; yani taşınmış bir örnek, her birini elle düzenlemek anlamına gelmez.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sorun Giderme</h2>
+    </div>
+    <details class="more"><summary>Oturum açma giriş sayfasına geri atıyor</summary>
+      <p>Girdiğiniz adresin Home Assistant'a gerçekten eriştiğiniz adres olduğundan, bağlantı noktası dahil (genellikle <code>:8123</code>), emin olun. Oturum açma kendi örneğinize karşı gerçek bir tarayıcı girişidir; bu yüzden kullanıcı adınız, parolanız ve iki aşamalı doğrulama kodunuz geçerlidir. Telefonda, uygulama içi tarayıcı sonucu teslim etse de yerel geri çağrı önce dönse de oturum açma tamamlanır; yine de takılırsa sayfayı kapatın ve Oturum aç'a yeniden dokunun.</p>
+    </details>
+    <details class="more"><summary>Projektör sensörü Home Assistant'ta görünmüyor</summary>
+      <p>Sensör, uygulama açıkken ve <b>Projektörün durumunu gönder</b> açıkken yayınlanır; bu yüzden uygulamayı açın ve bu anahtarı doğrulayın. Ardından Home Assistant'ta <b>Geliştirici Araçları &rsaquo; Durumlar</b>'ı kontrol edin ve <code>projector_pilot</code> ile filtreleyin. Beklemedeki bir projektör çok az şey yayınlar; uyandırın, okumalar dolacaktır.</p>
+    </details>
+    <details class="more"><summary>Eşitlenen betikler eksik</summary>
+      <p>Betikleri, <code>shell_command</code> bloğunun zaten <code>configuration.yaml</code> içine yapıştırılmış ve Home Assistant'ın bir kez yeniden başlatılmış olmasını gerektiren <b>HA ile Eşitle</b> yazar. Önce <b>Bağlantıyı Sına</b>'yı çalıştırın - bloğun orada olup olmadığını söyler. Sonra yeniden Eşitleyin. Eski, ölü betikler listeyi dolduruyorsa <b>Sahipsiz betikleri kaldır</b>'ı kullanın.</p>
+    </details>
+    <details class="more"><summary>Bir betik uygulamada çalışıyor ama telefonum uzaktayken Home Assistant'tan çalışmıyor</summary>
+      <p><code>shell_command</code> bloğunun amacı tam olarak budur - Home Assistant'ın projektörün IP'sine kendi başına ulaşmasını sağlayan odur. Yalnızca uygulama açıkken çalışıyorsa blok muhtemelen yapıştırılmamıştır veya yapıştırdıktan sonra Home Assistant yeniden başlatılmamıştır. Bağlantıyı Sına ile doğrulayın, Home Assistant'ı yeniden başlatın ve Eşitleyin.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Projektörünüzü tüm eve bağlayın</h2>
+    <p class="lead" style="margin:0 auto 24px">Ev Otomasyonu tek seferlik bir eklentidir. Abonelik yok, hesap yok, bulut yok. Tek bir satın alma, sahip olduğunuz her platformda kilidi açar.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - şimdi mevcut</a>
+      <span class="pill">App Store - onay bekliyor</span>
+      <span class="pill">Microsoft Store - onay bekliyor</span>
+      <span class="pill">Mac App Store - onay bekliyor</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/tr/pricing/">Ücretsiz, Pro ve Ev Otomasyonu'nu karşılaştırın &rarr;</a> &middot; <a href="/tr/guide/">Tam kullanım kılavuzu &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SSS</div>
+      <h2>Hızlı yanıtlar</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Home Assistant otomasyonlarının çalışması için telefonumun ağda kalması gerekir mi?</h3><p>Hayır. Tek shell_command bloğunu Home Assistant'a yapıştırıp eşitledikten sonra Home Assistant komutları doğrudan projektörün IP adresine gönderir. Projector Pilot yalnızca kurulum aracıdır; sonrasında telefonunuz evde olsun olmasın Home Assistant projektörle kendi başına konuşur.</p></div><div class="gcard"><h3>Projektör Home Assistant'ta nasıl görünür?</h3><p>Örneğin sensor.projector_pilot_epson_qb1000b_qb1000w gibi bir sensör olarak; güç, giriş, renk modu, görüntü değerleri ve lamba saatlerini taşır ve uygulama açıkken bunlar değiştikçe güncellenir. Gelişmiş Kontrolleri Eşitle'yi açarsanız uygulama ayrıca her Sahne için, ayrıca güç, her giriş, her renk modu ve projektörünüzün sahip olduğu her lens hafızası için bir Home Assistant betiği yazar.</p></div><div class="gcard"><h3>Ev Otomasyonu ücretsiz mi?</h3><p>Ev Otomasyonu, Projector Pilot Pro'dan ayrı, tek seferlik satın alınan ücretli bir eklentidir. Bir paket ikisini birlikte indirimli alır. Fiyatlandırma sayfasına bakın.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/pricing/">Fiyatlandırma</a><a href="/tr/highlights/">Öne Çıkanlar</a><a href="/tr/guide/home-automation/">Home Assistant</a><a href="/tr/help/">Yardım &amp; SSS</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/tr/help/#privacy">Gizlilik</a><a href="/tr/help/#terms">Şartlar</a></div>
+<div class="flinks"><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/guide/dashboard/">Yönetim Paneli</a><a href="/tr/guide/remote/">Kumanda</a><a href="/tr/guide/picture/">Görüntü</a><a href="/tr/guide/lens/">Lens</a><a href="/tr/guide/scenes/">Sahneler</a><a href="/tr/guide/home-assistant-dashboard/">HA Yönetim Paneli</a><a href="/tr/guide/maintenance/">Bakım</a><a href="/tr/guide/settings/">Ayarlar</a><a href="/tr/guide/languages/">Diller</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot, Epson ve PJLink projektörler için bağımsız bir uygulamadır. Epson, PJLink standart kuruluşu, Home Assistant, Hubitat, Apple, Google veya Microsoft ile bağlantılı değildir; bunlar tarafından onaylanmamış veya desteklenmemiştir. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play ve Microsoft Store ilgili sahiplerinin ticari markalarıdır ve yalnızca uygulamanın neyle çalıştığını belirtmek için anılmıştır.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

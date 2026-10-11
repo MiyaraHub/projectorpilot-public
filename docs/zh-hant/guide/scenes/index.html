@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B5E20" />
+<title>一鍵投影機場景 - Projector Pilot</title>
+<meta name="description" content="將投影機的電源、輸入、畫質、鏡頭記憶等設定儲存成場景，一鍵叫出。每個場景都可以成為 Home Assistant 指令碼。Pro。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/scenes/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/scenes/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/scenes/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/scenes/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/scenes/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/scenes/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/scenes/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/scenes/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/scenes/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/scenes/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/scenes/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/scenes/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/scenes/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/scenes/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/scenes/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/scenes/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/scenes/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/scenes/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/scenes/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/scenes/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/scenes/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/scenes/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/scenes/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/scenes/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/scenes/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/scenes/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/scenes/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/scenes/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/scenes/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="一鍵投影機場景 - Projector Pilot" />
+<meta property="og:description" content="將投影機的電源、輸入、畫質、鏡頭記憶等設定儲存成場景，一鍵叫出。每個場景都可以成為 Home Assistant 指令碼。Pro。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hant/guide/scenes/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="一鍵投影機場景 - Projector Pilot" />
+<meta name="twitter:description" content="將投影機的電源、輸入、畫質、鏡頭記憶等設定儲存成場景，一鍵叫出。每個場景都可以成為 Home Assistant 指令碼。Pro。" />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/scenes/#webpage", "url": "https://projectorpilot.com/guide/scenes/", "name": "一鍵投影機場景 - Projector Pilot", "description": "將投影機的電源、輸入、畫質、鏡頭記憶等設定儲存成場景，一鍵叫出。每個場景都可以成為 Home Assistant 指令碼。Pro。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-10-01", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/scenes/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/scenes/#article", "headline": "投影機場景：整個空間，一鍵到位", "description": "將投影機的電源、輸入、畫質、鏡頭記憶等設定儲存成場景，一鍵叫出。每個場景都可以成為 Home Assistant 指令碼。Pro。", "image": "https://projectorpilot.com/screenshots/05-scenes.png", "datePublished": "2026-09-23", "dateModified": "2026-10-01", "inLanguage": "zh-Hant", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/scenes/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/scenes/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "情境", "item": "https://projectorpilot.com/guide/scenes/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hant/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言"><a href="/zh-hant/#features">功能</a><a href="/zh-hant/guide/">指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明</a><a class="cta" href="/zh-hant/#download">GET THE APP</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 場景</div>
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">場景分頁 &middot; Pro</div>
+        <h1>投影機場景：整個空間，一鍵到位</h1>
+        <p class="lead">場景會依投影機此刻的樣子精確擷取，之後只要點一下就能全部還原。電影之夜、重要賽事、明亮的週日午場，各有各的場景，各自一鍵即達。您可以精確選擇場景要保留哪些部分，而且只會提供您的投影機實際回報的部分。</p>
+        <p class="lead">場景屬於 <a href="/zh-hant/pricing/">Projector Pilot Pro</a> 的一部分。</p>
+      </div>
+      <img src="/screenshots/05-scenes.png" alt="Projector Pilot 的場景分頁，附儲存目前設定按鈕" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">如何儲存場景</div>
+      <h2>先設定好空間，再擷取</h2>
+    </div>
+    <ol class="steps">
+      <li><b>先設定好。</b>把投影機調整成您想要的樣子：輸入、色彩模式、畫質、鏡頭記憶，全部都包括。</li>
+      <li><b>儲存目前設定。</b>在場景分頁點選<b>儲存目前設定</b>，替場景取個名字，並勾選要保留哪些部分。選擇器只會提供您的投影機回報的內容，因此您絕不會儲存機型沒有的設定。</li>
+      <li><b>叫出。</b>點選場景即可套用。Projector Pilot 會邊執行邊向投影機確認每項設定，絕不會宣稱某項沒有生效的變更已完成。</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">場景會擷取什麼</div>
+      <h2>您勾選多少就保留多少</h2>
+      <p class="lead">單一場景可以擷取以下任何內容。叫出時只會重現您勾選的部分，因此「深夜場」場景可以降低光輸出，其他一概不動。</p>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>電源</h3><p>投影機的電源狀態，讓場景可以把它喚醒，或在設定過程中送它進入待機。</p></div>
+      <div class="gcard"><h3>輸入</h3><p>場景要切換到的訊號源，讓「電影之夜」每次都落在正確的 HDMI。</p></div>
+      <div class="gcard"><h3>畫質</h3><p>色彩模式與畫質數值，各自採用投影機自己的選單刻度。</p></div>
+      <div class="gcard"><h3>訊號</h3><p>您的投影機針對所觀看內容所提供的訊號端設定。</p></div>
+      <div class="gcard"><h3>光源</h3><p>光源輸出，讓明亮的房間與昏暗的房間各有各的設定。</p></div>
+      <div class="gcard"><h3>幾何校正</h3><p>讓畫面在螢幕上正確取景的對齊與幾何狀態。</p></div>
+      <div class="gcard"><h3>音訊</h3><p>投影機回報的音訊設定，與其他設定一併保存。</p></div>
+      <div class="gcard"><h3>只保留有回報的內容</h3><p>勾選清單是依據您的投影機實際回應的內容建立，因此您儲存的一切都不是猜測。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">自動化</div>
+      <h2>每個場景都變成 Home Assistant 指令碼</h2>
+      <p class="lead">只要把一段區塊貼入您的 Home Assistant 設定一次，Projector Pilot 就會為您擁有的每個場景寫入一個指令碼，並為投影機實際具備的電源、每個輸入、每個色彩模式與每個鏡頭記憶也各寫一個。之後自動化或語音助理就能執行任何場景；當您關閉同步時，App 會移除它所寫入的指令碼，其他一概不動。</p>
+    </div>
+    <div class="note">場景也能透過 <b>Webhook</b> 運作：叫出場景時可以向您的 URL發送請求；並透過 Maker API 鏡像到 <b>Hubitat</b>。全都收錄在 <a href="/zh-hant/guide/home-automation/">Home Assistant 指南</a>中。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">分享您的成果</div>
+      <h2>可分享的場景設定檔</h2>
+      <p class="lead">調出了讓您自豪的場景嗎？匯出後交給朋友，或匯入別人分享給您的場景。場景設定檔可以在不同安裝之間轉移，因此一個好的設定不必在每台投影機上從頭重做。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">繼續閱讀</div>
+      <h2>相關指南</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/zh-hant/guide/lens/">鏡頭控制</a>
+      <a href="/zh-hant/guide/home-automation/">Home Assistant</a>
+      <a href="/zh-hant/guide/settings/">設定</a>
+      <a href="/zh-hant/guide/">完整使用指南</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/pricing/">價格</a><a href="/zh-hant/highlights/">亮點</a><a href="/zh-hant/guide/home-automation/">Home Assistant</a><a href="/zh-hant/help/">說明 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hant/help/#privacy">隱私權</a><a href="/zh-hant/help/#terms">條款</a></div>
+<div class="flinks"><a href="/zh-hant/guide/getting-started/">開始使用</a><a href="/zh-hant/guide/dashboard/">儀表板</a><a href="/zh-hant/guide/remote/">遙控器</a><a href="/zh-hant/guide/picture/">畫質</a><a href="/zh-hant/guide/lens/">鏡頭</a><a href="/zh-hant/guide/scenes/">場景</a><a href="/zh-hant/guide/home-assistant-dashboard/">HA 儀表板</a><a href="/zh-hant/guide/maintenance/">維護</a><a href="/zh-hant/guide/settings/">設定</a><a href="/zh-hant/guide/languages/">語言</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot 是專為 Epson 與 PJLink 投影機打造的獨立 App，與 Epson、PJLink 標準組織、Home Assistant、Hubitat、Apple、Google 或 Microsoft 並無關聯，亦未獲其背書或贊助。Epson、PJLink、Home Assistant、Hubitat、App Store、Mac App Store、Google Play 與 Microsoft Store 為其各自所有者的商標，此處僅用於說明本 App 的相容對象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="da" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant-projektordashboard (YAML) - Projector Pilot</title>
+<meta name="description" content="Byg et brugerdefineret Home Assistant-projektordashboard trin for trin: de HACS-kort, du skal installere, dit entity-ID og serienummer samt kopiklar YAML til hvert kort." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="da_DK" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Home Assistant-projektordashboard (YAML) - Projector Pilot" />
+<meta property="og:description" content="Byg et brugerdefineret Home Assistant-projektordashboard trin for trin: de HACS-kort, du skal installere, dit entity-ID og serienummer samt kopiklar YAML til hvert kort." />
+<meta property="og:url" content="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant-projektordashboard (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Byg et brugerdefineret Home Assistant-projektordashboard trin for trin: de HACS-kort, du skal installere, dit entity-ID og serienummer samt kopiklar YAML til hvert kort." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "da", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Home Assistant-projektordashboard (YAML) - Projector Pilot", "description": "Byg et brugerdefineret Home Assistant-projektordashboard trin for trin: de HACS-kort, du skal installere, dit entity-ID og serienummer samt kopiklar YAML til hvert kort.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "da", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Byg et Home Assistant-projektordashboard på cirka en time", "description": "Byg et brugerdefineret Home Assistant-projektordashboard trin for trin: de HACS-kort, du skal installere, dit entity-ID og serienummer samt kopiklar YAML til hvert kort.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "da", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Brugervejledning", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant-dashboard", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Skal jeg bygge dette dashboard i hånden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Når du trykker på Sync With HA i appen, bygger den et færdigt Projector Pilot-dashboard til dig direkte i Home Assistant - den levende projektorsensor plus en knap til hver kontrol og scene - og det dukker op i din sidebjælke som Projector Pilot. Når du har fællesskabskortene installeret, opgraderer Sync automatisk sine kort til dem; denne side er til at bygge den rigere grønne glasversion i hånden eller tilpasse det, Sync har oprettet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Skal jeg bruge brugerdefinerede kort fra HACS for at bygge dette?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For at ramme udseendet på skærmbilledet, ja: Mushroom, button-card, card-mod og mini-graph-card. Ingen af dem er nødvendige for, at de underliggende kontroller virker - hver knap er et almindeligt script-kald, og de brugerdefinerede kort er stylingen oven på."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor viser infofelterne en værdi, men knapperne gør ingenting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projektorsensoren publicerer sine aflæsninger, så snart du logger ind og synkroniserer i appen, så infofelterne er levende med det samme. Kontrol- og scene-knapperne kalder scripts, som først findes i Home Assistant, efter du har indsat appens Copy-blok i configuration.yaml, genstartet Home Assistant og trykket på Sync With HA én gang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vil mine enheds-id'er svare til dem i denne vejledning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mønsteret vil, de præcise tegn vil ikke. Din projektorsensor er opkaldt efter din projektors model, og hvert script er opkaldt efter din projektors serienummer. Hvor denne side skriver YOUR_PROJECTOR, skal du indsætte din egen sensors entity-id; hvor den skriver YOURSERIAL, skal du indsætte det serienummerafledte id, der vises på appens Home Assistant-skærm."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/da/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Søg i guiden..." data-i18n-empty="Ingen resultater for" data-i18n-language="Sprog"><a href="/da/#features">Funktioner</a><a href="/da/guide/">Guide</a><a href="/da/pricing/">Priser</a><a href="/da/highlights/">Højdepunkter</a><a href="/da/guide/home-automation/">Home Assistant</a><a href="/da/help/">Hjælp</a><a class="cta" href="/da/#download">HENT APPEN</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/da/">Hjem</a> &rsaquo; <a href="/da/guide/">Brugervejledning</a> &rsaquo; Home Assistant-dashboard</div>
+    <div class="eyebrow">Home Assistant &middot; trin for trin</div>
+    <h1>Byg et Home Assistant-projektordashboard <span class="g">på cirka en time</span></h1>
+    <p>Appen bygger allerede et fungerende dashboard til dig, når du synkroniserer - denne side er deluxe-versionen, bygget i hånden. Ti trin, YAML til hvert kort og en komplet visning, du kan indsætte på én gang. Grønne glasfelter, en levende billedvisning, dine scener og en graf over lasertimer, alt sammen fra én projektorsensor. Ret to tekststrenge, så er det dit.</p>
+    <div class="readout"><span>Sync bygger et gratis</span><span>4 HACS-kort til udseendet</span><span>Infofelter live med det samme</span><span>Knapper efter én indsættelse</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Det færdige Projector Pilot-dashboard i Home Assistant: strøm og kilde, farvetilstande, hele billedmenuen, HDR og signal, RGB-kalibrering, objektiv og geometri, vedligeholdelse med en graf over lasertimer og scener, alt sammen som grønne glasfelter" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Det, du bygger. Rul i det, eller klik for at forstørre.</figcaption>
+    </figure>
+    <div class="note"><b>Vil du bare have et fungerende board? Det har du allerede.</b> Tryk på <b>Sync With HA</b> i appen, og den bygger et færdigt Projector Pilot-dashboard til dig i din Home Assistant-sidebjælke, med alle kontroller og den levende sensor - ingen kort, ingen YAML, ingen indsættelse. Se <a href="/da/guide/home-automation/#dashboard">Sync bygger dashboardet for dig</a>. Denne side er til at bygge den rigere grønne glasversion i hånden eller tilpasse det, Sync gav dig.</div>
+    <div class="note"><b>Har du travlt med det tilpassede udseende?</b> Spring til <a href="#whole">trin 10</a>, hent den komplette visning, ret to tekststrenge og de tre scene-id'er, og indsæt den. Trinnene imellem forklarer, hvad hver del gør, så du kan ændre den.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Før du går i gang</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot er forbundet til Home Assistant.</b> <a href="/da/guide/home-automation/">Opsætningsguiden</a> dækker login og aktivering af <b>Send projektorens status</b>. Du skal kunne se din projektor som en sensor i Home Assistant, før du bygger noget oven på den.</li>
+      <li><b>Du har synkroniseret mindst én gang.</b> Settings &rsaquo; Home Automation &rsaquo; Home Assistant &rsaquo; <b>Sync With HA</b>, efter du har indsat appens <b>Copy-blok</b> i <code>configuration.yaml</code> og genstartet Home Assistant. Det er det, der opretter de scripts, som hver kontrolknap nedenfor kalder.</li>
+      <li><b>Din projektor er tændt</b>, mens du bygger. De billedattributter nedenfor er det, en projektor i standby for det meste lader stå tomt.</li>
+    </ul>
+    <p class="lead">To ting fodrer dette dashboard, og forskellen har betydning i hvert eneste trin nedenfor.</p>
+    <table class="t">
+      <thead><tr><th>Kommer fra</th><th>Giver dig</th></tr></thead>
+      <tbody>
+        <tr><td>Projektorsensoren, <code>sensor.YOUR_PROJECTOR</code></td><td>Hver <b>aflæsning</b>. Strøm, kilde, farvetilstand, alle billedtal, HDR og signal, objektiv og geometri, lampetimer. Live, så snart du logger ind og synkroniserer - ingen Copy-blok nødvendig.</td></tr>
+        <tr><td>Appens synkroniserede scripts, <code>script.projpilot_YOURSERIAL_...</code></td><td>Hver <b>kontrol</b>. Strøm, kilder, farvetilstande, objektivhukommelser og dine scener. De findes kun, efter at Copy-blokken er indsat, Home Assistant er genstartet, og du har trykket på Sync With HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 1</div>
+      <h2>Installer fire kort fra HACS</h2>
+    </div>
+    <p class="lead">Alle fire findes i den almindelige HACS-butik. I Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, søg på navnet, tryk Download, og genindlæs derefter din browser.</p>
+    <table class="t">
+      <thead><tr><th>Søg efter</th><th>Bruges til</th><th>Hvis du springer det over</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Hvert infofelt, hver kontrolknap og hvert scenefelt</td><td>Brug et almindeligt <code>button</code>-kort. Det virker, men ser mere kantet ud.</td></tr>
+        <tr><td><b>button-card</b></td><td>Heltekortet med sin levende etiket</td><td>Brug et <code>entity</code>-kort, eller et Mushroom-skabelonkort med færre detaljer.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Den grønne glasbaggrund, kanterne og gradienterne</td><td>Alt virker stadig. Intet får sin glød.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Historikken over lasertimer under Vedligeholdelse</td><td>Brug det indbyggede <code>history-graph</code>-kort.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Ingen af dem er nødvendige for, at det virker.</b> Hver kontrol nedenfor kører fra et almindeligt Home Assistant-knapkort, der peger på det samme script. De brugerdefinerede kort er det grønne glasudseende, ikke rørføringen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 2</div>
+      <h2>Find dit entity-ID og dit serienummer</h2>
+    </div>
+    <p class="lead">Hvert eksempel på denne side bruger to pladsholdere. Find dine én gang, så er resten copy-paste.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States i Home Assistant, filtrér på <code>projector_pilot</code>. Noget i retning af <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; åbn appen, <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b>. Det serienummerafledte id vises lige der, og det er midten af hvert synkroniseret scriptnavn: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> og så videre.</li>
+    </ul>
+    <p class="lead">Du kan også filtrere Developer Tools &rsaquo; States på <code>projpilot</code> for at se hele din synkroniserede kontrolliste på én gang, når trin 1's Copy-blok og Sync er gennemført.</p>
+    <div class="note"><b>Ingen scriptliste endnu?</b> Det er forventeligt, før du har indsat Copy-blokken. Sensoren findes stadig og opdateres stadig; scriptsene dukker først op, når Sync With HA er kørt med succes.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 3</div>
+      <h2>Opret visningen</h2>
+    </div>
+    <ol class="steps">
+      <li>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard &rsaquo; New dashboard from scratch. Kald det Projector Pilot.</li>
+      <li>Åbn det, og tryk derefter på blyantikonet øverst til højre for at redigere.</li>
+      <li>Tilføj en visning. Begge layouts virker; det rigtige board bruger standardstakken af kort, ét under det andet, som er det enkleste at indsætte i.</li>
+      <li>For at indsætte YAML skal du bruge trepunktsmenuen på et kort og vælge <b>Edit in YAML</b>, eller trepunktsmenuen på dashboardet for <b>Raw configuration editor</b> for at indsætte en hel visning på én gang.</li>
+    </ol>
+    <p class="lead">Visningens egne indstillinger, hvis du hellere vil skrive dem selv:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 4</div>
+      <h2>Tilføj et levende infofelt</h2>
+    </div>
+    <p class="lead">Start med noget, der kun læser, så du ved, at dit entity-ID er rigtigt, før du rører ved noget, der sender en kommando. Dette her er levende i samme øjeblik, din projektorsensor findes, uden Copy-blok og uden sync. Tilføj et kort, Edit in YAML, indsæt:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Den samme form læser alle de ~80 attributter, sensoren bærer: skift <code>brightness</code> ud med <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, hvad du nu vil have på feltet.</p>
+    <p class="lead">Gem det. Hvis et rigtigt tal eller ord dukker op, er dit entity-ID rigtigt, og alt nedenfor vil virke. Hvis det viser tomt, så gå tilbage til trin 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 5</div>
+      <h2>Tilføj en grøn sektionsoverskrift</h2>
+    </div>
+    <p class="lead">En almindelig titel er spildt plads. Det her er et <code>markdown</code>-kort med en gradientbaggrund fra card-mod, og det er det, der gør en stak felter til navngivne sektioner. Hver sektion på boardet åbner med et af disse, bare med en anden etiket og emoji.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Ret emojikoden og etiketteksten; card-mod-blokken er identisk i hver sektion.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 6</div>
+      <h2>Tilføj en kontrolknap</h2>
+    </div>
+    <p class="lead">Denne sender en kommando i stedet for blot at læse en værdi, så scriptsene skal findes først. Den kalder <code>script.projpilot_YOURSERIAL_power_on</code>, som appen først skriver, efter du har indsat dens Copy-blok i <code>configuration.yaml</code>, genstartet Home Assistant og trykket på <b>Sync With HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Samme kort til Power Off, Screen Blank, HDMI 1, HDMI 2, A/V Mute, en farvetilstand eller en objektivhukommelse: kun etiket, ikon og <code>service</code> ændres.</p>
+    <div class="note"><b>Hvis det ser rigtigt ud, men intet sker,</b> når du trykker på det, er Copy-blokken enten ikke indsat, eller Home Assistant er ikke genstartet siden. Kør <b>Test forbindelse</b> i appen, som tjekker netop det, før du antager, at dashboardet er forkert.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 7</div>
+      <h2>Tilføj heltekortet</h2>
+    </div>
+    <p class="lead">Heltekortet øverst på boardet er et <code>button-card</code>: en stor strømstatus, en enlinjes oversigt bygget af flere attributter på én gang og den grønne glasbehandling på hele kortet og ikke kun kanten.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Beskåret til de dele, der ændrer sig fra installation til installation. Det fulde kort sætter også ikon, navn og etiketternes gitterpositioner; se downloaden i trin 10 for det hele.</p>
+    <p class="lead">Foretrækker du en slankere stribe? Et <code>mushroom-chips-card</code> gør samme job i én række små chips: strømstatus, kilde, farvetilstand, videoområde og lampetimer, hver en skabelon, der læser <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Brug det ene eller det andet, ikke begge, øverst på boardet.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 8</div>
+      <h2>Tilføj dine scener</h2>
+    </div>
+    <p class="lead">Hver scene, du gemmer i appen, bliver til et script med navnet <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code>, så snart du synkroniserer, og et felt til en scene er det samme kontrolknapkort fra trin 6 med et scenenavn og ikon.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Erstat <code>YOURSCENE1</code> med det id, der vises for den scene på appens synkroniserede kontrolliste. Ét felt pr. scene, i et <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 9</div>
+      <h2>Tilføj historik over lasertimer</h2>
+    </div>
+    <p class="lead">Projektorsensoren optages af Home Assistant som enhver anden, så <code>lamp_hours</code> får en historik gratis. Ingen ekstra sensorer, ingen hjælpere, intet at konfigurere først, under sektionen Vedligeholdelse.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 timer er to uger. Laser- og lampetimer stiger støt i stedet for at hoppe rundt, så et vindue på to uger er som regel nok til at se tendensen, uden at grafen ser flad ud.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trin 10</div>
+      <h2>Eller tag det hele</h2>
+    </div>
+    <p class="lead">Den komplette visning, hver sektion og hvert kort fra skærmbilledet øverst på denne side, med pladsholdere i stedet for entity-ID'er.</p>
+    <ol class="steps">
+      <li><a href="/da/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Hent visningens YAML</a>.</li>
+      <li>Åbn den i en hvilken som helst teksteditor, og erstat overalt, hvor de forekommer: <code>YOUR_PROJECTOR</code> med din projektorsensors entity-id fra trin 2, og <code>YOURSERIAL</code> med dit serienummerafledte id fra trin 2.</li>
+      <li>I sektionen Scener nær bunden erstatter du <code>YOURSCENE1</code>, <code>YOURSCENE2</code> og <code>YOURSCENE3</code> med dine egne tre scene-id'er, eller tilføjer og fjerner felter, så de passer til det antal scener, du faktisk har.</li>
+      <li>Åbn dit dashboard i Home Assistant, tryk på blyantikonet, trepunktsmenuen, <b>Raw configuration editor</b>, og indsæt den som en visning.</li>
+    </ol>
+    <div class="note"><b>Dine scenenavne og dit antal vil ikke passe.</b> Filen leveres med tre eksempelscener: Movie Night, Gaming, Sports Day. Omdøb felterne, peg dem på dine egne scene-id'er, og tilføj eller slet felter, indtil sektionen svarer til det antal scener, du faktisk har gemt.</div>
+    <div class="note"><b>Infofelterne virker lige efter indsættelsen.</b> De kræver kun, at sensoren findes. Kontrol- og scene-knapper forbliver døde, indtil Copy-blokken er indsat i <code>configuration.yaml</code>, Home Assistant er genstartet, og du har trykket på Sync With HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Fejlfinding</h2>
+    </div>
+    <details class="more"><summary>Et felt viser Unknown</summary>
+      <p>Tjek attributnavnet mod det, sensoren faktisk bærer: Developer Tools &rsaquo; States, din <code>sensor.YOUR_PROJECTOR</code>-entity, og læs dens attributliste. Nogle få aflæsninger, som HDR PQ eller HDR HLG, udfyldes kun, mens projektoren aktivt modtager den slags signal, så Unknown på de to kan være korrekt og ikke en fejl. Hvis hele sensoren ser sparsom ud, så væk projektoren: en enhed i standby publicerer meget lidt.</p>
+    </details>
+    <details class="more"><summary>En knap gør ingenting</summary>
+      <p>Du har ikke indsat Copy-blokken endnu, eller Home Assistant er ikke genstartet, siden du gjorde det. Kontrol- og scene-knapper kalder scripts, som appen skriver, og de scripts findes ikke, før <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b> i appen har fået Copy-blokken indsat i <code>configuration.yaml</code>, Home Assistant er genstartet én gang, og der er trykket på <b>Sync With HA</b>. Kør først <b>Test forbindelse</b> i appen - den fortæller dig, om blokken er til stede, før du leder efter en fejl i dashboardet.</p>
+    </details>
+    <details class="more"><summary>De scripts, jeg forventer, mangler i Developer Tools &rsaquo; States</summary>
+      <p>Filtrér på <code>projpilot</code> i stedet for hele serienummeret - så er det nemmere at se hele listen. Hvis en kontrol eller scene, du netop har tilføjet, mangler, så tryk på <b>Sync With HA</b> igen; den opdaterer på stedet i stedet for at kræve en ny opsætning. Hvis gamle, døde scripts roder i listen, efter du har slettet en scene, så brug <b>Fjern forældreløse scripts</b> i appen.</p>
+    </details>
+    <details class="more"><summary>Mit entity-ID ligner ikke det i denne guide</summary>
+      <p>Mønsteret er fast, midten er ikke. Din sensor er opkaldt efter din egen projektors model, og hvert script bærer din egen projektors serienummer, ikke pladsholderne på denne side. Hent begge dele fra Developer Tools &rsaquo; States og appens Home Assistant-skærm, som i trin 2, og brug dem i stedet for at skrive eksempelteksten.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Hele din projektor, på én væg</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation er et engangstilkøb. Intet abonnement, ingen konto, ingen cloud. Ét køb låser det op på hver platform, du ejer.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - tilgængelig nu</a>
+      <span class="pill">App Store - afventer godkendelse</span>
+      <span class="pill">Microsoft Store - afventer godkendelse</span>
+      <span class="pill">Mac App Store - afventer godkendelse</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/da/guide/home-automation/">Tilbage til Hjemmeautomatisering &rarr;</a> &middot; <a href="/da/guide/">Hele brugervejledningen &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Hurtige svar</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Skal jeg bygge dette dashboard i hånden?</h3><p>Nej. Når du trykker på Sync With HA i appen, bygger den et færdigt Projector Pilot-dashboard til dig direkte i Home Assistant - den levende projektorsensor plus en knap til hver kontrol og scene - og det dukker op i din sidebjælke som Projector Pilot. Denne side er til at bygge den rigere grønne glasversion i hånden eller tilpasse det, Sync har oprettet.</p></div><div class="gcard"><h3>Skal jeg bruge brugerdefinerede kort fra HACS for at bygge dette?</h3><p>For at ramme udseendet på skærmbilledet, ja: Mushroom, button-card, card-mod og mini-graph-card. Ingen af dem er nødvendige for, at de underliggende kontroller virker - hver knap er et almindeligt script-kald, og de brugerdefinerede kort er stylingen oven på.</p></div><div class="gcard"><h3>Hvorfor viser infofelterne en værdi, men knapperne gør ingenting?</h3><p>Projektorsensoren publicerer sine aflæsninger, så snart du logger ind og synkroniserer i appen, så infofelterne er levende med det samme. Kontrol- og scene-knapperne kalder scripts, som først findes i Home Assistant, efter du har indsat appens Copy-blok i configuration.yaml, genstartet Home Assistant og trykket på Sync With HA én gang.</p></div><div class="gcard"><h3>Vil mine enheds-id'er svare til dem i denne vejledning?</h3><p>Mønsteret vil, de præcise tegn vil ikke. Din projektorsensor er opkaldt efter din projektors model, og hvert script er opkaldt efter din projektors serienummer. Hvor denne side skriver YOUR_PROJECTOR, skal du indsætte din egen sensors entity-id; hvor den skriver YOURSERIAL, skal du indsætte det serienummerafledte id, der vises på appens Home Assistant-skærm.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/da/guide/">Brugervejledning</a><a href="/da/pricing/">Priser</a><a href="/da/highlights/">Højdepunkter</a><a href="/da/guide/home-automation/">Home Assistant</a><a href="/da/help/">Hjælp &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/da/help/#privacy">Privatliv</a><a href="/da/help/#terms">Vilkår</a></div>
+<div class="flinks"><a href="/da/guide/getting-started/">Kom godt i gang</a><a href="/da/guide/dashboard/">Dashboard</a><a href="/da/guide/remote/">Fjernbetjening</a><a href="/da/guide/picture/">Billede</a><a href="/da/guide/lens/">Objektiv</a><a href="/da/guide/scenes/">Scener</a><a href="/da/guide/home-assistant-dashboard/">HA-dashboard</a><a href="/da/guide/maintenance/">Vedligeholdelse</a><a href="/da/guide/settings/">Indstillinger</a><a href="/da/guide/languages/">Sprog</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot er en uafhængig app til Epson- og PJLink-projektorer. Den er ikke tilknyttet, godkendt eller sponsoreret af Epson, PJLink-standardorganet, Home Assistant, Hubitat, Apple, Google eller Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play og Microsoft Store er varemærker tilhørende deres respektive ejere og nævnes kun for at beskrive, hvad appen fungerer sammen med.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

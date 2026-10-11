@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="id" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Panduan Home Assistant &amp; Hubitat untuk Proyektor - Projector Pilot</title>
+<meta name="description" content="Hubungkan proyektor Epson atau PJLink Anda ke Home Assistant, Hubitat, dan webhook. Sync With HA menerbitkan status langsung dan mengubah setiap Skenario menjadi skrip." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/id/guide/home-automation/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-automation/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-automation/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-automation/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-automation/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-automation/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-automation/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-automation/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-automation/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-automation/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-automation/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-automation/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-automation/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-automation/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-automation/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-automation/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-automation/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-automation/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-automation/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-automation/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-automation/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-automation/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-automation/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-automation/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-automation/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-automation/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-automation/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-automation/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-automation/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-automation/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-automation/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Panduan Home Assistant &amp; Hubitat untuk Proyektor - Projector Pilot" />
+<meta property="og:description" content="Hubungkan proyektor Epson atau PJLink Anda ke Home Assistant, Hubitat, dan webhook. Sync With HA menerbitkan status langsung dan mengubah setiap Skenario menjadi skrip." />
+<meta property="og:url" content="https://projectorpilot.com/id/guide/home-automation/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Panduan Home Assistant &amp; Hubitat untuk Proyektor - Projector Pilot" />
+<meta name="twitter:description" content="Hubungkan proyektor Epson atau PJLink Anda ke Home Assistant, Hubitat, dan webhook. Sync With HA menerbitkan status langsung dan mengubah setiap Skenario menjadi skrip." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-automation/#webpage", "url": "https://projectorpilot.com/guide/home-automation/", "name": "Panduan Home Assistant & Hubitat untuk Proyektor - Projector Pilot", "description": "Hubungkan proyektor Epson atau PJLink Anda ke Home Assistant, Hubitat, dan webhook. Sync With HA menerbitkan status langsung dan mengubah setiap Skenario menjadi skrip.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-automation/#article", "headline": "Proyektor Anda, di Home Assistant dan Hubitat.", "description": "Hubungkan proyektor Epson atau PJLink Anda ke Home Assistant, Hubitat, dan webhook. Sync With HA menerbitkan status langsung dan mengubah setiap Skenario menjadi skrip.", "image": "https://projectorpilot.com/screenshots/07-home-automation.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "id", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-automation/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Otomasi Rumah", "item": "https://projectorpilot.com/guide/home-automation/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah ponsel saya harus tetap berada di jaringan agar otomasi Home Assistant berjalan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Setelah Anda menempelkan satu blok shell_command ke Home Assistant dan sinkron, Home Assistant mengirim perintah langsung ke alamat IP proyektor. Projector Pilot hanyalah alat penyiapan; setelah itu, Home Assistant berbicara dengan proyektor sendiri, entah ponsel Anda di rumah atau tidak."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana proyektor muncul di Home Assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sebagai sensor, misalnya sensor.projector_pilot_epson_qb1000b_qb1000w, yang membawa daya, input, mode warna, angka gambar, dan jam lampu, diperbarui setiap kali berubah selama aplikasi terbuka. Aktifkan Sync Advanced Controls dan aplikasi juga menulis skrip Home Assistant untuk setiap Skenario, plus daya, setiap input, setiap mode warna, dan setiap memori lensa yang dimiliki proyektor Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah Otomasi Rumah gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Otomasi Rumah adalah add-on berbayar, pembelian sekali, terpisah dari Projector Pilot Pro. Paket bundel membeli keduanya sekaligus dengan harga lebih hemat. Lihat halaman harga."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/id/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa"><a href="/id/#features">Fitur</a><a href="/id/guide/">Panduan</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/guide/home-assistant-dashboard/">Dasbor HA</a><a href="/id/help/">Bantuan</a><a class="cta" href="/id/#download">DAPATKAN APLIKASI</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Otomasi Rumah</div>
+    <div class="eyebrow">Home Assistant &middot; Hubitat &middot; Webhook</div>
+    <h1>Proyektor Anda, <span class="g">di Home Assistant dan Hubitat</span>.</h1>
+    <p>Projector Pilot menerbitkan status langsung proyektor Anda dan setiap kontrol ke Home Assistant, Hubitat, dan webhook apa pun yang Anda suka. Atur sekali, dan rumah pintar Anda menjalankan proyektor dengan sendirinya - tanpa ponsel di jaringan, tanpa cloud di tengah.</p>
+    <div class="readout"><span>Tanpa server setelah disiapkan</span><span>Skenario menjadi skrip</span><span>Dasbor siap pakai</span><span>Daftar periksa penyiapan</span><span>Add-on berbayar</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ikhtisar</div>
+      <h2>Apa yang dilakukan Otomasi Rumah</h2>
+      <p class="lead">Otomasi Rumah mengubah Projector Pilot dari remote di tangan Anda menjadi perangkat yang bisa dilihat seluruh rumah. Ia menampilkan apa yang dilakukan proyektor - daya, input, mode warna, angka gambar, jam lampu - dan memberi rumah pintar Anda kontrol atas semua yang bisa diubah aplikasi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ia menerbitkan status.</b> Proyektor muncul sebagai sensor Home Assistant, perangkat Hubitat, atau payload JSON di webhook Anda, membawa pembacaan yang sama dengan yang ditampilkan aplikasi.</li>
+      <li><b>Ia menerbitkan kontrol.</b> Setiap Skenario yang Anda simpan, plus daya, setiap input, setiap mode warna, dan setiap memori lensa, menjadi sesuatu yang bisa dijalankan oleh otomasi atau asisten suara.</li>
+      <li><b>Ia berjalan tanpa server.</b> Setelah skrip disiapkan, Home Assistant mengirim perintah langsung ke alamat IP proyektor. Ponsel Anda tidak perlu berada di jaringan, dan tidak ada yang melewati akun cloud.</li>
+    </ul>
+    <div class="note"><b>Otomasi Rumah adalah add-on berbayar.</b> Pembeliannya sekali saja, terpisah dari Projector Pilot Pro, dan paket bundel membeli keduanya sekaligus dengan harga lebih hemat. Tanpa langganan, tanpa akun, tanpa cloud. Lihat <a href="/id/pricing/">harga</a>.</div>
+    <div class="with-shot" style="margin-top:28px">
+      <div>
+        <h3>Tiga jalur masuk, satu hub</h3>
+        <p class="lead">Pengaturan &rsaquo; Otomasi Rumah adalah hubnya. Pilih platform yang Anda gunakan - Home Assistant, Hubitat, atau Webhook - dan atur di sana. Anda bisa menghubungkan lebih dari satu sekaligus; semuanya independen.</p>
+      </div>
+      <img src="/screenshots/07-home-automation.png" alt="Hub Otomasi Rumah di Projector Pilot: Home Assistant, Hubitat, dan Webhook" width="1600" height="2384" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section id="home-assistant">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Home Assistant</div>
+      <h2>Siapkan Home Assistant</h2>
+      <p class="lead">Masuk dari aplikasi, terbitkan proyektor sebagai sensor, tempel satu blok ke konfigurasi Anda, lalu sinkron. Sejak itu Home Assistant menjalankan proyektor sendiri.</p>
+    </div>
+    <div class="with-shot">
+      <ol class="steps">
+        <li>Buka <b>Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Home Assistant</b>.</li>
+        <li>Ketik <b>alamat Home Assistant</b> Anda (misalnya <code>http://homeassistant.local:8123</code> atau IP-nya), lalu ketuk <b>Masuk</b>. Ini adalah login lewat browser ke instans Anda sendiri - <b>tidak ada token untuk ditempel</b>. Gunakan login Home Assistant biasa Anda, lengkap dengan autentikasi dua faktor.</li>
+        <li>Aplikasi menerbitkan proyektor sebagai <b>sensor</b>, dengan entitas seperti <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>, yang membawa daya, input, mode warna, angka gambar, dan jam lampu.</li>
+        <li>Aktifkan <b>Kirim status proyektor</b> agar pembacaan itu diperbarui di Home Assistant setiap kali berubah selama aplikasi terbuka, dan aktifkan <b>Sync Advanced Controls</b> untuk menerbitkan skrip untuk mode gambar, input, memori lensa, dan daya.</li>
+        <li>Tempel satu blok <b>shell_command</b> (di bawah) ke <code>configuration.yaml</code> Anda, mulai ulang Home Assistant, lalu ketuk <b>Sync With HA</b>.</li>
+      </ol>
+      <img src="/screenshots/08-home-assistant.png" alt="Layar Home Assistant di Projector Pilot yang menampilkan blok shell_command, Masuk, Projector Entity ID, dan tombol sinkron" width="1600" height="2384" loading="lazy" decoding="async" />
+    </div>
+
+    <h3 style="margin-top:36px">Blok shell_command</h3>
+    <p class="lead">Inilah seluruh trik tanpa server. Aplikasi menulis satu perintah yang dijalankan Home Assistant untuk berbicara dengan Web Control proyektor, dan setiap skrip yang disinkronkan memanggil perintah itu dengan kata kerja berbeda. Ketuk <b>Copy block</b> di aplikasi dan tempel ke <code>configuration.yaml</code>. Contoh di bawah hanya ilustrasi - aplikasi mengisi alamat dan nama perintah proyektor Anda sendiri:</p>
+<pre class="code">shell_command:
+  projector_pilot_epson: &gt;-
+    curl -s --max-time 5 --digest -u 'EPSONWEB:'
+    -H "X-Requested-With: XMLHttpRequest"
+    -H "Referer: http://192.168.1.50/cgi-bin/webconf"
+    "http://192.168.1.50/cgi-bin/directsend?{{ verb }}={{ value | urlencode }}"</pre>
+    <p class="capt">Hanya contoh. Aplikasi membuat milik Anda dengan IP asli proyektor dan nama yang diturunkan dari nomor serinya.</p>
+    <div class="note"><b>Mengapa tanpa server.</b> <code>curl</code> itu berjalan di perangkat Home Assistant, bukan ponsel Anda. Home Assistant menjangkau IP proyektor langsung lewat Web Control, sehingga otomasi berjalan entah aplikasi terbuka atau tidak dan entah ponsel Anda di rumah atau tidak. Pengguna digest <code>EPSONWEB</code> adalah login Web Control; aplikasi memakai kata sandi Web Control yang sudah tersimpan untuk proyektor.</p></div>
+
+    <h3 style="margin-top:32px">Test Connection, Sync, dan pembersihan</h3>
+    <ul class="plain">
+      <li><b>Test Connection</b> memeriksa bahwa aplikasi bisa menjangkau Home Assistant Anda dan bahwa <code>shell_command</code> yang ditempel benar-benar ada, sehingga Anda menemukan salah ketik sebelum membangun apa pun di atasnya.</li>
+      <li><b>Sync With HA</b> menulis atau memperbarui skrip untuk Skenario dan kontrol Anda, dan membuat dasbor Projector Pilot siap pakai langsung di Home Assistant. Jalankan lagi kapan saja saat Anda menambah Skenario atau mengubah kontrol - ia memperbarui di tempat, tidak menumpuk duplikat.</li>
+      <li><b>Remove orphaned scripts</b> menemukan skrip yang ditulis aplikasi yang tidak lagi punya Skenario atau kontrol yang cocok - misalnya setelah Anda menghapus Skenario - <b>menampilkan daftar persis mana yang akan dihapus, dan bertanya dulu</b>. Tidak ada yang dihapus sampai Anda konfirmasi. Ia hanya menyentuh skrip yang dibuat Projector Pilot; tidak ada hal lain di Home Assistant Anda yang terganggu, dan jika Home Assistant tidak mau menampilkan daftar skripnya, tidak ada yang dihapus.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Daftar periksa penyiapan</div>
+      <h2>Aplikasi memberi tahu apa yang sudah selesai dan apa yang kurang</h2>
+      <p class="lead">Layar Home Assistant memiliki <b>Daftar periksa penyiapan</b> dan panel <b>Apa yang dimiliki Home Assistant Anda</b>, sehingga Anda tidak perlu menebak langkah mana yang tersisa. Setiap baris menyatakan apakah sudah selesai, kurang, atau tidak bisa dipastikan, dan menjelaskan apa yang harus dilakukan selanjutnya.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Terhubung ke Home Assistant</b> - sudah masuk dan menjawab. Jika Home Assistant tidak menjawab, baris ini meminta Anda memeriksa alamat dan memastikan ponsel Anda di jaringan yang sama.</li>
+      <li><b>Proyektor ditambahkan ke Home Assistant</b> - apakah Home Assistant sudah memiliki proyektor ini. Jika belum, baris ini mengarahkan Anda menambahkan integrasi PJLink, dan langkah tambah integrasi menampilkan host dan port PJLink yang diminta Home Assistant.</li>
+      <li><b>Sensor pembacaan terdaftar</b> - sensor yang membawa pembacaan proyektor Anda. Sensor ini terdaftar saat pertama kali aplikasi membaca proyektor, dan baris ini menawarkan <b>Daftarkan sekarang</b> atau <b>Aktifkan</b> saat ada yang menghalanginya.</li>
+      <li><b>Apa yang dimiliki Home Assistant Anda</b> - HACS (toko komunitas), integrasi Epson Projector Link, integrasi PJLink, dan perintah Projector Pilot di <code>configuration.yaml</code>. Masing-masing menampilkan Ditemukan, Tidak terpasang, atau Tidak bisa dipastikan, dengan tombol Cara memasang dan Buka di HACS jika berguna.</li>
+    </ul>
+    <div class="note"><b>Periksa lagi memberi tahu apa yang ditemukan.</b> Ketuk <b>Periksa lagi</b> setelah Anda memperbaiki sesuatu dan aplikasi membaca ulang Home Assistant Anda lalu melaporkan hasilnya, bukan membiarkan Anda bertanya-tanya apakah berhasil. Baris yang tidak bisa diperiksa menyatakan <i>Tidak bisa dipastikan</i>, tidak pernah ya atau tidak yang ditebak.</div>
+  </div>
+</section>
+
+<section id="pjlink-core">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bekerja dengan apa yang sudah Anda punya</div>
+      <h2>Dukungan integrasi PJLink inti, dan kartu yang lebih kaya jika Anda memilikinya</h2>
+      <p class="lead">Projector Pilot mencari tahu apa yang terpasang di Home Assistant Anda dan membangun di sekitarnya. Ia bekerja dengan <b>integrasi PJLink inti</b> yang sudah disertakan Home Assistant, sehingga proyektor PJLink yang sudah Anda tambahkan di sana diperlakukan sebagai warga kelas satu.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Kartu bawaan lebih dulu.</b> Jika Anda tidak punya kartu komunitas, Sync membangun dasbor Anda dengan kartu bawaan Home Assistant dan menyatakannya saat selesai. Langsung berfungsi tanpa penyiapan tambahan.</li>
+      <li><b>Ditingkatkan saat kartu HACS terpasang.</b> Aplikasi memeriksa kartu komunitas mana (Mushroom, button-card, card-mod, apexcharts-card) yang terpasang dan meningkatkan setiap kartu ke yang lebih kaya jika Anda memilikinya. <a href="/id/guide/home-assistant-dashboard/">Panduan dasbor buatan manual</a> melangkah lebih jauh jika Anda ingin tampilan green-glass penuh.</li>
+      <li><b>Skenario dan kontrol butuh satu kali tempel.</b> Jika Home Assistant belum punya perintah untuk mengirim ke proyektor, dasbor tetap dibuat dengan pembacaan langsung, dan kartu <b>Selesaikan penyiapan</b> memandu Anda: ketuk Copy block, tempel ke <code>configuration.yaml</code>, mulai ulang Home Assistant, lalu ketuk Sync lagi.</li>
+      <li><b>Tidak ada yang terpasang? Tempel manual.</b> Jika tidak ada yang terpasang di Home Assistant, Anda tetap bisa menyalin semuanya dari aplikasi dan menempelkannya sendiri.</li>
+      <li><b>Kata sandi diberi tanda.</b> Blok perintah yang Anda tempel menyatakan saat ia membawa kata sandi proyektor, sehingga Anda tahu sebelum membagikan atau menyimpannya.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="last-known">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Saat proyektor mati</div>
+      <h2>Pembacaan yang tetap bertahan</h2>
+      <p class="lead">Proyektor dalam standby melaporkan sangat sedikit, sehingga dasbor biasanya menjadi kosong. <b>Sensor terakhir diketahui</b> opsional menyimpan pembacaan terakhir proyektor Anda - input, jam lampu atau laser - di Home Assistant selama proyektor mati.</p>
+    </div>
+    <ul class="plain">
+      <li>Ini satu blok opsional lagi: tempel di akhir <code>configuration.yaml</code> (atau tambahkan hanya barisnya di bawah seksi <code>template:</code> yang sudah ada) dan mulai ulang Home Assistant. Aplikasi punya tombol <b>Periksa apakah sudah ada</b> yang memberi tahu apakah Home Assistant memilikinya.</li>
+      <li>Daya yang dimatikan kini sampai ke Home Assistant sebagai <b>off</b>, sehingga dasbor dan otomasi Anda melihat proyektor sebagai mati saat memang mati.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="scenes-as-scripts">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Skenario sebagai skrip</div>
+      <h2>Setiap Skenario menjadi skrip Home Assistant</h2>
+      <p class="lead">Setelah sinkron, Skenario Anda tidak terkunci di dalam aplikasi. Masing-masing, plus daya, setiap input, setiap mode warna, dan setiap memori lensa yang benar-benar dimiliki proyektor Anda, ditulis sebagai skrip Home Assistant.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Otomasi bisa menjalankannya.</b> "Saat matahari terbenam, jika TV menyala, jalankan Movie Night" adalah otomasi Home Assistant biasa begitu Skenario menjadi skrip.</li>
+      <li><b>Asisten suara bisa menjalankannya.</b> Ekspos skrip ke asisten Anda dan "nyalakan Movie Night" mengatur input, mode gambar, dan memori lensa sekaligus.</li>
+      <li><b>Hanya kontrol nyata Anda yang muncul.</b> Aplikasi menulis skrip untuk setiap input, mode warna, dan memori lensa yang dilaporkan proyektor - bukan daftar umum hasil tebakan.</li>
+      <li><b>Menghapus sinkron hanya menghapus yang ditulis aplikasi.</b> Matikan sinkron, atau gunakan Remove orphaned scripts (yang menampilkan daftarnya dan bertanya dulu), dan Projector Pilot menghapus skrip yang dibuatnya dan tidak ada yang lain.</li>
+    </ul>
+    <div class="note"><b>Skrip dinamai agar penggantian nama memperbarui skrip yang sama.</b> Nama skrip diturunkan dari proyektor dan kontrolnya, sehingga sinkron ulang setelah Anda mengganti nama Skenario memperbarui skrip yang ada, bukan membuat salinan kedua.</div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dasbor</div>
+      <h2>Sync membuatkan dasbor untuk Anda</h2>
+      <p class="lead">Anda tidak perlu membuat tampilan Lovelace secara manual, dan tidak perlu lagi menempelkannya. Saat Anda mengetuk <b>Sync With HA</b>, aplikasi membangun dasbor Projector Pilot lengkap langsung di Home Assistant lewat API-nya sendiri: status langsung proyektor dan tombol untuk setiap Skenario dan kontrol yang disinkronkan. Dasbor itu muncul di bilah samping Home Assistant Anda sebagai <b>Projector Pilot</b> - buka dan selesai.</p>
+      <figure style="margin:28px 0 0">
+        <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+          <img src="/screenshots/ha-dashboard.png" alt="Dasbor Projector Pilot di Home Assistant: daya dan sumber, mode warna, menu gambar lengkap, HDR dan sinyal, kalibrasi RGB, lensa dan geometri, grafik jam laser, perawatan, dan Skenario - semuanya sebagai petak green glass" style="display:block;width:100%" width="3184" height="5576" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>Versi dasbor yang lebih kaya dan dibuat manual. Dasbor yang dibuat Sync membawa status langsung dan tombol yang sama dalam kartu Home Assistant standar; tampilan green glass di bawah adalah versi kustom opsional. Gulir, atau klik untuk memperbesar.</figcaption>
+      </figure>
+    </div>
+    <ol class="steps">
+      <li>Masuk ke Home Assistant di aplikasi.</li>
+      <li>Tempel <b>blok Copy</b> aplikasi ke <code>configuration.yaml</code> sekali saja dan mulai ulang Home Assistant (satu-satunya langkah manual - Home Assistant tidak mengizinkan aplikasi menambahkan perintah itu dari jarak jauh).</li>
+      <li>Ketuk <b>Sync With HA</b>. Dasbor dibuat untuk Anda dan muncul di bilah samping sebagai <b>Projector Pilot</b>.</li>
+    </ol>
+    <div class="note"><b>Lebih suka menempelnya sendiri?</b> <b>Salin dasbor</b> masih ada di layar Home Assistant. Ketuk, lalu di Home Assistant buka <b>Pengaturan &rsaquo; Dasbor &rsaquo; Tambah Dasbor</b>, buat dasbor kosong, buka menu tiga titiknya &rsaquo; <b>Edit dashboard</b> &rsaquo; menu tiga titik &rsaquo; <b>Raw configuration editor</b>, dan tempel YAML yang disalin.</div>
+    <p class="lead">Entah dibuatkan untuk Anda atau Anda tempel sendiri, dasbornya sama - kartu status plus tombol untuk setiap kontrol (cuplikan ilustrasi):</p>
+<pre class="code">views:
+  - title: Projector
+    cards:
+      - type: entity
+        entity: sensor.projector_pilot_epson_qb1000b_qb1000w
+        name: Projector
+      - type: button
+        name: Power On
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_power_on
+      - type: button
+        name: Movie Night
+        tap_action:
+          action: perform-action
+          perform_action: script.turn_on
+          target:
+            entity_id: script.projector_pilot_scene_movie_night</pre>
+    <p class="capt">Hanya contoh. Dasbor Anda membawa entitas asli proyektor Anda dan Skenario Anda sendiri.</p>
+    <div class="note"><b>Tidak terikat model.</b> Dasbor dibuat dari kemampuan proyektor <i>Anda</i> sendiri - entitas, angka gambar, input, mode warna, memori lensa, dan Skenario yang benar-benar dilaporkannya. Tangkapan layar di sini adalah QB1000; model Anda mungkin menampilkan input, kontrol, dan pembacaan yang berbeda. Untuk dasbor green-glass penuh seperti yang tampak, ikuti <a href="/id/guide/home-assistant-dashboard/">panduan dasbor langkah demi langkah</a> atau <a href="/id/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>unduh tampilan lengkapnya</a> dan ubah dua string.</div>
+    <div class="note"><b>Ingin dinding yang lebih kaya?</b> Skrip yang sama menggerakkan kartu apa pun yang Anda suka. Jika Anda pernah memakai AVR Maestro, pendekatannya identik - buat petak sumber dan mode yang menyala, header langsung, dan riwayat dari satu sensor dan skrip yang disinkronkan.</div>
+  </div>
+</section>
+
+<section id="hubitat">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hubitat</div>
+      <h2>Siapkan Hubitat</h2>
+      <p class="lead">Di Hubitat, Projector Pilot mencerminkan proyektor ke sebuah perangkat di hub Anda lewat Maker API, sehingga Rule Machine bisa membaca dan bertindak atas daya, mute, dan input.</p>
+    </div>
+    <ol class="steps">
+      <li>Di Hubitat, aktifkan aplikasi <b>Maker API</b> dan catat URL akses serta tokennya, lalu pilih perangkat mana yang diekspos.</li>
+      <li>Di Projector Pilot, buka <b>Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Hubitat</b> dan masukkan detail <b>Maker API</b> hub Anda.</li>
+      <li>Pilih <b>perangkat yang mewakili proyektor</b>. Aplikasi menyarankan yang paling mungkin; pilih itu atau pilih milik Anda sendiri.</li>
+      <li>Aplikasi <b>mencerminkan daya, mute, dan input</b> ke perangkat itu, hanya mengirim perintah yang diterima perangkat.</li>
+      <li>Buat aturan <b>Rule Machine</b> terhadap perangkat itu seperti perangkat lainnya - status proyektor yang menggerakkannya.</li>
+    </ol>
+    <div class="note"><b>Hanya yang diterima perangkat.</b> Aplikasi mengirim nilai proyektor ke Hubitat hanya jika perangkat yang dipilih mendukung perintah itu, sehingga tidak pernah mendorong sesuatu yang akan ditolak perangkat.</div>
+  </div>
+</section>
+
+<section id="webhooks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Webhook</div>
+      <h2>Siapkan Webhook</h2>
+      <p class="lead">Webhook adalah penampung segala keperluan. Aplikasi mengirim ke URL milik Anda saat proyektor menyala, mati, berganti input, atau memanggil Skenario - webhook Home Assistant, Node-RED, IFTTT, atau apa pun yang menerima JSON.</p>
+    </div>
+    <ol class="steps">
+      <li>Buka <b>Pengaturan &rsaquo; Otomasi Rumah &rsaquo; Webhook</b>.</li>
+      <li>Masukkan <b>URL</b> tujuan pengiriman. Webhook Home Assistant terlihat seperti <code>http://homeassistant.local:8123/api/webhook/your-id</code>.</li>
+      <li>Pilih <b>peristiwa</b> mana yang memicu webhook: daya menyala, daya mati, perubahan input, pemanggilan Skenario - dan secara opsional saring ke input atau Skenario tertentu.</li>
+      <li>Secara opsional atur <b>payload kustom</b> jika layanan penerima menginginkan bentuk tertentu; jika tidak, aplikasi mengirim JSON default-nya.</li>
+      <li>Simpan. Sejak itu aplikasi mengirim pada setiap peristiwa yang cocok.</li>
+    </ol>
+    <p class="lead">Payload default adalah JSON biasa - sebuah peristiwa, proyektor, dan nilai yang berubah:</p>
+<pre class="code">{
+  "event": "scene_recalled",
+  "projector": "Epson QB1000B/QB1000W",
+  "scene": "Movie Night",
+  "power": "on",
+  "input": "HDMI1",
+  "color_mode": "Cinema",
+  "timestamp": "2026-09-23T20:14:07Z"
+}</pre>
+    <p class="capt">Contoh payload. Peristiwa perubahan input atau daya membawa kolom yang relevan dengannya.</p>
+    <div class="note"><b>Menautkan ulang memperbaiki semuanya.</b> Jika Anda menautkan ulang Home Assistant ke alamat baru, aplikasi memperbarui semua webhook yang mengarah ke sana sekaligus, sehingga instans yang pindah tidak berarti mengedit satu per satu secara manual.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pemecahan masalah</h2>
+    </div>
+    <details class="more"><summary>Login memantul kembali ke halaman masuk</summary>
+      <p>Pastikan alamat yang Anda masukkan adalah alamat yang benar-benar Anda gunakan untuk menjangkau Home Assistant, termasuk port (biasanya <code>:8123</code>). Login ini adalah login browser sungguhan ke instans Anda, jadi nama pengguna, kata sandi, dan kode dua faktor Anda semuanya berlaku. Di ponsel, login selesai entah browser dalam aplikasi menyerahkan hasilnya atau callback lokal kembali lebih dulu; jika masih macet, tutup lembar itu dan ketuk Masuk lagi.</p>
+    </details>
+    <details class="more"><summary>Sensor proyektor tidak muncul di Home Assistant</summary>
+      <p>Sensor diterbitkan saat aplikasi terbuka dan <b>Kirim status proyektor</b> aktif, jadi buka aplikasi dan pastikan tombol itu. Lalu periksa <b>Developer Tools &rsaquo; States</b> di Home Assistant dan saring dengan <code>projector_pilot</code>. Proyektor dalam standby menerbitkan sangat sedikit; bangunkan dan pembacaannya akan terisi.</p>
+    </details>
+    <details class="more"><summary>Skrip yang disinkronkan tidak ada</summary>
+      <p>Skrip ditulis oleh <b>Sync With HA</b>, yang membutuhkan blok <code>shell_command</code> sudah ditempel ke <code>configuration.yaml</code> dan Home Assistant sudah dimulai ulang sekali. Jalankan <b>Test Connection</b> lebih dulu - ia memberi tahu apakah blok itu ada. Lalu Sync lagi. Jika skrip lama yang sudah mati memenuhi daftar, gunakan <b>Remove orphaned scripts</b>.</p>
+    </details>
+    <details class="more"><summary>Skrip berjalan di aplikasi tetapi tidak dari Home Assistant saat ponsel saya tidak ada</summary>
+      <p>Itulah tujuan blok <code>shell_command</code> - ia yang memungkinkan Home Assistant menjangkau IP proyektor sendiri. Jika hanya berfungsi saat aplikasi terbuka, kemungkinan blok belum ditempel atau Home Assistant belum dimulai ulang setelah menempel. Pastikan dengan Test Connection, mulai ulang Home Assistant, dan Sync.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Hubungkan proyektor Anda ke seluruh rumah</h2>
+    <p class="lead" style="margin:0 auto 24px">Otomasi Rumah adalah add-on sekali beli. Tanpa langganan, tanpa akun, tanpa cloud. Satu pembelian membukanya di setiap platform yang Anda miliki.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - tersedia sekarang</a>
+      <span class="pill">App Store - menunggu persetujuan</span>
+      <span class="pill">Microsoft Store - menunggu persetujuan</span>
+      <span class="pill">Mac App Store - menunggu persetujuan</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/id/pricing/">Lihat Gratis vs Pro vs Otomasi Rumah &rarr;</a> &middot; <a href="/id/guide/">Panduan pengguna lengkap &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Jawaban singkat</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Apakah ponsel saya harus tetap berada di jaringan agar otomasi Home Assistant berjalan?</h3><p>Tidak. Setelah Anda menempelkan satu blok shell_command ke Home Assistant dan sinkron, Home Assistant mengirim perintah langsung ke alamat IP proyektor. Projector Pilot hanyalah alat penyiapan; setelah itu, Home Assistant berbicara dengan proyektor sendiri, entah ponsel Anda di rumah atau tidak.</p></div><div class="gcard"><h3>Bagaimana proyektor muncul di Home Assistant?</h3><p>Sebagai sensor, misalnya sensor.projector_pilot_epson_qb1000b_qb1000w, yang membawa daya, input, mode warna, angka gambar, dan jam lampu, diperbarui setiap kali berubah selama aplikasi terbuka. Aktifkan Sync Advanced Controls dan aplikasi juga menulis skrip Home Assistant untuk setiap Skenario, plus daya, setiap input, setiap mode warna, dan setiap memori lensa yang dimiliki proyektor Anda.</p></div><div class="gcard"><h3>Apakah Otomasi Rumah gratis?</h3><p>Otomasi Rumah adalah add-on berbayar, pembelian sekali, terpisah dari Projector Pilot Pro. Paket bundel membeli keduanya sekaligus dengan harga lebih hemat. Lihat halaman harga.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/id/guide/">Panduan Pengguna</a><a href="/id/pricing/">Harga</a><a href="/id/highlights/">Sorotan</a><a href="/id/guide/home-automation/">Home Assistant</a><a href="/id/help/">Bantuan &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/id/help/#privacy">Privasi</a><a href="/id/help/#terms">Ketentuan</a></div>
+<div class="flinks"><a href="/id/guide/getting-started/">Memulai</a><a href="/id/guide/dashboard/">Dasbor</a><a href="/id/guide/remote/">Remote</a><a href="/id/guide/picture/">Gambar</a><a href="/id/guide/lens/">Lensa</a><a href="/id/guide/scenes/">Skenario</a><a href="/id/guide/home-assistant-dashboard/">Dasbor HA</a><a href="/id/guide/maintenance/">Perawatan</a><a href="/id/guide/settings/">Pengaturan</a><a href="/id/guide/languages/">Bahasa</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot adalah aplikasi independen untuk proyektor Epson dan PJLink. Aplikasi ini tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Epson, badan standar PJLink, Home Assistant, Hubitat, Apple, Google, atau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play, dan Microsoft Store adalah merek dagang dari pemiliknya masing-masing, disebutkan hanya untuk menjelaskan apa yang didukung aplikasi ini.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="ro" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#1B5E20" />
+<title>Tablou de bord Home Assistant pentru proiector (YAML) - Projector Pilot</title>
+<meta name="description" content="Construiește pas cu pas un tablou de bord Home Assistant personalizat pentru proiector: cardurile HACS de instalat, ID-ul entității și seria, plus YAML gata de copiat pentru fiecare card." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tablou de bord Home Assistant pentru proiector (YAML) - Projector Pilot" />
+<meta property="og:description" content="Construiește pas cu pas un tablou de bord Home Assistant personalizat pentru proiector: cardurile HACS de instalat, ID-ul entității și seria, plus YAML gata de copiat pentru fiecare card." />
+<meta property="og:url" content="https://projectorpilot.com/ro/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tablou de bord Home Assistant pentru proiector (YAML) - Projector Pilot" />
+<meta name="twitter:description" content="Construiește pas cu pas un tablou de bord Home Assistant personalizat pentru proiector: cardurile HACS de instalat, ID-ul entității și seria, plus YAML gata de copiat pentru fiecare card." />
+<meta name="twitter:image" content="https://projectorpilot.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Projector Pilot, the control app for Epson and PJLink projectors, shown on a phone" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/guide/home-assistant-dashboard/", "name": "Tablou de bord Home Assistant pentru proiector (YAML) - Projector Pilot", "description": "Construiește pas cu pas un tablou de bord Home Assistant personalizat pentru proiector: cardurile HACS de instalat, ID-ul entității și seria, plus YAML gata de copiat pentru fiecare card.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-10-06", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/og-card.png", "width": 1200, "height": 630}, "breadcrumb": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/#app"}}, {"@type": "TechArticle", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#article", "headline": "Construiește un tablou de bord Home Assistant pentru proiector în aproximativ o oră", "description": "Construiește pas cu pas un tablou de bord Home Assistant personalizat pentru proiector: cardurile HACS de instalat, ID-ul entității și seria, plus YAML gata de copiat pentru fiecare card.", "image": "https://projectorpilot.com/screenshots/ha-dashboard.png", "datePublished": "2026-09-23", "dateModified": "2026-10-06", "inLanguage": "ro", "mainEntityOfPage": {"@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#webpage"}, "about": {"@id": "https://projectorpilot.com/#app"}, "author": {"@id": "https://projectorpilot.com/#organization"}, "publisher": {"@id": "https://projectorpilot.com/#organization"}, "isPartOf": {"@id": "https://projectorpilot.com/#website"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/guide/"}, {"@type": "ListItem", "position": 3, "name": "Panou Home Assistant", "item": "https://projectorpilot.com/guide/home-assistant-dashboard/"}]}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trebuie să construiesc acest tablou de bord manual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Când atingi Sincronizează cu HA în aplicație, aceasta construiește pentru tine direct în Home Assistant un tablou de bord Projector Pilot gata făcut - senzorul live al proiectorului plus un buton pentru fiecare comandă și Scenă - și apare în bara laterală ca Projector Pilot. Dacă ai instalate cardurile comunității, Sincronizarea le trece automat pe acestea; această pagină este pentru construirea manuală a versiunii mai bogate, în stil sticlă verde, sau pentru personalizarea a ceea ce a creat Sincronizarea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am nevoie de carduri personalizate din HACS pentru a-l construi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ca să obții aspectul din captura de ecran, da: Mushroom, button-card, card-mod și mini-graph-card. Niciunul nu este necesar pentru ca butoanele să funcționeze - fiecare buton este un simplu apel de script, iar cardurile personalizate sunt doar stilizarea de deasupra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De ce plăcile cu informații arată o valoare, dar butoanele nu fac nimic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senzorul proiectorului își publică valorile imediat ce te conectezi și sincronizezi în aplicație, așa că plăcile cu informații sunt live pe loc. Butoanele de comandă și de Scenă apelează scripturi care există în Home Assistant abia după ce lipești blocul Copy al aplicației în configuration.yaml, repornești Home Assistant și atingi o dată Sincronizează cu HA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se vor potrivi ID-urile mele de entitate cu cele din acest ghid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modelul da, caracterele exacte nu. Senzorul proiectorului tău poartă numele modelului proiectorului, iar fiecare script poartă numele seriei proiectorului. Oriunde această pagină scrie YOUR_PROJECTOR, pune ID-ul entității senzorului tău; oriunde scrie YOURSERIAL, pune ID-ul derivat din serie afișat pe ecranul Home Assistant al aplicației."
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ro/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot</a>
+<button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă"><a href="/ro/#features">Funcții</a><a href="/ro/guide/">Ghid</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/help/">Ajutor</a><a class="cta" href="/ro/#download">DESCARCĂ APLICAȚIA</a></nav>
+</div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Tablou de bord Home Assistant</div>
+    <div class="eyebrow">Home Assistant &middot; pas cu pas</div>
+    <h1>Construiește un tablou de bord Home Assistant pentru proiector <span class="g">în aproximativ o oră</span></h1>
+    <p>Aplicația îți construiește deja un tablou de bord funcțional când sincronizezi - această pagină este versiunea de lux, făcută manual. Zece pași, YAML-ul fiecărui card și o vizualizare completă pe care o poți lipi dintr-odată. Plăci de sticlă verde, o afișare live a imaginii, Scenele tale și un grafic al orelor laser, toate dintr-un singur senzor de proiector. Schimbi două șiruri de text și este al tău.</p>
+    <div class="readout"><span>Sincronizarea construiește unul gratuit</span><span>4 carduri HACS pentru aspect</span><span>Plăci cu informații live imediat</span><span>Butoane după o singură lipire</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <figure>
+      <div style="border:1px solid rgba(46,160,67,0.28);border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.35);overflow:hidden">
+        <img src="/screenshots/ha-dashboard.png" alt="Tabloul de bord Projector Pilot finalizat în Home Assistant: alimentare și sursă, moduri de culoare, meniul complet al imaginii, HDR și semnal, calibrare RGB, obiectiv și geometrie, întreținere cu grafic al orelor laser și Scene, toate ca plăci de sticlă verde" style="display:block;width:100%" width="3184" height="5576" decoding="async" />
+      </div>
+      <figcaption>Ce construiești. Derulează sau fă clic pentru a mări.</figcaption>
+    </figure>
+    <div class="note"><b>Vrei doar un tablou funcțional? Ai deja unul.</b> Atinge <b>Sincronizează cu HA</b> în aplicație și ea îți construiește un tablou de bord Projector Pilot gata făcut, în bara laterală Home Assistant, cu toate comenzile și senzorul live - fără carduri, fără YAML, fără lipire. Vezi <a href="/ro/guide/home-automation/#dashboard">Sincronizarea construiește tabloul de bord pentru tine</a>. Această pagină este pentru construirea manuală a versiunii mai bogate, în stil sticlă verde, sau pentru personalizarea a ceea ce ți-a dat Sincronizarea.</div>
+    <div class="note"><b>Te grăbești spre aspectul personalizat?</b> Sari la <a href="#whole">pasul 10</a>, descarcă vizualizarea completă, schimbă două șiruri de text și cele trei ID-uri de Scenă, apoi lipește-o. Pașii dintre ele explică ce face fiecare piesă, ca s-o poți modifica.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Înainte de a începe</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Projector Pilot este conectat la Home Assistant.</b> <a href="/ro/guide/home-automation/">Ghidul de configurare</a> acoperă conectarea și activarea opțiunii <b>Trimite starea proiectorului</b>. Ar trebui să-ți vezi proiectorul ca senzor în Home Assistant înainte de a construi ceva peste el.</li>
+      <li><b>Ai sincronizat cel puțin o dată.</b> Settings &rsaquo; Home Automation &rsaquo; Home Assistant &rsaquo; <b>Sincronizează cu HA</b>, după ce ai lipit <b>blocul Copy</b> al aplicației în <code>configuration.yaml</code> și ai repornit Home Assistant. Asta creează scripturile pe care le apelează fiecare buton de comandă de mai jos.</li>
+      <li><b>Proiectorul tău este pornit</b> cât timp construiești. Atributele imaginii de mai jos sunt ceea ce un proiector în standby lasă în mare parte goale.</li>
+    </ul>
+    <p class="lead">Două surse alimentează acest panou de control, iar diferența contează la fiecare pas de mai jos.</p>
+    <table class="t">
+      <thead><tr><th>Provine din</th><th>Vă oferă</th></tr></thead>
+      <tbody>
+        <tr><td>Senzorul proiectorului, <code>sensor.YOUR_PROJECTOR</code></td><td>Fiecare <b>valoare citită</b>. Alimentare, intrare, mod de culoare, toate valorile imaginii, HDR și semnal, obiectiv și geometrie, orele lămpii. Live imediat ce te conectezi și sincronizezi, fără bloc Copy.</td></tr>
+        <tr><td>Scripturile sincronizate ale aplicației, <code>script.projpilot_YOURSERIAL_...</code></td><td>Fiecare <b>comandă</b>. Alimentare, intrări, moduri de culoare, memorii de obiectiv și Scenele tale. Acestea există abia după ce blocul Copy este lipit, Home Assistant este repornit și ai atins Sincronizează cu HA.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 1</div>
+      <h2>Instalați patru carduri din HACS</h2>
+    </div>
+    <p class="lead">Toate patru se află în magazinul HACS implicit. În Home Assistant: <b>HACS &rsaquo; Frontend &rsaquo; Explore &amp; Download Repositories</b>, căutați numele, apăsați Download, apoi reîncărcați browserul.</p>
+    <table class="t">
+      <thead><tr><th>Căutați</th><th>Folosit pentru</th><th>Dacă îl omiteți</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mushroom</b></td><td>Fiecare placă cu informații, buton de comandă și placă de Scenă</td><td>Folosiți un card simplu <code>button</code>. Funcționează, dar arată mai pătrățos.</td></tr>
+        <tr><td><b>button-card</b></td><td>Eroul, cu eticheta lui live</td><td>Folosește un card <code>entity</code> sau un card șablon Mushroom cu mai puține detalii.</td></tr>
+        <tr><td><b>card-mod</b></td><td>Fundalul de sticlă verde, chenarele și gradientele</td><td>Totul funcționează în continuare. Doar că nimic nu mai strălucește.</td></tr>
+        <tr><td><b>mini-graph-card</b></td><td>Istoricul orelor laser din secțiunea Întreținere</td><td>Folosiți cardul <code>history-graph</code> încorporat.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Niciunul nu este necesar pentru ca totul să funcționeze.</b> Fiecare comandă de mai jos rulează dintr-un card buton standard Home Assistant îndreptat spre același script. Cardurile personalizate dau aspectul de sticlă verde, nu instalația.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 2</div>
+      <h2>Găsește-ți ID-ul entității și seria</h2>
+    </div>
+    <p class="lead">Fiecare fragment de pe această pagină folosește două substituenți. Aflați-le pe ale dumneavoastră o singură dată, iar restul înseamnă copiere și lipire.</p>
+    <ul class="plain">
+      <li><b><code>sensor.YOUR_PROJECTOR</code></b> &rarr; Developer Tools &rsaquo; States în Home Assistant, filtrează după <code>projector_pilot</code>. Ceva de genul <code>sensor.projector_pilot_epson_qb1000b_qb1000w</code>.</li>
+      <li><b><code>YOURSERIAL</code></b> &rarr; deschide aplicația, <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b>. ID-ul derivat din serie este afișat chiar acolo și este partea din mijloc a fiecărui nume de script sincronizat: <code>script.projpilot_YOURSERIAL_power_on</code>, <code>script.projpilot_YOURSERIAL_input_hdmi1</code> și așa mai departe.</li>
+    </ul>
+    <p class="lead">Poți filtra și Developer Tools &rsaquo; States după <code>projpilot</code>, ca să vezi dintr-odată întreaga listă de comenzi sincronizate, după ce blocul Copy și Sincronizarea de la pasul 1 sunt făcute.</p>
+    <div class="note"><b>Încă nu ai listă de scripturi?</b> E normal înainte să fi lipit blocul Copy. Senzorul există și se actualizează în continuare; scripturile apar abia după ce Sincronizează cu HA rulează cu succes.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 3</div>
+      <h2>Creați vizualizarea</h2>
+    </div>
+    <ol class="steps">
+      <li>Settings &rsaquo; Dashboards &rsaquo; Add Dashboard &rsaquo; New dashboard from scratch. Numește-l Projector Pilot.</li>
+      <li>Deschide-l, apoi atinge pictograma creion din dreapta sus pentru a edita.</li>
+      <li>Adaugă o vizualizare. Orice aranjament merge; tabloul real folosește stiva implicită de carduri, unul sub altul, care e cel mai simplu pentru lipire.</li>
+      <li>Ca să lipești YAML, folosește meniul cu trei puncte al unui card și alege <b>Edit in YAML</b>, sau meniul cu trei puncte al tabloului de bord pentru <b>Raw configuration editor</b>, ca să lipești o vizualizare întreagă dintr-odată.</li>
+    </ol>
+    <p class="lead">Setările proprii ale vizualizării, dacă preferi să le scrii:</p>
+<pre class="code">title: Projector Pilot
+views:
+- title: Projector Pilot
+  path: projector-pilot
+  icon: mdi:projector
+  cards: []</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 4</div>
+      <h2>Adaugă o placă cu informații live</h2>
+    </div>
+    <p class="lead">Începe cu ceva care doar citește, ca să știi că ID-ul entității este corect înainte să atingi ceva care trimite o comandă. Aceasta este live din clipa în care există senzorul proiectorului, fără bloc Copy, fără sincronizare. Adaugă un card, Edit in YAML, lipește:</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Brightness
+secondary: '{{ state_attr(''sensor.YOUR_PROJECTOR'',''brightness'') }}'
+icon: mdi:brightness-6
+icon_color: green
+layout: vertical
+fill_container: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px);
+    min-height: 104px; }'</pre>
+    <p class="capt">Aceeași formă citește oricare dintre cele ~80 de atribute pe care le are senzorul: înlocuiește <code>brightness</code> cu <code>contrast</code>, <code>gamma</code>, <code>color_temp</code>, <code>hdr_pq</code>, <code>lamp_hours</code>, orice vrei pe placă.</p>
+    <p class="lead">Salvează. Dacă apare un număr sau un cuvânt real, ID-ul entității este corect și tot ce urmează va funcționa. Dacă apare gol, întoarce-te la pasul 2.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 5</div>
+      <h2>Adaugă un antet de secțiune verde</h2>
+    </div>
+    <p class="lead">Un titlu simplu e spațiu irosit. Acesta este un card <code>markdown</code> cu fundal în gradient din card-mod, și el transformă o stivă de plăci în secțiuni cu nume. Fiecare secțiune a tabloului începe cu unul ca acesta, doar cu altă etichetă și alt emoji.</p>
+<pre class="code">type: markdown
+content: '&amp;#128268;  &amp;nbsp; **POWER &amp;amp; SOURCE**'
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.30), rgba(16,120,60,0.30));
+    border: 1px solid rgba(61,220,107,0.45); border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    ha-markdown { padding: 12px 20px !important; } ha-markdown p { margin: 0 !important;
+    letter-spacing: 3px; color: #eafff0; font-size: 14px; font-weight: 700; }'</pre>
+    <p class="capt">Schimbă codul emoji și textul etichetei; blocul card-mod este identic în fiecare secțiune.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 6</div>
+      <h2>Adaugă un buton de comandă</h2>
+    </div>
+    <p class="lead">Acesta trimite o comandă în loc să citească doar o valoare, așa că scripturile trebuie să existe mai întâi. Apelează <code>script.projpilot_YOURSERIAL_power_on</code>, pe care aplicația îl scrie abia după ce lipești blocul Copy în <code>configuration.yaml</code>, repornești Home Assistant și atingi <b>Sincronizează cu HA</b>.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Power On
+icon: mdi:power
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_power_on
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Același card pentru Power Off, Screen Blank, HDMI 1, HDMI 2, A/V Mute, un mod de culoare sau o memorie de obiectiv: se schimbă doar eticheta, pictograma și <code>service</code>.</p>
+    <div class="note"><b>Dacă arată bine, dar nu se întâmplă nimic</b> când îl atingi, fie blocul Copy nu a fost lipit, fie Home Assistant nu a mai fost repornit de atunci. Rulează <b>Testează conexiunea</b> în aplicație, care verifică exact asta, înainte să presupui că tabloul de bord e greșit.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 7</div>
+      <h2>Adaugă eroul</h2>
+    </div>
+    <p class="lead">Eroul din partea de sus a tabloului este un <code>button-card</code>: o stare mare de alimentare, un rezumat pe o linie construit din mai multe atribute deodată și tratamentul de sticlă verde pe întregul card, nu doar pe chenar.</p>
+<pre class="code">type: custom:button-card
+entity: sensor.YOUR_PROJECTOR
+name: Epson QB1000
+show_state: true
+show_label: true
+size: 48px
+state_display: '[[[ return entity.state==''on'' ? ''Powered on'' : ''Standby''; ]]]'
+label: '[[[ var a=entity.attributes; return (a.input||''-'')+''  &bull;  ''+(a.color_mode||''-'')+
+  ''  &bull;  ''+(a.video_range||''-'')+''  &bull;  ''+(a.lamp_hours||0)+''  h''; ]]]'
+styles:
+  card:
+  - height: 176px
+  - background: linear-gradient(135deg, rgba(61,220,107,0.32), rgba(11,64,34,0.6))
+  - border: 1px solid rgba(61,220,107,0.5)
+  - border-radius: 22px
+  - box-shadow: 0 12px 36px rgba(0,0,0,0.42)
+  - padding: 20px
+  state:
+  - color: '[[[ return entity.state==''on'' ? ''#3ddc6b'' : ''#8a9'' ]]]'</pre>
+    <p class="capt">Redus la piesele care diferă de la o instalare la alta. Cardul complet setează și pictograma, numele și pozițiile în grilă ale etichetelor; vezi descărcarea de la pasul 10 pentru tot.</p>
+    <p class="lead">Preferi o bandă mai subțire? Un <code>mushroom-chips-card</code> face aceeași treabă într-un singur rând de chipuri mici: starea de alimentare, intrarea, modul de culoare, intervalul video și orele lămpii, fiecare un șablon care citește <code>state_attr('sensor.YOUR_PROJECTOR', ...)</code>. Folosește unul sau altul, nu ambele, în partea de sus a tabloului.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 8</div>
+      <h2>Adăugați Scenele dumneavoastră</h2>
+    </div>
+    <p class="lead">Fiecare Scenă pe care o salvezi în aplicație devine, după sincronizare, un script numit <code>script.projpilot_YOURSERIAL_scene_&lt;id&gt;</code>, iar o placă pentru ea este același card buton de comandă de la pasul 6, cu un nume de Scenă și o pictogramă.</p>
+<pre class="code">type: custom:mushroom-template-card
+primary: Movie Night
+icon: mdi:movie-open
+icon_color: green
+layout: vertical
+fill_container: true
+tap_action:
+  action: call-service
+  service: script.projpilot_YOURSERIAL_scene_YOURSCENE1
+card_mod:
+  style: 'ha-card { background: linear-gradient(135deg, rgba(61,220,107,0.16), rgba(16,90,46,0.20));
+    border: 1px solid rgba(61,220,107,0.34); border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32);
+    min-height: 92px; }'</pre>
+    <p class="capt">Înlocuiește <code>YOURSCENE1</code> cu ID-ul afișat pentru acea Scenă în lista de comenzi sincronizate a aplicației. O placă pe Scenă, într-un <code>horizontal-stack</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 9</div>
+      <h2>Adaugă istoricul orelor laser</h2>
+    </div>
+    <p class="lead">Senzorul proiectorului este înregistrat de Home Assistant ca oricare altul, așa că <code>lamp_hours</code> are un istoric pe gratis. Fără senzori suplimentari, fără helperi, nimic de configurat în prealabil, în secțiunea Întreținere.</p>
+<pre class="code">type: custom:mini-graph-card
+entities:
+- entity: sensor.YOUR_PROJECTOR
+  attribute: lamp_hours
+  name: Laser hours
+name: Laser hours
+icon: mdi:lightbulb-on-outline
+line_color: '#3ddc6b'
+line_width: 4
+hours_to_show: 336
+points_per_hour: 0.5
+height: 96
+animate: true
+card_mod:
+  style: 'ha-card { background: rgba(18,26,20,0.60); border: 1px solid rgba(61,220,107,0.20);
+    border-radius: 16px; box-shadow: 0 6px 22px rgba(0,0,0,0.32); backdrop-filter: blur(8px); }'</pre>
+    <p class="capt">336 de ore înseamnă două săptămâni. Orele laserului și ale lămpii cresc constant, fără salturi, așa că o fereastră de două săptămâni e de obicei suficientă pentru a vedea tendința fără ca graficul să pară plat.</p>
+  </div>
+</section>
+
+<section id="whole">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 10</div>
+      <h2>Sau luați-le pe toate</h2>
+    </div>
+    <p class="lead">Vizualizarea completă, cu fiecare secțiune și fiecare card din captura de ecran de la începutul acestei pagini, cu substituenți în loc de ID-uri de entități.</p>
+    <ol class="steps">
+      <li><a href="/ro/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml" download>Descarcă YAML-ul vizualizării</a>.</li>
+      <li>Deschide-l în orice editor de text și înlocuiește, peste tot unde apar: <code>YOUR_PROJECTOR</code> cu ID-ul entității senzorului tău de proiector de la pasul 2 și <code>YOURSERIAL</code> cu ID-ul tău derivat din serie de la pasul 2.</li>
+      <li>În secțiunea Scene, spre final, înlocuiește <code>YOURSCENE1</code>, <code>YOURSCENE2</code> și <code>YOURSCENE3</code> cu cele trei ID-uri de Scenă ale tale sau adaugă și elimină plăci după câte Scene ai de fapt.</li>
+      <li>În Home Assistant, deschide tabloul tău de bord, pictograma creion, meniul cu trei puncte, <b>Raw configuration editor</b> și lipește-l ca vizualizare.</li>
+    </ol>
+    <div class="note"><b>Numele și numărul Scenelor tale nu se vor potrivi.</b> Fișierul vine cu trei Scene exemplu: Movie Night, Gaming, Sports Day. Redenumește plăcile, îndreaptă-le spre propriile ID-uri de Scenă și adaugă sau șterge plăci până când secțiunea corespunde numărului de Scene pe care le-ai salvat.</div>
+    <div class="note"><b>Plăcile cu informații funcționează imediat după lipire.</b> Au nevoie doar ca senzorul să existe. Butoanele de comandă și de Scenă rămân inactive până când blocul Copy este lipit în <code>configuration.yaml</code>, Home Assistant este repornit și ai atins Sincronizează cu HA.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Depanare</h2>
+    </div>
+    <details class="more"><summary>O placă arată Unknown</summary>
+      <p>Verifică numele atributului față de ce are de fapt senzorul: Developer Tools &rsaquo; States, entitatea ta <code>sensor.YOUR_PROJECTOR</code>, și citește lista de atribute. Câteva valori, precum HDR PQ sau HDR HLG, se completează doar cât timp proiectorul primește efectiv acel tip de semnal, așa că Unknown la acestea două poate fi corect, nu o defecțiune. Dacă întregul senzor pare sărac în date, trezește proiectorul: o unitate în standby publică foarte puține.</p>
+    </details>
+    <details class="more"><summary>Un buton nu face nimic</summary>
+      <p>Fie nu ai lipit încă blocul Copy, fie Home Assistant nu a mai fost repornit de când l-ai lipit. Butoanele de comandă și de Scenă apelează scripturi scrise de aplicație, iar acele scripturi nu există până când în <b>Settings &rsaquo; Home Automation &rsaquo; Home Assistant</b> din aplicație blocul Copy nu este lipit în <code>configuration.yaml</code>, Home Assistant nu este repornit o dată și nu ai atins <b>Sincronizează cu HA</b>. Rulează mai întâi <b>Testează conexiunea</b> în aplicație - ea îți spune dacă blocul este prezent, înainte să cauți o greșeală în tabloul de bord.</p>
+    </details>
+    <details class="more"><summary>Scripturile pe care le aștept lipsesc din Developer Tools &rsaquo; States</summary>
+      <p>Filtrează după <code>projpilot</code> în loc de seria completă - e mai ușor să vezi întreaga listă. Dacă lipsește o comandă sau o Scenă adăugată recent, atinge din nou <b>Sincronizează cu HA</b>; se actualizează pe loc, fără o configurare nouă. Dacă scripturi vechi, moarte, aglomerează lista după ce ai șters o Scenă, folosește <b>Elimină scripturile orfane</b> în aplicație.</p>
+    </details>
+    <details class="more"><summary>ID-ul meu de entitate nu seamănă cu cel din acest ghid</summary>
+      <p>Modelul este fix, partea din mijloc nu. Senzorul tău poartă numele modelului propriului tău proiector, iar fiecare script poartă seria propriului tău proiector, nu substituenții de pe această pagină. Ia-le pe amândouă din Developer Tools &rsaquo; States și din ecranul Home Assistant al aplicației, ca la pasul 2, și folosește-le pe acelea în loc de textul exemplu.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tot proiectorul tău, pe un singur perete</h2>
+    <p class="lead" style="margin:0 auto 24px">Home Automation este un supliment cumpărat o singură dată. Fără abonament, fără cont, fără cloud. O singură achiziție îl deblochează pe toate platformele pe care le ai.</p>
+    <div class="pills" style="justify-content:center">
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot" rel="noopener">Google Play - disponibil acum</a>
+      <span class="pill">App Store - în așteptarea aprobării</span>
+      <span class="pill">Microsoft Store - în așteptarea aprobării</span>
+      <span class="pill">Mac App Store - în așteptarea aprobării</span>
+    </div>
+    <p class="lead" style="margin:20px auto 0;font-size:.92rem"><a href="/ro/guide/home-automation/">Înapoi la Automatizare Locuință &rarr;</a> &middot; <a href="/ro/guide/">Ghidul complet de utilizare &rarr;</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Răspunsuri rapide</h2>
+    </div>
+    <div class="grid"><div class="gcard"><h3>Trebuie să construiesc acest tablou de bord manual?</h3><p>Nu. Când atingi Sincronizează cu HA în aplicație, aceasta construiește pentru tine direct în Home Assistant un tablou de bord Projector Pilot gata făcut - senzorul live al proiectorului plus un buton pentru fiecare comandă și Scenă - și apare în bara laterală ca Projector Pilot. Această pagină este pentru construirea manuală a versiunii mai bogate, în stil sticlă verde, sau pentru personalizarea a ceea ce a creat Sincronizarea.</p></div><div class="gcard"><h3>Am nevoie de carduri personalizate din HACS pentru a-l construi?</h3><p>Ca să obții aspectul din captura de ecran, da: Mushroom, button-card, card-mod și mini-graph-card. Niciunul nu este necesar pentru ca butoanele să funcționeze - fiecare buton este un simplu apel de script, iar cardurile personalizate sunt doar stilizarea de deasupra.</p></div><div class="gcard"><h3>De ce plăcile cu informații arată o valoare, dar butoanele nu fac nimic?</h3><p>Senzorul proiectorului își publică valorile imediat ce te conectezi și sincronizezi în aplicație, așa că plăcile cu informații sunt live pe loc. Butoanele de comandă și de Scenă apelează scripturi care există în Home Assistant abia după ce lipești blocul Copy al aplicației în configuration.yaml, repornești Home Assistant și atingi o dată Sincronizează cu HA.</p></div><div class="gcard"><h3>Se vor potrivi ID-urile mele de entitate cu cele din acest ghid?</h3><p>Modelul da, caracterele exacte nu. Senzorul proiectorului tău poartă numele modelului proiectorului, iar fiecare script poartă numele seriei proiectorului. Oriunde această pagină scrie YOUR_PROJECTOR, pune ID-ul entității senzorului tău; oriunde scrie YOURSERIAL, pune ID-ul derivat din serie afișat pe ecranul Home Assistant al aplicației.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot</div></div>
+<div class="flinks"><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/pricing/">Prețuri</a><a href="/ro/highlights/">Repere</a><a href="/ro/guide/home-automation/">Home Assistant</a><a href="/ro/help/">Ajutor &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ro/help/#privacy">Confidențialitate</a><a href="/ro/help/#terms">Termeni</a></div>
+<div class="flinks"><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/guide/dashboard/">Tablou de bord</a><a href="/ro/guide/remote/">Telecomandă</a><a href="/ro/guide/picture/">Imagine</a><a href="/ro/guide/lens/">Obiectiv</a><a href="/ro/guide/scenes/">Scene</a><a href="/ro/guide/home-assistant-dashboard/">Tablou HA</a><a href="/ro/guide/maintenance/">Întreținere</a><a href="/ro/guide/settings/">Setări</a><a href="/ro/guide/languages/">Limbi</a></div>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot este o aplicație independentă pentru proiectoare Epson și PJLink. Nu este afiliată, susținută sau sponsorizată de Epson, de organismul de standardizare PJLink, de Home Assistant, Hubitat, Apple, Google sau Microsoft. Epson, PJLink, Home Assistant, Hubitat, App Store, Mac App Store, Google Play și Microsoft Store sunt mărci comerciale ale deținătorilor lor respectivi, menționate doar pentru a descrie cu ce funcționează aplicația.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body></html>
