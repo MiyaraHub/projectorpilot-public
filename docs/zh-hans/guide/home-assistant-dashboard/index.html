@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">常见问题</div>
       <h2>快速解答</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>我必须手动搭建这个仪表盘吗？</h3><p>不需要。当您在应用中轻点“与 HA 同步”时，它会直接在 Home Assistant 中为您构建一个现成的 Projector Pilot 仪表盘：包含实时的投影机传感器，以及每个控件和场景对应的按钮，并以 Projector Pilot 的名称出现在侧边栏中。本页面适用于手动打造更丰富的绿色玻璃风格版本，或自定义同步创建的内容。</p></div><div class="gcard"><h3>搭建它需要 HACS 的自定义卡片吗？</h3><p>要还原截图中的外观，需要安装：Mushroom、button-card、card-mod 和 mini-graph-card。不过底层控制功能并不依赖它们：每个按钮都只是一次普通的脚本调用，自定义卡片只是外层的样式。</p></div><div class="gcard"><h3>为什么信息图块有数值，按钮却没反应？</h3><p>您在应用中登录并同步后，投影机传感器就会立即发布读数，所以信息图块马上就有实时数据。而控制和场景按钮调用的脚本，需要您把应用的复制代码块粘贴到 configuration.yaml、重启 Home Assistant，并轻点一次“与 HA 同步”之后，才会存在于 Home Assistant 中。</p></div><div class="gcard"><h3>我的实体 ID 会和本指南中的一致吗？</h3><p>命名规律是一样的，但具体字符不会一样。您的投影机传感器以投影机的型号命名，每个脚本则以投影机的序列号命名。本页面凡是写着 YOUR_PROJECTOR 的地方，请填入您自己传感器的实体 ID；凡是写着 YOURSERIAL 的地方，请填入应用 Home Assistant 界面上显示的、由序列号派生的 ID。</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>

@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">GYIK</div>
       <h2>Gyors válaszok</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>Kézzel kell megépítenem ezt a vezérlőpultot?</h3><p>Nem. Ha az alkalmazásban a Szinkronizálás HA-val gombra koppint, az közvetlenül a Home Assistant-ban elkészít Önnek egy kész Projector Pilot vezérlőpultot - az élő projektorszenzorral és minden vezérlőhöz és Jelenethez egy-egy gombbal -, amely a Projector Pilot néven jelenik meg az oldalsávban. Ez az oldal a gazdagabb, zöld üveges változat kézi felépítéséhez, vagy a szinkronizálással létrehozott vezérlőpult testreszabásához készült.</p></div><div class="gcard"><h3>Kellenek hozzá egyéni HACS kártyák?</h3><p>A képernyőképen látható megjelenéshez igen: Mushroom, button-card, card-mod és mini-graph-card. A mögöttes vezérlők működéséhez egyik sem kötelező - minden gomb egy egyszerű szkripthívás, az egyedi kártyák pedig csak a stílust adják rá.</p></div><div class="gcard"><h3>Miért mutatnak az információs csempék értéket, a gombok pedig miért nem csinálnak semmit?</h3><p>A projektorszenzor az értékeit abban a pillanatban közzéteszi, ahogy bejelentkezik és szinkronizál az alkalmazásban, így az információs csempék azonnal élnek. A vezérlő- és Jelenet-gombok olyan szkripteket hívnak, amelyek csak azután léteznek a Home Assistant-ban, hogy az alkalmazás Másolás blokkját beillesztette a configuration.yaml fájlba, újraindította a Home Assistant-ot, és egyszer megnyomta a Szinkronizálás HA-val gombot.</p></div><div class="gcard"><h3>Megegyeznek majd az entitásazonosítóim az ebben az útmutatóban szereplőkkel?</h3><p>A minta igen, a pontos karakterek nem. A projektorszenzor a projektor modellje után kapja a nevét, minden szkript pedig a projektor sorozatszáma után. Ahol ez az oldal YOUR_PROJECTOR szöveget ír, oda a saját szenzorának entitás-ID-ját írja; ahol YOURSERIAL szerepel, oda az alkalmazás Home Assistant képernyőjén látható, sorozatszámból képzett azonosítót.</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>

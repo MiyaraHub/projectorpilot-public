@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">よくある質問</div>
       <h2>かんたん回答</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>このダッシュボードは手作業で作らなければいけませんか?</h3><p>いいえ。アプリで「HAと同期」をタップすると、ライブのプロジェクターセンサーと、すべてのコントロールおよびシーンのボタンを備えたProjector Pilotのダッシュボードが、Home Assistant内に自動で作成され、サイドバーに「Projector Pilot」として表示されます。このページは、よりリッチなグリーングラス版を手作業で作る方、または同期で作成された内容をカスタマイズしたい方向けです。</p></div><div class="gcard"><h3>これを作るのにHACSのカスタムカードは必要ですか?</h3><p>スクリーンショットと同じ見た目にするなら必要です。Mushroom、button-card、card-mod、mini-graph-cardの4つです。ただし、基本のコントロールが動作するためにはどれも必須ではありません。すべてのボタンは通常のスクリプト呼び出しで、カスタムカードは見た目を整えるための装飾です。</p></div><div class="gcard"><h3>情報タイルには値が表示されるのに、ボタンが何も動作しないのはなぜですか?</h3><p>プロジェクターセンサーは、アプリでサインインして同期するとすぐに測定値を公開するため、情報タイルは直ちにライブ表示されます。一方、コントロールとシーンのボタンが呼び出すスクリプトは、アプリの「ブロックをコピー」の内容をconfiguration.yamlに貼り付け、Home Assistantを再起動し、「HAと同期」を一度タップするまでHome Assistant上に存在しません。</p></div><div class="gcard"><h3>このガイドのエンティティIDと同じになりますか?</h3><p>パターンは同じですが、具体的な文字列は同じになりません。プロジェクターセンサーの名前はお使いのプロジェクターのモデル名に基づき、すべてのスクリプト名はシリアル番号に基づきます。このページにYOUR_PROJECTORと書かれている箇所にはご自身のセンサーのエンティティIDを、YOURSERIALと書かれている箇所にはアプリのHome Assistant画面に表示されるシリアル番号由来のIDを入れてください。</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>

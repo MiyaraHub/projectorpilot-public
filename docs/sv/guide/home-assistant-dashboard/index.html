@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">Vanliga frågor</div>
       <h2>Snabba svar</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>Måste jag bygga den här panelen för hand?</h3><p>Nej. När du trycker på Synka med HA i appen bygger den en färdig Projector Pilot-panel åt dig direkt i Home Assistant - live-sensorn för projektorn plus en knapp för varje kontroll och scen - och den dyker upp i ditt sidofält som Projector Pilot. Den här sidan är till för att bygga den rikare gröna glasversionen för hand, eller anpassa det som Synka skapade.</p></div><div class="gcard"><h3>Behöver jag anpassade kort från HACS för att bygga det här?</h3><p>För att få samma utseende som på skärmbilden, ja: Mushroom, button-card, card-mod och mini-graph-card. Inget av dem krävs för att de underliggande kontrollerna ska fungera - varje knapp är ett vanligt skriptanrop, och de anpassade korten är bara stylingen ovanpå.</p></div><div class="gcard"><h3>Varför visar infobrickorna ett värde medan knapparna inte gör något?</h3><p>Projektorsensorn publicerar sina avläsningar så fort du loggar in och synkar i appen, så infobrickorna är live direkt. Kontroll- och scenknapparna anropar skript som bara finns i Home Assistant efter att du klistrat in appens Kopiera-block i configuration.yaml, startat om Home Assistant och tryckt på Synka med HA en gång.</p></div><div class="gcard"><h3>Stämmer mina entitets-ID:n med dem i den här guiden?</h3><p>Mönstret gör det, de exakta tecknen gör det inte. Din projektorsensor är uppkallad efter din projektormodell, och varje skript är uppkallat efter din projektors serienummer. Överallt där den här sidan skriver YOUR_PROJECTOR sätter du din egen sensors entity-id; överallt där den skriver YOURSERIAL sätter du det serienummerbaserade id som visas på appens Home Assistant-skärm.</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>

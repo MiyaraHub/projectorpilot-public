@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">Preguntas frecuentes</div>
       <h2>Respuestas rápidas</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>¿Tengo que montar este panel a mano?</h3><p>No. Cuando tocas Sincronizar con HA en la app, esta te crea directamente en Home Assistant un panel de Projector Pilot ya hecho - el sensor del proyector en vivo más un botón para cada control y escena - y aparece en tu barra lateral como Projector Pilot. Esta página es para montar a mano la versión más rica de cristal verde, o para personalizar lo que creó Sincronizar.</p></div><div class="gcard"><h3>¿Necesito tarjetas personalizadas de HACS para crearlo?</h3><p>Para igualar el aspecto de la captura, sí: Mushroom, button-card, card-mod y mini-graph-card. Ninguna es imprescindible para que funcionen los controles de fondo - cada botón es una simple llamada a un script, y las tarjetas personalizadas son el estilo por encima.</p></div><div class="gcard"><h3>¿Por qué los recuadros de información muestran un valor pero los botones no hacen nada?</h3><p>El sensor del proyector publica sus lecturas en cuanto inicias sesión y sincronizas en la app, así que los recuadros de información están en vivo enseguida. Los botones de control y de escena llaman a scripts que solo existen en Home Assistant después de pegar el bloque Copiar de la app en configuration.yaml, reiniciar Home Assistant y tocar Sincronizar con HA una vez.</p></div><div class="gcard"><h3>¿Mis ID de entidad coincidirán con los de esta guía?</h3><p>El patrón sí, los caracteres exactos no. Tu sensor de proyector lleva el nombre del modelo de tu proyector, y cada script lleva el nombre del número de serie de tu proyector. Donde esta página escribe YOUR_PROJECTOR, pon el ID de entidad de tu propio sensor; donde escribe YOURSERIAL, pon el ID derivado del número de serie que se muestra en la pantalla de Home Assistant de la app.</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>

@@ -442,7 +442,7 @@ card_mod:
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">FAQ</div>
+      <div class="eyebrow">Întrebări frecvente</div>
       <h2>Răspunsuri rapide</h2>
     </div>
     <div class="grid"><div class="gcard"><h3>Trebuie să construiesc acest tablou de bord manual?</h3><p>Nu. Când atingi Sincronizează cu HA în aplicație, aceasta construiește pentru tine direct în Home Assistant un tablou de bord Projector Pilot gata făcut - senzorul live al proiectorului plus un buton pentru fiecare comandă și Scenă - și apare în bara laterală ca Projector Pilot. Această pagină este pentru construirea manuală a versiunii mai bogate, în stil sticlă verde, sau pentru personalizarea a ceea ce a creat Sincronizarea.</p></div><div class="gcard"><h3>Am nevoie de carduri personalizate din HACS pentru a-l construi?</h3><p>Ca să obții aspectul din captura de ecran, da: Mushroom, button-card, card-mod și mini-graph-card. Niciunul nu este necesar pentru ca butoanele să funcționeze - fiecare buton este un simplu apel de script, iar cardurile personalizate sunt doar stilizarea de deasupra.</p></div><div class="gcard"><h3>De ce plăcile cu informații arată o valoare, dar butoanele nu fac nimic?</h3><p>Senzorul proiectorului își publică valorile imediat ce te conectezi și sincronizezi în aplicație, așa că plăcile cu informații sunt live pe loc. Butoanele de comandă și de Scenă apelează scripturi care există în Home Assistant abia după ce lipești blocul Copy al aplicației în configuration.yaml, repornești Home Assistant și atingi o dată Sincronizează cu HA.</p></div><div class="gcard"><h3>Se vor potrivi ID-urile mele de entitate cu cele din acest ghid?</h3><p>Modelul da, caracterele exacte nu. Senzorul proiectorului tău poartă numele modelului proiectorului, iar fiecare script poartă numele seriei proiectorului. Oriunde această pagină scrie YOUR_PROJECTOR, pune ID-ul entității senzorului tău; oriunde scrie YOURSERIAL, pune ID-ul derivat din serie afișat pe ecranul Home Assistant al aplicației.</p></div></div>
@@ -457,4 +457,5 @@ card_mod:
 </div></footer>
 <script src="/assets/lightbox.js"></script>
 <script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
 </body></html>
