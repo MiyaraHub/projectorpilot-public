@@ -8,7 +8,8 @@
     jvc: {
       name: "JVC D-ILA",
       locales: true,
-      pages: ["", "guide/", "guide/dashboard/", "guide/getting-started/", "guide/home-assistant/", "guide/home-automation/", "guide/languages/", "guide/lens/", "guide/maintenance/", "guide/picture/", "guide/remote/", "guide/scenes/", "guide/settings/", "help/", "highlights/", "pricing/", "privacy/"]
+      english: ["guide/home-assistant-dashboard/"],
+      pages: ["", "guide/", "guide/dashboard/", "guide/getting-started/", "guide/home-assistant/", "guide/home-assistant-dashboard/", "guide/home-automation/", "guide/languages/", "guide/lens/", "guide/maintenance/", "guide/picture/", "guide/remote/", "guide/scenes/", "guide/settings/", "help/", "highlights/", "pricing/", "privacy/"]
     }
   };
   var SAME = { "guide/home-assistant-dashboard/": "guide/home-assistant/", "guide/home-assistant/": "guide/home-assistant-dashboard/" };
@@ -40,7 +41,8 @@
       var saved = read("lang");
       if (saved && saved !== "en") locale = saved;
     }
-    var prefix = APPS[app].locales && locale ? "/" + locale : "";
+    var solo = (APPS[app].english || []).indexOf(rest) >= 0;
+    var prefix = APPS[app].locales && locale && !solo ? "/" + locale : "";
     return prefix + "/" + app + "/" + rest;
   }
 

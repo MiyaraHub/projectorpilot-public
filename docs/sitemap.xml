@@ -8651,6 +8651,12 @@
     <image:image><image:loc>https://projectorpilot.com/screenshots/jvc/08-home-assistant.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://projectorpilot.com/jvc/guide/home-assistant-dashboard/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"/>
+  </url>
+  <url>
     <loc>https://projectorpilot.com/jvc/guide/home-automation/</loc>
     <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-automation/"/>
