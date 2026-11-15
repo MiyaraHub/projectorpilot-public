@@ -336,3 +336,24 @@ table.spec th,table.spec td{text-align:left;padding:9px 10px;border-bottom:1px s
 table.spec th{color:var(--ink);font-family:var(--disp)}
 table.spec td{color:var(--steel)}
 .tablewrap{overflow-x:auto}
+
+/* header layout: brand and switcher never overlap, nav never wraps mid-link */
+.nav .wrap{max-width:1480px}
+.nav .brand{flex:0 0 auto}
+.nav .app-switch{flex:0 0 auto}
+.nav nav{flex:1 1 auto;min-width:0;flex-wrap:nowrap;gap:clamp(12px,1.3vw,24px)}
+.nav nav a.cta{white-space:nowrap;flex:0 0 auto}
+.nav .lang-picker{flex:0 0 auto}
+.nav .site-search{flex:0 0 auto}
+@media(min-width:901px) and (max-width:1359px){
+  .nav .wrap{height:auto;flex-wrap:wrap;row-gap:4px;padding-top:10px;padding-bottom:8px}
+  .nav nav{order:5;flex:1 0 100%;justify-content:flex-start;padding-bottom:2px}
+  .nav .brand{margin-right:auto}
+}
+@media(max-width:900px){
+  .nav .wrap{gap:10px}
+  .nav .brand{flex:0 1 auto;min-width:0}
+}
+@media(max-width:700px){
+  .nav .brand{font-size:0;gap:0}
+}
