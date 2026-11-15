@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="nl" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/nl/jvc/guide/home-assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<meta property="og:url" content="https://projectorpilot.com/nl/jvc/guide/home-assistant/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nl", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Handleiding", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/nl/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal"><a href="/nl/jvc/#features">Functies</a><a href="/nl/jvc/guide/">Gids</a><a href="/nl/jvc/pricing/">Prijzen</a><a href="/nl/jvc/highlights/">Hoogtepunten</a><a href="/nl/jvc/guide/home-assistant/">Home Assistant</a><a href="/nl/jvc/help/">Hulp</a><a class="cta" href="/nl/jvc/#status">BINNENKORT</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/nl/jvc/">Home</a> &rsaquo; <a href="/nl/jvc/guide/">Gebruikershandleiding</a> &rsaquo; Home Assistant</div>
+    <div class="eyebrow">Home Assistant</div>
+    <h1>Home Assistant</h1>
+    <p class="lead">Stel je JVC projector in Home Assistant in vanuit de app.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Installatie</div>
+        <h2>Van aanmelden tot dashboard</h2>
+        <ul class="plain">
+          <li><b>Aanmelden</b> bij Home Assistant met de eigen OAuth-aanmelding.</li>
+          <li><b>Integratie</b>: de app voegt de kernintegratie <b>jvc_projector</b> van Home Assistant toe en stuurt de host, poort en het wachtwoord mee.</li>
+          <li><b>Sensor</b>: een mobile_app-sensor rapporteert via een webhook.</li>
+          <li><b>Geavanceerde bediening synchroniseren</b> maakt scripts met het voorvoegsel <b>ppjvc</b>.</li>
+          <li><b>Dashboard</b>: een Lovelace-dashboard in de stijl van de kern of van HACS.</li>
+          <li>Een <b>installatiechecklist</b> toont wat klaar is en wat nog moet.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Installatiepagina voor Home Assistant in Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+    <div class="note">Home Assistant heeft de Domotica-add-on nodig.</div>
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Volgende</div>
+      <h2>Lees verder</h2>
+    </div>
+    <ul class="plain">
+      <li><a href="/nl/jvc/guide/">Terug naar de gebruikershandleiding</a></li>
+      <li><a href="/nl/jvc/help/">Hulp en veelgestelde vragen</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/nl/jvc/guide/">Gebruikersgids</a><a href="/nl/jvc/pricing/">Prijzen</a><a href="/nl/jvc/highlights/">Highlights</a><a href="/nl/jvc/guide/home-assistant/">Home Assistant</a><a href="/nl/jvc/help/">Help &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/nl/jvc/privacy/">Privacy</a><a href="https://miyarahub.com/terms.html">Voorwaarden</a></div>
+<div class="flinks"><a href="/nl/jvc/guide/getting-started/">Aan de slag</a><a href="/nl/jvc/guide/dashboard/">Dashboard</a><a href="/nl/jvc/guide/remote/">Afstandsbediening</a><a href="/nl/jvc/guide/picture/">Beeld</a><a href="/nl/jvc/guide/lens/">Lens</a><a href="/nl/jvc/guide/scenes/">Scènes</a><a href="/nl/jvc/guide/settings/">Instellingen</a><a href="/nl/jvc/guide/maintenance/">Onderhoud</a><a href="/nl/jvc/guide/home-automation/">Domotica</a><a href="/nl/jvc/guide/languages/">Talen</a></div>
+<p class="crosslink">Gebruik je een Epson projector? <a href="/nl/epson/" data-app-pick="epson">Bekijk Projector Pilot voor Epson &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot D-ILA is een onafhankelijke app voor JVC D-ILA projectors. Niet gelieerd aan of goedgekeurd door JVCKENWOOD Corporation. JVC en D-ILA zijn handelsmerken van hun eigenaren. De app is ook niet gelieerd aan Home Assistant, Hubitat, Apple, Google of Microsoft; die namen zijn handelsmerken van hun respectieve eigenaren en worden alleen genoemd om te beschrijven waarmee de app werkt.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

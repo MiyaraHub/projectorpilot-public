@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /guide/home-assistant-dashboard/projector-pilot-dashboard.yaml
+Disallow: /epson/guide/home-assistant-dashboard/projector-pilot-dashboard.yaml
 
 Sitemap: https://projectorpilot.com/sitemap.xml

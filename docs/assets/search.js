@@ -1,7 +1,8 @@
 (function () {
   var LANG = (document.documentElement.getAttribute("lang") || "en").toLowerCase();
   var UI = (document.getElementById("m") || { dataset: {} }).dataset;
-  var INDEX_URL = LANG === "en" ? "/assets/search-index.json" : "/assets/search-index." + LANG + ".json";
+  var SECTION = /^\/(?:[a-z]{2}(?:-[a-z]+)?\/)?jvc\//.test(location.pathname) ? "jvc" : null;
+  var INDEX_URL = "/assets/search-index" + (SECTION ? "." + SECTION : "") + (LANG === "en" ? "" : "." + LANG) + ".json";
   var idx = null, loading = false;
 
   var css = document.createElement("style");
