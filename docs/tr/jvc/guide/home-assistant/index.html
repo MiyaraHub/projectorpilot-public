@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA uygulamasını Home Assistant ile bağlayın: oturum açın, jvc_projector entegrasyonunu ekleyin, betikleri eşitleyin ve bir kontrol paneli oluşturun." />
+<title>Home Assistant Kurulumu - Projector Pilot D-ILA</title>
+<meta name="description" content="JVC D-ILA projektörünüzü YAML olmadan Home Assistant'a ekleyin: oturum açma, JVC Projector entegrasyonu, canlı bir sensör ve sahne betikleri." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/tr/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA uygulamasını Home Assistant ile bağlayın: oturum açın, jvc_projector entegrasyonunu ekleyin, betikleri eşitleyin ve bir kontrol paneli oluşturun." />
+<meta property="og:title" content="Home Assistant Kurulumu - Projector Pilot D-ILA" />
+<meta property="og:description" content="JVC D-ILA projektörünüzü YAML olmadan Home Assistant'a ekleyin: oturum açma, JVC Projector entegrasyonu, canlı bir sensör ve sahne betikleri." />
 <meta property="og:url" content="https://projectorpilot.com/tr/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA uygulamasını Home Assistant ile bağlayın: oturum açın, jvc_projector entegrasyonunu ekleyin, betikleri eşitleyin ve bir kontrol paneli oluşturun." />
+<meta name="twitter:title" content="Home Assistant Kurulumu - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="JVC D-ILA projektörünüzü YAML olmadan Home Assistant'a ekleyin: oturum açma, JVC Projector entegrasyonu, canlı bir sensör ve sahne betikleri." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA uygulamasını Home Assistant ile bağlayın: oturum açın, jvc_projector entegrasyonunu ekleyin, betikleri eşitleyin ve bir kontrol paneli oluşturun.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant Kurulumu - Projector Pilot D-ILA", "description": "JVC D-ILA projektörünüzü YAML olmadan Home Assistant'a ekleyin: oturum açma, JVC Projector entegrasyonu, canlı bir sensör ve sahne betikleri.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/tr/jvc/">Ana Sayfa</a> &rsaquo; <a href="/tr/jvc/guide/">Kullanım Kılavuzu</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">JVC projektörünüzü uygulamadan Home Assistant ortamında kurun.</p>
+    <h1>JVC projektörünüzü Home Assistant'ta kurun</h1>
+    <p class="lead">Uygulama Home Assistant'ınızda oturum açar, projektörü Home Assistant'ın kendi JVC Projector entegrasyonuna ekler, sahnelerinizi ve kontrollerinizi betik olarak yayımlar ve bir kontrol paneli oluşturur. Hiçbir zaman bir jeton yapıştırmanız veya YAML yazmanız gerekmez. Ev Otomasyonu eklentisi gerekir.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Önce bunu okuyun</div>
+      <h2>Aynı anda tek denetleyici</h2>
+      <p class="lead">Bir JVC projektör aynı anda yalnızca bir ağ denetleyicisine hizmet verir. Bu uygulama açık ve projektöre bağlıyken Home Assistant ona ulaşamaz. Home Assistant'ın projektör kontrolleri ve betikleri uygulama kapalıyken çalışır ve uygulama arka plana geçtiğinde projektörü bırakır.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Kurulum</div>
-        <h2>Oturum açmaktan kontrol paneline</h2>
-        <ul class="plain">
-          <li>Home Assistant için kendi OAuth oturum açma yöntemiyle <b>oturum açın</b>.</li>
-          <li><b>Entegrasyon</b>: uygulama, Home Assistant çekirdek <b>jvc_projector</b> entegrasyonunu ekler; ana makineyi, portu ve parolayı gönderir.</li>
-          <li><b>Sensör</b>: bir mobile_app sensörü webhook üzerinden bildirir.</li>
-          <li><b>Gelişmiş Kontrolleri Eşitle</b>, <b>ppjvc</b> önekli betikler oluşturur.</li>
-          <li><b>Kontrol paneli</b>: çekirdek stilinde veya HACS stilinde bir Lovelace kontrol paneli.</li>
-          <li>Bir <b>kurulum kontrol listesi</b> nelerin yapıldığını ve nelerin kaldığını gösterir.</li>
-        </ul>
+        <div class="eyebrow">Adım 1</div>
+        <h2>Oturum açın</h2>
+        <ol class="steps">
+          <li>Ayarlar, Ev Otomasyonu, Home Assistant bölümünü açın.</li>
+          <li><b>Home Assistant adresinizi</b> http:// veya https:// ile başlayarak girin.</li>
+          <li><b>Oturum aç</b> seçeneğine dokunun. Home Assistant'ın kendi oturum açma sayfası tarayıcıda açılır; orada oturum açın ve geri dönün.</li>
+          <li>Doğrulamak için <b>Bağlantıyı test et</b> seçeneğine dokunun.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA Home Assistant kurulum sayfası" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Kurulum kontrol listesini içeren Projector Pilot D-ILA Home Assistant ekranı" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Home Assistant'a ulaşılamıyorsa adresi ve bu cihazın Home Assistant ile aynı ağda olup olmadığını kontrol edin.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 2</div>
+      <h2>Home Assistant'ınızda neler var</h2>
+      <p class="lead">Bir panel Home Assistant'ınızı okur ve her parçayı Bulundu, Yüklü değil veya Belirlenemedi olarak işaretler. Tekrar kontrol et bunu yeniden okur.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Parça</th><th>Ne için gerekli</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App entegrasyonu</td><td>Canlı durum sensörü.</td></tr>
+        <tr><td>JVC Projector entegrasyonu</td><td>Bu projektörü Home Assistant'tan kontrol etmek.</td></tr>
+        <tr><td>HACS</td><td>Yalnızca kontrol panelinin stilli görünümü.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Adım 3</div>
+      <h2>Kurulum kontrol listesi</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Home Assistant'ta oturum açın.</b></li>
+      <li><b>Bu projektörü Home Assistant'ın JVC Projector entegrasyonuna ekleyin.</b> Ekle'ye dokunun. Uygulama, önce size sorduktan sonra projektörün adresini, portunu ve ağ parolasını Home Assistant'ın JVC Projector entegrasyonuna gönderir.</li>
+      <li><b>Betiklerin ihtiyaç duyduğu varlıkları etkinleştirin.</b> Bazı JVC Projector varlıkları Home Assistant'ta devre dışı başlar; her birinin yanındaki Etkinleştir'e dokunun. Bir varlığın görünmesi için Home Assistant'ın yeniden yüklenmesi veya yeniden başlatılması gerekebilir.</li>
+      <li><b>Canlı durum sensörü.</b> Projektörün durumunu gönder seçeneğini açın. Sensör, uygulama bağlıyken projektörün durumunu bir sonraki gönderişinde oluşturulur.</li>
+    </ol>
+    <div class="note"><b>Parola hakkında.</b> Projektörü eklediğinizde ağ parolası Home Assistant'ınıza gönderilir ve orada, JVC Projector girdisinde saklanır. Uygulama onu başka hiçbir yere göndermez. Home Assistant projektöre bağlanırken uygulama projektörü bırakır, ardından yeniden bağlanır.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hangi girdi?</div>
+      <h2>Uygulama projektörünüzü Home Assistant'ta nasıl bulur</h2>
+      <p>Uygulama, JVC Projector girdisini projektörün MAC adresiyle eşleştirir; bu yüzden önce projektöre en az bir kez bağlanın. Home Assistant'ta bu MAC adresine sahip hiç girdi yoksa ya da birden fazla varsa kontrol listesi bunu ve ne yapılacağını söyler. Projektör taşındıysa uygulama yeni adresi Home Assistant'a göndermeyi önerir.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant için Ev Otomasyonu eklentisi gerekir.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sensör</div>
+      <h2>Canlı durum</h2>
+      <p>Sensörün durumu, uygulamanın en son okuduğu güçtür; öznitelikleri ise giriş, model ve uygulamanın okuduğu ayarlardır. Mobile App entegrasyonu üzerinden gider ve projektöre hiçbir şey göndermez. Uygulama açık ve bağlıyken durum her değiştiğinde güncellenir.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Betikler</div>
+      <h2>Sahneler ve kontroller</h2>
+      <p class="lead">Kayıtlı her sahne, Home Assistant'ta JVC Projector varlıkları üzerinden çalışan bir betik olur. Bir betik adres ve parola tutmaz. Betik kimlikleri <code>ppjvc</code> ile başlar.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b>, <a href="/tr/jvc/guide/scenes/">sahnelerinizi</a> betik olarak yazar ve her birinin kaç adım taşıdığını, neyin neden dışarıda bırakıldığını gösterir.</li>
+      <li><b>Sync Advanced Controls</b>, güç, girişler, görüntü modları, lens hafızaları ve Gizle için betikler yayımlar.</li>
+      <li><b>Sonuçlar</b> sayılır: kaç betik eşitlendi, Home Assistant kaçını reddetti ve onları yeniden yüklediğini doğrulayıp doğrulamadığı.</li>
+      <li><b>Sahipsiz betikleri kaldır</b>, bu uygulamanın oluşturduğu ve artık hiçbir sahnenin kullanmadığı betikleri siler. Onları listeler ve önce sorar.</li>
+    </ul>
+    <div class="note">Bir eşitlemenin dayandığı bir şey okunmamışsa hiçbir şey yazılmaz, değiştirilmez veya kaldırılmaz. Bir eşitleme tahmine dayanarak yarım çalışmaz.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gösterge Paneli</div>
+      <h2>Hazır bir kontrol paneli</h2>
+      <p><b>Kontrol panelini gönder</b>, JVC Projector varlıklarından, betiklerden ve sensörden Home Assistant'ınızda bir projektör kontrol paneli oluşturur. <b>Kontrol panelini kopyala</b> ise onu, yeni bir kontrol paneline kendiniz yapıştırmanız için kopyalar. Bununla ilgili her şey <a href="/tr/jvc/guide/home-assistant-dashboard/">Home Assistant kontrol paneli sayfasındadır</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kurallar</div>
+      <h2>Uygulamanın asla yapmadıkları</h2>
+    </div>
+    <ul class="plain">
+      <li>Demo projektör seçiliyken veya Ev Otomasyonu kilidi açık değilken cihazdan hiçbir şey çıkmaz.</li>
+      <li><b>Bağlantıyı Kaldır</b> bağlantıyı yalnızca bu uygulamadan kaldırır. Projektörün cihazı ve varlıkları, siz orada silene kadar Home Assistant'ta kalır.</li>
+      <li>Home Assistant oturum açmayı kabul etmeyi bırakırsa uygulama bunu söyler ve yeniden oturum açmanızı ister.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Sonraki</div>
-      <h2>Okumaya devam edin</h2>
+      <h2>Devam edin</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/tr/jvc/guide/">Kullanım kılavuzuna dön</a></li>
-      <li><a href="/tr/jvc/help/">Yardım ve SSS</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/tr/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant kontrol paneli</a>
+      <a href="/tr/jvc/guide/home-automation/"><span>&#127968;</span>Ev otomasyonu</a>
+      <a href="/tr/jvc/help/"><span>&#10067;</span>Yardım ve SSS</a>
+      <a href="/tr/jvc/guide/"><span>&#128218;</span>Kılavuz ana sayfasına dön</a>
+    </div>
   </div>
 </section>
 

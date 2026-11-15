@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="nl" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<title>Home Assistant-installatie - Projector Pilot D-ILA</title>
+<meta name="description" content="Voeg je JVC D-ILA-projector toe aan Home Assistant zonder YAML: aanmelden, de JVC Projector-integratie, een live sensor en scènescripts." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/nl/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<meta property="og:title" content="Home Assistant-installatie - Projector Pilot D-ILA" />
+<meta property="og:description" content="Voeg je JVC D-ILA-projector toe aan Home Assistant zonder YAML: aanmelden, de JVC Projector-integratie, een live sensor en scènescripts." />
 <meta property="og:url" content="https://projectorpilot.com/nl/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard." />
+<meta name="twitter:title" content="Home Assistant-installatie - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Voeg je JVC D-ILA-projector toe aan Home Assistant zonder YAML: aanmelden, de JVC Projector-integratie, een live sensor en scènescripts." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Koppel Projector Pilot D-ILA aan Home Assistant: meld je aan, voeg de integratie jvc_projector toe, synchroniseer scripts en bouw een dashboard.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nl", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Handleiding", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant-installatie - Projector Pilot D-ILA", "description": "Voeg je JVC D-ILA-projector toe aan Home Assistant zonder YAML: aanmelden, de JVC Projector-integratie, een live sensor en scènescripts.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nl", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Handleiding", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/nl/jvc/">Home</a> &rsaquo; <a href="/nl/jvc/guide/">Gebruikershandleiding</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Stel je JVC projector in Home Assistant in vanuit de app.</p>
+    <h1>Je JVC-projector instellen in Home Assistant</h1>
+    <p class="lead">De app meldt zich aan bij je Home Assistant, voegt de projector toe aan de eigen JVC Projector-integratie van Home Assistant, publiceert je scènes en bediening als scripts en bouwt een dashboard. Je plakt nooit een token en schrijft geen YAML. Hiervoor is de add-on Domotica nodig.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lees dit eerst</div>
+      <h2>Eén controller tegelijk</h2>
+      <p class="lead">Een JVC-projector bedient één netwerkcontroller tegelijk. Zolang deze app geopend en met de projector verbonden is, kan Home Assistant er niet bij. De projectorbediening en scripts van Home Assistant werken als de app gesloten is, en de app laat de projector los als hij naar de achtergrond gaat.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Installatie</div>
-        <h2>Van aanmelden tot dashboard</h2>
-        <ul class="plain">
-          <li><b>Aanmelden</b> bij Home Assistant met de eigen OAuth-aanmelding.</li>
-          <li><b>Integratie</b>: de app voegt de kernintegratie <b>jvc_projector</b> van Home Assistant toe en stuurt de host, poort en het wachtwoord mee.</li>
-          <li><b>Sensor</b>: een mobile_app-sensor rapporteert via een webhook.</li>
-          <li><b>Geavanceerde bediening synchroniseren</b> maakt scripts met het voorvoegsel <b>ppjvc</b>.</li>
-          <li><b>Dashboard</b>: een Lovelace-dashboard in de stijl van de kern of van HACS.</li>
-          <li>Een <b>installatiechecklist</b> toont wat klaar is en wat nog moet.</li>
-        </ul>
+        <div class="eyebrow">Stap 1</div>
+        <h2>Aanmelden</h2>
+        <ol class="steps">
+          <li>Open Instellingen, Domotica, Home Assistant.</li>
+          <li>Voer je <b>Home Assistant-adres</b> in, beginnend met http:// of https://.</li>
+          <li>Tik op <b>Aanmelden</b>. De eigen aanmeldpagina van Home Assistant opent in de browser; meld je daar aan en kom terug.</li>
+          <li>Tik op <b>Verbinding testen</b> om het te bevestigen.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Installatiepagina voor Home Assistant in Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA-scherm voor Home Assistant met de installatiechecklist" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Als Home Assistant niet bereikbaar is, controleer dan het adres en of dit apparaat op hetzelfde netwerk zit als Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Stap 2</div>
+      <h2>Wat je Home Assistant heeft</h2>
+      <p class="lead">Een paneel leest je Home Assistant uit en markeert elk onderdeel als Gevonden, Niet geïnstalleerd of Kon het niet bepalen. Opnieuw controleren leest het opnieuw uit.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Onderdeel</th><th>Nodig voor</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App-integratie</td><td>De live statussensor.</td></tr>
+        <tr><td>JVC Projector-integratie</td><td>Deze projector bedienen vanuit Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Alleen de vormgegeven look van het dashboard.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Stap 3</div>
+      <h2>De installatiechecklist</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Aanmelden bij Home Assistant.</b></li>
+      <li><b>Voeg deze projector toe aan de JVC Projector-integratie van Home Assistant.</b> Tik op Toevoegen. De app stuurt het adres, de poort en het netwerkwachtwoord van de projector naar de JVC Projector-integratie van Home Assistant, nadat hij het je eerst heeft gevraagd.</li>
+      <li><b>Schakel de entiteiten in die scripts nodig hebben.</b> Sommige JVC Projector-entiteiten staan in Home Assistant standaard uit; tik naast elk ervan op Inschakelen. Home Assistant moet mogelijk opnieuw laden of opnieuw starten voordat het verschijnt.</li>
+      <li><b>Live statussensor.</b> Zet Status van de projector verzenden aan. De sensor wordt aangemaakt de eerstvolgende keer dat de app de status van de projector verstuurt terwijl hij verbonden is.</li>
+    </ol>
+    <div class="note"><b>Over het wachtwoord.</b> Als je de projector toevoegt, wordt zijn netwerkwachtwoord naar je Home Assistant gestuurd en daar opgeslagen, in zijn JVC Projector-item. De app stuurt het nergens anders heen. De app laat de projector los terwijl Home Assistant ermee verbindt, en maakt daarna opnieuw verbinding.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Welk item?</div>
+      <h2>Hoe de app je projector in Home Assistant vindt</h2>
+      <p>De app koppelt het JVC Projector-item aan de hand van het MAC-adres van de projector, dus maak eerst minstens één keer verbinding met de projector. Als Home Assistant geen item met dat MAC-adres heeft, of meer dan één, zegt de checklist dat en wat je moet doen. Als de projector is verhuisd, biedt de app aan het nieuwe adres naar Home Assistant te sturen.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant heeft de Domotica-add-on nodig.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">De sensor</div>
+      <h2>Live status</h2>
+      <p>De status van de sensor is de voedingsstatus die de app het laatst heeft gelezen, en de attributen zijn de bron, het model en de instellingen die de app heeft gelezen. Hij loopt via de Mobile App-integratie en stuurt niets naar de projector. Hij wordt bijgewerkt telkens als de status verandert terwijl de app geopend en verbonden is.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scripts</div>
+      <h2>Scènes en bediening</h2>
+      <p class="lead">Elke opgeslagen scène wordt een script in Home Assistant dat via de JVC Projector-entiteiten draait. Een script bevat geen adres en geen wachtwoord. Script-id's beginnen met <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Synchroniseren met HA</b> schrijft je <a href="/nl/jvc/guide/scenes/">scènes</a> weg als scripts en toont hoeveel stappen elk script bevat, en wat is weggelaten en waarom.</li>
+      <li><b>Geavanceerde bediening synchroniseren</b> publiceert scripts voor voeding, bronnen, beeldmodi, lensgeheugens en Verbergen.</li>
+      <li><b>Resultaten</b> worden geteld: hoeveel scripts zijn gesynchroniseerd, hoeveel Home Assistant heeft geweigerd en of het heeft bevestigd dat het ze opnieuw heeft geladen.</li>
+      <li><b>Verweesde scripts verwijderen</b> wist scripts die deze app heeft aangemaakt en die geen enkele scène meer gebruikt. De app toont ze en vraagt eerst om bevestiging.</li>
+    </ul>
+    <div class="note">Als iets waarvan een synchronisatie afhangt niet is gelezen, wordt er niets geschreven, gewijzigd of verwijderd. Een synchronisatie draait nooit half op een gok.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dashboard</div>
+      <h2>Een kant-en-klaar dashboard</h2>
+      <p><b>Dashboard verzenden</b> bouwt in je Home Assistant een projectordashboard uit de JVC Projector-entiteiten, de scripts en de sensor. <b>Dashboard kopiëren</b> kopieert het in plaats daarvan, zodat je het zelf in een nieuw dashboard kunt plakken. Alles erover staat op <a href="/nl/jvc/guide/home-assistant-dashboard/">de pagina over het Home Assistant-dashboard</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Regels</div>
+      <h2>Wat de app nooit doet</h2>
+    </div>
+    <ul class="plain">
+      <li>Er verlaat niets het apparaat zolang de demoprojector is geselecteerd of Domotica niet is ontgrendeld.</li>
+      <li><b>Ontkoppelen</b> verwijdert de koppeling alleen uit deze app. Het apparaat en de entiteiten van de projector blijven in Home Assistant staan totdat je ze daar verwijdert.</li>
+      <li>Als Home Assistant de aanmelding niet meer accepteert, meldt de app dat en vraagt hij je om opnieuw aan te melden.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Volgende</div>
-      <h2>Lees verder</h2>
+      <h2>Ga verder</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/nl/jvc/guide/">Terug naar de gebruikershandleiding</a></li>
-      <li><a href="/nl/jvc/help/">Hulp en veelgestelde vragen</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/nl/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant-dashboard</a>
+      <a href="/nl/jvc/guide/home-automation/"><span>&#127968;</span>Domotica</a>
+      <a href="/nl/jvc/help/"><span>&#10067;</span>Help en veelgestelde vragen</a>
+      <a href="/nl/jvc/guide/"><span>&#128218;</span>Terug naar het gidsoverzicht</a>
+    </div>
   </div>
 </section>
 

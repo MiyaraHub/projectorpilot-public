@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Tự động hóa máy chiếu JVC với Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Tự động hóa gia đình trong Projector Pilot D-ILA: trình kích hoạt webhook theo sự kiện nguồn, đầu vào và cảnh, Hubitat Maker API và Home Assistant." />
+<title>Tự động hóa gia đình - Projector Pilot D-ILA</title>
+<meta name="description" content="Trình kích hoạt webhook, gương Hubitat và thiết lập Home Assistant cho máy chiếu JVC D-ILA của bạn, kèm yêu cầu chính xác mà ứng dụng gửi." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/vi/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Tự động hóa máy chiếu JVC với Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Tự động hóa gia đình trong Projector Pilot D-ILA: trình kích hoạt webhook theo sự kiện nguồn, đầu vào và cảnh, Hubitat Maker API và Home Assistant." />
+<meta property="og:title" content="Tự động hóa gia đình - Projector Pilot D-ILA" />
+<meta property="og:description" content="Trình kích hoạt webhook, gương Hubitat và thiết lập Home Assistant cho máy chiếu JVC D-ILA của bạn, kèm yêu cầu chính xác mà ứng dụng gửi." />
 <meta property="og:url" content="https://projectorpilot.com/vi/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Tự động hóa máy chiếu JVC với Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Tự động hóa gia đình trong Projector Pilot D-ILA: trình kích hoạt webhook theo sự kiện nguồn, đầu vào và cảnh, Hubitat Maker API và Home Assistant." />
+<meta name="twitter:title" content="Tự động hóa gia đình - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Trình kích hoạt webhook, gương Hubitat và thiết lập Home Assistant cho máy chiếu JVC D-ILA của bạn, kèm yêu cầu chính xác mà ứng dụng gửi." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Tự động hóa máy chiếu JVC với Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Tự động hóa gia đình trong Projector Pilot D-ILA: trình kích hoạt webhook theo sự kiện nguồn, đầu vào và cảnh, Hubitat Maker API và Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Tự động hóa gia đình", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Tự động hóa gia đình - Projector Pilot D-ILA", "description": "Trình kích hoạt webhook, gương Hubitat và thiết lập Home Assistant cho máy chiếu JVC D-ILA của bạn, kèm yêu cầu chính xác mà ứng dụng gửi.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Tự động hóa gia đình", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/vi/jvc/">Trang chủ</a> &rsaquo; <a href="/vi/jvc/guide/">Hướng dẫn sử dụng</a> &rsaquo; Tự động hóa gia đình</div>
     <div class="eyebrow">Tự động hóa gia đình</div>
     <h1>Kết nối máy chiếu với ngôi nhà của bạn</h1>
-    <p class="lead">Webhook, Hubitat và Home Assistant, với tiện ích bổ sung Home Automation.</p>
+    <p class="lead">Để phần còn lại của ngôi nhà phản ứng khi máy chiếu bật, chuyển sang chờ, đổi nguồn vào hoặc gọi lại một cảnh. Ba liên kết nằm trong Cài đặt, Home Automation: trình kích hoạt webhook, Hubitat và Home Assistant. Cả ba đều cần tiện ích bổ sung Home Automation, bán riêng hoặc trong gói; riêng Pro không bao gồm nó.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Chọn một</div>
+      <h2>Dùng liên kết nào</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhook</h3><p>Bất kỳ hệ thống nào chấp nhận yêu cầu web: Node-RED, máy chủ gia đình, tự động hóa trên đám mây. Ứng dụng gửi, bạn quyết định điều gì xảy ra.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Một gương một chiều của nguồn và nguồn vào lên một thiết bị trong hub của bạn, qua Maker API, để Rule Machine xử lý.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Thiết lập tích hợp JVC Projector của chính Home Assistant, các tập lệnh cho cảnh của bạn và một bảng điều khiển dựng sẵn.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Trình kích hoạt</div>
-        <h2>Webhook theo sự kiện của máy chiếu</h2>
+        <div class="eyebrow">Webhook</div>
+        <h2>Trình kích hoạt tự động hóa</h2>
+        <p>Một trình kích hoạt gửi yêu cầu web tới địa chỉ bạn nhập khi có việc xảy ra trên máy chiếu này. Mỗi máy chiếu có danh sách riêng. Chạm vào <b>Thêm trình kích hoạt</b>, rồi chọn:</p>
         <ul class="plain">
-          <li><b>Sự kiện</b>: bật nguồn, chờ, đổi đầu vào và cảnh.</li>
-          <li><b>Yêu cầu</b>: POST, PUT hoặc GET tới một địa chỉ bạn nhập.</li>
-          <li>Trình kích hoạt chỉ chạy khi ứng dụng đang mở và đã kết nối, và không bao giờ chạy từ máy chiếu demo.</li>
+          <li><b>Khi</b>: Máy chiếu bật, Máy chiếu chuyển sang chờ, Nguồn vào thay đổi (sang bất kỳ nguồn vào nào hoặc một nguồn cụ thể), hoặc Một cảnh được gọi lại (bất kỳ cảnh nào hoặc một cảnh cụ thể).</li>
+          <li><b>Phương thức</b>: POST (mặc định), PUT hoặc GET.</li>
+          <li><b>Địa chỉ web</b>: một địa chỉ http:// hoặc https:// có tên máy chủ.</li>
+          <li><b>Đã bật</b>, để tạm dừng một trình kích hoạt mà không xóa nó.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Trang tự động hóa gia đình của Projector Pilot D-ILA với các trình kích hoạt" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Danh sách trình kích hoạt tự động hóa của Projector Pilot D-ILA cho máy chiếu JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">Địa chỉ bắt đầu bằng http:// được gửi không mã hóa, và trình chỉnh sửa có báo điều đó. Hãy dùng https:// khi hệ thống của bạn hỗ trợ.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Payload</div>
+      <h2>Yêu cầu mang theo gì</h2>
+      <p class="lead">POST và PUT gửi nội dung JSON; GET thì không. Tiêu đề duy nhất mà ứng dụng thêm là Content-Type. Trường nào không áp dụng cho sự kiện sẽ bị bỏ ra.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Trường</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> hoặc <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Tên của máy chiếu trong ứng dụng.</td></tr>
+        <tr><td><code>input</code></td><td>Nguồn vào, chẳng hạn <code>hdmi1</code> hoặc <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Cảnh, khi gọi lại một cảnh.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Thời điểm xảy ra, theo giờ UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Chỉ có mặt, và là true, trên yêu cầu được gửi bằng Gửi thử.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gửi đi</div>
+      <h2>Một lần thử, báo cáo trung thực</h2>
+    </div>
+    <ul class="plain">
+      <li>Mỗi sự kiện được gửi một lần, với giới hạn 10 giây, và không đi theo chuyển hướng.</li>
+      <li>Trình kích hoạt hiển thị kết quả gần nhất: Đã gửi lúc một thời điểm kèm mã trạng thái, Bị từ chối, Không có phản hồi, Không thể truy cập địa chỉ, Kết nối bảo mật thất bại, hoặc Chưa gửi.</li>
+      <li><b>Gửi thử</b> gửi một yêu cầu được đánh dấu là thử nghiệm, để bạn nối đầu bên kia trước khi máy chiếu làm bất cứ điều gì.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Khi nào trình kích hoạt chạy</div>
+      <h2>Các quy tắc</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Chỉ khi ứng dụng đang mở và kết nối</b> với máy chiếu. Ứng dụng theo dõi trạng thái máy chiếu; nó không phải dịch vụ chạy nền.</li>
+      <li><b>Thay đổi, không phải giá trị đọc.</b> Lần đọc đầu tiên sau khi ứng dụng kết nối chỉ đặt điểm xuất phát, nên mở ứng dụng không kích hoạt "bật" cho máy chiếu vốn đã bật.</li>
+      <li><b>Không bao giờ từ máy chiếu demo.</b> Không có gì rời khỏi thiết bị khi máy chiếu demo đang được chọn hoặc Home Automation chưa được mở khóa.</li>
+      <li><b>Lưu an toàn.</b> Địa chỉ của trình kích hoạt được giữ trong bộ nhớ bảo mật của thiết bị.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Chiếu gương máy chiếu vào Hubitat</h2>
+      <p class="lead">Ứng dụng phản chiếu máy chiếu này lên một thiết bị trong hub Hubitat của bạn qua Maker API: bật và chờ, và nguồn vào là HDMI 1 hoặc HDMI 2, tùy thiết bị chấp nhận mục nào. Rule Machine sau đó có thể xử lý nó.</p>
     </div>
-    <ul class="plain">
-      <li>Qua Maker API của Hubitat: bật, tắt, HDMI 1 và HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>Trong Hubitat, thêm Maker API và ghi lại app id của nó (số trong các URL của nó) và access token.</li>
+      <li>Trong ứng dụng, nhập <b>Địa chỉ hub</b>, <b>app id của Maker API</b> và <b>Mã truy cập</b>.</li>
+      <li>Chạm vào <b>Tìm thiết bị</b> và chọn thiết bị đại diện cho máy chiếu này. Nếu không có thiết bị nào giống, hãy thêm một Virtual Switch đặt tên theo máy chiếu trong Hubitat rồi thử lại.</li>
+      <li>Bật <b>Chiếu gương trạng thái máy chiếu</b>. Thiết bị sẽ theo máy chiếu mỗi khi nó thay đổi trong lúc ứng dụng đang mở và kết nối.</li>
+    </ol>
+    <div class="note"><b>Chỉ một chiều.</b> Không có gì được gửi từ Hubitat tới máy chiếu. Hủy liên kết sẽ xóa liên kết khỏi ứng dụng.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Liên kết sâu nhất</h2>
+      <p>Ứng dụng đăng nhập vào Home Assistant, thêm máy chiếu của bạn vào tích hợp JVC Projector của nó, xuất bản các cảnh và điều khiển của bạn dưới dạng tập lệnh, và tạo một bảng điều khiển. Nó có các trang riêng: <a href="/vi/jvc/guide/home-assistant/">thiết lập Home Assistant</a> và <a href="/vi/jvc/guide/home-assistant-dashboard/">bảng điều khiển Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Đăng nhập, thêm máy chiếu và xây dựng trang tổng quan. Xem <a href="/vi/jvc/guide/home-assistant/">hướng dẫn Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Tiếp theo</div>
-      <h2>Đọc tiếp</h2>
+      <h2>Tiếp tục khám phá</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/vi/jvc/guide/">Quay lại hướng dẫn sử dụng</a></li>
-      <li><a href="/vi/jvc/help/">Trợ giúp và câu hỏi thường gặp</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/vi/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/vi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Bảng điều khiển Home Assistant</a>
+      <a href="/vi/jvc/guide/scenes/"><span>&#127917;</span>Cảnh</a>
+      <a href="/vi/jvc/guide/"><span>&#128218;</span>Quay lại trung tâm hướng dẫn</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVCプロジェクターのHome Assistant &amp; Hubitatオートメーション - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILAのホームオートメーション: 電源、入力、シーンのイベントに対するWebhookトリガー、Hubitat Maker API、Home Assistant。" />
+<title>ホームオートメーション - Projector Pilot D-ILA</title>
+<meta name="description" content="JVC D-ILAプロジェクター向けのWebhookトリガー、Hubitatミラー、Home Assistantのセットアップ。アプリが送信するリクエストの内容も掲載しています。" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ja/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVCプロジェクターのHome Assistant &amp; Hubitatオートメーション - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILAのホームオートメーション: 電源、入力、シーンのイベントに対するWebhookトリガー、Hubitat Maker API、Home Assistant。" />
+<meta property="og:title" content="ホームオートメーション - Projector Pilot D-ILA" />
+<meta property="og:description" content="JVC D-ILAプロジェクター向けのWebhookトリガー、Hubitatミラー、Home Assistantのセットアップ。アプリが送信するリクエストの内容も掲載しています。" />
 <meta property="og:url" content="https://projectorpilot.com/ja/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVCプロジェクターのHome Assistant &amp; Hubitatオートメーション - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILAのホームオートメーション: 電源、入力、シーンのイベントに対するWebhookトリガー、Hubitat Maker API、Home Assistant。" />
+<meta name="twitter:title" content="ホームオートメーション - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="JVC D-ILAプロジェクター向けのWebhookトリガー、Hubitatミラー、Home Assistantのセットアップ。アプリが送信するリクエストの内容も掲載しています。" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ja", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVCプロジェクターのHome Assistant & Hubitatオートメーション - Projector Pilot D-ILA", "description": "Projector Pilot D-ILAのホームオートメーション: 電源、入力、シーンのイベントに対するWebhookトリガー、Hubitat Maker API、Home Assistant。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ja", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "ユーザーガイド", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "ホームオートメーション", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ja", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "ホームオートメーション - Projector Pilot D-ILA", "description": "JVC D-ILAプロジェクター向けのWebhookトリガー、Hubitatミラー、Home Assistantのセットアップ。アプリが送信するリクエストの内容も掲載しています。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ja", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "ユーザーガイド", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "ホームオートメーション", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/ja/jvc/">ホーム</a> &rsaquo; <a href="/ja/jvc/guide/">ユーザーガイド</a> &rsaquo; ホームオートメーション</div>
     <div class="eyebrow">ホームオートメーション</div>
     <h1>プロジェクターをスマートホームに接続</h1>
-    <p class="lead">Home Automationアドオンで、Webhook、Hubitat、Home Assistantを利用できます。</p>
+    <p class="lead">プロジェクターの電源オン、スタンバイ、入力切替、シーンの呼び出しに合わせて、家の他の機器を反応させられます。設定のホームオートメーションの下に、Webhookトリガー、Hubitat、Home Assistantの3つの連携があります。3つすべてにホームオートメーションのアドオンが必要で、単品でもバンドルでも購入できます。Proだけには含まれません。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">1つ選ぶ</div>
+      <h2>使う連携の選び方</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhook</h3><p>Node-RED、ホームサーバー、クラウドの自動化など、Webリクエストを受け付けるあらゆるシステム向けです。送信はアプリが行い、何が起きるかはお客様が決めます。</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Maker APIを通じて、電源と入力をハブ上のデバイスに一方向でミラーリングし、Rule Machineで処理できるようにします。</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Home Assistant標準のJVC Projector連携、シーン用のスクリプト、既成のダッシュボードをセットアップします。</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">トリガー</div>
-        <h2>プロジェクターのイベントに対するWebhook</h2>
+        <div class="eyebrow">Webhook</div>
+        <h2>オートメーショントリガー</h2>
+        <p>トリガーは、このプロジェクターで何かが起きたときに、入力したアドレスにWebリクエストを送信します。トリガーの一覧はプロジェクターごとに別々です。<b>トリガーを追加</b>をタップして、次を選びます。</p>
         <ul class="plain">
-          <li><b>イベント</b>: 電源オン、スタンバイ、入力の切り替え、シーン。</li>
-          <li><b>リクエスト</b>: 入力したアドレスへのPOST、PUT、GET。</li>
-          <li>トリガーは、アプリが開いていて接続されている間だけ実行され、デモプロジェクターからは実行されません。</li>
+          <li><b>条件</b>：プロジェクターの電源がオンになった時、プロジェクターがスタンバイになった時、入力切替(任意の入力または特定の入力へ)、シーンが呼び出された時(任意のシーンまたは特定のシーン)。</li>
+          <li><b>メソッド</b>：POST(既定)、PUT、GET。</li>
+          <li><b>ウェブアドレス</b>：ホスト名を含むhttp://またはhttps://のアドレス。</li>
+          <li><b>有効</b>：トリガーを削除せずに一時停止できます。</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="トリガーを表示したProjector Pilot D-ILAのホームオートメーション画面" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="JVCプロジェクターのオートメーショントリガー一覧を表示したProjector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">http://で始まるアドレスは暗号化なしで送信され、エディターにもその旨が表示されます。お使いのシステムが対応している場合は、https://を使ってください。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ペイロード</div>
+      <h2>リクエストに含まれる内容</h2>
+      <p class="lead">POSTとPUTはJSONの本文を送信し、GETは本文を送信しません。アプリが追加するヘッダーはContent-Typeだけです。イベントに該当しないフィールドは含まれません。</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>項目</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>、<code>power_off</code>、<code>input_changed</code>、または<code>scene_recalled</code>。</td></tr>
+        <tr><td><code>projector</code></td><td>アプリ内のプロジェクターの名前。</td></tr>
+        <tr><td><code>input</code></td><td><code>hdmi1</code>や<code>hdmi2</code>などの入力。</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>シーンの呼び出しの場合は、そのシーン。</td></tr>
+        <tr><td><code>timestamp</code></td><td>発生した時刻(UTC)。</td></tr>
+        <tr><td><code>test</code></td><td>テスト送信で送られたリクエストにのみ、trueとして含まれます。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">配信</div>
+      <h2>送信は1回、結果は正直に報告</h2>
+    </div>
+    <ul class="plain">
+      <li>各イベントは10秒の制限付きで1回だけ送信され、リダイレクトには従いません。</li>
+      <li>トリガーには最後の結果が表示されます。ステータスコード付きの「配信済み」と時刻、「拒否されました」、「応答なし」、「アドレスに到達できませんでした」、「セキュア接続に失敗しました」、「未送信」のいずれかです。</li>
+      <li><b>テスト送信</b>はテスト用と明記したリクエストを送信するので、プロジェクターが何かを行う前に、受信側の設定を済ませられます。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">トリガーが動作するとき</div>
+      <h2>ルール</h2>
+    </div>
+    <ul class="plain">
+      <li><b>アプリが開いていて、プロジェクターに接続している間だけ</b>動作します。アプリはプロジェクターの状態を監視しており、バックグラウンドサービスではありません。</li>
+      <li><b>変化だけが対象で、読み取り値そのものは対象外です。</b>アプリが接続した後の最初の読み取りは基準点を設定するだけなので、すでに電源が入っていたプロジェクターについて、アプリを開いたときに「電源がオンになった時」のトリガーが動作することはありません。</li>
+      <li><b>デモプロジェクターからは決して送信されません。</b>デモプロジェクターが選択されているとき、またはホームオートメーションが解放されていないときは、デバイスから何も送信されません。</li>
+      <li><b>安全に保存されます。</b>トリガーのアドレスは、デバイスのセキュアストレージに保存されます。</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>プロジェクターをHubitatにミラーリングする</h2>
+      <p class="lead">アプリは、Maker APIを通じて、このプロジェクターの状態をお使いのHubitatハブのデバイスにミラーリングします。オンとスタンバイ、そして入力(HDMI 1またはHDMI 2)のうち、そのデバイスが受け付けるものが対象です。Rule Machineでその状態に応じた処理ができます。</p>
     </div>
-    <ul class="plain">
-      <li>HubitatのMaker API経由で、オン、オフ、HDMI 1、HDMI 2を操作します。</li>
-    </ul>
+    <ol class="steps">
+      <li>Hubitatで、Maker APIを追加し、そのアプリID(URLに含まれる番号)とアクセストークンを控えます。</li>
+      <li>アプリで、<b>ハブアドレス</b>、<b>Maker APIのアプリID</b>、<b>アクセストークン</b>を入力します。</li>
+      <li><b>デバイスを検索</b>をタップして、このプロジェクターに対応するデバイスを選びます。該当するものがない場合は、Hubitatでプロジェクターの名前を付けた仮想スイッチを追加して、もう一度試してください。</li>
+      <li><b>プロジェクターの状態をミラーリング</b>をオンにします。アプリが開いて接続している間にプロジェクターが変化するたびに、デバイスもそれに追従します。</li>
+    </ol>
+    <div class="note"><b>一方向のみ。</b>Hubitatからプロジェクターには何も送信されません。連携を解除すると、アプリ側の連携が削除されます。</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>最も深い連携</h2>
+      <p>アプリがHome Assistantにサインインし、プロジェクターをJVC Projector連携に追加し、シーンと操作をスクリプトとして公開し、ダッシュボードを作成します。専用のページがあります：<a href="/ja/jvc/guide/home-assistant/">Home Assistantのセットアップ</a>と<a href="/ja/jvc/guide/home-assistant-dashboard/">Home Assistantのダッシュボード</a>。</p>
     </div>
-    <ul class="plain">
-      <li>サインインし、プロジェクターを追加して、ダッシュボードを作成します。詳しくは<a href="/ja/jvc/guide/home-assistant/">Home Assistantガイド</a>をご覧ください。</li>
-    </ul>
   </div>
 </section>
 
@@ -154,10 +230,12 @@
       <div class="eyebrow">次へ</div>
       <h2>続けて読む</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ja/jvc/guide/">ユーザーガイドに戻る</a></li>
-      <li><a href="/ja/jvc/help/">ヘルプとFAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ja/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/ja/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistantのダッシュボード</a>
+      <a href="/ja/jvc/guide/scenes/"><span>&#127917;</span>シーン</a>
+      <a href="/ja/jvc/guide/"><span>&#128218;</span>ガイドトップに戻る</a>
+    </div>
   </div>
 </section>
 

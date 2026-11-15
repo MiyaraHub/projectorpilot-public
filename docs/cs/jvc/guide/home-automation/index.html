@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="cs" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Automatizace projektoru JVC přes Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Domácí automatizace v Projector Pilot D-ILA: spouštěče webhooků při událostech napájení, vstupu a scén, Hubitat Maker API a Home Assistant." />
+<title>Domácí automatizace - Projector Pilot D-ILA</title>
+<meta name="description" content="Spouštěče webhooků, zrcadlení do Hubitat a nastavení Home Assistant pro váš projektor JVC D-ILA, s přesným požadavkem, který aplikace odesílá." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/cs/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Automatizace projektoru JVC přes Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Domácí automatizace v Projector Pilot D-ILA: spouštěče webhooků při událostech napájení, vstupu a scén, Hubitat Maker API a Home Assistant." />
+<meta property="og:title" content="Domácí automatizace - Projector Pilot D-ILA" />
+<meta property="og:description" content="Spouštěče webhooků, zrcadlení do Hubitat a nastavení Home Assistant pro váš projektor JVC D-ILA, s přesným požadavkem, který aplikace odesílá." />
 <meta property="og:url" content="https://projectorpilot.com/cs/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Automatizace projektoru JVC přes Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Domácí automatizace v Projector Pilot D-ILA: spouštěče webhooků při událostech napájení, vstupu a scén, Hubitat Maker API a Home Assistant." />
+<meta name="twitter:title" content="Domácí automatizace - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Spouštěče webhooků, zrcadlení do Hubitat a nastavení Home Assistant pro váš projektor JVC D-ILA, s přesným požadavkem, který aplikace odesílá." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Automatizace projektoru JVC přes Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Domácí automatizace v Projector Pilot D-ILA: spouštěče webhooků při událostech napájení, vstupu a scén, Hubitat Maker API a Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Domácí automatizace", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Domácí automatizace - Projector Pilot D-ILA", "description": "Spouštěče webhooků, zrcadlení do Hubitat a nastavení Home Assistant pro váš projektor JVC D-ILA, s přesným požadavkem, který aplikace odesílá.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Domácí automatizace", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/cs/jvc/">Domů</a> &rsaquo; <a href="/cs/jvc/guide/">Uživatelská příručka</a> &rsaquo; Domácí automatizace</div>
     <div class="eyebrow">Domácí automatizace</div>
     <h1>Propojte projektor se svou domácností</h1>
-    <p class="lead">Webhooky, Hubitat a Home Assistant s doplňkem Home Automation.</p>
+    <p class="lead">Nechte zbytek domu reagovat, když se projektor zapne, přejde do pohotovostního režimu, změní vstup nebo vyvolá scénu. Tři propojení najdete v Nastavení, Home Automation: spouštěče webhooků, Hubitat a Home Assistant. Všechna tři vyžadují doplněk Home Automation, prodávaný samostatně nebo v balíčku; samotné Pro jej neobsahuje.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vyberte jedno</div>
+      <h2>Které propojení použít</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooky</h3><p>Jakýkoli systém, který přijímá webový požadavek: Node-RED, domácí server, cloudová automatizace. Aplikace odesílá, vy rozhodujete, co se stane.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Jednosměrné zrcadlo napájení a vstupu na zařízení ve vašem hubu přes Maker API, aby na něj mohl reagovat Rule Machine.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Nastaví vlastní integraci JVC Projector v Home Assistant, skripty pro vaše scény a hotovou nástěnku.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Spouštěče</div>
-        <h2>Webhooky při událostech projektoru</h2>
+        <div class="eyebrow">Webhooky</div>
+        <h2>Spouštěče automatizace</h2>
+        <p>Spouštěč odešle webový požadavek na adresu, kterou zadáte, když se na tomto projektoru něco stane. Každý projektor má vlastní seznam. Klepněte na <b>Přidat spouštěč</b> a zvolte:</p>
         <ul class="plain">
-          <li><b>Události</b>: zapnutí, pohotovostní režim, změna vstupu a scéna.</li>
-          <li><b>Požadavky</b>: POST, PUT nebo GET na adresu, kterou zadáte.</li>
-          <li>Spouštěče se spustí, jen když je aplikace otevřená a připojená, a nikdy z demo projektoru.</li>
+          <li><b>Kdy</b>: Projektor se zapne, Projektor přejde do pohotovostního režimu, Změní se vstup (na libovolný vstup nebo konkrétní) nebo Je vyvolána scéna (libovolná scéna nebo konkrétní).</li>
+          <li><b>Metoda</b>: POST (výchozí), PUT nebo GET.</li>
+          <li><b>Webová adresa</b>: adresa http:// nebo https:// s názvem hostitele.</li>
+          <li><b>Povoleno</b>, pro pozastavení spouštěče bez jeho smazání.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Stránka domácí automatizace Projector Pilot D-ILA se spouštěči" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Seznam spouštěčů automatizace v Projector Pilot D-ILA pro projektor JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">Adresa začínající http:// se odešle bez šifrování a editor to uvádí. Pokud to váš systém podporuje, použijte https://.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Data požadavku</div>
+      <h2>Co požadavek nese</h2>
+      <p class="lead">POST a PUT odesílají tělo JSON; GET žádné. Jediná hlavička, kterou aplikace přidává, je Content-Type. Pole, které se k události nevztahuje, se vynechá.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Údaj</th><th>Význam</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> nebo <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Název projektoru v aplikaci.</td></tr>
+        <tr><td><code>input</code></td><td>Vstup, například <code>hdmi1</code> nebo <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Scéna, při vyvolání scény.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Kdy se to stalo, v UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Přítomno, a pravdivé, jen u požadavku odeslaného tlačítkem Odeslat test.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Doručení</div>
+      <h2>Jeden pokus, poctivě oznámený</h2>
+    </div>
+    <ul class="plain">
+      <li>Každá událost se odešle jednou, s limitem 10 sekund, a přesměrování se nesledují.</li>
+      <li>Spouštěč ukazuje svůj poslední výsledek: Doručeno v určitý čas s kódem stavu, Odmítnuto, Bez odpovědi, Adresu nelze dosáhnout, Zabezpečené připojení selhalo nebo Zatím neodesláno.</li>
+      <li><b>Odeslat test</b> odešle požadavek označený jako test, takže můžete zapojit druhou stranu, než projektor cokoli udělá.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kdy se spouštěče spustí</div>
+      <h2>Pravidla</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Jen když je aplikace otevřená a připojená</b> k projektoru. Aplikace sleduje stav projektoru; není to služba na pozadí.</li>
+      <li><b>Změny, ne čtení.</b> První čtení po připojení aplikace jen nastaví výchozí bod, takže otevření aplikace nespustí „zapne se“ u projektoru, který už byl zapnutý.</li>
+      <li><b>Nikdy z demo projektoru.</b> Nic neopustí zařízení, dokud je vybrán demo projektor nebo není odemčena Home Automation.</li>
+      <li><b>Uloženo bezpečně.</b> Adresy spouštěčů se uchovávají v zabezpečeném úložišti zařízení.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Zrcadlení projektoru do Hubitat</h2>
+      <p class="lead">Aplikace zrcadlí tento projektor na zařízení ve vašem hubu Hubitat přes Maker API: zapnutí a pohotovostní režim a vstup jako HDMI 1 nebo HDMI 2, podle toho, které z nich zařízení přijímá. Rule Machine pak může reagovat.</p>
     </div>
-    <ul class="plain">
-      <li>Přes Maker API systému Hubitat: zapnout, vypnout, HDMI 1 a HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>V Hubitat přidejte Maker API a poznamenejte si jeho id aplikace (číslo v jeho adresách URL) a přístupový token.</li>
+      <li>V aplikaci zadejte <b>adresu hubu</b>, <b>id aplikace Maker API</b> a <b>přístupový token</b>.</li>
+      <li>Klepněte na <b>Najít zařízení</b> a vyberte zařízení, které zastupuje tento projektor. Pokud žádné nevypadá správně, přidejte v Hubitat virtuální spínač pojmenovaný podle projektoru a zkuste to znovu.</li>
+      <li>Zapněte <b>Zrcadlit stav projektoru</b>. Zařízení následuje projektor při každé změně, dokud je aplikace otevřená a připojená.</li>
+    </ol>
+    <div class="note"><b>Pouze jedním směrem.</b> Z Hubitat se projektoru nic neodesílá. Odpojit odebere propojení z aplikace.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Nejhlubší propojení</h2>
+      <p>Aplikace se přihlásí k Home Assistant, přidá váš projektor do jeho integrace JVC Projector, publikuje vaše scény a ovládání jako skripty a sestaví nástěnku. Má vlastní stránky: <a href="/cs/jvc/guide/home-assistant/">nastavení Home Assistant</a> a <a href="/cs/jvc/guide/home-assistant-dashboard/">nástěnka Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Přihlaste se, přidejte projektor a vytvořte nástěnku. Viz <a href="/cs/jvc/guide/home-assistant/">příručka k Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Další</div>
-      <h2>Čtěte dál</h2>
+      <h2>Pokračujte</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/cs/jvc/guide/">Zpět na uživatelskou příručku</a></li>
-      <li><a href="/cs/jvc/help/">Nápověda a časté dotazy</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/cs/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/cs/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Nástěnka Home Assistant</a>
+      <a href="/cs/jvc/guide/scenes/"><span>&#127917;</span>Scény</a>
+      <a href="/cs/jvc/guide/"><span>&#128218;</span>Zpět na rozcestník příruček</a>
+    </div>
   </div>
 </section>
 

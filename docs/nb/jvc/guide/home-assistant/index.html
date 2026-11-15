@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="nb" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Koble Projector Pilot D-ILA til Home Assistant: logg inn, legg til integrasjonen jvc_projector, synkroniser skript og bygg et dashbord." />
+<title>Home Assistant-oppsett - Projector Pilot D-ILA</title>
+<meta name="description" content="Legg til JVC D-ILA-prosjektoren din i Home Assistant uten YAML: pålogging, JVC Projector-integrasjonen, en sensor med direkte status og scenescript." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/nb/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Koble Projector Pilot D-ILA til Home Assistant: logg inn, legg til integrasjonen jvc_projector, synkroniser skript og bygg et dashbord." />
+<meta property="og:title" content="Home Assistant-oppsett - Projector Pilot D-ILA" />
+<meta property="og:description" content="Legg til JVC D-ILA-prosjektoren din i Home Assistant uten YAML: pålogging, JVC Projector-integrasjonen, en sensor med direkte status og scenescript." />
 <meta property="og:url" content="https://projectorpilot.com/nb/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Koble Projector Pilot D-ILA til Home Assistant: logg inn, legg til integrasjonen jvc_projector, synkroniser skript og bygg et dashbord." />
+<meta name="twitter:title" content="Home Assistant-oppsett - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Legg til JVC D-ILA-prosjektoren din i Home Assistant uten YAML: pålogging, JVC Projector-integrasjonen, en sensor med direkte status og scenescript." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nb", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Koble Projector Pilot D-ILA til Home Assistant: logg inn, legg til integrasjonen jvc_projector, synkroniser skript og bygg et dashbord.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nb", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Brukerguide", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nb", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant-oppsett - Projector Pilot D-ILA", "description": "Legg til JVC D-ILA-prosjektoren din i Home Assistant uten YAML: pålogging, JVC Projector-integrasjonen, en sensor med direkte status og scenescript.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nb", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Brukerguide", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/nb/jvc/">Hjem</a> &rsaquo; <a href="/nb/jvc/guide/">Brukerveiledning</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Sett opp JVC-prosjektoren din i Home Assistant fra appen.</p>
+    <h1>Sett opp JVC-prosjektoren din i Home Assistant</h1>
+    <p class="lead">Appen logger inn på Home Assistant, legger prosjektoren til i Home Assistants egen JVC Projector-integrasjon, publiserer scenene og kontrollene dine som script, og bygger et dashbord. Du limer aldri inn et token og skriver aldri YAML. Det krever tillegget Home Automation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Les dette først</div>
+      <h2>Én kontroller om gangen</h2>
+      <p class="lead">En JVC-prosjektor betjener én nettverkskontroller om gangen. Mens denne appen er åpen og koblet til prosjektoren, kan ikke Home Assistant nå den. Home Assistants prosjektorkontroller og script fungerer når appen er lukket, og appen slipper prosjektoren når den går i bakgrunnen.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Oppsett</div>
-        <h2>Fra innlogging til dashbord</h2>
-        <ul class="plain">
-          <li><b>Logg inn</b> på Home Assistant med dens egen OAuth-innlogging.</li>
-          <li><b>Integrasjon</b>: appen legger til Home Assistants innebygde integrasjon <b>jvc_projector</b> og sender vert, port og passord.</li>
-          <li><b>Sensor</b>: en mobile_app-sensor rapporterer via en webhook.</li>
-          <li><b>Synkroniser avanserte kontroller</b> oppretter skript med prefikset <b>ppjvc</b>.</li>
-          <li><b>Dashbord</b>: et Lovelace-dashbord i kjernestil eller HACS-stil.</li>
-          <li>En <b>sjekkliste for oppsett</b> viser hva som er gjort og hva som gjenstår.</li>
-        </ul>
+        <div class="eyebrow">Steg 1</div>
+        <h2>Logg inn</h2>
+        <ol class="steps">
+          <li>Åpne Innstillinger, Hjemmeautomasjon, Home Assistant.</li>
+          <li>Skriv inn <b>Home Assistant-adresse</b>, som begynner med http:// eller https://.</li>
+          <li>Trykk på <b>Logg inn</b>. Home Assistants egen påloggingsside åpnes i nettleseren; logg inn der og kom tilbake.</li>
+          <li>Trykk på <b>Test tilkoblingen</b> for å bekrefte.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Oppsettsiden for Home Assistant i Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA-skjermen for Home Assistant med sjekklisten for oppsett" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Hvis Home Assistant ikke kan nås, sjekk adressen, og at denne enheten er på samme nettverk som Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Steg 2</div>
+      <h2>Hva Home Assistant har</h2>
+      <p class="lead">Et panel leser Home Assistant og merker hver del Funnet, Ikke installert eller Kunne ikke avgjøre. Sjekk igjen leser den på nytt.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Del</th><th>Trengs for</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App-integrasjon</td><td>Sensoren for direkte status.</td></tr>
+        <tr><td>JVC Projector-integrasjon</td><td>Styre denne prosjektoren fra Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Bare den stilede utformingen av dashbordet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Steg 3</div>
+      <h2>Sjekkliste for oppsett</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Logg inn på Home Assistant.</b></li>
+      <li><b>Legg til denne prosjektoren i Home Assistants JVC Projector-integrasjon.</b> Trykk på Legg til. Appen sender prosjektorens adresse, port og nettverkspassord til Home Assistants JVC Projector-integrasjon, etter at den har spurt deg først.</li>
+      <li><b>Aktiver enhetene scriptene trenger.</b> Noen JVC Projector-enheter starter deaktivert i Home Assistant; trykk på Aktiver ved siden av hver enkelt. Home Assistant kan trenge en omlasting eller en omstart før den vises.</li>
+      <li><b>Sensor for direkte status.</b> Slå på Send prosjektorens tilstand. Sensoren opprettes neste gang appen sender prosjektorens tilstand mens den er tilkoblet.</li>
+    </ol>
+    <div class="note"><b>Om passordet.</b> Når du legger til prosjektoren, sendes nettverkspassordet til Home Assistant og lagres der, i JVC Projector-oppføringen. Appen sender det ingen andre steder. Appen slipper prosjektoren mens Home Assistant kobler til den, og kobler deretter til igjen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hvilken oppføring?</div>
+      <h2>Hvordan appen finner prosjektoren din i Home Assistant</h2>
+      <p>Appen finner JVC Projector-oppføringen ut fra prosjektorens MAC-adresse, så koble til prosjektoren minst én gang først. Hvis Home Assistant ikke har noen oppføring med den MAC-adressen, eller mer enn én, sier sjekklisten det og hva du skal gjøre. Hvis prosjektoren har flyttet, tilbyr appen å sende den nye adressen til Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant krever tillegget Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sensoren</div>
+      <h2>Sanntidstilstand</h2>
+      <p>Sensorens tilstand er strømmen appen sist leste, og attributtene er inngangen, modellen og innstillingene appen har lest. Den går gjennom Mobile App-integrasjonen og sender ingenting til prosjektoren. Den oppdateres hver gang tilstanden endres mens appen er åpen og tilkoblet.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Script</div>
+      <h2>Scener og kontroller</h2>
+      <p class="lead">Hver lagrede scene blir et script i Home Assistant som kjører gjennom JVC Projector-enhetene. Et script inneholder ingen adresse og intet passord. Script-id-er begynner med <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b> skriver <a href="/nb/jvc/guide/scenes/">scenene</a> dine som script og viser hvor mange trinn hvert av dem har, og hva som ble utelatt og hvorfor.</li>
+      <li><b>Sync Advanced Controls</b> publiserer script for strøm, innganger, bildemodus, objektivminner og Skjul.</li>
+      <li><b>Resultater</b> telles: hvor mange script som ble synkronisert, hvor mange Home Assistant avviste, og om den bekreftet at de ble lastet på nytt.</li>
+      <li><b>Fjern foreldreløse script</b> sletter script denne appen har opprettet som ingen scene bruker lenger. Den viser dem og spør først.</li>
+    </ul>
+    <div class="note">Hvis noe en synkronisering er avhengig av ikke er lest, blir ingenting skrevet, endret eller fjernet. En synkronisering kjører aldri halvveis på en gjetning.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dashbord</div>
+      <h2>Et ferdig dashbord</h2>
+      <p><b>Send dashbord</b> bygger et prosjektordashbord i Home Assistant ut fra JVC Projector-enhetene, scriptene og sensoren. <b>Kopier dashbord</b> kopierer det i stedet, så du kan lime det inn i et nytt dashbord selv. Alt om det står på <a href="/nb/jvc/guide/home-assistant-dashboard/">siden om Home Assistant-dashbordet</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Regler</div>
+      <h2>Hva appen aldri gjør</h2>
+    </div>
+    <ul class="plain">
+      <li>Ingenting forlater enheten mens demoprojektoren er valgt eller Hjemmeautomasjon ikke er låst opp.</li>
+      <li><b>Koble fra</b> fjerner koblingen bare fra denne appen. Prosjektorens enhet og enheter blir værende i Home Assistant til du sletter dem der.</li>
+      <li>Hvis Home Assistant slutter å godta påloggingen, sier appen fra og ber deg logge inn på nytt.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Neste</div>
       <h2>Les videre</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/nb/jvc/guide/">Tilbake til brukerveiledningen</a></li>
-      <li><a href="/nb/jvc/help/">Hjelp og vanlige spørsmål</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/nb/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant-dashbord</a>
+      <a href="/nb/jvc/guide/home-automation/"><span>&#127968;</span>Hjemmeautomatisering</a>
+      <a href="/nb/jvc/help/"><span>&#10067;</span>Hjelp og vanlige spørsmål</a>
+      <a href="/nb/jvc/guide/"><span>&#128218;</span>Tilbake til guideoversikten</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="es" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Conecta Projector Pilot D-ILA a Home Assistant: inicia sesión, añade la integración jvc_projector, sincroniza scripts y crea un panel." />
+<title>Configuración de Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Añade tu proyector JVC D-ILA a Home Assistant sin YAML: inicio de sesión, la integración JVC Projector, un sensor en vivo y scripts de escenas." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/es/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Conecta Projector Pilot D-ILA a Home Assistant: inicia sesión, añade la integración jvc_projector, sincroniza scripts y crea un panel." />
+<meta property="og:title" content="Configuración de Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Añade tu proyector JVC D-ILA a Home Assistant sin YAML: inicio de sesión, la integración JVC Projector, un sensor en vivo y scripts de escenas." />
 <meta property="og:url" content="https://projectorpilot.com/es/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Conecta Projector Pilot D-ILA a Home Assistant: inicia sesión, añade la integración jvc_projector, sincroniza scripts y crea un panel." />
+<meta name="twitter:title" content="Configuración de Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Añade tu proyector JVC D-ILA a Home Assistant sin YAML: inicio de sesión, la integración JVC Projector, un sensor en vivo y scripts de escenas." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "es", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Conecta Projector Pilot D-ILA a Home Assistant: inicia sesión, añade la integración jvc_projector, sincroniza scripts y crea un panel.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "es", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Guía de usuario", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "es", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Configuración de Home Assistant - Projector Pilot D-ILA", "description": "Añade tu proyector JVC D-ILA a Home Assistant sin YAML: inicio de sesión, la integración JVC Projector, un sensor en vivo y scripts de escenas.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "es", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Guía de usuario", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/es/jvc/">Inicio</a> &rsaquo; <a href="/es/jvc/guide/">Guía del usuario</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Configura tu proyector JVC en Home Assistant desde la app.</p>
+    <h1>Configura tu proyector JVC en Home Assistant</h1>
+    <p class="lead">La app inicia sesión en tu Home Assistant, añade el proyector a la integración JVC Projector del propio Home Assistant, publica tus escenas y controles como scripts y crea un panel. Nunca tienes que pegar un token ni escribir YAML. Requiere el complemento Home Automation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lee esto primero</div>
+      <h2>Un controlador a la vez</h2>
+      <p class="lead">Un proyector JVC atiende a un controlador de red a la vez. Mientras esta app está abierta y conectada al proyector, Home Assistant no puede acceder a él. Los controles y scripts del proyector de Home Assistant funcionan cuando la app está cerrada, y la app suelta el proyector cuando pasa a segundo plano.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Configuración</div>
-        <h2>Del inicio de sesión al panel</h2>
-        <ul class="plain">
-          <li><b>Inicia sesión</b> en Home Assistant con su propio acceso OAuth.</li>
-          <li><b>Integración</b>: la app añade la integración principal <b>jvc_projector</b> de Home Assistant y le envía el host, el puerto y la contraseña.</li>
-          <li><b>Sensor</b>: un sensor mobile_app informa mediante un webhook.</li>
-          <li><b>Sincronizar controles avanzados</b> crea scripts con el prefijo <b>ppjvc</b>.</li>
-          <li><b>Panel</b>: un panel Lovelace con estilo core o estilo HACS.</li>
-          <li>Una <b>lista de verificación de configuración</b> muestra lo que ya está hecho y lo que falta.</li>
-        </ul>
+        <div class="eyebrow">Paso 1</div>
+        <h2>Iniciar sesión</h2>
+        <ol class="steps">
+          <li>Abre Ajustes, Home Automation, Home Assistant.</li>
+          <li>Introduce tu <b>dirección de Home Assistant</b>, que empieza por http:// o https://.</li>
+          <li>Toca <b>Iniciar sesión</b>. La página de inicio de sesión del propio Home Assistant se abre en el navegador; inicia sesión allí y vuelve.</li>
+          <li>Toca <b>Probar la conexión</b> para confirmar.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Página de configuración de Home Assistant en Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Pantalla de Home Assistant de Projector Pilot D-ILA con la lista de configuración" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Si no se puede acceder a Home Assistant, comprueba la dirección y que este dispositivo esté en la misma red que Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Paso 2</div>
+      <h2>Lo que tiene tu Home Assistant</h2>
+      <p class="lead">Un panel lee tu Home Assistant y marca cada parte como Encontrado, No instalado o No se pudo determinar. Comprobar de nuevo lo vuelve a leer.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Parte</th><th>Necesaria para</th></tr></thead>
+      <tbody>
+        <tr><td>Integración Mobile App</td><td>El sensor de estado en vivo.</td></tr>
+        <tr><td>Integración JVC Projector</td><td>Controlar este proyector desde Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Solo el aspecto con estilo del panel.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Paso 3</div>
+      <h2>La lista de configuración</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Inicia sesión en Home Assistant.</b></li>
+      <li><b>Añade este proyector a la integración JVC Projector de Home Assistant.</b> Toca Añadir. La app envía la dirección, el puerto y la contraseña de red del proyector a la integración JVC Projector de Home Assistant, después de preguntarte antes.</li>
+      <li><b>Activa las entidades que necesitan los scripts.</b> Algunas entidades de JVC Projector empiezan desactivadas en Home Assistant; toca Activar junto a cada una. Puede que Home Assistant necesite recargarse o reiniciarse antes de que aparezca.</li>
+      <li><b>Sensor de estado en vivo.</b> Activa Enviar el estado del proyector. El sensor se crea la próxima vez que la app envía el estado del proyector mientras está conectada.</li>
+    </ol>
+    <div class="note"><b>Sobre la contraseña.</b> Cuando añades el proyector, su contraseña de red se envía a tu Home Assistant y se guarda allí, en su entrada de JVC Projector. La app no la envía a ningún otro sitio. La app suelta el proyector mientras Home Assistant se conecta a él, y luego se reconecta.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">¿Qué entrada?</div>
+      <h2>Cómo encuentra la app tu proyector en Home Assistant</h2>
+      <p>La app empareja la entrada de JVC Projector por la dirección MAC del proyector, así que conéctate al proyector al menos una vez antes. Si Home Assistant no tiene ninguna entrada con esa MAC, o tiene más de una, la lista de configuración lo dice y explica qué hacer. Si el proyector ha cambiado de dirección, la app ofrece enviar la nueva dirección a Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant necesita el complemento Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">El sensor</div>
+      <h2>Estado en vivo</h2>
+      <p>El estado del sensor es el encendido que la app leyó por última vez, y sus atributos son la entrada, el modelo y los ajustes que la app ha leído. Pasa por la integración Mobile App y no envía nada al proyector. Se actualiza siempre que el estado cambia mientras la app está abierta y conectada.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scripts</div>
+      <h2>Escenas y controles</h2>
+      <p class="lead">Cada escena guardada se convierte en un script de Home Assistant que se ejecuta a través de las entidades de JVC Projector. Un script no guarda dirección ni contraseña. Los ids de script empiezan por <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b> escribe tus <a href="/es/jvc/guide/scenes/">escenas</a> como scripts y muestra cuántos pasos lleva cada una, y qué se dejó fuera y por qué.</li>
+      <li><b>Sync Advanced Controls</b> publica scripts de encendido, entradas, modos de imagen, memorias del objetivo y Ocultar.</li>
+      <li><b>Los resultados</b> se cuentan: cuántos scripts se sincronizaron, cuántos rechazó Home Assistant y si confirmó que los recargaba.</li>
+      <li><b>Remove orphaned scripts</b> elimina los scripts que creó esta app y que ya no usa ninguna escena. Los lista y pregunta antes.</li>
+    </ul>
+    <div class="note">Si algo de lo que depende una sincronización no se ha leído, no se escribe, cambia ni elimina nada. Una sincronización nunca se ejecuta a medias basándose en una suposición.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Panel</div>
+      <h2>Un panel listo para usar</h2>
+      <p><b>Enviar panel</b> crea un panel del proyector en tu Home Assistant a partir de las entidades de JVC Projector, los scripts y el sensor. <b>Copiar panel</b> lo copia en su lugar, para que lo pegues tú mismo en un panel nuevo. Todo sobre él está en <a href="/es/jvc/guide/home-assistant-dashboard/">la página del panel de Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Reglas</div>
+      <h2>Lo que la app nunca hace</h2>
+    </div>
+    <ul class="plain">
+      <li>No sale nada del dispositivo mientras el proyector de demostración está seleccionado o Home Automation no está desbloqueado.</li>
+      <li><b>Desvincular</b> elimina el enlace solo de esta app. El dispositivo y las entidades del proyector permanecen en Home Assistant hasta que los borres allí.</li>
+      <li>Si Home Assistant deja de aceptar el inicio de sesión, la app lo dice y te pide que inicies sesión de nuevo.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Siguiente</div>
-      <h2>Sigue leyendo</h2>
+      <h2>Sigue explorando</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/es/jvc/guide/">Volver a la guía del usuario</a></li>
-      <li><a href="/es/jvc/help/">Ayuda y preguntas frecuentes</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/es/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Panel de Home Assistant</a>
+      <a href="/es/jvc/guide/home-automation/"><span>&#127968;</span>Domótica</a>
+      <a href="/es/jvc/help/"><span>&#10067;</span>Ayuda y preguntas frecuentes</a>
+      <a href="/es/jvc/guide/"><span>&#128218;</span>Volver al centro de guías</a>
+    </div>
   </div>
 </section>
 

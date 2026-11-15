@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="sv" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Automatisering av JVC-projektor med Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Hemautomation i Projector Pilot D-ILA: webhook-utlösare för ström-, ingångs- och scenhändelser, Hubitat Maker API och Home Assistant." />
+<title>Hemautomation - Projector Pilot D-ILA</title>
+<meta name="description" content="Webhook-utlösare, en Hubitat-spegling och installation av Home Assistant för din JVC D-ILA-projektor, med den exakta begäran som appen skickar." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/sv/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Automatisering av JVC-projektor med Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Hemautomation i Projector Pilot D-ILA: webhook-utlösare för ström-, ingångs- och scenhändelser, Hubitat Maker API och Home Assistant." />
+<meta property="og:title" content="Hemautomation - Projector Pilot D-ILA" />
+<meta property="og:description" content="Webhook-utlösare, en Hubitat-spegling och installation av Home Assistant för din JVC D-ILA-projektor, med den exakta begäran som appen skickar." />
 <meta property="og:url" content="https://projectorpilot.com/sv/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Automatisering av JVC-projektor med Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Hemautomation i Projector Pilot D-ILA: webhook-utlösare för ström-, ingångs- och scenhändelser, Hubitat Maker API och Home Assistant." />
+<meta name="twitter:title" content="Hemautomation - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Webhook-utlösare, en Hubitat-spegling och installation av Home Assistant för din JVC D-ILA-projektor, med den exakta begäran som appen skickar." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "sv", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Automatisering av JVC-projektor med Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Hemautomation i Projector Pilot D-ILA: webhook-utlösare för ström-, ingångs- och scenhändelser, Hubitat Maker API och Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "sv", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hem", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Användarguide", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Hemautomation", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "sv", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Hemautomation - Projector Pilot D-ILA", "description": "Webhook-utlösare, en Hubitat-spegling och installation av Home Assistant för din JVC D-ILA-projektor, med den exakta begäran som appen skickar.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "sv", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Hem", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Användarguide", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Hemautomation", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/sv/jvc/">Hem</a> &rsaquo; <a href="/sv/jvc/guide/">Användarguide</a> &rsaquo; Hemautomation</div>
     <div class="eyebrow">Hemautomation</div>
     <h1>Koppla din projektor till ditt hem</h1>
-    <p class="lead">Webhooks, Hubitat och Home Assistant, med tillägget Hemautomation.</p>
+    <p class="lead">Låt resten av huset reagera när projektorn slås på, går till standby, byter ingång eller hämtar en scen. Tre länkar finns under Inställningar, Hemautomation: webhook-utlösare, Hubitat och Home Assistant. Alla tre kräver tillägget Hemautomation, som säljs separat eller i paketet; enbart Pro inkluderar det inte.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Välj en</div>
+      <h2>Vilken länk du ska använda</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>Alla system som tar emot en webbbegäran: Node-RED, en hemmaserver, en molnautomation. Appen skickar, du bestämmer vad som händer.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>En enkelriktad spegling av ström och ingång till en enhet i din hubb, via Maker API, som Rule Machine kan agera på.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Konfigurerar Home Assistants egen JVC Projector-integration, skript för dina scener och en färdig instrumentpanel.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Utlösare</div>
-        <h2>Webhooks vid projektorhändelser</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>Automationsutlösare</h2>
+        <p>En utlösare skickar en webbbegäran till en adress du anger när något händer med den här projektorn. Varje projektor har sin egen lista. Tryck på <b>Lägg till utlösare</b> och välj sedan:</p>
         <ul class="plain">
-          <li><b>Händelser</b>: ström på, standby, ingångsbyte och scen.</li>
-          <li><b>Anrop</b>: POST, PUT eller GET till en adress som du anger.</li>
-          <li>Utlösare avfyras bara medan appen är öppen och ansluten, och aldrig från demoprojektorn.</li>
+          <li><b>När</b>: Projektorn slås på, Projektorn går till standby, Ingång ändras (till vilken ingång som helst eller en viss) eller En scen hämtas (vilken scen som helst eller en viss).</li>
+          <li><b>Metod</b>: POST (standard), PUT eller GET.</li>
+          <li><b>Webbadress</b>: en http://- eller https://-adress med ett värdnamn.</li>
+          <li><b>Aktiverad</b>, för att pausa en utlösare utan att radera den.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Sidan för hemautomation i Projector Pilot D-ILA med utlösare" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Listan över automationsutlösare i Projector Pilot D-ILA för en JVC-projektor" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">En adress som börjar med http:// skickas utan kryptering, och redigeraren säger det. Använd https:// när ditt system stöder det.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nyttolast</div>
+      <h2>Vad begäran innehåller</h2>
+      <p class="lead">POST och PUT skickar en JSON-kropp; GET skickar ingen. Den enda rubrik appen lägger till är Content-Type. Ett fält som inte gäller för händelsen utelämnas.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Fält</th><th>Betydelse</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> eller <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Projektorns namn i appen.</td></tr>
+        <tr><td><code>input</code></td><td>Ingången, till exempel <code>hdmi1</code> eller <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Scenen, vid hämtning av en scen.</td></tr>
+        <tr><td><code>timestamp</code></td><td>När det hände, i UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Finns, och är sant, bara i en begäran som skickats med Skicka test.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Leverans</div>
+      <h2>Ett försök, ärligt rapporterat</h2>
+    </div>
+    <ul class="plain">
+      <li>Varje händelse skickas en gång, med en gräns på 10 sekunder, och omdirigeringar följs inte.</li>
+      <li>Utlösaren visar sitt senaste resultat: Levererad vid en tidpunkt med statuskoden, Avvisad, Inget svar, Kunde inte nå adressen, Säker anslutning misslyckades eller Inte skickad än.</li>
+      <li><b>Skicka test</b> skickar en begäran markerad som test, så att du kan koppla upp den andra änden innan projektorn gör något.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">När utlösare avfyras</div>
+      <h2>Reglerna</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Bara medan appen är öppen och ansluten</b> till projektorn. Appen bevakar projektorns tillstånd; den är ingen bakgrundstjänst.</li>
+      <li><b>Ändringar, inte avläsningar.</b> Den första avläsningen efter att appen har anslutit sätter bara startpunkten, så att appen inte avfyrar ”slås på” för en projektor som redan var på.</li>
+      <li><b>Aldrig från demoprojektorn.</b> Inget lämnar enheten medan demoprojektorn är vald eller Hemautomation inte är upplåst.</li>
+      <li><b>Sparas säkert.</b> Utlösaradresser lagras i enhetens säkra lagring.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Spegla projektorn i Hubitat</h2>
+      <p class="lead">Appen speglar den här projektorn till en enhet i din Hubitat-hubb via Maker API: på och standby, samt ingången som HDMI 1 eller HDMI 2, för de av dem som enheten godtar. Rule Machine kan sedan agera på det.</p>
     </div>
-    <ul class="plain">
-      <li>Via Maker API i Hubitat: på, av, HDMI 1 och HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>Lägg till Maker API i Hubitat och notera dess app-id (numret i dess URL:er) och dess åtkomsttoken.</li>
+      <li>Ange <b>Hubbens adress</b>, <b>Maker API:s app-id</b> och <b>Åtkomsttoken</b> i appen.</li>
+      <li>Tryck på <b>Hitta enhet</b> och välj den enhet som representerar den här projektorn. Om ingen ser ut som den lägger du till en Virtual Switch med projektorns namn i Hubitat och försöker igen.</li>
+      <li>Slå på <b>Spegla projektorns status</b>. Enheten följer projektorn varje gång den ändras medan appen är öppen och ansluten.</li>
+    </ol>
+    <div class="note"><b>Bara enkelriktat.</b> Inget skickas från Hubitat till projektorn. Ta bort länk tar bort länken från appen.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Den djupaste länken</h2>
+      <p>Appen loggar in i Home Assistant, lägger till din projektor i dess JVC Projector-integration, publicerar dina scener och kontroller som skript och bygger en instrumentpanel. Den har egna sidor: <a href="/sv/jvc/guide/home-assistant/">installation av Home Assistant</a> och <a href="/sv/jvc/guide/home-assistant-dashboard/">Home Assistant-instrumentpanelen</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Logga in, lägg till projektorn och bygg en instrumentpanel. Se <a href="/sv/jvc/guide/home-assistant/">guiden för Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Nästa</div>
-      <h2>Fortsätt läsa</h2>
+      <h2>Fortsätt</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/sv/jvc/guide/">Tillbaka till användarguiden</a></li>
-      <li><a href="/sv/jvc/help/">Hjälp och vanliga frågor</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/sv/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/sv/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant-instrumentpanel</a>
+      <a href="/sv/jvc/guide/scenes/"><span>&#127917;</span>Scener</a>
+      <a href="/sv/jvc/guide/"><span>&#128218;</span>Tillbaka till guidens startsida</a>
+    </div>
   </div>
 </section>
 

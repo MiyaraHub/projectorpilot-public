@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVC Projektör Home Assistant &amp; Hubitat Otomasyonu - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA ev otomasyonu: güç, giriş ve sahne olaylarında webhook tetikleyicileri, Hubitat Maker API ve Home Assistant." />
+<title>Ev Otomasyonu - Projector Pilot D-ILA</title>
+<meta name="description" content="JVC D-ILA projektörünüz için web kancası tetikleyicileri, bir Hubitat yansıması ve Home Assistant kurulumu; uygulamanın gönderdiği isteğin tam haliyle." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/tr/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVC Projektör Home Assistant &amp; Hubitat Otomasyonu - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA ev otomasyonu: güç, giriş ve sahne olaylarında webhook tetikleyicileri, Hubitat Maker API ve Home Assistant." />
+<meta property="og:title" content="Ev Otomasyonu - Projector Pilot D-ILA" />
+<meta property="og:description" content="JVC D-ILA projektörünüz için web kancası tetikleyicileri, bir Hubitat yansıması ve Home Assistant kurulumu; uygulamanın gönderdiği isteğin tam haliyle." />
 <meta property="og:url" content="https://projectorpilot.com/tr/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVC Projektör Home Assistant &amp; Hubitat Otomasyonu - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA ev otomasyonu: güç, giriş ve sahne olaylarında webhook tetikleyicileri, Hubitat Maker API ve Home Assistant." />
+<meta name="twitter:title" content="Ev Otomasyonu - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="JVC D-ILA projektörünüz için web kancası tetikleyicileri, bir Hubitat yansıması ve Home Assistant kurulumu; uygulamanın gönderdiği isteğin tam haliyle." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVC Projektör Home Assistant & Hubitat Otomasyonu - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA ev otomasyonu: güç, giriş ve sahne olaylarında webhook tetikleyicileri, Hubitat Maker API ve Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Ev otomasyonu", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Ev Otomasyonu - Projector Pilot D-ILA", "description": "JVC D-ILA projektörünüz için web kancası tetikleyicileri, bir Hubitat yansıması ve Home Assistant kurulumu; uygulamanın gönderdiği isteğin tam haliyle.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Ev otomasyonu", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/tr/jvc/">Ana Sayfa</a> &rsaquo; <a href="/tr/jvc/guide/">Kullanım Kılavuzu</a> &rsaquo; Ev otomasyonu</div>
     <div class="eyebrow">Ev otomasyonu</div>
     <h1>Projektörünüzü evinize bağlayın</h1>
-    <p class="lead">Ev Otomasyonu eklentisiyle webhook'lar, Hubitat ve Home Assistant.</p>
+    <p class="lead">Projektör açıldığında, beklemeye geçtiğinde, girişi değiştirdiğinde veya bir sahneyi çağırdığında evin geri kalanının tepki vermesini sağlayın. Ayarlar, Ev Otomasyonu altında üç bağlantı vardır: web kancası tetikleyicileri, Hubitat ve Home Assistant. Üçü de tek başına ya da paket içinde satılan Ev Otomasyonu eklentisini gerektirir; yalnızca Pro bunu içermez.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Birini seçin</div>
+      <h2>Hangi bağlantıyı kullanmalı</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhook'lar</h3><p>Web isteği kabul eden her sistem: Node-RED, bir ev sunucusu, bir bulut otomasyonu. Uygulama gönderir, ne olacağına siz karar verirsiniz.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Güç ve girişin, Maker API üzerinden hub'ınızdaki bir cihaza tek yönlü yansıtılması; Rule Machine bunun üzerinden harekete geçer.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Home Assistant'ın kendi JVC Projector entegrasyonunu, sahneleriniz için betikleri ve hazır bir kontrol panelini kurar.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Tetikleyiciler</div>
-        <h2>Projektör olaylarında webhook'lar</h2>
+        <div class="eyebrow">Webhook'lar</div>
+        <h2>Otomasyon tetikleyicileri</h2>
+        <p>Bir tetikleyici, bu projektörde bir şey olduğunda sizin girdiğiniz adrese bir web isteği gönderir. Her projektörün kendi listesi vardır. <b>Tetikleyici ekle</b> seçeneğine dokunun, sonra seçin:</p>
         <ul class="plain">
-          <li><b>Olaylar</b>: açılma, bekleme, giriş değişikliği ve sahne.</li>
-          <li><b>İstekler</b>: girdiğiniz bir adrese POST, PUT veya GET.</li>
-          <li>Tetikleyiciler yalnızca uygulama açık ve bağlıyken çalışır, demo projektörden ise asla çalışmaz.</li>
+          <li><b>Ne zaman</b>: Projektör açıldığında, Projektör beklemeye geçtiğinde, Giriş değiştiğinde (herhangi bir girişe veya belirli bir girişe) ya da Bir sahne çağrıldığında (herhangi bir sahne veya belirli bir sahne).</li>
+          <li><b>Yöntem</b>: POST (varsayılan), PUT veya GET.</li>
+          <li><b>Web adresi</b>: ana makine adı olan bir http:// veya https:// adresi.</li>
+          <li><b>Etkin</b>, bir tetikleyiciyi silmeden duraklatmak için.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Tetikleyicilerin göründüğü Projector Pilot D-ILA ev otomasyonu sayfası" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Bir JVC projektör için Projector Pilot D-ILA otomasyon tetikleyicileri listesi" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">http:// ile başlayan bir adres şifrelenmeden gönderilir ve düzenleyici bunu söyler. Sisteminiz destekliyorsa https:// kullanın.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veri yükü</div>
+      <h2>İsteğin taşıdığı</h2>
+      <p class="lead">POST ve PUT bir JSON gövdesi gönderir; GET göndermez. Uygulamanın eklediği tek üst bilgi Content-Type'tır. Olaya uygulanmayan bir alan dışarıda bırakılır.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Alan</th><th>Anlamı</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> veya <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Projektörün uygulamadaki adı.</td></tr>
+        <tr><td><code>input</code></td><td><code>hdmi1</code> veya <code>hdmi2</code> gibi giriş.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Sahne çağırma için sahne.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Ne zaman gerçekleştiği, UTC olarak.</td></tr>
+        <tr><td><code>test</code></td><td>Yalnızca Test gönder ile gönderilen bir istekte bulunur ve değeri true olur.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Teslimat</div>
+      <h2>Tek deneme, dürüstçe bildirilir</h2>
+    </div>
+    <ul class="plain">
+      <li>Her olay bir kez, 10 saniyelik bir sınırla gönderilir ve yönlendirmeler izlenmez.</li>
+      <li>Tetikleyici son sonucunu gösterir: durum koduyla birlikte bir zamanda Teslim edildi, Reddedildi, Yanıt yok, Adrese ulaşılamadı, Güvenli bağlantı başarısız oldu veya Henüz gönderilmedi.</li>
+      <li><b>Test gönder</b>, test olarak işaretlenmiş bir istek gönderir; böylece projektör bir şey yapmadan önce diğer ucu kurabilirsiniz.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tetikleyiciler ne zaman çalışır</div>
+      <h2>Kurallar</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Yalnızca uygulama açık ve projektöre bağlıyken.</b> Uygulama projektörün durumunu izler; bir arka plan hizmeti değildir.</li>
+      <li><b>Değişiklikler, okumalar değil.</b> Uygulama bağlandıktan sonraki ilk okuma yalnızca başlangıç noktasını belirler; bu yüzden uygulamayı açmak, zaten açık olan bir projektör için "açılıyor" tetikleyicisini çalıştırmaz.</li>
+      <li><b>Demo projektörden asla.</b> Demo projektör seçiliyken veya Ev Otomasyonu kilidi açık değilken cihazdan hiçbir şey çıkmaz.</li>
+      <li><b>Güvenle saklanır.</b> Tetikleyici adresleri cihazın güvenli depolama alanında tutulur.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Projektörü Hubitat'a yansıtın</h2>
+      <p class="lead">Uygulama bu projektörü, Maker API üzerinden Hubitat hub'ınızdaki bir cihaza yansıtır: açık ve bekleme, ve giriş HDMI 1 veya HDMI 2 olarak; cihazın hangisini kabul ettiğine göre. Rule Machine bunun üzerinden harekete geçebilir.</p>
     </div>
-    <ul class="plain">
-      <li>Hubitat Maker API üzerinden: açma, kapatma, HDMI 1 ve HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>Hubitat'ta Maker API'yi ekleyin ve uygulama kimliğini (URL'lerindeki sayı) ile erişim jetonunu not edin.</li>
+      <li>Uygulamada <b>Hub adresini</b>, <b>Maker API uygulama kimliğini</b> ve <b>Erişim jetonunu</b> girin.</li>
+      <li><b>Cihazı bul</b> seçeneğine dokunun ve bu projektörü temsil eden cihazı seçin. Hiçbiri ona benzemiyorsa Hubitat'ta projektörün adını taşıyan bir Virtual Switch ekleyin ve yeniden deneyin.</li>
+      <li><b>Projektörün durumunu yansıt</b> seçeneğini açın. Cihaz, uygulama açık ve bağlıyken projektör her değiştiğinde onu izler.</li>
+    </ol>
+    <div class="note"><b>Yalnızca tek yön.</b> Hubitat'tan projektöre hiçbir şey gönderilmez. Bağlantıyı Kaldır, bağlantıyı uygulamadan kaldırır.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>En derin bağlantı</h2>
+      <p>Uygulama Home Assistant'ta oturum açar, projektörünüzü JVC Projector entegrasyonuna ekler, sahnelerinizi ve kontrollerinizi betik olarak yayımlar ve bir kontrol paneli oluşturur. Kendi sayfaları vardır: <a href="/tr/jvc/guide/home-assistant/">Home Assistant kurulumu</a> ve <a href="/tr/jvc/guide/home-assistant-dashboard/">Home Assistant kontrol paneli</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Oturum açın, projektörü ekleyin ve bir kontrol paneli oluşturun. <a href="/tr/jvc/guide/home-assistant/">Home Assistant kılavuzuna</a> bakın.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Sonraki</div>
-      <h2>Okumaya devam edin</h2>
+      <h2>Devam edin</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/tr/jvc/guide/">Kullanım kılavuzuna dön</a></li>
-      <li><a href="/tr/jvc/help/">Yardım ve SSS</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/tr/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/tr/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant kontrol paneli</a>
+      <a href="/tr/jvc/guide/scenes/"><span>&#127917;</span>Sahneler</a>
+      <a href="/tr/jvc/guide/"><span>&#128218;</span>Kılavuz ana sayfasına dön</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="fi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Yhdistä Projector Pilot D-ILA Home Assistantiin: kirjaudu sisään, lisää jvc_projector-integraatio, synkronoi skriptit ja rakenna kojelauta." />
+<title>Home Assistant -asennus - Projector Pilot D-ILA</title>
+<meta name="description" content="Lisää JVC D-ILA -projektorisi Home Assistantiin ilman YAMLia: kirjautuminen, JVC Projector -integraatio, reaaliaikainen anturi ja kohtauskomentosarjat." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/fi/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Yhdistä Projector Pilot D-ILA Home Assistantiin: kirjaudu sisään, lisää jvc_projector-integraatio, synkronoi skriptit ja rakenna kojelauta." />
+<meta property="og:title" content="Home Assistant -asennus - Projector Pilot D-ILA" />
+<meta property="og:description" content="Lisää JVC D-ILA -projektorisi Home Assistantiin ilman YAMLia: kirjautuminen, JVC Projector -integraatio, reaaliaikainen anturi ja kohtauskomentosarjat." />
 <meta property="og:url" content="https://projectorpilot.com/fi/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Yhdistä Projector Pilot D-ILA Home Assistantiin: kirjaudu sisään, lisää jvc_projector-integraatio, synkronoi skriptit ja rakenna kojelauta." />
+<meta name="twitter:title" content="Home Assistant -asennus - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Lisää JVC D-ILA -projektorisi Home Assistantiin ilman YAMLia: kirjautuminen, JVC Projector -integraatio, reaaliaikainen anturi ja kohtauskomentosarjat." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Yhdistä Projector Pilot D-ILA Home Assistantiin: kirjaudu sisään, lisää jvc_projector-integraatio, synkronoi skriptit ja rakenna kojelauta.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant -asennus - Projector Pilot D-ILA", "description": "Lisää JVC D-ILA -projektorisi Home Assistantiin ilman YAMLia: kirjautuminen, JVC Projector -integraatio, reaaliaikainen anturi ja kohtauskomentosarjat.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/fi/jvc/">Etusivu</a> &rsaquo; <a href="/fi/jvc/guide/">Käyttöopas</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Määritä JVC-projektorisi Home Assistantiin sovelluksesta käsin.</p>
+    <h1>Määritä JVC-projektorisi Home Assistantissa</h1>
+    <p class="lead">Sovellus kirjautuu Home Assistantiisi, lisää projektorin Home Assistantin omaan JVC Projector -integraatioon, julkaisee kohtauksesi ja säätimesi komentosarjoina ja rakentaa kojelaudan. Et liitä tunnusta etkä kirjoita YAMLia. Se vaatii Kotiautomaatio-lisäosan.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lue tämä ensin</div>
+      <h2>Yksi ohjain kerrallaan</h2>
+      <p class="lead">JVC-projektori palvelee yhtä verkko-ohjainta kerrallaan. Kun tämä sovellus on auki ja yhdistetty projektoriin, Home Assistant ei pääse siihen käsiksi. Home Assistantin projektorisäätimet ja komentosarjat toimivat, kun sovellus on suljettu, ja sovellus päästää projektorista irti siirtyessään taustalle.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Käyttöönotto</div>
-        <h2>Sisäänkirjautumisesta kojelautaan</h2>
-        <ul class="plain">
-          <li><b>Kirjaudu sisään</b> Home Assistantiin sen omalla OAuth-kirjautumisella.</li>
-          <li><b>Integraatio</b>: sovellus lisää Home Assistantin ydinintegraation <b>jvc_projector</b> ja lähettää sille isännän, portin ja salasanan.</li>
-          <li><b>Anturi</b>: mobile_app-anturi raportoi webhookin kautta.</li>
-          <li><b>Synkronoi lisäsäätimet</b> luo skriptit, joiden etuliite on <b>ppjvc</b>.</li>
-          <li><b>Kojelauta</b>: Lovelace-kojelauta ydintyylillä tai HACS-tyylillä.</li>
-          <li><b>Asennuksen tarkistuslista</b> näyttää, mikä on tehty ja mikä vielä tekemättä.</li>
-        </ul>
+        <div class="eyebrow">Vaihe 1</div>
+        <h2>Kirjaudu sisään</h2>
+        <ol class="steps">
+          <li>Avaa Asetukset, Kotiautomaatio, Home Assistant.</li>
+          <li>Anna <b>Home Assistantin osoite</b>, joka alkaa merkinnällä http:// tai https://.</li>
+          <li>Napauta <b>Kirjaudu sisään</b>. Home Assistantin oma kirjautumissivu avautuu selaimessa; kirjaudu siellä ja palaa takaisin.</li>
+          <li>Vahvista napauttamalla <b>Testaa yhteys</b>.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA:n Home Assistant -asennussivu" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA:n Home Assistant -näyttö ja asennuksen tarkistuslista" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Jos Home Assistantiin ei saada yhteyttä, tarkista osoite ja että tämä laite on samassa verkossa kuin Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 2</div>
+      <h2>Mitä Home Assistantissasi on</h2>
+      <p class="lead">Paneeli lukee Home Assistantisi ja merkitsee jokaisen osan tilaan Löytyi, Ei asennettu tai Ei voitu selvittää. Tarkista uudelleen lukee sen uudelleen.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Osa</th><th>Tarvitaan</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App -integraatio</td><td>Reaaliaikaisen tilan anturi.</td></tr>
+        <tr><td>JVC Projector -integraatio</td><td>Tämän projektorin ohjaaminen Home Assistantista.</td></tr>
+        <tr><td>HACS</td><td>Vain kojelaudan tyylitelty ulkoasu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vaihe 3</div>
+      <h2>Asennuksen tarkistuslista</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Kirjaudu sisään Home Assistantiin.</b></li>
+      <li><b>Lisää tämä projektori Home Assistantin JVC Projector -integraatioon.</b> Napauta Lisää. Sovellus lähettää projektorin osoitteen, portin ja verkkosalasanan Home Assistantin JVC Projector -integraatioon, kun olet ensin antanut luvan.</li>
+      <li><b>Ota käyttöön entiteetit, joita komentosarjat tarvitsevat.</b> Jotkin JVC Projector -entiteetit ovat Home Assistantissa aluksi pois käytöstä; napauta Ota käyttöön kunkin vieressä. Home Assistant saattaa tarvita uudelleenlatauksen tai uudelleenkäynnistyksen ennen kuin entiteetti ilmestyy.</li>
+      <li><b>Reaaliaikaisen tilan anturi.</b> Ota käyttöön Lähetä projektorin tila. Anturi luodaan seuraavan kerran, kun sovellus lähettää projektorin tilan yhdistettynä.</li>
+    </ol>
+    <div class="note"><b>Salasanasta.</b> Kun lisäät projektorin, sen verkkosalasana lähetetään Home Assistantillesi ja tallennetaan sinne sen JVC Projector -merkintään. Sovellus ei lähetä sitä minnekään muualle. Sovellus päästää projektorista irti, kun Home Assistant yhdistää siihen, ja yhdistää sitten uudelleen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mikä merkintä?</div>
+      <h2>Miten sovellus löytää projektorisi Home Assistantista</h2>
+      <p>Sovellus yhdistää JVC Projector -merkinnän projektorin MAC-osoitteen perusteella, joten yhdistä projektoriin ensin vähintään kerran. Jos Home Assistantissa ei ole merkintää, jolla on kyseinen MAC-osoite, tai niitä on useampi, tarkistuslista kertoo sen ja mitä tehdä. Jos projektori on siirtynyt, sovellus tarjoutuu lähettämään uuden osoitteen Home Assistantille.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant vaatii Kodin automaatio -lisäosan.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Anturi</div>
+      <h2>Reaaliaikainen tila</h2>
+      <p>Anturin tila on sovelluksen viimeksi lukema virta, ja sen attribuutit ovat tulo, malli ja sovelluksen lukemat asetukset. Se kulkee Mobile App -integraation kautta eikä lähetä mitään projektorille. Se päivittyy aina, kun tila muuttuu sovelluksen ollessa auki ja yhdistettynä.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Komentosarjat</div>
+      <h2>Tilanteet ja säätimet</h2>
+      <p class="lead">Jokaisesta tallennetusta kohtauksesta tulee Home Assistantiin komentosarja, joka ajetaan JVC Projector -entiteettien kautta. Komentosarja ei sisällä osoitetta eikä salasanaa. Komentosarjojen tunnukset alkavat merkinnällä <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b> kirjoittaa <a href="/fi/jvc/guide/scenes/">kohtauksesi</a> komentosarjoiksi ja näyttää, montako vaihetta kukin sisältää sekä mitä jätettiin pois ja miksi.</li>
+      <li><b>Sync Advanced Controls</b> julkaisee komentosarjat virralle, tuloille, kuvatiloille, linssimuisteille ja piilotukselle.</li>
+      <li><b>Tulokset</b> lasketaan: montako komentosarjaa synkronoitiin, montako Home Assistant hylkäsi ja vahvistiko se niiden uudelleenlatauksen.</li>
+      <li><b>Poista orvot komentosarjat</b> poistaa komentosarjat, jotka tämä sovellus on luonut ja joita mikään kohtaus ei enää käytä. Se listaa ne ja kysyy ensin.</li>
+    </ul>
+    <div class="note">Jos jotakin, mistä synkronointi riippuu, ei ole luettu, mitään ei kirjoiteta, muuteta tai poisteta. Synkronointi ei koskaan jää puolitiehen arvauksen varassa.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kojelauta</div>
+      <h2>Valmis kojelauta</h2>
+      <p><b>Lähetä hallintapaneeli</b> rakentaa projektorin kojelaudan Home Assistantiisi JVC Projector -entiteeteistä, komentosarjoista ja anturista. <b>Kopioi kojelauta</b> kopioi sen sen sijaan, jotta voit liittää sen itse uuteen kojelautaan. Kaikki siitä on <a href="/fi/jvc/guide/home-assistant-dashboard/">Home Assistantin kojelautasivulla</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Säännöt</div>
+      <h2>Mitä sovellus ei koskaan tee</h2>
+    </div>
+    <ul class="plain">
+      <li>Mitään ei poistu laitteelta, kun demoprojektori on valittuna tai Kotiautomaatiota ei ole avattu.</li>
+      <li><b>Poista yhdistäminen</b> poistaa linkin vain tästä sovelluksesta. Projektorin laite ja entiteetit pysyvät Home Assistantissa, kunnes poistat ne siellä.</li>
+      <li>Jos Home Assistant lakkaa hyväksymästä kirjautumista, sovellus kertoo siitä ja pyytää sinua kirjautumaan uudelleen.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Seuraava</div>
-      <h2>Lue lisää</h2>
+      <h2>Jatka eteenpäin</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/fi/jvc/guide/">Takaisin käyttöoppaaseen</a></li>
-      <li><a href="/fi/jvc/help/">Ohje ja UKK</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/fi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant -kojelauta</a>
+      <a href="/fi/jvc/guide/home-automation/"><span>&#127968;</span>Kodin automaatio</a>
+      <a href="/fi/jvc/help/"><span>&#10067;</span>Ohje ja UKK</a>
+      <a href="/fi/jvc/guide/"><span>&#128218;</span>Takaisin oppaan etusivulle</a>
+    </div>
   </div>
 </section>
 

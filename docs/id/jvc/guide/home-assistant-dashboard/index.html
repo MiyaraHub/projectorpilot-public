@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="id" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Dasbor Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Buat dasbor Home Assistant untuk proyektor JVC D-ILA Anda dengan satu ketukan: daya, gambar, skenario, input, memori lensa, dan sinyal." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dasbor Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Buat dasbor Home Assistant untuk proyektor JVC D-ILA Anda dengan satu ketukan: daya, gambar, skenario, input, memori lensa, dan sinyal." />
+<meta property="og:url" content="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dasbor Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Buat dasbor Home Assistant untuk proyektor JVC D-ILA Anda dengan satu ketukan: daya, gambar, skenario, input, memori lensa, dan sinyal." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Dasbor Home Assistant - Projector Pilot D-ILA", "description": "Buat dasbor Home Assistant untuk proyektor JVC D-ILA Anda dengan satu ketukan: daya, gambar, skenario, input, memori lensa, dan sinyal.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Dasbor Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/id/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa"><a href="/id/jvc/#features">Fitur</a><a href="/id/jvc/guide/">Panduan</a><a href="/id/jvc/pricing/">Harga</a><a href="/id/jvc/highlights/">Sorotan</a><a href="/id/jvc/guide/home-assistant/">Home Assistant</a><a href="/id/jvc/help/">Bantuan</a><a class="cta" href="/id/jvc/#status">SEGERA HADIR</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/id/jvc/">Beranda</a> &rsaquo; <a href="/id/jvc/guide/">Panduan Pengguna</a> &rsaquo; Dasbor Home Assistant</div>
+    <div class="eyebrow">Dasbor Home Assistant</div>
+    <h1>Dasbor proyektor di Home Assistant</h1>
+    <p class="lead">Satu ketukan membuat dasbor lengkap untuk proyektor JVC Anda di Home Assistant: daya, status, opsi gambar, skenario Anda, input, memori lensa, pembacaan sinyal, dan lainnya. Dasbor dibangun dari apa yang benar-benar dimiliki Home Assistant Anda, dan tidak menyimpan alamat atau kata sandi. Memerlukan add-on Otomatisasi Rumah.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sebelum Anda mengirim</div>
+      <h2>Yang dibutuhkan</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Home Assistant tertaut</b>, dengan proyektor ditambahkan ke integrasi JVC Projector. Lihat <a href="/id/jvc/guide/home-assistant/">penyiapan Home Assistant</a>.</li>
+      <li><b>Skrip tersinkron</b> jika Anda menginginkan tombol skenario, daya, input, memori lensa, dan kontrol. Dasbor memakai skrip yang ada.</li>
+      <li><b>Sensor status langsung</b> diaktifkan, untuk ubin status dan pembacaan.</li>
+      <li><b>Akun administrator</b> di Home Assistant, karena membuat dasbor memerlukannya. Tanpa itu, Home Assistant menolak dan aplikasi menyatakannya.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Dua cara</div>
+        <h2>Kirim atau salin</h2>
+        <ul class="plain">
+          <li><b>Kirim dasbor</b> membuat dasbor di Home Assistant, di bilah samping, dengan judul nama proyektor Anda dan ikon proyektor. Kirim lagi untuk memperbaruinya. Sinkronisasi dengan Home Assistant juga mengirimnya.</li>
+          <li><b>Salin dasbor</b> tidak mengirim apa pun. Fitur ini menyalin dasbor agar Anda dapat menempelkannya sendiri ke editor konfigurasi mentah dari dasbor baru, dan mengubahnya sesuka Anda.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Layar Home Assistant Projector Pilot D-ILA dengan tombol Kirim dasbor dan Salin dasbor" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Setiap proyektor mendapat dasbornya sendiri, di alamat yang diawali <code>projector-pilot-jvc-</code>, sehingga dua proyektor tidak pernah saling menimpa.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tata letak</div>
+      <h2>Apa isinya, dari atas ke bawah</h2>
+      <p class="lead">Sebuah bagian muncul hanya jika ada isinya, sehingga proyektor tanpa memori lensa tidak mendapat bagian memori lensa.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Bagian</th><th>Isi</th></tr></thead>
+      <tbody>
+        <tr><td>Header</td><td>Nama proyektor, kapan status terakhir diperbarui, daya, status, dan jam sumber cahaya.</td></tr>
+        <tr><td>Gambar</td><td>Input dan opsi gambar yang ditawarkan Home Assistant untuk proyektor, seperti mode gambar, daya cahaya, kontrol dinamis, Clear Motion Drive, anamorfik, pemrosesan HDR, dan mode instalasi, jika model Anda menawarkannya dan opsi itu diaktifkan.</td></tr>
+        <tr><td>Skenario</td><td>Satu tombol per skrip skenario.</td></tr>
+        <tr><td>Daya</td><td>Skrip daya.</td></tr>
+        <tr><td>Input</td><td>Skrip input.</td></tr>
+        <tr><td>Memori lensa</td><td>Satu tombol per slot memori lensa yang dimiliki model Anda.</td></tr>
+        <tr><td>Kontrol</td><td>Skrip kontrol lainnya, seperti mode gambar dan Sembunyikan.</td></tr>
+        <tr><td>Sinyal</td><td>Resolusi, kedalaman warna, ruang warna, kolorimetri, dan HDR, sebagaimana dilaporkan Home Assistant.</td></tr>
+        <tr><td>Pembacaan</td><td>Pengaturan yang sudah dibaca aplikasi, dari sensor status langsung.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tampilan</div>
+      <h2>Kartu inti atau tampilan bergaya</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Inti</h3><p>Dibangun hanya dari kartu bawaan Home Assistant. Berfungsi di Home Assistant mana pun, tanpa yang perlu dipasang.</p></div>
+      <div class="gcard"><h3>Bergaya</h3><p>Memakai kartu button-card, card-mod, dan Mushroom dari HACS untuk tampilan yang lebih kaya. Dipakai hanya jika ketiganya ada.</p></div>
+    </div>
+    <p>Jika salah satu dari ketiganya tidak ada, aplikasi mengirim versi inti dan memberi tahu Anda kartu mana yang harus dipasang dari HACS untuk tampilan bergaya. Pasang kartunya, lalu kirim lagi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Jujur sejak rancangan</div>
+      <h2>Mengapa beberapa hal tidak ada di dalamnya</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tanpa gauge.</b> JVC tidak memberikan rentang untuk level yang dilaporkan Home Assistant, sehingga dasbor tidak menggambar gauge yang harus ditebaknya.</li>
+      <li><b>Tanpa alamat atau kata sandi.</b> Dasbor hanya menyimpan ID entitas, nama, dan label.</li>
+      <li><b>Tanpa entitas karangan.</b> Sebuah ubin muncul hanya untuk entitas atau skrip yang ada di Home Assistant Anda.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Jika terjadi masalah</div>
+      <h2>Pesan</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Dasbor terkirim.</b> Buka dari bilah samping Home Assistant.</li>
+      <li><b>Ditolak.</b> Home Assistant menolak dasbor: masuk dengan akun administrator, lalu kirim lagi.</li>
+      <li><b>Login tidak diterima.</b> Masuk lagi, lalu kirim dasbor.</li>
+      <li><b>Tidak ada jawaban.</b> Home Assistant tidak menjawab, jadi dasbor tidak terkonfirmasi. Periksa koneksi dan kirim lagi.</li>
+      <li><b>Tidak diizinkan.</b> Tidak ada yang keluar dari perangkat selama proyektor demo dipilih atau Otomatisasi Rumah belum dibuka.</li>
+    </ul>
+    <div class="note">Dasbor mengontrol proyektor melalui integrasi JVC Projector milik Home Assistant, yang hanya dapat menjangkau proyektor selama aplikasi ini tidak terhubung dengannya. Tutup aplikasi sebelum memakai dasbor.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Berikutnya</div>
+      <h2>Lanjutkan</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/id/jvc/guide/home-assistant/"><span>&#128200;</span>Penyiapan Home Assistant</a>
+      <a href="/id/jvc/guide/home-automation/"><span>&#127968;</span>Otomatisasi rumah</a>
+      <a href="/id/jvc/guide/scenes/"><span>&#127917;</span>Skenario</a>
+      <a href="/id/jvc/guide/"><span>&#128218;</span>Kembali ke pusat panduan</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/id/jvc/guide/">Panduan Pengguna</a><a href="/id/jvc/pricing/">Harga</a><a href="/id/jvc/highlights/">Sorotan</a><a href="/id/jvc/guide/home-assistant/">Home Assistant</a><a href="/id/jvc/help/">Bantuan &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/id/jvc/privacy/">Privasi</a><a href="https://miyarahub.com/terms.html">Ketentuan</a></div>
+<div class="flinks"><a href="/id/jvc/guide/getting-started/">Memulai</a><a href="/id/jvc/guide/dashboard/">Dasbor</a><a href="/id/jvc/guide/remote/">Remote</a><a href="/id/jvc/guide/picture/">Gambar</a><a href="/id/jvc/guide/lens/">Lensa</a><a href="/id/jvc/guide/scenes/">Skenario</a><a href="/id/jvc/guide/settings/">Pengaturan</a><a href="/id/jvc/guide/maintenance/">Perawatan</a><a href="/id/jvc/guide/home-automation/">Otomatisasi Rumah</a><a href="/id/jvc/guide/languages/">Bahasa</a></div>
+<p class="crosslink">Menggunakan proyektor Epson? <a href="/id/epson/" data-app-pick="epson">Lihat Projector Pilot untuk Epson &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot D-ILA adalah aplikasi independen untuk proyektor JVC D-ILA. Tidak berafiliasi dengan atau didukung oleh JVCKENWOOD Corporation. JVC dan D-ILA adalah merek dagang dari pemiliknya. Aplikasi ini juga tidak berafiliasi dengan Home Assistant, Hubitat, Apple, Google, maupun Microsoft; nama-nama tersebut adalah merek dagang dari pemiliknya masing-masing, yang disebutkan hanya untuk menjelaskan perangkat yang didukung aplikasi.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

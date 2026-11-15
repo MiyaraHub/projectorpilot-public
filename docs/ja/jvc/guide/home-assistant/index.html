@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILAをHome Assistantに接続する: サインイン、jvc_projectorインテグレーションの追加、スクリプトの同期、ダッシュボードの作成。" />
+<title>Home Assistantのセットアップ - Projector Pilot D-ILA</title>
+<meta name="description" content="YAMLなしでJVC D-ILAプロジェクターをHome Assistantに追加：サインイン、JVC Projector連携、リアルタイムのセンサー、シーンのスクリプト。" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ja/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILAをHome Assistantに接続する: サインイン、jvc_projectorインテグレーションの追加、スクリプトの同期、ダッシュボードの作成。" />
+<meta property="og:title" content="Home Assistantのセットアップ - Projector Pilot D-ILA" />
+<meta property="og:description" content="YAMLなしでJVC D-ILAプロジェクターをHome Assistantに追加：サインイン、JVC Projector連携、リアルタイムのセンサー、シーンのスクリプト。" />
 <meta property="og:url" content="https://projectorpilot.com/ja/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILAをHome Assistantに接続する: サインイン、jvc_projectorインテグレーションの追加、スクリプトの同期、ダッシュボードの作成。" />
+<meta name="twitter:title" content="Home Assistantのセットアップ - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="YAMLなしでJVC D-ILAプロジェクターをHome Assistantに追加：サインイン、JVC Projector連携、リアルタイムのセンサー、シーンのスクリプト。" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ja", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Projector Pilot D-ILAをHome Assistantに接続する: サインイン、jvc_projectorインテグレーションの追加、スクリプトの同期、ダッシュボードの作成。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ja", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "ユーザーガイド", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ja", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistantのセットアップ - Projector Pilot D-ILA", "description": "YAMLなしでJVC D-ILAプロジェクターをHome Assistantに追加：サインイン、JVC Projector連携、リアルタイムのセンサー、シーンのスクリプト。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ja", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "ユーザーガイド", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/ja/jvc/">ホーム</a> &rsaquo; <a href="/ja/jvc/guide/">ユーザーガイド</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">アプリから、お使いのJVCプロジェクターをHome Assistantに設定します。</p>
+    <h1>Home AssistantでJVCプロジェクターをセットアップする</h1>
+    <p class="lead">アプリがHome Assistantにサインインし、プロジェクターをHome Assistant標準のJVC Projector連携に追加し、シーンと操作をスクリプトとして公開し、ダッシュボードを作成します。トークンを貼り付けたりYAMLを書いたりする必要はありません。ホームオートメーションのアドオンが必要です。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">最初にお読みください</div>
+      <h2>コントローラーは同時に1つだけ</h2>
+      <p class="lead">JVCプロジェクターは、同時に1つのネットワークコントローラーにしか対応しません。このアプリが開いてプロジェクターに接続している間は、Home Assistantからプロジェクターに接続できません。アプリを閉じている間は、Home Assistantのプロジェクター操作とスクリプトが動作します。アプリはバックグラウンドに移るとプロジェクターとの接続を解放します。</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">セットアップ</div>
-        <h2>サインインからダッシュボードまで</h2>
-        <ul class="plain">
-          <li>Home Assistantの専用OAuthサインインで<b>サインイン</b>します。</li>
-          <li><b>インテグレーション</b>: アプリがHome Assistantのコアの<b>jvc_projector</b>インテグレーションを追加し、ホスト、ポート、パスワードを送ります。</li>
-          <li><b>センサー</b>: mobile_appセンサーがWebhook経由で状態を報告します。</li>
-          <li><b>詳細コントロールの同期</b>で、<b>ppjvc</b>プレフィックスのスクリプトを作成します。</li>
-          <li><b>ダッシュボード</b>: コアスタイルまたはHACSスタイルのLovelaceダッシュボード。</li>
-          <li><b>セットアップチェックリスト</b>で、完了した項目と残りの項目を確認できます。</li>
-        </ul>
+        <div class="eyebrow">ステップ 1</div>
+        <h2>サインイン</h2>
+        <ol class="steps">
+          <li>設定、ホームオートメーション、Home Assistantの順に開きます。</li>
+          <li>http://またはhttps://で始まる<b>Home Assistantのアドレス</b>を入力します。</li>
+          <li><b>サインイン</b>をタップします。Home Assistant自身のサインインページがブラウザーで開くので、そこでサインインしてからアプリに戻ります。</li>
+          <li><b>接続をテスト</b>をタップして確認します。</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILAのHome Assistantセットアップ画面" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="セットアップのチェックリストを表示したProjector Pilot D-ILAのHome Assistant画面" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Home Assistantに接続できない場合は、アドレスと、このデバイスがHome Assistantと同じネットワークにあるかどうかを確認してください。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ステップ 2</div>
+      <h2>Home Assistantの状況</h2>
+      <p class="lead">パネルがHome Assistantを読み取り、各項目を「見つかりました」「インストールされていません」「判定できませんでした」のいずれかで表示します。もう一度確認をタップすると再度読み取ります。</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>項目</th><th>必要な用途</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App連携</td><td>リアルタイム状態センサー。</td></tr>
+        <tr><td>JVC Projector連携</td><td>Home Assistantからこのプロジェクターを操作すること。</td></tr>
+        <tr><td>HACS</td><td>ダッシュボードのスタイル付き表示のみ。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ステップ 3</div>
+      <h2>セットアップのチェックリスト</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Home Assistantにサインインします。</b></li>
+      <li><b>このプロジェクターをHome AssistantのJVC Projector連携に追加します。</b>追加をタップします。アプリは、確認を求めたうえで、プロジェクターのアドレス、ポート、ネットワークパスワードをHome AssistantのJVC Projector連携に送信します。</li>
+      <li><b>スクリプトに必要なエンティティを有効にします。</b>JVC Projectorのエンティティの一部はHome Assistantで無効の状態から始まります。各エンティティの横にある有効にするをタップしてください。表示されるまでに、Home Assistantの再読み込みまたは再起動が必要な場合があります。</li>
+      <li><b>リアルタイム状態センサー。</b>プロジェクターの状態を送信をオンにします。センサーは、アプリが接続中に次にプロジェクターの状態を送信したときに作成されます。</li>
+    </ol>
+    <div class="note"><b>パスワードについて。</b>プロジェクターを追加すると、そのネットワークパスワードがお使いのHome Assistantに送信され、JVC Projectorのエントリー内に保存されます。アプリがそれ以外の場所に送信することはありません。Home Assistantがプロジェクターに接続する間、アプリはプロジェクターとの接続を解放し、その後に再接続します。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">どのエントリー?</div>
+      <h2>アプリがHome Assistant内のプロジェクターを見つける方法</h2>
+      <p>アプリは、プロジェクターのMACアドレスでJVC Projectorのエントリーを照合します。そのため、先に少なくとも1回プロジェクターに接続してください。そのMACアドレスのエントリーがHome Assistantにない場合や、複数ある場合は、チェックリストにその旨と対処方法が表示されます。プロジェクターのアドレスが変わった場合は、新しいアドレスをHome Assistantに送信するかどうかをアプリが確認します。</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistantの利用には、Home Automationアドオンが必要です。</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">センサー</div>
+      <h2>リアルタイム状態</h2>
+      <p>センサーの状態は、アプリが最後に読み取った電源状態で、属性は入力、モデル、アプリが読み取った設定です。Mobile App連携を経由し、プロジェクターには何も送信しません。アプリが開いて接続している間に状態が変わると、そのたびに更新されます。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">スクリプト</div>
+      <h2>シーンと操作</h2>
+      <p class="lead">保存した各シーンは、JVC Projectorのエンティティを通じて実行されるスクリプトとしてHome Assistantに登録されます。スクリプトにアドレスやパスワードは含まれません。スクリプトのIDは<code>ppjvc</code>で始まります。</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b>は<a href="/ja/jvc/guide/scenes/">シーン</a>をスクリプトとして書き込み、各スクリプトのステップ数と、除外された内容とその理由を表示します。</li>
+      <li><b>Sync Advanced Controls</b>は、電源、入力、ピクチャーモード、レンズメモリー、ハイドのスクリプトを公開します。</li>
+      <li><b>結果</b>は件数で表示されます。同期されたスクリプトの数、Home Assistantが拒否した数、再読み込みが確認されたかどうかです。</li>
+      <li><b>孤立したスクリプトを削除</b>は、このアプリが作成したスクリプトのうち、どのシーンでも使われなくなったものを削除します。削除前に一覧が表示され、確認が求められます。</li>
+    </ul>
+    <div class="note">同期が依存する情報が読み取れていない場合、何も書き込まれず、変更も削除もされません。同期が推測で途中まで実行されることはありません。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ダッシュボード</div>
+      <h2>既成のダッシュボード</h2>
+      <p><b>ダッシュボードを送信</b>は、JVC Projectorのエンティティ、スクリプト、センサーから、プロジェクター用のダッシュボードをお使いのHome Assistantに作成します。<b>ダッシュボードをコピー</b>は、代わりにダッシュボードをコピーするので、新しいダッシュボードに自分で貼り付けられます。詳しくは<a href="/ja/jvc/guide/home-assistant-dashboard/">Home Assistantのダッシュボードのページ</a>をご覧ください。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ルール</div>
+      <h2>アプリが決して行わないこと</h2>
+    </div>
+    <ul class="plain">
+      <li>デモプロジェクターが選択されているとき、またはホームオートメーションが解放されていないときは、デバイスから何も送信されません。</li>
+      <li><b>連携を解除</b>すると、このアプリ側の連携だけが削除されます。プロジェクターのデバイスとエンティティは、Home Assistant側で削除するまで残ります。</li>
+      <li>Home Assistantがサインインを受け付けなくなった場合は、アプリがその旨を表示し、再度のサインインを求めます。</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">次へ</div>
       <h2>続けて読む</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ja/jvc/guide/">ユーザーガイドに戻る</a></li>
-      <li><a href="/ja/jvc/help/">ヘルプとFAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ja/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistantのダッシュボード</a>
+      <a href="/ja/jvc/guide/home-automation/"><span>&#127968;</span>ホームオートメーション</a>
+      <a href="/ja/jvc/help/"><span>&#10067;</span>ヘルプとFAQ</a>
+      <a href="/ja/jvc/guide/"><span>&#128218;</span>ガイドトップに戻る</a>
+    </div>
   </div>
 </section>
 

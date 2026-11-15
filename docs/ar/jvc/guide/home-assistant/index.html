@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="اربط Projector Pilot D-ILA بـ Home Assistant: سجّل الدخول، وأضف تكامل jvc_projector، وزامن النصوص البرمجية، وأنشئ لوحة تحكم." />
+<title>إعداد Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="أضف جهاز عرض JVC D-ILA الخاص بك إلى Home Assistant بلا YAML: تسجيل الدخول، وتكامل JVC Projector، ومستشعر مباشر، ونصوص المشاهد البرمجية." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ar/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="اربط Projector Pilot D-ILA بـ Home Assistant: سجّل الدخول، وأضف تكامل jvc_projector، وزامن النصوص البرمجية، وأنشئ لوحة تحكم." />
+<meta property="og:title" content="إعداد Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="أضف جهاز عرض JVC D-ILA الخاص بك إلى Home Assistant بلا YAML: تسجيل الدخول، وتكامل JVC Projector، ومستشعر مباشر، ونصوص المشاهد البرمجية." />
 <meta property="og:url" content="https://projectorpilot.com/ar/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="اربط Projector Pilot D-ILA بـ Home Assistant: سجّل الدخول، وأضف تكامل jvc_projector، وزامن النصوص البرمجية، وأنشئ لوحة تحكم." />
+<meta name="twitter:title" content="إعداد Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="أضف جهاز عرض JVC D-ILA الخاص بك إلى Home Assistant بلا YAML: تسجيل الدخول، وتكامل JVC Projector، ومستشعر مباشر، ونصوص المشاهد البرمجية." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "اربط Projector Pilot D-ILA بـ Home Assistant: سجّل الدخول، وأضف تكامل jvc_projector، وزامن النصوص البرمجية، وأنشئ لوحة تحكم.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "إعداد Home Assistant - Projector Pilot D-ILA", "description": "أضف جهاز عرض JVC D-ILA الخاص بك إلى Home Assistant بلا YAML: تسجيل الدخول، وتكامل JVC Projector، ومستشعر مباشر، ونصوص المشاهد البرمجية.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/ar/jvc/">الرئيسية</a> &rsaquo; <a href="/ar/jvc/guide/">دليل المستخدم</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">أعدّ جهاز عرض JVC في Home Assistant من داخل التطبيق.</p>
+    <h1>إعداد جهاز عرض JVC في Home Assistant</h1>
+    <p class="lead">يسجّل التطبيق الدخول إلى Home Assistant الخاص بك، ويضيف جهاز العرض إلى تكامل JVC Projector الخاص بـ Home Assistant نفسه، وينشر مشاهدك وعناصر التحكم نصوصًا برمجية، ويبني لوحة معلومات. لا تلصق رمزًا ولا تكتب YAML أبدًا. ويتطلب إضافة أتمتة المنزل.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">اقرأ هذا أولًا</div>
+      <h2>وحدة تحكم واحدة في كل مرة</h2>
+      <p class="lead">يخدم جهاز عرض JVC وحدة تحكم شبكية واحدة في كل مرة. وما دام هذا التطبيق مفتوحًا ومتصلًا بجهاز العرض لا يستطيع Home Assistant الوصول إليه. تعمل عناصر تحكم جهاز العرض في Home Assistant ونصوصه البرمجية عندما يكون التطبيق مغلقًا، ويتخلى التطبيق عن جهاز العرض عندما ينتقل إلى الخلفية.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">الإعداد</div>
-        <h2>من تسجيل الدخول إلى لوحة التحكم</h2>
-        <ul class="plain">
-          <li><b>سجّل الدخول</b> إلى Home Assistant عبر تسجيل الدخول الخاص به بواسطة OAuth.</li>
-          <li><b>التكامل</b>: يضيف التطبيق تكامل <b>jvc_projector</b> الأساسي في Home Assistant، ويرسل المضيف والمنفذ وكلمة المرور.</li>
-          <li><b>المستشعر</b>: يبلّغ مستشعر mobile_app عبر خطاف ويب.</li>
-          <li><b>مزامنة عناصر التحكم المتقدمة</b> تنشئ نصوصًا برمجية بالبادئة <b>ppjvc</b>.</li>
-          <li><b>لوحة التحكم</b>: لوحة Lovelace بنمط core أو بنمط HACS.</li>
-          <li><b>قائمة التحقق من الإعداد</b> تعرض ما اكتمل وما تبقى.</li>
-        </ul>
+        <div class="eyebrow">الخطوة 1</div>
+        <h2>تسجيل الدخول</h2>
+        <ol class="steps">
+          <li>افتح الإعدادات، ثم أتمتة المنزل، ثم Home Assistant.</li>
+          <li>أدخل <b>عنوان Home Assistant</b> الخاص بك، بادئًا بـ http:// أو https://.</li>
+          <li>انقر على <b>تسجيل الدخول</b>. تفتح صفحة تسجيل الدخول الخاصة بـ Home Assistant في المتصفح؛ سجّل الدخول هناك ثم عد.</li>
+          <li>انقر على <b>اختبار الاتصال</b> للتأكد.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="صفحة إعداد Home Assistant في Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="شاشة Home Assistant في Projector Pilot D-ILA مع قائمة الإعداد" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">إذا تعذر الوصول إلى Home Assistant فتحقق من العنوان، ومن أن هذا الجهاز على الشبكة نفسها التي يوجد عليها Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 2</div>
+      <h2>ما الموجود في Home Assistant الخاص بك</h2>
+      <p class="lead">تقرأ لوحة Home Assistant الخاص بك وتضع على كل جزء علامة تم العثور، أو غير مثبّت، أو تعذر التحديد. وتعيد إعادة التحقق قراءتها.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>الجزء</th><th>مطلوب من أجل</th></tr></thead>
+      <tbody>
+        <tr><td>تكامل Mobile App</td><td>مستشعر الحالة المباشرة.</td></tr>
+        <tr><td>تكامل JVC Projector</td><td>التحكم في جهاز العرض هذا من Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>المظهر المنسّق للوحة المعلومات فقط.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الخطوة 3</div>
+      <h2>قائمة الإعداد</h2>
+    </div>
+    <ol class="steps">
+      <li><b>سجّل الدخول إلى Home Assistant.</b></li>
+      <li><b>أضف جهاز العرض هذا إلى تكامل JVC Projector في Home Assistant.</b> انقر على إضافة. يرسل التطبيق عنوان جهاز العرض ومنفذه وكلمة مرور الشبكة إلى تكامل JVC Projector في Home Assistant، بعد أن يسألك أولًا.</li>
+      <li><b>فعّل الكيانات التي تحتاجها النصوص البرمجية.</b> تبدأ بعض كيانات JVC Projector معطّلة في Home Assistant؛ انقر على تفعيل بجانب كل واحد منها. قد يحتاج Home Assistant إلى إعادة تحميل أو إعادة تشغيل قبل أن يظهر.</li>
+      <li><b>مستشعر الحالة المباشرة.</b> فعّل إرسال حالة جهاز العرض. يُنشأ المستشعر في المرة التالية التي يرسل فيها التطبيق حالة جهاز العرض أثناء الاتصال.</li>
+    </ol>
+    <div class="note"><b>بخصوص كلمة المرور.</b> عندما تضيف جهاز العرض تُرسَل كلمة مرور الشبكة الخاصة به إلى Home Assistant الخاص بك وتُخزَّن هناك، في إدخال JVC Projector الخاص به. ولا يرسلها التطبيق إلى أي جهة أخرى. يتخلى التطبيق عن جهاز العرض بينما يتصل به Home Assistant، ثم يعيد الاتصال.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أي إدخال؟</div>
+      <h2>كيف يجد التطبيق جهاز العرض الخاص بك في Home Assistant</h2>
+      <p>يطابق التطبيق إدخال JVC Projector بعنوان MAC لجهاز العرض، لذلك اتصل بجهاز العرض مرة واحدة على الأقل أولًا. إذا لم يكن في Home Assistant أي إدخال بعنوان MAC هذا، أو كان فيه أكثر من واحد، فإن قائمة الإعداد تقول ذلك وتقول ما يجب فعله. وإذا كان جهاز العرض قد انتقل، يعرض التطبيق إرسال العنوان الجديد إلى Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">يحتاج Home Assistant إلى إضافة الأتمتة المنزلية.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">المستشعر</div>
+      <h2>الحالة المباشرة</h2>
+      <p>حالة المستشعر هي آخر حالة تشغيل قرأها التطبيق، وسماته هي المدخل والطراز والإعدادات التي قرأها التطبيق. يمر عبر تكامل Mobile App ولا يرسل شيئًا إلى جهاز العرض. ويتحدث كلما تغيرت الحالة والتطبيق مفتوح ومتصل.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">النصوص البرمجية</div>
+      <h2>المشاهد وعناصر التحكم</h2>
+      <p class="lead">يصبح كل مشهد محفوظ نصًا برمجيًا في Home Assistant يعمل عبر كيانات JVC Projector. لا يحمل النص البرمجي أي عنوان ولا كلمة مرور. تبدأ معرّفات النصوص البرمجية بـ <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>مزامنة مع HA</b> تكتب <a href="/ar/jvc/guide/scenes/">مشاهدك</a> نصوصًا برمجية وتعرض عدد الخطوات في كل منها، وما تُرك خارجها ولماذا.</li>
+      <li><b>مزامنة عناصر التحكم المتقدمة</b> تنشر نصوصًا برمجية للتشغيل والمداخل وأوضاع الصورة وذاكرات العدسة والإخفاء.</li>
+      <li><b>النتائج</b> معدودة: كم نصًا برمجيًا جرت مزامنته، وكم رفضه Home Assistant، وهل أكد إعادة تحميلها.</li>
+      <li><b>إزالة النصوص البرمجية اليتيمة</b> تحذف النصوص البرمجية التي أنشأها هذا التطبيق ولم يعد أي مشهد يستخدمها. تعرضها وتسأل أولًا.</li>
+    </ul>
+    <div class="note">إذا لم تُقرأ حالة شيء تعتمد عليه المزامنة، فلا يُكتب شيء ولا يتغير ولا يُزال. لا تعمل المزامنة نصف عمل بناءً على تخمين.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">لوحة التحكم</div>
+      <h2>لوحة معلومات جاهزة</h2>
+      <p><b>إرسال لوحة التحكم</b> تبني لوحة معلومات لجهاز العرض في Home Assistant الخاص بك من كيانات JVC Projector والنصوص البرمجية والمستشعر. أما <b>نسخ لوحة المعلومات</b> فتنسخها بدلًا من ذلك، لتلصقها بنفسك في لوحة معلومات جديدة. كل ما يخصها موجود في <a href="/ar/jvc/guide/home-assistant-dashboard/">صفحة لوحة Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">القواعد</div>
+      <h2>ما لا يفعله التطبيق أبدًا</h2>
+    </div>
+    <ul class="plain">
+      <li>لا يغادر شيء الجهاز ما دام جهاز العرض التجريبي محددًا أو أتمتة المنزل غير مفتوحة.</li>
+      <li><b>إلغاء الربط</b> يزيل الربط من هذا التطبيق فقط. يبقى جهاز العرض وكياناته في Home Assistant إلى أن تحذفها هناك.</li>
+      <li>إذا توقف Home Assistant عن قبول تسجيل الدخول، يخبرك التطبيق بذلك ويطلب منك تسجيل الدخول مرة أخرى.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">التالي</div>
-      <h2>تابع القراءة</h2>
+      <h2>تابع</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ar/jvc/guide/">العودة إلى دليل المستخدم</a></li>
-      <li><a href="/ar/jvc/help/">المساعدة والأسئلة الشائعة</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ar/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>لوحة Home Assistant</a>
+      <a href="/ar/jvc/guide/home-automation/"><span>&#127968;</span>الأتمتة المنزلية</a>
+      <a href="/ar/jvc/help/"><span>&#10067;</span>المساعدة والأسئلة الشائعة</a>
+      <a href="/ar/jvc/guide/"><span>&#128218;</span>العودة إلى مركز الدليل</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ko" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA를 Home Assistant에 연결하기: 로그인, jvc_projector 통합구성요소 추가, 스크립트 동기화, 대시보드 만들기." />
+<title>Home Assistant 설정 - Projector Pilot D-ILA</title>
+<meta name="description" content="YAML 없이 JVC D-ILA 프로젝터를 Home Assistant에 추가하세요. 로그인, JVC Projector 통합구성요소, 실시간 센서, 장면 스크립트까지 설정합니다." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ko/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA를 Home Assistant에 연결하기: 로그인, jvc_projector 통합구성요소 추가, 스크립트 동기화, 대시보드 만들기." />
+<meta property="og:title" content="Home Assistant 설정 - Projector Pilot D-ILA" />
+<meta property="og:description" content="YAML 없이 JVC D-ILA 프로젝터를 Home Assistant에 추가하세요. 로그인, JVC Projector 통합구성요소, 실시간 센서, 장면 스크립트까지 설정합니다." />
 <meta property="og:url" content="https://projectorpilot.com/ko/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA를 Home Assistant에 연결하기: 로그인, jvc_projector 통합구성요소 추가, 스크립트 동기화, 대시보드 만들기." />
+<meta name="twitter:title" content="Home Assistant 설정 - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="YAML 없이 JVC D-ILA 프로젝터를 Home Assistant에 추가하세요. 로그인, JVC Projector 통합구성요소, 실시간 센서, 장면 스크립트까지 설정합니다." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ko", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA를 Home Assistant에 연결하기: 로그인, jvc_projector 통합구성요소 추가, 스크립트 동기화, 대시보드 만들기.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ko", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "사용 설명서", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ko", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant 설정 - Projector Pilot D-ILA", "description": "YAML 없이 JVC D-ILA 프로젝터를 Home Assistant에 추가하세요. 로그인, JVC Projector 통합구성요소, 실시간 센서, 장면 스크립트까지 설정합니다.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ko", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "사용 설명서", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/ko/jvc/">홈</a> &rsaquo; <a href="/ko/jvc/guide/">사용자 가이드</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">앱에서 Home Assistant에 JVC 프로젝터를 설정하세요.</p>
+    <h1>Home Assistant에서 JVC 프로젝터 설정하기</h1>
+    <p class="lead">앱이 Home Assistant에 로그인하여 프로젝터를 Home Assistant 자체 JVC Projector 통합구성요소에 추가하고, 장면과 컨트롤을 스크립트로 게시하며, 대시보드까지 만들어 줍니다. 토큰을 붙여넣거나 YAML을 작성할 필요가 없습니다. Home Automation 애드온이 필요합니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">먼저 읽어 보세요</div>
+      <h2>한 번에 컨트롤러 하나</h2>
+      <p class="lead">JVC 프로젝터는 한 번에 하나의 네트워크 컨트롤러만 지원합니다. 이 앱이 열려 있고 프로젝터에 연결되어 있는 동안에는 Home Assistant가 프로젝터에 접근할 수 없습니다. 앱을 닫아 두면 Home Assistant의 프로젝터 컨트롤과 스크립트가 동작하며, 앱은 백그라운드로 이동할 때 프로젝터 연결을 해제합니다.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">설정</div>
-        <h2>로그인부터 대시보드까지</h2>
-        <ul class="plain">
-          <li>Home Assistant 자체 OAuth 로그인으로 <b>로그인</b>하세요.</li>
-          <li><b>통합구성요소</b>: 앱이 호스트, 포트, 비밀번호를 전달해 Home Assistant 기본 <b>jvc_projector</b> 통합구성요소를 추가합니다.</li>
-          <li><b>센서</b>: mobile_app 센서가 웹훅으로 상태를 보고합니다.</li>
-          <li><b>고급 컨트롤 동기화</b>는 <b>ppjvc</b> 접두사가 붙은 스크립트를 만듭니다.</li>
-          <li><b>대시보드</b>: 기본 스타일 또는 HACS 스타일의 Lovelace 대시보드.</li>
-          <li><b>설정 체크리스트</b>에서 완료한 항목과 남은 항목을 확인할 수 있습니다.</li>
-        </ul>
+        <div class="eyebrow">1단계</div>
+        <h2>로그인</h2>
+        <ol class="steps">
+          <li>설정, Home Automation, Home Assistant를 엽니다.</li>
+          <li><b>Home Assistant 주소</b>를 http:// 또는 https://로 시작하게 입력합니다.</li>
+          <li><b>로그인</b>을 누릅니다. 브라우저에서 Home Assistant 자체 로그인 페이지가 열립니다. 그곳에서 로그인한 후 앱으로 돌아오세요.</li>
+          <li><b>연결 테스트</b>를 눌러 확인합니다.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA Home Assistant 설정 페이지" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="설정 체크리스트가 보이는 Projector Pilot D-ILA의 Home Assistant 화면" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Home Assistant에 연결할 수 없으면 주소를 확인하고, 이 기기가 Home Assistant와 같은 네트워크에 있는지도 확인하세요.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">2단계</div>
+      <h2>Home Assistant에 있는 항목</h2>
+      <p class="lead">패널이 Home Assistant를 읽어 각 항목을 찾음, 설치되지 않음, 확인할 수 없음으로 표시합니다. 다시 확인을 누르면 다시 읽습니다.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>항목</th><th>필요한 이유</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App 통합구성요소</td><td>실시간 상태 센서.</td></tr>
+        <tr><td>JVC Projector 통합구성요소</td><td>Home Assistant에서 이 프로젝터를 제어합니다.</td></tr>
+        <tr><td>HACS</td><td>대시보드의 스타일 디자인에만 필요합니다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">3단계</div>
+      <h2>설정 체크리스트</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Home Assistant에 로그인합니다.</b></li>
+      <li><b>이 프로젝터를 Home Assistant의 JVC Projector 통합구성요소에 추가합니다.</b> 추가를 누르세요. 앱이 먼저 사용자에게 확인한 뒤, 프로젝터의 주소, 포트, 네트워크 비밀번호를 Home Assistant의 JVC Projector 통합구성요소로 보냅니다.</li>
+      <li><b>스크립트에 필요한 엔티티를 사용 설정합니다.</b> 일부 JVC Projector 엔티티는 Home Assistant에서 사용 안 함 상태로 시작합니다. 각 엔티티 옆의 사용을 누르세요. 엔티티가 나타나기 전에 Home Assistant를 다시 불러오거나 재시작해야 할 수도 있습니다.</li>
+      <li><b>실시간 상태 센서.</b> 프로젝터 상태 전송을 켭니다. 센서는 앱이 연결된 상태에서 다음번에 프로젝터 상태를 보낼 때 만들어집니다.</li>
+    </ol>
+    <div class="note"><b>비밀번호에 관해.</b> 프로젝터를 추가하면 프로젝터의 네트워크 비밀번호가 사용자의 Home Assistant로 전송되어 JVC Projector 항목에 저장됩니다. 앱은 그 외의 어떤 곳으로도 비밀번호를 보내지 않습니다. Home Assistant가 프로젝터에 연결하는 동안 앱은 프로젝터 연결을 해제했다가 이후 다시 연결합니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">어떤 항목인가요?</div>
+      <h2>앱이 Home Assistant에서 프로젝터를 찾는 방법</h2>
+      <p>앱은 프로젝터의 MAC 주소로 JVC Projector 항목을 찾아 맞춥니다. 그래서 먼저 프로젝터에 한 번 이상 연결해야 합니다. 해당 MAC 주소를 가진 항목이 Home Assistant에 없거나 둘 이상이면, 체크리스트가 그 사실과 해결 방법을 알려 줍니다. 프로젝터 주소가 바뀐 경우에는 앱이 새 주소를 Home Assistant로 보내도록 제안합니다.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant를 사용하려면 Home Automation 추가 기능이 필요합니다.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">센서</div>
+      <h2>실시간 상태</h2>
+      <p>센서의 상태 값은 앱이 마지막으로 읽은 전원 상태이고, 속성은 입력, 모델, 앱이 읽은 설정입니다. 센서는 Mobile App 통합구성요소를 거치며 프로젝터에는 아무것도 보내지 않습니다. 앱이 열려 있고 연결된 상태에서 값이 바뀔 때마다 갱신됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">스크립트</div>
+      <h2>장면 및 컨트롤</h2>
+      <p class="lead">저장된 각 장면은 JVC Projector 엔티티를 통해 실행되는 Home Assistant 스크립트가 됩니다. 스크립트에는 주소도 비밀번호도 들어 있지 않습니다. 스크립트 ID는 <code>ppjvc</code>로 시작합니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>HA와 동기화</b>는 <a href="/ko/jvc/guide/scenes/">장면</a>을 스크립트로 작성하고, 각 스크립트의 단계 수와 제외된 항목 및 그 이유를 표시합니다.</li>
+      <li><b>고급 컨트롤 동기화</b>는 전원, 입력, 픽처 모드, 렌즈 메모리, 숨기기용 스크립트를 게시합니다.</li>
+      <li><b>결과</b>는 동기화된 스크립트 수, Home Assistant가 거부한 수, 스크립트 다시 불러오기를 확인했는지 여부로 집계됩니다.</li>
+      <li><b>고아 스크립트 제거</b>는 앱이 만들었지만 더 이상 어떤 장면도 사용하지 않는 스크립트를 삭제합니다. 삭제 전에 목록을 보여 주고 먼저 확인을 요청합니다.</li>
+    </ul>
+    <div class="note">동기화에 필요한 항목 중 읽지 못한 것이 있으면 아무것도 쓰거나 변경하거나 삭제하지 않습니다. 동기화는 추측에 의존해 절반만 실행되는 일이 없습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">대시보드</div>
+      <h2>바로 쓸 수 있는 대시보드</h2>
+      <p><b>대시보드 전송</b>은 JVC Projector 엔티티, 스크립트, 센서를 이용해 Home Assistant에 프로젝터 대시보드를 만듭니다. <b>대시보드 복사</b>는 대신 대시보드를 복사하므로 새 대시보드에 직접 붙여넣을 수 있습니다. 대시보드에 관한 모든 내용은 <a href="/ko/jvc/guide/home-assistant-dashboard/">Home Assistant 대시보드 페이지</a>에 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">규칙</div>
+      <h2>앱이 절대 하지 않는 일</h2>
+    </div>
+    <ul class="plain">
+      <li>데모 프로젝터를 선택했거나 Home Automation이 잠금 해제되지 않은 상태에서는 기기 밖으로 아무것도 전송되지 않습니다.</li>
+      <li><b>연동 해제</b>는 이 앱에서만 연결을 제거합니다. 프로젝터의 기기와 엔티티는 Home Assistant에서 직접 삭제하기 전까지 그대로 남아 있습니다.</li>
+      <li>Home Assistant가 로그인을 더 이상 받아 주지 않으면 앱이 그 사실을 알리고 다시 로그인하라고 안내합니다.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">다음</div>
-      <h2>계속 읽기</h2>
+      <h2>계속 읽어 보기</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ko/jvc/guide/">사용자 가이드로 돌아가기</a></li>
-      <li><a href="/ko/jvc/help/">도움말 및 FAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ko/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant 대시보드</a>
+      <a href="/ko/jvc/guide/home-automation/"><span>&#127968;</span>홈 오토메이션</a>
+      <a href="/ko/jvc/help/"><span>&#10067;</span>도움말 및 FAQ</a>
+      <a href="/ko/jvc/guide/"><span>&#128218;</span>가이드 허브로 돌아가기</a>
+    </div>
   </div>
 </section>
 

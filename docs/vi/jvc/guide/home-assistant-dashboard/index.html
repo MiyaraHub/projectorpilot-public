@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Bảng điều khiển Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Tạo bảng điều khiển Home Assistant cho máy chiếu JVC D-ILA của bạn chỉ với một lần chạm: nguồn, hình ảnh, cảnh, nguồn vào, bộ nhớ ống kính và tín hiệu." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bảng điều khiển Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Tạo bảng điều khiển Home Assistant cho máy chiếu JVC D-ILA của bạn chỉ với một lần chạm: nguồn, hình ảnh, cảnh, nguồn vào, bộ nhớ ống kính và tín hiệu." />
+<meta property="og:url" content="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bảng điều khiển Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Tạo bảng điều khiển Home Assistant cho máy chiếu JVC D-ILA của bạn chỉ với một lần chạm: nguồn, hình ảnh, cảnh, nguồn vào, bộ nhớ ống kính và tín hiệu." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Bảng điều khiển Home Assistant - Projector Pilot D-ILA", "description": "Tạo bảng điều khiển Home Assistant cho máy chiếu JVC D-ILA của bạn chỉ với một lần chạm: nguồn, hình ảnh, cảnh, nguồn vào, bộ nhớ ống kính và tín hiệu.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Bảng điều khiển Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/vi/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ"><a href="/vi/jvc/#features">Tính năng</a><a href="/vi/jvc/guide/">Hướng dẫn</a><a href="/vi/jvc/pricing/">Giá</a><a href="/vi/jvc/highlights/">Điểm nổi bật</a><a href="/vi/jvc/guide/home-assistant/">Home Assistant</a><a href="/vi/jvc/help/">Trợ giúp</a><a class="cta" href="/vi/jvc/#status">SẮP RA MẮT</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/vi/jvc/">Trang chủ</a> &rsaquo; <a href="/vi/jvc/guide/">Hướng dẫn sử dụng</a> &rsaquo; Bảng điều khiển Home Assistant</div>
+    <div class="eyebrow">Bảng điều khiển Home Assistant</div>
+    <h1>Một bảng điều khiển máy chiếu trong Home Assistant</h1>
+    <p class="lead">Một lần chạm tạo ra bảng điều khiển đầy đủ cho máy chiếu JVC của bạn trong Home Assistant: nguồn, trạng thái, tùy chọn hình ảnh, các cảnh của bạn, nguồn vào, bộ nhớ ống kính, số liệu tín hiệu và nhiều hơn nữa. Nó được xây dựng từ những gì Home Assistant của bạn thực sự có, và không lưu địa chỉ hay mật khẩu. Tính năng này cần tiện ích bổ sung Home Automation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trước khi gửi</div>
+      <h2>Cần gì</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Đã liên kết Home Assistant</b>, với máy chiếu được thêm vào tích hợp JVC Projector. Xem <a href="/vi/jvc/guide/home-assistant/">thiết lập Home Assistant</a>.</li>
+      <li><b>Đã đồng bộ tập lệnh</b> nếu bạn muốn có các nút cảnh, nguồn, nguồn vào, bộ nhớ ống kính và điều khiển. Bảng điều khiển dùng các tập lệnh hiện có.</li>
+      <li><b>Đã bật cảm biến trạng thái trực tiếp</b>, cho các ô trạng thái và số liệu.</li>
+      <li><b>Một tài khoản quản trị viên</b> trong Home Assistant, vì tạo bảng điều khiển cần tài khoản này. Nếu không có, Home Assistant từ chối và ứng dụng sẽ báo.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Hai cách</div>
+        <h2>Gửi hoặc sao chép</h2>
+        <ul class="plain">
+          <li><b>Gửi bảng điều khiển</b> tạo bảng điều khiển trong Home Assistant, ở thanh bên, đặt tiêu đề theo tên máy chiếu của bạn và biểu tượng máy chiếu. Gửi lại để cập nhật. Đồng bộ với Home Assistant cũng gửi nó.</li>
+          <li><b>Sao chép bảng điều khiển</b> không gửi gì cả. Nó sao chép bảng điều khiển để bạn tự dán vào trình soạn thảo cấu hình thô của một bảng điều khiển mới, rồi chỉnh sửa tùy ý.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Màn hình Home Assistant của Projector Pilot D-ILA với các nút Gửi bảng điều khiển và Sao chép bảng điều khiển" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Mỗi máy chiếu có bảng điều khiển riêng, ở một địa chỉ bắt đầu bằng <code>projector-pilot-jvc-</code>, nên hai máy chiếu không bao giờ ghi đè lên nhau.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bố cục</div>
+      <h2>Những gì có trên đó, từ trên xuống dưới</h2>
+      <p class="lead">Một phần chỉ xuất hiện khi nó có nội dung, nên máy chiếu không có bộ nhớ ống kính sẽ không có phần bộ nhớ ống kính.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Mục</th><th>Chứa</th></tr></thead>
+      <tbody>
+        <tr><td>Đầu trang</td><td>Tên máy chiếu, lần cập nhật trạng thái gần nhất, nguồn, trạng thái và số giờ hoạt động của nguồn sáng.</td></tr>
+        <tr><td>Hình ảnh</td><td>Nguồn vào và các tùy chọn hình ảnh mà Home Assistant cung cấp cho máy chiếu, chẳng hạn chế độ hình ảnh, công suất ánh sáng, điều khiển động, Clear Motion Drive, anamorphic, xử lý HDR và chế độ lắp đặt, khi mẫu máy của bạn có chúng và chúng đã được bật.</td></tr>
+        <tr><td>Cảnh</td><td>Một nút cho mỗi tập lệnh cảnh.</td></tr>
+        <tr><td>Nguồn điện</td><td>Các tập lệnh nguồn.</td></tr>
+        <tr><td>Nguồn vào</td><td>Các tập lệnh nguồn vào.</td></tr>
+        <tr><td>Bộ nhớ ống kính</td><td>Một nút cho mỗi ô bộ nhớ ống kính mà mẫu máy của bạn có.</td></tr>
+        <tr><td>Điều khiển</td><td>Các tập lệnh điều khiển khác, chẳng hạn chế độ hình ảnh và Ẩn hình.</td></tr>
+        <tr><td>Tín hiệu</td><td>Độ phân giải, độ sâu màu, không gian màu, đo màu và HDR, theo cách Home Assistant báo cáo.</td></tr>
+        <tr><td>Giá trị đọc</td><td>Các cài đặt mà ứng dụng đã đọc, từ cảm biến trạng thái trực tiếp.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Giao diện</div>
+      <h2>Thẻ lõi hoặc giao diện được tạo kiểu</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Lõi</h3><p>Chỉ được xây dựng từ các thẻ riêng của Home Assistant. Chạy trên mọi Home Assistant, không cần cài gì.</p></div>
+      <div class="gcard"><h3>Được tạo kiểu</h3><p>Dùng các thẻ button-card, card-mod và Mushroom từ HACS để có giao diện phong phú hơn. Chỉ dùng khi có đủ cả ba.</p></div>
+    </div>
+    <p>Nếu thiếu bất kỳ thẻ nào trong ba thẻ đó, ứng dụng gửi phiên bản lõi và cho bạn biết cần cài những thẻ nào từ HACS để có giao diện được tạo kiểu. Hãy cài chúng, rồi gửi lại.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trung thực từ thiết kế</div>
+      <h2>Vì sao một số thứ không có trên đó</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Không có đồng hồ đo.</b> JVC không cung cấp dải giá trị cho các mức mà Home Assistant báo cáo, nên bảng điều khiển không vẽ đồng hồ đo mà nó phải đoán.</li>
+      <li><b>Không có địa chỉ hay mật khẩu.</b> Bảng điều khiển chỉ chứa ID thực thể, tên và nhãn.</li>
+      <li><b>Không có thực thể bịa ra.</b> Một ô chỉ xuất hiện cho thực thể hoặc tập lệnh có thật trong Home Assistant của bạn.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nếu có sự cố</div>
+      <h2>Thông báo</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Đã gửi bảng điều khiển.</b> Mở nó từ thanh bên của Home Assistant.</li>
+      <li><b>Bị từ chối.</b> Home Assistant từ chối bảng điều khiển: hãy đăng nhập bằng tài khoản quản trị viên, rồi gửi lại.</li>
+      <li><b>Đăng nhập không được chấp nhận.</b> Hãy đăng nhập lại, rồi gửi bảng điều khiển.</li>
+      <li><b>Không có phản hồi.</b> Home Assistant không phản hồi, nên bảng điều khiển chưa được xác nhận. Hãy kiểm tra kết nối và gửi lại.</li>
+      <li><b>Không được phép.</b> Không có gì rời khỏi thiết bị khi máy chiếu demo đang được chọn hoặc Home Automation chưa được mở khóa.</li>
+    </ul>
+    <div class="note">Bảng điều khiển điều khiển máy chiếu qua tích hợp JVC Projector của Home Assistant, vốn chỉ truy cập được máy chiếu khi ứng dụng này không kết nối với nó. Hãy đóng ứng dụng trước khi dùng bảng điều khiển.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tiếp theo</div>
+      <h2>Tiếp tục khám phá</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/vi/jvc/guide/home-assistant/"><span>&#128200;</span>Thiết lập Home Assistant</a>
+      <a href="/vi/jvc/guide/home-automation/"><span>&#127968;</span>Tự động hóa gia đình</a>
+      <a href="/vi/jvc/guide/scenes/"><span>&#127917;</span>Cảnh</a>
+      <a href="/vi/jvc/guide/"><span>&#128218;</span>Quay lại trung tâm hướng dẫn</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/vi/jvc/guide/">Hướng dẫn sử dụng</a><a href="/vi/jvc/pricing/">Giá</a><a href="/vi/jvc/highlights/">Điểm nổi bật</a><a href="/vi/jvc/guide/home-assistant/">Home Assistant</a><a href="/vi/jvc/help/">Trợ giúp &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/vi/jvc/privacy/">Quyền riêng tư</a><a href="https://miyarahub.com/terms.html">Điều khoản</a></div>
+<div class="flinks"><a href="/vi/jvc/guide/getting-started/">Bắt đầu</a><a href="/vi/jvc/guide/dashboard/">Trang tổng quan</a><a href="/vi/jvc/guide/remote/">Điều khiển từ xa</a><a href="/vi/jvc/guide/picture/">Hình ảnh</a><a href="/vi/jvc/guide/lens/">Ống kính</a><a href="/vi/jvc/guide/scenes/">Cảnh</a><a href="/vi/jvc/guide/settings/">Cài đặt</a><a href="/vi/jvc/guide/maintenance/">Bảo trì</a><a href="/vi/jvc/guide/home-automation/">Tự động hóa gia đình</a><a href="/vi/jvc/guide/languages/">Ngôn ngữ</a></div>
+<p class="crosslink">Bạn dùng máy chiếu Epson? <a href="/vi/epson/" data-app-pick="epson">Xem Projector Pilot cho Epson &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot D-ILA là ứng dụng độc lập dành cho máy chiếu JVC D-ILA. Không liên kết với hoặc được chứng thực bởi JVCKENWOOD Corporation. JVC và D-ILA là thương hiệu của các chủ sở hữu. Ứng dụng cũng không liên kết với Home Assistant, Hubitat, Apple, Google hay Microsoft; các tên đó là thương hiệu của các chủ sở hữu tương ứng, được nêu tên chỉ để mô tả những gì ứng dụng hoạt động cùng.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

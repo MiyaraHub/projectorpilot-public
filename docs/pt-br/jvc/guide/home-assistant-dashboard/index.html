@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="pt-BR" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Painel do Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Monte um painel do Home Assistant para o seu projetor JVC D-ILA com um toque: energia, imagem, cenas, entradas, memórias de lente e sinal." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Painel do Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Monte um painel do Home Assistant para o seu projetor JVC D-ILA com um toque: energia, imagem, cenas, entradas, memórias de lente e sinal." />
+<meta property="og:url" content="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Painel do Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Monte um painel do Home Assistant para o seu projetor JVC D-ILA com um toque: energia, imagem, cenas, entradas, memórias de lente e sinal." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "pt-BR", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Painel do Home Assistant - Projector Pilot D-ILA", "description": "Monte um painel do Home Assistant para o seu projetor JVC D-ILA com um toque: energia, imagem, cenas, entradas, memórias de lente e sinal.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "pt-BR", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Guia do Usuário", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Painel do Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/pt-br/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Pesquisar no guia..." data-i18n-empty="Nenhum resultado para" data-i18n-language="Idioma"><a href="/pt-br/jvc/#features">Recursos</a><a href="/pt-br/jvc/guide/">Guia</a><a href="/pt-br/jvc/pricing/">Preços</a><a href="/pt-br/jvc/highlights/">Destaques</a><a href="/pt-br/jvc/guide/home-assistant/">Home Assistant</a><a href="/pt-br/jvc/help/">Ajuda</a><a class="cta" href="/pt-br/jvc/#status">EM BREVE</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/pt-br/jvc/">Início</a> &rsaquo; <a href="/pt-br/jvc/guide/">Guia do Usuário</a> &rsaquo; Painel do Home Assistant</div>
+    <div class="eyebrow">Painel do Home Assistant</div>
+    <h1>Um painel do projetor no Home Assistant</h1>
+    <p class="lead">Um toque monta um painel completo para o seu projetor JVC no Home Assistant: energia, status, opções de imagem, suas cenas, entradas, memórias de lente, leituras de sinal e mais. Ele é montado com o que o seu Home Assistant realmente tem e não guarda endereço nem senha. Exige o complemento Automação Residencial.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Antes de enviar</div>
+      <h2>O que ele precisa</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Home Assistant vinculado</b>, com o projetor adicionado à integração JVC Projector. Veja a <a href="/pt-br/jvc/guide/home-assistant/">configuração do Home Assistant</a>.</li>
+      <li><b>Scripts sincronizados</b>, se você quiser botões de cena, energia, entrada, memória de lente e controle. O painel usa os scripts que existirem.</li>
+      <li><b>O sensor de estado ao vivo</b> ativado, para os blocos de status e leituras.</li>
+      <li><b>Uma conta de administrador</b> no Home Assistant, porque criar um painel exige uma. Sem ela, o Home Assistant recusa e o app avisa.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Duas formas</div>
+        <h2>Enviar ou copiar</h2>
+        <ul class="plain">
+          <li><b>Enviar painel</b> cria o painel no Home Assistant, na barra lateral, com o nome do seu projetor como título e o ícone de projetor. Envie de novo para atualizá-lo. Sincronizar com o Home Assistant também o envia.</li>
+          <li><b>Copiar painel</b> não envia nada. Ele copia o painel para você colar no editor de configuração bruta de um novo painel por conta própria e alterá-lo como quiser.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Tela do Home Assistant no Projector Pilot D-ILA com os botões Enviar painel e Copiar painel" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Cada projetor recebe o próprio painel, em um endereço que começa com <code>projector-pilot-jvc-</code>, para que dois projetores nunca sobrescrevam um ao outro.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Layout</div>
+      <h2>O que há nele, de cima para baixo</h2>
+      <p class="lead">Uma seção só aparece quando tem algo dentro, então um projetor sem memórias de lente não ganha seção de memória de lente.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Seção</th><th>Contém</th></tr></thead>
+      <tbody>
+        <tr><td>Cabeçalho</td><td>O nome do projetor, quando o estado foi atualizado pela última vez, energia, status e horas da fonte de luz.</td></tr>
+        <tr><td>Imagem</td><td>A entrada e as opções de imagem que o Home Assistant oferece para o projetor, como modo de imagem, potência da luz, controle dinâmico, Clear Motion Drive, anamórfico, processamento HDR e modo de instalação, quando o seu modelo as oferece e elas estão ativadas.</td></tr>
+        <tr><td>Cenas</td><td>Um botão por script de cena.</td></tr>
+        <tr><td>Energia</td><td>Scripts de energia.</td></tr>
+        <tr><td>Entradas</td><td>Scripts de entrada.</td></tr>
+        <tr><td>Memórias de lente</td><td>Um botão por posição de memória de lente que o seu modelo tem.</td></tr>
+        <tr><td>Controles</td><td>Os demais scripts de controle, como modos de imagem e Ocultar.</td></tr>
+        <tr><td>Sinal</td><td>Resolução, profundidade de cor, espaço de cor, colorimetria e HDR, como o Home Assistant os informa.</td></tr>
+        <tr><td>Leituras</td><td>Os ajustes que o app leu, a partir do sensor de estado ao vivo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Visual</div>
+      <h2>Cartões básicos ou o visual estilizado</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Básico</h3><p>Montado somente com os cartões do próprio Home Assistant. Funciona em qualquer Home Assistant, sem nada para instalar.</p></div>
+      <div class="gcard"><h3>Estilizado</h3><p>Usa button-card, card-mod e cartões Mushroom do HACS para um visual mais rico. Usado somente quando os três estão presentes.</p></div>
+    </div>
+    <p>Se algum dos três estiver faltando, o app envia a versão básica e informa quais cartões instalar pelo HACS para obter o visual estilizado. Instale-os e envie de novo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Honesto por princípio</div>
+      <h2>Por que algumas coisas não estão nele</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Sem medidores.</b> A JVC não informa uma faixa para os níveis que o Home Assistant relata, então o painel não desenha um medidor que teria de adivinhar.</li>
+      <li><b>Sem endereço nem senha.</b> O painel guarda somente ids de entidades, nomes e rótulos.</li>
+      <li><b>Sem entidades inventadas.</b> Um bloco só aparece para uma entidade ou script que exista no seu Home Assistant.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Se algo der errado</div>
+      <h2>Mensagens</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Painel enviado.</b> Abra-o pela barra lateral do Home Assistant.</li>
+      <li><b>Recusado.</b> O Home Assistant recusou o painel: entre com uma conta de administrador e envie de novo.</li>
+      <li><b>Login não aceito.</b> Entre novamente e depois envie o painel.</li>
+      <li><b>Sem resposta.</b> O Home Assistant não respondeu, então o painel não foi confirmado. Verifique a conexão e envie de novo.</li>
+      <li><b>Não permitido.</b> Nada sai do dispositivo enquanto o projetor de demonstração está selecionado ou a Automação Residencial não está desbloqueada.</li>
+    </ul>
+    <div class="note">O painel controla o projetor pela integração JVC Projector do Home Assistant, que só consegue alcançar o projetor enquanto este app não está conectado a ele. Feche o app antes de usar o painel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Próximo</div>
+      <h2>Continue explorando</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/pt-br/jvc/guide/home-assistant/"><span>&#128200;</span>Configuração do Home Assistant</a>
+      <a href="/pt-br/jvc/guide/home-automation/"><span>&#127968;</span>Automação residencial</a>
+      <a href="/pt-br/jvc/guide/scenes/"><span>&#127917;</span>Cenas</a>
+      <a href="/pt-br/jvc/guide/"><span>&#128218;</span>Voltar ao hub de guias</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/pt-br/jvc/guide/">Guia do Usuário</a><a href="/pt-br/jvc/pricing/">Preços</a><a href="/pt-br/jvc/highlights/">Destaques</a><a href="/pt-br/jvc/guide/home-assistant/">Home Assistant</a><a href="/pt-br/jvc/help/">Ajuda &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/pt-br/jvc/privacy/">Privacidade</a><a href="https://miyarahub.com/terms.html">Termos</a></div>
+<div class="flinks"><a href="/pt-br/jvc/guide/getting-started/">Primeiros passos</a><a href="/pt-br/jvc/guide/dashboard/">Painel</a><a href="/pt-br/jvc/guide/remote/">Controle remoto</a><a href="/pt-br/jvc/guide/picture/">Imagem</a><a href="/pt-br/jvc/guide/lens/">Lente</a><a href="/pt-br/jvc/guide/scenes/">Cenas</a><a href="/pt-br/jvc/guide/settings/">Configurações</a><a href="/pt-br/jvc/guide/maintenance/">Manutenção</a><a href="/pt-br/jvc/guide/home-automation/">Home Automation</a><a href="/pt-br/jvc/guide/languages/">Idiomas</a></div>
+<p class="crosslink">Usa um projetor Epson? <a href="/pt-br/epson/" data-app-pick="epson">Conheça o Projector Pilot para Epson &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. O Projector Pilot D-ILA é um app independente para projetores JVC D-ILA. Não é afiliado nem endossado pela JVCKENWOOD Corporation. JVC e D-ILA são marcas registradas de seus proprietários. Também não é afiliado ao Home Assistant, ao Hubitat, à Apple, ao Google nem à Microsoft; esses nomes são marcas registradas de seus respectivos proprietários, citadas apenas para descrever com o que o app funciona.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

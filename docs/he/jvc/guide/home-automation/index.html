@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>אוטומציה למקרן JVC עם Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="אוטומציה ביתית ב-Projector Pilot D-ILA: טריגרים של webhook לאירועי הפעלה, כניסה וסצנה, Maker API של Hubitat ו-Home Assistant." />
+<title>אוטומציה ביתית - Projector Pilot D-ILA</title>
+<meta name="description" content="טריגרים של webhook, שיקוף ל-Hubitat והגדרת Home Assistant למקרן JVC D-ILA שלכם, עם הבקשה המדויקת שהאפליקציה שולחת." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/he/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="אוטומציה למקרן JVC עם Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="אוטומציה ביתית ב-Projector Pilot D-ILA: טריגרים של webhook לאירועי הפעלה, כניסה וסצנה, Maker API של Hubitat ו-Home Assistant." />
+<meta property="og:title" content="אוטומציה ביתית - Projector Pilot D-ILA" />
+<meta property="og:description" content="טריגרים של webhook, שיקוף ל-Hubitat והגדרת Home Assistant למקרן JVC D-ILA שלכם, עם הבקשה המדויקת שהאפליקציה שולחת." />
 <meta property="og:url" content="https://projectorpilot.com/he/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="אוטומציה למקרן JVC עם Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="אוטומציה ביתית ב-Projector Pilot D-ILA: טריגרים של webhook לאירועי הפעלה, כניסה וסצנה, Maker API של Hubitat ו-Home Assistant." />
+<meta name="twitter:title" content="אוטומציה ביתית - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="טריגרים של webhook, שיקוף ל-Hubitat והגדרת Home Assistant למקרן JVC D-ILA שלכם, עם הבקשה המדויקת שהאפליקציה שולחת." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "he", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "אוטומציה למקרן JVC עם Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "אוטומציה ביתית ב-Projector Pilot D-ILA: טריגרים של webhook לאירועי הפעלה, כניסה וסצנה, Maker API של Hubitat ו-Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "he", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "בית", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "מדריך למשתמש", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "אוטומציה ביתית", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "he", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "אוטומציה ביתית - Projector Pilot D-ILA", "description": "טריגרים של webhook, שיקוף ל-Hubitat והגדרת Home Assistant למקרן JVC D-ILA שלכם, עם הבקשה המדויקת שהאפליקציה שולחת.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "he", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "בית", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "מדריך למשתמש", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "אוטומציה ביתית", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/he/jvc/">בית</a> &rsaquo; <a href="/he/jvc/guide/">מדריך למשתמש</a> &rsaquo; אוטומציה ביתית</div>
     <div class="eyebrow">אוטומציה ביתית</div>
     <h1>חיבור המקרן לבית שלך</h1>
-    <p class="lead">Webhooks, Hubitat ו-Home Assistant, עם התוסף Home Automation.</p>
+    <p class="lead">תנו לשאר הבית להגיב כשהמקרן נדלק, עובר להמתנה, מחליף קלט או מפעיל סצנה. שלושה קישורים נמצאים תחת הגדרות, אוטומציה ביתית: טריגרים של webhook, Hubitat ו-Home Assistant. כולם דורשים את תוספת האוטומציה הביתית, הנמכרת לבדה או בחבילה; Pro לבדו אינו כולל אותה.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">בחרו אחד</div>
+      <h2>באיזה קישור להשתמש</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>כל מערכת שמקבלת בקשת רשת: Node-RED, שרת ביתי, אוטומציה בענן. האפליקציה שולחת, אתם מחליטים מה קורה.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>שיקוף חד-כיווני של הפעלה וקלט אל מכשיר ב-hub שלכם, דרך Maker API, כדי ש-Rule Machine יפעל לפיו.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>מגדיר את האינטגרציה JVC Projector של Home Assistant עצמו, סקריפטים לסצנות שלכם ולוח בקרה מוכן.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">טריגרים</div>
-        <h2>Webhooks על אירועי המקרן</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>טריגרים של אוטומציה</h2>
+        <p>טריגר שולח בקשת רשת לכתובת שהזנתם כשמשהו קורה במקרן הזה. לכל מקרן יש רשימה משלו. הקישו על <b>הוספת טריגר</b> ואז בחרו:</p>
         <ul class="plain">
-          <li><b>אירועים</b>: הפעלה, מעבר להמתנה, החלפת כניסה וסצנה.</li>
-          <li><b>בקשות</b>: POST, PUT או GET לכתובת שאתה מזין.</li>
-          <li>טריגרים נשלחים רק כשהאפליקציה פתוחה ומחוברת, ולעולם לא ממקרן ההדגמה.</li>
+          <li><b>מתי</b>: המקרן נדלק, המקרן עובר להמתנה, הקלט משתנה (לכל קלט או לקלט מסוים), או סצנה מופעלת (כל סצנה או סצנה מסוימת).</li>
+          <li><b>שיטה</b>: POST (ברירת המחדל), PUT או GET.</li>
+          <li><b>כתובת אינטרנט</b>: כתובת http:// או https:// עם שם מארח.</li>
+          <li><b>מופעל</b>, כדי להשהות טריגר בלי למחוק אותו.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="דף האוטומציה הביתית של Projector Pilot D-ILA עם טריגרים" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="רשימת הטריגרים של האוטומציה ב-Projector Pilot D-ILA למקרן JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">כתובת שמתחילה ב-http:// נשלחת בלי הצפנה, והעורך אומר זאת. השתמשו ב-https:// כשהמערכת שלכם תומכת בכך.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">מטען</div>
+      <h2>מה הבקשה נושאת</h2>
+      <p class="lead">POST ו-PUT שולחים גוף JSON; GET לא שולח. הכותרת היחידה שהאפליקציה מוסיפה היא Content-Type. שדה שלא רלוונטי לאירוע מושמט.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>שדה</th><th>משמעות</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> או <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>שם המקרן באפליקציה.</td></tr>
+        <tr><td><code>input</code></td><td>הקלט, כמו <code>hdmi1</code> או <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>הסצנה, בהפעלת סצנה.</td></tr>
+        <tr><td><code>timestamp</code></td><td>מתי זה קרה, ב-UTC.</td></tr>
+        <tr><td><code>test</code></td><td>קיים, ואמת, רק בבקשה שנשלחה על ידי שליחת בדיקה.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">מסירה</div>
+      <h2>ניסיון אחד, מדווח בכנות</h2>
+    </div>
+    <ul class="plain">
+      <li>כל אירוע נשלח פעם אחת, עם מגבלה של 10 שניות, ולא עוקבים אחרי הפניות.</li>
+      <li>הטריגר מציג את התוצאה האחרונה שלו: נמסר בשעה מסוימת עם קוד המצב, נדחה, אין תגובה, לא ניתן להגיע לכתובת, החיבור המאובטח נכשל, או עדיין לא נשלח.</li>
+      <li><b>שליחת בדיקה</b> שולחת בקשה המסומנת כבדיקה, כדי שתוכלו לחבר את הצד השני לפני שהמקרן עושה משהו.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">מתי טריגרים פועלים</div>
+      <h2>הכללים</h2>
+    </div>
+    <ul class="plain">
+      <li><b>רק כשהאפליקציה פתוחה ומחוברת</b> למקרן. האפליקציה עוקבת אחרי מצב המקרן; היא לא שירות רקע.</li>
+      <li><b>שינויים, לא קריאות.</b> הקריאה הראשונה אחרי שהאפליקציה מתחברת קובעת רק את נקודת ההתחלה, ולכן פתיחת האפליקציה לא מפעילה "נדלק" עבור מקרן שכבר היה פועל.</li>
+      <li><b>אף פעם לא ממקרן ההדגמה.</b> שום דבר לא עוזב את המכשיר כשמקרן ההדגמה נבחר או כשהאוטומציה הביתית לא פתוחה.</li>
+      <li><b>נשמר באופן מאובטח.</b> כתובות הטריגרים נשמרות באחסון המאובטח של המכשיר.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>שיקוף המקרן אל Hubitat</h2>
+      <p class="lead">האפליקציה משקפת את המקרן הזה אל מכשיר ב-hub של Hubitat שלכם דרך Maker API: פועל והמתנה, והקלט כ-HDMI 1 או HDMI 2, עבור מה שהמכשיר מקבל מבין אלה. אז Rule Machine יכול לפעול לפיו.</p>
     </div>
-    <ul class="plain">
-      <li>דרך Maker API של Hubitat: הפעלה, כיבוי, HDMI 1 ו-HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>ב-Hubitat, הוסיפו את Maker API ורשמו את מזהה האפליקציה שלו (המספר בכתובות שלו) ואת אסימון הגישה.</li>
+      <li>באפליקציה, הזינו את <b>כתובת ה-hub</b>, את <b>מזהה אפליקציית Maker API</b> ואת <b>אסימון הגישה</b>.</li>
+      <li>הקישו על <b>איתור מכשיר</b> ובחרו את המכשיר שמייצג את המקרן הזה. אם אין כזה, הוסיפו ב-Hubitat מתג וירטואלי בשם המקרן ונסו שוב.</li>
+      <li>הפעילו את <b>שיקוף מצב המקרן</b>. המכשיר עוקב אחרי המקרן בכל פעם שהוא משתנה בזמן שהאפליקציה פתוחה ומחוברת.</li>
+    </ol>
+    <div class="note"><b>כיוון אחד בלבד.</b> שום דבר לא נשלח מ-Hubitat אל המקרן. ביטול קישור מסיר את הקישור מהאפליקציה.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>הקישור העמוק ביותר</h2>
+      <p>האפליקציה מתחברת אל Home Assistant, מוסיפה את המקרן שלכם לאינטגרציה JVC Projector שלו, מפרסמת את הסצנות והבקרות שלכם כסקריפטים ובונה לוח בקרה. יש לה דפים משלה: <a href="/he/jvc/guide/home-assistant/">הגדרת Home Assistant</a> ו<a href="/he/jvc/guide/home-assistant-dashboard/">לוח הבקרה של Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>התחבר, הוסף את המקרן ובנה לוח בקרה. ראה <a href="/he/jvc/guide/home-assistant/">המדריך ל-Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">הבא</div>
-      <h2>ממשיכים לקרוא</h2>
+      <h2>ממשיכים</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/he/jvc/guide/">חזרה למדריך למשתמש</a></li>
-      <li><a href="/he/jvc/help/">עזרה ושאלות נפוצות</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/he/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/he/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>לוח הבקרה של Home Assistant</a>
+      <a href="/he/jvc/guide/scenes/"><span>&#127917;</span>סצנות</a>
+      <a href="/he/jvc/guide/"><span>&#128218;</span>חזרה למרכז המדריכים</a>
+    </div>
   </div>
 </section>
 

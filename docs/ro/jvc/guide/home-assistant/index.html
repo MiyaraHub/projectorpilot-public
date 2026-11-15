@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ro" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Conectează Projector Pilot D-ILA la Home Assistant: autentifică-te, adaugă integrarea jvc_projector, sincronizează scripturile și creează un tablou de bord." />
+<title>Configurare Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Adaugă proiectorul tău JVC D-ILA în Home Assistant fără YAML: autentificare, integrarea JVC Projector, un senzor live și scripturi de scene." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ro/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Conectează Projector Pilot D-ILA la Home Assistant: autentifică-te, adaugă integrarea jvc_projector, sincronizează scripturile și creează un tablou de bord." />
+<meta property="og:title" content="Configurare Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Adaugă proiectorul tău JVC D-ILA în Home Assistant fără YAML: autentificare, integrarea JVC Projector, un senzor live și scripturi de scene." />
 <meta property="og:url" content="https://projectorpilot.com/ro/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Conectează Projector Pilot D-ILA la Home Assistant: autentifică-te, adaugă integrarea jvc_projector, sincronizează scripturile și creează un tablou de bord." />
+<meta name="twitter:title" content="Configurare Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Adaugă proiectorul tău JVC D-ILA în Home Assistant fără YAML: autentificare, integrarea JVC Projector, un senzor live și scripturi de scene." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Conectează Projector Pilot D-ILA la Home Assistant: autentifică-te, adaugă integrarea jvc_projector, sincronizează scripturile și creează un tablou de bord.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Configurare Home Assistant - Projector Pilot D-ILA", "description": "Adaugă proiectorul tău JVC D-ILA în Home Assistant fără YAML: autentificare, integrarea JVC Projector, un senzor live și scripturi de scene.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/ro/jvc/">Acasă</a> &rsaquo; <a href="/ro/jvc/guide/">Ghid de utilizare</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Configurează proiectorul JVC în Home Assistant direct din aplicație.</p>
+    <h1>Configurează proiectorul JVC în Home Assistant</h1>
+    <p class="lead">Aplicația se autentifică în Home Assistant, adaugă proiectorul în integrarea JVC Projector proprie a Home Assistant, publică scenele și comenzile tale ca scripturi și construiește un tablou de bord. Nu lipești niciodată un token și nu scrii YAML. Necesită suplimentul Automatizare Locuință.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Citește mai întâi</div>
+      <h2>Un controler odată</h2>
+      <p class="lead">Un proiector JVC deservește un singur controler de rețea odată. Cât timp această aplicație este deschisă și conectată la proiector, Home Assistant nu îl poate accesa. Comenzile și scripturile Home Assistant pentru proiector funcționează când aplicația este închisă, iar aplicația eliberează proiectorul când trece în fundal.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Configurare</div>
-        <h2>De la autentificare la tabloul de bord</h2>
-        <ul class="plain">
-          <li><b>Autentifică-te</b> în Home Assistant cu propria lui autentificare OAuth.</li>
-          <li><b>Integrare</b>: aplicația adaugă integrarea de bază <b>jvc_projector</b> din Home Assistant și trimite gazda, portul și parola.</li>
-          <li><b>Senzor</b>: un senzor mobile_app raportează printr-un webhook.</li>
-          <li><b>Sync Advanced Controls</b> creează scripturi cu prefixul <b>ppjvc</b>.</li>
-          <li><b>Tablou de bord</b>: un tablou de bord Lovelace în stil de bază sau în stil HACS.</li>
-          <li>O <b>listă de verificare a configurării</b> arată ce este gata și ce a mai rămas.</li>
-        </ul>
+        <div class="eyebrow">Pasul 1</div>
+        <h2>Autentificare</h2>
+        <ol class="steps">
+          <li>Deschide Setări, Automatizare Locuință, Home Assistant.</li>
+          <li>Introdu <b>adresa Home Assistant</b>, care începe cu http:// sau https://.</li>
+          <li>Atinge <b>Autentificare</b>. Pagina de autentificare a Home Assistant se deschide în browser; autentifică-te acolo și revino.</li>
+          <li>Atinge <b>Test conexiune</b> pentru confirmare.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Pagina de configurare Home Assistant din Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Ecranul Home Assistant din Projector Pilot D-ILA cu lista de verificare a configurării" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Dacă Home Assistant nu poate fi accesat, verifică adresa și dacă acest dispozitiv este în aceeași rețea cu Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 2</div>
+      <h2>Ce are instalarea ta Home Assistant</h2>
+      <p class="lead">Un panou citește instalarea Home Assistant și marchează fiecare parte Găsit, Neinstalat sau Nu s-a putut stabili. Verifică din nou o citește încă o dată.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Componentă</th><th>Necesară pentru</th></tr></thead>
+      <tbody>
+        <tr><td>Integrarea Mobile App</td><td>Senzorul de stare live.</td></tr>
+        <tr><td>Integrarea JVC Projector</td><td>Controlul acestui proiector din Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Doar aspectul stilizat al tabloului de bord.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pasul 3</div>
+      <h2>Lista de verificare a configurării</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Autentifică-te în Home Assistant.</b></li>
+      <li><b>Adaugă acest proiector în integrarea JVC Projector din Home Assistant.</b> Atinge Adaugă. Aplicația trimite adresa, portul și parola de rețea ale proiectorului către integrarea JVC Projector din Home Assistant, după ce te întreabă mai întâi.</li>
+      <li><b>Activează entitățile de care au nevoie scripturile.</b> Unele entități JVC Projector pornesc dezactivate în Home Assistant; atinge Activează lângă fiecare. Este posibil ca Home Assistant să aibă nevoie de o reîncărcare sau o repornire înainte ca entitatea să apară.</li>
+      <li><b>Senzorul de stare live.</b> Activează Trimite starea proiectorului. Senzorul este creat data viitoare când aplicația trimite starea proiectorului cât timp este conectată.</li>
+    </ol>
+    <div class="note"><b>Despre parolă.</b> Când adaugi proiectorul, parola lui de rețea este trimisă către Home Assistant și stocată acolo, în intrarea lui JVC Projector. Aplicația nu o trimite nicăieri altundeva. Aplicația eliberează proiectorul cât timp Home Assistant se conectează la el, apoi se reconectează.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ce intrare?</div>
+      <h2>Cum își găsește aplicația proiectorul în Home Assistant</h2>
+      <p>Aplicația potrivește intrarea JVC Projector după adresa MAC a proiectorului, așa că conectează-te mai întâi cel puțin o dată la proiector. Dacă Home Assistant nu are nicio intrare cu acel MAC, sau are mai multe, lista de verificare spune asta și ce ai de făcut. Dacă proiectorul s-a mutat, aplicația se oferă să trimită noua adresă către Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant necesită suplimentul Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Senzorul</div>
+      <h2>Stare live</h2>
+      <p>Starea senzorului este alimentarea citită ultima dată de aplicație, iar atributele lui sunt intrarea, modelul și setările citite de aplicație. Trece prin integrarea Mobile App și nu trimite nimic către proiector. Se actualizează ori de câte ori starea se schimbă cât timp aplicația este deschisă și conectată.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Scripturi</div>
+      <h2>Scene și comenzi</h2>
+      <p class="lead">Fiecare scenă salvată devine un script în Home Assistant care rulează prin entitățile JVC Projector. Un script nu conține nicio adresă și nicio parolă. ID-urile scripturilor încep cu <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sincronizează cu HA</b> scrie <a href="/ro/jvc/guide/scenes/">scenele</a> tale ca scripturi și arată câți pași are fiecare, ce a fost lăsat deoparte și de ce.</li>
+      <li><b>Sincronizează comenzile avansate</b> publică scripturi pentru alimentare, intrări, moduri de imagine, memorii de obiectiv și Ascundere.</li>
+      <li><b>Rezultatele</b> sunt numărate: câte scripturi s-au sincronizat, câte a refuzat Home Assistant și dacă a confirmat reîncărcarea lor.</li>
+      <li><b>Elimină scripturile orfane</b> șterge scripturile create de această aplicație pe care nicio scenă nu le mai folosește. Le listează și întreabă mai întâi.</li>
+    </ul>
+    <div class="note">Dacă ceva de care depinde o sincronizare nu a fost citit, nu se scrie, nu se schimbă și nu se elimină nimic. O sincronizare nu rulează niciodată pe jumătate, pe baza unei presupuneri.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Panou de control</div>
+      <h2>Un tablou de bord gata făcut</h2>
+      <p><b>Trimite tabloul de bord</b> construiește în Home Assistant un tablou de bord pentru proiector din entitățile JVC Projector, scripturi și senzor. <b>Copiază dashboardul</b> îl copiază în schimb, ca să-l lipești tu într-un tablou de bord nou. Tot ce ține de el este pe <a href="/ro/jvc/guide/home-assistant-dashboard/">pagina tabloului de bord Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Reguli</div>
+      <h2>Ce nu face aplicația niciodată</h2>
+    </div>
+    <ul class="plain">
+      <li>Nimic nu părăsește dispozitivul cât timp este selectat proiectorul demo sau Automatizare Locuință nu este deblocată.</li>
+      <li><b>Deconectează legătura</b> elimină legătura doar din această aplicație. Dispozitivul și entitățile proiectorului rămân în Home Assistant până le ștergi acolo.</li>
+      <li>Dacă Home Assistant nu mai acceptă autentificarea, aplicația spune asta și îți cere să te autentifici din nou.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Mai departe</div>
-      <h2>Continuă lectura</h2>
+      <h2>Continuă</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ro/jvc/guide/">Înapoi la ghidul de utilizare</a></li>
-      <li><a href="/ro/jvc/help/">Ajutor și întrebări frecvente</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ro/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Tablou de bord Home Assistant</a>
+      <a href="/ro/jvc/guide/home-automation/"><span>&#127968;</span>Automatizarea locuinței</a>
+      <a href="/ro/jvc/help/"><span>&#10067;</span>Ajutor și întrebări frecvente</a>
+      <a href="/ro/jvc/guide/"><span>&#128218;</span>Înapoi la centrul de ghiduri</a>
+    </div>
   </div>
 </section>
 

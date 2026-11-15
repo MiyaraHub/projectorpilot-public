@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-Hant" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant 儀表板 - Projector Pilot D-ILA</title>
+<meta name="description" content="輕點一下，即可為您的 JVC D-ILA 投影機建立 Home Assistant 儀表板:電源、畫質、情境、輸入、鏡頭記憶與訊號。" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home Assistant 儀表板 - Projector Pilot D-ILA" />
+<meta property="og:description" content="輕點一下，即可為您的 JVC D-ILA 投影機建立 Home Assistant 儀表板:電源、畫質、情境、輸入、鏡頭記憶與訊號。" />
+<meta property="og:url" content="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant 儀表板 - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="輕點一下，即可為您的 JVC D-ILA 投影機建立 Home Assistant 儀表板:電源、畫質、情境、輸入、鏡頭記憶與訊號。" />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Home Assistant 儀表板 - Projector Pilot D-ILA", "description": "輕點一下，即可為您的 JVC D-ILA 投影機建立 Home Assistant 儀表板:電源、畫質、情境、輸入、鏡頭記憶與訊號。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant 儀表板", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/zh-hant/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言"><a href="/zh-hant/jvc/#features">功能</a><a href="/zh-hant/jvc/guide/">使用指南</a><a href="/zh-hant/jvc/pricing/">價格</a><a href="/zh-hant/jvc/highlights/">重點功能</a><a href="/zh-hant/jvc/guide/home-assistant/">Home Assistant</a><a href="/zh-hant/jvc/help/">說明</a><a class="cta" href="/zh-hant/jvc/#status">即將推出</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/jvc/">首頁</a> &rsaquo; <a href="/zh-hant/jvc/guide/">使用指南</a> &rsaquo; Home Assistant 儀表板</div>
+    <div class="eyebrow">Home Assistant 儀表板</div>
+    <h1>Home Assistant 中的投影機儀表板</h1>
+    <p class="lead">輕點一下，就能在 Home Assistant 中為您的 JVC 投影機建立完整的儀表板:電源、狀態、畫質選項、您的情境、輸入、鏡頭記憶、訊號讀數等。它是根據您的 Home Assistant 實際擁有的內容建立，且不保存任何位址或密碼。此功能需要家庭自動化附加元件。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">傳送之前</div>
+      <h2>需求</h2>
+    </div>
+    <ul class="plain">
+      <li><b>已連結 Home Assistant</b>，且投影機已加入 JVC Projector 整合。請參閱 <a href="/zh-hant/jvc/guide/home-assistant/">Home Assistant 設定</a>。</li>
+      <li><b>已同步指令碼</b>，如果您想要情境、電源、輸入、鏡頭記憶與控制按鈕。儀表板會使用已存在的指令碼。</li>
+      <li><b>已開啟即時狀態感測器</b>，以顯示狀態與讀數方塊。</li>
+      <li><b>Home Assistant 中的管理員帳號</b>，因為建立儀表板需要管理員權限。沒有的話，Home Assistant 會拒絕，App 也會告知。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">兩種方式</div>
+        <h2>傳送或複製</h2>
+        <ul class="plain">
+          <li><b>傳送儀表板</b>會在 Home Assistant 的側邊欄中建立儀表板，標題為您的投影機名稱，並使用投影機圖示。再次傳送即可更新。與 Home Assistant 同步時也會一併傳送。</li>
+          <li><b>複製儀表板</b>不會傳送任何內容。它會複製儀表板，讓您自行貼到新儀表板的原始設定編輯器中，並隨意修改。</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA 的 Home Assistant 畫面，顯示傳送儀表板與複製儀表板按鈕" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">每台投影機都有自己的儀表板，其位址以 <code>projector-pilot-jvc-</code> 開頭，因此兩台投影機絕不會互相覆寫。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">版面配置</div>
+      <h2>上面有什麼，由上到下</h2>
+      <p class="lead">區段只有在有內容時才會出現，因此沒有鏡頭記憶的投影機就不會有鏡頭記憶區段。</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>區塊</th><th>內容</th></tr></thead>
+      <tbody>
+        <tr><td>標頭</td><td>投影機的名稱、狀態最近一次更新的時間、電源、狀態與光源使用時數。</td></tr>
+        <tr><td>畫質</td><td>輸入，以及 Home Assistant 為投影機提供的畫質選項，例如畫面模式、光源功率、動態控制、Clear Motion Drive、變形、HDR 處理與安裝模式，前提是您的機型提供且已啟用。</td></tr>
+        <tr><td>場景</td><td>每個情境指令碼一個按鈕。</td></tr>
+        <tr><td>電源</td><td>電源指令碼。</td></tr>
+        <tr><td>輸入</td><td>輸入指令碼。</td></tr>
+        <tr><td>鏡頭記憶</td><td>您的機型所擁有的每個鏡頭記憶欄位各一個按鈕。</td></tr>
+        <tr><td>控制</td><td>其他控制指令碼，例如畫面模式與隱藏。</td></tr>
+        <tr><td>訊號</td><td>解析度、色彩深度、色彩空間、色度測定與 HDR，依 Home Assistant 回報的內容顯示。</td></tr>
+        <tr><td>讀數</td><td>App 已讀取的設定，來自即時狀態感測器。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">外觀</div>
+      <h2>核心卡片或樣式化外觀</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>核心</h3><p>僅使用 Home Assistant 自己的卡片建立。可在任何 Home Assistant 上運作，不需安裝任何東西。</p></div>
+      <div class="gcard"><h3>樣式化</h3><p>使用來自 HACS 的 button-card、card-mod 與 Mushroom 卡片，呈現更豐富的外觀。只有在三者都存在時才會使用。</p></div>
+    </div>
+    <p>若三者中缺少任何一個，App 會傳送核心版本，並告訴您為了樣式化外觀要從 HACS 安裝哪些卡片。安裝後再傳送一次即可。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">刻意保持誠實</div>
+      <h2>為什麼有些東西不在上面</h2>
+    </div>
+    <ul class="plain">
+      <li><b>沒有儀表。</b>JVC 並未提供 Home Assistant 所回報數值的範圍，因此儀表板不會繪製需要憑猜測的儀表。</li>
+      <li><b>沒有位址或密碼。</b>儀表板只保存實體 id、名稱與標籤。</li>
+      <li><b>沒有憑空捏造的實體。</b>只有在您的 Home Assistant 中真的存在該實體或指令碼時，才會出現對應的方塊。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">出問題時</div>
+      <h2>訊息</h2>
+    </div>
+    <ul class="plain">
+      <li><b>儀表板已傳送。</b>請從 Home Assistant 側邊欄開啟它。</li>
+      <li><b>被拒絕。</b>Home Assistant 拒絕了儀表板:請使用管理員帳號登入，然後再傳送一次。</li>
+      <li><b>登入不被接受。</b>請重新登入，然後傳送儀表板。</li>
+      <li><b>無回應。</b>Home Assistant 沒有回應，因此儀表板未獲確認。請檢查連線，然後再傳送一次。</li>
+      <li><b>不允許。</b>選取示範投影機，或尚未解鎖家庭自動化時，不會有任何內容離開裝置。</li>
+    </ul>
+    <div class="note">儀表板是透過 Home Assistant 的 JVC Projector 整合來控制投影機，而該整合只有在此 App 未連線到投影機時才能連上它。使用儀表板之前，請先關閉 App。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">下一步</div>
+      <h2>繼續探索</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/zh-hant/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant 設定</a>
+      <a href="/zh-hant/jvc/guide/home-automation/"><span>&#127968;</span>居家自動化</a>
+      <a href="/zh-hant/jvc/guide/scenes/"><span>&#127917;</span>場景</a>
+      <a href="/zh-hant/jvc/guide/"><span>&#128218;</span>返回指南首頁</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/zh-hant/jvc/guide/">使用指南</a><a href="/zh-hant/jvc/pricing/">價格</a><a href="/zh-hant/jvc/highlights/">亮點</a><a href="/zh-hant/jvc/guide/home-assistant/">Home Assistant</a><a href="/zh-hant/jvc/help/">說明 &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/zh-hant/jvc/privacy/">隱私權</a><a href="https://miyarahub.com/terms.html">條款</a></div>
+<div class="flinks"><a href="/zh-hant/jvc/guide/getting-started/">開始使用</a><a href="/zh-hant/jvc/guide/dashboard/">儀表板</a><a href="/zh-hant/jvc/guide/remote/">遙控</a><a href="/zh-hant/jvc/guide/picture/">畫質</a><a href="/zh-hant/jvc/guide/lens/">鏡頭</a><a href="/zh-hant/jvc/guide/scenes/">場景</a><a href="/zh-hant/jvc/guide/settings/">設定</a><a href="/zh-hant/jvc/guide/maintenance/">維護</a><a href="/zh-hant/jvc/guide/home-automation/">居家自動化</a><a href="/zh-hant/jvc/guide/languages/">語言</a></div>
+<p class="crosslink">使用 Epson 投影機？<a href="/zh-hant/epson/" data-app-pick="epson">前往適用於 Epson 的 Projector Pilot &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC。Projector Pilot D-ILA 是適用於 JVC D-ILA 投影機的獨立 App，與 JVCKENWOOD Corporation 沒有隸屬關係，亦未獲其認可。JVC 與 D-ILA 為其所有者的商標。本 App 也與 Home Assistant、Hubitat、Apple、Google 或 Microsoft 沒有隸屬關係；這些名稱為各自所有者的商標，在此僅用於說明 App 所支援的對象。</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

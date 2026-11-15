@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="cs" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Připojte Projector Pilot D-ILA k Home Assistant: přihlaste se, přidejte integraci jvc_projector, synchronizujte skripty a vytvořte nástěnku." />
+<title>Nastavení Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Přidejte svůj projektor JVC D-ILA do Home Assistant bez YAML: přihlášení, integrace JVC Projector, živý senzor a skripty scén." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/cs/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Připojte Projector Pilot D-ILA k Home Assistant: přihlaste se, přidejte integraci jvc_projector, synchronizujte skripty a vytvořte nástěnku." />
+<meta property="og:title" content="Nastavení Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Přidejte svůj projektor JVC D-ILA do Home Assistant bez YAML: přihlášení, integrace JVC Projector, živý senzor a skripty scén." />
 <meta property="og:url" content="https://projectorpilot.com/cs/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Připojte Projector Pilot D-ILA k Home Assistant: přihlaste se, přidejte integraci jvc_projector, synchronizujte skripty a vytvořte nástěnku." />
+<meta name="twitter:title" content="Nastavení Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Přidejte svůj projektor JVC D-ILA do Home Assistant bez YAML: přihlášení, integrace JVC Projector, živý senzor a skripty scén." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Připojte Projector Pilot D-ILA k Home Assistant: přihlaste se, přidejte integraci jvc_projector, synchronizujte skripty a vytvořte nástěnku.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "cs", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Nastavení Home Assistant - Projector Pilot D-ILA", "description": "Přidejte svůj projektor JVC D-ILA do Home Assistant bez YAML: přihlášení, integrace JVC Projector, živý senzor a skripty scén.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "cs", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Uživatelská příručka", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/cs/jvc/">Domů</a> &rsaquo; <a href="/cs/jvc/guide/">Uživatelská příručka</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Nastavte svůj projektor JVC v Home Assistant přímo z aplikace.</p>
+    <h1>Nastavení projektoru JVC v Home Assistant</h1>
+    <p class="lead">Aplikace se přihlásí k vašemu Home Assistant, přidá projektor do vlastní integrace JVC Projector v Home Assistant, publikuje vaše scény a ovládání jako skripty a sestaví nástěnku. Nikdy nevkládáte token ani nepíšete YAML. Vyžaduje doplněk Home Automation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Přečtěte si nejdřív</div>
+      <h2>Vždy jen jeden ovladač</h2>
+      <p class="lead">Projektor JVC obsluhuje najednou jen jeden síťový ovladač. Dokud je tato aplikace otevřená a připojená k projektoru, Home Assistant se k němu nedostane. Ovládání projektoru a skripty v Home Assistant fungují, když je aplikace zavřená, a aplikace projektor pustí, když přejde na pozadí.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Nastavení</div>
-        <h2>Od přihlášení po nástěnku</h2>
-        <ul class="plain">
-          <li><b>Přihlaste se</b> k Home Assistant jeho vlastním přihlášením OAuth.</li>
-          <li><b>Integrace</b>: aplikace přidá základní integraci <b>jvc_projector</b> z Home Assistant a odešle hostitele, port a heslo.</li>
-          <li><b>Senzor</b>: senzor mobile_app hlásí data přes webhook.</li>
-          <li><b>Synchronizovat pokročilé ovládání</b> vytvoří skripty s předponou <b>ppjvc</b>.</li>
-          <li><b>Nástěnka</b>: nástěnka Lovelace ve stylu core nebo HACS.</li>
-          <li><b>Kontrolní seznam nastavení</b> ukazuje, co je hotovo a co zbývá.</li>
-        </ul>
+        <div class="eyebrow">Krok 1</div>
+        <h2>Přihlášení</h2>
+        <ol class="steps">
+          <li>Otevřete Nastavení, Home Automation, Home Assistant.</li>
+          <li>Zadejte <b>adresu Home Assistant</b>, začínající http:// nebo https://.</li>
+          <li>Klepněte na <b>Přihlásit</b>. V prohlížeči se otevře přihlašovací stránka Home Assistant; přihlaste se tam a vraťte se.</li>
+          <li>Klepnutím na <b>Test připojení</b> to potvrďte.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Stránka nastavení Home Assistant v Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Obrazovka Home Assistant v Projector Pilot D-ILA s kontrolním seznamem nastavení" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Pokud se k Home Assistant nelze dostat, zkontrolujte adresu a to, zda je toto zařízení ve stejné síti jako Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 2</div>
+      <h2>Co váš Home Assistant má</h2>
+      <p class="lead">Panel načte váš Home Assistant a každou část označí jako Nalezeno, Nenainstalováno nebo Nelze zjistit. Zkontrolovat znovu ji načte znovu.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Část</th><th>Potřebná pro</th></tr></thead>
+      <tbody>
+        <tr><td>Integrace Mobile App</td><td>Živý senzor stavu.</td></tr>
+        <tr><td>Integrace JVC Projector</td><td>Ovládání tohoto projektoru z Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Pouze stylizovaný vzhled nástěnky.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Krok 3</div>
+      <h2>Kontrolní seznam nastavení</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Přihlaste se k Home Assistant.</b></li>
+      <li><b>Přidejte tento projektor do integrace JVC Projector v Home Assistant.</b> Klepněte na Přidat. Aplikace po předchozím dotazu odešle adresu, port a síťové heslo projektoru do integrace JVC Projector v Home Assistant.</li>
+      <li><b>Povolte entity, které skripty potřebují.</b> Některé entity JVC Projector jsou v Home Assistant zpočátku zakázané; klepněte na Povolit vedle každé z nich. Home Assistant může před jejich zobrazením potřebovat opětovné načtení nebo restart.</li>
+      <li><b>Živý senzor stavu.</b> Zapněte Odesílat stav projektoru. Senzor se vytvoří při příštím odeslání stavu projektoru aplikací během připojení.</li>
+    </ol>
+    <div class="note"><b>O heslu.</b> Když projektor přidáte, jeho síťové heslo se odešle do vašeho Home Assistant a uloží se tam, v jeho záznamu JVC Projector. Aplikace jej neposílá nikam jinam. Aplikace projektor pustí, zatímco se k němu Home Assistant připojuje, a poté se znovu připojí.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Který záznam?</div>
+      <h2>Jak aplikace najde váš projektor v Home Assistant</h2>
+      <p>Aplikace přiřadí záznam JVC Projector podle adresy MAC projektoru, proto se nejdřív alespoň jednou k projektoru připojte. Pokud Home Assistant nemá žádný záznam s touto adresou MAC, nebo více než jeden, kontrolní seznam to řekne i co dělat. Pokud se projektor přesunul, aplikace nabídne odeslání nové adresy do Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant vyžaduje doplněk Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Senzor</div>
+      <h2>Živý stav</h2>
+      <p>Stav senzoru je napájení, které aplikace naposledy přečetla, a jeho atributy jsou vstup, model a nastavení, která aplikace přečetla. Prochází integrací Mobile App a nic neposílá projektoru. Aktualizuje se při každé změně stavu, dokud je aplikace otevřená a připojená.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Skripty</div>
+      <h2>Scény a ovládání</h2>
+      <p class="lead">Každá uložená scéna se stane skriptem v Home Assistant, který běží přes entity JVC Projector. Skript neobsahuje žádnou adresu ani heslo. Id skriptů začínají <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Synchronizovat s HA</b> zapíše vaše <a href="/cs/jvc/guide/scenes/">scény</a> jako skripty a ukáže, kolik kroků každá nese a co bylo vynecháno a proč.</li>
+      <li><b>Synchronizovat pokročilé ovládání</b> publikuje skripty pro napájení, vstupy, obrazové režimy, paměti objektivu a Skrytí.</li>
+      <li><b>Výsledky</b> se počítají: kolik skriptů se synchronizovalo, kolik jich Home Assistant odmítl a zda potvrdil jejich opětovné načtení.</li>
+      <li><b>Odebrat osiřelé skripty</b> smaže skripty, které tato aplikace vytvořila a žádná scéna je už nepoužívá. Vypíše je a nejdřív se zeptá.</li>
+    </ul>
+    <div class="note">Pokud nebylo přečteno něco, na čem synchronizace závisí, nic se nezapíše, nezmění ani neodebere. Synchronizace nikdy neběží napůl na základě dohadu.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dashboard</div>
+      <h2>Hotová nástěnka</h2>
+      <p><b>Odeslat nástěnku</b> sestaví ve vašem Home Assistant nástěnku projektoru z entit JVC Projector, skriptů a senzoru. <b>Kopírovat nástěnku</b> ji místo toho zkopíruje, abyste ji sami vložili do nové nástěnky. Vše o ní je na <a href="/cs/jvc/guide/home-assistant-dashboard/">stránce nástěnky Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pravidla</div>
+      <h2>Co aplikace nikdy nedělá</h2>
+    </div>
+    <ul class="plain">
+      <li>Nic neopustí zařízení, dokud je vybrán demo projektor nebo není odemčena Home Automation.</li>
+      <li><b>Odpojit</b> odebere propojení jen z této aplikace. Zařízení a entity projektoru zůstanou v Home Assistant, dokud je tam nesmažete.</li>
+      <li>Pokud Home Assistant přestane přihlášení přijímat, aplikace to oznámí a požádá vás o nové přihlášení.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Další</div>
-      <h2>Čtěte dál</h2>
+      <h2>Pokračujte</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/cs/jvc/guide/">Zpět na uživatelskou příručku</a></li>
-      <li><a href="/cs/jvc/help/">Nápověda a časté dotazy</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/cs/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Nástěnka Home Assistant</a>
+      <a href="/cs/jvc/guide/home-automation/"><span>&#127968;</span>Domácí automatizace</a>
+      <a href="/cs/jvc/help/"><span>&#10067;</span>Nápověda a FAQ</a>
+      <a href="/cs/jvc/guide/"><span>&#128218;</span>Zpět na rozcestník příruček</a>
+    </div>
   </div>
 </section>
 

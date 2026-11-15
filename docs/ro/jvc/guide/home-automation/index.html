@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ro" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Automatizare pentru proiectoare JVC cu Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Automatizarea locuinței în Projector Pilot D-ILA: declanșatoare webhook la evenimente de alimentare, intrare și scenă, Hubitat Maker API și Home Assistant." />
+<title>Automatizare locuință - Projector Pilot D-ILA</title>
+<meta name="description" content="Declanșatoare webhook, o oglindă Hubitat și configurarea Home Assistant pentru proiectorul tău JVC D-ILA, cu cererea exactă pe care o trimite aplicația." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ro/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Automatizare pentru proiectoare JVC cu Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Automatizarea locuinței în Projector Pilot D-ILA: declanșatoare webhook la evenimente de alimentare, intrare și scenă, Hubitat Maker API și Home Assistant." />
+<meta property="og:title" content="Automatizare locuință - Projector Pilot D-ILA" />
+<meta property="og:description" content="Declanșatoare webhook, o oglindă Hubitat și configurarea Home Assistant pentru proiectorul tău JVC D-ILA, cu cererea exactă pe care o trimite aplicația." />
 <meta property="og:url" content="https://projectorpilot.com/ro/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Automatizare pentru proiectoare JVC cu Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Automatizarea locuinței în Projector Pilot D-ILA: declanșatoare webhook la evenimente de alimentare, intrare și scenă, Hubitat Maker API și Home Assistant." />
+<meta name="twitter:title" content="Automatizare locuință - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Declanșatoare webhook, o oglindă Hubitat și configurarea Home Assistant pentru proiectorul tău JVC D-ILA, cu cererea exactă pe care o trimite aplicația." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Automatizare pentru proiectoare JVC cu Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Automatizarea locuinței în Projector Pilot D-ILA: declanșatoare webhook la evenimente de alimentare, intrare și scenă, Hubitat Maker API și Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Automatizarea casei", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Automatizare locuință - Projector Pilot D-ILA", "description": "Declanșatoare webhook, o oglindă Hubitat și configurarea Home Assistant pentru proiectorul tău JVC D-ILA, cu cererea exactă pe care o trimite aplicația.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Automatizarea casei", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/ro/jvc/">Acasă</a> &rsaquo; <a href="/ro/jvc/guide/">Ghid de utilizare</a> &rsaquo; Automatizarea locuinței</div>
     <div class="eyebrow">Automatizarea casei</div>
     <h1>Conectează proiectorul la locuința ta</h1>
-    <p class="lead">Webhookuri, Hubitat și Home Assistant, cu suplimentul Home Automation.</p>
+    <p class="lead">Lasă restul casei să reacționeze când proiectorul pornește, trece în standby, schimbă intrarea sau reapelează o scenă. Trei legături se află în Setări, Automatizare Locuință: declanșatoare webhook, Hubitat și Home Assistant. Toate trei necesită suplimentul Automatizare Locuință, vândut separat sau în pachet; Pro singur nu îl include.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Alege una</div>
+      <h2>Ce legătură să folosești</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>Orice sistem care acceptă o cerere web: Node-RED, un server de acasă, o automatizare în cloud. Aplicația trimite, tu decizi ce se întâmplă.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>O oglindă unidirecțională a alimentării și intrării pe un dispozitiv din hubul tău, prin Maker API, pentru ca Rule Machine să acționeze.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Configurează integrarea JVC Projector proprie a Home Assistant, scripturi pentru scenele tale și un tablou de bord gata făcut.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Declanșatoare</div>
-        <h2>Webhookuri la evenimentele proiectorului</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>Declanșatoare de automatizare</h2>
+        <p>Un declanșator trimite o cerere web la o adresă introdusă de tine când se întâmplă ceva pe acest proiector. Fiecare proiector are propria listă. Atinge <b>Adaugă declanșator</b>, apoi alege:</p>
         <ul class="plain">
-          <li><b>Evenimente</b>: pornire, standby, schimbarea intrării și scenă.</li>
-          <li><b>Cereri</b>: POST, PUT sau GET către o adresă pe care o introduci.</li>
-          <li>Declanșatoarele se activează doar cât timp aplicația este deschisă și conectată, și niciodată de la proiectorul demo.</li>
+          <li><b>Când</b>: Proiectorul pornește, Proiectorul trece în standby, Intrarea se schimbă (la orice intrare sau la una anume) sau O scenă este reapelată (orice scenă sau una anume).</li>
+          <li><b>Metodă</b>: POST (implicit), PUT sau GET.</li>
+          <li><b>Adresă web</b>: o adresă http:// sau https:// cu un nume de gazdă.</li>
+          <li><b>Activat</b>, ca să oprești temporar un declanșator fără să-l ștergi.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Pagina de automatizare a locuinței din Projector Pilot D-ILA cu declanșatoare" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Lista declanșatoarelor de automatizare Projector Pilot D-ILA pentru un proiector JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">O adresă care începe cu http:// este trimisă necriptat, iar editorul spune asta. Folosește https:// când sistemul tău o acceptă.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Conținut</div>
+      <h2>Ce transportă cererea</h2>
+      <p class="lead">POST și PUT trimit un corp JSON; GET nu trimite niciunul. Singurul antet adăugat de aplicație este Content-Type. Un câmp care nu se aplică evenimentului este omis.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Câmp</th><th>Semnificație</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> sau <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Numele proiectorului din aplicație.</td></tr>
+        <tr><td><code>input</code></td><td>Intrarea, de exemplu <code>hdmi1</code> sau <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Scena, pentru reapelarea unei scene.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Când s-a întâmplat, în UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Prezent, și adevărat, doar într-o cerere trimisă prin Trimite test.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Livrare</div>
+      <h2>O singură încercare, raportată sincer</h2>
+    </div>
+    <ul class="plain">
+      <li>Fiecare eveniment este trimis o singură dată, cu o limită de 10 secunde, iar redirecționările nu sunt urmate.</li>
+      <li>Declanșatorul își arată ultimul rezultat: Livrat la o oră cu codul de stare, Refuzat, Fără răspuns, Adresa nu a putut fi accesată, Conexiunea securizată a eșuat sau Încă netrimis.</li>
+      <li><b>Trimite test</b> trimite o cerere marcată ca test, ca să poți configura celălalt capăt înainte ca proiectorul să facă ceva.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Când se declanșează</div>
+      <h2>Regulile</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Doar cât timp aplicația este deschisă și conectată</b> la proiector. Aplicația urmărește starea proiectorului; nu este un serviciu de fundal.</li>
+      <li><b>Schimbări, nu citiri.</b> Prima citire după conectarea aplicației stabilește doar punctul de pornire, așa că deschiderea aplicației nu declanșează "pornește" pentru un proiector care era deja pornit.</li>
+      <li><b>Niciodată de pe proiectorul demo.</b> Nimic nu părăsește dispozitivul cât timp este selectat proiectorul demo sau Automatizare Locuință nu este deblocată.</li>
+      <li><b>Salvate securizat.</b> Adresele declanșatoarelor sunt păstrate în stocarea securizată a dispozitivului.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Oglindește proiectorul în Hubitat</h2>
+      <p class="lead">Aplicația oglindește acest proiector pe un dispozitiv din hubul tău Hubitat prin Maker API: pornit și standby, iar intrarea ca HDMI 1 sau HDMI 2, pentru oricare dintre acestea pe care le acceptă dispozitivul. Rule Machine poate apoi să acționeze pe baza lor.</p>
     </div>
-    <ul class="plain">
-      <li>Prin Maker API din Hubitat: pornit, oprit, HDMI 1 și HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>În Hubitat, adaugă Maker API și notează ID-ul aplicației (numărul din URL-urile ei) și tokenul de acces.</li>
+      <li>În aplicație, introdu <b>Adresa hub-ului</b>, <b>ID-ul aplicației Maker API</b> și <b>Tokenul de acces</b>.</li>
+      <li>Atinge <b>Găsește dispozitivul</b> și alege dispozitivul care reprezintă acest proiector. Dacă niciunul nu seamănă, adaugă în Hubitat un Virtual Switch cu numele proiectorului și încearcă din nou.</li>
+      <li>Activează <b>Oglindește starea proiectorului</b>. Dispozitivul urmărește proiectorul ori de câte ori acesta se schimbă cât timp aplicația este deschisă și conectată.</li>
+    </ol>
+    <div class="note"><b>Doar într-o direcție.</b> Nimic nu este trimis din Hubitat către proiector. Deconectarea legăturii o elimină din aplicație.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Cea mai profundă legătură</h2>
+      <p>Aplicația se autentifică în Home Assistant, adaugă proiectorul tău în integrarea JVC Projector, publică scenele și comenzile tale ca scripturi și construiește un tablou de bord. Are propriile pagini: <a href="/ro/jvc/guide/home-assistant/">Configurare Home Assistant</a> și <a href="/ro/jvc/guide/home-assistant-dashboard/">tabloul de bord Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Autentifică-te, adaugă proiectorul și creează un tablou de bord. Vezi <a href="/ro/jvc/guide/home-assistant/">ghidul Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Mai departe</div>
-      <h2>Continuă lectura</h2>
+      <h2>Continuă</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ro/jvc/guide/">Înapoi la ghidul de utilizare</a></li>
-      <li><a href="/ro/jvc/help/">Ajutor și întrebări frecvente</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ro/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/ro/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Tablou de bord Home Assistant</a>
+      <a href="/ro/jvc/guide/scenes/"><span>&#127917;</span>Scene</a>
+      <a href="/ro/jvc/guide/"><span>&#128218;</span>Înapoi la centrul de ghiduri</a>
+    </div>
   </div>
 </section>
 

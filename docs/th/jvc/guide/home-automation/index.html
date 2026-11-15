@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="th" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>ระบบอัตโนมัติ Home Assistant &amp; Hubitat สำหรับโปรเจกเตอร์ JVC - Projector Pilot D-ILA</title>
-<meta name="description" content="Home Automation ใน Projector Pilot D-ILA: ทริกเกอร์เว็บฮุกสำหรับเหตุการณ์เปิดปิดเครื่อง อินพุต และฉาก, Hubitat Maker API และ Home Assistant" />
+<title>ระบบอัตโนมัติภายในบ้าน - Projector Pilot D-ILA</title>
+<meta name="description" content="ทริกเกอร์เว็บฮุก มิเรอร์ Hubitat และการตั้งค่า Home Assistant สำหรับโปรเจกเตอร์ JVC D-ILA ของคุณ พร้อมคำขอที่แอปส่งจริง" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/th/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ระบบอัตโนมัติ Home Assistant &amp; Hubitat สำหรับโปรเจกเตอร์ JVC - Projector Pilot D-ILA" />
-<meta property="og:description" content="Home Automation ใน Projector Pilot D-ILA: ทริกเกอร์เว็บฮุกสำหรับเหตุการณ์เปิดปิดเครื่อง อินพุต และฉาก, Hubitat Maker API และ Home Assistant" />
+<meta property="og:title" content="ระบบอัตโนมัติภายในบ้าน - Projector Pilot D-ILA" />
+<meta property="og:description" content="ทริกเกอร์เว็บฮุก มิเรอร์ Hubitat และการตั้งค่า Home Assistant สำหรับโปรเจกเตอร์ JVC D-ILA ของคุณ พร้อมคำขอที่แอปส่งจริง" />
 <meta property="og:url" content="https://projectorpilot.com/th/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ระบบอัตโนมัติ Home Assistant &amp; Hubitat สำหรับโปรเจกเตอร์ JVC - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Home Automation ใน Projector Pilot D-ILA: ทริกเกอร์เว็บฮุกสำหรับเหตุการณ์เปิดปิดเครื่อง อินพุต และฉาก, Hubitat Maker API และ Home Assistant" />
+<meta name="twitter:title" content="ระบบอัตโนมัติภายในบ้าน - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="ทริกเกอร์เว็บฮุก มิเรอร์ Hubitat และการตั้งค่า Home Assistant สำหรับโปรเจกเตอร์ JVC D-ILA ของคุณ พร้อมคำขอที่แอปส่งจริง" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "ระบบอัตโนมัติ Home Assistant & Hubitat สำหรับโปรเจกเตอร์ JVC - Projector Pilot D-ILA", "description": "Home Automation ใน Projector Pilot D-ILA: ทริกเกอร์เว็บฮุกสำหรับเหตุการณ์เปิดปิดเครื่อง อินพุต และฉาก, Hubitat Maker API และ Home Assistant", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "ระบบอัตโนมัติในบ้าน", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "ระบบอัตโนมัติภายในบ้าน - Projector Pilot D-ILA", "description": "ทริกเกอร์เว็บฮุก มิเรอร์ Hubitat และการตั้งค่า Home Assistant สำหรับโปรเจกเตอร์ JVC D-ILA ของคุณ พร้อมคำขอที่แอปส่งจริง", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "ระบบอัตโนมัติในบ้าน", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/th/jvc/">หน้าแรก</a> &rsaquo; <a href="/th/jvc/guide/">คู่มือผู้ใช้</a> &rsaquo; Home Automation</div>
     <div class="eyebrow">ระบบอัตโนมัติในบ้าน</div>
     <h1>เชื่อมต่อโปรเจกเตอร์ของคุณเข้ากับบ้าน</h1>
-    <p class="lead">เว็บฮุก Hubitat และ Home Assistant พร้อมส่วนเสริม Home Automation</p>
+    <p class="lead">ให้ส่วนอื่นของบ้านตอบสนองเมื่อโปรเจกเตอร์เปิด เข้าสู่สแตนด์บาย เปลี่ยนอินพุต หรือเรียกใช้ฉาก มีลิงก์สามแบบอยู่ใต้ การตั้งค่า, Home Automation ได้แก่ ทริกเกอร์เว็บฮุก Hubitat และ Home Assistant ทั้งสามแบบต้องใช้แอดออน Home Automation ซึ่งขายแยกหรือในชุดรวม Pro อย่างเดียวไม่รวมแอดออนนี้</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">เลือกหนึ่งแบบ</div>
+      <h2>ควรใช้ลิงก์ไหน</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>ระบบใดก็ได้ที่รับคำขอเว็บ: Node-RED เซิร์ฟเวอร์ในบ้าน ระบบอัตโนมัติบนคลาวด์ แอปเป็นฝ่ายส่ง คุณเป็นฝ่ายกำหนดว่าจะเกิดอะไรขึ้น</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>มิเรอร์ทางเดียวของสถานะเปิดปิดและอินพุตไปยังอุปกรณ์ในฮับของคุณ ผ่าน Maker API เพื่อให้ Rule Machine นำไปใช้งานต่อ</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>ตั้งค่าอินทิเกรชัน JVC Projector ของ Home Assistant เอง สคริปต์สำหรับฉากของคุณ และแดชบอร์ดสำเร็จรูป</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">ทริกเกอร์</div>
-        <h2>เว็บฮุกเมื่อเกิดเหตุการณ์ของโปรเจกเตอร์</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>ทริกเกอร์อัตโนมัติ</h2>
+        <p>ทริกเกอร์จะส่งคำขอเว็บไปยังที่อยู่ที่คุณป้อนเมื่อมีเหตุการณ์เกิดขึ้นกับโปรเจกเตอร์เครื่องนี้ โปรเจกเตอร์แต่ละเครื่องมีรายการของตัวเอง แตะ <b>เพิ่มทริกเกอร์</b> แล้วเลือก:</p>
         <ul class="plain">
-          <li><b>เหตุการณ์</b>: เปิดเครื่อง สแตนด์บาย เปลี่ยนอินพุต และฉาก</li>
-          <li><b>คำขอ</b>: POST, PUT หรือ GET ไปยังที่อยู่ที่คุณป้อน</li>
-          <li>ทริกเกอร์จะทำงานเฉพาะขณะที่แอปเปิดอยู่และเชื่อมต่ออยู่ และจะไม่ทำงานจากโปรเจกเตอร์สาธิตเลย</li>
+          <li><b>เมื่อ</b>: โปรเจกเตอร์เปิด โปรเจกเตอร์เข้าสู่สแตนด์บาย อินพุตเปลี่ยนแปลง (เป็นอินพุตใดก็ได้หรืออินพุตที่ระบุ) หรือ มีการเรียกใช้ฉาก (ฉากใดก็ได้หรือฉากที่ระบุ)</li>
+          <li><b>เมธอด</b>: POST (ค่าเริ่มต้น) PUT หรือ GET</li>
+          <li><b>ที่อยู่เว็บ</b>: ที่อยู่ http:// หรือ https:// ที่มีชื่อโฮสต์</li>
+          <li><b>เปิดใช้งาน</b> เพื่อหยุดทริกเกอร์ชั่วคราวโดยไม่ต้องลบ</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="หน้า Home Automation ของ Projector Pilot D-ILA พร้อมทริกเกอร์" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="รายการทริกเกอร์อัตโนมัติของ Projector Pilot D-ILA สำหรับโปรเจกเตอร์ JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">ที่อยู่ที่ขึ้นต้นด้วย http:// จะถูกส่งโดยไม่เข้ารหัส และตัวแก้ไขจะแจ้งให้ทราบ ใช้ https:// เมื่อระบบของคุณรองรับ</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">เพย์โหลด</div>
+      <h2>สิ่งที่คำขอส่งไป</h2>
+      <p class="lead">POST และ PUT ส่งเนื้อหา JSON ส่วน GET ไม่ส่ง เฮดเดอร์เดียวที่แอปเพิ่มคือ Content-Type ฟิลด์ที่ไม่เกี่ยวกับเหตุการณ์จะถูกละไว้</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>ช่อง</th><th>ความหมาย</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> หรือ <code>scene_recalled</code></td></tr>
+        <tr><td><code>projector</code></td><td>ชื่อของโปรเจกเตอร์ในแอป</td></tr>
+        <tr><td><code>input</code></td><td>อินพุต เช่น <code>hdmi1</code> หรือ <code>hdmi2</code></td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>ฉาก สำหรับการเรียกใช้ฉาก</td></tr>
+        <tr><td><code>timestamp</code></td><td>เวลาที่เกิดเหตุการณ์ ในเวลา UTC</td></tr>
+        <tr><td><code>test</code></td><td>มีอยู่และเป็น true เฉพาะในคำขอที่ส่งจาก ส่งการทดสอบ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">การส่งมอบ</div>
+      <h2>ลองครั้งเดียว รายงานตามจริง</h2>
+    </div>
+    <ul class="plain">
+      <li>แต่ละเหตุการณ์ส่งเพียงครั้งเดียว โดยมีขีดจำกัด 10 วินาที และไม่ตามการเปลี่ยนเส้นทาง</li>
+      <li>ทริกเกอร์แสดงผลล่าสุด: ส่งแล้ว พร้อมเวลาและรหัสสถานะ ถูกปฏิเสธ ไม่มีการตอบกลับ เข้าถึงที่อยู่ไม่ได้ การเชื่อมต่อที่ปลอดภัยล้มเหลว หรือ ยังไม่ได้ส่ง</li>
+      <li><b>ส่งการทดสอบ</b>จะส่งคำขอที่ทำเครื่องหมายว่าเป็นการทดสอบ เพื่อให้คุณเชื่อมต่อปลายทางอีกฝั่งได้ก่อนที่โปรเจกเตอร์จะทำอะไร</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ทริกเกอร์ทำงานเมื่อใด</div>
+      <h2>กฎ</h2>
+    </div>
+    <ul class="plain">
+      <li><b>เฉพาะขณะที่แอปเปิดและเชื่อมต่อ</b>กับโปรเจกเตอร์อยู่ แอปเฝ้าดูสถานะของโปรเจกเตอร์ ไม่ใช่บริการเบื้องหลัง</li>
+      <li><b>การเปลี่ยนแปลง ไม่ใช่ค่าที่อ่านได้</b> ค่าที่อ่านครั้งแรกหลังแอปเชื่อมต่อใช้เป็นจุดเริ่มต้นเท่านั้น การเปิดแอปจึงไม่ทำให้เกิด "เปิด" สำหรับโปรเจกเตอร์ที่เปิดอยู่แล้ว</li>
+      <li><b>ไม่เคยจากโปรเจกเตอร์สาธิต</b> จะไม่มีสิ่งใดออกจากอุปกรณ์ขณะที่เลือกโปรเจกเตอร์สาธิตอยู่ หรือยังไม่ได้ปลดล็อก Home Automation</li>
+      <li><b>บันทึกอย่างปลอดภัย</b> ที่อยู่ของทริกเกอร์เก็บไว้ในที่เก็บข้อมูลที่ปลอดภัยของอุปกรณ์</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>มิเรอร์โปรเจกเตอร์ไปยัง Hubitat</h2>
+      <p class="lead">แอปมิเรอร์โปรเจกเตอร์เครื่องนี้ไปยังอุปกรณ์ในฮับ Hubitat ของคุณผ่าน Maker API ได้แก่ เปิดและสแตนด์บาย และอินพุตเป็น HDMI 1 หรือ HDMI 2 เท่าที่อุปกรณ์นั้นรับได้ จากนั้น Rule Machine จะนำไปใช้งานต่อได้</p>
     </div>
-    <ul class="plain">
-      <li>ผ่าน Maker API ของ Hubitat: เปิด ปิด HDMI 1 และ HDMI 2</li>
-    </ul>
+    <ol class="steps">
+      <li>ใน Hubitat ให้เพิ่ม Maker API และจดรหัสแอป (ตัวเลขใน URL ของแอป) และโทเคนการเข้าถึงไว้</li>
+      <li>ในแอป ให้ป้อน<b>ที่อยู่ฮับ</b> <b>รหัสแอป Maker API</b> และ<b>โทเคนการเข้าถึง</b></li>
+      <li>แตะ <b>ค้นหาอุปกรณ์</b> แล้วเลือกอุปกรณ์ที่แทนโปรเจกเตอร์เครื่องนี้ หากไม่มีอุปกรณ์ใดดูตรงกัน ให้เพิ่ม Virtual Switch ที่ตั้งชื่อตามโปรเจกเตอร์ใน Hubitat แล้วลองอีกครั้ง</li>
+      <li>เปิด <b>มิเรอร์สถานะของโปรเจกเตอร์</b> อุปกรณ์จะเปลี่ยนตามโปรเจกเตอร์ทุกครั้งที่สถานะเปลี่ยนขณะที่แอปเปิดและเชื่อมต่ออยู่</li>
+    </ol>
+    <div class="note"><b>ทางเดียวเท่านั้น</b> ไม่มีสิ่งใดถูกส่งจาก Hubitat ไปยังโปรเจกเตอร์ ยกเลิกการเชื่อมโยงจะลบการเชื่อมโยงออกจากแอป</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>การเชื่อมโยงที่ลึกที่สุด</h2>
+      <p>แอปเข้าสู่ระบบ Home Assistant เพิ่มโปรเจกเตอร์ของคุณลงในอินทิเกรชัน JVC Projector เผยแพร่ฉากและตัวควบคุมของคุณเป็นสคริปต์ และสร้างแดชบอร์ด มีหน้าของตัวเอง: <a href="/th/jvc/guide/home-assistant/">การตั้งค่า Home Assistant</a> และ<a href="/th/jvc/guide/home-assistant-dashboard/">แดชบอร์ด Home Assistant</a></p>
     </div>
-    <ul class="plain">
-      <li>ลงชื่อเข้าใช้ เพิ่มโปรเจกเตอร์ และสร้างแดชบอร์ด ดู<a href="/th/jvc/guide/home-assistant/">คู่มือ Home Assistant</a></li>
-    </ul>
   </div>
 </section>
 
@@ -154,10 +230,12 @@
       <div class="eyebrow">ถัดไป</div>
       <h2>อ่านต่อ</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/th/jvc/guide/">กลับไปที่คู่มือผู้ใช้</a></li>
-      <li><a href="/th/jvc/help/">ความช่วยเหลือและคำถามที่พบบ่อย</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/th/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/th/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>แดชบอร์ด Home Assistant</a>
+      <a href="/th/jvc/guide/scenes/"><span>&#127917;</span>ฉาก</a>
+      <a href="/th/jvc/guide/"><span>&#128218;</span>กลับไปที่ศูนย์รวมคู่มือ</a>
+    </div>
   </div>
 </section>
 

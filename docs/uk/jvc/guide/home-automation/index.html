@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="uk" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Автоматизація проєктора JVC через Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Домашня автоматизація в Projector Pilot D-ILA: тригери вебхуків для подій живлення, входу та сцен, Hubitat Maker API і Home Assistant." />
+<title>Домашня автоматизація - Projector Pilot D-ILA</title>
+<meta name="description" content="Тригери вебхуків, дзеркало Hubitat і налаштування Home Assistant для вашого проєктора JVC D-ILA, з точним запитом, який надсилає застосунок." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/uk/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Автоматизація проєктора JVC через Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Домашня автоматизація в Projector Pilot D-ILA: тригери вебхуків для подій живлення, входу та сцен, Hubitat Maker API і Home Assistant." />
+<meta property="og:title" content="Домашня автоматизація - Projector Pilot D-ILA" />
+<meta property="og:description" content="Тригери вебхуків, дзеркало Hubitat і налаштування Home Assistant для вашого проєктора JVC D-ILA, з точним запитом, який надсилає застосунок." />
 <meta property="og:url" content="https://projectorpilot.com/uk/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Автоматизація проєктора JVC через Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Домашня автоматизація в Projector Pilot D-ILA: тригери вебхуків для подій живлення, входу та сцен, Hubitat Maker API і Home Assistant." />
+<meta name="twitter:title" content="Домашня автоматизація - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Тригери вебхуків, дзеркало Hubitat і налаштування Home Assistant для вашого проєктора JVC D-ILA, з точним запитом, який надсилає застосунок." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "uk", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Автоматизація проєктора JVC через Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Домашня автоматизація в Projector Pilot D-ILA: тригери вебхуків для подій живлення, входу та сцен, Hubitat Maker API і Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "uk", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Посібник користувача", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Домашня автоматизація", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "uk", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Домашня автоматизація - Projector Pilot D-ILA", "description": "Тригери вебхуків, дзеркало Hubitat і налаштування Home Assistant для вашого проєктора JVC D-ILA, з точним запитом, який надсилає застосунок.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "uk", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Посібник користувача", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Домашня автоматизація", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/uk/jvc/">Головна</a> &rsaquo; <a href="/uk/jvc/guide/">Посібник користувача</a> &rsaquo; Домашня автоматизація</div>
     <div class="eyebrow">Домашня автоматизація</div>
     <h1>Підключіть проєктор до свого дому</h1>
-    <p class="lead">Вебхуки, Hubitat і Home Assistant з додатком Home Automation.</p>
+    <p class="lead">Нехай решта дому реагує, коли проєктор вмикається, переходить у режим очікування, змінює вхід або викликає сцену. У розділі Налаштування, Домашня автоматизація є три зв'язки: тригери вебхуків, Hubitat і Home Assistant. Усі три потребують додатка «Домашня автоматизація», який продається окремо або у комплекті; самого Pro для цього недостатньо.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Виберіть один</div>
+      <h2>Який зв'язок використати</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Вебхуки</h3><p>Будь-яка система, що приймає веб-запит: Node-RED, домашній сервер, хмарна автоматизація. Застосунок надсилає, а ви вирішуєте, що відбувається далі.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Односпрямоване дзеркало живлення та входу на пристрій у вашому хабі через Maker API, щоб на нього реагував Rule Machine.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Налаштовує власну інтеграцію Home Assistant JVC Projector, скрипти для ваших сцен і готовий дашборд.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Тригери</div>
-        <h2>Вебхуки для подій проєктора</h2>
+        <div class="eyebrow">Вебхуки</div>
+        <h2>Тригери автоматизації</h2>
+        <p>Тригер надсилає веб-запит на введену вами адресу, коли на цьому проєкторі щось відбувається. Кожен проєктор має власний список. Торкніться <b>Додати тригер</b>, потім виберіть:</p>
         <ul class="plain">
-          <li><b>Події</b>: увімкнення, режим очікування, зміна входу та сцена.</li>
-          <li><b>Запити</b>: POST, PUT або GET на введену вами адресу.</li>
-          <li>Тригери спрацьовують, лише поки застосунок відкритий і підключений, і ніколи - з демонстраційного проєктора.</li>
+          <li><b>Коли</b>: Проєктор вмикається, Проєктор переходить у режим очікування, Вхід змінюється (на будь-який вхід або на конкретний) чи Викликається сцена (будь-яка сцена або конкретна).</li>
+          <li><b>Метод</b>: POST (за промовчанням), PUT або GET.</li>
+          <li><b>Веб-адреса</b>: адреса http:// або https:// з іменем хоста.</li>
+          <li><b>Увімкнено</b>, щоб призупинити тригер, не видаляючи його.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Сторінка домашньої автоматизації Projector Pilot D-ILA з тригерами" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Список тригерів автоматизації Projector Pilot D-ILA для проєктора JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">Адреса, що починається з http://, надсилається без шифрування, і редактор про це повідомляє. Використовуйте https://, якщо ваша система це підтримує.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Корисне навантаження</div>
+      <h2>Що несе запит</h2>
+      <p class="lead">POST і PUT надсилають тіло JSON; GET - без тіла. Єдиний заголовок, який додає застосунок, - Content-Type. Поле, що не стосується події, пропускається.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Поле</th><th>Значення</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> або <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Назва проєктора в застосунку.</td></tr>
+        <tr><td><code>input</code></td><td>Вхід, наприклад <code>hdmi1</code> або <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Сцена, для виклику сцени.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Коли це сталося, за UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Присутнє, і має значення true, лише в запиті, надісланому через «Надіслати тест».</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Доставка</div>
+      <h2>Одна спроба, про яку повідомляється чесно</h2>
+    </div>
+    <ul class="plain">
+      <li>Кожна подія надсилається один раз із обмеженням 10 секунд, а переспрямування не виконуються.</li>
+      <li>Тригер показує свій останній результат: Доставлено в такий-то час із кодом стану, Відхилено, Немає відповіді, Не вдалося дістатися адреси, Не вдалося встановити захищене з'єднання або Ще не надіслано.</li>
+      <li><b>Надіслати тест</b> надсилає запит, позначений як тестовий, щоб ви могли налаштувати інший кінець, поки проєктор ще нічого не робить.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Коли спрацьовують тригери</div>
+      <h2>Правила</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Лише поки застосунок відкрито й підключено</b> до проєктора. Застосунок стежить за станом проєктора; він не є фоновою службою.</li>
+      <li><b>Зміни, а не показання.</b> Перше зчитування після підключення застосунку лише задає початкову точку, тож відкриття застосунку не запускає «вмикається» для проєктора, який уже був увімкнений.</li>
+      <li><b>Ніколи від демопроєктора.</b> Нічого не залишає пристрій, поки вибрано демопроєктор або Домашню автоматизацію не розблоковано.</li>
+      <li><b>Збережено надійно.</b> Адреси тригерів зберігаються в захищеному сховищі пристрою.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Віддзеркалення проєктора в Hubitat</h2>
+      <p class="lead">Застосунок віддзеркалює цей проєктор на пристрій у вашому хабі Hubitat через Maker API: увімкнення та режим очікування, а також вхід як HDMI 1 або HDMI 2, для того з них, який пристрій приймає. Тоді на це може реагувати Rule Machine.</p>
     </div>
-    <ul class="plain">
-      <li>Через Maker API Hubitat: увімкнення, вимкнення, HDMI 1 і HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>У Hubitat додайте Maker API і запишіть ідентифікатор його застосунку (число в його адресах) та токен доступу.</li>
+      <li>У застосунку введіть <b>адресу хаба</b>, <b>ідентифікатор застосунку Maker API</b> і <b>токен доступу</b>.</li>
+      <li>Торкніться <b>Знайти пристрій</b> і виберіть пристрій, що позначає цей проєктор. Якщо жоден на нього не схожий, додайте в Hubitat віртуальний перемикач з назвою проєктора й повторіть.</li>
+      <li>Увімкніть <b>Віддзеркалювати стан проєктора</b>. Пристрій слідує за проєктором щоразу, коли той змінюється, поки застосунок відкрито й підключено.</li>
+    </ol>
+    <div class="note"><b>Лише в один бік.</b> З Hubitat до проєктора нічого не надсилається. «Скасувати прив'язку» видаляє зв'язок із застосунку.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Найглибший зв'язок</h2>
+      <p>Застосунок входить у Home Assistant, додає ваш проєктор до власної інтеграції JVC Projector, публікує ваші сцени та елементи керування як скрипти й будує дашборд. Для цього є окремі сторінки: <a href="/uk/jvc/guide/home-assistant/">налаштування Home Assistant</a> та <a href="/uk/jvc/guide/home-assistant-dashboard/">дашборд Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Увійдіть, додайте проєктор і створіть дашборд. Див. <a href="/uk/jvc/guide/home-assistant/">посібник із Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Далі</div>
-      <h2>Читайте далі</h2>
+      <h2>Продовжуйте</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/uk/jvc/guide/">Назад до посібника користувача</a></li>
-      <li><a href="/uk/jvc/help/">Довідка та поширені запитання</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/uk/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/uk/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Дашборд Home Assistant</a>
+      <a href="/uk/jvc/guide/scenes/"><span>&#127917;</span>Сцени</a>
+      <a href="/uk/jvc/guide/"><span>&#128218;</span>Назад до центру посібників</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="A Projector Pilot D-ILA összekapcsolása a Home Assistant rendszerrel: bejelentkezés, a jvc_projector integráció hozzáadása, szkriptek szinkronizálása és vezérlőpult létrehozása." />
+<title>Home Assistant beállítása - Projector Pilot D-ILA</title>
+<meta name="description" content="Add hozzá a JVC D-ILA projektorodat a Home Assistanthoz YAML nélkül: bejelentkezés, a JVC Projector integráció, élő szenzor és jelenetszkriptek." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/hu/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="A Projector Pilot D-ILA összekapcsolása a Home Assistant rendszerrel: bejelentkezés, a jvc_projector integráció hozzáadása, szkriptek szinkronizálása és vezérlőpult létrehozása." />
+<meta property="og:title" content="Home Assistant beállítása - Projector Pilot D-ILA" />
+<meta property="og:description" content="Add hozzá a JVC D-ILA projektorodat a Home Assistanthoz YAML nélkül: bejelentkezés, a JVC Projector integráció, élő szenzor és jelenetszkriptek." />
 <meta property="og:url" content="https://projectorpilot.com/hu/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="A Projector Pilot D-ILA összekapcsolása a Home Assistant rendszerrel: bejelentkezés, a jvc_projector integráció hozzáadása, szkriptek szinkronizálása és vezérlőpult létrehozása." />
+<meta name="twitter:title" content="Home Assistant beállítása - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Add hozzá a JVC D-ILA projektorodat a Home Assistanthoz YAML nélkül: bejelentkezés, a JVC Projector integráció, élő szenzor és jelenetszkriptek." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "A Projector Pilot D-ILA összekapcsolása a Home Assistant rendszerrel: bejelentkezés, a jvc_projector integráció hozzáadása, szkriptek szinkronizálása és vezérlőpult létrehozása.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant beállítása - Projector Pilot D-ILA", "description": "Add hozzá a JVC D-ILA projektorodat a Home Assistanthoz YAML nélkül: bejelentkezés, a JVC Projector integráció, élő szenzor és jelenetszkriptek.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/hu/jvc/">Kezdőlap</a> &rsaquo; <a href="/hu/jvc/guide/">Felhasználói útmutató</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Állítsd be a JVC projektorodat a Home Assistant rendszerben az alkalmazásból.</p>
+    <h1>Állítsd be a JVC projektorodat a Home Assistantban</h1>
+    <p class="lead">Az alkalmazás bejelentkezik a Home Assistantba, hozzáadja a projektort a Home Assistant saját JVC Projector integrációjához, szkriptekként közzéteszi a jeleneteidet és a vezérlőket, és felépít egy vezérlőpultot. Soha nem kell tokent beillesztened vagy YAML-t írnod. Szükség van hozzá az Otthon-automatizálás kiegészítőre.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ezt olvasd el először</div>
+      <h2>Egyszerre egy vezérlő</h2>
+      <p class="lead">A JVC projektor egyszerre egy hálózati vezérlőt szolgál ki. Amíg ez az alkalmazás nyitva van és csatlakozik a projektorhoz, a Home Assistant nem éri el. A Home Assistant projektorvezérlői és szkriptjei akkor működnek, amikor az alkalmazás be van zárva, és az alkalmazás elengedi a projektort, amikor a háttérbe kerül.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Beállítás</div>
-        <h2>A bejelentkezéstől a vezérlőpultig</h2>
-        <ul class="plain">
-          <li><b>Jelentkezz be</b> a Home Assistant rendszerbe annak saját OAuth bejelentkezésével.</li>
-          <li><b>Integráció</b>: az alkalmazás hozzáadja a Home Assistant alap <b>jvc_projector</b> integrációját, és elküldi a hostot, a portot és a jelszót.</li>
-          <li><b>Szenzor</b>: egy mobile_app szenzor webhookon keresztül jelent.</li>
-          <li>A <b>Speciális vezérlők szinkronizálása</b> szkripteket hoz létre a <b>ppjvc</b> előtaggal.</li>
-          <li><b>Vezérlőpult</b>: egy Lovelace vezérlőpult core vagy HACS stílusban.</li>
-          <li>Egy <b>beállítási ellenőrzőlista</b> mutatja, mi készült el, és mi van még hátra.</li>
-        </ul>
+        <div class="eyebrow">1. lépés</div>
+        <h2>Bejelentkezés</h2>
+        <ol class="steps">
+          <li>Nyisd meg a Beállítások, Otthon-automatizálás, Home Assistant részt.</li>
+          <li>Add meg a <b>Home Assistant címét</b>, amely http:// vagy https:// előtaggal kezdődik.</li>
+          <li>Koppints a <b>Bejelentkezés</b> gombra. A Home Assistant saját bejelentkezési oldala megnyílik a böngészőben; jelentkezz be ott, majd térj vissza.</li>
+          <li>Koppints a <b>Kapcsolat tesztelése</b> gombra a megerősítéshez.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="A Projector Pilot D-ILA Home Assistant beállítási oldala" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="A Projector Pilot D-ILA Home Assistant képernyője a beállítási ellenőrzőlistával" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Ha a Home Assistant nem érhető el, ellenőrizd a címet, és hogy ez az eszköz ugyanazon a hálózaton van-e, mint a Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">2. lépés</div>
+      <h2>Mi van a Home Assistantodban</h2>
+      <p class="lead">Egy panel beolvassa a Home Assistantodat, és minden részt Megtalálva, Nincs telepítve vagy Nem állapítható meg jelöléssel lát el. Az Ellenőrzés újra újra beolvassa.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Elem</th><th>Mihez kell</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App integráció</td><td>Az élő állapotszenzor.</td></tr>
+        <tr><td>JVC Projector integráció</td><td>Ennek a projektornak a vezérlése a Home Assistantból.</td></tr>
+        <tr><td>HACS</td><td>Csak a vezérlőpult stílusos megjelenéséhez.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">3. lépés</div>
+      <h2>A beállítási ellenőrzőlista</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Jelentkezz be a Home Assistantba.</b></li>
+      <li><b>Add hozzá ezt a projektort a Home Assistant JVC Projector integrációjához.</b> Koppints a Hozzáadás gombra. Az alkalmazás elküldi a projektor címét, portját és hálózati jelszavát a Home Assistant JVC Projector integrációjának, miután előbb megkérdezett.</li>
+      <li><b>Engedélyezd a szkriptekhez szükséges entitásokat.</b> Néhány JVC Projector entitás letiltva indul a Home Assistantban; koppints az Engedélyezés gombra mindegyik mellett. A Home Assistantnak újratöltésre vagy újraindításra lehet szüksége, mielőtt megjelenik.</li>
+      <li><b>Élő állapotszenzor.</b> Kapcsold be a A projektor állapotának küldése beállítást. A szenzor a következő alkalommal jön létre, amikor az alkalmazás csatlakozva elküldi a projektor állapotát.</li>
+    </ol>
+    <div class="note"><b>A jelszóról.</b> Amikor hozzáadod a projektort, a hálózati jelszava el lesz küldve a Home Assistantodnak, és ott tárolódik, a JVC Projector bejegyzésében. Az alkalmazás máshová nem küldi el. Az alkalmazás elengedi a projektort, amíg a Home Assistant csatlakozik hozzá, majd újracsatlakozik.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Melyik bejegyzés?</div>
+      <h2>Hogyan találja meg az alkalmazás a projektorodat a Home Assistantban</h2>
+      <p>Az alkalmazás a projektor MAC-címe alapján párosítja a JVC Projector bejegyzést, ezért előbb csatlakozz legalább egyszer a projektorhoz. Ha a Home Assistantban nincs ilyen MAC-címmel bejegyzés, vagy több is van, az ellenőrzőlista ezt közli, és azt is, mit tegyél. Ha a projektor átkerült, az alkalmazás felajánlja, hogy elküldi az új címet a Home Assistantnak.</p>
     </div>
   </div>
 </section>
-    <div class="note">A Home Assistant használatához a Home Automation kiegészítő szükséges.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A szenzor</div>
+      <h2>Élő állapot</h2>
+      <p>A szenzor állapota az alkalmazás által utoljára beolvasott bekapcsolási állapot, az attribútumai pedig a bemenet, a modell és a beállítások, amelyeket az alkalmazás beolvasott. A Mobile App integráción keresztül működik, és nem küld semmit a projektornak. Frissül, valahányszor az állapot megváltozik, amíg az alkalmazás nyitva van és csatlakozik.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Szkriptek</div>
+      <h2>Jelenetek és vezérlők</h2>
+      <p class="lead">Minden mentett jelenetből szkript lesz a Home Assistantban, amely a JVC Projector entitásokon keresztül fut. A szkript nem tartalmaz címet és jelszót. A szkriptazonosítók így kezdődnek: <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li>A <b>Szinkronizálás HA-val</b> a <a href="/hu/jvc/guide/scenes/">jeleneteidet</a> szkriptekként írja ki, és megmutatja, hány lépést tartalmaz mindegyik, és mi maradt ki, miért.</li>
+      <li>A <b>Speciális vezérlők szinkronizálása</b> szkripteket tesz közzé a bekapcsoláshoz, bemenetekhez, képmódokhoz, lencsememóriákhoz és az Elrejtéshez.</li>
+      <li>Az <b>eredmények</b> meg vannak számolva: hány szkript szinkronizálódott, hányat utasított el a Home Assistant, és megerősítette-e az újratöltésüket.</li>
+      <li>Az <b>Árva szkriptek eltávolítása</b> törli azokat az ezen alkalmazás által létrehozott szkripteket, amelyeket már egy jelenet sem használ. Felsorolja őket, és előbb rákérdez.</li>
+    </ul>
+    <div class="note">Ha a szinkronizálás valamely függősége nincs beolvasva, semmi nem íródik, módosul vagy törlődik. A szinkronizálás soha nem fut le félig találgatás alapján.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Irányítópult</div>
+      <h2>Egy kész vezérlőpult</h2>
+      <p>A <b>Vezérlőpult küldése</b> projektor-vezérlőpultot épít a Home Assistantodban a JVC Projector entitásokból, a szkriptekből és a szenzorból. A <b>Vezérlőpult másolása</b> ehelyett a vágólapra másolja, hogy te illeszd be egy új vezérlőpultba. Minden róla a <a href="/hu/jvc/guide/home-assistant-dashboard/">Home Assistant vezérlőpult oldalon</a> található.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Szabályok</div>
+      <h2>Amit az alkalmazás soha nem tesz</h2>
+    </div>
+    <ul class="plain">
+      <li>Semmi nem hagyja el az eszközt, amíg a demóprojektor ki van választva, vagy az Otthon-automatizálás nincs feloldva.</li>
+      <li>A <b>Kapcsolat bontása</b> csak ebből az alkalmazásból távolítja el a kapcsolatot. A projektor eszköze és entitásai a Home Assistantban maradnak, amíg ott nem törlöd őket.</li>
+      <li>Ha a Home Assistant nem fogadja el tovább a bejelentkezést, az alkalmazás ezt jelzi, és kéri, hogy jelentkezz be újra.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Következő</div>
-      <h2>Olvasson tovább</h2>
+      <h2>Folytassa</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/hu/jvc/guide/">Vissza a felhasználói útmutatóhoz</a></li>
-      <li><a href="/hu/jvc/help/">Súgó és GYIK</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/hu/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant vezérlőpult</a>
+      <a href="/hu/jvc/guide/home-automation/"><span>&#127968;</span>Otthonautomatizálás</a>
+      <a href="/hu/jvc/help/"><span>&#10067;</span>Súgó és FAQ</a>
+      <a href="/hu/jvc/guide/"><span>&#128218;</span>Vissza az útmutató főoldalára</a>
+    </div>
   </div>
 </section>
 

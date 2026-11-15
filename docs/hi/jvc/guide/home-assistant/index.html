@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="hi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA को Home Assistant से जोड़ें: साइन इन करें, jvc_projector इंटीग्रेशन जोड़ें, स्क्रिप्ट सिंक करें और डैशबोर्ड बनाएँ।" />
+<title>Home Assistant सेटअप - Projector Pilot D-ILA</title>
+<meta name="description" content="अपना JVC D-ILA प्रोजेक्टर बिना YAML के Home Assistant में जोड़ें: साइन इन, JVC Projector इंटीग्रेशन, एक लाइव सेंसर और सीन स्क्रिप्ट।" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/hi/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA को Home Assistant से जोड़ें: साइन इन करें, jvc_projector इंटीग्रेशन जोड़ें, स्क्रिप्ट सिंक करें और डैशबोर्ड बनाएँ।" />
+<meta property="og:title" content="Home Assistant सेटअप - Projector Pilot D-ILA" />
+<meta property="og:description" content="अपना JVC D-ILA प्रोजेक्टर बिना YAML के Home Assistant में जोड़ें: साइन इन, JVC Projector इंटीग्रेशन, एक लाइव सेंसर और सीन स्क्रिप्ट।" />
 <meta property="og:url" content="https://projectorpilot.com/hi/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA को Home Assistant से जोड़ें: साइन इन करें, jvc_projector इंटीग्रेशन जोड़ें, स्क्रिप्ट सिंक करें और डैशबोर्ड बनाएँ।" />
+<meta name="twitter:title" content="Home Assistant सेटअप - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="अपना JVC D-ILA प्रोजेक्टर बिना YAML के Home Assistant में जोड़ें: साइन इन, JVC Projector इंटीग्रेशन, एक लाइव सेंसर और सीन स्क्रिप्ट।" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA को Home Assistant से जोड़ें: साइन इन करें, jvc_projector इंटीग्रेशन जोड़ें, स्क्रिप्ट सिंक करें और डैशबोर्ड बनाएँ।", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "होम", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "उपयोगकर्ता गाइड", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant सेटअप - Projector Pilot D-ILA", "description": "अपना JVC D-ILA प्रोजेक्टर बिना YAML के Home Assistant में जोड़ें: साइन इन, JVC Projector इंटीग्रेशन, एक लाइव सेंसर और सीन स्क्रिप्ट।", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "होम", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "उपयोगकर्ता गाइड", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/hi/jvc/">होम</a> &rsaquo; <a href="/hi/jvc/guide/">यूज़र गाइड</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">ऐप से Home Assistant में अपना JVC प्रोजेक्टर सेट अप करें।</p>
+    <h1>Home Assistant में अपना JVC प्रोजेक्टर सेट अप करें</h1>
+    <p class="lead">ऐप आपके Home Assistant में साइन इन करता है, प्रोजेक्टर को Home Assistant के अपने JVC Projector इंटीग्रेशन में जोड़ता है, आपके सीन और कंट्रोल को स्क्रिप्ट के रूप में प्रकाशित करता है, और एक डैशबोर्ड बनाता है। आपको कभी टोकन पेस्ट नहीं करना पड़ता और न YAML लिखना पड़ता है। इसके लिए Home Automation ऐड-ऑन चाहिए।</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">पहले यह पढ़ें</div>
+      <h2>एक समय में एक कंट्रोलर</h2>
+      <p class="lead">JVC प्रोजेक्टर एक समय में एक नेटवर्क कंट्रोलर को सेवा देता है। जब तक यह ऐप खुला है और प्रोजेक्टर से कनेक्टेड है, Home Assistant उस तक नहीं पहुँच सकता। ऐप बंद होने पर Home Assistant के प्रोजेक्टर कंट्रोल और स्क्रिप्ट काम करते हैं, और ऐप के बैकग्राउंड में जाते ही वह प्रोजेक्टर को छोड़ देता है।</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">सेटअप</div>
-        <h2>साइन-इन से डैशबोर्ड तक</h2>
-        <ul class="plain">
-          <li>Home Assistant के अपने OAuth साइन-इन से <b>साइन इन</b> करें।</li>
-          <li><b>इंटीग्रेशन</b>: ऐप Home Assistant का कोर <b>jvc_projector</b> इंटीग्रेशन जोड़ता है, और होस्ट, पोर्ट व पासवर्ड भेजता है।</li>
-          <li><b>सेंसर</b>: mobile_app सेंसर वेबहुक के ज़रिए रिपोर्ट करता है।</li>
-          <li><b>Sync Advanced Controls</b> <b>ppjvc</b> प्रीफ़िक्स वाली स्क्रिप्ट बनाता है।</li>
-          <li><b>डैशबोर्ड</b>: कोर स्टाइल या HACS स्टाइल में Lovelace डैशबोर्ड।</li>
-          <li><b>सेटअप चेकलिस्ट</b> दिखाती है कि क्या हो चुका है और क्या बाकी है।</li>
-        </ul>
+        <div class="eyebrow">चरण 1</div>
+        <h2>साइन इन</h2>
+        <ol class="steps">
+          <li>Settings, Home Automation, Home Assistant खोलें।</li>
+          <li>अपना <b>Home Assistant पता</b> दर्ज करें, जो http:// या https:// से शुरू हो।</li>
+          <li><b>साइन इन</b> टैप करें। Home Assistant का अपना साइन-इन पेज ब्राउज़र में खुलता है; वहाँ साइन इन करके वापस आएँ।</li>
+          <li>पुष्टि के लिए <b>कनेक्शन टेस्ट करें</b> टैप करें।</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA का Home Assistant सेटअप पेज" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="सेटअप चेकलिस्ट के साथ Projector Pilot D-ILA का Home Assistant स्क्रीन" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">अगर Home Assistant तक पहुँचा नहीं जा सकता, तो पता जाँचें, और यह भी कि यह डिवाइस Home Assistant वाले नेटवर्क पर ही है।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">चरण 2</div>
+      <h2>आपके Home Assistant में क्या है</h2>
+      <p class="lead">एक पैनल आपका Home Assistant पढ़ता है और हर हिस्से को मिला, इंस्टॉल नहीं है या पता नहीं चला के रूप में चिह्नित करता है। फिर से जाँचें उसे दोबारा पढ़ता है।</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>हिस्सा</th><th>किसलिए चाहिए</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App इंटीग्रेशन</td><td>लाइव स्थिति सेंसर।</td></tr>
+        <tr><td>JVC Projector इंटीग्रेशन</td><td>Home Assistant से इस प्रोजेक्टर को नियंत्रित करना।</td></tr>
+        <tr><td>HACS</td><td>केवल डैशबोर्ड का स्टाइल वाला रूप।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">चरण 3</div>
+      <h2>सेटअप चेकलिस्ट</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Home Assistant में साइन इन करें।</b></li>
+      <li><b>इस प्रोजेक्टर को Home Assistant के JVC Projector इंटीग्रेशन में जोड़ें।</b> Add टैप करें। पहले आपसे पूछने के बाद, ऐप प्रोजेक्टर का पता, पोर्ट और नेटवर्क पासवर्ड Home Assistant के JVC Projector इंटीग्रेशन को भेजता है।</li>
+      <li><b>स्क्रिप्ट को चाहिए वाली एंटिटी सक्षम करें।</b> कुछ JVC Projector एंटिटी Home Assistant में अक्षम रहकर शुरू होती हैं; हर एक के पास Enable टैप करें। उसके दिखने से पहले Home Assistant को रीलोड या रीस्टार्ट की ज़रूरत पड़ सकती है।</li>
+      <li><b>लाइव स्थिति सेंसर।</b> प्रोजेक्टर की स्थिति भेजें चालू करें। सेंसर तब बनता है जब ऐप अगली बार कनेक्टेड रहते हुए प्रोजेक्टर की स्थिति भेजता है।</li>
+    </ol>
+    <div class="note"><b>पासवर्ड के बारे में।</b> प्रोजेक्टर जोड़ते समय उसका नेटवर्क पासवर्ड आपके Home Assistant को भेजा जाता है और वहीं, उसकी JVC Projector एंट्री में, सेव होता है। ऐप उसे कहीं और नहीं भेजता। जब Home Assistant प्रोजेक्टर से कनेक्ट होता है, तब ऐप प्रोजेक्टर को छोड़ देता है, फिर दोबारा कनेक्ट करता है।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">कौन-सी एंट्री?</div>
+      <h2>ऐप Home Assistant में आपका प्रोजेक्टर कैसे ढूँढता है</h2>
+      <p>ऐप JVC Projector एंट्री को प्रोजेक्टर के MAC पते से मिलाता है, इसलिए पहले कम से कम एक बार प्रोजेक्टर से कनेक्ट करें। अगर Home Assistant में उस MAC वाली कोई एंट्री नहीं है, या एक से ज़्यादा हैं, तो चेकलिस्ट यह बताती है और यह भी कि क्या करना है। अगर प्रोजेक्टर का पता बदल गया है, तो ऐप नया पता Home Assistant को भेजने की पेशकश करता है।</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant के लिए Home Automation ऐड-ऑन चाहिए।</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">सेंसर</div>
+      <h2>लाइव स्थिति</h2>
+      <p>सेंसर की स्थिति वह पावर है जो ऐप ने आख़िरी बार पढ़ी, और उसके एट्रिब्यूट इनपुट, मॉडल और ऐप की पढ़ी हुई सेटिंग हैं। यह Mobile App इंटीग्रेशन से होकर जाता है और प्रोजेक्टर को कुछ नहीं भेजता। ऐप के खुले और कनेक्टेड रहने के दौरान स्थिति बदलते ही यह अपडेट होता है।</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">स्क्रिप्ट</div>
+      <h2>सीन और नियंत्रण</h2>
+      <p class="lead">हर सेव किया हुआ सीन Home Assistant में एक स्क्रिप्ट बन जाता है जो JVC Projector एंटिटी के ज़रिए चलती है। स्क्रिप्ट में कोई पता या पासवर्ड नहीं होता। स्क्रिप्ट आईडी <code>ppjvc</code> से शुरू होती हैं।</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b> आपके <a href="/hi/jvc/guide/scenes/">सीन</a> को स्क्रिप्ट के रूप में लिखता है और दिखाता है कि हर एक में कितने स्टेप हैं, और क्या छोड़ा गया और क्यों।</li>
+      <li><b>Sync Advanced Controls</b> पावर, इनपुट, पिक्चर मोड, लेंस मेमोरी और छिपाने के लिए स्क्रिप्ट प्रकाशित करता है।</li>
+      <li><b>नतीजे</b> गिने जाते हैं: कितनी स्क्रिप्ट सिंक हुईं, Home Assistant ने कितनी अस्वीकार कीं, और क्या उसने उन्हें रीलोड करने की पुष्टि की।</li>
+      <li><b>अनाथ स्क्रिप्ट हटाएँ</b> वे स्क्रिप्ट मिटाता है जो इस ऐप ने बनाई थीं और जिन्हें अब कोई सीन इस्तेमाल नहीं करता। वह उन्हें सूचीबद्ध करता है और पहले पूछता है।</li>
+    </ul>
+    <div class="note">अगर सिंक जिस चीज़ पर निर्भर है वह पढ़ी नहीं गई है, तो कुछ भी लिखा, बदला या हटाया नहीं जाता। सिंक कभी अंदाज़े पर आधा नहीं चलता।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">डैशबोर्ड</div>
+      <h2>बना-बनाया डैशबोर्ड</h2>
+      <p><b>डैशबोर्ड भेजें</b> JVC Projector एंटिटी, स्क्रिप्ट और सेंसर से आपके Home Assistant में प्रोजेक्टर डैशबोर्ड बनाता है। <b>डैशबोर्ड कॉपी करें</b> उसे इसके बजाय कॉपी करता है, ताकि आप उसे खुद किसी नए डैशबोर्ड में पेस्ट करें। उसके बारे में सब कुछ <a href="/hi/jvc/guide/home-assistant-dashboard/">Home Assistant डैशबोर्ड पेज</a> पर है।</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">नियम</div>
+      <h2>ऐप कभी क्या नहीं करता</h2>
+    </div>
+    <ul class="plain">
+      <li>जब डेमो प्रोजेक्टर चुना हो या Home Automation अनलॉक न हो, तब डिवाइस से कुछ बाहर नहीं जाता।</li>
+      <li><b>अनलिंक करें</b> लिंक को केवल इस ऐप से हटाता है। प्रोजेक्टर का डिवाइस और एंटिटी Home Assistant में तब तक रहती हैं जब तक आप उन्हें वहाँ न हटाएँ।</li>
+      <li>अगर Home Assistant साइन-इन स्वीकार करना बंद कर दे, तो ऐप यह बताता है और आपसे फिर से साइन इन करने को कहता है।</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">आगे</div>
-      <h2>और पढ़ें</h2>
+      <h2>पढ़ते रहें</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/hi/jvc/guide/">यूज़र गाइड पर वापस जाएँ</a></li>
-      <li><a href="/hi/jvc/help/">सहायता और FAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/hi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant डैशबोर्ड</a>
+      <a href="/hi/jvc/guide/home-automation/"><span>&#127968;</span>होम ऑटोमेशन</a>
+      <a href="/hi/jvc/help/"><span>&#10067;</span>सहायता और FAQ</a>
+      <a href="/hi/jvc/guide/"><span>&#128218;</span>गाइड हब पर वापस</a>
+    </div>
   </div>
 </section>
 

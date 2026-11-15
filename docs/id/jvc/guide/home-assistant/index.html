@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="id" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Hubungkan Projector Pilot D-ILA ke Home Assistant: masuk, tambahkan integrasi jvc_projector, sinkronkan skrip, dan buat dasbor." />
+<title>Penyiapan Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Tambahkan proyektor JVC D-ILA Anda ke Home Assistant tanpa YAML: masuk, integrasi JVC Projector, sensor langsung, dan skrip skenario." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/id/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Hubungkan Projector Pilot D-ILA ke Home Assistant: masuk, tambahkan integrasi jvc_projector, sinkronkan skrip, dan buat dasbor." />
+<meta property="og:title" content="Penyiapan Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Tambahkan proyektor JVC D-ILA Anda ke Home Assistant tanpa YAML: masuk, integrasi JVC Projector, sensor langsung, dan skrip skenario." />
 <meta property="og:url" content="https://projectorpilot.com/id/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Hubungkan Projector Pilot D-ILA ke Home Assistant: masuk, tambahkan integrasi jvc_projector, sinkronkan skrip, dan buat dasbor." />
+<meta name="twitter:title" content="Penyiapan Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Tambahkan proyektor JVC D-ILA Anda ke Home Assistant tanpa YAML: masuk, integrasi JVC Projector, sensor langsung, dan skrip skenario." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Hubungkan Projector Pilot D-ILA ke Home Assistant: masuk, tambahkan integrasi jvc_projector, sinkronkan skrip, dan buat dasbor.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "id", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Penyiapan Home Assistant - Projector Pilot D-ILA", "description": "Tambahkan proyektor JVC D-ILA Anda ke Home Assistant tanpa YAML: masuk, integrasi JVC Projector, sensor langsung, dan skrip skenario.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "id", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Panduan Pengguna", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/id/jvc/">Beranda</a> &rsaquo; <a href="/id/jvc/guide/">Panduan Pengguna</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Siapkan proyektor JVC Anda di Home Assistant dari dalam aplikasi.</p>
+    <h1>Siapkan proyektor JVC Anda di Home Assistant</h1>
+    <p class="lead">Aplikasi masuk ke Home Assistant Anda, menambahkan proyektor ke integrasi JVC Projector milik Home Assistant sendiri, menerbitkan skenario dan kontrol Anda sebagai skrip, dan membuat dasbor. Anda tidak perlu menempelkan token atau menulis YAML. Memerlukan add-on Otomatisasi Rumah.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Baca ini dulu</div>
+      <h2>Satu pengontrol dalam satu waktu</h2>
+      <p class="lead">Proyektor JVC melayani satu pengontrol jaringan dalam satu waktu. Selama aplikasi ini terbuka dan terhubung ke proyektor, Home Assistant tidak dapat menjangkaunya. Kontrol proyektor dan skrip di Home Assistant berfungsi saat aplikasi ditutup, dan aplikasi melepaskan proyektor saat berpindah ke latar belakang.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Penyiapan</div>
-        <h2>Dari masuk hingga dasbor</h2>
-        <ul class="plain">
-          <li><b>Masuk</b> ke Home Assistant dengan OAuth sign-in miliknya sendiri.</li>
-          <li><b>Integrasi</b>: aplikasi menambahkan integrasi inti <b>jvc_projector</b> milik Home Assistant, dengan mengirim host, port, dan kata sandi.</li>
-          <li><b>Sensor</b>: sensor mobile_app melaporkan lewat webhook.</li>
-          <li><b>Sync Advanced Controls</b> membuat skrip dengan awalan <b>ppjvc</b>.</li>
-          <li><b>Dasbor</b>: dasbor Lovelace bergaya inti atau bergaya HACS.</li>
-          <li><b>Daftar periksa penyiapan</b> menunjukkan apa yang sudah selesai dan apa yang tersisa.</li>
-        </ul>
+        <div class="eyebrow">Langkah 1</div>
+        <h2>Masuk</h2>
+        <ol class="steps">
+          <li>Buka Pengaturan, Otomatisasi Rumah, Home Assistant.</li>
+          <li>Masukkan <b>alamat Home Assistant</b> Anda, diawali http:// atau https://.</li>
+          <li>Ketuk <b>Masuk</b>. Halaman masuk milik Home Assistant sendiri terbuka di browser; masuklah di sana lalu kembali.</li>
+          <li>Ketuk <b>Uji koneksi</b> untuk memastikan.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Halaman penyiapan Home Assistant di Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Layar Home Assistant Projector Pilot D-ILA dengan daftar periksa penyiapan" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Jika Home Assistant tidak dapat dijangkau, periksa alamatnya, dan pastikan perangkat ini berada di jaringan yang sama dengan Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 2</div>
+      <h2>Apa yang dimiliki Home Assistant Anda</h2>
+      <p class="lead">Sebuah panel membaca Home Assistant Anda dan menandai setiap bagian Ditemukan, Tidak terpasang, atau Tidak bisa dipastikan. Periksa lagi membacanya ulang.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Bagian</th><th>Diperlukan untuk</th></tr></thead>
+      <tbody>
+        <tr><td>Integrasi Mobile App</td><td>Sensor status langsung.</td></tr>
+        <tr><td>Integrasi JVC Projector</td><td>Mengontrol proyektor ini dari Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Hanya tampilan bergaya pada dasbor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Langkah 3</div>
+      <h2>Daftar periksa penyiapan</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Masuk ke Home Assistant.</b></li>
+      <li><b>Tambahkan proyektor ini ke integrasi JVC Projector milik Home Assistant.</b> Ketuk Tambah. Aplikasi mengirim alamat, port, dan kata sandi jaringan proyektor ke integrasi JVC Projector milik Home Assistant, setelah menanyakannya kepada Anda terlebih dahulu.</li>
+      <li><b>Aktifkan entitas yang dibutuhkan skrip.</b> Beberapa entitas JVC Projector dimulai dalam keadaan nonaktif di Home Assistant; ketuk Aktifkan di samping masing-masing. Home Assistant mungkin perlu dimuat ulang atau dimulai ulang sebelum entitas itu muncul.</li>
+      <li><b>Sensor status langsung.</b> Aktifkan Kirim status proyektor. Sensor dibuat saat berikutnya aplikasi mengirim status proyektor selama terhubung.</li>
+    </ol>
+    <div class="note"><b>Tentang kata sandi.</b> Saat Anda menambahkan proyektor, kata sandi jaringannya dikirim ke Home Assistant Anda dan disimpan di sana, dalam entri JVC Projector-nya. Aplikasi tidak mengirimnya ke tempat lain. Aplikasi melepaskan proyektor selagi Home Assistant menghubunginya, lalu menyambung ulang.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Entri yang mana?</div>
+      <h2>Cara aplikasi menemukan proyektor Anda di Home Assistant</h2>
+      <p>Aplikasi mencocokkan entri JVC Projector berdasarkan alamat MAC proyektor, jadi hubungkan ke proyektor setidaknya sekali terlebih dahulu. Jika Home Assistant tidak memiliki entri dengan MAC itu, atau lebih dari satu, daftar periksa menyatakannya beserta apa yang harus dilakukan. Jika proyektor sudah berpindah, aplikasi menawarkan untuk mengirim alamat baru ke Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant memerlukan add-on Otomatisasi Rumah.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sensor</div>
+      <h2>Status langsung</h2>
+      <p>Status sensor adalah daya yang terakhir dibaca aplikasi, dan atributnya adalah input, model, dan pengaturan yang sudah dibaca aplikasi. Sensor ini berjalan melalui integrasi Mobile App dan tidak mengirim apa pun ke proyektor. Sensor diperbarui setiap kali status berubah selagi aplikasi terbuka dan terhubung.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Skrip</div>
+      <h2>Skenario dan kontrol</h2>
+      <p class="lead">Setiap skenario yang tersimpan menjadi skrip di Home Assistant yang berjalan melalui entitas JVC Projector. Skrip tidak menyimpan alamat maupun kata sandi. ID skrip diawali <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sinkronkan dengan HA</b> menulis <a href="/id/jvc/guide/scenes/">skenario</a> Anda sebagai skrip dan menampilkan berapa langkah yang dimuat tiap skrip, serta apa yang dilewati dan alasannya.</li>
+      <li><b>Sinkronkan Kontrol Lanjutan</b> menerbitkan skrip untuk daya, input, mode gambar, memori lensa, dan Sembunyikan.</li>
+      <li><b>Hasil</b> dihitung: berapa skrip yang tersinkron, berapa yang ditolak Home Assistant, dan apakah Home Assistant mengonfirmasi pemuatan ulangnya.</li>
+      <li><b>Hapus skrip yatim</b> menghapus skrip yang dibuat aplikasi ini yang tidak lagi dipakai skenario mana pun. Aplikasi mencantumkannya dan menanyakan dulu.</li>
+    </ul>
+    <div class="note">Jika sesuatu yang dibutuhkan sinkronisasi belum dibaca, tidak ada yang ditulis, diubah, atau dihapus. Sinkronisasi tidak pernah berjalan setengah-setengah berdasarkan tebakan.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dasbor</div>
+      <h2>Dasbor siap pakai</h2>
+      <p><b>Kirim dasbor</b> membuat dasbor proyektor di Home Assistant Anda dari entitas JVC Projector, skrip, dan sensor. <b>Salin dasbor</b> menyalinnya saja, untuk Anda tempelkan sendiri ke dasbor baru. Semua tentangnya ada di <a href="/id/jvc/guide/home-assistant-dashboard/">halaman dasbor Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Aturan</div>
+      <h2>Yang tidak pernah dilakukan aplikasi</h2>
+    </div>
+    <ul class="plain">
+      <li>Tidak ada yang keluar dari perangkat selama proyektor demo dipilih atau Otomatisasi Rumah belum dibuka.</li>
+      <li><b>Putuskan Tautan</b> menghapus tautan dari aplikasi ini saja. Perangkat dan entitas proyektor tetap ada di Home Assistant sampai Anda menghapusnya di sana.</li>
+      <li>Jika Home Assistant berhenti menerima login, aplikasi menyatakannya dan meminta Anda masuk lagi.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Berikutnya</div>
-      <h2>Lanjutkan membaca</h2>
+      <h2>Lanjutkan</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/id/jvc/guide/">Kembali ke panduan pengguna</a></li>
-      <li><a href="/id/jvc/help/">Bantuan dan FAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/id/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Dasbor Home Assistant</a>
+      <a href="/id/jvc/guide/home-automation/"><span>&#127968;</span>Otomatisasi rumah</a>
+      <a href="/id/jvc/help/"><span>&#10067;</span>Bantuan dan FAQ</a>
+      <a href="/id/jvc/guide/"><span>&#128218;</span>Kembali ke pusat panduan</a>
+    </div>
   </div>
 </section>
 

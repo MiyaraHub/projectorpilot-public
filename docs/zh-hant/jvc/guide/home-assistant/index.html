@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-Hant" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="將 Projector Pilot D-ILA 連線到 Home Assistant：登入、新增 jvc_projector 整合、同步指令碼並建立儀表板。" />
+<title>Home Assistant 設定 - Projector Pilot D-ILA</title>
+<meta name="description" content="不必寫 YAML，即可將您的 JVC D-ILA 投影機加入 Home Assistant:登入、JVC Projector 整合、即時感測器與情境指令碼。" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="vi_VN" />
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="將 Projector Pilot D-ILA 連線到 Home Assistant：登入、新增 jvc_projector 整合、同步指令碼並建立儀表板。" />
+<meta property="og:title" content="Home Assistant 設定 - Projector Pilot D-ILA" />
+<meta property="og:description" content="不必寫 YAML，即可將您的 JVC D-ILA 投影機加入 Home Assistant:登入、JVC Projector 整合、即時感測器與情境指令碼。" />
 <meta property="og:url" content="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="將 Projector Pilot D-ILA 連線到 Home Assistant：登入、新增 jvc_projector 整合、同步指令碼並建立儀表板。" />
+<meta name="twitter:title" content="Home Assistant 設定 - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="不必寫 YAML，即可將您的 JVC D-ILA 投影機加入 Home Assistant:登入、JVC Projector 整合、即時感測器與情境指令碼。" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "將 Projector Pilot D-ILA 連線到 Home Assistant：登入、新增 jvc_projector 整合、同步指令碼並建立儀表板。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hant", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant 設定 - Projector Pilot D-ILA", "description": "不必寫 YAML，即可將您的 JVC D-ILA 投影機加入 Home Assistant:登入、JVC Projector 整合、即時感測器與情境指令碼。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hant", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "使用指南", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/zh-hant/jvc/">首頁</a> &rsaquo; <a href="/zh-hant/jvc/guide/">使用指南</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">從 App 在 Home Assistant 中設定您的 JVC 投影機。</p>
+    <h1>在 Home Assistant 中設定您的 JVC 投影機</h1>
+    <p class="lead">App 會登入您的 Home Assistant，將投影機加入 Home Assistant 自己的 JVC Projector 整合，把您的情境與控制項發布為指令碼，並建立儀表板。您完全不需要貼上權杖或撰寫 YAML。此功能需要家庭自動化附加元件。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">請先閱讀</div>
+      <h2>一次只能一個控制器</h2>
+      <p class="lead">JVC 投影機一次只服務一個網路控制器。當此 App 開啟並連線到投影機時，Home Assistant 就無法連上它。在 App 關閉時，Home Assistant 的投影機控制項與指令碼才能運作，而 App 進入背景時會釋放投影機。</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">設定方式</div>
-        <h2>從登入到儀表板</h2>
-        <ul class="plain">
-          <li>使用 Home Assistant 本身的 OAuth 登入，<b>登入</b> Home Assistant。</li>
-          <li><b>整合</b>：App 會新增 Home Assistant 內建的 <b>jvc_projector</b> 整合，並傳送主機、連接埠與密碼。</li>
-          <li><b>感測器</b>：mobile_app 感測器會透過 Webhook 回報狀態。</li>
-          <li><b>同步進階控制</b>會建立以 <b>ppjvc</b> 為前綴的指令碼。</li>
-          <li><b>儀表板</b>：核心樣式或 HACS 樣式的 Lovelace 儀表板。</li>
-          <li><b>設定清單</b>會顯示已完成與尚未完成的項目。</li>
-        </ul>
+        <div class="eyebrow">步驟 1</div>
+        <h2>登入</h2>
+        <ol class="steps">
+          <li>開啟設定、家庭自動化、Home Assistant。</li>
+          <li>輸入您的 <b>Home Assistant 位址</b>，以 http:// 或 https:// 開頭。</li>
+          <li>點選<b>登入</b>。Home Assistant 自己的登入頁面會在瀏覽器中開啟；請在該頁面登入後再回來。</li>
+          <li>點選<b>測試連線</b>加以確認。</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA 的 Home Assistant 設定頁面" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Projector Pilot D-ILA 的 Home Assistant 畫面與設定清單" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">若無法連上 Home Assistant，請檢查位址，並確認此裝置與 Home Assistant 位於同一個網路。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">步驟 2</div>
+      <h2>您的 Home Assistant 有什麼</h2>
+      <p class="lead">面板會讀取您的 Home Assistant，並將每個部分標示為「已找到」、「未安裝」或「無法確定」。按「重新檢查」會再讀取一次。</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>部分</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td>Mobile App 整合</td><td>即時狀態感測器。</td></tr>
+        <tr><td>JVC Projector 整合</td><td>從 Home Assistant 控制這台投影機。</td></tr>
+        <tr><td>HACS</td><td>僅用於儀表板的樣式化外觀。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">步驟 3</div>
+      <h2>設定清單</h2>
+    </div>
+    <ol class="steps">
+      <li><b>登入 Home Assistant。</b></li>
+      <li><b>將此投影機新增至 Home Assistant 的 JVC Projector 整合。</b>點選「新增」。App 會在先詢問您之後，將投影機的位址、連接埠與網路密碼傳送給 Home Assistant 的 JVC Projector 整合。</li>
+      <li><b>啟用指令碼所需的實體。</b>部分 JVC Projector 實體在 Home Assistant 中預設為停用；請點選每一項旁的「啟用」。Home Assistant 可能需要重新載入或重新啟動，實體才會出現。</li>
+      <li><b>即時狀態感測器。</b>開啟「傳送投影機狀態」。下次 App 在連線期間傳送投影機狀態時，就會建立該感測器。</li>
+    </ol>
+    <div class="note"><b>關於密碼。</b>新增投影機時，其網路密碼會傳送到您的 Home Assistant，並儲存在它的 JVC Projector 項目中。App 不會把它傳送到其他任何地方。Home Assistant 連線到投影機期間，App 會釋放投影機，之後再重新連線。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">是哪個項目?</div>
+      <h2>App 如何在 Home Assistant 中找到您的投影機</h2>
+      <p>App 會以投影機的 MAC 位址比對 JVC Projector 項目，因此請先至少連線到投影機一次。若 Home Assistant 中沒有該 MAC 的項目，或有多個，檢查清單會說明並告訴您該怎麼做。若投影機換了位址，App 會提議將新位址傳送給 Home Assistant。</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant 需要 Home Automation 附加元件。</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">感測器</div>
+      <h2>即時狀態</h2>
+      <p>感測器的狀態是 App 最近一次讀取的電源狀態，其屬性則是輸入、機型，以及 App 已讀取的設定。它透過 Mobile App 整合運作，不會向投影機傳送任何內容。只要 App 開啟且已連線，狀態一有變更就會更新。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">指令碼</div>
+      <h2>情境與控制</h2>
+      <p class="lead">每個儲存的情境都會成為 Home Assistant 中的一個指令碼，透過 JVC Projector 實體執行。指令碼不保存任何位址或密碼。指令碼 id 以 <code>ppjvc</code> 開頭。</p>
+    </div>
+    <ul class="plain">
+      <li><b>與 HA 同步</b>會將您的<a href="/zh-hant/jvc/guide/scenes/">情境</a>寫成指令碼，並顯示每個指令碼包含幾個步驟，以及有哪些內容被略過與原因。</li>
+      <li><b>同步進階控制</b>會發布電源、輸入、畫面模式、鏡頭記憶與隱藏的指令碼。</li>
+      <li><b>結果</b>會加以統計:有多少指令碼已同步、有多少被 Home Assistant 拒絕，以及它是否確認已重新載入這些指令碼。</li>
+      <li><b>移除孤立的指令碼</b>會刪除此 App 建立、但已沒有任何情境使用的指令碼。它會先列出這些指令碼並詢問您。</li>
+    </ul>
+    <div class="note">若同步所依賴的某項資料尚未讀取，就不會寫入、變更或移除任何內容。同步絕不會憑猜測執行到一半。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">儀表板</div>
+      <h2>現成的儀表板</h2>
+      <p><b>傳送儀表板</b>會根據 JVC Projector 實體、指令碼與感測器，在您的 Home Assistant 中建立投影機儀表板。<b>複製儀表板</b>則改為複製它，讓您自行貼到新的儀表板中。關於它的一切都在<a href="/zh-hant/jvc/guide/home-assistant-dashboard/">Home Assistant 儀表板頁面</a>。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">規則</div>
+      <h2>App 絕不會做的事</h2>
+    </div>
+    <ul class="plain">
+      <li>選取示範投影機，或尚未解鎖家庭自動化時，不會有任何內容離開裝置。</li>
+      <li><b>取消連結</b>只會從此 App 移除連結。投影機的裝置與實體仍會留在 Home Assistant 中，直到您在那裡刪除為止。</li>
+      <li>若 Home Assistant 不再接受登入，App 會告知，並請您重新登入。</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">下一步</div>
-      <h2>繼續閱讀</h2>
+      <h2>繼續探索</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/zh-hant/jvc/guide/">返回使用指南</a></li>
-      <li><a href="/zh-hant/jvc/help/">說明與常見問題</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/zh-hant/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant 儀表板</a>
+      <a href="/zh-hant/jvc/guide/home-automation/"><span>&#127968;</span>居家自動化</a>
+      <a href="/zh-hant/jvc/help/"><span>&#10067;</span>說明與常見問題</a>
+      <a href="/zh-hant/jvc/guide/"><span>&#128218;</span>返回指南首頁</a>
+    </div>
   </div>
 </section>
 

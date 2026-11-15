@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="vi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Kết nối Projector Pilot D-ILA với Home Assistant: đăng nhập, thêm tích hợp jvc_projector, đồng bộ tập lệnh và xây dựng trang tổng quan." />
+<title>Thiết lập Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Thêm máy chiếu JVC D-ILA của bạn vào Home Assistant mà không cần YAML: đăng nhập, tích hợp JVC Projector, một cảm biến trực tiếp và các tập lệnh cảnh." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/vi/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Kết nối Projector Pilot D-ILA với Home Assistant: đăng nhập, thêm tích hợp jvc_projector, đồng bộ tập lệnh và xây dựng trang tổng quan." />
+<meta property="og:title" content="Thiết lập Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Thêm máy chiếu JVC D-ILA của bạn vào Home Assistant mà không cần YAML: đăng nhập, tích hợp JVC Projector, một cảm biến trực tiếp và các tập lệnh cảnh." />
 <meta property="og:url" content="https://projectorpilot.com/vi/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Kết nối Projector Pilot D-ILA với Home Assistant: đăng nhập, thêm tích hợp jvc_projector, đồng bộ tập lệnh và xây dựng trang tổng quan." />
+<meta name="twitter:title" content="Thiết lập Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Thêm máy chiếu JVC D-ILA của bạn vào Home Assistant mà không cần YAML: đăng nhập, tích hợp JVC Projector, một cảm biến trực tiếp và các tập lệnh cảnh." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Kết nối Projector Pilot D-ILA với Home Assistant: đăng nhập, thêm tích hợp jvc_projector, đồng bộ tập lệnh và xây dựng trang tổng quan.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "vi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Thiết lập Home Assistant - Projector Pilot D-ILA", "description": "Thêm máy chiếu JVC D-ILA của bạn vào Home Assistant mà không cần YAML: đăng nhập, tích hợp JVC Projector, một cảm biến trực tiếp và các tập lệnh cảnh.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "vi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn sử dụng", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/vi/jvc/">Trang chủ</a> &rsaquo; <a href="/vi/jvc/guide/">Hướng dẫn sử dụng</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Thiết lập máy chiếu JVC của bạn trong Home Assistant ngay từ ứng dụng.</p>
+    <h1>Thiết lập máy chiếu JVC của bạn trong Home Assistant</h1>
+    <p class="lead">Ứng dụng đăng nhập vào Home Assistant của bạn, thêm máy chiếu vào tích hợp JVC Projector của chính Home Assistant, xuất bản các cảnh và điều khiển của bạn dưới dạng tập lệnh, và tạo một bảng điều khiển. Bạn không bao giờ phải dán token hay viết YAML. Tính năng này cần tiện ích bổ sung Home Automation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Đọc phần này trước</div>
+      <h2>Mỗi lần một bộ điều khiển</h2>
+      <p class="lead">Máy chiếu JVC chỉ phục vụ một bộ điều khiển mạng tại một thời điểm. Khi ứng dụng này đang mở và kết nối với máy chiếu, Home Assistant không thể truy cập máy chiếu. Các điều khiển và tập lệnh máy chiếu của Home Assistant hoạt động khi ứng dụng đã đóng, và ứng dụng nhả máy chiếu khi chuyển xuống chạy nền.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Thiết lập</div>
-        <h2>Từ đăng nhập đến trang tổng quan</h2>
-        <ul class="plain">
-          <li><b>Đăng nhập</b> vào Home Assistant bằng cơ chế đăng nhập OAuth riêng của nó.</li>
-          <li><b>Tích hợp</b>: ứng dụng thêm tích hợp lõi <b>jvc_projector</b> của Home Assistant, gửi kèm máy chủ, cổng và mật khẩu.</li>
-          <li><b>Cảm biến</b>: một cảm biến mobile_app báo cáo qua webhook.</li>
-          <li><b>Đồng bộ điều khiển nâng cao</b> tạo các tập lệnh với tiền tố <b>ppjvc</b>.</li>
-          <li><b>Trang tổng quan</b>: một trang tổng quan Lovelace theo kiểu lõi hoặc kiểu HACS.</li>
-          <li>Một <b>danh sách kiểm tra thiết lập</b> cho biết việc nào đã xong và việc nào còn lại.</li>
-        </ul>
+        <div class="eyebrow">Bước 1</div>
+        <h2>Đăng nhập</h2>
+        <ol class="steps">
+          <li>Mở Cài đặt, Home Automation, Home Assistant.</li>
+          <li>Nhập <b>địa chỉ Home Assistant</b> của bạn, bắt đầu bằng http:// hoặc https://.</li>
+          <li>Chạm vào <b>Đăng nhập</b>. Trang đăng nhập riêng của Home Assistant mở trong trình duyệt; hãy đăng nhập ở đó rồi quay lại.</li>
+          <li>Chạm vào <b>Kiểm tra kết nối</b> để xác nhận.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Trang thiết lập Home Assistant của Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Màn hình Home Assistant của Projector Pilot D-ILA với danh sách kiểm tra thiết lập" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Nếu không truy cập được Home Assistant, hãy kiểm tra địa chỉ, và kiểm tra thiết bị này có cùng mạng với Home Assistant không.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 2</div>
+      <h2>Home Assistant của bạn có gì</h2>
+      <p class="lead">Một bảng đọc Home Assistant của bạn và đánh dấu từng phần là Đã tìm thấy, Chưa cài đặt hoặc Không xác định được. Kiểm tra lại sẽ đọc lại.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Phần</th><th>Cần cho</th></tr></thead>
+      <tbody>
+        <tr><td>Tích hợp Mobile App</td><td>Cảm biến trạng thái trực tiếp.</td></tr>
+        <tr><td>Tích hợp JVC Projector</td><td>Điều khiển máy chiếu này từ Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Chỉ giao diện được tạo kiểu của bảng điều khiển.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bước 3</div>
+      <h2>Danh sách kiểm tra thiết lập</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Đăng nhập vào Home Assistant.</b></li>
+      <li><b>Thêm máy chiếu này vào tích hợp JVC Projector của Home Assistant.</b> Chạm vào Thêm. Ứng dụng gửi địa chỉ, cổng và mật khẩu mạng của máy chiếu tới tích hợp JVC Projector của Home Assistant, sau khi hỏi bạn trước.</li>
+      <li><b>Bật các thực thể mà tập lệnh cần.</b> Một số thực thể JVC Projector ban đầu bị tắt trong Home Assistant; chạm vào Bật bên cạnh từng thực thể. Home Assistant có thể cần tải lại hoặc khởi động lại trước khi nó xuất hiện.</li>
+      <li><b>Cảm biến trạng thái trực tiếp.</b> Bật Gửi trạng thái máy chiếu. Cảm biến được tạo vào lần tiếp theo ứng dụng gửi trạng thái máy chiếu khi đang kết nối.</li>
+    </ol>
+    <div class="note"><b>Về mật khẩu.</b> Khi bạn thêm máy chiếu, mật khẩu mạng của nó được gửi tới Home Assistant của bạn và lưu ở đó, trong mục JVC Projector của nó. Ứng dụng không gửi nó đi đâu khác. Ứng dụng nhả máy chiếu trong lúc Home Assistant kết nối với nó, rồi kết nối lại.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mục nào?</div>
+      <h2>Cách ứng dụng tìm máy chiếu của bạn trong Home Assistant</h2>
+      <p>Ứng dụng khớp mục JVC Projector theo địa chỉ MAC của máy chiếu, nên hãy kết nối với máy chiếu ít nhất một lần trước. Nếu Home Assistant không có mục nào với địa chỉ MAC đó, hoặc có nhiều hơn một, danh sách kiểm tra sẽ nói rõ và hướng dẫn cách xử lý. Nếu máy chiếu đã đổi địa chỉ, ứng dụng đề nghị gửi địa chỉ mới tới Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant cần tiện ích bổ sung Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cảm biến</div>
+      <h2>Trạng thái trực tiếp</h2>
+      <p>Trạng thái của cảm biến là nguồn mà ứng dụng đọc được gần nhất, còn các thuộc tính của nó là nguồn vào, mẫu máy và các cài đặt mà ứng dụng đã đọc. Nó đi qua tích hợp Mobile App và không gửi gì tới máy chiếu. Nó cập nhật mỗi khi trạng thái thay đổi trong lúc ứng dụng đang mở và kết nối.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tập lệnh</div>
+      <h2>Cảnh và điều khiển</h2>
+      <p class="lead">Mỗi cảnh đã lưu trở thành một tập lệnh trong Home Assistant chạy qua các thực thể JVC Projector. Tập lệnh không lưu địa chỉ hay mật khẩu. ID tập lệnh bắt đầu bằng <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Đồng bộ với HA</b> ghi các <a href="/vi/jvc/guide/scenes/">cảnh</a> của bạn thành tập lệnh và cho biết mỗi tập lệnh có bao nhiêu bước, cùng những gì bị bỏ ra và lý do.</li>
+      <li><b>Đồng bộ điều khiển nâng cao</b> xuất bản các tập lệnh cho nguồn, nguồn vào, chế độ hình ảnh, bộ nhớ ống kính và Ẩn hình.</li>
+      <li><b>Kết quả</b> được đếm: bao nhiêu tập lệnh đã đồng bộ, bao nhiêu bị Home Assistant từ chối, và Home Assistant có xác nhận đã tải lại chúng hay không.</li>
+      <li><b>Xóa tập lệnh mồ côi</b> xóa các tập lệnh do ứng dụng này tạo mà không còn cảnh nào dùng. Nó liệt kê chúng và hỏi trước.</li>
+    </ul>
+    <div class="note">Nếu một thứ mà lần đồng bộ phụ thuộc chưa được đọc, sẽ không có gì được ghi, thay đổi hay xóa. Một lần đồng bộ không bao giờ chạy dở dang theo phỏng đoán.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dashboard</div>
+      <h2>Một bảng điều khiển dựng sẵn</h2>
+      <p><b>Gửi bảng điều khiển</b> tạo một bảng điều khiển máy chiếu trong Home Assistant của bạn từ các thực thể JVC Projector, các tập lệnh và cảm biến. <b>Sao chép bảng điều khiển</b> thì sao chép nó, để bạn tự dán vào một bảng điều khiển mới. Mọi thông tin về nó có trên <a href="/vi/jvc/guide/home-assistant-dashboard/">trang bảng điều khiển Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quy tắc</div>
+      <h2>Những gì ứng dụng không bao giờ làm</h2>
+    </div>
+    <ul class="plain">
+      <li>Không có gì rời khỏi thiết bị khi máy chiếu demo đang được chọn hoặc Home Automation chưa được mở khóa.</li>
+      <li><b>Hủy liên kết</b> chỉ xóa liên kết khỏi ứng dụng này. Thiết bị và các thực thể của máy chiếu vẫn còn trong Home Assistant cho đến khi bạn xóa chúng ở đó.</li>
+      <li>Nếu Home Assistant ngừng chấp nhận đăng nhập, ứng dụng sẽ báo và yêu cầu bạn đăng nhập lại.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Tiếp theo</div>
-      <h2>Đọc tiếp</h2>
+      <h2>Tiếp tục khám phá</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/vi/jvc/guide/">Quay lại hướng dẫn sử dụng</a></li>
-      <li><a href="/vi/jvc/help/">Trợ giúp và câu hỏi thường gặp</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/vi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Bảng điều khiển Home Assistant</a>
+      <a href="/vi/jvc/guide/home-automation/"><span>&#127968;</span>Tự động hóa gia đình</a>
+      <a href="/vi/jvc/help/"><span>&#10067;</span>Trợ giúp và câu hỏi thường gặp</a>
+      <a href="/vi/jvc/guide/"><span>&#128218;</span>Quay lại trung tâm hướng dẫn</a>
+    </div>
   </div>
 </section>
 

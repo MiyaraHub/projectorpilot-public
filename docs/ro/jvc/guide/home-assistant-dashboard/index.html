@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="ro" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Tablou de bord Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Construiește dintr-o atingere un tablou de bord Home Assistant pentru proiectorul tău JVC D-ILA: alimentare, imagine, scene, intrări, memorii de obiectiv și semnal." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tablou de bord Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Construiește dintr-o atingere un tablou de bord Home Assistant pentru proiectorul tău JVC D-ILA: alimentare, imagine, scene, intrări, memorii de obiectiv și semnal." />
+<meta property="og:url" content="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tablou de bord Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Construiește dintr-o atingere un tablou de bord Home Assistant pentru proiectorul tău JVC D-ILA: alimentare, imagine, scene, intrări, memorii de obiectiv și semnal." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ro", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Tablou de bord Home Assistant - Projector Pilot D-ILA", "description": "Construiește dintr-o atingere un tablou de bord Home Assistant pentru proiectorul tău JVC D-ILA: alimentare, imagine, scene, intrări, memorii de obiectiv și semnal.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ro", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Ghid de utilizare", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Panou Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/ro/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă"><a href="/ro/jvc/#features">Funcții</a><a href="/ro/jvc/guide/">Ghid</a><a href="/ro/jvc/pricing/">Prețuri</a><a href="/ro/jvc/highlights/">Noutăți</a><a href="/ro/jvc/guide/home-assistant/">Home Assistant</a><a href="/ro/jvc/help/">Ajutor</a><a class="cta" href="/ro/jvc/#status">ÎN CURÂND</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/ro/jvc/">Acasă</a> &rsaquo; <a href="/ro/jvc/guide/">Ghid de utilizare</a> &rsaquo; Tablou de bord Home Assistant</div>
+    <div class="eyebrow">Panou Home Assistant</div>
+    <h1>Un tablou de bord pentru proiector în Home Assistant</h1>
+    <p class="lead">O atingere construiește în Home Assistant un tablou de bord complet pentru proiectorul tău JVC: alimentare, stare, opțiuni de imagine, scenele tale, intrări, memorii de obiectiv, valori ale semnalului și altele. Este construit din ce are de fapt Home Assistant și nu conține nicio adresă sau parolă. Necesită suplimentul Automatizare Locuință.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Înainte să trimiți</div>
+      <h2>Ce necesită</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Home Assistant conectat</b>, cu proiectorul adăugat în integrarea JVC Projector. Vezi <a href="/ro/jvc/guide/home-assistant/">Configurare Home Assistant</a>.</li>
+      <li><b>Scripturi sincronizate</b>, dacă vrei butoane pentru scene, alimentare, intrare, memorie de obiectiv și comenzi. Tabloul de bord folosește scripturile care există.</li>
+      <li><b>Senzorul de stare live</b> activat, pentru panourile de stare și de valori.</li>
+      <li><b>Un cont de administrator</b> în Home Assistant, pentru că la crearea unui tablou de bord este nevoie de unul. Fără el, Home Assistant refuză, iar aplicația spune asta.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">Două variante</div>
+        <h2>Trimite sau copiază</h2>
+        <ul class="plain">
+          <li><b>Trimite tabloul de bord</b> creează tabloul de bord în Home Assistant, în bara laterală, cu numele proiectorului tău și cu pictograma de proiector. Trimite-l din nou ca să îl actualizezi. Și sincronizarea cu Home Assistant îl trimite.</li>
+          <li><b>Copiază dashboardul</b> nu trimite nimic. Copiază tabloul de bord ca să-l lipești tu în editorul de configurare brută al unui tablou de bord nou și să-l modifici cum vrei.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Ecranul Home Assistant din Projector Pilot D-ILA cu butoanele Trimite tabloul de bord și Copiază dashboardul" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Fiecare proiector primește propriul tablou de bord, la o adresă care începe cu <code>projector-pilot-jvc-</code>, așa că două proiectoare nu se suprascriu niciodată.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Aspect</div>
+      <h2>Ce conține, de sus în jos</h2>
+      <p class="lead">O secțiune apare doar când are ceva în ea, deci un proiector fără memorii de obiectiv nu primește secțiune de memorii de obiectiv.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Secțiune</th><th>Conține</th></tr></thead>
+      <tbody>
+        <tr><td>Antet</td><td>Numele proiectorului, când a fost actualizată ultima dată starea, alimentarea, starea și orele sursei de lumină.</td></tr>
+        <tr><td>Imagine</td><td>Intrarea și opțiunile de imagine pe care Home Assistant le oferă pentru proiector, de exemplu modul de imagine, puterea luminii, controlul dinamic, Clear Motion Drive, anamorfic, procesarea HDR și modul de instalare, acolo unde modelul tău le oferă și sunt activate.</td></tr>
+        <tr><td>Scene</td><td>Un buton pentru fiecare script de scenă.</td></tr>
+        <tr><td>Alimentare</td><td>Scripturi de alimentare.</td></tr>
+        <tr><td>Intrări</td><td>Scripturi de intrare.</td></tr>
+        <tr><td>Memorii obiectiv</td><td>Un buton pentru fiecare slot de memorie de obiectiv pe care îl are modelul tău.</td></tr>
+        <tr><td>Comenzi</td><td>Celelalte scripturi de control, cum ar fi modurile de imagine și Ascundere.</td></tr>
+        <tr><td>Semnal</td><td>Rezoluție, adâncime de culoare, spațiu de culoare, colorimetrie și HDR, așa cum le raportează Home Assistant.</td></tr>
+        <tr><td>Citiri</td><td>Setările citite de aplicație, din senzorul de stare live.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Aspect vizual</div>
+      <h2>Carduri de bază sau aspectul stilizat</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>De bază</h3><p>Construit doar din cardurile proprii ale Home Assistant. Funcționează pe orice Home Assistant, fără nimic de instalat.</p></div>
+      <div class="gcard"><h3>Stilizat</h3><p>Folosește button-card, card-mod și cardurile Mushroom din HACS pentru un aspect mai bogat. Se folosește doar când sunt prezente toate trei.</p></div>
+    </div>
+    <p>Dacă lipsește oricare dintre cele trei, aplicația trimite versiunea de bază și îți spune ce carduri să instalezi din HACS pentru aspectul stilizat. Instalează-le, apoi trimite din nou.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sinceritate prin construcție</div>
+      <h2>De ce unele lucruri nu apar pe el</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Fără indicatoare cu scală.</b> JVC nu dă un interval pentru nivelurile raportate de Home Assistant, așa că tabloul de bord nu desenează un indicator pe care ar trebui să-l ghicească.</li>
+      <li><b>Fără adresă sau parolă.</b> Tabloul de bord conține doar ID-uri de entități, nume și etichete.</li>
+      <li><b>Fără entități inventate.</b> Un panou apare doar pentru o entitate sau un script care există în Home Assistant.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dacă ceva nu merge</div>
+      <h2>Mesaje</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tablou de bord trimis.</b> Deschide-l din bara laterală Home Assistant.</li>
+      <li><b>Refuzat.</b> Home Assistant a refuzat tabloul de bord: autentifică-te cu un cont de administrator, apoi trimite-l din nou.</li>
+      <li><b>Autentificare neacceptată.</b> Autentifică-te din nou, apoi trimite tabloul de bord.</li>
+      <li><b>Fără răspuns.</b> Home Assistant nu a răspuns, deci tabloul de bord nu a fost confirmat. Verifică conexiunea și trimite-l din nou.</li>
+      <li><b>Nepermis.</b> Nimic nu părăsește dispozitivul cât timp este selectat proiectorul demo sau Automatizare Locuință nu este deblocată.</li>
+    </ul>
+    <div class="note">Tabloul de bord controlează proiectorul prin integrarea JVC Projector din Home Assistant, care poate accesa proiectorul doar cât timp această aplicație nu este conectată la el. Închide aplicația înainte să folosești tabloul de bord.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mai departe</div>
+      <h2>Continuă</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/ro/jvc/guide/home-assistant/"><span>&#128200;</span>Configurare Home Assistant</a>
+      <a href="/ro/jvc/guide/home-automation/"><span>&#127968;</span>Automatizarea locuinței</a>
+      <a href="/ro/jvc/guide/scenes/"><span>&#127917;</span>Scene</a>
+      <a href="/ro/jvc/guide/"><span>&#128218;</span>Înapoi la centrul de ghiduri</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/ro/jvc/guide/">Ghid de utilizare</a><a href="/ro/jvc/pricing/">Prețuri</a><a href="/ro/jvc/highlights/">Repere</a><a href="/ro/jvc/guide/home-assistant/">Home Assistant</a><a href="/ro/jvc/help/">Ajutor &amp; FAQ</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/ro/jvc/privacy/">Confidențialitate</a><a href="https://miyarahub.com/terms.html">Termeni</a></div>
+<div class="flinks"><a href="/ro/jvc/guide/getting-started/">Primii pași</a><a href="/ro/jvc/guide/dashboard/">Tablou de bord</a><a href="/ro/jvc/guide/remote/">Telecomandă</a><a href="/ro/jvc/guide/picture/">Imagine</a><a href="/ro/jvc/guide/lens/">Obiectiv</a><a href="/ro/jvc/guide/scenes/">Scene</a><a href="/ro/jvc/guide/settings/">Setări</a><a href="/ro/jvc/guide/maintenance/">Întreținere</a><a href="/ro/jvc/guide/home-automation/">Automatizare locuință</a><a href="/ro/jvc/guide/languages/">Limbi</a></div>
+<p class="crosslink">Ai un proiector Epson? <a href="/ro/epson/" data-app-pick="epson">Vezi Projector Pilot pentru Epson &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot D-ILA este o aplicație independentă pentru proiectoare JVC D-ILA. Nu este afiliată cu și nu este aprobată de JVCKENWOOD Corporation. JVC și D-ILA sunt mărci comerciale ale proprietarilor lor. Nu este afiliată nici cu Home Assistant, Hubitat, Apple, Google sau Microsoft; aceste nume sunt mărci comerciale ale proprietarilor lor respectivi, menționate doar pentru a descrie cu ce funcționează aplicația.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

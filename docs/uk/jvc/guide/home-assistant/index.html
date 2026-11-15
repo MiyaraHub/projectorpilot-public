@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="uk" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="Підключіть Projector Pilot D-ILA до Home Assistant: увійдіть, додайте інтеграцію jvc_projector, синхронізуйте скрипти й створіть дашборд." />
+<title>Налаштування Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="Додайте свій проєктор JVC D-ILA до Home Assistant без YAML: вхід, інтеграція JVC Projector, живий сенсор і скрипти сцен." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/uk/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="Підключіть Projector Pilot D-ILA до Home Assistant: увійдіть, додайте інтеграцію jvc_projector, синхронізуйте скрипти й створіть дашборд." />
+<meta property="og:title" content="Налаштування Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="Додайте свій проєктор JVC D-ILA до Home Assistant без YAML: вхід, інтеграція JVC Projector, живий сенсор і скрипти сцен." />
 <meta property="og:url" content="https://projectorpilot.com/uk/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Підключіть Projector Pilot D-ILA до Home Assistant: увійдіть, додайте інтеграцію jvc_projector, синхронізуйте скрипти й створіть дашборд." />
+<meta name="twitter:title" content="Налаштування Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Додайте свій проєктор JVC D-ILA до Home Assistant без YAML: вхід, інтеграція JVC Projector, живий сенсор і скрипти сцен." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "uk", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "Підключіть Projector Pilot D-ILA до Home Assistant: увійдіть, додайте інтеграцію jvc_projector, синхронізуйте скрипти й створіть дашборд.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "uk", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Посібник користувача", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "uk", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Налаштування Home Assistant - Projector Pilot D-ILA", "description": "Додайте свій проєктор JVC D-ILA до Home Assistant без YAML: вхід, інтеграція JVC Projector, живий сенсор і скрипти сцен.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "uk", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Посібник користувача", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/uk/jvc/">Головна</a> &rsaquo; <a href="/uk/jvc/guide/">Посібник користувача</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">Налаштуйте свій проєктор JVC у Home Assistant із застосунку.</p>
+    <h1>Налаштуйте проєктор JVC у Home Assistant</h1>
+    <p class="lead">Застосунок входить у ваш Home Assistant, додає проєктор до власної інтеграції JVC Projector, публікує ваші сцени та елементи керування як скрипти й будує дашборд. Вам ніколи не потрібно вставляти токен чи писати YAML. Потрібен додаток «Домашня автоматизація».</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Прочитайте це першим</div>
+      <h2>Один контролер одночасно</h2>
+      <p class="lead">Проєктор JVC обслуговує одного мережевого контролера одночасно. Поки цей застосунок відкрито й підключено до проєктора, Home Assistant не може до нього дістатися. Елементи керування проєктором і скрипти в Home Assistant працюють, коли застосунок закрито, а застосунок відпускає проєктор, коли переходить у фоновий режим.</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Налаштування</div>
-        <h2>Від входу до дашборда</h2>
-        <ul class="plain">
-          <li><b>Увійдіть</b> до Home Assistant через його власний вхід OAuth.</li>
-          <li><b>Інтеграція</b>: застосунок додає основну інтеграцію Home Assistant <b>jvc_projector</b>, передаючи хост, порт і пароль.</li>
-          <li><b>Сенсор</b>: сенсор mobile_app передає дані через вебхук.</li>
-          <li><b>Синхронізація розширених елементів керування</b> створює скрипти з префіксом <b>ppjvc</b>.</li>
-          <li><b>Дашборд</b>: дашборд Lovelace у стилі core або у стилі HACS.</li>
-          <li><b>Контрольний список налаштування</b> показує, що зроблено і що залишилося.</li>
-        </ul>
+        <div class="eyebrow">Крок 1</div>
+        <h2>Вхід</h2>
+        <ol class="steps">
+          <li>Відкрийте Налаштування, Домашня автоматизація, Home Assistant.</li>
+          <li>Введіть <b>адресу вашого Home Assistant</b>, що починається з http:// або https://.</li>
+          <li>Торкніться <b>Увійти</b>. У браузері відкриється власна сторінка входу Home Assistant; увійдіть там і поверніться.</li>
+          <li>Торкніться <b>Перевірити підключення</b>, щоб переконатися.</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="Сторінка налаштування Home Assistant у Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Екран Home Assistant у Projector Pilot D-ILA з контрольним списком налаштування" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Якщо Home Assistant недоступний, перевірте адресу та те, що цей пристрій в одній мережі з Home Assistant.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 2</div>
+      <h2>Що є у вашому Home Assistant</h2>
+      <p class="lead">Панель зчитує ваш Home Assistant і позначає кожну частину як Знайдено, Не встановлено або Не вдалося визначити. «Перевірити ще раз» зчитує все знову.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Частина</th><th>Для чого потрібна</th></tr></thead>
+      <tbody>
+        <tr><td>Інтеграція Mobile App</td><td>Сенсор живого стану.</td></tr>
+        <tr><td>Інтеграція JVC Projector</td><td>Керування цим проєктором із Home Assistant.</td></tr>
+        <tr><td>HACS</td><td>Лише стилізований вигляд дашборда.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Крок 3</div>
+      <h2>Контрольний список налаштування</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Увійдіть у Home Assistant.</b></li>
+      <li><b>Додайте цей проєктор до інтеграції JVC Projector у Home Assistant.</b> Торкніться «Додати». Застосунок надсилає адресу, порт і мережевий пароль проєктора до інтеграції JVC Projector у Home Assistant, спершу запитавши вас.</li>
+      <li><b>Увімкніть сутності, потрібні скриптам.</b> Деякі сутності JVC Projector у Home Assistant спочатку вимкнені; торкніться «Увімкнути» біля кожної. Home Assistant може потребувати перезавантаження конфігурації або перезапуску, перш ніж вона з'явиться.</li>
+      <li><b>Сенсор живого стану.</b> Увімкніть «Надсилати стан проєктора». Сенсор створюється, коли застосунок наступного разу надішле стан проєктора під час підключення.</li>
+    </ol>
+    <div class="note"><b>Про пароль.</b> Коли ви додаєте проєктор, його мережевий пароль надсилається у ваш Home Assistant і зберігається там, у записі JVC Projector. Більше нікуди застосунок його не надсилає. Поки Home Assistant підключається до проєктора, застосунок відпускає його, а потім підключається знову.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Який запис?</div>
+      <h2>Як застосунок знаходить ваш проєктор у Home Assistant</h2>
+      <p>Застосунок зіставляє запис JVC Projector з MAC-адресою проєктора, тому спершу підключіться до проєктора хоча б раз. Якщо в Home Assistant немає запису з такою MAC-адресою або їх кілька, контрольний список повідомляє про це й підказує, що робити. Якщо проєктор змінив адресу, застосунок пропонує надіслати нову адресу до Home Assistant.</p>
     </div>
   </div>
 </section>
-    <div class="note">Для Home Assistant потрібен додаток Home Automation.</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Сенсор</div>
+      <h2>Живий стан</h2>
+      <p>Станом сенсора є живлення, яке застосунок зчитав востаннє, а його атрибути - це вхід, модель і налаштування, які застосунок зчитав. Він працює через інтеграцію Mobile App і нічого не надсилає проєктору. Він оновлюється щоразу, коли стан змінюється, поки застосунок відкрито й підключено.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Скрипти</div>
+      <h2>Сцени та елементи керування</h2>
+      <p class="lead">Кожна збережена сцена стає скриптом у Home Assistant, який виконується через сутності JVC Projector. Скрипт не містить ні адреси, ні пароля. Ідентифікатори скриптів починаються з <code>ppjvc</code>.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Синхронізація з HA</b> записує ваші <a href="/uk/jvc/guide/scenes/">сцени</a> як скрипти та показує, скільки кроків має кожен, а також що було пропущено і чому.</li>
+      <li><b>Синхронізація розширених елементів керування</b> публікує скрипти для живлення, входів, режимів зображення, пам'яті об'єктива та приховування.</li>
+      <li><b>Результати</b> підраховуються: скільки скриптів синхронізовано, скільки Home Assistant відхилив і чи підтвердив він їх перезавантаження.</li>
+      <li><b>Вилучити осиротілі скрипти</b> видаляє скрипти, створені цим застосунком, якими більше не користується жодна сцена. Він показує їх список і спершу запитує.</li>
+    </ul>
+    <div class="note">Якщо щось, від чого залежить синхронізація, не було зчитано, нічого не записується, не змінюється і не вилучається. Синхронізація ніколи не виконується наполовину навмання.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Дашборд</div>
+      <h2>Готовий дашборд</h2>
+      <p><b>Надіслати панель</b> будує дашборд проєктора у вашому Home Assistant із сутностей JVC Projector, скриптів і сенсора. <b>Копіювати дашборд</b> натомість копіює його, щоб ви самі вставили його в новий дашборд. Усе про нього - на <a href="/uk/jvc/guide/home-assistant-dashboard/">сторінці дашборда Home Assistant</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Правила</div>
+      <h2>Чого застосунок ніколи не робить</h2>
+    </div>
+    <ul class="plain">
+      <li>Нічого не залишає пристрій, поки вибрано демопроєктор або Домашню автоматизацію не розблоковано.</li>
+      <li><b>Скасувати прив'язку</b> видаляє зв'язок лише з цього застосунку. Пристрій і сутності проєктора залишаються в Home Assistant, доки ви не видалите їх там.</li>
+      <li>Якщо Home Assistant перестає приймати вхід, застосунок повідомляє про це й просить увійти знову.</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Далі</div>
-      <h2>Читайте далі</h2>
+      <h2>Продовжуйте</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/uk/jvc/guide/">Назад до посібника користувача</a></li>
-      <li><a href="/uk/jvc/help/">Довідка та поширені запитання</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/uk/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Дашборд Home Assistant</a>
+      <a href="/uk/jvc/guide/home-automation/"><span>&#127968;</span>Домашня автоматизація</a>
+      <a href="/uk/jvc/help/"><span>&#10067;</span>Довідка та поширені запитання</a>
+      <a href="/uk/jvc/guide/"><span>&#128218;</span>Назад до центру посібників</a>
+    </div>
   </div>
 </section>
 

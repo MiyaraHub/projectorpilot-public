@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="fi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVC-projektorin Home Assistant &amp; Hubitat -automaatio - Projector Pilot D-ILA</title>
-<meta name="description" content="Kodin automaatio Projector Pilot D-ILA -sovelluksessa: webhook-liipaisimet virta-, tulo- ja tilannetapahtumille, Hubitat Maker API ja Home Assistant." />
+<title>Kodin automaatio - Projector Pilot D-ILA</title>
+<meta name="description" content="Webhook-laukaisimet, Hubitat-peilaus ja Home Assistant -asennus JVC D-ILA -projektorillesi sekä tarkka pyyntö, jonka sovellus lähettää." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/fi/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVC-projektorin Home Assistant &amp; Hubitat -automaatio - Projector Pilot D-ILA" />
-<meta property="og:description" content="Kodin automaatio Projector Pilot D-ILA -sovelluksessa: webhook-liipaisimet virta-, tulo- ja tilannetapahtumille, Hubitat Maker API ja Home Assistant." />
+<meta property="og:title" content="Kodin automaatio - Projector Pilot D-ILA" />
+<meta property="og:description" content="Webhook-laukaisimet, Hubitat-peilaus ja Home Assistant -asennus JVC D-ILA -projektorillesi sekä tarkka pyyntö, jonka sovellus lähettää." />
 <meta property="og:url" content="https://projectorpilot.com/fi/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVC-projektorin Home Assistant &amp; Hubitat -automaatio - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Kodin automaatio Projector Pilot D-ILA -sovelluksessa: webhook-liipaisimet virta-, tulo- ja tilannetapahtumille, Hubitat Maker API ja Home Assistant." />
+<meta name="twitter:title" content="Kodin automaatio - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Webhook-laukaisimet, Hubitat-peilaus ja Home Assistant -asennus JVC D-ILA -projektorillesi sekä tarkka pyyntö, jonka sovellus lähettää." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVC-projektorin Home Assistant & Hubitat -automaatio - Projector Pilot D-ILA", "description": "Kodin automaatio Projector Pilot D-ILA -sovelluksessa: webhook-liipaisimet virta-, tulo- ja tilannetapahtumille, Hubitat Maker API ja Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Kodin automaatio", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "fi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Kodin automaatio - Projector Pilot D-ILA", "description": "Webhook-laukaisimet, Hubitat-peilaus ja Home Assistant -asennus JVC D-ILA -projektorillesi sekä tarkka pyyntö, jonka sovellus lähettää.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "fi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Käyttöopas", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Kodin automaatio", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/fi/jvc/">Etusivu</a> &rsaquo; <a href="/fi/jvc/guide/">Käyttöopas</a> &rsaquo; Kodin automaatio</div>
     <div class="eyebrow">Kodin automaatio</div>
     <h1>Yhdistä projektorisi kotiisi</h1>
-    <p class="lead">Webhookit, Hubitat ja Home Assistant Kodin automaatio -lisäosan avulla.</p>
+    <p class="lead">Anna muun talon reagoida, kun projektori käynnistyy, siirtyy valmiustilaan, vaihtaa tuloa tai palauttaa kohtauksen. Kolme linkkiä löytyy kohdasta Asetukset, Kotiautomaatio: webhook-laukaisimet, Hubitat ja Home Assistant. Kaikki kolme vaativat Kotiautomaatio-lisäosan, jota myydään erikseen tai paketissa; pelkkä Pro ei sisällä sitä.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Valitse yksi</div>
+      <h2>Mitä linkkiä käyttää</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhookit</h3><p>Mikä tahansa järjestelmä, joka hyväksyy verkkopyynnön: Node-RED, kotipalvelin, pilviautomaatio. Sovellus lähettää, sinä päätät, mitä tapahtuu.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Yksisuuntainen peilaus virrasta ja tulosta keskuksesi laitteeseen Maker APIn kautta, jonka perusteella Rule Machine voi toimia.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Määrittää Home Assistantin oman JVC Projector -integraation, komentosarjat kohtauksillesi ja valmiin kojelaudan.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Liipaisimet</div>
-        <h2>Webhookit projektoritapahtumista</h2>
+        <div class="eyebrow">Webhookit</div>
+        <h2>Automaatiolaukaisimet</h2>
+        <p>Laukaisin lähettää verkkopyynnön antamaasi osoitteeseen, kun tälle projektorille tapahtuu jotakin. Jokaisella projektorilla on oma listansa. Napauta <b>Lisää laukaisin</b> ja valitse sitten:</p>
         <ul class="plain">
-          <li><b>Tapahtumat</b>: virta päälle, valmiustila, tulon vaihto ja tilanne.</li>
-          <li><b>Pyynnöt</b>: POST, PUT tai GET antamaasi osoitteeseen.</li>
-          <li>Liipaisimet laukeavat vain, kun sovellus on auki ja yhdistetty, eikä koskaan demoprojektorista.</li>
+          <li><b>Kun</b>: Projektori käynnistyy, Projektori siirtyy valmiustilaan, Tulo vaihtuu (mihin tahansa tuloon tai tiettyyn) tai Kohtaus palautetaan (mikä tahansa kohtaus tai tietty).</li>
+          <li><b>Menetelmä</b>: POST (oletus), PUT tai GET.</li>
+          <li><b>Verkko-osoite</b>: http://- tai https://-osoite, jossa on isäntänimi.</li>
+          <li><b>Käytössä</b>, jolla keskeytät laukaisimen poistamatta sitä.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Projector Pilot D-ILA:n kodin automaatiosivu liipaisimineen" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Projector Pilot D-ILA:n automaatiolaukaisimien lista JVC-projektorille" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">Osoite, joka alkaa merkinnällä http://, lähetetään salaamattomana, ja editori kertoo siitä. Käytä https://-osoitetta, kun järjestelmäsi tukee sitä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hyötykuorma</div>
+      <h2>Mitä pyyntö sisältää</h2>
+      <p class="lead">POST ja PUT lähettävät JSON-sisällön; GET ei lähetä sellaista. Ainoa otsake, jonka sovellus lisää, on Content-Type. Kenttä, joka ei koske tapahtumaa, jätetään pois.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Kenttä</th><th>Merkitys</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> tai <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>Projektorin nimi sovelluksessa.</td></tr>
+        <tr><td><code>input</code></td><td>Tulo, kuten <code>hdmi1</code> tai <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>Kohtaus, kun kohtaus palautetaan.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Milloin se tapahtui, UTC-ajassa.</td></tr>
+        <tr><td><code>test</code></td><td>Läsnä ja tosi vain Lähetä testi -toiminnolla lähetetyssä pyynnössä.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Toimitus</div>
+      <h2>Yksi yritys, rehellisesti raportoituna</h2>
+    </div>
+    <ul class="plain">
+      <li>Jokainen tapahtuma lähetetään kerran 10 sekunnin aikarajalla, eikä uudelleenohjauksia seurata.</li>
+      <li>Laukaisin näyttää viimeisen tuloksensa: Toimitettu kellonaikana ja tilakoodilla, Hylätty, Ei vastausta, Osoitteeseen ei saatu yhteyttä, Suojattu yhteys epäonnistui tai Ei vielä lähetetty.</li>
+      <li><b>Lähetä testi</b> lähettää testiksi merkityn pyynnön, jotta voit kytkeä toisen pään ennen kuin projektori tekee mitään.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kun laukaisimet laukeavat</div>
+      <h2>Säännöt</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Vain kun sovellus on auki ja yhdistetty</b> projektoriin. Sovellus tarkkailee projektorin tilaa; se ei ole taustapalvelu.</li>
+      <li><b>Muutokset, ei lukemat.</b> Ensimmäinen lukema sovelluksen yhdistämisen jälkeen vain asettaa lähtöpisteen, joten sovelluksen avaaminen ei laukaise kohtaa ”käynnistyy” projektorille, joka oli jo päällä.</li>
+      <li><b>Ei koskaan demoprojektorilta.</b> Mitään ei poistu laitteelta, kun demoprojektori on valittuna tai Kotiautomaatiota ei ole avattu.</li>
+      <li><b>Tallennettu turvallisesti.</b> Laukaisimien osoitteet säilytetään laitteen suojatussa tallennustilassa.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>Peilaa projektori Hubitatiin</h2>
+      <p class="lead">Sovellus peilaa tämän projektorin Hubitat-keskuksesi laitteeseen Maker APIn kautta: päällä ja valmiustila sekä tulo HDMI 1:nä tai HDMI 2:na sen mukaan, kumpaa laite hyväksyy. Rule Machine voi sitten toimia sen perusteella.</p>
     </div>
-    <ul class="plain">
-      <li>Hubitatin Maker API:n kautta: päälle, pois, HDMI 1 ja HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>Lisää Hubitatissa Maker API ja merkitse muistiin sen sovellustunnus (numero sen URL-osoitteissa) ja käyttöoikeustunnus.</li>
+      <li>Anna sovelluksessa <b>Keskuksen osoite</b>, <b>Maker API -sovellustunnus</b> ja <b>Käyttöoikeustunnus</b>.</li>
+      <li>Napauta <b>Etsi laite</b> ja valitse laite, joka edustaa tätä projektoria. Jos mikään ei vaikuta siltä, lisää Hubitatiin projektorin mukaan nimetty virtuaalikytkin ja yritä uudelleen.</li>
+      <li>Ota käyttöön <b>Peilaa projektorin tila</b>. Laite seuraa projektoria aina, kun se muuttuu sovelluksen ollessa auki ja yhdistettynä.</li>
+    </ol>
+    <div class="note"><b>Vain yksisuuntainen.</b> Hubitatista ei lähetetä mitään projektorille. Poista yhdistäminen poistaa linkin sovelluksesta.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>Syvin linkki</h2>
+      <p>Sovellus kirjautuu Home Assistantiin, lisää projektorisi sen JVC Projector -integraatioon, julkaisee kohtauksesi ja säätimesi komentosarjoina ja rakentaa kojelaudan. Sillä on omat sivunsa: <a href="/fi/jvc/guide/home-assistant/">Home Assistant -asennus</a> ja <a href="/fi/jvc/guide/home-assistant-dashboard/">Home Assistant -kojelauta</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Kirjaudu sisään, lisää projektori ja rakenna kojelauta. Katso <a href="/fi/jvc/guide/home-assistant/">Home Assistant -opas</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Seuraava</div>
-      <h2>Lue lisää</h2>
+      <h2>Jatka eteenpäin</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/fi/jvc/guide/">Takaisin käyttöoppaaseen</a></li>
-      <li><a href="/fi/jvc/help/">Ohje ja UKK</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/fi/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/fi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant -kojelauta</a>
+      <a href="/fi/jvc/guide/scenes/"><span>&#127917;</span>Kohtaukset</a>
+      <a href="/fi/jvc/guide/"><span>&#128218;</span>Takaisin oppaan etusivulle</a>
+    </div>
   </div>
 </section>
 

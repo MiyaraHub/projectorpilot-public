@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="hi" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVC प्रोजेक्टर के लिए Home Assistant &amp; Hubitat ऑटोमेशन - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA में होम ऑटोमेशन: पावर, इनपुट और सीन इवेंट पर वेबहुक ट्रिगर, Hubitat Maker API और Home Assistant।" />
+<title>होम ऑटोमेशन - Projector Pilot D-ILA</title>
+<meta name="description" content="आपके JVC D-ILA प्रोजेक्टर के लिए वेबहुक ट्रिगर, Hubitat मिरर और Home Assistant सेटअप, ऐप जो ठीक-ठीक अनुरोध भेजता है उसके साथ।" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/hi/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVC प्रोजेक्टर के लिए Home Assistant &amp; Hubitat ऑटोमेशन - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA में होम ऑटोमेशन: पावर, इनपुट और सीन इवेंट पर वेबहुक ट्रिगर, Hubitat Maker API और Home Assistant।" />
+<meta property="og:title" content="होम ऑटोमेशन - Projector Pilot D-ILA" />
+<meta property="og:description" content="आपके JVC D-ILA प्रोजेक्टर के लिए वेबहुक ट्रिगर, Hubitat मिरर और Home Assistant सेटअप, ऐप जो ठीक-ठीक अनुरोध भेजता है उसके साथ।" />
 <meta property="og:url" content="https://projectorpilot.com/hi/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVC प्रोजेक्टर के लिए Home Assistant &amp; Hubitat ऑटोमेशन - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA में होम ऑटोमेशन: पावर, इनपुट और सीन इवेंट पर वेबहुक ट्रिगर, Hubitat Maker API और Home Assistant।" />
+<meta name="twitter:title" content="होम ऑटोमेशन - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="आपके JVC D-ILA प्रोजेक्टर के लिए वेबहुक ट्रिगर, Hubitat मिरर और Home Assistant सेटअप, ऐप जो ठीक-ठीक अनुरोध भेजता है उसके साथ।" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVC प्रोजेक्टर के लिए Home Assistant & Hubitat ऑटोमेशन - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA में होम ऑटोमेशन: पावर, इनपुट और सीन इवेंट पर वेबहुक ट्रिगर, Hubitat Maker API और Home Assistant।", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "होम", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "उपयोगकर्ता गाइड", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "होम ऑटोमेशन", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hi", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "होम ऑटोमेशन - Projector Pilot D-ILA", "description": "आपके JVC D-ILA प्रोजेक्टर के लिए वेबहुक ट्रिगर, Hubitat मिरर और Home Assistant सेटअप, ऐप जो ठीक-ठीक अनुरोध भेजता है उसके साथ।", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hi", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "होम", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "उपयोगकर्ता गाइड", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "होम ऑटोमेशन", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/hi/jvc/">होम</a> &rsaquo; <a href="/hi/jvc/guide/">यूज़र गाइड</a> &rsaquo; होम ऑटोमेशन</div>
     <div class="eyebrow">होम ऑटोमेशन</div>
     <h1>अपने प्रोजेक्टर को अपने घर से जोड़ें</h1>
-    <p class="lead">Home Automation ऐड-ऑन के साथ वेबहुक, Hubitat और Home Assistant।</p>
+    <p class="lead">प्रोजेक्टर के चालू होने, स्टैंडबाय में जाने, इनपुट बदलने या सीन बुलाने पर घर के बाकी हिस्से को प्रतिक्रिया करने दें। Settings, Home Automation के नीचे तीन लिंक हैं: वेबहुक ट्रिगर, Hubitat और Home Assistant। तीनों के लिए Home Automation ऐड-ऑन चाहिए, जो अकेला या बंडल में बिकता है; केवल Pro में यह शामिल नहीं है।</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">कोई एक चुनें</div>
+      <h2>कौन-सा लिंक इस्तेमाल करें</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>वेबहुक</h3><p>कोई भी सिस्टम जो वेब अनुरोध स्वीकार करता है: Node-RED, होम सर्वर, क्लाउड ऑटोमेशन। ऐप भेजता है, आप तय करते हैं कि क्या होगा।</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>आपके हब के किसी डिवाइस पर पावर और इनपुट का एकतरफ़ा मिरर, Maker API के ज़रिए, ताकि Rule Machine उस पर कार्रवाई कर सके।</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Home Assistant का अपना JVC Projector इंटीग्रेशन, आपके सीन के लिए स्क्रिप्ट और बना-बनाया डैशबोर्ड सेट अप करता है।</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">ट्रिगर</div>
-        <h2>प्रोजेक्टर इवेंट पर वेबहुक</h2>
+        <div class="eyebrow">वेबहुक</div>
+        <h2>ऑटोमेशन ट्रिगर</h2>
+        <p>ट्रिगर इस प्रोजेक्टर पर कुछ होने पर आपके दिए पते पर एक वेब अनुरोध भेजता है। हर प्रोजेक्टर की अपनी सूची होती है। <b>Add trigger</b> टैप करें, फिर चुनें:</p>
         <ul class="plain">
-          <li><b>इवेंट</b>: पावर ऑन, स्टैंडबाई, इनपुट बदलना और सीन।</li>
-          <li><b>अनुरोध</b>: आपके दर्ज किए गए पते पर POST, PUT या GET।</li>
-          <li>ट्रिगर केवल तब चलते हैं जब ऐप खुला हो और कनेक्ट हो, और डेमो प्रोजेक्टर से कभी नहीं।</li>
+          <li><b>जब</b>: Projector turns on, Projector goes to standby, Input changes (किसी भी इनपुट पर या किसी खास इनपुट पर), या A scene is recalled (कोई भी सीन या कोई खास सीन)।</li>
+          <li><b>विधि</b>: POST (डिफ़ॉल्ट), PUT या GET।</li>
+          <li><b>वेब पता</b>: होस्ट नाम वाला http:// या https:// पता।</li>
+          <li><b>सक्षम</b>, ट्रिगर को हटाए बिना रोकने के लिए।</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="ट्रिगर के साथ Projector Pilot D-ILA का होम ऑटोमेशन पेज" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="JVC प्रोजेक्टर के लिए Projector Pilot D-ILA ऑटोमेशन ट्रिगर की सूची" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">http:// से शुरू होने वाला पता बिना एन्क्रिप्शन के भेजा जाता है, और एडिटर यह बताता है। अगर आपका सिस्टम सपोर्ट करता है तो https:// इस्तेमाल करें।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">पेलोड</div>
+      <h2>अनुरोध में क्या जाता है</h2>
+      <p class="lead">POST और PUT JSON बॉडी भेजते हैं; GET कुछ नहीं भेजता। ऐप केवल Content-Type हेडर जोड़ता है। जो फ़ील्ड घटना पर लागू नहीं होती उसे छोड़ दिया जाता है।</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>फ़ील्ड</th><th>मतलब</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> या <code>scene_recalled</code>।</td></tr>
+        <tr><td><code>projector</code></td><td>ऐप में प्रोजेक्टर का नाम।</td></tr>
+        <tr><td><code>input</code></td><td>इनपुट, जैसे <code>hdmi1</code> या <code>hdmi2</code>।</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>सीन, सीन रीकॉल के लिए।</td></tr>
+        <tr><td><code>timestamp</code></td><td>यह कब हुआ, UTC में।</td></tr>
+        <tr><td><code>test</code></td><td>केवल Send test से भेजे गए अनुरोध पर मौजूद, और true।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">डिलीवरी</div>
+      <h2>एक कोशिश, ईमानदारी से बताई गई</h2>
+    </div>
+    <ul class="plain">
+      <li>हर घटना एक बार भेजी जाती है, 10 सेकंड की सीमा के साथ, और रीडायरेक्ट नहीं अपनाए जाते।</li>
+      <li>ट्रिगर अपना आख़िरी नतीजा दिखाता है: Delivered, समय और स्टेटस कोड के साथ, Refused, No answer, Could not reach the address, Secure connection failed, या Not sent yet।</li>
+      <li><b>Send test</b> टेस्ट के रूप में चिह्नित अनुरोध भेजता है, ताकि प्रोजेक्टर कुछ करे इससे पहले आप दूसरा सिरा जोड़ सकें।</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ट्रिगर कब चलते हैं</div>
+      <h2>नियम</h2>
+    </div>
+    <ul class="plain">
+      <li><b>केवल तब जब ऐप खुला हो और प्रोजेक्टर से कनेक्टेड हो।</b> ऐप प्रोजेक्टर की स्थिति देखता है; वह बैकग्राउंड सर्विस नहीं है।</li>
+      <li><b>बदलाव, रीडिंग नहीं।</b> ऐप के कनेक्ट होने के बाद की पहली रीडिंग केवल शुरुआती बिंदु तय करती है, इसलिए पहले से चालू प्रोजेक्टर के लिए ऐप खोलने पर "turns on" नहीं चलता।</li>
+      <li><b>डेमो प्रोजेक्टर से कभी नहीं।</b> जब डेमो प्रोजेक्टर चुना हो या Home Automation अनलॉक न हो, तब डिवाइस से कुछ बाहर नहीं जाता।</li>
+      <li><b>सुरक्षित रूप से सेव।</b> ट्रिगर के पते डिवाइस के सुरक्षित स्टोरेज में रखे जाते हैं।</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>प्रोजेक्टर को Hubitat में मिरर करें</h2>
+      <p class="lead">ऐप इस प्रोजेक्टर को Maker API के ज़रिए आपके Hubitat हब के किसी डिवाइस पर मिरर करता है: चालू और स्टैंडबाय, और इनपुट HDMI 1 या HDMI 2 के रूप में, उनमें से जो भी डिवाइस स्वीकार करे। फिर Rule Machine उस पर कार्रवाई कर सकता है।</p>
     </div>
-    <ul class="plain">
-      <li>Hubitat के Maker API के ज़रिए: चालू, बंद, HDMI 1 और HDMI 2।</li>
-    </ul>
+    <ol class="steps">
+      <li>Hubitat में Maker API जोड़ें और उसका ऐप आईडी (उसके URL में आने वाली संख्या) और उसका एक्सेस टोकन नोट करें।</li>
+      <li>ऐप में <b>हब पता</b>, <b>Maker API ऐप आईडी</b> और <b>एक्सेस टोकन</b> दर्ज करें।</li>
+      <li><b>डिवाइस खोजें</b> टैप करें और वह डिवाइस चुनें जो इस प्रोजेक्टर का प्रतिनिधित्व करता है। अगर कोई मेल न खाए, तो Hubitat में प्रोजेक्टर के नाम पर एक Virtual Switch जोड़ें और फिर कोशिश करें।</li>
+      <li><b>प्रोजेक्टर की स्थिति मिरर करें</b> चालू करें। ऐप के खुले और कनेक्टेड रहते प्रोजेक्टर में जब भी बदलाव होता है, डिवाइस उसके साथ चलता है।</li>
+    </ol>
+    <div class="note"><b>केवल एकतरफ़ा।</b> Hubitat से प्रोजेक्टर को कुछ नहीं भेजा जाता। अनलिंक करें ऐप से लिंक हटा देता है।</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>सबसे गहरा लिंक</h2>
+      <p>ऐप Home Assistant में साइन इन करता है, आपके प्रोजेक्टर को उसके JVC Projector इंटीग्रेशन में जोड़ता है, आपके सीन और कंट्रोल को स्क्रिप्ट के रूप में प्रकाशित करता है, और एक डैशबोर्ड बनाता है। इसके अपने पेज हैं: <a href="/hi/jvc/guide/home-assistant/">Home Assistant सेटअप</a> और <a href="/hi/jvc/guide/home-assistant-dashboard/">Home Assistant डैशबोर्ड</a>।</p>
     </div>
-    <ul class="plain">
-      <li>साइन इन करें, प्रोजेक्टर जोड़ें और डैशबोर्ड बनाएँ। <a href="/hi/jvc/guide/home-assistant/">Home Assistant गाइड</a> देखें।</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">आगे</div>
-      <h2>और पढ़ें</h2>
+      <h2>पढ़ते रहें</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/hi/jvc/guide/">यूज़र गाइड पर वापस जाएँ</a></li>
-      <li><a href="/hi/jvc/help/">सहायता और FAQ</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/hi/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/hi/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant डैशबोर्ड</a>
+      <a href="/hi/jvc/guide/scenes/"><span>&#127917;</span>सीन</a>
+      <a href="/hi/jvc/guide/"><span>&#128218;</span>गाइड हब पर वापस</a>
+    </div>
   </div>
 </section>
 

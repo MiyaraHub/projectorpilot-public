@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="nl" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Automatisering van je JVC Projector met Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="Domotica in Projector Pilot D-ILA: webhooktriggers bij aan/uit-, bron- en scènegebeurtenissen, Hubitat Maker API en Home Assistant." />
+<title>Domotica - Projector Pilot D-ILA</title>
+<meta name="description" content="Webhooktriggers, een Hubitat-spiegel en Home Assistant-installatie voor je JVC D-ILA-projector, met het exacte verzoek dat de app verstuurt." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/nl/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Automatisering van je JVC Projector met Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="Domotica in Projector Pilot D-ILA: webhooktriggers bij aan/uit-, bron- en scènegebeurtenissen, Hubitat Maker API en Home Assistant." />
+<meta property="og:title" content="Domotica - Projector Pilot D-ILA" />
+<meta property="og:description" content="Webhooktriggers, een Hubitat-spiegel en Home Assistant-installatie voor je JVC D-ILA-projector, met het exacte verzoek dat de app verstuurt." />
 <meta property="og:url" content="https://projectorpilot.com/nl/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Automatisering van je JVC Projector met Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Domotica in Projector Pilot D-ILA: webhooktriggers bij aan/uit-, bron- en scènegebeurtenissen, Hubitat Maker API en Home Assistant." />
+<meta name="twitter:title" content="Domotica - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Webhooktriggers, een Hubitat-spiegel en Home Assistant-installatie voor je JVC D-ILA-projector, met het exacte verzoek dat de app verstuurt." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Automatisering van je JVC Projector met Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "Domotica in Projector Pilot D-ILA: webhooktriggers bij aan/uit-, bron- en scènegebeurtenissen, Hubitat Maker API en Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nl", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Handleiding", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Domotica", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "nl", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Domotica - Projector Pilot D-ILA", "description": "Webhooktriggers, een Hubitat-spiegel en Home Assistant-installatie voor je JVC D-ILA-projector, met het exacte verzoek dat de app verstuurt.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "nl", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Handleiding", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Domotica", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/nl/jvc/">Home</a> &rsaquo; <a href="/nl/jvc/guide/">Gebruikershandleiding</a> &rsaquo; Domotica</div>
     <div class="eyebrow">Domotica</div>
     <h1>Koppel je projector aan je huis</h1>
-    <p class="lead">Webhooks, Hubitat en Home Assistant, met de Domotica-add-on.</p>
+    <p class="lead">Laat de rest van het huis reageren als de projector aangaat, naar stand-by gaat, van bron wisselt of een scène oproept. Onder Instellingen, Domotica staan drie koppelingen: webhooktriggers, Hubitat en Home Assistant. Alle drie vragen de add-on Domotica, los of in de bundel verkocht; Pro alleen bevat die niet.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kies er een</div>
+      <h2>Welke koppeling je gebruikt</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>Elk systeem dat een webverzoek accepteert: Node-RED, een thuisserver, een cloudautomatisering. De app verstuurt, jij bepaalt wat er gebeurt.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>Een eenrichtingsspiegel van voeding en bron op een apparaat in je hub, via Maker API, waarop Rule Machine kan reageren.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Stelt de eigen JVC Projector-integratie van Home Assistant in, scripts voor je scènes en een kant-en-klaar dashboard.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Triggers</div>
-        <h2>Webhooks bij projectorgebeurtenissen</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>Automatiseringstriggers</h2>
+        <p>Een trigger stuurt een webverzoek naar een adres dat je invoert wanneer er iets gebeurt met deze projector. Elke projector heeft zijn eigen lijst. Tik op <b>Trigger toevoegen</b> en kies dan:</p>
         <ul class="plain">
-          <li><b>Gebeurtenissen</b>: inschakelen, stand-by, bronwijziging en scène.</li>
-          <li><b>Verzoeken</b>: POST, PUT of GET naar een adres dat je invoert.</li>
-          <li>Triggers worden alleen geactiveerd terwijl de app open en verbonden is, en nooit vanaf de demoprojector.</li>
+          <li><b>Wanneer</b>: Projector gaat aan, Projector gaat naar stand-by, Bron wijzigt (naar een willekeurige bron of een specifieke) of Een scène wordt opgeroepen (een willekeurige scène of een specifieke).</li>
+          <li><b>Methode</b>: POST (standaard), PUT of GET.</li>
+          <li><b>Webadres</b>: een http://- of https://-adres met een hostnaam.</li>
+          <li><b>Ingeschakeld</b>, om een trigger te pauzeren zonder hem te verwijderen.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="Domoticapagina van Projector Pilot D-ILA met triggers" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Projector Pilot D-ILA-lijst met automatiseringstriggers voor een JVC-projector" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">Een adres dat met http:// begint, wordt zonder versleuteling verzonden, en de editor zegt dat. Gebruik https:// als je systeem dat ondersteunt.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Payload</div>
+      <h2>Wat het verzoek meedraagt</h2>
+      <p class="lead">POST en PUT sturen een JSON-body; GET stuurt er geen. De enige header die de app toevoegt is Content-Type. Een veld dat niet van toepassing is op de gebeurtenis wordt weggelaten.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Veld</th><th>Betekenis</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> of <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>De naam van de projector in de app.</td></tr>
+        <tr><td><code>input</code></td><td>De bron, zoals <code>hdmi1</code> of <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>De scène, bij het oproepen van een scène.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Wanneer het gebeurde, in UTC.</td></tr>
+        <tr><td><code>test</code></td><td>Alleen aanwezig, en true, bij een verzoek dat is verzonden met Test verzenden.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bezorging</div>
+      <h2>Eén poging, eerlijk gemeld</h2>
+    </div>
+    <ul class="plain">
+      <li>Elke gebeurtenis wordt één keer verzonden, met een limiet van 10 seconden, en omleidingen worden niet gevolgd.</li>
+      <li>De trigger toont zijn laatste resultaat: Bezorgd op een tijdstip met de statuscode, Geweigerd, Geen antwoord, Adres niet bereikbaar, Beveiligde verbinding mislukt of Nog niet verzonden.</li>
+      <li><b>Test verzenden</b> verstuurt een verzoek dat als test is gemarkeerd, zodat je de andere kant kunt aansluiten voordat de projector iets doet.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Wanneer triggers afgaan</div>
+      <h2>De regels</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Alleen terwijl de app geopend en verbonden is</b> met de projector. De app volgt de status van de projector; hij is geen achtergrondservice.</li>
+      <li><b>Wijzigingen, geen metingen.</b> De eerste meting nadat de app verbindt, legt alleen het beginpunt vast, dus het openen van de app activeert geen "gaat aan" voor een projector die al aan stond.</li>
+      <li><b>Nooit vanaf de demoprojector.</b> Er verlaat niets het apparaat zolang de demoprojector is geselecteerd of Domotica niet is ontgrendeld.</li>
+      <li><b>Veilig opgeslagen.</b> Triggeradressen worden bewaard in de beveiligde opslag van het apparaat.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>De projector spiegelen in Hubitat</h2>
+      <p class="lead">De app spiegelt deze projector op een apparaat in je Hubitat-hub via Maker API: aan en stand-by, en de bron als HDMI 1 of HDMI 2, voor zover het apparaat die accepteert. Rule Machine kan er dan op reageren.</p>
     </div>
-    <ul class="plain">
-      <li>Via de Maker API van Hubitat: aan, uit, HDMI 1 en HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>Voeg in Hubitat Maker API toe en noteer de app-id (het getal in de URL's) en het toegangstoken.</li>
+      <li>Voer in de app het <b>Hubadres</b>, de <b>Maker API-app-id</b> en het <b>Toegangstoken</b> in.</li>
+      <li>Tik op <b>Apparaat zoeken</b> en kies het apparaat dat deze projector vertegenwoordigt. Als geen enkel apparaat erop lijkt, voeg dan in Hubitat een Virtual Switch toe met de naam van de projector en probeer het opnieuw.</li>
+      <li>Zet <b>Status van de projector spiegelen</b> aan. Het apparaat volgt de projector telkens als die verandert terwijl de app geopend en verbonden is.</li>
+    </ol>
+    <div class="note"><b>Maar één richting.</b> Er wordt niets van Hubitat naar de projector verzonden. Ontkoppelen verwijdert de koppeling uit de app.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>De diepste koppeling</h2>
+      <p>De app meldt zich aan bij Home Assistant, voegt je projector toe aan zijn JVC Projector-integratie, publiceert je scènes en bediening als scripts en bouwt een dashboard. Hij heeft eigen pagina's: <a href="/nl/jvc/guide/home-assistant/">Home Assistant-installatie</a> en <a href="/nl/jvc/guide/home-assistant-dashboard/">het Home Assistant-dashboard</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Meld je aan, voeg de projector toe en bouw een dashboard. Zie <a href="/nl/jvc/guide/home-assistant/">de gids voor Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Volgende</div>
-      <h2>Lees verder</h2>
+      <h2>Ga verder</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/nl/jvc/guide/">Terug naar de gebruikershandleiding</a></li>
-      <li><a href="/nl/jvc/help/">Hulp en veelgestelde vragen</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/nl/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/nl/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant-dashboard</a>
+      <a href="/nl/jvc/guide/scenes/"><span>&#127917;</span>Scènes</a>
+      <a href="/nl/jvc/guide/"><span>&#128218;</span>Terug naar het gidsoverzicht</a>
+    </div>
   </div>
 </section>
 

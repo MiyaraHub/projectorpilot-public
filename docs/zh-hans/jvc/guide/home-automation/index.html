@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-Hans" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVC 投影机 Home Assistant &amp; Hubitat 自动化 - Projector Pilot D-ILA</title>
-<meta name="description" content="Projector Pilot D-ILA 中的家庭自动化：针对电源、信号源和场景事件的 Webhook 触发器、Hubitat Maker API 和 Home Assistant。" />
+<title>家庭自动化 - Projector Pilot D-ILA</title>
+<meta name="description" content="Webhook 触发器、Hubitat 镜像以及 JVC D-ILA 投影机的 Home Assistant 设置，并附应用所发送的确切请求。" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/zh-hans/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="vi_VN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVC 投影机 Home Assistant &amp; Hubitat 自动化 - Projector Pilot D-ILA" />
-<meta property="og:description" content="Projector Pilot D-ILA 中的家庭自动化：针对电源、信号源和场景事件的 Webhook 触发器、Hubitat Maker API 和 Home Assistant。" />
+<meta property="og:title" content="家庭自动化 - Projector Pilot D-ILA" />
+<meta property="og:description" content="Webhook 触发器、Hubitat 镜像以及 JVC D-ILA 投影机的 Home Assistant 设置，并附应用所发送的确切请求。" />
 <meta property="og:url" content="https://projectorpilot.com/zh-hans/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVC 投影机 Home Assistant &amp; Hubitat 自动化 - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Projector Pilot D-ILA 中的家庭自动化：针对电源、信号源和场景事件的 Webhook 触发器、Hubitat Maker API 和 Home Assistant。" />
+<meta name="twitter:title" content="家庭自动化 - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Webhook 触发器、Hubitat 镜像以及 JVC D-ILA 投影机的 Home Assistant 设置，并附应用所发送的确切请求。" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hans", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVC 投影机 Home Assistant & Hubitat 自动化 - Projector Pilot D-ILA", "description": "Projector Pilot D-ILA 中的家庭自动化：针对电源、信号源和场景事件的 Webhook 触发器、Hubitat Maker API 和 Home Assistant。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hans", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "主页", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "用户指南", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "家庭自动化", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "zh-Hans", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "家庭自动化 - Projector Pilot D-ILA", "description": "Webhook 触发器、Hubitat 镜像以及 JVC D-ILA 投影机的 Home Assistant 设置，并附应用所发送的确切请求。", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "zh-Hans", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "主页", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "用户指南", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "家庭自动化", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/zh-hans/jvc/">首页</a> &rsaquo; <a href="/zh-hans/jvc/guide/">用户指南</a> &rsaquo; 家庭自动化</div>
     <div class="eyebrow">家庭自动化</div>
     <h1>将您的投影机接入智能家居</h1>
-    <p class="lead">借助家庭自动化附加包，使用 Webhook、Hubitat 和 Home Assistant。</p>
+    <p class="lead">让家里的其他设备在投影机开机、进入待机、切换信号源或调用场景时做出反应。“设置”的“家庭自动化”下有三种关联：Webhook 触发器、Hubitat 和 Home Assistant。三者都需要家庭自动化附加包，该附加包可单独购买或随捆绑包购买；仅有 Pro 并不包含它。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">任选其一</div>
+      <h2>该用哪种关联</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhook</h3><p>任何能接收网络请求的系统：Node-RED、家庭服务器、云端自动化。应用负责发送，由您决定接下来发生什么。</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>通过 Maker API，把电源和信号源单向镜像到您的 Hub 中的某个设备上，供 Rule Machine 据此执行操作。</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>设置 Home Assistant 自带的 JVC Projector 集成、您的场景脚本和现成的仪表盘。</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">触发器</div>
-        <h2>投影机事件的 Webhook</h2>
+        <div class="eyebrow">Webhook</div>
+        <h2>自动化触发器</h2>
+        <p>此投影机上发生某件事时，触发器会向您输入的地址发送网络请求。每台投影机都有各自的列表。点按<b>添加触发器</b>，然后选择：</p>
         <ul class="plain">
-          <li><b>事件</b>：开机、待机、信号源切换和场景。</li>
-          <li><b>请求</b>：向您输入的地址发送 POST、PUT 或 GET 请求。</li>
-          <li>触发器仅在应用打开并已连接时触发，且绝不会由演示投影机触发。</li>
+          <li><b>触发条件</b>：投影机开机、投影机进入待机、信号源变更（变为任意信号源或某个指定信号源），或调用某个场景（任意场景或某个指定场景）。</li>
+          <li><b>方法</b>：POST（默认）、PUT 或 GET。</li>
+          <li><b>网址</b>：带有主机名的 http:// 或 https:// 地址。</li>
+          <li><b>已启用</b>，可暂停触发器而不必删除。</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="带有触发器的 Projector Pilot D-ILA 家庭自动化页面" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="Projector Pilot D-ILA 的 JVC 投影机自动化触发器列表" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">以 http:// 开头的地址会不加密发送，编辑器也会提示这一点。系统支持时请使用 https://。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">载荷</div>
+      <h2>请求携带的内容</h2>
+      <p class="lead">POST 和 PUT 发送 JSON 正文；GET 不发送。应用添加的唯一请求头是 Content-Type。不适用于该事件的字段会被省略。</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>字段</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>、<code>power_off</code>、<code>input_changed</code> 或 <code>scene_recalled</code>。</td></tr>
+        <tr><td><code>projector</code></td><td>投影机在应用中的名称。</td></tr>
+        <tr><td><code>input</code></td><td>信号源，例如 <code>hdmi1</code> 或 <code>hdmi2</code>。</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>场景，用于场景调用。</td></tr>
+        <tr><td><code>timestamp</code></td><td>事件发生的时间，采用 UTC。</td></tr>
+        <tr><td><code>test</code></td><td>仅在由“发送测试”发出的请求中出现，且值为 true。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">发送</div>
+      <h2>只尝试一次，如实报告</h2>
+    </div>
+    <ul class="plain">
+      <li>每个事件只发送一次，限时 10 秒，且不跟随重定向。</li>
+      <li>触发器会显示其最近一次结果：已送达（附时间和状态码）、被拒绝、无响应、无法访问该地址、安全连接失败，或尚未发送。</li>
+      <li><b>发送测试</b>会发送标记为测试的请求，让您在投影机有任何动作之前就能先把另一端接好。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">触发器何时触发</div>
+      <h2>规则</h2>
+    </div>
+    <ul class="plain">
+      <li><b>仅在应用已打开并已连接</b>投影机时。应用监视投影机的状态；它不是后台服务。</li>
+      <li><b>针对变化，而非读数。</b>应用连接后的第一次读数只用来设定起点，因此打开应用不会对已经开机的投影机触发“开机”。</li>
+      <li><b>绝不来自演示投影机。</b>选中演示投影机或家庭自动化未解锁时，任何内容都不会离开设备。</li>
+      <li><b>安全保存。</b>触发器地址保存在设备的安全存储中。</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>把投影机镜像到 Hubitat</h2>
+      <p class="lead">应用通过 Maker API，把此投影机镜像到您的 Hubitat Hub 中的某个设备上：开机和待机，以及信号源（HDMI 1 或 HDMI 2，取决于该设备接受哪些）。之后 Rule Machine 即可据此执行操作。</p>
     </div>
-    <ul class="plain">
-      <li>通过 Hubitat 的 Maker API：开、关、HDMI 1 和 HDMI 2。</li>
-    </ul>
+    <ol class="steps">
+      <li>在 Hubitat 中添加 Maker API，并记下其应用 ID（其 URL 中的数字）和访问令牌。</li>
+      <li>在应用中输入 <b>Hub 地址</b>、<b>Maker API 应用 ID</b> 和<b>访问令牌</b>。</li>
+      <li>点按<b>查找设备</b>，选择代表此投影机的设备。如果没有合适的，请在 Hubitat 中添加一个以该投影机命名的虚拟开关，然后重试。</li>
+      <li>打开<b>镜像投影机状态</b>。应用打开并连接期间，投影机一有变化，该设备就会随之更新。</li>
+    </ol>
+    <div class="note"><b>仅限单向。</b>Hubitat 不会向投影机发送任何内容。“取消关联”会移除应用中的关联。</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>最深入的关联</h2>
+      <p>应用会登录 Home Assistant，把您的投影机添加到其 JVC Projector 集成中，把您的场景和控制发布为脚本，并生成仪表盘。它有专门的页面：<a href="/zh-hans/jvc/guide/home-assistant/">Home Assistant 设置</a>和<a href="/zh-hans/jvc/guide/home-assistant-dashboard/">Home Assistant 仪表盘</a>。</p>
     </div>
-    <ul class="plain">
-      <li>登录、添加投影机并创建仪表盘。请参阅<a href="/zh-hans/jvc/guide/home-assistant/">Home Assistant 指南</a>。</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">下一步</div>
-      <h2>继续阅读</h2>
+      <h2>继续了解</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/zh-hans/jvc/guide/">返回用户指南</a></li>
-      <li><a href="/zh-hans/jvc/help/">帮助与常见问题</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/zh-hans/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/zh-hans/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant 仪表盘</a>
+      <a href="/zh-hans/jvc/guide/scenes/"><span>&#127917;</span>场景</a>
+      <a href="/zh-hans/jvc/guide/"><span>&#128218;</span>返回指南首页</a>
+    </div>
   </div>
 </section>
 

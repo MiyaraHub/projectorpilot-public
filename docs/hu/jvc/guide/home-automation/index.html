@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="hu" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>JVC projektor Home Assistant &amp; Hubitat automatizálás - Projector Pilot D-ILA</title>
-<meta name="description" content="Otthonautomatizálás a Projector Pilot D-ILA alkalmazásban: webhook eseményindítók bekapcsolás, bemenet és jelenet eseményekre, Hubitat Maker API és Home Assistant." />
+<title>Otthonautomatizálás - Projector Pilot D-ILA</title>
+<meta name="description" content="Webhook aktiválók, Hubitat-tükör és Home Assistant beállítása a JVC D-ILA projektorodhoz, az alkalmazás által küldött pontos kéréssel." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/hu/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="JVC projektor Home Assistant &amp; Hubitat automatizálás - Projector Pilot D-ILA" />
-<meta property="og:description" content="Otthonautomatizálás a Projector Pilot D-ILA alkalmazásban: webhook eseményindítók bekapcsolás, bemenet és jelenet eseményekre, Hubitat Maker API és Home Assistant." />
+<meta property="og:title" content="Otthonautomatizálás - Projector Pilot D-ILA" />
+<meta property="og:description" content="Webhook aktiválók, Hubitat-tükör és Home Assistant beállítása a JVC D-ILA projektorodhoz, az alkalmazás által küldött pontos kéréssel." />
 <meta property="og:url" content="https://projectorpilot.com/hu/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JVC projektor Home Assistant &amp; Hubitat automatizálás - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="Otthonautomatizálás a Projector Pilot D-ILA alkalmazásban: webhook eseményindítók bekapcsolás, bemenet és jelenet eseményekre, Hubitat Maker API és Home Assistant." />
+<meta name="twitter:title" content="Otthonautomatizálás - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="Webhook aktiválók, Hubitat-tükör és Home Assistant beállítása a JVC D-ILA projektorodhoz, az alkalmazás által küldött pontos kéréssel." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "JVC projektor Home Assistant & Hubitat automatizálás - Projector Pilot D-ILA", "description": "Otthonautomatizálás a Projector Pilot D-ILA alkalmazásban: webhook eseményindítók bekapcsolás, bemenet és jelenet eseményekre, Hubitat Maker API és Home Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Otthon-automatizálás", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "hu", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "Otthonautomatizálás - Projector Pilot D-ILA", "description": "Webhook aktiválók, Hubitat-tükör és Home Assistant beállítása a JVC D-ILA projektorodhoz, az alkalmazás által küldött pontos kéréssel.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "hu", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Felhasználói útmutató", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Otthon-automatizálás", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/hu/jvc/">Kezdőlap</a> &rsaquo; <a href="/hu/jvc/guide/">Felhasználói útmutató</a> &rsaquo; Otthonautomatizálás</div>
     <div class="eyebrow">Otthon-automatizálás</div>
     <h1>Kapcsold össze a projektorodat az otthonoddal</h1>
-    <p class="lead">Webhookok, Hubitat és Home Assistant, a Home Automation kiegészítővel.</p>
+    <p class="lead">Engedd, hogy a ház többi része reagáljon, amikor a projektor bekapcsol, készenlétbe lép, bemenetet vált vagy előhív egy jelenetet. Három kapcsolat található a Beállítások, Otthon-automatizálás alatt: webhook aktiválók, Hubitat és Home Assistant. Mindhárom az Otthon-automatizálás kiegészítőt igényli, amely külön vagy a csomagban kapható; a Pro önmagában nem tartalmazza.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Válassz egyet</div>
+      <h2>Melyik kapcsolatot használd</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhookok</h3><p>Bármely rendszer, amely webes kérést fogad: Node-RED, otthoni szerver, felhős automatizálás. Az alkalmazás küld, te döntöd el, mi történjen.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>A bekapcsolás és a bemenet egyirányú tükrözése a hubod egy eszközére, a Maker API-n keresztül, hogy a Rule Machine reagálhasson rá.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>Beállítja a Home Assistant saját JVC Projector integrációját, a jeleneteid szkriptjeit és egy kész vezérlőpultot.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">Eseményindítók</div>
-        <h2>Webhookok projektoreseményekre</h2>
+        <div class="eyebrow">Webhookok</div>
+        <h2>Automatizálási aktiválók</h2>
+        <p>Az aktiváló webes kérést küld egy általad megadott címre, amikor valami történik ezen a projektoron. Minden projektornak saját listája van. Koppints az <b>Aktiváló hozzáadása</b> gombra, majd válassz:</p>
         <ul class="plain">
-          <li><b>Események</b>: bekapcsolás, készenlét, bemenetváltás és jelenet.</li>
-          <li><b>Kérések</b>: POST, PUT vagy GET az általad megadott címre.</li>
-          <li>Az eseményindítók csak akkor aktiválódnak, amíg az alkalmazás nyitva van és csatlakozik, és a demóprojektorról soha.</li>
+          <li><b>Mikor</b>: A projektor bekapcsol, A projektor készenlétbe lép, A bemenet változik (bármely bemenetre vagy egy adottra), vagy Egy jelenet előhívásra kerül (bármely jelenet vagy egy adott).</li>
+          <li><b>Módszer</b>: POST (az alapértelmezett), PUT vagy GET.</li>
+          <li><b>Webcím</b>: http:// vagy https:// címmel, állomásnévvel.</li>
+          <li><b>Engedélyezve</b>, hogy egy aktiválót törlés nélkül szüneteltess.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="A Projector Pilot D-ILA otthonautomatizálási oldala eseményindítókkal" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="A Projector Pilot D-ILA automatizálási aktiválóinak listája egy JVC projektorhoz" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">A http:// kezdetű cím titkosítás nélkül kerül elküldésre, és a szerkesztő ezt jelzi. Használj https:// címet, ha a rendszered támogatja.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tartalom</div>
+      <h2>Mit visz a kérés</h2>
+      <p class="lead">A POST és a PUT JSON törzset küld; a GET nem küld. Az egyetlen fejléc, amelyet az alkalmazás hozzáad, a Content-Type. Az eseményre nem vonatkozó mező kimarad.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>Mező</th><th>Jelentés</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code>, <code>power_off</code>, <code>input_changed</code> vagy <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>A projektor neve az alkalmazásban.</td></tr>
+        <tr><td><code>input</code></td><td>A bemenet, például <code>hdmi1</code> vagy <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>A jelenet, jelenet-előhívásnál.</td></tr>
+        <tr><td><code>timestamp</code></td><td>Mikor történt, UTC szerint.</td></tr>
+        <tr><td><code>test</code></td><td>Csak a Teszt küldése által küldött kérésben van jelen, és igaz.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kézbesítés</div>
+      <h2>Egy kísérlet, őszintén jelentve</h2>
+    </div>
+    <ul class="plain">
+      <li>Minden eseményt egyszer küld el az alkalmazás, 10 másodperces határidővel, és az átirányításokat nem követi.</li>
+      <li>Az aktiváló mutatja az utolsó eredményét: Kézbesítve egy időponttal és az állapotkóddal, Elutasítva, Nincs válasz, A cím nem érhető el, A biztonságos kapcsolat sikertelen, vagy Még nincs elküldve.</li>
+      <li>A <b>Teszt küldése</b> tesztként megjelölt kérést küld, így beállíthatod a másik oldalt, mielőtt a projektor bármit csinálna.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mikor aktiválódnak</div>
+      <h2>A szabályok</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Csak amíg az alkalmazás nyitva van és csatlakozik</b> a projektorhoz. Az alkalmazás figyeli a projektor állapotát; nem háttérszolgáltatás.</li>
+      <li><b>Változások, nem értékek.</b> Az alkalmazás csatlakozása utáni első beolvasás csak a kiindulópontot állítja be, így az alkalmazás megnyitása nem aktiválja a "bekapcsol" eseményt egy már bekapcsolt projektornál.</li>
+      <li><b>Soha a demóprojektorról.</b> Semmi nem hagyja el az eszközt, amíg a demóprojektor ki van választva, vagy az Otthon-automatizálás nincs feloldva.</li>
+      <li><b>Biztonságosan mentve.</b> Az aktiválók címei az eszköz biztonságos tárhelyén vannak tárolva.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>A projektor tükrözése a Hubitatba</h2>
+      <p class="lead">Az alkalmazás a Maker API-n keresztül tükrözi ezt a projektort a Hubitat hubod egy eszközére: bekapcsolt és készenléti állapotot, és a bemenetet HDMI 1 vagy HDMI 2 formában, amelyiket az eszköz elfogadja. A Rule Machine ezután reagálhat rá.</p>
     </div>
-    <ul class="plain">
-      <li>A Hubitat Maker API segítségével: be, ki, HDMI 1 és HDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>A Hubitatban add hozzá a Maker API-t, és jegyezd fel az alkalmazásazonosítóját (a számot az URL-jeiben) és a hozzáférési tokenjét.</li>
+      <li>Az alkalmazásban add meg a <b>Hub címét</b>, a <b>Maker API alkalmazásazonosítóját</b> és a <b>Hozzáférési tokent</b>.</li>
+      <li>Koppints az <b>Eszköz keresése</b> gombra, és válaszd ki azt az eszközt, amely ezt a projektort jelképezi. Ha egyik sem hasonlít rá, adj hozzá a Hubitatban egy, a projektorról elnevezett Virtual Switch eszközt, és próbáld újra.</li>
+      <li>Kapcsold be a <b>A projektor állapotának tükrözése</b> beállítást. Az eszköz követi a projektort, valahányszor az megváltozik, amíg az alkalmazás nyitva van és csatlakozik.</li>
+    </ol>
+    <div class="note"><b>Csak egyirányú.</b> A Hubitatból semmi nem megy a projektornak. A Kapcsolat bontása eltávolítja a kapcsolatot az alkalmazásból.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>A legmélyebb kapcsolat</h2>
+      <p>Az alkalmazás bejelentkezik a Home Assistantba, hozzáadja a projektorodat a JVC Projector integrációjához, szkriptekként közzéteszi a jeleneteidet és a vezérlőket, és felépít egy vezérlőpultot. Saját oldalai vannak: <a href="/hu/jvc/guide/home-assistant/">Home Assistant beállítása</a> és <a href="/hu/jvc/guide/home-assistant-dashboard/">a Home Assistant vezérlőpult</a>.</p>
     </div>
-    <ul class="plain">
-      <li>Jelentkezz be, add hozzá a projektort, és hozz létre egy vezérlőpultot. Lásd: <a href="/hu/jvc/guide/home-assistant/">a Home Assistant útmutató</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Következő</div>
-      <h2>Olvasson tovább</h2>
+      <h2>Folytassa</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/hu/jvc/guide/">Vissza a felhasználói útmutatóhoz</a></li>
-      <li><a href="/hu/jvc/help/">Súgó és GYIK</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/hu/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/hu/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>Home Assistant vezérlőpult</a>
+      <a href="/hu/jvc/guide/scenes/"><span>&#127917;</span>Jelenetek</a>
+      <a href="/hu/jvc/guide/"><span>&#128218;</span>Vissza az útmutató főoldalára</a>
+    </div>
   </div>
 </section>
 

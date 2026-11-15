@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="tr" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
+<title>Home Assistant Kontrol Paneli - Projector Pilot D-ILA</title>
+<meta name="description" content="JVC D-ILA projektörünüz için tek dokunuşla bir Home Assistant kontrol paneli oluşturun: güç, görüntü, sahneler, girişler, lens hafızaları ve sinyal." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ar" href="https://projectorpilot.com/ar/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="cs" href="https://projectorpilot.com/cs/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="da" href="https://projectorpilot.com/da/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="de" href="https://projectorpilot.com/de/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="el" href="https://projectorpilot.com/el/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="es" href="https://projectorpilot.com/es/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fi" href="https://projectorpilot.com/fi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="fr" href="https://projectorpilot.com/fr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="he" href="https://projectorpilot.com/he/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hi" href="https://projectorpilot.com/hi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="hu" href="https://projectorpilot.com/hu/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="id" href="https://projectorpilot.com/id/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="it" href="https://projectorpilot.com/it/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ja" href="https://projectorpilot.com/ja/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ko" href="https://projectorpilot.com/ko/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nb" href="https://projectorpilot.com/nb/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="nl" href="https://projectorpilot.com/nl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pl" href="https://projectorpilot.com/pl/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt" href="https://projectorpilot.com/pt/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="pt-BR" href="https://projectorpilot.com/pt-br/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ro" href="https://projectorpilot.com/ro/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="ru" href="https://projectorpilot.com/ru/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="sv" href="https://projectorpilot.com/sv/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="th" href="https://projectorpilot.com/th/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="tr" href="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="uk" href="https://projectorpilot.com/uk/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="vi" href="https://projectorpilot.com/vi/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://projectorpilot.com/zh-hans/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://projectorpilot.com/zh-hant/jvc/guide/home-assistant-dashboard/" />
+<link rel="alternate" hreflang="x-default" href="https://projectorpilot.com/jvc/guide/home-assistant-dashboard/" />
+<!--/hreflang-->
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<meta property="og:site_name" content="Projector Pilot" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home Assistant Kontrol Paneli - Projector Pilot D-ILA" />
+<meta property="og:description" content="JVC D-ILA projektörünüz için tek dokunuşla bir Home Assistant kontrol paneli oluşturun: güç, görüntü, sahneler, girişler, lens hafızaları ve sinyal." />
+<meta property="og:url" content="https://projectorpilot.com/tr/jvc/guide/home-assistant-dashboard/" />
+<meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1242" />
+<meta property="og:image:height" content="2208" />
+<meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Home Assistant Kontrol Paneli - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="JVC D-ILA projektörünüz için tek dokunuşla bir Home Assistant kontrol paneli oluşturun: güç, görüntü, sahneler, girişler, lens hafızaları ve sinyal." />
+<meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
+<meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
+<script type="application/ld+json" id="seo-graph">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "tr", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/", "name": "Home Assistant Kontrol Paneli - Projector Pilot D-ILA", "description": "JVC D-ILA projektörünüz için tek dokunuşla bir Home Assistant kontrol paneli oluşturun: güç, görüntü, sahneler, girişler, lens hafızaları ve sinyal.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "tr", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "Kullanım Kılavuzu", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant panosu", "item": "https://projectorpilot.com/jvc/guide/home-assistant-dashboard/"}]}]}
+</script>
+<link rel="stylesheet" href="/assets/site.css" />
+</head><body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="/tr/jvc/"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" decoding="async" />Projector Pilot D-ILA</a>
+<button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+<nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil"><a href="/tr/jvc/#features">Özellikler</a><a href="/tr/jvc/guide/">Kılavuz</a><a href="/tr/jvc/pricing/">Fiyatlandırma</a><a href="/tr/jvc/highlights/">Öne Çıkanlar</a><a href="/tr/jvc/guide/home-assistant/">Home Assistant</a><a href="/tr/jvc/help/">Yardım</a><a class="cta" href="/tr/jvc/#status">ÇOK YAKINDA</a></nav>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="crumb"><a href="/tr/jvc/">Ana Sayfa</a> &rsaquo; <a href="/tr/jvc/guide/">Kullanım Kılavuzu</a> &rsaquo; Home Assistant yönetim paneli</div>
+    <div class="eyebrow">Home Assistant panosu</div>
+    <h1>Home Assistant'ta bir projektör kontrol paneli</h1>
+    <p class="lead">Tek dokunuş, JVC projektörünüz için Home Assistant'ta eksiksiz bir kontrol paneli oluşturur: güç, durum, görüntü seçenekleri, sahneleriniz, girişler, lens hafızaları, sinyal değerleri ve daha fazlası. Home Assistant'ınızda gerçekten bulunanlardan oluşturulur ve adres veya parola içermez. Ev Otomasyonu eklentisi gerekir.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Göndermeden önce</div>
+      <h2>Neye ihtiyaç duyar</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Home Assistant bağlı</b> ve projektör JVC Projector entegrasyonuna eklenmiş olmalı. Bkz. <a href="/tr/jvc/guide/home-assistant/">Home Assistant kurulumu</a>.</li>
+      <li>Sahne, güç, giriş, lens hafızası ve kontrol düğmelerini istiyorsanız <b>betikler eşitlenmiş</b> olmalı. Kontrol paneli, var olan betikleri kullanır.</li>
+      <li>Durum ve değer kutucukları için <b>canlı durum sensörü</b> açık olmalı.</li>
+      <li>Home Assistant'ta <b>bir yönetici hesabı</b>, çünkü bir kontrol paneli oluşturmak bunu gerektirir. Yoksa Home Assistant reddeder ve uygulama bunu söyler.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="with-shot">
+      <div>
+        <div class="eyebrow">İki yol</div>
+        <h2>Gönder veya kopyala</h2>
+        <ul class="plain">
+          <li><b>Kontrol panelini gönder</b>, kontrol panelini Home Assistant'ta, kenar çubuğunda, projektörünüzün adı ve projektör simgesiyle oluşturur. Güncellemek için yeniden gönderin. Home Assistant ile eşitlemek de onu gönderir.</li>
+          <li><b>Kontrol panelini kopyala</b> hiçbir şey göndermez. Kontrol panelini, yeni bir kontrol panelinin ham yapılandırma düzenleyicisine kendiniz yapıştırıp istediğiniz gibi değiştirebilmeniz için kopyalar.</li>
+        </ul>
+      </div>
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="Kontrol panelini gönder ve Kontrol panelini kopyala düğmelerini içeren Projector Pilot D-ILA Home Assistant ekranı" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">Her projektör, <code>projector-pilot-jvc-</code> ile başlayan bir adreste kendi kontrol panelini alır, böylece iki projektör birbirinin üzerine asla yazmaz.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Düzen</div>
+      <h2>Üzerinde neler var, yukarıdan aşağıya</h2>
+      <p class="lead">Bir bölüm yalnızca içinde bir şey olduğunda görünür; bu yüzden lens hafızası olmayan bir projektörde lens hafızası bölümü olmaz.</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>Bölüm</th><th>İçerik</th></tr></thead>
+      <tbody>
+        <tr><td>Üst bilgi</td><td>Projektörün adı, durumun en son ne zaman güncellendiği, güç, durum ve ışık kaynağı saatleri.</td></tr>
+        <tr><td>Görüntü</td><td>Giriş ve Home Assistant'ın projektör için sunduğu görüntü seçenekleri; örneğin görüntü modu, ışık gücü, dinamik kontrol, Clear Motion Drive, anamorfik, HDR işleme ve kurulum modu; modeliniz bunları sunuyorsa ve etkinse.</td></tr>
+        <tr><td>Sahneler</td><td>Her sahne betiği için bir düğme.</td></tr>
+        <tr><td>Güç</td><td>Güç betikleri.</td></tr>
+        <tr><td>Girişler</td><td>Giriş betikleri.</td></tr>
+        <tr><td>Lens hafızaları</td><td>Modelinizdeki her lens hafızası yuvası için bir düğme.</td></tr>
+        <tr><td>Kontroller</td><td>Görüntü modları ve Gizle gibi diğer kontrol betikleri.</td></tr>
+        <tr><td>Sinyal</td><td>Çözünürlük, renk derinliği, renk uzayı, kolorimetri ve HDR; Home Assistant'ın bildirdiği şekilde.</td></tr>
+        <tr><td>Değerler</td><td>Uygulamanın okuduğu ayarlar, canlı durum sensöründen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Görünüm</div>
+      <h2>Çekirdek kartlar veya stilli görünüm</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Çekirdek</h3><p>Yalnızca Home Assistant'ın kendi kartlarından oluşturulur. Her Home Assistant'ta çalışır, kurulacak bir şey yoktur.</p></div>
+      <div class="gcard"><h3>Stilli</h3><p>Daha zengin bir görünüm için HACS'ten button-card, card-mod ve Mushroom kartlarını kullanır. Yalnızca üçü de mevcutsa kullanılır.</p></div>
+    </div>
+    <p>Üçünden biri eksikse uygulama çekirdek sürümü gönderir ve stilli görünüm için HACS'ten hangi kartları kurmanız gerektiğini söyler. Onları kurun, sonra yeniden gönderin.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tasarım gereği dürüst</div>
+      <h2>Neden bazı şeyler üzerinde yok</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Gösterge yok.</b> JVC, Home Assistant'ın bildirdiği seviyeler için bir aralık vermez; bu yüzden kontrol paneli tahmin etmek zorunda kalacağı bir gösterge çizmez.</li>
+      <li><b>Adres veya parola yok.</b> Kontrol paneli yalnızca varlık kimliklerini, adları ve etiketleri içerir.</li>
+      <li><b>Uydurma varlık yok.</b> Bir kutucuk yalnızca Home Assistant'ınızda var olan bir varlık veya betik için görünür.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bir şey ters giderse</div>
+      <h2>Mesajlar</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Kontrol paneli gönderildi.</b> Home Assistant kenar çubuğundan açın.</li>
+      <li><b>Reddedildi.</b> Home Assistant kontrol panelini reddetti: bir yönetici hesabıyla oturum açın, sonra yeniden gönderin.</li>
+      <li><b>Oturum açma kabul edilmedi.</b> Yeniden oturum açın, sonra kontrol panelini gönderin.</li>
+      <li><b>Yanıt yok.</b> Home Assistant yanıt vermedi, bu yüzden kontrol panelinin gönderildiği doğrulanmadı. Bağlantıyı kontrol edin ve yeniden gönderin.</li>
+      <li><b>İzin verilmedi.</b> Demo projektör seçiliyken veya Ev Otomasyonu kilidi açık değilken cihazdan hiçbir şey çıkmaz.</li>
+    </ul>
+    <div class="note">Kontrol paneli projektörü, Home Assistant'ın JVC Projector entegrasyonu üzerinden kontrol eder; entegrasyon projektöre yalnızca bu uygulama ona bağlı değilken ulaşabilir. Kontrol panelini kullanmadan önce uygulamayı kapatın.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sonraki</div>
+      <h2>Devam edin</h2>
+    </div>
+    <div class="guide-toc">
+      <a href="/tr/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant kurulumu</a>
+      <a href="/tr/jvc/guide/home-automation/"><span>&#127968;</span>Ev otomasyonu</a>
+      <a href="/tr/jvc/guide/scenes/"><span>&#127917;</span>Sahneler</a>
+      <a href="/tr/jvc/guide/"><span>&#128218;</span>Kılavuz ana sayfasına dön</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-brand"><img src="/assets/icon-192.png" alt="Projector Pilot" width="192" height="192" loading="lazy" decoding="async" /><div style="font-family:var(--disp);font-weight:700;font-size:1.05rem;color:var(--ink)">Projector Pilot D-ILA</div></div>
+<div class="flinks"><a href="/tr/jvc/guide/">Kullanım Kılavuzu</a><a href="/tr/jvc/pricing/">Fiyatlandırma</a><a href="/tr/jvc/highlights/">Öne Çıkanlar</a><a href="/tr/jvc/guide/home-assistant/">Home Assistant</a><a href="/tr/jvc/help/">Yardım &amp; SSS</a><a href="https://miyarahub.com">MiyaraHub</a><a href="/tr/jvc/privacy/">Gizlilik</a><a href="https://miyarahub.com/terms.html">Şartlar</a></div>
+<div class="flinks"><a href="/tr/jvc/guide/getting-started/">Başlarken</a><a href="/tr/jvc/guide/dashboard/">Kontrol Paneli</a><a href="/tr/jvc/guide/remote/">Kumanda</a><a href="/tr/jvc/guide/picture/">Görüntü</a><a href="/tr/jvc/guide/lens/">Lens</a><a href="/tr/jvc/guide/scenes/">Sahneler</a><a href="/tr/jvc/guide/settings/">Ayarlar</a><a href="/tr/jvc/guide/maintenance/">Bakım</a><a href="/tr/jvc/guide/home-automation/">Ev Otomasyonu</a><a href="/tr/jvc/guide/languages/">Diller</a></div>
+<p class="crosslink">Epson projektör mü kullanıyorsunuz? <a href="/tr/epson/" data-app-pick="epson">Epson için Projector Pilot sayfasına bakın &rarr;</a></p>
+<p class="legal">&copy; 2026 MiyaraHub Technologies LLC. Projector Pilot D-ILA, JVC D-ILA projektörler için bağımsız bir uygulamadır. JVCKENWOOD Corporation ile bağlantılı değildir ve onun tarafından onaylanmamıştır. JVC ve D-ILA sahiplerinin ticari markalarıdır. Ayrıca Home Assistant, Hubitat, Apple, Google veya Microsoft ile de bağlantılı değildir; bu adlar ilgili sahiplerinin ticari markalarıdır ve yalnızca uygulamanın nelerle çalıştığını açıklamak için anılmıştır.</p>
+</div></footer>
+<script src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/apps.js"></script>
+</body></html>

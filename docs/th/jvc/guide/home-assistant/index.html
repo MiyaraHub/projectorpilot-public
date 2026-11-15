@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="th" dir="ltr"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>Home Assistant - Projector Pilot D-ILA</title>
-<meta name="description" content="เชื่อมต่อ Projector Pilot D-ILA กับ Home Assistant: ลงชื่อเข้าใช้ เพิ่มการผสานรวม jvc_projector ซิงก์สคริปต์ และสร้างแดชบอร์ด" />
+<title>การตั้งค่า Home Assistant - Projector Pilot D-ILA</title>
+<meta name="description" content="เพิ่มโปรเจกเตอร์ JVC D-ILA ของคุณใน Home Assistant โดยไม่ต้องใช้ YAML: เข้าสู่ระบบ การเชื่อมต่อ JVC Projector เซนเซอร์สถานะสด และสคริปต์ฉาก" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/th/jvc/guide/home-assistant/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta property="og:description" content="เชื่อมต่อ Projector Pilot D-ILA กับ Home Assistant: ลงชื่อเข้าใช้ เพิ่มการผสานรวม jvc_projector ซิงก์สคริปต์ และสร้างแดชบอร์ด" />
+<meta property="og:title" content="การตั้งค่า Home Assistant - Projector Pilot D-ILA" />
+<meta property="og:description" content="เพิ่มโปรเจกเตอร์ JVC D-ILA ของคุณใน Home Assistant โดยไม่ต้องใช้ YAML: เข้าสู่ระบบ การเชื่อมต่อ JVC Projector เซนเซอร์สถานะสด และสคริปต์ฉาก" />
 <meta property="og:url" content="https://projectorpilot.com/th/jvc/guide/home-assistant/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Home Assistant - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="เชื่อมต่อ Projector Pilot D-ILA กับ Home Assistant: ลงชื่อเข้าใช้ เพิ่มการผสานรวม jvc_projector ซิงก์สคริปต์ และสร้างแดชบอร์ด" />
+<meta name="twitter:title" content="การตั้งค่า Home Assistant - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="เพิ่มโปรเจกเตอร์ JVC D-ILA ของคุณใน Home Assistant โดยไม่ต้องใช้ YAML: เข้าสู่ระบบ การเชื่อมต่อ JVC Projector เซนเซอร์สถานะสด และสคริปต์ฉาก" />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "Home Assistant - Projector Pilot D-ILA", "description": "เชื่อมต่อ Projector Pilot D-ILA กับ Home Assistant: ลงชื่อเข้าใช้ เพิ่มการผสานรวม jvc_projector ซิงก์สคริปต์ และสร้างแดชบอร์ด", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "th", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-assistant/", "name": "การตั้งค่า Home Assistant - Projector Pilot D-ILA", "description": "เพิ่มโปรเจกเตอร์ JVC D-ILA ของคุณใน Home Assistant โดยไม่ต้องใช้ YAML: เข้าสู่ระบบ การเชื่อมต่อ JVC Projector เซนเซอร์สถานะสด และสคริปต์ฉาก", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "th", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-assistant/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือผู้ใช้", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "Home Assistant", "item": "https://projectorpilot.com/jvc/guide/home-assistant/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -102,8 +102,18 @@
   <div class="wrap">
     <div class="crumb"><a href="/th/jvc/">หน้าแรก</a> &rsaquo; <a href="/th/jvc/guide/">คู่มือผู้ใช้</a> &rsaquo; Home Assistant</div>
     <div class="eyebrow">Home Assistant</div>
-    <h1>Home Assistant</h1>
-    <p class="lead">ตั้งค่าโปรเจกเตอร์ JVC ของคุณใน Home Assistant จากในแอป</p>
+    <h1>ตั้งค่าโปรเจกเตอร์ JVC ของคุณใน Home Assistant</h1>
+    <p class="lead">แอปเข้าสู่ระบบ Home Assistant ของคุณ เพิ่มโปรเจกเตอร์ลงในอินทิเกรชัน JVC Projector ของ Home Assistant เอง เผยแพร่ฉากและตัวควบคุมของคุณเป็นสคริปต์ และสร้างแดชบอร์ดให้ คุณไม่ต้องวางโทเคนหรือเขียน YAML ต้องใช้แอดออน Home Automation</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">อ่านก่อน</div>
+      <h2>ครั้งละหนึ่งตัวควบคุม</h2>
+      <p class="lead">โปรเจกเตอร์ JVC รองรับตัวควบคุมเครือข่ายครั้งละหนึ่งตัว ขณะที่แอปนี้เปิดและเชื่อมต่อกับโปรเจกเตอร์อยู่ Home Assistant จะเข้าถึงโปรเจกเตอร์ไม่ได้ ตัวควบคุมโปรเจกเตอร์และสคริปต์ของ Home Assistant ทำงานได้เมื่อปิดแอป และแอปจะปล่อยโปรเจกเตอร์เมื่อไปอยู่เบื้องหลัง</p>
+    </div>
   </div>
 </section>
 
@@ -111,32 +121,128 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">การตั้งค่า</div>
-        <h2>ตั้งแต่ลงชื่อเข้าใช้จนถึงแดชบอร์ด</h2>
-        <ul class="plain">
-          <li><b>ลงชื่อเข้าใช้</b> Home Assistant ด้วยการลงชื่อเข้าใช้ OAuth ของ Home Assistant เอง</li>
-          <li><b>การผสานรวม</b>: แอปจะเพิ่มการผสานรวม <b>jvc_projector</b> หลักของ Home Assistant โดยส่งโฮสต์ พอร์ต และรหัสผ่านไปให้</li>
-          <li><b>เซนเซอร์</b>: เซนเซอร์ mobile_app รายงานผ่านเว็บฮุก</li>
-          <li><b>ซิงก์ตัวควบคุมขั้นสูง</b> สร้างสคริปต์ที่มีคำนำหน้า <b>ppjvc</b></li>
-          <li><b>แดชบอร์ด</b>: แดชบอร์ด Lovelace แบบสไตล์หลักหรือสไตล์ HACS</li>
-          <li><b>รายการตรวจสอบการตั้งค่า</b> จะแสดงสิ่งที่ทำเสร็จแล้วและสิ่งที่เหลืออยู่</li>
-        </ul>
+        <div class="eyebrow">ขั้นตอนที่ 1</div>
+        <h2>เข้าสู่ระบบ</h2>
+        <ol class="steps">
+          <li>เปิด การตั้งค่า, Home Automation, Home Assistant</li>
+          <li>ป้อน<b>ที่อยู่ Home Assistant</b> ของคุณ โดยขึ้นต้นด้วย http:// หรือ https://</li>
+          <li>แตะ <b>เข้าสู่ระบบ</b> หน้าเข้าสู่ระบบของ Home Assistant เองจะเปิดในเบราว์เซอร์ ให้เข้าสู่ระบบที่นั่นแล้วกลับมา</li>
+          <li>แตะ <b>ทดสอบการเชื่อมต่อ</b> เพื่อยืนยัน</li>
+        </ol>
       </div>
-      <img src="/screenshots/jvc/08-home-assistant.png" alt="หน้าตั้งค่า Home Assistant ของ Projector Pilot D-ILA" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/08-home-assistant.png" alt="หน้าจอ Home Assistant ของ Projector Pilot D-ILA พร้อมรายการตรวจสอบการตั้งค่า" width="1242" height="2208" loading="lazy" decoding="async" />
+    </div>
+    <div class="note">หากเข้าถึง Home Assistant ไม่ได้ ให้ตรวจสอบที่อยู่ และตรวจว่าอุปกรณ์เครื่องนี้อยู่ในเครือข่ายเดียวกับ Home Assistant</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 2</div>
+      <h2>สิ่งที่ Home Assistant ของคุณมี</h2>
+      <p class="lead">แผงหนึ่งจะอ่านข้อมูลจาก Home Assistant ของคุณและทำเครื่องหมายแต่ละส่วนว่า พบ ไม่ได้ติดตั้ง หรือ ไม่สามารถระบุได้ ตรวจสอบอีกครั้งจะอ่านใหม่</p>
+    </div>
+    <table class="t">
+      <thead><tr><th>ส่วน</th><th>ใช้สำหรับ</th></tr></thead>
+      <tbody>
+        <tr><td>อินทิเกรชัน Mobile App</td><td>เซนเซอร์สถานะสด</td></tr>
+        <tr><td>อินทิเกรชัน JVC Projector</td><td>การควบคุมโปรเจกเตอร์เครื่องนี้จาก Home Assistant</td></tr>
+        <tr><td>HACS</td><td>เฉพาะรูปลักษณ์แบบตกแต่งของแดชบอร์ด</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ขั้นตอนที่ 3</div>
+      <h2>รายการตรวจสอบการตั้งค่า</h2>
+    </div>
+    <ol class="steps">
+      <li><b>เข้าสู่ระบบ Home Assistant</b></li>
+      <li><b>เพิ่มโปรเจกเตอร์นี้ลงในอินทิเกรชัน JVC Projector ของ Home Assistant</b> แตะ เพิ่ม แอปจะส่งที่อยู่ พอร์ต และรหัสผ่านเครือข่ายของโปรเจกเตอร์ไปยังอินทิเกรชัน JVC Projector ของ Home Assistant หลังจากถามคุณก่อน</li>
+      <li><b>เปิดใช้เอนทิตีที่สคริปต์ต้องใช้</b> เอนทิตี JVC Projector บางรายการเริ่มต้นเป็นปิดใช้งานใน Home Assistant แตะ เปิดใช้งาน ข้างแต่ละรายการ Home Assistant อาจต้องโหลดใหม่หรือรีสตาร์ตก่อนรายการนั้นจะปรากฏ</li>
+      <li><b>เซนเซอร์สถานะสด</b> เปิด ส่งสถานะของโปรเจกเตอร์ เซนเซอร์จะถูกสร้างในครั้งถัดไปที่แอปส่งสถานะของโปรเจกเตอร์ขณะเชื่อมต่ออยู่</li>
+    </ol>
+    <div class="note"><b>เรื่องรหัสผ่าน</b> เมื่อคุณเพิ่มโปรเจกเตอร์ รหัสผ่านเครือข่ายของโปรเจกเตอร์จะถูกส่งไปยัง Home Assistant ของคุณและเก็บไว้ที่นั่น ในรายการ JVC Projector แอปไม่ส่งรหัสนี้ไปที่อื่น แอปจะปล่อยโปรเจกเตอร์ขณะที่ Home Assistant เชื่อมต่อกับโปรเจกเตอร์ แล้วจึงเชื่อมต่อใหม่</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">รายการไหน</div>
+      <h2>แอปหาโปรเจกเตอร์ของคุณใน Home Assistant อย่างไร</h2>
+      <p>แอปจับคู่รายการ JVC Projector ด้วยที่อยู่ MAC ของโปรเจกเตอร์ จึงต้องเชื่อมต่อกับโปรเจกเตอร์อย่างน้อยหนึ่งครั้งก่อน หาก Home Assistant ไม่มีรายการที่มี MAC นั้น หรือมีมากกว่าหนึ่งรายการ รายการตรวจสอบจะแจ้งไว้พร้อมวิธีดำเนินการ หากโปรเจกเตอร์เปลี่ยนที่อยู่ แอปจะเสนอให้ส่งที่อยู่ใหม่ไปยัง Home Assistant</p>
     </div>
   </div>
 </section>
-    <div class="note">Home Assistant ต้องใช้ส่วนเสริม Home Automation</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">เซนเซอร์</div>
+      <h2>สถานะสด</h2>
+      <p>สถานะของเซนเซอร์คือสถานะพลังงานที่แอปอ่านล่าสุด ส่วนแอตทริบิวต์คืออินพุต รุ่น และการตั้งค่าที่แอปอ่านได้ เซนเซอร์ทำงานผ่านอินทิเกรชัน Mobile App และไม่ส่งอะไรไปยังโปรเจกเตอร์ เซนเซอร์อัปเดตทุกครั้งที่สถานะเปลี่ยนขณะที่แอปเปิดและเชื่อมต่ออยู่</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">สคริปต์</div>
+      <h2>ฉากและการควบคุม</h2>
+      <p class="lead">ฉากที่บันทึกไว้แต่ละฉากจะกลายเป็นสคริปต์ใน Home Assistant ที่ทำงานผ่านเอนทิตี JVC Projector สคริปต์ไม่เก็บที่อยู่และรหัสผ่าน รหัสสคริปต์ขึ้นต้นด้วย <code>ppjvc</code></p>
+    </div>
+    <ul class="plain">
+      <li><b>Sync With HA</b> เขียน<a href="/th/jvc/guide/scenes/">ฉาก</a>ของคุณเป็นสคริปต์ และแสดงจำนวนขั้นตอนของแต่ละสคริปต์ รวมถึงสิ่งที่ถูกตัดออกและเหตุผล</li>
+      <li><b>Sync Advanced Controls</b> เผยแพร่สคริปต์สำหรับสถานะเปิดปิด อินพุต โหมดภาพ หน่วยความจำเลนส์ และซ่อน</li>
+      <li><b>ผลลัพธ์</b> มีการนับ: ซิงค์สคริปต์สำเร็จกี่รายการ Home Assistant ปฏิเสธกี่รายการ และ Home Assistant ยืนยันการโหลดใหม่หรือไม่</li>
+      <li><b>Remove orphaned scripts</b> ลบสคริปต์ที่แอปนี้สร้างขึ้นซึ่งไม่มีฉากใดใช้อีกต่อไป โดยแสดงรายการและถามก่อน</li>
+    </ul>
+    <div class="note">หากยังไม่ได้อ่านสิ่งที่การซิงค์ต้องใช้ จะไม่มีการเขียน เปลี่ยนแปลง หรือลบสิ่งใด การซิงค์ไม่เคยทำงานครึ่งๆ กลางๆ จากการคาดเดา</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">แดชบอร์ด</div>
+      <h2>แดชบอร์ดสำเร็จรูป</h2>
+      <p><b>ส่งแดชบอร์ด</b>สร้างแดชบอร์ดโปรเจกเตอร์ใน Home Assistant ของคุณจากเอนทิตี JVC Projector สคริปต์ และเซนเซอร์ ส่วน<b>คัดลอกแดชบอร์ด</b>จะคัดลอกแทน เพื่อให้คุณนำไปวางในแดชบอร์ดใหม่เอง รายละเอียดทั้งหมดอยู่ใน<a href="/th/jvc/guide/home-assistant-dashboard/">หน้าแดชบอร์ด Home Assistant</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">กฎ</div>
+      <h2>สิ่งที่แอปไม่เคยทำ</h2>
+    </div>
+    <ul class="plain">
+      <li>จะไม่มีสิ่งใดออกจากอุปกรณ์ขณะที่เลือกโปรเจกเตอร์สาธิตอยู่ หรือยังไม่ได้ปลดล็อก Home Automation</li>
+      <li><b>ยกเลิกการเชื่อมโยง</b>จะลบการเชื่อมโยงออกจากแอปนี้เท่านั้น อุปกรณ์และเอนทิตีของโปรเจกเตอร์ยังคงอยู่ใน Home Assistant จนกว่าคุณจะลบที่นั่น</li>
+      <li>หาก Home Assistant ไม่ยอมรับการเข้าสู่ระบบอีกต่อไป แอปจะแจ้งและขอให้คุณเข้าสู่ระบบอีกครั้ง</li>
+    </ul>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">ถัดไป</div>
       <h2>อ่านต่อ</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/th/jvc/guide/">กลับไปที่คู่มือผู้ใช้</a></li>
-      <li><a href="/th/jvc/help/">ความช่วยเหลือและคำถามที่พบบ่อย</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/th/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>แดชบอร์ด Home Assistant</a>
+      <a href="/th/jvc/guide/home-automation/"><span>&#127968;</span>Home Automation</a>
+      <a href="/th/jvc/help/"><span>&#10067;</span>วิธีใช้และคำถามที่พบบ่อย</a>
+      <a href="/th/jvc/guide/"><span>&#128218;</span>กลับไปที่ศูนย์รวมคู่มือ</a>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="google-site-verification" content="Z0oFfpLiodGcKiCbKl5X_EEnnIZO10DJKq-m-a4rbLk" /><meta name="theme-color" content="#1B5E20" />
-<title>أتمتة جهاز عرض JVC عبر Home Assistant &amp; Hubitat - Projector Pilot D-ILA</title>
-<meta name="description" content="الأتمتة المنزلية في Projector Pilot D-ILA: مشغلات خطافات الويب لأحداث التشغيل والمدخل والمشاهد، وHubitat Maker API وHome Assistant." />
+<title>الأتمتة المنزلية - Projector Pilot D-ILA</title>
+<meta name="description" content="مشغلات Webhook ومرآة Hubitat وإعداد Home Assistant لجهاز عرض JVC D-ILA الخاص بك، مع الطلب الدقيق الذي يرسله التطبيق." />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://projectorpilot.com/ar/jvc/guide/home-automation/" />
 <!--hreflang-->
@@ -72,8 +72,8 @@
 <meta property="og:locale:alternate" content="zh_CN" />
 <meta property="og:locale:alternate" content="zh_TW" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="أتمتة جهاز عرض JVC عبر Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta property="og:description" content="الأتمتة المنزلية في Projector Pilot D-ILA: مشغلات خطافات الويب لأحداث التشغيل والمدخل والمشاهد، وHubitat Maker API وHome Assistant." />
+<meta property="og:title" content="الأتمتة المنزلية - Projector Pilot D-ILA" />
+<meta property="og:description" content="مشغلات Webhook ومرآة Hubitat وإعداد Home Assistant لجهاز عرض JVC D-ILA الخاص بك، مع الطلب الدقيق الذي يرسله التطبيق." />
 <meta property="og:url" content="https://projectorpilot.com/ar/jvc/guide/home-automation/" />
 <meta property="og:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,12 +81,12 @@
 <meta property="og:image:height" content="2208" />
 <meta property="og:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="أتمتة جهاز عرض JVC عبر Home Assistant &amp; Hubitat - Projector Pilot D-ILA" />
-<meta name="twitter:description" content="الأتمتة المنزلية في Projector Pilot D-ILA: مشغلات خطافات الويب لأحداث التشغيل والمدخل والمشاهد، وHubitat Maker API وHome Assistant." />
+<meta name="twitter:title" content="الأتمتة المنزلية - Projector Pilot D-ILA" />
+<meta name="twitter:description" content="مشغلات Webhook ومرآة Hubitat وإعداد Home Assistant لجهاز عرض JVC D-ILA الخاص بك، مع الطلب الدقيق الذي يرسله التطبيق." />
 <meta name="twitter:image" content="https://projectorpilot.com/screenshots/jvc/01-dashboard.png" />
 <meta name="twitter:image:alt" content="Projector Pilot D-ILA dashboard on a phone, controlling a JVC D-ILA projector" />
 <script type="application/ld+json" id="seo-graph">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "أتمتة جهاز عرض JVC عبر Home Assistant & Hubitat - Projector Pilot D-ILA", "description": "الأتمتة المنزلية في Projector Pilot D-ILA: مشغلات خطافات الويب لأحداث التشغيل والمدخل والمشاهد، وHubitat Maker API وHome Assistant.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "أتمتة المنزل", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://projectorpilot.com/#organization", "name": "MiyaraHub Technologies LLC", "url": "https://miyarahub.com", "logo": {"@type": "ImageObject", "url": "https://projectorpilot.com/assets/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://github.com/MiyaraHub"]}, {"@type": "WebSite", "@id": "https://projectorpilot.com/#website", "url": "https://projectorpilot.com/", "name": "Projector Pilot", "inLanguage": "ar", "publisher": {"@id": "https://projectorpilot.com/#organization"}}, {"@type": "WebPage", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#webpage", "url": "https://projectorpilot.com/jvc/guide/home-automation/", "name": "الأتمتة المنزلية - Projector Pilot D-ILA", "description": "مشغلات Webhook ومرآة Hubitat وإعداد Home Assistant لجهاز عرض JVC D-ILA الخاص بك، مع الطلب الدقيق الذي يرسله التطبيق.", "isPartOf": {"@id": "https://projectorpilot.com/#website"}, "inLanguage": "ar", "dateModified": "2026-11-15", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://projectorpilot.com/screenshots/jvc/01-dashboard.png", "width": 1242, "height": 2208}, "breadcrumb": {"@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb"}, "about": {"@id": "https://projectorpilot.com/jvc/#app"}}, {"@type": "BreadcrumbList", "@id": "https://projectorpilot.com/jvc/guide/home-automation/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://projectorpilot.com/jvc/"}, {"@type": "ListItem", "position": 2, "name": "دليل المستخدم", "item": "https://projectorpilot.com/jvc/guide/"}, {"@type": "ListItem", "position": 3, "name": "أتمتة المنزل", "item": "https://projectorpilot.com/jvc/guide/home-automation/"}]}]}
 </script>
 <link rel="preload" href="/assets/fonts/archivo-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/fonts/saira-normal-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -103,7 +103,21 @@
     <div class="crumb"><a href="/ar/jvc/">الرئيسية</a> &rsaquo; <a href="/ar/jvc/guide/">دليل المستخدم</a> &rsaquo; الأتمتة المنزلية</div>
     <div class="eyebrow">أتمتة المنزل</div>
     <h1>اربط جهاز العرض ببيتك</h1>
-    <p class="lead">خطافات الويب وHubitat وHome Assistant، مع إضافة الأتمتة المنزلية.</p>
+    <p class="lead">دع بقية المنزل يتفاعل عندما يعمل جهاز العرض أو ينتقل إلى وضع الاستعداد أو يغيّر المدخل أو يستدعي مشهدًا. توجد ثلاثة روابط ضمن الإعدادات، أتمتة المنزل: مشغلات webhook وHubitat وHome Assistant. تتطلب الثلاثة إضافة أتمتة المنزل، التي تُباع منفردة أو ضمن الحزمة؛ ولا يشملها Pro وحده.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">اختر واحدًا</div>
+      <h2>أي رابط تستخدم</h2>
+    </div>
+    <div class="grid">
+      <div class="gcard"><h3>Webhooks</h3><p>أي نظام يقبل طلب ويب: Node-RED أو خادم منزلي أو أتمتة سحابية. التطبيق يرسل وأنت تقرر ما يحدث.</p></div>
+      <div class="gcard"><h3>Hubitat</h3><p>مرآة باتجاه واحد للتشغيل والمدخل على جهاز في المركز الخاص بك، عبر Maker API، ليتصرف بناءً عليها Rule Machine.</p></div>
+      <div class="gcard"><h3>Home Assistant</h3><p>يُعدّ تكامل JVC Projector الخاص بـ Home Assistant نفسه، ونصوصًا برمجية لمشاهدك، ولوحة معلومات جاهزة.</p></div>
+    </div>
   </div>
 </section>
 
@@ -111,16 +125,75 @@
   <div class="wrap">
     <div class="with-shot">
       <div>
-        <div class="eyebrow">المشغلات</div>
-        <h2>خطافات الويب عند أحداث جهاز العرض</h2>
+        <div class="eyebrow">Webhooks</div>
+        <h2>مشغلات الأتمتة</h2>
+        <p>يرسل المشغل طلب ويب إلى عنوان تدخله عندما يحدث شيء على جهاز العرض هذا. لكل جهاز عرض قائمته الخاصة. انقر على <b>إضافة مشغل</b>، ثم اختر:</p>
         <ul class="plain">
-          <li><b>الأحداث</b>: التشغيل والاستعداد وتغيّر المدخل والمشهد.</li>
-          <li><b>الطلبات</b>: POST أو PUT أو GET إلى عنوان تدخله.</li>
-          <li>لا تعمل المشغلات إلا أثناء فتح التطبيق واتصاله، ولا تعمل أبدًا من جهاز العرض التجريبي.</li>
+          <li><b>عندما</b>: يتم تشغيل جهاز العرض، أو ينتقل جهاز العرض إلى وضع الاستعداد، أو يتغير المدخل (إلى أي مدخل أو إلى مدخل محدد)، أو يتم استدعاء مشهد (أي مشهد أو مشهد محدد).</li>
+          <li><b>الطريقة</b>: POST (الافتراضية) أو PUT أو GET.</li>
+          <li><b>عنوان الويب</b>: عنوان http:// أو https:// مع اسم مضيف.</li>
+          <li><b>مفعّل</b>، لإيقاف مشغل مؤقتًا دون حذفه.</li>
         </ul>
       </div>
-      <img src="/screenshots/jvc/07-home-automation.png" alt="صفحة الأتمتة المنزلية في Projector Pilot D-ILA مع المشغلات" width="1242" height="2208" loading="lazy" decoding="async" />
+      <img src="/screenshots/jvc/07-home-automation.png" alt="قائمة مشغلات الأتمتة في Projector Pilot D-ILA لجهاز عرض JVC" width="1242" height="2208" loading="lazy" decoding="async" />
     </div>
+    <div class="note">يُرسَل العنوان الذي يبدأ بـ http:// دون تشفير، ويقول المحرر ذلك. استخدم https:// عندما يدعمه نظامك.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">الحمولة</div>
+      <h2>ما الذي يحمله الطلب</h2>
+      <p class="lead">يرسل POST وPUT جسمًا بصيغة JSON؛ أما GET فلا يرسل جسمًا. والترويسة الوحيدة التي يضيفها التطبيق هي Content-Type. ويُترك أي حقل لا ينطبق على الحدث.</p>
+    </div>
+    <pre class="code">{
+  "event": "input_changed",
+  "projector": "Theater",
+  "input": "hdmi2",
+  "timestamp": "2026-11-15T20:00:00.000Z"
+}</pre>
+    <table class="t">
+      <thead><tr><th>الحقل</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td><code>event</code></td><td><code>power_on</code> أو <code>power_off</code> أو <code>input_changed</code> أو <code>scene_recalled</code>.</td></tr>
+        <tr><td><code>projector</code></td><td>اسم جهاز العرض في التطبيق.</td></tr>
+        <tr><td><code>input</code></td><td>المدخل، مثل <code>hdmi1</code> أو <code>hdmi2</code>.</td></tr>
+        <tr><td><code>scene_id</code>, <code>scene_name</code></td><td>المشهد، عند استدعاء مشهد.</td></tr>
+        <tr><td><code>timestamp</code></td><td>وقت حدوثه، بالتوقيت UTC.</td></tr>
+        <tr><td><code>test</code></td><td>موجود، وقيمته true، فقط في الطلب المرسل عبر إرسال اختبار.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">التسليم</div>
+      <h2>محاولة واحدة، يُبلَّغ عنها بصدق</h2>
+    </div>
+    <ul class="plain">
+      <li>يُرسَل كل حدث مرة واحدة، بمهلة 10 ثوانٍ، ولا تُتبع عمليات إعادة التوجيه.</li>
+      <li>يعرض المشغل آخر نتيجة له: تم التسليم في وقت معين مع رمز الحالة، أو مرفوض، أو لا توجد استجابة، أو تعذر الوصول إلى العنوان، أو فشل الاتصال الآمن، أو لم يُرسل بعد.</li>
+      <li><b>إرسال اختبار</b> يرسل طلبًا معلَّمًا على أنه اختبار، لتتمكن من تجهيز الطرف الآخر قبل أن يفعل جهاز العرض أي شيء.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">متى تعمل المشغلات</div>
+      <h2>القواعد</h2>
+    </div>
+    <ul class="plain">
+      <li><b>فقط ما دام التطبيق مفتوحًا ومتصلًا</b> بجهاز العرض. يراقب التطبيق حالة جهاز العرض؛ وهو ليس خدمة تعمل في الخلفية.</li>
+      <li><b>التغيّرات، لا القراءات.</b> القراءة الأولى بعد اتصال التطبيق تحدد نقطة البداية فقط، لذلك لا يؤدي فتح التطبيق إلى تشغيل "يتم تشغيل" لجهاز عرض كان يعمل أصلًا.</li>
+      <li><b>لا شيء من جهاز العرض التجريبي أبدًا.</b> لا يغادر شيء الجهاز ما دام جهاز العرض التجريبي محددًا أو أتمتة المنزل غير مفتوحة.</li>
+      <li><b>محفوظة بأمان.</b> تُحفظ عناوين المشغلات في التخزين الآمن للجهاز.</li>
+    </ul>
   </div>
 </section>
 
@@ -128,11 +201,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Hubitat</div>
-      <h2>Hubitat</h2>
+      <h2>اعكس جهاز العرض في Hubitat</h2>
+      <p class="lead">يعكس التطبيق جهاز العرض هذا على جهاز في مركز Hubitat الخاص بك عبر Maker API: التشغيل والاستعداد، والمدخل بصيغة HDMI 1 أو HDMI 2، لأي من هذين يقبله الجهاز. وبعدها يستطيع Rule Machine التصرف بناءً عليه.</p>
     </div>
-    <ul class="plain">
-      <li>عبر Maker API في Hubitat: التشغيل والإيقاف وHDMI 1 وHDMI 2.</li>
-    </ul>
+    <ol class="steps">
+      <li>في Hubitat، أضف Maker API ودوّن معرّف تطبيقه (الرقم الظاهر في روابطه) ورمز الوصول الخاص به.</li>
+      <li>في التطبيق، أدخل <b>عنوان المركز</b> و<b>معرّف تطبيق Maker API</b> و<b>رمز الوصول</b>.</li>
+      <li>انقر على <b>البحث عن جهاز</b> واختر الجهاز الذي يمثل جهاز العرض هذا. إذا لم يبدُ أي جهاز مناسبًا، فأضف في Hubitat مفتاحًا افتراضيًا (Virtual Switch) باسم جهاز العرض وحاول مرة أخرى.</li>
+      <li>فعّل <b>عرض حالة جهاز العرض مطابقة</b>. يتبع الجهاز جهاز العرض كلما تغير والتطبيق مفتوح ومتصل.</li>
+    </ol>
+    <div class="note"><b>اتجاه واحد فقط.</b> لا يُرسل شيء من Hubitat إلى جهاز العرض. يزيل إلغاء الربط الربط من التطبيق.</div>
   </div>
 </section>
 
@@ -140,11 +218,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Home Assistant</div>
-      <h2>Home Assistant</h2>
+      <h2>أعمق رابط</h2>
+      <p>يسجّل التطبيق الدخول إلى Home Assistant ويضيف جهاز العرض إلى تكامل JVC Projector فيه، وينشر مشاهدك وعناصر التحكم نصوصًا برمجية، ويبني لوحة معلومات. وله صفحاته الخاصة: <a href="/ar/jvc/guide/home-assistant/">إعداد Home Assistant</a> و<a href="/ar/jvc/guide/home-assistant-dashboard/">لوحة Home Assistant</a>.</p>
     </div>
-    <ul class="plain">
-      <li>سجّل الدخول، وأضف جهاز العرض، وأنشئ لوحة تحكم. راجع <a href="/ar/jvc/guide/home-assistant/">دليل Home Assistant</a>.</li>
-    </ul>
   </div>
 </section>
 
@@ -152,12 +228,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">التالي</div>
-      <h2>تابع القراءة</h2>
+      <h2>تابع</h2>
     </div>
-    <ul class="plain">
-      <li><a href="/ar/jvc/guide/">العودة إلى دليل المستخدم</a></li>
-      <li><a href="/ar/jvc/help/">المساعدة والأسئلة الشائعة</a></li>
-    </ul>
+    <div class="guide-toc">
+      <a href="/ar/jvc/guide/home-assistant/"><span>&#128200;</span>Home Assistant</a>
+      <a href="/ar/jvc/guide/home-assistant-dashboard/"><span>&#128421;</span>لوحة Home Assistant</a>
+      <a href="/ar/jvc/guide/scenes/"><span>&#127917;</span>المشاهد</a>
+      <a href="/ar/jvc/guide/"><span>&#128218;</span>العودة إلى مركز الدليل</a>
+    </div>
   </div>
 </section>
 
