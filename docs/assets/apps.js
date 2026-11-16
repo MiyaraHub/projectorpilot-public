@@ -3,7 +3,7 @@
     epson: {
       name: "Epson",
       locales: true,
-      pages: ["", "guide/", "guide/dashboard/", "guide/getting-started/", "guide/home-assistant-dashboard/", "guide/home-automation/", "guide/languages/", "guide/lens/", "guide/maintenance/", "guide/picture/", "guide/remote/", "guide/scenes/", "guide/settings/", "help/", "highlights/", "pricing/"]
+      pages: ["", "compatible-projectors/", "guide/", "guide/dashboard/", "guide/getting-started/", "guide/home-assistant-dashboard/", "guide/home-automation/", "guide/languages/", "guide/lens/", "guide/maintenance/", "guide/picture/", "guide/remote/", "guide/scenes/", "guide/settings/", "help/", "highlights/", "pricing/"]
     },
     jvc: {
       name: "JVC D-ILA",
