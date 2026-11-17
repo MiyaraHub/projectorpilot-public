@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "O Projector Pilot precisa de conta ou envia meus dados para a nuvem?",
+      "name": "O Projector Pilot precisa de uma conta ou envia meus dados para algum lugar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sem conta e sem nuvem. O app fala com o seu projetor na sua rede. Ele usa diagnósticos de falhas pelo Crashlytics e análises de uso opcionais, desativadas por padrão e que podem ser desligadas em Configurações > Sobre. Nada é vendido."
+        "text": "Sem conta. O app conversa com o seu projetor na sua rede. No Android e no iOS ele envia relatórios de falhas ao Google Firebase Crashlytics por padrão, o que você pode desativar em Configurações > Sobre, e a análise de uso é opcional e vem desativada por padrão. Nada é vendido."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Privacidade</div>
       <h2>Seus dados continuam seus</h2>
-      <p class="lead">O Projector Pilot é um app local. Ele fala com o seu projetor na sua rede, e não há nada para se cadastrar.</p>
+      <p class="lead">O Projector Pilot conversa com o seu projetor na sua própria rede, e não há nada para cadastrar. Veja exatamente o que sai do seu dispositivo, e quando.</p>
     </div>
     <ul class="plain">
-      <li><b>Sem conta, sem nuvem.</b> Você não cria uma conta, e os dados do projetor não são enviados a nenhum servidor nosso.</li>
-      <li><b>Diagnósticos de falhas pelo Crashlytics.</b> Quando o app falha, ele envia um relatório de diagnóstico para o bug ser corrigido. É relatório de falhas padrão, não rastreamento.</li>
-      <li><b>Análises opcionais, por adesão.</b> As análises de uso ficam <b>desativadas por padrão</b>. O app pergunta uma vez na primeira abertura, e você pode ativá-las ou desativá-las a qualquer momento em <b>Configurações &rsaquo; Sobre</b>. Nada é coletado ou enviado a menos que você ative.</li>
-      <li><b>Nada é vendido.</b> Seus dados não são vendidos a ninguém, ponto final.</li>
+      <li><b>Sem conta.</b> Você não cria nenhuma conta. A MiyaraHub não mantém nenhum servidor com o qual o app se comunique, e os ajustes, endereços e senhas dos seus projetores ficam no seu dispositivo.</li>
+      <li><b>Os relatórios de falhas vêm ativados por padrão.</b> No Android e no iOS, o app envia relatórios de falhas e erros ao Google Firebase Crashlytics desde a primeira abertura, para que os bugs possam ser corrigidos. Os endereços de rede são removidos antes do envio. Você pode desativar isso a qualquer momento em <b>Configurações &rsaquo; Sobre</b>. Isso não é rastreamento, e as versões para computador não enviam esses relatórios.</li>
+      <li><b>A análise de uso é opcional.</b> Ela vem <b>desativada por padrão</b>. O app pergunta na configuração inicial, e você pode mudar a escolha em <b>Configurações &rsaquo; Sobre</b>. Nada é coletado para análise a menos que você ative. Ao desativar, os dados que o Google guarda da sua instalação são redefinidos.</li>
+      <li><b>Os relatórios de suporte vão só para onde você os enviar.</b> Um relatório de feedback ou um pacote de relatório de bug é criado no seu dispositivo e só sai dele quando você toca em Email ou Compartilhar. Ele contém a versão do app, seu dispositivo e sistema, o nome e o modelo do projetor, o firmware e o log do app. Endereços IP e MAC, números de série e nomes de host ficam mascarados, a menos que você ative <b>Incluir endereços de rede e números de série</b>, e dá para visualizar o texto exato antes. Os emails de suporte para admin@miyarahub.com são mantidos até você pedir que os excluamos.</li>
+      <li><b>Os endereços do Home Assistant, do Hubitat e da web são seus.</b> Se você vincular o Home Assistant ou o Hubitat, ou adicionar um endereço web de automação, o app envia o que você configurou (como nome do projetor, modelo, número de série, horas da lâmpada e estado de energia) para esse endereço. Isso não é enviado para nós. Use <b>https</b> para qualquer endereço fora da sua própria rede; o app avisa quando você digita http simples para um deles.</li>
+      <li><b>Acesso à rede local.</b> O app se conecta aos projetores na sua rede, e a busca tenta endereços da sua sub-rede local para encontrá-los. Os resultados da busca não são enviados para lugar nenhum.</li>
+      <li><b>As compras</b> são processadas pela Apple, pelo Google Play ou pela Microsoft. O app guarda apenas se o Pro e a Automação residencial estão desbloqueados.</li>
+      <li><b>Apagar todos os dados do app.</b> <b>Configurações &rsaquo; Apagar todos os dados do app</b> remove do dispositivo seus projetores, senhas, tokens, preferências e arquivos exportados. Os indicadores de desbloqueio de compras e os contadores do nível gratuito são mantidos, para que uma compra na loja não se perca. No iOS e no macOS, esses poucos itens também podem sobreviver a uma desinstalação.</li>
+      <li><b>Nada é vendido nem compartilhado para publicidade.</b> Não há publicidade, nem rastreamento entre apps, nem venda ou compartilhamento de informações pessoais (inclusive conforme a CCPA).</li>
+      <li><b>Seus direitos.</b> Você pode pedir para acessar, corrigir ou excluir os dados pessoais que guardamos, que são apenas os emails de suporte, escrevendo para admin@miyarahub.com. Onde o GDPR ou o GDPR do Reino Unido se aplica, nos baseamos no contrato para a função principal do app, no nosso interesse legítimo em corrigir falhas para os relatórios de falhas e no seu consentimento para a análise. Os dados do Firebase são processados pelo Google, que pode transferi-los para os Estados Unidos conforme as cláusulas contratuais padrão. Você pode reclamar à autoridade local de proteção de dados.</li>
+      <li><b>Crianças.</b> O app não é voltado a crianças e não coleta dados delas conscientemente.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Respostas rápidas</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>O Projector Pilot não encontra ou não conecta ao meu projetor</h3><p>Confirme que o celular e o projetor estão na mesma rede Wi-Fi e sub-rede - redes de visitantes e VLANs de IoT podem isolá-los. No projetor, ative o controle de rede (PJLink e/ou Web Control) no menu de rede dele. Encontre o IP do projetor na tela de informações de rede dele e adicione manualmente se a busca não o encontrar.</p></div><div class="gcard"><h3>Quais projetores o Projector Pilot suporta?</h3><p>Projetores Epson por ESC/VP21 e Web Control, e qualquer projetor PJLink. Um transporte é usado porque responde, não porque foi configurado - o app recorre ao que o projetor responder, então um projetor só com PJLink é um dispositivo comum suportado.</p></div><div class="gcard"><h3>O Projector Pilot precisa de conta ou envia meus dados para a nuvem?</h3><p>Sem conta e sem nuvem. O app fala com o seu projetor na sua rede. Ele usa diagnósticos de falhas pelo Crashlytics e análises de uso opcionais, desativadas por padrão e que podem ser desligadas em Configurações &gt; Sobre. Nada é vendido.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>O Projector Pilot não encontra ou não conecta ao meu projetor</h3><p>Confirme que o celular e o projetor estão na mesma rede Wi-Fi e sub-rede - redes de visitantes e VLANs de IoT podem isolá-los. No projetor, ative o controle de rede (PJLink e/ou Web Control) no menu de rede dele. Encontre o IP do projetor na tela de informações de rede dele e adicione manualmente se a busca não o encontrar.</p></div><div class="gcard"><h3>Quais projetores o Projector Pilot suporta?</h3><p>Projetores Epson por ESC/VP21 e Web Control, e qualquer projetor PJLink. Um transporte é usado porque responde, não porque foi configurado - o app recorre ao que o projetor responder, então um projetor só com PJLink é um dispositivo comum suportado.</p></div><div class="gcard"><h3>O Projector Pilot precisa de uma conta ou envia meus dados para algum lugar?</h3><p>Sem conta. O app conversa com o seu projetor na sua rede. No Android e no iOS ele envia relatórios de falhas ao Google Firebase Crashlytics por padrão, o que você pode desativar em Configurações &gt; Sobre, e a análise de uso é opcional e vem desativada por padrão. Nada é vendido.</p></div></div>
   </div>
 </section>
 

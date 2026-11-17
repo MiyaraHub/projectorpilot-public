@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Potřebuje Projector Pilot účet, nebo posílá moje data do cloudu?",
+      "name": "Potřebuje Projector Pilot účet, nebo odesílá moje data někam pryč?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Žádný účet a žádný cloud. Aplikace komunikuje s projektorem ve vaší síti. Používá diagnostiku pádů přes Crashlytics a volitelnou analytiku používání, která je ve výchozím stavu vypnutá a lze ji vypnout v Nastavení > O aplikaci. Nic se neprodává."
+        "text": "Žádný účet. Aplikace komunikuje s projektorem ve vaší síti. V Androidu a iOS ve výchozím stavu odesílá hlášení o pádech službě Google Firebase Crashlytics, což můžete vypnout v Nastavení > O aplikaci, a analytika používání je dobrovolná a ve výchozím stavu vypnutá. Nic se neprodává."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Soukromí</div>
       <h2>Vaše data zůstávají vaše</h2>
-      <p class="lead">Projector Pilot je místní aplikace. Komunikuje s vaším projektorem ve vaší síti a není se k čemu registrovat.</p>
+      <p class="lead">Projector Pilot komunikuje s vaším projektorem ve vaší vlastní síti a nemusíte se nikam registrovat. Tady je přesně to, co vaše zařízení opouští, a kdy.</p>
     </div>
     <ul class="plain">
-      <li><b>Žádný účet, žádný cloud.</b> Nezakládáte účet a data projektoru se neposílají na žádný náš server.</li>
-      <li><b>Diagnostika pádů přes Crashlytics.</b> Když aplikace spadne, odešle diagnostickou zprávu, aby se chyba dala opravit. To je standardní hlášení pádů, ne sledování.</li>
-      <li><b>Volitelná analytika na vyžádání.</b> Analytika používání je <b>ve výchozím stavu vypnutá</b>. Aplikace se zeptá jednou při prvním spuštění a můžete ji kdykoli zapnout nebo vypnout v <b>Nastavení &rsaquo; O aplikaci</b>. Nic se neshromažďuje ani neodesílá, dokud ji nezapnete.</li>
-      <li><b>Nic se neprodává.</b> Vaše data se nikomu neprodávají, tečka.</li>
+      <li><b>Žádný účet.</b> Účet si nezakládáte. MiyaraHub neprovozuje žádný server, se kterým by aplikace komunikovala, a nastavení, adresy a hesla vašich projektorů zůstávají ve vašem zařízení.</li>
+      <li><b>Hlášení o pádech jsou ve výchozím stavu zapnutá.</b> V Androidu a iOS aplikace od prvního spuštění odesílá hlášení o pádech a chybách službě Google Firebase Crashlytics, aby bylo možné chyby opravovat. Síťové adresy se před odesláním odstraní. Kdykoli to můžete vypnout v <b>Nastavení &rsaquo; O aplikaci</b>. Nejde o sledování a desktopové verze hlášení neodesílají.</li>
+      <li><b>Analytika používání je dobrovolná.</b> Je <b>ve výchozím stavu vypnutá</b>. Aplikace se na ni zeptá při prvním nastavení a svou volbu můžete změnit v <b>Nastavení &rsaquo; O aplikaci</b>. Dokud ji nezapnete, nesbírá se pro analytiku nic. Vypnutím se resetují data, která Google o vaší instalaci uchovává.</li>
+      <li><b>Hlášení pro podporu jdou jen tam, kam je pošlete.</b> Hlášení zpětné vazby nebo balíček s hlášením chyby se vytvoří ve vašem zařízení a opustí ho, jen když klepnete na E-mail nebo Sdílet. Obsahuje verzi aplikace, vaše zařízení a OS, název a model projektoru, firmware a protokol aplikace. IP a MAC adresy, sériová čísla a názvy hostitelů jsou zamaskované, pokud nezapnete <b>Zahrnout síťové adresy a sériová čísla</b>, a přesný text si můžete předem zobrazit. E-maily podpoře na admin@miyarahub.com uchováváme, dokud nás nepožádáte o jejich smazání.</li>
+      <li><b>Adresy Home Assistant, Hubitat a webu jsou vaše.</b> Pokud propojíte Home Assistant nebo Hubitat, nebo přidáte webovou adresu automatizace, aplikace na tuto adresu odešle to, co jste nastavili (například název projektoru, model, sériové číslo, hodiny lampy a stav napájení). Nám se nic neodesílá. Pro každou adresu mimo vlastní síť používejte <b>https</b>; aplikace vás upozorní, když zadáte prosté http.</li>
+      <li><b>Přístup k místní síti.</b> Aplikace se připojuje k projektorům ve vaší síti a její vyhledávání zkouší adresy ve vaší místní podsíti, aby je našlo. Výsledky vyhledávání nikam neodesílá.</li>
+      <li><b>Nákupy</b> zpracovává Apple, Google Play nebo Microsoft. Aplikace si uchovává jen informaci, zda jsou Pro a Home Automation odemčené.</li>
+      <li><b>Smazat všechna data aplikace.</b> <b>Nastavení &rsaquo; Smazat všechna data aplikace</b> odstraní ze zařízení vaše projektory, hesla, tokeny, předvolby a exportované soubory. Příznaky odemčení nákupů a počítadla bezplatné verze zůstanou zachovány, aby se nákup ze store neztratil. V iOS a macOS mohou tyto drobné položky přežít i odinstalaci.</li>
+      <li><b>Nic se neprodává ani nesdílí pro reklamu.</b> Žádná reklama, žádné sledování napříč aplikacemi a žádný prodej ani sdílení osobních údajů (včetně podle CCPA).</li>
+      <li><b>Vaše práva.</b> Můžete nás požádat o přístup k osobním údajům, které uchováváme, o jejich opravu nebo smazání, což jsou jen e-maily podpoře, a to napsáním na admin@miyarahub.com. Kde se uplatňuje GDPR nebo britské GDPR, opíráme se u základní funkce aplikace o smlouvu, u hlášení o pádech o náš oprávněný zájem opravovat pády a u analytiky o váš souhlas. Data Firebase zpracovává Google, který je může předávat do Spojených států na základě svých standardních smluvních doložek. Můžete podat stížnost u místního úřadu pro ochranu osobních údajů.</li>
+      <li><b>Děti.</b> Aplikace není určena dětem a vědomě o nich nesbírá žádná data.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Rychlé odpovědi</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot nemůže najít můj projektor nebo se k němu připojit</h3><p>Ujistěte se, že telefon a projektor jsou ve stejné síti Wi-Fi a podsíti - hostovské sítě a IoT VLANs je mohou izolovat. Na projektoru zapněte síťové ovládání (PJLink nebo Web Control) v jeho síťové nabídce. IP projektoru najdete na jeho obrazovce se síťovými informacemi a pokud ji vyhledávání nenajde, přidejte ji ručně.</p></div><div class="gcard"><h3>Které projektory Projector Pilot podporuje?</h3><p>Projektory Epson přes ESC/VP21 a Web Control a libovolný projektor PJLink. Přenos se používá proto, že odpovídá, ne proto, že byl nastaven - aplikace přejde na to, na čem projektor odpovídá, takže projektor jen s PJLink je běžné podporované zařízení.</p></div><div class="gcard"><h3>Potřebuje Projector Pilot účet, nebo posílá moje data do cloudu?</h3><p>Žádný účet a žádný cloud. Aplikace komunikuje s projektorem ve vaší síti. Používá diagnostiku pádů přes Crashlytics a volitelnou analytiku používání, která je ve výchozím stavu vypnutá a lze ji vypnout v Nastavení &gt; O aplikaci. Nic se neprodává.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot nemůže najít můj projektor nebo se k němu připojit</h3><p>Ujistěte se, že telefon a projektor jsou ve stejné síti Wi-Fi a podsíti - hostovské sítě a IoT VLANs je mohou izolovat. Na projektoru zapněte síťové ovládání (PJLink nebo Web Control) v jeho síťové nabídce. IP projektoru najdete na jeho obrazovce se síťovými informacemi a pokud ji vyhledávání nenajde, přidejte ji ručně.</p></div><div class="gcard"><h3>Které projektory Projector Pilot podporuje?</h3><p>Projektory Epson přes ESC/VP21 a Web Control a libovolný projektor PJLink. Přenos se používá proto, že odpovídá, ne proto, že byl nastaven - aplikace přejde na to, na čem projektor odpovídá, takže projektor jen s PJLink je běžné podporované zařízení.</p></div><div class="gcard"><h3>Potřebuje Projector Pilot účet, nebo odesílá moje data někam pryč?</h3><p>Žádný účet. Aplikace komunikuje s projektorem ve vaší síti. V Androidu a iOS ve výchozím stavu odesílá hlášení o pádech službě Google Firebase Crashlytics, což můžete vypnout v Nastavení &gt; O aplikaci, a analytika používání je dobrovolná a ve výchozím stavu vypnutá. Nic se neprodává.</p></div></div>
   </div>
 </section>
 

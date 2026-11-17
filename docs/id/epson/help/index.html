@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Apakah Projector Pilot membutuhkan akun atau mengirim data saya ke cloud?",
+      "name": "Apakah Projector Pilot memerlukan akun atau mengirim data saya ke suatu tempat?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tanpa akun dan tanpa cloud. Aplikasi berbicara dengan proyektor Anda di jaringan Anda. Aplikasi memakai diagnostik crash lewat Crashlytics, dan analitik penggunaan opsional yang mati secara default dan bisa dimatikan di Pengaturan > Tentang. Tidak ada yang dijual."
+        "text": "Tanpa akun. Aplikasi berkomunikasi dengan proyektor Anda di jaringan Anda. Di Android dan iOS, aplikasi mengirim laporan crash ke Google Firebase Crashlytics secara default, yang dapat Anda nonaktifkan di Setelan > Tentang, dan analitik penggunaan bersifat opt-in dan nonaktif secara default. Tidak ada yang dijual."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Privasi</div>
       <h2>Data Anda tetap milik Anda</h2>
-      <p class="lead">Projector Pilot adalah aplikasi lokal. Aplikasi berbicara dengan proyektor Anda di jaringan Anda, dan tidak ada yang perlu didaftarkan.</p>
+      <p class="lead">Projector Pilot berkomunikasi dengan proyektor Anda di jaringan Anda sendiri, dan tidak ada yang perlu didaftarkan. Berikut ini persis apa yang keluar dari perangkat Anda, dan kapan.</p>
     </div>
     <ul class="plain">
-      <li><b>Tanpa akun, tanpa cloud.</b> Anda tidak membuat akun, dan data proyektor tidak dikirim ke server mana pun milik kami.</li>
-      <li><b>Diagnostik crash lewat Crashlytics.</b> Saat aplikasi crash, aplikasi mengirim laporan diagnostik agar bug bisa diperbaiki. Itu pelaporan crash standar, bukan pelacakan.</li>
-      <li><b>Analitik opsional, hanya jika Anda setuju.</b> Analitik penggunaan <b>mati secara default</b>. Aplikasi bertanya sekali saat peluncuran pertama, dan Anda bisa menyalakan atau mematikannya kapan saja di <b>Pengaturan &rsaquo; Tentang</b>. Tidak ada yang dikumpulkan atau dikirim kecuali Anda menyalakannya.</li>
-      <li><b>Tidak ada yang dijual.</b> Data Anda tidak dijual kepada siapa pun, titik.</li>
+      <li><b>Tanpa akun.</b> Anda tidak membuat akun. MiyaraHub tidak menjalankan server yang berkomunikasi dengan aplikasi, dan pengaturan, alamat, serta kata sandi proyektor Anda tetap berada di perangkat Anda.</li>
+      <li><b>Laporan crash aktif secara default.</b> Di Android dan iOS, aplikasi mengirim laporan crash dan error ke Google Firebase Crashlytics sejak peluncuran pertama agar bug dapat diperbaiki. Alamat jaringan dihapus sebelum dikirim. Anda dapat menonaktifkannya kapan saja di <b>Setelan &rsaquo; Tentang</b>. Ini bukan pelacakan, dan versi desktop tidak mengirimkannya.</li>
+      <li><b>Analitik penggunaan bersifat opt-in.</b> Analitik ini <b>nonaktif secara default</b>. Aplikasi menanyakannya saat penyiapan pertama, dan Anda dapat mengubah pilihan di <b>Setelan &rsaquo; Tentang</b>. Tidak ada data yang dikumpulkan untuk analitik kecuali Anda mengaktifkannya. Menonaktifkannya akan mereset data yang disimpan Google untuk instalasi Anda.</li>
+      <li><b>Laporan dukungan hanya dikirim ke tempat yang Anda tuju.</b> Laporan masukan atau paket laporan bug dibuat di perangkat Anda dan hanya keluar dari perangkat saat Anda mengetuk Email atau Bagikan. Isinya mencakup versi aplikasi, perangkat dan OS Anda, nama dan model proyektor, firmware, serta log aplikasi. Alamat IP dan MAC, nomor seri, dan nama host disamarkan kecuali Anda mengaktifkan <b>Sertakan alamat jaringan dan nomor seri</b>, dan Anda dapat melihat pratinjau teks persisnya terlebih dahulu. Email dukungan ke admin@miyarahub.com disimpan sampai Anda meminta kami menghapusnya.</li>
+      <li><b>Alamat Home Assistant, Hubitat, dan web adalah milik Anda.</b> Jika Anda menautkan Home Assistant atau Hubitat, atau menambahkan alamat web otomasi, aplikasi mengirim apa yang Anda atur (seperti nama proyektor, model, nomor seri, jam lampu, dan status daya) ke alamat tersebut. Data itu tidak dikirim kepada kami. Gunakan <b>https</b> untuk alamat apa pun di luar jaringan Anda sendiri; aplikasi memperingatkan saat Anda memasukkan http biasa untuk alamat seperti itu.</li>
+      <li><b>Akses jaringan lokal.</b> Aplikasi terhubung ke proyektor di jaringan Anda, dan pemindaiannya mencoba alamat di subnet lokal Anda untuk menemukannya. Hasil pemindaian tidak dikirim ke mana pun.</li>
+      <li><b>Pembelian</b> ditangani oleh Apple, Google Play, atau Microsoft. Aplikasi hanya menyimpan apakah Pro dan Otomasi Rumah sudah terbuka.</li>
+      <li><b>Hapus semua data aplikasi.</b> <b>Setelan &rsaquo; Hapus semua data aplikasi</b> menghapus proyektor, kata sandi, token, preferensi, dan file ekspor Anda dari perangkat. Tanda pembukaan pembelian dan penghitung tingkat gratis tetap disimpan agar pembelian di store tidak hilang. Di iOS dan macOS, beberapa item itu juga dapat bertahan setelah aplikasi dihapus.</li>
+      <li><b>Tidak ada yang dijual atau dibagikan untuk iklan.</b> Tidak ada iklan, tidak ada pelacakan lintas aplikasi, dan tidak ada penjualan atau pembagian informasi pribadi (termasuk berdasarkan CCPA).</li>
+      <li><b>Hak Anda.</b> Anda dapat meminta kami untuk mengakses, memperbaiki, atau menghapus data pribadi yang kami simpan, yaitu hanya email dukungan, dengan menulis ke admin@miyarahub.com. Jika GDPR atau UK GDPR berlaku, kami mengandalkan kontrak untuk fungsi inti aplikasi, kepentingan sah kami dalam memperbaiki crash untuk laporan crash, dan persetujuan Anda untuk analitik. Data Firebase diproses oleh Google, yang dapat mentransfernya ke Amerika Serikat berdasarkan ketentuan kontraktual standarnya. Anda dapat mengajukan keluhan ke otoritas perlindungan data setempat.</li>
+      <li><b>Anak-anak.</b> Aplikasi ini tidak ditujukan untuk anak-anak dan tidak dengan sengaja mengumpulkan data mereka.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Jawaban singkat</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot tidak dapat menemukan atau terhubung ke proyektor saya</h3><p>Pastikan ponsel dan proyektor berada di jaringan Wi-Fi dan subnet yang sama - jaringan tamu dan VLAN IoT bisa mengisolasi keduanya. Di proyektor, aktifkan kontrol jaringan (PJLink dan/atau Web Control) di menu jaringannya. Temukan IP proyektor di layar informasi jaringannya sendiri dan tambahkan secara manual jika pemindaian tidak menemukannya.</p></div><div class="gcard"><h3>Proyektor apa saja yang didukung Projector Pilot?</h3><p>Proyektor Epson lewat ESC/VP21 dan Web Control, serta proyektor PJLink apa pun. Sebuah transport dipakai karena ia menjawab, bukan karena dikonfigurasi - aplikasi beralih ke apa pun yang direspons proyektor, jadi proyektor yang hanya PJLink adalah perangkat biasa yang didukung.</p></div><div class="gcard"><h3>Apakah Projector Pilot membutuhkan akun atau mengirim data saya ke cloud?</h3><p>Tanpa akun dan tanpa cloud. Aplikasi berbicara dengan proyektor Anda di jaringan Anda. Aplikasi memakai diagnostik crash lewat Crashlytics, dan analitik penggunaan opsional yang mati secara default dan bisa dimatikan di Pengaturan &gt; Tentang. Tidak ada yang dijual.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot tidak dapat menemukan atau terhubung ke proyektor saya</h3><p>Pastikan ponsel dan proyektor berada di jaringan Wi-Fi dan subnet yang sama - jaringan tamu dan VLAN IoT bisa mengisolasi keduanya. Di proyektor, aktifkan kontrol jaringan (PJLink dan/atau Web Control) di menu jaringannya. Temukan IP proyektor di layar informasi jaringannya sendiri dan tambahkan secara manual jika pemindaian tidak menemukannya.</p></div><div class="gcard"><h3>Proyektor apa saja yang didukung Projector Pilot?</h3><p>Proyektor Epson lewat ESC/VP21 dan Web Control, serta proyektor PJLink apa pun. Sebuah transport dipakai karena ia menjawab, bukan karena dikonfigurasi - aplikasi beralih ke apa pun yang direspons proyektor, jadi proyektor yang hanya PJLink adalah perangkat biasa yang didukung.</p></div><div class="gcard"><h3>Apakah Projector Pilot memerlukan akun atau mengirim data saya ke suatu tempat?</h3><p>Tanpa akun. Aplikasi berkomunikasi dengan proyektor Anda di jaringan Anda. Di Android dan iOS, aplikasi mengirim laporan crash ke Google Firebase Crashlytics secara default, yang dapat Anda nonaktifkan di Setelan &gt; Tentang, dan analitik penggunaan bersifat opt-in dan nonaktif secara default. Tidak ada yang dijual.</p></div></div>
   </div>
 </section>
 

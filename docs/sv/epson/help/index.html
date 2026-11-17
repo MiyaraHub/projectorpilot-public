@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Behöver Projector Pilot ett konto eller skickar den mina data till molnet?",
+      "name": "Behöver Projector Pilot ett konto eller skickar det mina data någonstans?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Inget konto och inget moln. Appen pratar med din projektor på ditt nätverk. Den använder kraschdiagnostik via Crashlytics, och valfri användningsstatistik som är avstängd som standard och kan stängas av i Inställningar > Om. Ingenting säljs."
+        "text": "Inget konto. Appen pratar med din projektor på ditt nätverk. På Android och iOS skickar den kraschrapporter till Google Firebase Crashlytics som standard, vilket du kan stänga av i Inställningar > Om, och användningsanalys är frivillig och av som standard. Inget säljs."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Integritet</div>
       <h2>Dina data förblir dina</h2>
-      <p class="lead">Projector Pilot är en lokal app. Den pratar med din projektor på ditt nätverk, och det finns inget att registrera sig för.</p>
+      <p class="lead">Projector Pilot pratar med din projektor på ditt eget nätverk, och det finns inget att registrera sig för. Här är exakt vad som lämnar din enhet, och när.</p>
     </div>
     <ul class="plain">
-      <li><b>Inget konto, inget moln.</b> Du skapar inget konto, och projektorns data skickas inte till någon av våra servrar.</li>
-      <li><b>Kraschdiagnostik via Crashlytics.</b> När appen kraschar skickar den en diagnostikrapport så att felet kan åtgärdas. Det är vanlig kraschrapportering, inte spårning.</li>
-      <li><b>Valfri statistik med samtycke.</b> Användningsstatistik är <b>avstängd som standard</b>. Appen frågar en gång vid första starten, och du kan slå på eller stänga av den när som helst i <b>Inställningar &rsaquo; Om</b>. Ingenting samlas in eller skickas om du inte slår på det.</li>
-      <li><b>Ingenting säljs.</b> Dina data säljs inte till någon, punkt slut.</li>
+      <li><b>Inget konto.</b> Du skapar inget konto. MiyaraHub driver ingen server som appen pratar med, och dina projektorers inställningar, adresser och lösenord stannar på din enhet.</li>
+      <li><b>Kraschrapporter är på som standard.</b> På Android och iOS skickar appen krasch- och felrapporter till Google Firebase Crashlytics från första start, så att fel kan åtgärdas. Nätverksadresser tas bort innan de skickas. Du kan stänga av detta när som helst i <b>Inställningar &rsaquo; Om</b>. Det är ingen spårning, och datorversionerna skickar inget.</li>
+      <li><b>Användningsanalys är frivillig.</b> Den är <b>av som standard</b>. Appen frågar vid första installationen, och du kan ändra ditt val i <b>Inställningar &rsaquo; Om</b>. Inget samlas in för analys om du inte slår på den. När du stänger av den återställs de data som Google har för din installation.</li>
+      <li><b>Supportrapporter går bara dit du skickar dem.</b> En feedbackrapport eller ett felrapportpaket skapas på din enhet och lämnar den först när du trycker på E-post eller Dela. Den innehåller appversionen, din enhet och ditt operativsystem, projektorns namn och modell, firmware och appens logg. IP- och MAC-adresser, serienummer och värdnamn maskeras om du inte slår på <b>Inkludera nätverksadresser och serienummer</b>, och du kan förhandsgranska den exakta texten först. Supportmejl till admin@miyarahub.com sparas tills du ber oss radera dem.</li>
+      <li><b>Adresserna för Home Assistant, Hubitat och webben är dina.</b> Om du länkar Home Assistant eller Hubitat eller lägger till en webbadress för automation skickar appen det du har ställt in (som projektorns namn, modell, serienummer, lamptimmar och strömstatus) till den adressen. Det skickas inte till oss. Använd <b>https</b> för alla adresser utanför ditt eget nätverk; appen varnar när du anger vanlig http för en sådan.</li>
+      <li><b>Åtkomst till lokalt nätverk.</b> Appen ansluter till projektorer på ditt nätverk, och dess sökning provar adresser i ditt lokala undernät för att hitta dem. Sökresultaten skickas inte någonstans.</li>
+      <li><b>Köp</b> hanteras av Apple, Google Play eller Microsoft. Appen sparar bara om Pro och Home Automation är upplåsta.</li>
+      <li><b>Radera all appdata.</b> <b>Inställningar &rsaquo; Radera all appdata</b> tar bort dina projektorer, lösenord, token, inställningar och exporterade filer från enheten. Flaggor för upplåsta köp och räknare för gratisnivån behålls så att ett köp i butiken inte går förlorat. På iOS och macOS kan dessa få poster också överleva en avinstallation.</li>
+      <li><b>Inget säljs eller delas för reklam.</b> Det finns ingen reklam, ingen spårning mellan appar och ingen försäljning eller delning av personuppgifter (inklusive enligt CCPA).</li>
+      <li><b>Dina rättigheter.</b> Du kan be oss ge åtkomst till, rätta eller radera de personuppgifter vi har, vilket bara är supportmejl, genom att skriva till admin@miyarahub.com. Där GDPR eller brittiska GDPR gäller stöder vi oss på avtal för appens kärnfunktion, vårt berättigade intresse av att åtgärda kraschar för kraschrapporter och ditt samtycke för analys. Firebase-data behandlas av Google, som kan överföra dem till USA enligt sina standardavtalsklausuler. Du kan klaga hos din lokala dataskyddsmyndighet.</li>
+      <li><b>Barn.</b> Appen riktar sig inte till barn och samlar inte medvetet in deras data.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">Vanliga frågor</div>
       <h2>Snabba svar</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot kan inte hitta eller ansluta till min projektor</h3><p>Kontrollera att telefonen och projektorn är på samma Wi-Fi-nätverk och nätmask - gästnätverk och IoT VLANs kan isolera dem. Aktivera nätverksstyrning (PJLink och/eller Web Control) i projektorns nätverksmeny. Hitta projektorns IP på dess egen skärm med nätverksinformation och lägg till den för hand om sökningen inte hittar den.</p></div><div class="gcard"><h3>Vilka projektorer stöder Projector Pilot?</h3><p>Epson-projektorer över ESC/VP21 och Web Control, och alla PJLink-projektorer. En transport används för att den svarar, inte för att den konfigurerats - appen faller tillbaka på det som projektorn svarar på, så en projektor med bara PJLink är en helt vanlig enhet som stöds.</p></div><div class="gcard"><h3>Behöver Projector Pilot ett konto eller skickar den mina data till molnet?</h3><p>Inget konto och inget moln. Appen pratar med din projektor på ditt nätverk. Den använder kraschdiagnostik via Crashlytics, och valfri användningsstatistik som är avstängd som standard och kan stängas av i Inställningar &gt; Om. Ingenting säljs.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot kan inte hitta eller ansluta till min projektor</h3><p>Kontrollera att telefonen och projektorn är på samma Wi-Fi-nätverk och nätmask - gästnätverk och IoT VLANs kan isolera dem. Aktivera nätverksstyrning (PJLink och/eller Web Control) i projektorns nätverksmeny. Hitta projektorns IP på dess egen skärm med nätverksinformation och lägg till den för hand om sökningen inte hittar den.</p></div><div class="gcard"><h3>Vilka projektorer stöder Projector Pilot?</h3><p>Epson-projektorer över ESC/VP21 och Web Control, och alla PJLink-projektorer. En transport används för att den svarar, inte för att den konfigurerats - appen faller tillbaka på det som projektorn svarar på, så en projektor med bara PJLink är en helt vanlig enhet som stöds.</p></div><div class="gcard"><h3>Behöver Projector Pilot ett konto eller skickar det mina data någonstans?</h3><p>Inget konto. Appen pratar med din projektor på ditt nätverk. På Android och iOS skickar den kraschrapporter till Google Firebase Crashlytics som standard, vilket du kan stänga av i Inställningar &gt; Om, och användningsanalys är frivillig och av som standard. Inget säljs.</p></div></div>
   </div>
 </section>
 

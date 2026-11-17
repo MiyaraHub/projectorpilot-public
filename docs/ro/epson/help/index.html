@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Are Projector Pilot nevoie de un cont sau îmi trimite datele în cloud?",
+      "name": "Are Projector Pilot nevoie de un cont sau îmi trimite datele undeva?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fără cont și fără cloud. Aplicația vorbește cu proiectorul tău în rețeaua ta. Folosește diagnosticare a blocărilor prin Crashlytics și analize de utilizare opționale, dezactivate implicit, care pot fi oprite în Settings > About. Nimic nu se vinde."
+        "text": "Fără cont. Aplicația vorbește cu proiectorul tău în rețeaua ta. Pe Android și iOS trimite implicit rapoarte de blocare către Google Firebase Crashlytics, pe care le poți dezactiva în Setări > Despre, iar analiza utilizării este opțională și dezactivată implicit. Nimic nu se vinde."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Confidențialitate</div>
       <h2>Datele tale rămân ale tale</h2>
-      <p class="lead">Projector Pilot este o aplicație locală. Vorbește cu proiectorul tău în rețeaua ta și nu ai nimic la care să te înscrii.</p>
+      <p class="lead">Projector Pilot vorbește cu proiectorul tău în propria ta rețea și nu trebuie să te înregistrezi nicăieri. Iată exact ce părăsește dispozitivul tău și când.</p>
     </div>
     <ul class="plain">
-      <li><b>Fără cont, fără cloud.</b> Nu creezi un cont, iar datele proiectorului nu sunt trimise către vreun server al nostru.</li>
-      <li><b>Diagnosticare a blocărilor prin Crashlytics.</b> Când aplicația se blochează, trimite un raport de diagnosticare ca eroarea să poată fi reparată. Este raportare standard a blocărilor, nu urmărire.</li>
-      <li><b>Analize opționale, pe bază de acord.</b> Analizele de utilizare sunt <b>dezactivate implicit</b>. Aplicația întreabă o singură dată la prima pornire, iar le poți activa sau dezactiva oricând în <b>Settings &rsaquo; About</b>. Nu se colectează și nu se trimite nimic dacă nu le activezi.</li>
-      <li><b>Nimic nu se vinde.</b> Datele tale nu sunt vândute nimănui, punct.</li>
+      <li><b>Fără cont.</b> Nu creezi niciun cont. MiyaraHub nu rulează niciun server cu care să comunice aplicația, iar setările, adresele și parolele proiectoarelor tale rămân pe dispozitivul tău.</li>
+      <li><b>Rapoartele de blocare sunt activate implicit.</b> Pe Android și iOS, aplicația trimite rapoarte de blocare și de eroare către Google Firebase Crashlytics de la prima pornire, pentru ca erorile să poată fi remediate. Adresele de rețea sunt eliminate înainte de trimitere. Le poți dezactiva oricând din <b>Setări &rsaquo; Despre</b>. Nu este urmărire, iar versiunile pentru desktop nu le trimit.</li>
+      <li><b>Analiza utilizării este opțională.</b> Este <b>dezactivată implicit</b>. Aplicația te întreabă la prima configurare, iar alegerea o poți schimba în <b>Setări &rsaquo; Despre</b>. Nu se colectează nimic pentru analiză decât dacă o activezi. Dezactivarea resetează datele pe care Google le deține pentru instalarea ta.</li>
+      <li><b>Rapoartele pentru asistență ajung doar unde le trimiți.</b> Un raport de feedback sau un pachet de raport de eroare se creează pe dispozitivul tău și îl părăsește doar când atingi E-mail sau Distribuie. Conține versiunea aplicației, dispozitivul și sistemul de operare, numele și modelul proiectorului, firmware-ul și jurnalul aplicației. Adresele IP și MAC, numerele de serie și numele gazdelor sunt mascate, cu excepția cazului în care activezi <b>Include adresele de rețea și numerele de serie</b>, iar poți previzualiza mai întâi textul exact. E-mailurile către asistență, trimise la admin@miyarahub.com, sunt păstrate până ne ceri să le ștergem.</li>
+      <li><b>Adresele Home Assistant, Hubitat și web sunt ale tale.</b> Dacă asociezi Home Assistant sau Hubitat ori adaugi o adresă web de automatizare, aplicația trimite către acea adresă ce ai configurat (precum numele proiectorului, modelul, numărul de serie, orele lămpii și starea de alimentare). Nu ne este trimis nouă. Folosește <b>https</b> pentru orice adresă din afara propriei rețele; aplicația te avertizează când introduci http simplu pentru una.</li>
+      <li><b>Acces la rețeaua locală.</b> Aplicația se conectează la proiectoarele din rețeaua ta, iar scanarea încearcă adrese din subrețeaua ta locală ca să le găsească. Rezultatele scanării nu sunt trimise nicăieri.</li>
+      <li><b>Achizițiile</b> sunt gestionate de Apple, Google Play sau Microsoft. Aplicația păstrează doar dacă Pro și Home Automation sunt deblocate.</li>
+      <li><b>Șterge toate datele aplicației.</b> <b>Setări &rsaquo; Șterge toate datele aplicației</b> elimină de pe dispozitiv proiectoarele, parolele, token-urile, preferințele și fișierele exportate. Indicatorii de deblocare a achizițiilor și contoarele nivelului gratuit sunt păstrate, ca o achiziție din magazin să nu se piardă. Pe iOS și macOS, aceste câteva elemente pot supraviețui și dezinstalării.</li>
+      <li><b>Nimic nu se vinde și nu se partajează pentru publicitate.</b> Nu există publicitate, nici urmărire între aplicații, nici vânzare sau partajare de informații personale (inclusiv conform CCPA).</li>
+      <li><b>Drepturile tale.</b> Ne poți cere să accesăm, să corectăm sau să ștergem datele personale pe care le deținem, adică doar e-mailurile către asistență, scriind la admin@miyarahub.com. Acolo unde se aplică GDPR sau GDPR din Regatul Unit, ne bazăm pe contract pentru funcția de bază a aplicației, pe interesul nostru legitim de a remedia blocările pentru rapoartele de blocare și pe consimțământul tău pentru analiză. Datele Firebase sunt prelucrate de Google, care le poate transfera în Statele Unite în baza clauzelor contractuale standard. Poți depune o plângere la autoritatea locală pentru protecția datelor.</li>
+      <li><b>Copii.</b> Aplicația nu se adresează copiilor și nu colectează cu bună știință datele acestora.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">Întrebări frecvente</div>
       <h2>Răspunsuri rapide</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot nu îmi găsește sau nu se conectează la proiector</h3><p>Asigură-te că telefonul și proiectorul sunt în aceeași rețea Wi-Fi și aceeași subrețea - rețelele pentru oaspeți și VLAN-urile IoT le pot izola. Pe proiector, activează controlul prin rețea (PJLink și/sau Web Control) în meniul de rețea. Găsește IP-ul proiectorului în ecranul lui de informații de rețea și adaugă-l manual dacă scanarea nu îl descoperă.</p></div><div class="gcard"><h3>Ce proiectoare suportă Projector Pilot?</h3><p>Proiectoare Epson prin ESC/VP21 și Web Control, și orice proiector PJLink. Un transport este folosit pentru că răspunde, nu pentru că a fost configurat - aplicația folosește orice canal pe care răspunde proiectorul, așa că un proiector doar PJLink este un dispozitiv suportat obișnuit.</p></div><div class="gcard"><h3>Are Projector Pilot nevoie de un cont sau îmi trimite datele în cloud?</h3><p>Fără cont și fără cloud. Aplicația vorbește cu proiectorul tău în rețeaua ta. Folosește diagnosticare a blocărilor prin Crashlytics și analize de utilizare opționale, dezactivate implicit, care pot fi oprite în Settings &gt; About. Nimic nu se vinde.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot nu îmi găsește sau nu se conectează la proiector</h3><p>Asigură-te că telefonul și proiectorul sunt în aceeași rețea Wi-Fi și aceeași subrețea - rețelele pentru oaspeți și VLAN-urile IoT le pot izola. Pe proiector, activează controlul prin rețea (PJLink și/sau Web Control) în meniul de rețea. Găsește IP-ul proiectorului în ecranul lui de informații de rețea și adaugă-l manual dacă scanarea nu îl descoperă.</p></div><div class="gcard"><h3>Ce proiectoare suportă Projector Pilot?</h3><p>Proiectoare Epson prin ESC/VP21 și Web Control, și orice proiector PJLink. Un transport este folosit pentru că răspunde, nu pentru că a fost configurat - aplicația folosește orice canal pe care răspunde proiectorul, așa că un proiector doar PJLink este un dispozitiv suportat obișnuit.</p></div><div class="gcard"><h3>Are Projector Pilot nevoie de un cont sau îmi trimite datele undeva?</h3><p>Fără cont. Aplicația vorbește cu proiectorul tău în rețeaua ta. Pe Android și iOS trimite implicit rapoarte de blocare către Google Firebase Crashlytics, pe care le poți dezactiva în Setări &gt; Despre, iar analiza utilizării este opțională și dezactivată implicit. Nimic nu se vinde.</p></div></div>
   </div>
 </section>
 

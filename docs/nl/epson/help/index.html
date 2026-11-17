@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Heeft Projector Pilot een account nodig of stuurt het mijn gegevens naar de cloud?",
+      "name": "Heeft Projector Pilot een account nodig of stuurt de app mijn gegevens ergens naartoe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Geen account en geen cloud. De app praat met je projector op je netwerk. Hij gebruikt crashdiagnostiek via Crashlytics en optionele gebruiksstatistieken die standaard uit staan en in Instellingen > Over kunnen worden uitgeschakeld. Er wordt niets verkocht."
+        "text": "Geen account. De app praat met je projector op je netwerk. Op Android en iOS stuurt hij standaard crashrapporten naar Google Firebase Crashlytics, wat je kunt uitschakelen in Instellingen > Over, en gebruiksanalyse is opt-in en staat standaard uit. Er wordt niets verkocht."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Privacy</div>
       <h2>Je gegevens blijven van jou</h2>
-      <p class="lead">Projector Pilot is een lokale app. Hij praat met je projector op je netwerk en er hoeft niets te worden aangemeld.</p>
+      <p class="lead">Projector Pilot praat met je projector op je eigen netwerk en je hoeft je nergens voor aan te melden. Hier staat precies wat je apparaat verlaat, en wanneer.</p>
     </div>
     <ul class="plain">
-      <li><b>Geen account, geen cloud.</b> Je maakt geen account aan, en de gegevens van de projector worden niet naar een server van ons gestuurd.</li>
-      <li><b>Crashdiagnostiek via Crashlytics.</b> Als de app crasht, stuurt hij een diagnoserapport zodat de bug kan worden opgelost. Dat is standaard crashrapportage, geen tracking.</li>
-      <li><b>Optionele statistieken, alleen met toestemming.</b> Gebruiksstatistieken staan <b>standaard uit</b>. De app vraagt het eenmalig bij de eerste start, en je kunt ze op elk moment in- of uitschakelen via <b>Instellingen &rsaquo; Over</b>. Er wordt niets verzameld of verzonden tenzij je het inschakelt.</li>
-      <li><b>Er wordt niets verkocht.</b> Je gegevens worden aan niemand verkocht, punt.</li>
+      <li><b>Geen account.</b> Je maakt geen account aan. MiyaraHub beheert geen server waarmee de app communiceert, en de instellingen, adressen en wachtwoorden van je projectoren blijven op je apparaat.</li>
+      <li><b>Crashrapporten staan standaard aan.</b> Op Android en iOS stuurt de app vanaf de eerste start crash- en foutrapporten naar Google Firebase Crashlytics, zodat bugs kunnen worden opgelost. Netwerkadressen worden verwijderd voordat er iets wordt verstuurd. Je kunt dit op elk moment uitschakelen in <b>Instellingen &rsaquo; Over</b>. Het is geen tracking, en de desktopversies sturen het niet.</li>
+      <li><b>Gebruiksanalyse is opt-in.</b> Het staat <b>standaard uit</b>. De app vraagt hiernaar tijdens de eerste installatie, en je kunt je keuze wijzigen in <b>Instellingen &rsaquo; Over</b>. Er wordt niets voor analyse verzameld tenzij je het inschakelt. Als je het uitschakelt, worden de gegevens die Google voor jouw installatie bewaart gereset.</li>
+      <li><b>Supportrapporten gaan alleen waarheen je ze stuurt.</b> Een feedbackrapport of bugrapportbundel wordt op je apparaat samengesteld en verlaat het alleen wanneer je op E-mail of Delen tikt. Het bevat de appversie, je apparaat en besturingssysteem, de naam en het model van de projector, de firmware en het applogboek. IP- en MAC-adressen, serienummers en hostnamen worden gemaskeerd, tenzij je <b>Netwerkadressen en serienummers opnemen</b> inschakelt, en je kunt eerst de exacte tekst bekijken. Supportmail naar admin@miyarahub.com wordt bewaard totdat je ons vraagt die te verwijderen.</li>
+      <li><b>Home Assistant-, Hubitat- en webadressen zijn van jou.</b> Als je Home Assistant of Hubitat koppelt of een webadres voor automatisering toevoegt, stuurt de app wat je hebt ingesteld (zoals projectornaam, model, serienummer, lampuren en aan-/uitstatus) naar dat adres. Het wordt niet naar ons gestuurd. Gebruik <b>https</b> voor elk adres buiten je eigen netwerk; de app waarschuwt als je daarvoor gewoon http invoert.</li>
+      <li><b>Toegang tot het lokale netwerk.</b> De app maakt verbinding met projectoren op je netwerk, en de scan probeert adressen op je lokale subnet om ze te vinden. De scanresultaten worden nergens naartoe gestuurd.</li>
+      <li><b>Aankopen</b> worden afgehandeld door Apple, Google Play of Microsoft. De app bewaart alleen of Pro en Home Automation zijn ontgrendeld.</li>
+      <li><b>Alle app-gegevens wissen.</b> <b>Instellingen &rsaquo; Alle app-gegevens wissen</b> verwijdert je projectoren, wachtwoorden, tokens, voorkeuren en geëxporteerde bestanden van het apparaat. Ontgrendelvlaggen voor aankopen en tellers van het gratis niveau blijven behouden, zodat een aankoop in de store niet verloren gaat. Op iOS en macOS kunnen die paar items ook een verwijdering van de app overleven.</li>
+      <li><b>Er wordt niets verkocht of gedeeld voor advertenties.</b> Er is geen reclame, geen tracking over apps heen, en geen verkoop of delen van persoonsgegevens (ook niet onder de CCPA).</li>
+      <li><b>Je rechten.</b> Je kunt ons vragen de persoonsgegevens die we bewaren, en dat is alleen supportmail, in te zien, te corrigeren of te verwijderen door te schrijven naar admin@miyarahub.com. Waar de AVG of de Britse AVG van toepassing is, baseren we ons op een overeenkomst voor de kernfunctie van de app, op ons gerechtvaardigd belang bij het oplossen van crashes voor crashrapporten, en op jouw toestemming voor analyse. Firebase-gegevens worden verwerkt door Google, dat ze onder zijn standaardcontractbepalingen naar de Verenigde Staten kan doorgeven. Je kunt een klacht indienen bij je lokale gegevensbeschermingsautoriteit.</li>
+      <li><b>Kinderen.</b> De app is niet bedoeld voor kinderen en verzamelt niet bewust hun gegevens.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Snelle antwoorden</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot kan mijn projector niet vinden of er geen verbinding mee maken</h3><p>Zorg dat de telefoon en de projector op hetzelfde wifi-netwerk en subnet zitten - gastnetwerken en IoT-VLANs kunnen ze van elkaar isoleren. Schakel op de projector de netwerkbediening (PJLink en/of Web Control) in via het netwerkmenu. Vind het IP-adres van de projector op zijn eigen netwerkinformatiescherm en voeg het met de hand toe als de scan het niet vindt.</p></div><div class="gcard"><h3>Welke projectoren ondersteunt Projector Pilot?</h3><p>Epson-projectoren via ESC/VP21 en Web Control, en elke PJLink-projector. Een transport wordt gebruikt omdat het antwoordt, niet omdat het is geconfigureerd - de app valt terug op wat de projector beantwoordt, dus een projector met alleen PJLink is een gewoon ondersteund toestel.</p></div><div class="gcard"><h3>Heeft Projector Pilot een account nodig of stuurt het mijn gegevens naar de cloud?</h3><p>Geen account en geen cloud. De app praat met je projector op je netwerk. Hij gebruikt crashdiagnostiek via Crashlytics en optionele gebruiksstatistieken die standaard uit staan en in Instellingen &gt; Over kunnen worden uitgeschakeld. Er wordt niets verkocht.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot kan mijn projector niet vinden of er geen verbinding mee maken</h3><p>Zorg dat de telefoon en de projector op hetzelfde wifi-netwerk en subnet zitten - gastnetwerken en IoT-VLANs kunnen ze van elkaar isoleren. Schakel op de projector de netwerkbediening (PJLink en/of Web Control) in via het netwerkmenu. Vind het IP-adres van de projector op zijn eigen netwerkinformatiescherm en voeg het met de hand toe als de scan het niet vindt.</p></div><div class="gcard"><h3>Welke projectoren ondersteunt Projector Pilot?</h3><p>Epson-projectoren via ESC/VP21 en Web Control, en elke PJLink-projector. Een transport wordt gebruikt omdat het antwoordt, niet omdat het is geconfigureerd - de app valt terug op wat de projector beantwoordt, dus een projector met alleen PJLink is een gewoon ondersteund toestel.</p></div><div class="gcard"><h3>Heeft Projector Pilot een account nodig of stuurt de app mijn gegevens ergens naartoe?</h3><p>Geen account. De app praat met je projector op je netwerk. Op Android en iOS stuurt hij standaard crashrapporten naar Google Firebase Crashlytics, wat je kunt uitschakelen in Instellingen &gt; Over, en gebruiksanalyse is opt-in en staat standaard uit. Er wordt niets verkocht.</p></div></div>
   </div>
 </section>
 

@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Czy Projector Pilot potrzebuje konta albo wysyła moje dane do chmury?",
+      "name": "Czy Projector Pilot wymaga konta lub wysyła moje dane gdziekolwiek?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bez konta i bez chmury. Aplikacja rozmawia z Twoim projektorem w Twojej sieci. Używa diagnostyki awarii przez Crashlytics oraz opcjonalnej analityki użycia, która jest domyślnie wyłączona i można ją wyłączyć w Ustawienia > O aplikacji. Nic nie jest sprzedawane."
+        "text": "Bez konta. Aplikacja komunikuje się z Twoim projektorem w Twojej sieci. Na Androidzie i iOS domyślnie wysyła raporty o awariach do Google Firebase Crashlytics, co możesz wyłączyć w Ustawienia > Informacje, a analityka użycia jest opcjonalna i domyślnie wyłączona. Nic nie jest sprzedawane."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Prywatność</div>
       <h2>Twoje dane pozostają Twoje</h2>
-      <p class="lead">Projector Pilot to aplikacja lokalna. Rozmawia z Twoim projektorem w Twojej sieci, a nie ma niczego do zakładania.</p>
+      <p class="lead">Projector Pilot komunikuje się z Twoim projektorem w Twojej własnej sieci i nie trzeba się nigdzie rejestrować. Oto dokładnie, co opuszcza Twoje urządzenie i kiedy.</p>
     </div>
     <ul class="plain">
-      <li><b>Bez konta, bez chmury.</b> Nie tworzysz konta, a dane projektora nie są wysyłane na żaden nasz serwer.</li>
-      <li><b>Diagnostyka awarii przez Crashlytics.</b> Gdy aplikacja się zawiesza, wysyła raport diagnostyczny, aby można było naprawić błąd. To standardowe raportowanie awarii, a nie śledzenie.</li>
-      <li><b>Opcjonalna analityka na zgodę.</b> Analityka użycia jest <b>domyślnie wyłączona</b>. Aplikacja pyta raz przy pierwszym uruchomieniu, a możesz ją włączyć lub wyłączyć w każdej chwili w <b>Ustawienia &rsaquo; O aplikacji</b>. Nic nie jest zbierane ani wysyłane, jeśli jej nie włączysz.</li>
-      <li><b>Nic nie jest sprzedawane.</b> Twoje dane nie są nikomu sprzedawane, kropka.</li>
+      <li><b>Bez konta.</b> Nie tworzysz żadnego konta. MiyaraHub nie prowadzi serwera, z którym łączy się aplikacja, a ustawienia, adresy i hasła Twoich projektorów zostają na Twoim urządzeniu.</li>
+      <li><b>Raporty o awariach są domyślnie włączone.</b> Na Androidzie i iOS aplikacja od pierwszego uruchomienia wysyła raporty o awariach i błędach do Google Firebase Crashlytics, aby można było naprawiać błędy. Adresy sieciowe są usuwane przed wysłaniem. Możesz to wyłączyć w dowolnej chwili w <b>Ustawienia &rsaquo; Informacje</b>. To nie jest śledzenie, a wersje na komputery nie wysyłają takich raportów.</li>
+      <li><b>Analityka użycia jest opcjonalna (opt-in).</b> Jest <b>domyślnie wyłączona</b>. Aplikacja pyta o to podczas pierwszej konfiguracji, a swój wybór możesz zmienić w <b>Ustawienia &rsaquo; Informacje</b>. Nic nie jest zbierane do analityki, dopóki jej nie włączysz. Wyłączenie resetuje dane, które Google przechowuje dla Twojej instalacji.</li>
+      <li><b>Raporty dla wsparcia trafiają tylko tam, gdzie je wyślesz.</b> Raport z opinią lub pakiet zgłoszenia błędu powstaje na Twoim urządzeniu i opuszcza je tylko wtedy, gdy stukniesz E-mail lub Udostępnij. Zawiera wersję aplikacji, Twoje urządzenie i system, nazwę i model projektora, oprogramowanie sprzętowe oraz dziennik aplikacji. Adresy IP i MAC, numery seryjne i nazwy hostów są maskowane, chyba że włączysz <b>Dołącz adresy sieciowe i numery seryjne</b>, a dokładny tekst możesz wcześniej podejrzeć. Wiadomości do wsparcia wysłane na admin@miyarahub.com są przechowywane, dopóki nie poprosisz nas o ich usunięcie.</li>
+      <li><b>Adresy Home Assistant, Hubitat i internetowe są Twoje.</b> Jeśli połączysz Home Assistant lub Hubitat albo dodasz adres internetowy automatyzacji, aplikacja wyśle pod ten adres to, co skonfigurowałeś (na przykład nazwę projektora, model, numer seryjny, godziny pracy lampy i stan zasilania). Nie jest to wysyłane do nas. Dla każdego adresu spoza Twojej sieci używaj <b>https</b>; aplikacja ostrzeże Cię, gdy wpiszesz zwykły http.</li>
+      <li><b>Dostęp do sieci lokalnej.</b> Aplikacja łączy się z projektorami w Twojej sieci, a jej skanowanie próbuje adresów w Twojej lokalnej podsieci, aby je znaleźć. Wyników skanowania nie wysyła nigdzie.</li>
+      <li><b>Zakupami</b> zajmuje się Apple, Google Play lub Microsoft. Aplikacja zapamiętuje tylko, czy Pro i Home Automation są odblokowane.</li>
+      <li><b>Usuń wszystkie dane aplikacji.</b> <b>Ustawienia &rsaquo; Usuń wszystkie dane aplikacji</b> usuwa z urządzenia Twoje projektory, hasła, tokeny, preferencje i wyeksportowane pliki. Flagi odblokowania zakupów i liczniki wersji bezpłatnej są zachowywane, aby zakup w sklepie nie przepadł. Na iOS i macOS te nieliczne elementy mogą też przetrwać odinstalowanie.</li>
+      <li><b>Nic nie jest sprzedawane ani udostępniane do celów reklamowych.</b> Nie ma reklam, śledzenia między aplikacjami ani sprzedaży czy udostępniania danych osobowych (także w rozumieniu CCPA).</li>
+      <li><b>Twoje prawa.</b> Możesz poprosić nas o dostęp do danych osobowych, które przechowujemy (to wyłącznie wiadomości do wsparcia), ich sprostowanie lub usunięcie, pisząc na admin@miyarahub.com. Tam, gdzie obowiązuje RODO lub brytyjskie RODO, podstawą jest umowa dla głównej funkcji aplikacji, nasz prawnie uzasadniony interes w naprawianiu awarii dla raportów o awariach oraz Twoja zgoda dla analityki. Dane Firebase przetwarza Google, które może przekazywać je do Stanów Zjednoczonych na podstawie standardowych klauzul umownych. Możesz złożyć skargę do lokalnego organu ochrony danych.</li>
+      <li><b>Dzieci.</b> Aplikacja nie jest skierowana do dzieci i nie zbiera świadomie ich danych.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Szybkie odpowiedzi</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot nie może znaleźć mojego projektora lub się z nim połączyć</h3><p>Upewnij się, że telefon i projektor są w tej samej sieci Wi-Fi i podsieci - sieci gościnne i IoT VLANs mogą je izolować. Na projektorze włącz sterowanie sieciowe (PJLink i/lub Web Control) w jego menu sieciowym. Znajdź IP projektora na jego ekranie informacji o sieci i dodaj go ręcznie, jeśli skanowanie go nie wykryje.</p></div><div class="gcard"><h3>Które projektory obsługuje Projector Pilot?</h3><p>Projektory Epson przez ESC/VP21 i Web Control oraz każdy projektor PJLink. Transport jest używany, bo odpowiada, a nie dlatego, że został skonfigurowany - aplikacja przełącza się na to, na czym projektor odpowiada, więc projektor tylko z PJLink to zwykłe obsługiwane urządzenie.</p></div><div class="gcard"><h3>Czy Projector Pilot potrzebuje konta albo wysyła moje dane do chmury?</h3><p>Bez konta i bez chmury. Aplikacja rozmawia z Twoim projektorem w Twojej sieci. Używa diagnostyki awarii przez Crashlytics oraz opcjonalnej analityki użycia, która jest domyślnie wyłączona i można ją wyłączyć w Ustawienia &gt; O aplikacji. Nic nie jest sprzedawane.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot nie może znaleźć mojego projektora lub się z nim połączyć</h3><p>Upewnij się, że telefon i projektor są w tej samej sieci Wi-Fi i podsieci - sieci gościnne i IoT VLANs mogą je izolować. Na projektorze włącz sterowanie sieciowe (PJLink i/lub Web Control) w jego menu sieciowym. Znajdź IP projektora na jego ekranie informacji o sieci i dodaj go ręcznie, jeśli skanowanie go nie wykryje.</p></div><div class="gcard"><h3>Które projektory obsługuje Projector Pilot?</h3><p>Projektory Epson przez ESC/VP21 i Web Control oraz każdy projektor PJLink. Transport jest używany, bo odpowiada, a nie dlatego, że został skonfigurowany - aplikacja przełącza się na to, na czym projektor odpowiada, więc projektor tylko z PJLink to zwykłe obsługiwane urządzenie.</p></div><div class="gcard"><h3>Czy Projector Pilot wymaga konta lub wysyła moje dane gdziekolwiek?</h3><p>Bez konta. Aplikacja komunikuje się z Twoim projektorem w Twojej sieci. Na Androidzie i iOS domyślnie wysyła raporty o awariach do Google Firebase Crashlytics, co możesz wyłączyć w Ustawienia &gt; Informacje, a analityka użycia jest opcjonalna i domyślnie wyłączona. Nic nie jest sprzedawane.</p></div></div>
   </div>
 </section>
 

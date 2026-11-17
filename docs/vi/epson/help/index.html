@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Projector Pilot có cần tài khoản hoặc gửi dữ liệu của tôi lên đám mây không?",
+      "name": "Projector Pilot có cần tài khoản hay gửi dữ liệu của tôi đi đâu không?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Không tài khoản và không đám mây. Ứng dụng giao tiếp với máy chiếu của bạn trên mạng của bạn. Ứng dụng dùng chẩn đoán sự cố qua Crashlytics, và phân tích sử dụng tùy chọn, mặc định tắt và có thể tắt trong Cài đặt > Giới thiệu. Không có gì bị bán."
+        "text": "Không có tài khoản. Ứng dụng giao tiếp với máy chiếu của bạn trên mạng của bạn. Trên Android và iOS, ứng dụng gửi báo cáo sự cố tới Google Firebase Crashlytics theo mặc định, và bạn có thể tắt trong Cài đặt > Giới thiệu; phân tích mức sử dụng là tùy chọn bật và tắt theo mặc định. Không có gì được bán."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Quyền riêng tư</div>
       <h2>Dữ liệu của bạn vẫn là của bạn</h2>
-      <p class="lead">Projector Pilot là ứng dụng cục bộ. Nó giao tiếp với máy chiếu trên mạng của bạn, và không có gì cần đăng ký.</p>
+      <p class="lead">Projector Pilot giao tiếp với máy chiếu của bạn trên chính mạng của bạn và không có gì cần đăng ký. Dưới đây là chính xác những gì rời khỏi thiết bị của bạn, và vào lúc nào.</p>
     </div>
     <ul class="plain">
-      <li><b>Không tài khoản, không đám mây.</b> Bạn không tạo tài khoản, và dữ liệu của máy chiếu không được gửi tới bất kỳ máy chủ nào của chúng tôi.</li>
-      <li><b>Chẩn đoán sự cố qua Crashlytics.</b> Khi ứng dụng gặp sự cố, nó gửi một báo cáo chẩn đoán để lỗi có thể được sửa. Đó là báo cáo sự cố tiêu chuẩn, không phải theo dõi.</li>
-      <li><b>Phân tích tùy chọn, cần bạn đồng ý.</b> Phân tích sử dụng <b>mặc định tắt</b>. Ứng dụng hỏi một lần ở lần mở đầu tiên, và bạn có thể bật hoặc tắt bất cứ lúc nào trong <b>Cài đặt &rsaquo; Giới thiệu</b>. Không có gì được thu thập hoặc gửi đi trừ khi bạn bật.</li>
-      <li><b>Không có gì bị bán.</b> Dữ liệu của bạn không bán cho bất kỳ ai, dứt khoát.</li>
+      <li><b>Không có tài khoản.</b> Bạn không cần tạo tài khoản. MiyaraHub không vận hành máy chủ nào mà ứng dụng kết nối tới, và cài đặt, địa chỉ cùng mật khẩu máy chiếu của bạn vẫn nằm trên thiết bị của bạn.</li>
+      <li><b>Báo cáo sự cố được bật theo mặc định.</b> Trên Android và iOS, ứng dụng gửi báo cáo sự cố và lỗi tới Google Firebase Crashlytics ngay từ lần mở đầu tiên để lỗi có thể được sửa. Địa chỉ mạng được loại bỏ trước khi gửi. Bạn có thể tắt tính năng này bất cứ lúc nào trong <b>Cài đặt &rsaquo; Giới thiệu</b>. Đây không phải là theo dõi, và các phiên bản máy tính không gửi báo cáo này.</li>
+      <li><b>Phân tích mức sử dụng là tùy chọn bật.</b> Tính năng này <b>tắt theo mặc định</b>. Ứng dụng hỏi trong lần thiết lập đầu tiên, và bạn có thể đổi lựa chọn trong <b>Cài đặt &rsaquo; Giới thiệu</b>. Sẽ không có gì được thu thập cho phân tích trừ khi bạn bật nó. Khi bạn tắt, dữ liệu Google lưu cho bản cài đặt của bạn sẽ được đặt lại.</li>
+      <li><b>Báo cáo hỗ trợ chỉ đến nơi bạn gửi.</b> Báo cáo phản hồi hoặc gói báo cáo lỗi được tạo ngay trên thiết bị của bạn và chỉ rời khỏi thiết bị khi bạn nhấn Email hoặc Chia sẻ. Báo cáo gồm phiên bản ứng dụng, thiết bị và hệ điều hành của bạn, tên và kiểu máy chiếu, firmware và nhật ký ứng dụng. Địa chỉ IP và MAC, số sê-ri và tên máy chủ được che đi trừ khi bạn bật <b>Bao gồm địa chỉ mạng và số sê-ri</b>, và bạn có thể xem trước chính xác nội dung văn bản. Email hỗ trợ gửi tới admin@miyarahub.com được giữ cho đến khi bạn yêu cầu chúng tôi xóa.</li>
+      <li><b>Địa chỉ Home Assistant, Hubitat và địa chỉ web là của bạn.</b> Nếu bạn liên kết Home Assistant hoặc Hubitat hay thêm địa chỉ web tự động hóa, ứng dụng sẽ gửi những gì bạn đã thiết lập (như tên máy chiếu, kiểu máy, số sê-ri, số giờ đèn và trạng thái nguồn) tới địa chỉ đó. Dữ liệu này không được gửi cho chúng tôi. Hãy dùng <b>https</b> cho mọi địa chỉ nằm ngoài mạng của bạn; ứng dụng sẽ cảnh báo khi bạn nhập http thuần cho địa chỉ như vậy.</li>
+      <li><b>Truy cập mạng cục bộ.</b> Ứng dụng kết nối tới các máy chiếu trên mạng của bạn, và việc quét sẽ thử các địa chỉ trong subnet cục bộ để tìm chúng. Kết quả quét không được gửi đi đâu cả.</li>
+      <li><b>Giao dịch mua</b> do Apple, Google Play hoặc Microsoft xử lý. Ứng dụng chỉ lưu việc Pro và Tự động hóa gia đình đã được mở khóa hay chưa.</li>
+      <li><b>Xóa toàn bộ dữ liệu ứng dụng.</b> <b>Cài đặt &rsaquo; Xóa toàn bộ dữ liệu ứng dụng</b> xóa khỏi thiết bị các máy chiếu, mật khẩu, token, tùy chọn và tệp đã xuất của bạn. Cờ mở khóa giao dịch mua và bộ đếm gói miễn phí được giữ lại để giao dịch mua trên cửa hàng không bị mất. Trên iOS và macOS, một vài mục đó còn có thể tồn tại sau khi gỡ cài đặt.</li>
+      <li><b>Không có gì được bán hay chia sẻ cho quảng cáo.</b> Không có quảng cáo, không theo dõi giữa các ứng dụng, và không bán hay chia sẻ thông tin cá nhân (kể cả theo CCPA).</li>
+      <li><b>Quyền của bạn.</b> Bạn có thể yêu cầu chúng tôi cho truy cập, sửa hoặc xóa dữ liệu cá nhân chúng tôi đang giữ, vốn chỉ là email hỗ trợ, bằng cách viết tới admin@miyarahub.com. Khi GDPR hoặc GDPR của Vương quốc Anh áp dụng, chúng tôi dựa vào hợp đồng cho chức năng cốt lõi của ứng dụng, lợi ích hợp pháp của chúng tôi trong việc sửa lỗi sự cố cho báo cáo sự cố, và sự đồng ý của bạn cho phân tích. Dữ liệu Firebase do Google xử lý, và Google có thể chuyển dữ liệu đó sang Hoa Kỳ theo các điều khoản hợp đồng tiêu chuẩn của mình. Bạn có thể khiếu nại với cơ quan bảo vệ dữ liệu tại địa phương.</li>
+      <li><b>Trẻ em.</b> Ứng dụng không nhắm tới trẻ em và không cố ý thu thập dữ liệu của các em.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Giải đáp nhanh</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot không tìm thấy hoặc không kết nối được với máy chiếu của tôi</h3><p>Hãy đảm bảo điện thoại và máy chiếu cùng một mạng Wi-Fi và cùng subnet - mạng khách và VLANs IoT có thể cô lập chúng. Trên máy chiếu, bật điều khiển qua mạng (PJLink và/hoặc Web Control) trong trình đơn mạng của nó. Tìm IP của máy chiếu trong màn hình thông tin mạng của chính nó và thêm thủ công nếu quét không tìm ra.</p></div><div class="gcard"><h3>Projector Pilot hỗ trợ những máy chiếu nào?</h3><p>Máy chiếu Epson qua ESC/VP21 và Web Control, và mọi máy chiếu PJLink. Một phương thức được dùng vì nó phản hồi, không phải vì nó được cấu hình - ứng dụng tự chuyển sang bất kỳ phương thức nào máy chiếu phản hồi, nên một máy chiếu chỉ có PJLink là thiết bị được hỗ trợ bình thường.</p></div><div class="gcard"><h3>Projector Pilot có cần tài khoản hoặc gửi dữ liệu của tôi lên đám mây không?</h3><p>Không tài khoản và không đám mây. Ứng dụng giao tiếp với máy chiếu của bạn trên mạng của bạn. Ứng dụng dùng chẩn đoán sự cố qua Crashlytics, và phân tích sử dụng tùy chọn, mặc định tắt và có thể tắt trong Cài đặt &gt; Giới thiệu. Không có gì bị bán.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot không tìm thấy hoặc không kết nối được với máy chiếu của tôi</h3><p>Hãy đảm bảo điện thoại và máy chiếu cùng một mạng Wi-Fi và cùng subnet - mạng khách và VLANs IoT có thể cô lập chúng. Trên máy chiếu, bật điều khiển qua mạng (PJLink và/hoặc Web Control) trong trình đơn mạng của nó. Tìm IP của máy chiếu trong màn hình thông tin mạng của chính nó và thêm thủ công nếu quét không tìm ra.</p></div><div class="gcard"><h3>Projector Pilot hỗ trợ những máy chiếu nào?</h3><p>Máy chiếu Epson qua ESC/VP21 và Web Control, và mọi máy chiếu PJLink. Một phương thức được dùng vì nó phản hồi, không phải vì nó được cấu hình - ứng dụng tự chuyển sang bất kỳ phương thức nào máy chiếu phản hồi, nên một máy chiếu chỉ có PJLink là thiết bị được hỗ trợ bình thường.</p></div><div class="gcard"><h3>Projector Pilot có cần tài khoản hay gửi dữ liệu của tôi đi đâu không?</h3><p>Không có tài khoản. Ứng dụng giao tiếp với máy chiếu của bạn trên mạng của bạn. Trên Android và iOS, ứng dụng gửi báo cáo sự cố tới Google Firebase Crashlytics theo mặc định, và bạn có thể tắt trong Cài đặt &gt; Giới thiệu; phân tích mức sử dụng là tùy chọn bật và tắt theo mặc định. Không có gì được bán.</p></div></div>
   </div>
 </section>
 

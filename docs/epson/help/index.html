@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Does Projector Pilot need an account or send my data to the cloud?",
+      "name": "Does Projector Pilot need an account or send my data anywhere?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No account and no cloud. The app talks to your projector on your network. It uses crash diagnostics via Crashlytics, and optional usage analytics that are off by default and can be turned off in Settings > About. Nothing is sold."
+        "text": "No account. The app talks to your projector on your network. On Android and iOS it sends crash reports to Google Firebase Crashlytics by default, which you can turn off in Settings > About, and usage analytics are opt-in and off by default. Nothing is sold."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Privacy</div>
       <h2>Your data stays yours</h2>
-      <p class="lead">Projector Pilot is a local app. It talks to your projector on your network, and there is nothing to sign up for.</p>
+      <p class="lead">Projector Pilot talks to your projector on your own network, and there is nothing to sign up for. Here is exactly what leaves your device, and when.</p>
     </div>
     <ul class="plain">
-      <li><b>No account, no cloud.</b> You do not create an account, and the projector's data is not sent to any server of ours.</li>
-      <li><b>Crash diagnostics via Crashlytics.</b> When the app crashes it sends a diagnostic report so the bug can be fixed. That is standard crash reporting, not tracking.</li>
-      <li><b>Optional, opt-in analytics.</b> Usage analytics are <b>off by default</b>. The app asks once on first launch, and you can turn them on or off any time in <b>Settings &rsaquo; About</b>. Nothing is collected or sent unless you turn it on.</li>
-      <li><b>Nothing is sold.</b> Your data is not sold to anyone, full stop.</li>
+      <li><b>No account.</b> You do not create an account. MiyaraHub runs no server that the app talks to, and your projectors' settings, addresses and passwords stay on your device.</li>
+      <li><b>Crash reports are on by default.</b> On Android and iOS the app sends crash and error reports to Google Firebase Crashlytics from the first launch, so bugs can be fixed. Network addresses are removed before sending. You can turn this off at any time in <b>Settings &rsaquo; About</b>. It is not tracking, and desktop versions do not send it.</li>
+      <li><b>Usage analytics are opt-in.</b> They are <b>off by default</b>. The app asks during first-time setup, and you can change your choice in <b>Settings &rsaquo; About</b>. Nothing is collected for analytics unless you turn it on. Turning it off resets the data Google holds for your install.</li>
+      <li><b>Support reports go only where you send them.</b> A feedback report or bug-report bundle is built on your device and leaves it only when you tap Email or Share. It contains the app version, your device and OS, the projector name and model, firmware and the app log. IP and MAC addresses, serial numbers and host names are masked unless you switch on <b>Include network addresses and serial numbers</b>, and you can preview the exact text first. Support email to admin@miyarahub.com is kept until you ask us to delete it.</li>
+      <li><b>Home Assistant, Hubitat and web addresses are yours.</b> If you link Home Assistant or Hubitat or add an automation web address, the app sends what you set up (such as projector name, model, serial number, lamp hours and power state) to that address. It is not sent to us. Use <b>https</b> for any address outside your own network; the app warns when you enter plain http for one.</li>
+      <li><b>Local network access.</b> The app connects to projectors on your network, and its scan tries addresses on your local subnet to find them. It does not send the scan results anywhere.</li>
+      <li><b>Purchases</b> are handled by Apple, Google Play or Microsoft. The app keeps only whether Pro and Home Automation are unlocked.</li>
+      <li><b>Erase all app data.</b> <b>Settings &rsaquo; Erase all app data</b> removes your projectors, passwords, tokens, preferences and exported files from the device. Purchase unlock flags and free-tier counters are kept so a store purchase is not lost. On iOS and macOS those few items can also survive an uninstall.</li>
+      <li><b>Nothing is sold or shared for advertising.</b> There is no advertising, no tracking across apps, and no sale or sharing of personal information (including under the CCPA).</li>
+      <li><b>Your rights.</b> You can ask us to access, correct or delete the personal data we hold, which is only support email, by writing to admin@miyarahub.com. Where GDPR or UK GDPR applies, we rely on contract for the app's core function, our legitimate interest in fixing crashes for crash reports, and your consent for analytics. Firebase data is processed by Google, which may transfer it to the United States under its standard contractual terms. You can complain to your local data protection authority.</li>
+      <li><b>Children.</b> The app is not aimed at children and does not knowingly collect their data.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Quick answers</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot cannot find or connect to my projector</h3><p>Make sure the phone and the projector are on the same Wi-Fi network and subnet - guest networks and IoT VLANs can isolate them. On the projector, enable network control (PJLink and/or Web Control) in its network menu. Find the projector's IP in its own network information screen and add it by hand if the scan does not turn it up.</p></div><div class="gcard"><h3>Which projectors does Projector Pilot support?</h3><p>Epson projectors over ESC/VP21 and Web Control, and any PJLink projector. A transport is used because it answers, not because it was configured - the app falls back to whatever the projector responds on, so a PJLink-only projector is an ordinary supported device.</p></div><div class="gcard"><h3>Does Projector Pilot need an account or send my data to the cloud?</h3><p>No account and no cloud. The app talks to your projector on your network. It uses crash diagnostics via Crashlytics, and optional usage analytics that are off by default and can be turned off in Settings &gt; About. Nothing is sold.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot cannot find or connect to my projector</h3><p>Make sure the phone and the projector are on the same Wi-Fi network and subnet - guest networks and IoT VLANs can isolate them. On the projector, enable network control (PJLink and/or Web Control) in its network menu. Find the projector's IP in its own network information screen and add it by hand if the scan does not turn it up.</p></div><div class="gcard"><h3>Which projectors does Projector Pilot support?</h3><p>Epson projectors over ESC/VP21 and Web Control, and any PJLink projector. A transport is used because it answers, not because it was configured - the app falls back to whatever the projector responds on, so a PJLink-only projector is an ordinary supported device.</p></div><div class="gcard"><h3>Does Projector Pilot need an account or send my data anywhere?</h3><p>No account. The app talks to your projector on your network. On Android and iOS it sends crash reports to Google Firebase Crashlytics by default, which you can turn off in Settings &gt; About, and usage analytics are opt-in and off by default. Nothing is sold.</p></div></div>
   </div>
 </section>
 

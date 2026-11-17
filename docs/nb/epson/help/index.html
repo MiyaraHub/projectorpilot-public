@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Trenger Projector Pilot en konto, eller sender den dataene mine til skyen?",
+      "name": "Trenger Projector Pilot en konto, eller sender den dataene mine noe sted?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ingen konto og ingen sky. Appen snakker med prosjektoren på nettverket ditt. Den bruker krasjdiagnostikk via Crashlytics, og valgfri bruksstatistikk som er av som standard og kan slås av i Innstillinger > Om. Ingenting selges."
+        "text": "Ingen konto. Appen snakker med prosjektoren din på nettverket ditt. På Android og iOS sender den krasjrapporter til Google Firebase Crashlytics som standard, noe du kan slå av i Innstillinger > Om, og bruksanalyse er opt-in og av som standard. Ingenting selges."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Personvern</div>
       <h2>Dataene dine forblir dine</h2>
-      <p class="lead">Projector Pilot er en lokal app. Den snakker med prosjektoren på nettverket ditt, og det er ingenting å registrere seg for.</p>
+      <p class="lead">Projector Pilot snakker med prosjektoren din på ditt eget nettverk, og det er ingenting du må registrere deg for. Her er nøyaktig hva som forlater enheten din, og når.</p>
     </div>
     <ul class="plain">
-      <li><b>Ingen konto, ingen sky.</b> Du oppretter ikke en konto, og prosjektorens data sendes ikke til noen av våre servere.</li>
-      <li><b>Krasjdiagnostikk via Crashlytics.</b> Når appen krasjer, sender den en diagnoserapport slik at feilen kan fikses. Det er standard krasjrapportering, ikke sporing.</li>
-      <li><b>Valgfri, frivillig statistikk.</b> Bruksstatistikk er <b>av som standard</b>. Appen spør én gang ved første oppstart, og du kan slå den på eller av når som helst i <b>Innstillinger &rsaquo; Om</b>. Ingenting samles inn eller sendes med mindre du slår det på.</li>
-      <li><b>Ingenting selges.</b> Dataene dine selges ikke til noen, punktum.</li>
+      <li><b>Ingen konto.</b> Du oppretter ingen konto. MiyaraHub driver ingen server som appen snakker med, og innstillingene, adressene og passordene til prosjektorene dine blir værende på enheten din.</li>
+      <li><b>Krasjrapporter er slått på som standard.</b> På Android og iOS sender appen krasj- og feilrapporter til Google Firebase Crashlytics fra første oppstart, slik at feil kan rettes. Nettverksadresser fjernes før sending. Du kan slå dette av når som helst i <b>Innstillinger &rsaquo; Om</b>. Det er ikke sporing, og skrivebordsversjonene sender det ikke.</li>
+      <li><b>Bruksanalyse er opt-in.</b> Den er <b>av som standard</b>. Appen spør under førstegangsoppsettet, og du kan endre valget i <b>Innstillinger &rsaquo; Om</b>. Ingenting samles inn til analyse med mindre du slår det på. Når du slår det av, nullstilles dataene Google har for installasjonen din.</li>
+      <li><b>Supportrapporter går bare dit du sender dem.</b> En tilbakemeldingsrapport eller feilrapportpakke bygges på enheten din og forlater den bare når du trykker på E-post eller Del. Den inneholder appversjonen, enheten og operativsystemet ditt, prosjektorens navn og modell, fastvare og applogg. IP- og MAC-adresser, serienumre og vertsnavn maskeres med mindre du slår på <b>Ta med nettverksadresser og serienumre</b>, og du kan forhåndsvise den nøyaktige teksten først. Support-e-post til admin@miyarahub.com beholdes til du ber oss slette den.</li>
+      <li><b>Adresser til Home Assistant, Hubitat og nettet er dine.</b> Hvis du kobler til Home Assistant eller Hubitat, eller legger til en nettadresse for automatisering, sender appen det du har satt opp (for eksempel prosjektorens navn, modell, serienummer, lampetimer og strømstatus) til den adressen. Det sendes ikke til oss. Bruk <b>https</b> for alle adresser utenfor ditt eget nettverk; appen advarer når du skriver inn vanlig http for en slik adresse.</li>
+      <li><b>Tilgang til lokalt nettverk.</b> Appen kobler til prosjektorer på nettverket ditt, og skanningen prøver adresser på ditt lokale subnett for å finne dem. Den sender ikke skanneresultatene noe sted.</li>
+      <li><b>Kjøp</b> håndteres av Apple, Google Play eller Microsoft. Appen beholder bare om Pro og Home Automation er låst opp.</li>
+      <li><b>Slett alle appdata.</b> <b>Innstillinger &rsaquo; Slett alle appdata</b> fjerner prosjektorene, passordene, tokenene, innstillingene og eksporterte filer dine fra enheten. Opplåsingsflagg for kjøp og tellere for gratisnivået beholdes, slik at et kjøp i butikken ikke går tapt. På iOS og macOS kan disse få elementene også overleve en avinstallering.</li>
+      <li><b>Ingenting selges eller deles til reklame.</b> Det er ingen reklame, ingen sporing på tvers av apper, og ingen salg eller deling av personopplysninger (heller ikke etter CCPA).</li>
+      <li><b>Dine rettigheter.</b> Du kan be oss om innsyn i, retting av eller sletting av personopplysningene vi har, som bare er support-e-post, ved å skrive til admin@miyarahub.com. Der GDPR eller britisk GDPR gjelder, bygger vi på avtale for appens kjernefunksjon, vår berettigede interesse i å rette krasj for krasjrapporter, og ditt samtykke for analyse. Firebase-data behandles av Google, som kan overføre dem til USA under sine standard avtalevilkår. Du kan klage til din lokale personvernmyndighet.</li>
+      <li><b>Barn.</b> Appen er ikke rettet mot barn og samler ikke bevisst inn data om dem.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Raske svar</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot finner ikke eller får ikke kontakt med prosjektoren min</h3><p>Pass på at telefonen og prosjektoren er på samme Wi-Fi-nettverk og subnett - gjestenettverk og IoT-VLAN kan isolere dem fra hverandre. Aktiver nettverkskontroll (PJLink og/eller Web Control) i prosjektorens nettverksmeny. Finn prosjektorens IP på dens egen nettverksinformasjonsskjerm og legg den til for hånd hvis skanningen ikke finner den.</p></div><div class="gcard"><h3>Hvilke prosjektorer støtter Projector Pilot?</h3><p>Epson-prosjektorer over ESC/VP21 og Web Control, og alle PJLink-prosjektorer. En transport brukes fordi den svarer, ikke fordi den er konfigurert - appen faller tilbake på det prosjektoren svarer på, så en prosjektor med bare PJLink er en helt vanlig støttet enhet.</p></div><div class="gcard"><h3>Trenger Projector Pilot en konto, eller sender den dataene mine til skyen?</h3><p>Ingen konto og ingen sky. Appen snakker med prosjektoren på nettverket ditt. Den bruker krasjdiagnostikk via Crashlytics, og valgfri bruksstatistikk som er av som standard og kan slås av i Innstillinger &gt; Om. Ingenting selges.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot finner ikke eller får ikke kontakt med prosjektoren min</h3><p>Pass på at telefonen og prosjektoren er på samme Wi-Fi-nettverk og subnett - gjestenettverk og IoT-VLAN kan isolere dem fra hverandre. Aktiver nettverkskontroll (PJLink og/eller Web Control) i prosjektorens nettverksmeny. Finn prosjektorens IP på dens egen nettverksinformasjonsskjerm og legg den til for hånd hvis skanningen ikke finner den.</p></div><div class="gcard"><h3>Hvilke prosjektorer støtter Projector Pilot?</h3><p>Epson-prosjektorer over ESC/VP21 og Web Control, og alle PJLink-prosjektorer. En transport brukes fordi den svarer, ikke fordi den er konfigurert - appen faller tilbake på det prosjektoren svarer på, så en prosjektor med bare PJLink er en helt vanlig støttet enhet.</p></div><div class="gcard"><h3>Trenger Projector Pilot en konto, eller sender den dataene mine noe sted?</h3><p>Ingen konto. Appen snakker med prosjektoren din på nettverket ditt. På Android og iOS sender den krasjrapporter til Google Firebase Crashlytics som standard, noe du kan slå av i Innstillinger &gt; Om, og bruksanalyse er opt-in og av som standard. Ingenting selges.</p></div></div>
   </div>
 </section>
 

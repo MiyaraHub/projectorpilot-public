@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Braucht Projector Pilot ein Konto oder sendet es meine Daten in die Cloud?",
+      "name": "Braucht Projector Pilot ein Konto oder sendet es meine Daten irgendwohin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kein Konto und keine Cloud. Die App spricht in deinem Netzwerk mit deinem Projektor. Sie nutzt Absturzdiagnosen über Crashlytics und optionale Nutzungsdaten, die standardmäßig aus sind und in Einstellungen > Über ausgeschaltet werden können. Nichts wird verkauft."
+        "text": "Kein Konto. Die App spricht deinen Projektor in deinem Netzwerk an. Unter Android und iOS sendet sie standardmäßig Absturzberichte an Google Firebase Crashlytics, was du unter Einstellungen > Über ausschalten kannst, und die Nutzungsanalyse ist freiwillig und standardmäßig aus. Nichts wird verkauft."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Datenschutz</div>
       <h2>Deine Daten bleiben deine</h2>
-      <p class="lead">Projector Pilot ist eine lokale App. Sie spricht in deinem Netzwerk mit deinem Projektor, und du musst dich für nichts anmelden.</p>
+      <p class="lead">Projector Pilot spricht deinen Projektor in deinem eigenen Netzwerk an, und es gibt nichts, wofür du dich registrieren musst. Hier steht genau, was dein Gerät verlässt und wann.</p>
     </div>
     <ul class="plain">
-      <li><b>Kein Konto, keine Cloud.</b> Du legst kein Konto an, und die Daten des Projektors werden an keinen Server von uns gesendet.</li>
-      <li><b>Absturzdiagnosen über Crashlytics.</b> Stürzt die App ab, sendet sie einen Diagnosebericht, damit der Fehler behoben werden kann. Das ist übliche Absturzberichterstattung, kein Tracking.</li>
-      <li><b>Optionale Analysen mit Einwilligung.</b> Nutzungsdaten sind <b>standardmäßig aus</b>. Die App fragt einmal beim ersten Start, und du kannst sie jederzeit in <b>Einstellungen &rsaquo; Über</b> ein- oder ausschalten. Nichts wird erfasst oder gesendet, solange du es nicht einschaltest.</li>
-      <li><b>Nichts wird verkauft.</b> Deine Daten werden an niemanden verkauft, Punkt.</li>
+      <li><b>Kein Konto.</b> Du legst kein Konto an. MiyaraHub betreibt keinen Server, mit dem die App spricht, und die Einstellungen, Adressen und Passwörter deiner Projektoren bleiben auf deinem Gerät.</li>
+      <li><b>Absturzberichte sind standardmäßig aktiviert.</b> Unter Android und iOS sendet die App ab dem ersten Start Absturz- und Fehlerberichte an Google Firebase Crashlytics, damit Fehler behoben werden können. Netzwerkadressen werden vor dem Senden entfernt. Du kannst das jederzeit unter <b>Einstellungen &rsaquo; Über</b> ausschalten. Das ist kein Tracking, und die Desktop-Versionen senden es nicht.</li>
+      <li><b>Nutzungsanalyse ist freiwillig.</b> Sie ist <b>standardmäßig aus</b>. Die App fragt bei der Ersteinrichtung nach, und du kannst deine Wahl unter <b>Einstellungen &rsaquo; Über</b> ändern. Für die Analyse wird nichts erfasst, solange du sie nicht einschaltest. Beim Ausschalten werden die Daten zurückgesetzt, die Google zu deiner Installation hält.</li>
+      <li><b>Support-Berichte gehen nur dorthin, wohin du sie schickst.</b> Ein Feedback-Bericht oder ein Fehlerbericht-Paket wird auf deinem Gerät erstellt und verlässt es nur, wenn du auf E-Mail oder Teilen tippst. Er enthält die App-Version, dein Gerät und Betriebssystem, Name und Modell des Projektors, die Firmware und das App-Protokoll. IP- und MAC-Adressen, Seriennummern und Hostnamen werden maskiert, solange du nicht <b>Netzwerkadressen und Seriennummern einschließen</b> aktivierst, und du kannst den genauen Text vorher ansehen. Support-E-Mails an admin@miyarahub.com werden aufbewahrt, bis du uns um Löschung bittest.</li>
+      <li><b>Home-Assistant-, Hubitat- und Web-Adressen gehören dir.</b> Wenn du Home Assistant oder Hubitat verknüpfst oder eine Automatisierungs-Webadresse hinzufügst, sendet die App das, was du eingerichtet hast (etwa Projektorname, Modell, Seriennummer, Lampenstunden und Betriebszustand), an diese Adresse. Es wird nicht an uns gesendet. Nutze <b>https</b> für jede Adresse außerhalb deines eigenen Netzwerks; die App warnt, wenn du dafür einfaches http eingibst.</li>
+      <li><b>Zugriff auf das lokale Netzwerk.</b> Die App verbindet sich mit Projektoren in deinem Netzwerk, und ihr Scan probiert Adressen in deinem lokalen Subnetz aus, um sie zu finden. Die Scan-Ergebnisse sendet sie nirgendwohin.</li>
+      <li><b>Käufe</b> werden von Apple, Google Play oder Microsoft abgewickelt. Die App speichert nur, ob Pro und Home Automation freigeschaltet sind.</li>
+      <li><b>Alle App-Daten löschen.</b> <b>Einstellungen &rsaquo; Alle App-Daten löschen</b> entfernt deine Projektoren, Passwörter, Tokens, Einstellungen und exportierten Dateien vom Gerät. Freischaltmarken für Käufe und Zähler der kostenlosen Stufe bleiben erhalten, damit ein Store-Kauf nicht verloren geht. Unter iOS und macOS können diese wenigen Einträge auch eine Deinstallation überleben.</li>
+      <li><b>Nichts wird für Werbung verkauft oder weitergegeben.</b> Es gibt keine Werbung, kein App-übergreifendes Tracking und keinen Verkauf oder keine Weitergabe personenbezogener Daten (auch nicht im Sinne des CCPA).</li>
+      <li><b>Deine Rechte.</b> Du kannst uns per E-Mail an admin@miyarahub.com bitten, die von uns gespeicherten personenbezogenen Daten einzusehen, zu berichtigen oder zu löschen, und das sind nur Support-E-Mails. Wo die DSGVO oder die britische UK GDPR gilt, stützen wir uns für die Kernfunktion der App auf den Vertrag, für Absturzberichte auf unser berechtigtes Interesse an der Fehlerbehebung und für die Analyse auf deine Einwilligung. Firebase-Daten werden von Google verarbeitet, das sie nach seinen Standardvertragsklauseln in die USA übermitteln kann. Du kannst dich bei deiner örtlichen Datenschutzbehörde beschweren.</li>
+      <li><b>Kinder.</b> Die App richtet sich nicht an Kinder und erhebt wissentlich keine Daten von ihnen.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Kurze Antworten</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot findet meinen Projektor nicht oder kann sich nicht verbinden</h3><p>Stelle sicher, dass Handy und Projektor im selben WLAN und Subnetz sind - Gastnetzwerke und IoT-VLANs können sie voneinander isolieren. Aktiviere am Projektor im Netzwerkmenü die Netzwerksteuerung (PJLink und/oder Web Control). Die IP des Projektors findest du auf seinem eigenen Bildschirm mit den Netzwerkinformationen; füge sie von Hand hinzu, wenn die Suche ihn nicht findet.</p></div><div class="gcard"><h3>Welche Projektoren unterstützt Projector Pilot?</h3><p>Epson-Projektoren über ESC/VP21 und Web Control sowie jeden PJLink-Projektor. Ein Übertragungsweg wird genutzt, weil er antwortet, nicht weil er konfiguriert wurde - die App weicht auf das aus, worüber der Projektor antwortet, daher ist ein reiner PJLink-Projektor ein ganz normales unterstütztes Gerät.</p></div><div class="gcard"><h3>Braucht Projector Pilot ein Konto oder sendet es meine Daten in die Cloud?</h3><p>Kein Konto und keine Cloud. Die App spricht in deinem Netzwerk mit deinem Projektor. Sie nutzt Absturzdiagnosen über Crashlytics und optionale Nutzungsdaten, die standardmäßig aus sind und in Einstellungen &gt; Über ausgeschaltet werden können. Nichts wird verkauft.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot findet meinen Projektor nicht oder kann sich nicht verbinden</h3><p>Stelle sicher, dass Handy und Projektor im selben WLAN und Subnetz sind - Gastnetzwerke und IoT-VLANs können sie voneinander isolieren. Aktiviere am Projektor im Netzwerkmenü die Netzwerksteuerung (PJLink und/oder Web Control). Die IP des Projektors findest du auf seinem eigenen Bildschirm mit den Netzwerkinformationen; füge sie von Hand hinzu, wenn die Suche ihn nicht findet.</p></div><div class="gcard"><h3>Welche Projektoren unterstützt Projector Pilot?</h3><p>Epson-Projektoren über ESC/VP21 und Web Control sowie jeden PJLink-Projektor. Ein Übertragungsweg wird genutzt, weil er antwortet, nicht weil er konfiguriert wurde - die App weicht auf das aus, worüber der Projektor antwortet, daher ist ein reiner PJLink-Projektor ein ganz normales unterstütztes Gerät.</p></div><div class="gcard"><h3>Braucht Projector Pilot ein Konto oder sendet es meine Daten irgendwohin?</h3><p>Kein Konto. Die App spricht deinen Projektor in deinem Netzwerk an. Unter Android und iOS sendet sie standardmäßig Absturzberichte an Google Firebase Crashlytics, was du unter Einstellungen &gt; Über ausschalten kannst, und die Nutzungsanalyse ist freiwillig und standardmäßig aus. Nichts wird verkauft.</p></div></div>
   </div>
 </section>
 

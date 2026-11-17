@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Tarvitseeko Projector Pilot tilin tai lähettääkö se tietojani pilveen?",
+      "name": "Tarvitseeko Projector Pilot tilin tai lähettääkö se tietojani minnekään?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ei tiliä eikä pilveä. Sovellus keskustelee projektorisi kanssa omassa verkossasi. Se käyttää kaatumisdiagnostiikkaa Crashlyticsin kautta sekä valinnaisia käyttötilastoja, jotka ovat oletuksena pois päältä ja jotka voi kytkeä pois kohdassa Asetukset > Tietoja. Mitään ei myydä."
+        "text": "Ei tiliä. Sovellus keskustelee projektorisi kanssa verkossasi. Androidilla ja iOS:llä se lähettää oletuksena kaatumisraportit Google Firebase Crashlyticsille, jotka voit poistaa käytöstä kohdassa Asetukset > Tietoja, ja käyttöanalytiikka on vapaaehtoista ja oletuksena pois päältä. Mitään ei myydä."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Tietosuoja</div>
       <h2>Tietosi pysyvät sinun</h2>
-      <p class="lead">Projector Pilot on paikallinen sovellus. Se keskustelee projektorisi kanssa omassa verkossasi, eikä mihinkään tarvitse rekisteröityä.</p>
+      <p class="lead">Projector Pilot keskustelee projektorisi kanssa omassa verkossasi, eikä mihinkään tarvitse rekisteröityä. Tässä on tarkalleen, mitä laitteeltasi lähtee ja milloin.</p>
     </div>
     <ul class="plain">
-      <li><b>Ei tiliä, ei pilveä.</b> Et luo tiliä, eikä projektorin tietoja lähetetä millekään palvelimellemme.</li>
-      <li><b>Kaatumisdiagnostiikka Crashlyticsin kautta.</b> Kun sovellus kaatuu, se lähettää diagnostiikkaraportin, jotta virhe voidaan korjata. Se on tavallista kaatumisraportointia, ei seurantaa.</li>
-      <li><b>Valinnaiset, vapaaehtoiset käyttötilastot.</b> Käyttötilastot ovat <b>oletuksena pois päältä</b>. Sovellus kysyy kerran ensimmäisellä käynnistyksellä, ja voit kytkeä ne päälle tai pois milloin tahansa kohdassa <b>Asetukset &rsaquo; Tietoja</b>. Mitään ei kerätä tai lähetetä, ellet kytke sitä päälle.</li>
-      <li><b>Mitään ei myydä.</b> Tietojasi ei myydä kenellekään, piste.</li>
+      <li><b>Ei tiliä.</b> Tiliä ei luoda. MiyaraHub ei ylläpidä palvelinta, jonka kanssa sovellus keskustelee, ja projektoriesi asetukset, osoitteet ja salasanat pysyvät laitteellasi.</li>
+      <li><b>Kaatumisraportit ovat oletuksena päällä.</b> Androidilla ja iOS:llä sovellus lähettää kaatumis- ja virheraportit Google Firebase Crashlyticsille ensimmäisestä käynnistyksestä alkaen, jotta virheet voidaan korjata. Verkko-osoitteet poistetaan ennen lähettämistä. Voit poistaa tämän käytöstä milloin tahansa kohdassa <b>Asetukset &rsaquo; Tietoja</b>. Se ei ole seurantaa, eikä työpöytäversiot lähetä sitä.</li>
+      <li><b>Käyttöanalytiikka on vapaaehtoista.</b> Se on <b>oletuksena pois päältä</b>. Sovellus kysyy asiaa ensimmäisen käyttöönoton aikana, ja voit muuttaa valintaasi kohdassa <b>Asetukset &rsaquo; Tietoja</b>. Analytiikkaa varten ei kerätä mitään, ellet ota sitä käyttöön. Kun otat sen pois käytöstä, Googlen asennuksestasi säilyttämät tiedot nollataan.</li>
+      <li><b>Tukiraportit menevät vain sinne, minne ne lähetät.</b> Palauteraportti tai virheraporttipaketti kootaan laitteellasi, ja se poistuu laitteelta vasta, kun napautat Sähköposti tai Jaa. Se sisältää sovelluksen version, laitteesi ja käyttöjärjestelmän, projektorin nimen ja mallin, laiteohjelmiston ja sovelluksen lokin. IP- ja MAC-osoitteet, sarjanumerot ja isäntänimet peitetään, ellet ota käyttöön asetusta <b>Sisällytä verkko-osoitteet ja sarjanumerot</b>, ja voit esikatsella tarkan tekstin etukäteen. Tukisähköposti osoitteeseen admin@miyarahub.com säilytetään, kunnes pyydät meitä poistamaan sen.</li>
+      <li><b>Home Assistant-, Hubitat- ja verkko-osoitteet ovat sinun omiasi.</b> Jos yhdistät Home Assistantin tai Hubitatin tai lisäät automaation verkko-osoitteen, sovellus lähettää määrittämäsi tiedot (kuten projektorin nimen, mallin, sarjanumeron, lampun käyttötunnit ja virtatilan) kyseiseen osoitteeseen. Niitä ei lähetetä meille. Käytä osoitteissa, jotka ovat oman verkkosi ulkopuolella, protokollaa <b>https</b>. Sovellus varoittaa, jos syötät sellaiseen tavallisen http-osoitteen.</li>
+      <li><b>Paikallisverkon käyttö.</b> Sovellus yhdistää verkkosi projektoreihin, ja sen haku kokeilee paikallisen aliverkkosi osoitteita löytääkseen ne. Haun tuloksia ei lähetetä minnekään.</li>
+      <li><b>Ostokset</b> hoitaa Apple, Google Play tai Microsoft. Sovellus tallentaa vain sen, onko Pro ja Kodin automaatio avattu.</li>
+      <li><b>Poista kaikki sovelluksen tiedot.</b> <b>Asetukset &rsaquo; Poista kaikki sovelluksen tiedot</b> poistaa laitteelta projektorisi, salasanasi, tunnuksesi, asetuksesi ja viedyt tiedostot. Ostosten avauslippuja ja ilmaisversion laskureita ei poisteta, jotta kaupasta tehty ostos ei katoa. iOS:llä ja macOS:llä nämä muutamat kohteet voivat säilyä myös sovelluksen asennuksen poiston jälkeen.</li>
+      <li><b>Mitään ei myydä eikä jaeta mainontaan.</b> Mainontaa ei ole, sovellusten välistä seurantaa ei ole, eikä henkilötietoja myydä tai jaeta (myös CCPA:n mukaisesti).</li>
+      <li><b>Oikeutesi.</b> Voit pyytää meiltä pääsyä hallussamme oleviin henkilötietoihin, niiden oikaisua tai poistamista kirjoittamalla osoitteeseen admin@miyarahub.com. Nämä tiedot ovat vain tukisähköposti. Siellä, missä GDPR tai UK GDPR on voimassa, perustamme sovelluksen ydintoiminnon sopimukseen, kaatumisraporttien osalta oikeutettuun etuumme korjata kaatumiset ja analytiikan osalta suostumukseesi. Firebase-tietoja käsittelee Google, joka voi siirtää ne Yhdysvaltoihin vakiosopimuslausekkeidensa mukaisesti. Voit tehdä valituksen paikalliselle tietosuojaviranomaiselle.</li>
+      <li><b>Lapset.</b> Sovellus ei ole suunnattu lapsille, eikä se tietoisesti kerää heidän tietojaan.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Pikavastaukset</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot ei löydä projektoriani tai yhdistä siihen</h3><p>Varmista, että puhelin ja projektori ovat samassa Wi-Fi-verkossa ja aliverkossa - vierasverkot ja IoT-VLANit voivat eristää ne toisistaan. Ota projektorin verkkovalikosta käyttöön verkko-ohjaus (PJLink ja/tai Web Control). Selvitä projektorin IP-osoite sen omalta verkkotietonäytöltä ja lisää se käsin, jos haku ei löydä sitä.</p></div><div class="gcard"><h3>Mitä projektoreita Projector Pilot tukee?</h3><p>Epson-projektorit ESC/VP21- ja Web Control -protokollilla sekä kaikki PJLink-projektorit. Siirtotie valitaan sen mukaan, mikä vastaa, ei sen mukaan, mikä on määritetty - sovellus käyttää mitä tahansa, millä projektori vastaa, joten vain PJLink-projektori on ihan tavallinen tuettu laite.</p></div><div class="gcard"><h3>Tarvitseeko Projector Pilot tilin tai lähettääkö se tietojani pilveen?</h3><p>Ei tiliä eikä pilveä. Sovellus keskustelee projektorisi kanssa omassa verkossasi. Se käyttää kaatumisdiagnostiikkaa Crashlyticsin kautta sekä valinnaisia käyttötilastoja, jotka ovat oletuksena pois päältä ja jotka voi kytkeä pois kohdassa Asetukset &gt; Tietoja. Mitään ei myydä.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot ei löydä projektoriani tai yhdistä siihen</h3><p>Varmista, että puhelin ja projektori ovat samassa Wi-Fi-verkossa ja aliverkossa - vierasverkot ja IoT-VLANit voivat eristää ne toisistaan. Ota projektorin verkkovalikosta käyttöön verkko-ohjaus (PJLink ja/tai Web Control). Selvitä projektorin IP-osoite sen omalta verkkotietonäytöltä ja lisää se käsin, jos haku ei löydä sitä.</p></div><div class="gcard"><h3>Mitä projektoreita Projector Pilot tukee?</h3><p>Epson-projektorit ESC/VP21- ja Web Control -protokollilla sekä kaikki PJLink-projektorit. Siirtotie valitaan sen mukaan, mikä vastaa, ei sen mukaan, mikä on määritetty - sovellus käyttää mitä tahansa, millä projektori vastaa, joten vain PJLink-projektori on ihan tavallinen tuettu laite.</p></div><div class="gcard"><h3>Tarvitseeko Projector Pilot tilin tai lähettääkö se tietojani minnekään?</h3><p>Ei tiliä. Sovellus keskustelee projektorisi kanssa verkossasi. Androidilla ja iOS:llä se lähettää oletuksena kaatumisraportit Google Firebase Crashlyticsille, jotka voit poistaa käytöstä kohdassa Asetukset &gt; Tietoja, ja käyttöanalytiikka on vapaaehtoista ja oletuksena pois päältä. Mitään ei myydä.</p></div></div>
   </div>
 </section>
 

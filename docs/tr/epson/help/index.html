@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Projector Pilot hesap gerektirir mi veya verilerimi buluta gönderir mi?",
+      "name": "Projector Pilot için hesap gerekir mi, verilerimi bir yere gönderiyor mu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hesap yok, bulut yok. Uygulama projektörünüzle ağınızda konuşur. Crashlytics üzerinden çökme tanılaması ve varsayılan olarak kapalı olan, Ayarlar > Hakkında bölümünden kapatılabilen isteğe bağlı kullanım analizleri kullanır. Hiçbir şey satılmaz."
+        "text": "Hesap yok. Uygulama, projektörünüzle ağınız üzerinden konuşur. Android ve iOS'ta varsayılan olarak Google Firebase Crashlytics'e çökme raporları gönderir; bunu Ayarlar > Hakkında bölümünden kapatabilirsiniz. Kullanım analitiği isteğe bağlıdır ve varsayılan olarak kapalıdır. Hiçbir şey satılmaz."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Gizlilik</div>
       <h2>Verileriniz sizin kalır</h2>
-      <p class="lead">Projector Pilot yerel bir uygulamadır. Projektörünüzle ağınızda konuşur ve kaydolacak hiçbir şey yoktur.</p>
+      <p class="lead">Projector Pilot, projektörünüzle kendi ağınız üzerinden konuşur ve kaydolmanız gereken hiçbir şey yoktur. Cihazınızdan tam olarak neyin, ne zaman çıktığı aşağıda anlatılıyor.</p>
     </div>
     <ul class="plain">
-      <li><b>Hesap yok, bulut yok.</b> Hesap oluşturmazsınız ve projektörün verileri bizim hiçbir sunucumuza gönderilmez.</li>
-      <li><b>Crashlytics üzerinden çökme tanılaması.</b> Uygulama çöktüğünde, hata düzeltilebilsin diye bir tanılama raporu gönderir. Bu standart çökme raporlamasıdır, izleme değil.</li>
-      <li><b>İsteğe bağlı, onaya dayalı analizler.</b> Kullanım analizleri <b>varsayılan olarak kapalıdır</b>. Uygulama ilk açılışta bir kez sorar ve istediğiniz zaman <b>Ayarlar &rsaquo; Hakkında</b> bölümünden açıp kapatabilirsiniz. Siz açmadıkça hiçbir şey toplanmaz veya gönderilmez.</li>
-      <li><b>Hiçbir şey satılmaz.</b> Verileriniz kimseye satılmaz, nokta.</li>
+      <li><b>Hesap yok.</b> Hesap oluşturmazsınız. MiyaraHub'ın uygulamanın bağlandığı bir sunucusu yoktur; projektörlerinizin ayarları, adresleri ve parolaları cihazınızda kalır.</li>
+      <li><b>Çökme raporları varsayılan olarak açıktır.</b> Android ve iOS'ta uygulama, hataların giderilebilmesi için ilk açılıştan itibaren çökme ve hata raporlarını Google Firebase Crashlytics'e gönderir. Ağ adresleri gönderilmeden önce kaldırılır. Bunu istediğiniz zaman <b>Ayarlar &rsaquo; Hakkında</b> bölümünden kapatabilirsiniz. Bu bir izleme değildir ve masaüstü sürümleri bunu göndermez.</li>
+      <li><b>Kullanım analitiği isteğe bağlıdır.</b> <b>Varsayılan olarak kapalıdır</b>. Uygulama ilk kurulum sırasında sorar ve tercihinizi <b>Ayarlar &rsaquo; Hakkında</b> bölümünden değiştirebilirsiniz. Siz açmadıkça analitik için hiçbir şey toplanmaz. Kapattığınızda Google'ın kurulumunuz için tuttuğu veriler sıfırlanır.</li>
+      <li><b>Destek raporları yalnızca sizin gönderdiğiniz yere gider.</b> Geri bildirim raporu veya hata raporu paketi cihazınızda oluşturulur ve yalnızca E-posta ya da Paylaş'a dokunduğunuzda cihazdan çıkar. İçinde uygulama sürümü, cihazınız ve işletim sisteminiz, projektör adı ve modeli, ürün yazılımı ve uygulama günlüğü bulunur. <b>Ağ adreslerini ve seri numaralarını dahil et</b> seçeneğini açmadıkça IP ve MAC adresleri, seri numaraları ve ana bilgisayar adları maskelenir; ayrıca metnin tam hâlini önceden görebilirsiniz. admin@miyarahub.com adresine gönderilen destek e-postaları, silmemizi isteyene kadar saklanır.</li>
+      <li><b>Home Assistant, Hubitat ve web adresleri size aittir.</b> Home Assistant veya Hubitat'ı bağlarsanız ya da bir otomasyon web adresi eklerseniz uygulama, kurduğunuz bilgileri (projektör adı, model, seri numarası, lamba saatleri ve güç durumu gibi) o adrese gönderir. Bu bilgiler bize gönderilmez. Kendi ağınızın dışındaki her adres için <b>https</b> kullanın; böyle bir adrese düz http girdiğinizde uygulama sizi uyarır.</li>
+      <li><b>Yerel ağ erişimi.</b> Uygulama ağınızdaki projektörlere bağlanır ve taraması, onları bulmak için yerel alt ağınızdaki adresleri dener. Tarama sonuçlarını hiçbir yere göndermez.</li>
+      <li><b>Satın alımlar</b> Apple, Google Play veya Microsoft tarafından işlenir. Uygulama yalnızca Pro ve Ev Otomasyonu'nun açık olup olmadığını saklar.</li>
+      <li><b>Tüm uygulama verilerini sil.</b> <b>Ayarlar &rsaquo; Tüm uygulama verilerini sil</b>, projektörlerinizi, parolalarınızı, belirteçlerinizi, tercihlerinizi ve dışa aktarılan dosyalarınızı cihazdan kaldırır. Mağaza satın alımınız kaybolmasın diye satın alma kilit açma bayrakları ve ücretsiz katman sayaçları korunur. iOS ve macOS'ta bu birkaç öğe uygulamayı kaldırdıktan sonra da kalabilir.</li>
+      <li><b>Hiçbir şey reklam için satılmaz veya paylaşılmaz.</b> Reklam yoktur, uygulamalar arası izleme yoktur ve kişisel bilgiler satılmaz veya paylaşılmaz (CCPA kapsamında da).</li>
+      <li><b>Haklarınız.</b> admin@miyarahub.com adresine yazarak elimizdeki kişisel verilere, yani yalnızca destek e-postalarına, erişmemizi, bunları düzeltmemizi veya silmemizi isteyebilirsiniz. GDPR veya Birleşik Krallık GDPR'ı geçerli olduğunda, uygulamanın temel işlevi için sözleşmeye, çökme raporları için çökmeleri düzeltmedeki meşru menfaatimize, analitik için ise onayınıza dayanırız. Firebase verileri Google tarafından işlenir ve Google bunları standart sözleşme hükümleri çerçevesinde Amerika Birleşik Devletleri'ne aktarabilir. Yerel veri koruma otoritenize şikâyette bulunabilirsiniz.</li>
+      <li><b>Çocuklar.</b> Uygulama çocuklara yönelik değildir ve onların verilerini bilerek toplamaz.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">SSS</div>
       <h2>Hızlı yanıtlar</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot projektörümü bulamıyor veya bağlanamıyor</h3><p>Telefonun ve projektörün aynı Wi-Fi ağında ve alt ağda olduğundan emin olun - misafir ağlar ve IoT VLAN'ları onları yalıtabilir. Projektörde ağ menüsünden ağ kontrolünü (PJLink ve/veya Web Control) etkinleştirin. Projektörün IP'sini kendi ağ bilgisi ekranında bulun ve tarama bulamazsa elle ekleyin.</p></div><div class="gcard"><h3>Projector Pilot hangi projektörleri destekler?</h3><p>ESC/VP21 ve Web Control üzerinden Epson projektörler ve her PJLink projektör. Bir aktarım, yapılandırıldığı için değil yanıt verdiği için kullanılır - uygulama projektörün hangisinde yanıt verdiyse ona geçer; dolayısıyla yalnızca PJLink destekleyen bir projektör sıradan, desteklenen bir cihazdır.</p></div><div class="gcard"><h3>Projector Pilot hesap gerektirir mi veya verilerimi buluta gönderir mi?</h3><p>Hesap yok, bulut yok. Uygulama projektörünüzle ağınızda konuşur. Crashlytics üzerinden çökme tanılaması ve varsayılan olarak kapalı olan, Ayarlar &gt; Hakkında bölümünden kapatılabilen isteğe bağlı kullanım analizleri kullanır. Hiçbir şey satılmaz.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot projektörümü bulamıyor veya bağlanamıyor</h3><p>Telefonun ve projektörün aynı Wi-Fi ağında ve alt ağda olduğundan emin olun - misafir ağlar ve IoT VLAN'ları onları yalıtabilir. Projektörde ağ menüsünden ağ kontrolünü (PJLink ve/veya Web Control) etkinleştirin. Projektörün IP'sini kendi ağ bilgisi ekranında bulun ve tarama bulamazsa elle ekleyin.</p></div><div class="gcard"><h3>Projector Pilot hangi projektörleri destekler?</h3><p>ESC/VP21 ve Web Control üzerinden Epson projektörler ve her PJLink projektör. Bir aktarım, yapılandırıldığı için değil yanıt verdiği için kullanılır - uygulama projektörün hangisinde yanıt verdiyse ona geçer; dolayısıyla yalnızca PJLink destekleyen bir projektör sıradan, desteklenen bir cihazdır.</p></div><div class="gcard"><h3>Projector Pilot için hesap gerekir mi, verilerimi bir yere gönderiyor mu?</h3><p>Hesap yok. Uygulama, projektörünüzle ağınız üzerinden konuşur. Android ve iOS'ta varsayılan olarak Google Firebase Crashlytics'e çökme raporları gönderir; bunu Ayarlar &gt; Hakkında bölümünden kapatabilirsiniz. Kullanım analitiği isteğe bağlıdır ve varsayılan olarak kapalıdır. Hiçbir şey satılmaz.</p></div></div>
   </div>
 </section>
 

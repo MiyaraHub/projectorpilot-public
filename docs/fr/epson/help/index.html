@@ -135,10 +135,10 @@
     },
     {
       "@type": "Question",
-      "name": "Projector Pilot exige-t-il un compte ou envoie-t-il mes données dans le cloud ?",
+      "name": "Projector Pilot a-t-il besoin d'un compte ou envoie-t-il mes données quelque part ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aucun compte et aucun cloud. L'appli parle à votre projecteur sur votre réseau. Elle utilise des diagnostics de plantage via Crashlytics, et des statistiques d'utilisation facultatives désactivées par défaut et désactivables dans Réglages > À propos. Rien n'est vendu."
+        "text": "Aucun compte. L'application communique avec votre projecteur sur votre réseau. Sur Android et iOS, elle envoie par défaut des rapports de plantage à Google Firebase Crashlytics, que vous pouvez désactiver dans Paramètres > À propos, et les statistiques d'utilisation sont facultatives et désactivées par défaut. Rien n'est vendu."
       }
     }
   ]
@@ -227,13 +227,20 @@
     <div class="section-head">
       <div class="eyebrow">Confidentialité</div>
       <h2>Vos données restent les vôtres</h2>
-      <p class="lead">Projector Pilot est une appli locale. Elle parle à votre projecteur sur votre réseau, et il n'y a rien à quoi s'inscrire.</p>
+      <p class="lead">Projector Pilot communique avec votre projecteur sur votre propre réseau, et il n'y a rien à créer. Voici exactement ce qui quitte votre appareil, et quand.</p>
     </div>
     <ul class="plain">
-      <li><b>Pas de compte, pas de cloud.</b> Vous ne créez pas de compte, et les données du projecteur ne sont envoyées à aucun de nos serveurs.</li>
-      <li><b>Diagnostics de plantage via Crashlytics.</b> Quand l'appli plante, elle envoie un rapport de diagnostic pour que le bug puisse être corrigé. C'est un rapport de plantage standard, pas du suivi.</li>
-      <li><b>Statistiques facultatives, sur adhésion.</b> Les statistiques d'utilisation sont <b>désactivées par défaut</b>. L'appli demande une fois au premier lancement, et vous pouvez les activer ou les désactiver à tout moment dans <b>Réglages &rsaquo; À propos</b>. Rien n'est collecté ni envoyé sans votre activation.</li>
-      <li><b>Rien n'est vendu.</b> Vos données ne sont vendues à personne, point final.</li>
+      <li><b>Aucun compte.</b> Vous ne créez pas de compte. MiyaraHub n'exploite aucun serveur avec lequel l'application communique, et les réglages, adresses et mots de passe de vos projecteurs restent sur votre appareil.</li>
+      <li><b>Les rapports de plantage sont activés par défaut.</b> Sur Android et iOS, l'application envoie des rapports de plantage et d'erreur à Google Firebase Crashlytics dès le premier lancement, afin que les bugs puissent être corrigés. Les adresses réseau sont supprimées avant l'envoi. Vous pouvez le désactiver à tout moment dans <b>Paramètres &rsaquo; À propos</b>. Ce n'est pas du suivi, et les versions de bureau ne l'envoient pas.</li>
+      <li><b>Les statistiques d'utilisation sont facultatives.</b> Elles sont <b>désactivées par défaut</b>. L'application vous le demande lors de la première configuration, et vous pouvez modifier votre choix dans <b>Paramètres &rsaquo; À propos</b>. Rien n'est collecté à des fins statistiques tant que vous ne l'activez pas. La désactivation réinitialise les données que Google conserve pour votre installation.</li>
+      <li><b>Les rapports d'assistance vont uniquement là où vous les envoyez.</b> Un rapport de commentaires ou un pack de rapport de bug est créé sur votre appareil et ne le quitte que lorsque vous touchez E-mail ou Partager. Il contient la version de l'application, votre appareil et son système, le nom et le modèle du projecteur, le firmware et le journal de l'application. Les adresses IP et MAC, les numéros de série et les noms d'hôte sont masqués, sauf si vous activez <b>Inclure les adresses réseau et les numéros de série</b>, et vous pouvez d'abord prévisualiser le texte exact. L'e-mail d'assistance envoyé à admin@miyarahub.com est conservé jusqu'à ce que vous nous demandiez de le supprimer.</li>
+      <li><b>Les adresses Home Assistant, Hubitat et web vous appartiennent.</b> Si vous liez Home Assistant ou Hubitat, ou ajoutez une adresse web d'automatisation, l'application envoie ce que vous avez configuré (comme le nom du projecteur, le modèle, le numéro de série, les heures de lampe et l'état d'alimentation) à cette adresse. Rien ne nous est envoyé. Utilisez <b>https</b> pour toute adresse située hors de votre propre réseau ; l'application vous avertit lorsque vous saisissez du http simple pour une telle adresse.</li>
+      <li><b>Accès au réseau local.</b> L'application se connecte aux projecteurs de votre réseau, et sa recherche essaie des adresses de votre sous-réseau local pour les trouver. Elle n'envoie les résultats de la recherche nulle part.</li>
+      <li><b>Les achats</b> sont gérés par Apple, Google Play ou Microsoft. L'application conserve uniquement l'état de déverrouillage de Pro et de Domotique.</li>
+      <li><b>Effacer toutes les données de l'app.</b> <b>Paramètres &rsaquo; Effacer toutes les données de l'app</b> supprime de l'appareil vos projecteurs, mots de passe, jetons, préférences et fichiers exportés. Les indicateurs de déverrouillage des achats et les compteurs de la version gratuite sont conservés afin qu'un achat en magasin ne soit pas perdu. Sur iOS et macOS, ces quelques éléments peuvent aussi survivre à une désinstallation.</li>
+      <li><b>Rien n'est vendu ni partagé à des fins publicitaires.</b> Il n'y a aucune publicité, aucun suivi entre applications, et aucune vente ni aucun partage de données personnelles (y compris au sens du CCPA).</li>
+      <li><b>Vos droits.</b> Vous pouvez nous demander d'accéder aux données personnelles que nous détenons, de les corriger ou de les supprimer, ce qui ne concerne que les e-mails d'assistance, en écrivant à admin@miyarahub.com. Là où le GDPR ou le UK GDPR s'applique, nous nous appuyons sur le contrat pour la fonction principale de l'application, sur notre intérêt légitime à corriger les plantages pour les rapports de plantage, et sur votre consentement pour les statistiques. Les données Firebase sont traitées par Google, qui peut les transférer vers les États-Unis selon ses clauses contractuelles types. Vous pouvez déposer une plainte auprès de votre autorité locale de protection des données.</li>
+      <li><b>Enfants.</b> L'application ne s'adresse pas aux enfants et ne collecte pas sciemment leurs données.</li>
     </ul>
   </div>
 </section>
@@ -259,7 +266,7 @@
       <div class="eyebrow">FAQ</div>
       <h2>Réponses rapides</h2>
     </div>
-    <div class="grid"><div class="gcard"><h3>Projector Pilot ne trouve pas mon projecteur ou ne parvient pas à s'y connecter</h3><p>Vérifiez que le téléphone et le projecteur sont sur le même réseau Wi-Fi et le même sous-réseau - les réseaux invités et les VLAN IoT peuvent les isoler. Sur le projecteur, activez le contrôle réseau (PJLink et/ou Web Control) dans son menu réseau. Trouvez l'IP du projecteur dans son propre écran d'informations réseau et ajoutez-la à la main si la recherche ne le détecte pas.</p></div><div class="gcard"><h3>Quels projecteurs Projector Pilot prend-il en charge ?</h3><p>Les projecteurs Epson via ESC/VP21 et Web Control, et tout projecteur PJLink. Un transport est utilisé parce qu'il répond, pas parce qu'il a été configuré - l'appli se rabat sur celui sur lequel le projecteur répond, donc un projecteur PJLink uniquement est un appareil pris en charge tout à fait ordinaire.</p></div><div class="gcard"><h3>Projector Pilot exige-t-il un compte ou envoie-t-il mes données dans le cloud ?</h3><p>Aucun compte et aucun cloud. L'appli parle à votre projecteur sur votre réseau. Elle utilise des diagnostics de plantage via Crashlytics, et des statistiques d'utilisation facultatives désactivées par défaut et désactivables dans Réglages &gt; À propos. Rien n'est vendu.</p></div></div>
+    <div class="grid"><div class="gcard"><h3>Projector Pilot ne trouve pas mon projecteur ou ne parvient pas à s'y connecter</h3><p>Vérifiez que le téléphone et le projecteur sont sur le même réseau Wi-Fi et le même sous-réseau - les réseaux invités et les VLAN IoT peuvent les isoler. Sur le projecteur, activez le contrôle réseau (PJLink et/ou Web Control) dans son menu réseau. Trouvez l'IP du projecteur dans son propre écran d'informations réseau et ajoutez-la à la main si la recherche ne le détecte pas.</p></div><div class="gcard"><h3>Quels projecteurs Projector Pilot prend-il en charge ?</h3><p>Les projecteurs Epson via ESC/VP21 et Web Control, et tout projecteur PJLink. Un transport est utilisé parce qu'il répond, pas parce qu'il a été configuré - l'appli se rabat sur celui sur lequel le projecteur répond, donc un projecteur PJLink uniquement est un appareil pris en charge tout à fait ordinaire.</p></div><div class="gcard"><h3>Projector Pilot a-t-il besoin d'un compte ou envoie-t-il mes données quelque part ?</h3><p>Aucun compte. L'application communique avec votre projecteur sur votre réseau. Sur Android et iOS, elle envoie par défaut des rapports de plantage à Google Firebase Crashlytics, que vous pouvez désactiver dans Paramètres &gt; À propos, et les statistiques d'utilisation sont facultatives et désactivées par défaut. Rien n'est vendu.</p></div></div>
   </div>
 </section>
 
