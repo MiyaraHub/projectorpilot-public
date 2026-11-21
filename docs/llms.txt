@@ -1,49 +1,89 @@
 # Projector Pilot
 
-> Projector Pilot is a family of independent apps by MiyaraHub Technologies LLC for controlling projectors over your own network: Projector Pilot for Epson and PJLink projectors, and Projector Pilot D-ILA for JVC D-ILA projectors.
+> Projector Pilot is a family of independent apps by MiyaraHub Technologies LLC. Projector Pilot apps control projectors over your own network: Epson and PJLink projectors, and JVC D-ILA projectors. No account, no subscription.
 
-The site has one section per app. https://projectorpilot.com/epson/ covers Projector Pilot for Epson and PJLink projectors, and https://projectorpilot.com/jvc/ covers Projector Pilot D-ILA for JVC D-ILA projectors. Neither app needs an account or a cloud service, and both sell one-time purchases with no subscription and no ads.
+Key facts:
 
-## Projector Pilot for Epson and PJLink
+- The site has one section per app: https://projectorpilot.com/epson/ covers Projector Pilot for Epson and PJLink, and https://projectorpilot.com/jvc/ covers Projector Pilot D-ILA.
+- Projector Pilot (https://projectorpilot.com/epson/): on the stores: Google Play (https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot); App Store - iPhone, iPad and Mac (https://apps.apple.com/us/app/projector-pilot-pjlink-vp21/id6805125447); Microsoft Store (https://apps.microsoft.com/detail/9NG7C8T3SB93)
+  - Works with: An Epson projector with ESC/VP21 or Web Control, or any PJLink projector, on the same local network as the device running the app.
+  - Platforms: Android, iOS, Windows, macOS.
+  - Latest version: 1.7.0 (android, ios, macos, windows).
+  - Pricing, from https://projectorpilot.com/epson/:
+    - Free: $0 USD. Add a projector, power, input switching, live status and on-screen remote basics.
+    - Projector Pilot Pro: $9.99 USD. One-time in-app purchase. Reference price; the store shows the price for your region.
+    - Home Automation add-on: $2.99 USD. One-time in-app purchase. Reference price; the store shows the price for your region.
+    - Pro + Home Automation bundle: $11.99 USD. One-time in-app purchase. Reference price; the store shows the price for your region.
+  - Projectors tested on real hardware (https://projectorpilot.com/epson/compatible-projectors/): Epson QB1000B / QB1000W; Epson Home Cinema 4040 / Pro Cinema 4040.
+  - Models that use the same protocols (https://projectorpilot.com/epson/compatible-projectors/): Pro Cinema LS12000, LS9000; Home Cinema LS11000, 5050UB, 4010; Home Cinema 3800, 3200, 2350; EB-PU2220B, EB-PU2120W, EB-PU2010B/W, EB-L770U; EB-L730U, EB-L260F, EB-L265F, EB-L210W, EB-810E, EB-815E; EB-U50, EB-W50, EB-X50, EB-L630U, EB-L530U; EV-110, EV-115.
+  - Is Projector Pilot made by Epson? No. Projector Pilot is an independent app by MiyaraHub Technologies LLC. It is not affiliated with, endorsed by, or sponsored by Epson, the PJLink standards body, Home Assistant or Hubitat. Those names are trademarks of their respective owners and appear here only to describe which projectors and smart-home systems the app works with.
+  - Which projectors does Projector Pilot support? Epson projectors over ESC/VP21 and Web Control, and any PJLink projector. The app uses whichever the projector answers on, so a PJLink-only projector is an ordinary supported device.
+  - Is Projector Pilot a subscription? No. Basic control is free, and Pro, Home Automation and the bundle are one-time purchases. No subscription, no ads.
+  - Does Projector Pilot need an account or the cloud? No account. The app talks to your projector on your network. On Android and iOS it sends crash reports to Google Firebase Crashlytics by default, which you can turn off in Settings > About, and usage analytics are opt-in and off by default. Nothing is sold.
+- Projector Pilot D-ILA (https://projectorpilot.com/jvc/): Coming soon. Projector Pilot D-ILA is on its way to Google Play, the App Store and the Microsoft Store, for Android, iOS, macOS and Windows. It is not on any store yet, so there is nothing to download today.
+  - Works with: A JVC D-ILA projector with network control on the same local network as the device running the app.
+  - Platforms: Android, iOS, macOS, Windows.
+  - Pricing, from https://projectorpilot.com/jvc/pricing/:
+    - Free: $0. Power, HDMI 1, and 20 lifetime d-pad presses, then 3 per day.
+    - Pro: $9.99 once. HDMI 2, every remote key, picture, lens, installation, aspect, hide, scenes, maintenance, test patterns and widgets.
+    - Home Automation: $2.99 once. Webhook triggers, Hubitat and Home Assistant.
+    - Bundle: $11.99 once. Pro and Home Automation together.
+  - Supported projectors (https://projectorpilot.com/jvc/): 43 model profiles covering 64 DLA model names, 52 of them network-controllable. 2018 NX series: DLA-NX5, NX7, NX9 and their RS and regional names. 2021 NZ series: DLA-NZ7, NZ8, NZ9 and DLA-NP5, with their RS and regional names. 2024 and 2025 NZ series: DLA-NZ500, NZ700, NZ800 and NZ900. Earlier LAN models such as DLA-X7, X9, X30, X70R and X90R. An unlisted D-ILA projector still gets power, input and the remote keys.
+  - Which JVC projectors does Projector Pilot D-ILA support? JVC D-ILA projectors with network control, from the DLA-X and DLA-RS models with a LAN port through the 2018 NX series and the 2021, 2024 and 2025 NZ series. The app carries 43 model profiles covering 64 DLA model names, 52 of them network-controllable. A D-ILA projector that is not in the list still gets power, input and the remote keys.
+  - Do I need an account or a cloud service? No. The app talks to the projector directly on your local network over TCP port 20554, using the projector's own network password. There is no account and no cloud service.
+  - Is it a subscription? No. Power, HDMI 1 and a number of remote presses are free. Pro, the Home Automation add-on and the bundle are one-time purchases.
+  - When can I download it? Projector Pilot D-ILA is coming soon to Google Play, the App Store and the Microsoft Store. It is not on any store yet.
+- Which app do I need? Projector Pilot is for Epson projectors over ESC/VP21 and Web Control, and for any PJLink projector. Projector Pilot D-ILA is for JVC D-ILA projectors.
+- Do the apps need an account or a cloud service? No. Both apps talk to the projector on your own local network.
+- Are they subscriptions? No. Each app has a free tier, and its Pro, Home Automation and bundle purchases are one-time.
+- Disclaimer: Projector Pilot apps are independent apps. They are not affiliated with, endorsed by, or sponsored by Epson, JVCKENWOOD Corporation, the PJLink standards body, Home Assistant, Hubitat, Apple, Google or Microsoft. Epson, JVC, D-ILA, PJLink, Home Assistant, Hubitat, App Store, Google Play and Microsoft Store are trademarks of their respective owners, named only to describe what the apps work with.
+- Localized pages: every English page below also exists in 29 more languages at https://projectorpilot.com/<locale>/<english path> (locales: ar, cs, da, de, el, es, fi, fr, he, hi, hu, id, it, ja, ko, nb, nl, pl, pt, pt-br, ro, ru, sv, th, tr, uk, vi, zh-hans, zh-hant); the sitemap lists 1044 localized URLs. Only the English URLs are listed here.
 
-Projector Pilot talks to a projector over ESC/VP21, PJLink and Epson Web Control, using whichever the projector answers on. It covers power and input, the full picture menu, motorized lens shift, focus, zoom and lens memories, one-tap Scenes, maintenance insights such as lamp or laser hours, and Home Assistant, Hubitat and webhook automation, in 29 languages. Basic control is free; Pro ($9.99 reference price) and the Home Automation add-on are one-time purchases. The app is on Google Play (https://play.google.com/store/apps/details?id=com.miyarahub.projectorpilot), the App Store for iPhone, iPad and Mac (https://apps.apple.com/us/app/projector-pilot-pjlink-vp21/id6805125447) and the Microsoft Store (https://apps.microsoft.com/detail/9NG7C8T3SB93). Projector Pilot is not affiliated with, endorsed by, or sponsored by Epson, the PJLink standards body, Home Assistant or Hubitat; those names are trademarks of their respective owners and are used only to describe what the app works with.
+## Projector Pilot: App to Control Epson & PJLink Projectors
 
-- [Home](https://projectorpilot.com/epson/): What Projector Pilot does, screenshots and a short FAQ.
-- [Pricing](https://projectorpilot.com/epson/pricing/): Free, Pro, the Home Automation add-on and the bundle, all one-time purchases.
-- [Compatible projectors](https://projectorpilot.com/epson/compatible-projectors/): Which Epson and PJLink projectors the app works with, tested models and same-protocol families.
-- [Help & FAQ](https://projectorpilot.com/epson/help/): Getting connected, supported projectors, purchases and restore, privacy and terms.
-- [User Guide](https://projectorpilot.com/epson/guide/): Index of every guide page.
-- [Getting Started](https://projectorpilot.com/epson/guide/getting-started/): Add a projector by network scan or IP address, the capability scan, and demo mode.
-- [Dashboard](https://projectorpilot.com/epson/guide/dashboard/): Live power, input and color mode, projection info and customizable cards.
-- [Remote](https://projectorpilot.com/epson/guide/remote/): Navigation D-pad, input and color mode, screen blank, geometry correction and the Device tab.
-- [Picture](https://projectorpilot.com/epson/guide/picture/): Brightness, contrast, color temperature, gamma, RGB gain and offset on the projector's own scale.
-- [Lens](https://projectorpilot.com/epson/guide/lens/): Motorized lens shift, focus and zoom with a chosen step size, and lens memories.
-- [Scenes](https://projectorpilot.com/epson/guide/scenes/): Save and recall the projector's state in one tap; Scenes can become Home Assistant scripts.
-- [Home Automation](https://projectorpilot.com/epson/guide/home-automation/): Connect the projector to Home Assistant, Hubitat and webhooks.
-- [Home Assistant Dashboard](https://projectorpilot.com/epson/guide/home-assistant-dashboard/): Build a custom Home Assistant projector dashboard with HACS cards and YAML.
-- [Maintenance & Insights](https://projectorpilot.com/epson/guide/maintenance/): Lamp or laser hours, filter hours, projected life, running cost and the hour report.
-- [Settings](https://projectorpilot.com/epson/guide/settings/): Projectors, purchases, test patterns, themes, polling, backup and restore.
-- [Highlights](https://projectorpilot.com/epson/highlights/): Release highlights, from Home Assistant sync to the projector switcher.
-- [Languages](https://projectorpilot.com/epson/guide/languages/): The 29 supported languages and right-to-left layout.
+An independent app for Epson and PJLink projectors: power, input, full picture and color control, motorized lens shift, focus, zoom and memories, one-tap Scenes, Home Assistant, Hubitat and webhook automation, maintenance insights and home-screen widgets, in 29 languages.
 
-## Projector Pilot D-ILA for JVC
+- [App to Control Epson & PJLink Projectors](https://projectorpilot.com/epson/): Projector Pilot is an app for Epson and PJLink projectors: power, input, picture, motorized lens, one-tap Scenes and Home Assistant. No subscription.
+- [Epson-Compatible Projector Remote: Supported Models](https://projectorpilot.com/epson/compatible-projectors/): Which Epson projectors work with Projector Pilot over PJLink, Epson Web Control and ESC/VP21: Home Cinema, Pro Cinema, laser, installation and business models.
+- [Pricing: Free, Pro & Home Automation](https://projectorpilot.com/epson/pricing/): Projector Pilot is free for basic projector control. Pro is $9.99, one-time; Home Automation is a one-time add-on, or get both in a bundle. No subscription.
+- [Help & FAQ: Connect Your Projector](https://projectorpilot.com/epson/help/): Projector Pilot help: connect on the same Wi-Fi, enable PJLink and Web Control, find the projector's IP and passwords, supported projectors, restore, privacy.
+- [User Guide for Epson & PJLink Projectors](https://projectorpilot.com/epson/guide/): The Projector Pilot user guide for Epson and PJLink projectors: add a projector, then every screen from dashboard and remote to lens, Scenes and Home Assistant.
+- [Projector Home Assistant & Hubitat Guide](https://projectorpilot.com/epson/guide/home-automation/): Connect your Epson or PJLink projector to Home Assistant, Hubitat and webhooks. Sync With HA publishes live state and turns every Scene into a script.
+- [Connect an Epson Projector to Your Phone](https://projectorpilot.com/epson/guide/getting-started/): Connect an Epson or PJLink projector to Projector Pilot: scan your network or add by IP, run the capability scan, Test Connection and Save. Plus demo mode.
+- [Projector Status Dashboard App](https://projectorpilot.com/epson/guide/dashboard/): The Projector Pilot dashboard: live power, input and color mode, projection info like dynamic range, color space, gamma and laser hours, and reorderable cards.
+- [Projector Remote App for Epson & PJLink](https://projectorpilot.com/epson/guide/remote/): Use your phone as a projector remote: navigation D-pad, Menu, Back, Home and Source, input and color mode, screen blank, geometry correction and device locks.
+- [Projector Picture & Color Settings App](https://projectorpilot.com/epson/guide/picture/): Adjust projector picture settings from your phone: brightness, contrast, color temperature, gamma, RGB gain and offset, each on the projector's own menu scale.
+- [Projector Lens Shift, Focus & Zoom App](https://projectorpilot.com/epson/guide/lens/): Motorized lens shift, focus and zoom from your phone with a step size you choose, lens memory recall and save, and an honest position readout.
+- [One-Tap Projector Scenes](https://projectorpilot.com/epson/guide/scenes/): Save your projector's power, input, picture, lens memory and more as a Scene and recall it in one tap. Every Scene can become a Home Assistant script. Pro.
+- [Home Assistant Projector Dashboard (YAML)](https://projectorpilot.com/epson/guide/home-assistant-dashboard/): Build a custom Home Assistant projector dashboard step by step: the HACS cards to install, your entity ID and serial, and copy-ready YAML for every card.
+- [Settings, Themes & Backup](https://projectorpilot.com/epson/guide/settings/): Projector Pilot settings explained: projectors, ports and passwords, Pro and restore, test patterns, themes, polling interval, backup and restore, and language.
+- [Projector Lamp & Laser Hours Tracker](https://projectorpilot.com/epson/guide/maintenance/): Track projector lamp or laser hours and filter hours, projected life, a running cost estimate and a verifiable hour report, all read from the projector.
+- [Projector App in 29 Languages](https://projectorpilot.com/epson/guide/languages/): Projector Pilot speaks 29 languages, follows your device language or lets you pick one in Settings, and mirrors the layout right to left for Arabic and Hebrew.
 
-Projector Pilot D-ILA is a network remote for JVC D-ILA projectors over TCP port 20554, using the projector's own network password. It covers power and HDMI inputs, menu navigation, the picture settings each model's JVC command table documents, lens shift, focus, zoom, lens memory and installation modes, scenes, maintenance figures, widgets, and webhook, Hubitat and Home Assistant automation, in 29 languages. It carries 43 model profiles covering 64 DLA model names, 52 of them network-controllable. Power, HDMI 1 and a number of d-pad presses are free; Pro ($9.99), Home Automation ($2.99) and the bundle ($11.99) are one-time purchases. It is coming soon to Google Play, the App Store and the Microsoft Store, for Android, iOS, macOS and Windows, and is not on any store yet. Projector Pilot D-ILA is not affiliated with or endorsed by JVCKENWOOD Corporation; JVC and D-ILA are trademarks of their owners.
+## Projector Pilot D-ILA: JVC D-ILA Projector Remote
 
-- [Home](https://projectorpilot.com/jvc/): What Projector Pilot D-ILA does, supported models and a short FAQ.
-- [Pricing](https://projectorpilot.com/jvc/pricing/): Free, Pro, Home Automation and the bundle.
-- [Help & FAQ](https://projectorpilot.com/jvc/help/): Connecting, the network password, supported models and support.
-- [Privacy](https://projectorpilot.com/jvc/privacy/): What the app sends and where.
-- [User Guide](https://projectorpilot.com/jvc/guide/): Index of every guide page.
-- [Getting Started](https://projectorpilot.com/jvc/guide/getting-started/): Network scan, IP address, network password and the demo projector.
-- [Dashboard](https://projectorpilot.com/jvc/guide/dashboard/): Power, input and live status.
-- [Remote](https://projectorpilot.com/jvc/guide/remote/): Menu navigation, picture shortcuts, hide and the test pattern.
-- [Picture](https://projectorpilot.com/jvc/guide/picture/): The Picture, Signal and Display tabs.
-- [Lens](https://projectorpilot.com/jvc/guide/lens/): Shift, focus and zoom, lens aperture, lens memory and installation modes.
-- [Scenes](https://projectorpilot.com/jvc/guide/scenes/): Apply, share and import scenes.
-- [Settings](https://projectorpilot.com/jvc/guide/settings/): Theme, display size, backup and restore, diagnostics and widgets.
-- [Maintenance & Insights](https://projectorpilot.com/jvc/guide/maintenance/): Hours, rated life, cost per hour, reminders and the hour report.
-- [Home Automation](https://projectorpilot.com/jvc/guide/home-automation/): Webhook triggers and Hubitat.
-- [Home Assistant](https://projectorpilot.com/jvc/guide/home-assistant/): The jvc_projector integration, scripts and a Lovelace dashboard.
-- [Languages](https://projectorpilot.com/jvc/guide/languages/): The 29 supported languages.
-- [Highlights](https://projectorpilot.com/jvc/highlights/): What is in the first release.
+An independent network remote for JVC D-ILA projectors: power, inputs, picture settings, lens and installation control, scenes, maintenance figures and home automation, in 29 languages.
+
+- [Projector Pilot D-ILA: JVC D-ILA Projector Remote](https://projectorpilot.com/jvc/): A network remote for JVC D-ILA projectors: power, inputs, picture, lens, scenes, maintenance and home automation. No account, no cloud. Coming soon.
+- [Pricing](https://projectorpilot.com/jvc/pricing/): Projector Pilot D-ILA is free for power and HDMI 1. Pro, Home Automation and the bundle are one-time purchases, no subscription.
+- [Help & FAQ](https://projectorpilot.com/jvc/help/): Fix connection problems with your JVC D-ILA projector: network, port 20554, password, standby, one controller, supported models and purchases.
+- [User Guide](https://projectorpilot.com/jvc/guide/): The complete guide to Projector Pilot D-ILA: connect a JVC D-ILA projector, use the remote, picture, lens, scenes, maintenance and home automation.
+- [Home Assistant Setup](https://projectorpilot.com/jvc/guide/home-assistant/): Add your JVC D-ILA projector to Home Assistant without YAML: sign in, the JVC Projector integration, a live sensor and scene scripts.
+- [Getting Started](https://projectorpilot.com/jvc/guide/getting-started/): Find or add your JVC D-ILA projector on the network, set the network password, and fix a failed connection with the guided checks.
+- [JVC Projector Dashboard](https://projectorpilot.com/jvc/guide/dashboard/): Power, input, picture mode, signal readings and light source hours for your JVC D-ILA projector, on one screen.
+- [JVC D-ILA Remote App](https://projectorpilot.com/jvc/guide/remote/): Use your phone as a JVC D-ILA remote: d-pad, menu keys, inputs, aspect, Hide and device info, with the free daily presses explained.
+- [Picture Settings](https://projectorpilot.com/jvc/guide/picture/): Change picture mode, HDR, color, motion and the other picture settings your JVC D-ILA projector model offers, from your phone.
+- [Lens and Installation](https://projectorpilot.com/jvc/guide/lens/): Drive lens shift, focus and zoom, recall lens memories and switch installation modes on JVC D-ILA projectors that support them.
+- [Scenes](https://projectorpilot.com/jvc/guide/scenes/): Save your JVC projector settings as a scene, recall it in one tap, and share it as a .ppscene file.
+- [Settings](https://projectorpilot.com/jvc/guide/settings/): Projectors, purchases, theme, navigation, backup, reset, feedback and privacy switches in Projector Pilot D-ILA, explained.
+- [Maintenance and Insights](https://projectorpilot.com/jvc/guide/maintenance/): Track light source hours on your JVC D-ILA projector, see projected life and cost per hour, and set maintenance reminders.
+- [Home Automation](https://projectorpilot.com/jvc/guide/home-automation/): Webhook triggers, a Hubitat mirror and Home Assistant setup for your JVC D-ILA projector, with the exact request the app sends.
+- [Home Assistant Dashboard](https://projectorpilot.com/jvc/guide/home-assistant-dashboard/): Build a Home Assistant dashboard for your JVC D-ILA projector in one tap: power, picture, scenes, inputs, lens memories and signal.
+- [Languages](https://projectorpilot.com/jvc/guide/languages/): Projector Pilot D-ILA speaks 29 languages, including right-to-left Arabic and Hebrew. Change the app language in Settings.
+
+## Optional
+
+- [Projector Pilot: Remote Apps for Epson and JVC Projectors](https://projectorpilot.com/): Projector Pilot apps control projectors over your own network: Epson and PJLink projectors, and JVC D-ILA projectors. No account, no subscription.
+- [Projector Pilot Highlights](https://projectorpilot.com/epson/highlights/): Projector Pilot highlights, the control app for Epson and PJLink projectors: Home Assistant that builds your dashboard, a projector switcher, 29 languages, lens controls that work, and instant controls.
+- [Highlights](https://projectorpilot.com/jvc/highlights/): What is in Projector Pilot D-ILA 1.0.1: per-model JVC controls, lens, scenes, maintenance, Home Assistant and a demo projector.
+- [JVC Projector App Privacy Policy](https://projectorpilot.com/jvc/privacy/): Projector Pilot D-ILA privacy: local network control, no account, no ads, opt-in analytics and crash reports you can turn off.
